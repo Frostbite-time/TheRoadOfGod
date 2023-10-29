@@ -1,9 +1,9 @@
 ﻿mage = {	
-	texture = "gfx/interface/icons/regimenttypes/heavy_cavalry.dds"
+	texture = "gfx/interface/icons/regimenttypes/mage.dds"
 	parent = men_at_arms
 }
 holy_beast = {	
-	texture = "gfx/interface/icons/regimenttypes/heavy_cavalry.dds"
+	texture = "gfx/interface/icons/regimenttypes/holy_beast.dds"
 	parent = men_at_arms
 }
 creation = {	
@@ -11,7 +11,7 @@ creation = {
 	parent = men_at_arms
 }
 beast = {	
-	texture = "gfx/interface/icons/regimenttypes/heavy_cavalry.dds"
+	texture = "gfx/interface/icons/regimenttypes/beast.dds"
 	parent = men_at_arms
 }
 holy_heavy_infantry = {	
@@ -31,10 +31,10 @@ holy_archer_cavalry = {
 	parent = men_at_arms
 }
 extraplanar_mage = {
-	texture = "gfx/interface/icons/regimenttypes/heavy_cavalry.dds"
+	texture = "gfx/interface/icons/regimenttypes/extraplanar_mage.dds"
 	parent = men_at_arms
 }
 extraplanar_beast = {
-	texture = "gfx/interface/icons/regimenttypes/heavy_cavalry.dds"
+	texture = "gfx/interface/icons/regimenttypes/extraplanar_beast.dds"
 	parent = men_at_arms
 }
