@@ -7,7 +7,7 @@ holy_beast = {
 	parent = men_at_arms
 }
 creation = {	
-	texture = "gfx/interface/icons/regimenttypes/heavy_cavalry.dds"
+	texture = "gfx/interface/icons/regimenttypes/creation.dds"
 	parent = men_at_arms
 }
 beast = {	
