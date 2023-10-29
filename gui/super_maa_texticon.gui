@@ -89,3 +89,219 @@ texticon = {
 		fontsize = 16
 	}
 }
+texticon = {
+	icon = wise_god_low_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/mage.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = wise_god_high_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/holy_beast.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = war_god_low_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/holy_beast.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = war_god_high_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/creation.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = dark_god_low_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/creation.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = dark_god_high_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/creation.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = nature_god_low_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/beast.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = nature_god_high_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/holy_beast.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = sea_god_low_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/creation.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = sea_god_high_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/holy_beast.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = belief_god_low_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/heavy_infantry.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = belief_god_high_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/heavy_cavalry.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = hope_god_low_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/creation.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = hope_god_high_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/creation.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = time_god_low_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/mage.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = time_god_high_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/mage.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = destiny_god_low_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/heavy_infantry.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = destiny_god_high_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/mage.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = ark_god_low_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/pikemen.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = ark_god_high_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/heavy_cavalry.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = fight_god_low_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/creation.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = fight_god_high_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/heavy_cavalry.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = highlander_god_low_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/extraplanar_mage.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = highlander_god_high_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/extraplanar_beast.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
