@@ -1,0 +1,903 @@
+﻿#世界裂隙  暗杀
+world_rift_assassination = {
+	skill = intrigue
+	desc = world_rift_assassination_desc
+	hostile = yes
+	icon = icon_scheme_hostile
+	uses_agents = no    #这是一个只能一个人进行的阴谋
+	uses_resistance = no   #由于该阴谋仅作为触发器，所以没有阻力可言
+	allow = {
+		age >= 14
+		is_imprisoned = no
+		has_perk = precise_positioning   #需要perk
+	}
+	
+	valid = {
+		trigger_if = {       #使得不能用来谋杀自己的孩子，除非你有特殊的特质
+			limit = {
+				is_parent_of = scope:target
+				NOT = {
+					has_trait_with_flag = can_murder_own_children
+				}
+			}
+			NOT = { is_parent_of = scope:target }
+		}
+		custom_description = {
+			object = scope:target
+			text = "I_have_imprisoned_target"
+			scope:target = {
+				NOT = { imprisoner = scope:owner }
+			}
+		}
+		custom_description = {
+			object = scope:target
+			text = i_have_been_caught_trying_to_murder_target
+			scope:target = {
+				NOT = {
+					has_opinion_modifier = {
+						target = prev
+						modifier = murder_personal_grudge_opinion
+					}
+				}
+			}
+		}
+		scope:target = {
+			OR = {
+				exists = location
+				in_diplomatic_range = scope:owner
+			}
+		}
+		# Special AI exceptions
+		NOT = {
+			scope:owner = {
+				is_ai = yes
+				has_opinion_modifier = {
+					target = scope:target
+					modifier = repentant_opinion
+				}
+			}
+		}
+	}
+
+	valid_agent = {
+		always = no
+	}
+	
+	agent_join_chance = {
+		base = 0
+	}
+	
+	base_success_chance = {    #成功率
+		base = 100
+	}
+	
+	agent_success_chance = {
+		base = 0
+	}
+	
+	agent_leave_threshold = -25
+		
+	cooldown = { years = 10 }
+	is_secret = yes
+	base_secrecy = 100
+
+	on_ready = {
+		scheme_owner = {
+			trigger_event = rift_events_world.0001
+		}
+		scope:scheme = {
+			end_scheme = yes
+		}
+	}
+
+	on_monthly = {
+	}
+
+	
+	on_invalidated = {
+		if = { #Did the character die in another way?
+			limit = {
+				scheme_target = {
+					is_alive = no
+					NOT = { killer = prev.scheme_owner }
+				}
+			}
+			scheme_owner = {
+				trigger_event = murder_outcome.2000
+			}
+		}
+	}
+
+	
+	
+	power_per_skill_point = 1
+	minimum_progress_chance = 100
+	maximum_progress_chance = 100
+	minimum_success = 100
+	maximum_secrecy = 100
+	maximum_success = 100
+	
+}
+
+#制造高级牵制
+make_high_hook = {
+	skill = intrigue
+	desc = make_high_hook_desc
+	hostile = yes
+	icon = icon_scheme_hostile
+	uses_agents = no    #这是一个只能一个人进行的阴谋
+	uses_resistance = 40
+	allow = {
+		OR = {
+			has_perk = marionette # Scheme unlocked by Perk
+		}
+		is_adult = yes
+		is_landed = yes
+		is_imprisoned = no
+	}
+	
+	valid = {
+		trigger_if = {
+			limit = { exists = scope:target.court_owner }
+			custom_description = {
+				text = was_discovered_fabricating_hooks_already
+				NOT = {
+					scope:target.court_owner = {
+						has_opinion_modifier = {
+							target = scope:owner
+							modifier = fabricated_hook_against_court_opinion
+						}
+					}
+				}
+			}
+		}
+		trigger_else = {
+			custom_description = {
+				text = can_not_fabricate_hooks_on_wanderers
+				always = no
+			}
+		}
+		scope:target = {
+			is_adult = yes
+			is_imprisoned = no
+			NOT = { has_trait = incapable }
+			#exists = location
+			in_diplomatic_range = scope:owner
+		}
+
+		#Temporary fix to communicate to players that the scheme is unavailabe. 
+		#A character should always have a location but some characters are lost in the pool ATM
+		#This custom description should be removed once the pool is fixed, and the line from the previous block should be uncommented. 
+		custom_description = {
+			text = in_diplomatic_range
+			scope:target = {
+				exists = location
+			}
+		}
+		custom_description = {
+			text = already_knows_secret_about_ruler_target
+			NOT = {
+				scope:target = {
+					is_ruler = yes
+					any_secret = {
+						is_known_by = scope:owner
+						is_blackmailable_secret_trigger = { BLACKMAILER = scope:owner PARTICIPANT = scope:target }
+					}
+				}	
+			}
+		}
+		custom_description = {
+			text = already_knows_criminal_secret_about_target
+			NOT = {
+				scope:target = {
+					any_secret = {
+						is_criminal_for = scope:target
+						is_known_by = scope:owner
+						is_blackmailable_secret_trigger = { BLACKMAILER = scope:owner PARTICIPANT = scope:target }
+					}
+				}
+			}
+		}
+		# Special AI exceptions
+		NOT = {
+			scope:owner = {
+				is_ai = yes
+				has_opinion_modifier = {
+					target = scope:target
+					modifier = repentant_opinion
+				}
+			}
+		}
+	}
+
+	valid_agent = {
+		always = no
+	}
+	
+	agent_join_chance = {
+		base = 0
+	}
+	
+	base_success_chance = {    #成功率
+		base = 10
+	}
+	
+	agent_success_chance = {
+		base = 0
+	}
+	
+	agent_leave_threshold = -25
+		
+	cooldown = { years = 3 }
+	is_secret = yes
+	base_secrecy = 10
+
+	on_ready = {
+		# Do the Success Roll
+		random = {
+			chance = scheme_success_chance
+			save_scope_value_as = {
+				name = scheme_succeeded
+				value = yes
+			}
+		}
+		# Do the Secrecy Roll
+		save_scope_value_as = {
+			name = discovery_chance
+			value = {
+				value = 100
+				subtract = scheme_secrecy
+			}
+		}
+		random = {
+			chance = scope:discovery_chance
+			save_scope_value_as = {
+				name = scheme_discovered
+				value = yes
+			}
+		}
+
+		# On Success: Check for viable Secret
+		if = {
+			limit = { exists = scope:scheme_succeeded }
+			scheme_owner = {
+				trigger_event = thelast.0004 # 密谋成功
+			}
+			scope:target = {
+				trigger_event = thelast.0010
+			}
+			scope:scheme = {
+				end_scheme = yes
+			}
+		}
+
+		else_if = {
+			limit = { exists = scope:scheme_discovered }
+			scheme_owner = {
+				trigger_event = thelast.0003 # 密谋败露
+			}
+			scope:scheme = {
+				end_scheme = yes
+			}
+		}
+		else = {
+			scheme_owner = {
+				trigger_event = thelast.0005 # 密谋未成功
+			}
+			scope:scheme = {
+				end_scheme = yes
+			}
+		}
+	}
+
+	on_monthly = {
+		hostile_scheme_discovery_chance_effect = yes
+	}
+
+	
+	on_invalidated = {
+		if = {
+			limit = {
+				scope:target = { is_alive = no }
+			}
+			scope:owner = {
+				send_interface_toast = {
+					title = make_high_hook_scheme_invalidated_title
+					left_icon = scope:target
+					custom_description_no_bullet = {
+						object = scope:target
+						text = scheme_target_died
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				scope:target = {
+					is_imprisoned = yes
+				}
+			}
+			scope:target.imprisoner = { save_scope_as = other_imprisoner }
+			scope:owner = {
+				send_interface_toast = {
+					title = make_high_hook_scheme_invalidated_title
+					left_icon = scope:target
+					custom_description_no_bullet = {
+						subject = scope:other_imprisoner
+						object = scope:target
+						text = scheme_target_imprisoned_by_other
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				scope:target = {
+					has_trait = incapable
+				}
+			}
+			scope:owner = {
+				send_interface_toast = {
+					title = make_high_hook_scheme_invalidated_title
+					left_icon = scope:target
+					custom_tooltip = scheme_target_is_incapable
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				scope:target = { 
+					NOT = { in_diplomatic_range = scope:owner } 
+				}
+			}
+			scope:owner = {
+				send_interface_toast = {
+					title = make_high_hook_scheme_invalidated_title
+					left_icon = scope:target
+					custom_description_no_bullet = {
+						object = scope:target
+						text = scheme_target_not_in_diplomatic_range
+					}
+				}
+			}
+		}
+	}
+
+	
+	
+	power_per_skill_point = 3
+	resistance_per_skill_point = 1
+	tier_resistance = 1
+	minimum_progress_chance = 10
+	maximum_progress_chance = 90
+	minimum_success = 10
+	maximum_secrecy = 100
+	maximum_success = 90
+	success_desc = "MAKE_HIGH_SUCCESS_DESC"
+	discovery_desc = "MAKE_HIGH_DISCOVERY_DESC"
+	
+}
+
+
+
+
+#制造中等牵制
+make_mid_hook = {
+	skill = intrigue
+	desc = make_high_hook_desc
+	hostile = yes
+	icon = icon_scheme_hostile
+	uses_agents = no    #这是一个只能一个人进行的阴谋
+	uses_resistance = 40
+	allow = {
+		OR = {
+			has_perk = wielding # Scheme unlocked by Perk
+		}
+		is_adult = yes
+		is_landed = yes
+		is_imprisoned = no
+	}
+	
+	valid = {
+		trigger_if = {
+			limit = { exists = scope:target.court_owner }
+			custom_description = {
+				text = was_discovered_fabricating_hooks_already
+				NOT = {
+					scope:target.court_owner = {
+						has_opinion_modifier = {
+							target = scope:owner
+							modifier = fabricated_hook_against_court_opinion
+						}
+					}
+				}
+			}
+		}
+		trigger_else = {
+			custom_description = {
+				text = can_not_fabricate_hooks_on_wanderers
+				always = no
+			}
+		}
+		scope:target = {
+			is_adult = yes
+			is_imprisoned = no
+			NOT = { has_trait = incapable }
+			#exists = location
+			in_diplomatic_range = scope:owner
+		}
+
+		#Temporary fix to communicate to players that the scheme is unavailabe. 
+		#A character should always have a location but some characters are lost in the pool ATM
+		#This custom description should be removed once the pool is fixed, and the line from the previous block should be uncommented. 
+		custom_description = {
+			text = in_diplomatic_range
+			scope:target = {
+				exists = location
+			}
+		}
+		custom_description = {
+			text = already_knows_secret_about_ruler_target
+			NOT = {
+				scope:target = {
+					is_ruler = yes
+					any_secret = {
+						is_known_by = scope:owner
+						is_blackmailable_secret_trigger = { BLACKMAILER = scope:owner PARTICIPANT = scope:target }
+					}
+				}	
+			}
+		}
+		custom_description = {
+			text = already_knows_criminal_secret_about_target
+			NOT = {
+				scope:target = {
+					any_secret = {
+						is_criminal_for = scope:target
+						is_known_by = scope:owner
+						is_blackmailable_secret_trigger = { BLACKMAILER = scope:owner PARTICIPANT = scope:target }
+					}
+				}
+			}
+		}
+		# Special AI exceptions
+		NOT = {
+			scope:owner = {
+				is_ai = yes
+				has_opinion_modifier = {
+					target = scope:target
+					modifier = repentant_opinion
+				}
+			}
+		}
+	}
+
+	valid_agent = {
+		always = no
+	}
+	
+	agent_join_chance = {
+		base = 0
+	}
+	
+	base_success_chance = {    #成功率
+		base = 10
+	}
+	
+	agent_success_chance = {
+		base = 0
+	}
+	
+	agent_leave_threshold = -25
+		
+	cooldown = { years = 3 }
+	is_secret = yes
+	base_secrecy = 20
+
+	on_ready = {
+		# Do the Success Roll
+		random = {
+			chance = scheme_success_chance
+			save_scope_value_as = {
+				name = scheme_succeeded
+				value = yes
+			}
+		}
+		# Do the Secrecy Roll
+		save_scope_value_as = {
+			name = discovery_chance
+			value = {
+				value = 100
+				subtract = scheme_secrecy
+			}
+		}
+		random = {
+			chance = scope:discovery_chance
+			save_scope_value_as = {
+				name = scheme_discovered
+				value = yes
+			}
+		}
+
+		# On Success: Check for viable Secret
+		if = {
+			limit = { exists = scope:scheme_succeeded }
+			scheme_owner = {
+				trigger_event = thelast.0006 # 密谋成功
+			}
+			scope:target = {
+				trigger_event = thelast.0010
+			}
+			scope:scheme = {
+				end_scheme = yes
+			}
+		}
+
+		else_if = {
+			limit = { exists = scope:scheme_discovered }
+			scheme_owner = {
+				trigger_event = thelast.0007 # 密谋败露
+			}
+			scope:scheme = {
+				end_scheme = yes
+			}
+		}
+		else = {
+			scheme_owner = {
+				trigger_event = thelast.0005 # 密谋未成功
+			}
+			scope:scheme = {
+				end_scheme = yes
+			}
+		}
+	}
+
+	on_monthly = {
+		hostile_scheme_discovery_chance_effect = yes
+	}
+
+	
+	on_invalidated = {
+		if = {
+			limit = {
+				scope:target = { is_alive = no }
+			}
+			scope:owner = {
+				send_interface_toast = {
+					title = make_high_hook_scheme_invalidated_title
+					left_icon = scope:target
+					custom_description_no_bullet = {
+						object = scope:target
+						text = scheme_target_died
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				scope:target = {
+					is_imprisoned = yes
+				}
+			}
+			scope:target.imprisoner = { save_scope_as = other_imprisoner }
+			scope:owner = {
+				send_interface_toast = {
+					title = make_high_hook_scheme_invalidated_title
+					left_icon = scope:target
+					custom_description_no_bullet = {
+						subject = scope:other_imprisoner
+						object = scope:target
+						text = scheme_target_imprisoned_by_other
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				scope:target = {
+					has_trait = incapable
+				}
+			}
+			scope:owner = {
+				send_interface_toast = {
+					title = make_high_hook_scheme_invalidated_title
+					left_icon = scope:target
+					custom_tooltip = scheme_target_is_incapable
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				scope:target = { 
+					NOT = { in_diplomatic_range = scope:owner } 
+				}
+			}
+			scope:owner = {
+				send_interface_toast = {
+					title = make_high_hook_scheme_invalidated_title
+					left_icon = scope:target
+					custom_description_no_bullet = {
+						object = scope:target
+						text = scheme_target_not_in_diplomatic_range
+					}
+				}
+			}
+		}
+	}
+
+	
+	
+	power_per_skill_point = 4
+	resistance_per_skill_point = 1
+	tier_resistance = 1
+	minimum_progress_chance = 10
+	maximum_progress_chance = 90
+	minimum_success = 10
+	maximum_secrecy = 100
+	maximum_success = 90
+	success_desc = "MAKE_MID_SUCCESS_DESC"
+	discovery_desc = "MAKE_HIGH_DISCOVERY_DESC"
+	
+}
+
+
+
+
+#制造低等牵制
+make_low_hook = {
+	skill = intrigue
+	desc = make_low_hook_desc
+	hostile = yes
+	icon = icon_scheme_hostile
+	uses_agents = no    #这是一个只能一个人进行的阴谋
+	uses_resistance = 40
+	allow = {
+		OR = {
+			has_perk = brain_scholar # Scheme unlocked by Perk
+		}
+		is_adult = yes
+		is_landed = yes
+		is_imprisoned = no
+	}
+	
+	valid = {
+		trigger_if = {
+			limit = { exists = scope:target.court_owner }
+			custom_description = {
+				text = was_discovered_fabricating_hooks_already
+				NOT = {
+					scope:target.court_owner = {
+						has_opinion_modifier = {
+							target = scope:owner
+							modifier = fabricated_hook_against_court_opinion
+						}
+					}
+				}
+			}
+		}
+		trigger_else = {
+			custom_description = {
+				text = can_not_fabricate_hooks_on_wanderers
+				always = no
+			}
+		}
+		scope:target = {
+			is_adult = yes
+			is_imprisoned = no
+			NOT = { has_trait = incapable }
+			#exists = location
+			in_diplomatic_range = scope:owner
+		}
+
+		#Temporary fix to communicate to players that the scheme is unavailabe. 
+		#A character should always have a location but some characters are lost in the pool ATM
+		#This custom description should be removed once the pool is fixed, and the line from the previous block should be uncommented. 
+		custom_description = {
+			text = in_diplomatic_range
+			scope:target = {
+				exists = location
+			}
+		}
+		custom_description = {
+			text = already_knows_secret_about_ruler_target
+			NOT = {
+				scope:target = {
+					is_ruler = yes
+					any_secret = {
+						is_known_by = scope:owner
+						is_blackmailable_secret_trigger = { BLACKMAILER = scope:owner PARTICIPANT = scope:target }
+					}
+				}	
+			}
+		}
+		custom_description = {
+			text = already_knows_criminal_secret_about_target
+			NOT = {
+				scope:target = {
+					any_secret = {
+						is_criminal_for = scope:target
+						is_known_by = scope:owner
+						is_blackmailable_secret_trigger = { BLACKMAILER = scope:owner PARTICIPANT = scope:target }
+					}
+				}
+			}
+		}
+		# Special AI exceptions
+		NOT = {
+			scope:owner = {
+				is_ai = yes
+				has_opinion_modifier = {
+					target = scope:target
+					modifier = repentant_opinion
+				}
+			}
+		}
+	}
+
+	valid_agent = {
+		always = no
+	}
+	
+	agent_join_chance = {
+		base = 0
+	}
+	
+	base_success_chance = {    #成功率
+		base = 10
+	}
+	
+	agent_success_chance = {
+		base = 0
+	}
+	
+	agent_leave_threshold = -25
+		
+	cooldown = { years = 3 }
+	is_secret = yes
+	base_secrecy = 20
+
+	on_ready = {
+		# Do the Success Roll
+		random = {
+			chance = scheme_success_chance
+			save_scope_value_as = {
+				name = scheme_succeeded
+				value = yes
+			}
+		}
+		# Do the Secrecy Roll
+		save_scope_value_as = {
+			name = discovery_chance
+			value = {
+				value = 100
+				subtract = scheme_secrecy
+			}
+		}
+		random = {
+			chance = scope:discovery_chance
+			save_scope_value_as = {
+				name = scheme_discovered
+				value = yes
+			}
+		}
+
+		# On Success: Check for viable Secret
+		if = {
+			limit = { exists = scope:scheme_succeeded }
+			scheme_owner = {
+				trigger_event = thelast.0008 # 密谋成功
+			}
+			scope:target = {
+				trigger_event = thelast.0010
+			}
+			scope:scheme = {
+				end_scheme = yes
+			}
+		}
+
+		else_if = {
+			limit = { exists = scope:scheme_discovered }
+			scheme_owner = {
+				trigger_event = thelast.0009 # 密谋败露
+			}
+			scope:scheme = {
+				end_scheme = yes
+			}
+		}
+		else = {
+			scheme_owner = {
+				trigger_event = thelast.0005 # 密谋未成功
+			}
+			scope:scheme = {
+				end_scheme = yes
+			}
+		}
+	}
+
+	on_monthly = {
+		hostile_scheme_discovery_chance_effect = yes
+	}
+
+	
+	on_invalidated = {
+		if = {
+			limit = {
+				scope:target = { is_alive = no }
+			}
+			scope:owner = {
+				send_interface_toast = {
+					title = make_high_hook_scheme_invalidated_title
+					left_icon = scope:target
+					custom_description_no_bullet = {
+						object = scope:target
+						text = scheme_target_died
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				scope:target = {
+					is_imprisoned = yes
+				}
+			}
+			scope:target.imprisoner = { save_scope_as = other_imprisoner }
+			scope:owner = {
+				send_interface_toast = {
+					title = make_high_hook_scheme_invalidated_title
+					left_icon = scope:target
+					custom_description_no_bullet = {
+						subject = scope:other_imprisoner
+						object = scope:target
+						text = scheme_target_imprisoned_by_other
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				scope:target = {
+					has_trait = incapable
+				}
+			}
+			scope:owner = {
+				send_interface_toast = {
+					title = make_high_hook_scheme_invalidated_title
+					left_icon = scope:target
+					custom_tooltip = scheme_target_is_incapable
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				scope:target = { 
+					NOT = { in_diplomatic_range = scope:owner } 
+				}
+			}
+			scope:owner = {
+				send_interface_toast = {
+					title = make_high_hook_scheme_invalidated_title
+					left_icon = scope:target
+					custom_description_no_bullet = {
+						object = scope:target
+						text = scheme_target_not_in_diplomatic_range
+					}
+				}
+			}
+		}
+	}
+
+	
+	
+	power_per_skill_point = 5
+	resistance_per_skill_point = 2
+	tier_resistance = 1
+	minimum_progress_chance = 10
+	maximum_progress_chance = 90
+	minimum_success = 10
+	maximum_secrecy = 100
+	maximum_success = 90
+	success_desc = "MAKE_LOW_SUCCESS_DESC"
+	discovery_desc = "MAKE_HIGH_DISCOVERY_DESC"
+	
+}

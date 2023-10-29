@@ -1,0 +1,64 @@
+﻿namespace = fixed_war_arm
+
+#修复战神之甲
+fixed_war_arm.0001 = {
+	type = character_event
+	title = fixed_war_arm.0001.t
+	desc = fixed_war_arm.0001.desc
+	theme = realm
+	left_portrait = root
+	artifact = {
+		target = scope:newly_created_artifact
+		position = lower_left_portrait
+	}	
+	immediate = {
+		hidden_effect = {
+			destroy_leadr = yes
+		}
+		create_artifact = {
+			name = war_arm
+			description = war_arm_desc
+			type = armor_plate
+			visuals = armor
+			rarity = illustrious
+			decaying = no
+			quality = 300
+			wealth = 300
+			modifier = leader_am_fixed_modif
+			max_durability = 1000
+			durability = 1000
+			save_scope_as = newly_created_artifact
+			template = war_armr_template
+		}		
+	}
+	option = {
+		custom_tooltip = {
+			text = destroy_war_ararm
+		}
+		name = fixed_war_arm.0001.a
+	}
+}
+
+#修复战神之甲后其他角色
+fixed_war_arm.0002 = {
+	type = character_event
+	title = fixed_war_arm.0001.t
+	desc = fixed_war_arm.0002.desc
+	theme = realm
+	left_portrait = root
+	immediate = {
+		hidden_effect = {
+			destroy_leadr = yes
+		}
+	}			
+	option = {
+		custom_tooltip = {
+			text = destroy_war_ararm
+		}
+		name = fixed_war_arm.0002.a
+	}
+}
+
+
+
+

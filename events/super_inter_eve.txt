@@ -1,0 +1,215 @@
+﻿namespace = thelast
+
+thelast.0001 = {
+	type = character_event
+	title = thelast.0001.t
+	desc = thelast.0001.desc
+	theme = realm
+	left_portrait = root
+	right_portrait = scope:recipient
+	option = {
+		name = thelast.0001.a
+	}
+}
+
+thelast.0002 = {
+	type = character_event
+	title = thelast.0001.t
+	desc = thelast.0002.desc
+	theme = realm
+	left_portrait = root
+	right_portrait = scope:recipient
+	option = {
+		name = thelast.0002.a
+	}
+}
+
+#制造高级牵制被发现
+thelast.0003 = {
+	type = character_event
+	title = thelast.0003.t
+	desc = thelast.0003.desc
+	theme = realm
+	left_portrait = root
+	right_portrait = scope:target
+	option = {
+		name = thelast.0003.a
+		scope:target = {
+			add_opinion = {
+				modifier = hook_discoved_super_high
+				target = root
+			}
+		}
+	}
+}
+#制造高级牵制成功
+thelast.0004 = {
+	type = character_event
+	title = thelast.0004.t
+	desc = thelast.0004.desc
+	theme = realm
+	left_portrait = root
+	right_portrait = scope:target
+	option = {
+		name = thelast.0004.a
+		scope:target = {
+			add_opinion = {
+				modifier = hook_suessce_super_high
+				target = root
+			}
+			add_to_variable_list = {
+				name = be_hooked_people
+				target = root
+			}
+		}
+		root = {
+			add_hook_no_toast = {
+				target = scope:target
+				type = super_high_hook
+			}
+		}
+	}
+}
+
+#制造牵制失败
+thelast.0005 = {
+	type = character_event
+	title = thelast.0005.t
+	desc = thelast.0005.desc
+	theme = realm
+	left_portrait = root
+	right_portrait = scope:target
+	option = {
+		name = thelast.0005.a
+	}
+}
+
+#制造中级牵制成功
+thelast.0006 = {
+	type = character_event
+	title = thelast.0004.t
+	desc = thelast.0006.desc
+	theme = realm
+	left_portrait = root
+	right_portrait = scope:target
+	option = {
+		name = thelast.0006.a
+		scope:target = {     #被执行者，这个作用域是从阴谋那边传递过来的，测试可用
+			add_opinion = {   #添加意见修饰符
+				modifier = hook_suessce_super_high
+				target = root
+			}
+			add_to_variable_list = {  #添加列表
+				name = be_hooked_people
+				target = root
+			}
+		}
+		root = {    #执行者，因为是事件，所以直接用root方便
+			add_hook_no_toast = {
+				target = scope:target
+				type = super_mid_hook
+			}
+		}
+	}
+}
+#制造中级牵制被发现
+thelast.0007 = {
+	type = character_event
+	title = thelast.0003.t
+	desc = thelast.0003.desc
+	theme = realm
+	left_portrait = root
+	right_portrait = scope:target
+	option = {
+		name = thelast.0003.a
+		scope:target = {
+			add_opinion = {
+				modifier = hook_discoved_super_mid
+				target = root
+			}
+		}
+	}
+}
+
+#制造低级牵制成功
+thelast.0008 = {
+	type = character_event
+	title = thelast.0004.t
+	desc = thelast.0008.desc
+	theme = realm
+	left_portrait = root
+	right_portrait = scope:target
+	option = {
+		name = thelast.0008.a
+		scope:target = {
+			add_to_variable_list = {
+				name = be_hooked_people
+				target = root
+			}
+		}
+		root = {
+			add_hook_no_toast = {
+				target = scope:target
+				type = super_low_hook
+			}
+			remove_character_flag = used_2
+			remove_character_flag = used_1
+		}
+	}
+}
+
+#制造低级牵制被发现
+thelast.0009 = {
+	type = character_event
+	title = thelast.0003.t
+	desc = thelast.0003.desc
+	theme = realm
+	left_portrait = root
+	right_portrait = scope:target
+	option = {
+		name = thelast.0003.a
+		scope:target = {
+			add_opinion = {
+				modifier = hook_discoved_super_low
+				target = root
+			}
+		}
+	}
+}
+
+#对于被制造者的提示
+thelast.0010 = {
+	type = character_event
+	title = thelast.0010.t
+	desc = thelast.0010.desc
+	theme = realm
+	left_portrait = root
+	right_portrait = scope:owner
+	option = {
+		name = thelast.0010.a
+	}
+}
+
+#摆脱思想操纵
+thelast.0011 = {
+	type = character_event
+	title = thelast.0011.t
+	desc = thelast.0011.desc
+	theme = realm
+	left_portrait = root
+	option = {
+		name = thelast.0011.a
+	}
+}
+
+#当对方摆脱后,操纵持有者收到的
+thelast.0012 = {
+	type = character_event
+	title = thelast.0012.t
+	desc = thelast.0012.desc
+	theme = realm
+	left_portrait = root
+	option = {
+		name = thelast.0012.a
+	}
+}

@@ -1,0 +1,555 @@
+﻿#战争巨神
+super_war_god = {
+	index = 1081 	  #索引
+	#####神的基本属性#####
+	good = yes		  #好的特质
+	immortal = yes    #不朽
+	health = 200	  #健康	
+	prowess = 100	  #勇武
+	no_prowess_loss_from_age = yes  #勇武不因年龄衰减（已经衰减的不能恢复）
+	stress_gain_mult = -1	#压力增加系数
+	stress_loss_mult = 1	#压力丢失系数
+	domain_limit = 100      #统治上限
+	vassal_limit = 200      #附庸上限
+	domain_tax_mult = 1     #直辖收入系数
+	vassal_tax_mult = 1     #附庸税收系数
+	diplomatic_range_mult = 10 #外交距离系数
+	knight_limit = 40       #骑士上限
+	knight_effectiveness_mult = 2.5   #骑士战斗力增加系数
+	same_faith_opinion = 100     #相同信仰好感
+	hostile_scheme_resistance_add = 200 #敌对计谋阻力
+	advantage = 100  #战斗优势
+	monthly_piety_gain_mult = 3 #每月虔诚系数
+	monthly_prestige_gain_mult = 3 #每月威望系数
+	#####不同神的特殊属性#####
+	diplomacy = 10   #外交
+	martial = 100     #军事
+	stewardship = 10 #管理
+	intrigue = 10	  #谋略
+	learning = 10	  #智识
+	monthly_war_income_mult = 3						 	#战争期间每月收入系数
+	monthly_piety_gain_per_dread_add = 100 				#每点恐怖值使得虔诚每月增加
+	monthly_prestige_gain_per_dread_add = 100			#恐怖值使得每月威望增加
+	monthly_dynasty_prestige = 100						#每月宗族威望增加
+	dread_gain_mult = 3									#恐怖值增加系数
+	dread_loss_mult = -0.5								#恐怖值减少系数
+	tyranny_gain_mult = 0.2								#暴政增加系数
+	men_at_arms_maintenance = -1						#常备军维护费
+	holy_order_hire_cost_mult = -0.5					#骑士团雇佣花费系数
+	general_opinion = 60								#大众好感					
+	men_at_arms_limit = 10								#单个军团规模数量
+	men_at_arms_cap = 10								#军团总数
+	naval_movement_speed_mult = 1						#海军速度
+	enemy_hard_casualty_modifier = 0.3 					#敌方战死几率
+	hard_casualty_modifier = -0.3                       #我方战死几率
+	advantage = 200										#战斗优势
+	attacker_advantage = 50								#进攻方战斗优势
+	defender_advantage = 50								#防守方战斗优势
+	supply_capacity_add = 50000							#补给能力
+	levy_reinforcement_rate_friendly_territory = 1      #友方领地补兵效率
+	movement_speed = 5 #陆军移动速度
+	ai_boldness = very_high_positive_ai_value   		#AI大胆程度  很积极
+}
+
+#暗影囚笼
+super_dark_god = {
+	index = 1082 	  #索引
+	#####神的基本属性#####
+	good = yes		  #好的特质
+	immortal = yes    #不朽
+	health = 200	  #健康	
+	prowess = 100	  #勇武
+	no_prowess_loss_from_age = yes  #勇武不因年龄衰减（已经衰减的不能恢复）
+	stress_gain_mult = -1	#压力增加系数
+	stress_loss_mult = 1	#压力丢失系数
+	domain_limit = 100      #统治上限
+	vassal_limit = 200      #附庸上限
+	domain_tax_mult = 1     #直辖收入系数
+	vassal_tax_mult = 1     #附庸税收系数
+	diplomatic_range_mult = 10 #外交距离系数
+	knight_limit = 10       #骑士上限
+	knight_effectiveness_mult = 0.5   #骑士战斗力增加系数
+	same_faith_opinion = 100     #相同信仰好感
+	advantage = 100  #战斗优势
+	supply_capacity_add = 5000  #补给能力
+	monthly_piety_gain_mult = 3 #每月虔诚系数
+	monthly_prestige_gain_mult = 3 #每月威望系数
+	#####不同神的特殊属性#####
+	diplomacy = 50   #外交
+	martial = 20     #军事
+	stewardship = 50 #管理
+	intrigue = 100	  #谋略
+	learning = 50	  #智识
+	monthly_income_per_stress_level_mult = 1 #每级压力使收入系数增加
+	monthly_piety_gain_per_dread_mult = 0.1 #每点恐怖值使得每月虔诚增加系数
+	monthly_prestige_gain_per_dread_mult = 0.1 #每点恐怖值使得每月威望增加系数
+	dread_baseline_add = 100 #基础恐怖值
+	dread_decay_mult = -10 #恐怖值消逝系数
+	monthly_tyranny = 1 #每月暴政增加
+	general_opinion = -50 #大众好感
+	prisoner_opinion = -1000 #囚徒好感
+	intimidated_vassal_tax_contribution_mult = 1 #心怀恐惧的封臣的税收系数
+	cowed_vassal_tax_contribution_mult = 2 #畏惧的封臣的税收系数
+	intimidated_vassal_levy_contribution_mult = 1 #心怀恐惧的封臣的征兵系数
+	cowed_vassal_levy_contribution_mult = 2 #畏惧的封臣的征兵系数
+	hostile_scheme_power_add = 1000  #阴谋计谋强度
+	hostile_scheme_resistance_add = 1000 #阴谋计谋阻力
+	personal_scheme_resistance_add = 1000 #个人计谋阻力
+	personal_scheme_power_add = 1000 #个人计谋强度
+	scheme_discovery_chance_mult = 0.5 #计谋发现概率
+	owned_hostile_scheme_success_chance_add = 50 #自己的敌对计谋成功率
+	owned_personal_scheme_success_chance_add = 50 #自己的个人计谋成功率
+	enemy_hostile_scheme_success_chance_add = -100 #敌人的敌对计谋成功率
+	enemy_personal_scheme_success_chance_add = -100 #敌人的个人计谋成功率
+	max_personal_schemes_add = 10 #个人计谋最大数量增加
+	max_hostile_schemes_add = 5 #阴谋计谋最大数量增加
+	ai_vengefulness = very_high_positive_ai_value #ai的复仇欲 极大
+}
+
+#星海铭刻
+super_wisdom_god = {
+	index = 1083 	  #索引
+	#####神的基本属性#####
+	good = yes		  #好的特质
+	immortal = yes    #不朽
+	health = 200	  #健康	
+	prowess = 100	  #勇武
+	no_prowess_loss_from_age = yes  #勇武不因年龄衰减（已经衰减的不能恢复）
+	stress_gain_mult = -1	#压力增加系数
+	stress_loss_mult = 1	#压力丢失系数
+	domain_tax_mult = 1     #直辖收入系数
+	vassal_tax_mult = 1     #附庸税收系数
+	diplomatic_range_mult = 10 #外交距离系数
+	knight_limit = 10       #骑士上限
+	knight_effectiveness_mult = 0.5   #骑士战斗力增加系数
+	same_faith_opinion = 100     #相同信仰好感
+	advantage = 100  #战斗优势
+	supply_capacity_add = 5000  #补给能力
+	monthly_piety_gain_mult = 3 #每月虔诚系数
+	monthly_prestige_gain_mult = 3 #每月威望系数
+	#####不同神的特殊属性#####
+	diplomacy = 70   #外交
+	martial = 50     #军事
+	stewardship = 100 #管理
+	intrigue = 70	  #谋略
+	learning = 100	  #智识
+	monthly_prestige_gain_per_dread_add = -100 #每点恐怖值使得每月威望增加
+	tyranny_loss_mult = 10 #暴政减少系数
+	domain_limit = 200 #统治上限
+	vassal_limit = 500 #附庸上限
+	domain_tax_mult = 3 #直辖收入系数
+	vassal_tax_mult = 3 #附庸税收系数
+	men_at_arms_maintenance = -0.3 #军队维护费系数
+	monthly_lifestyle_xp_gain_mult = 3 #每月生活方式经验增长
+	same_culture_mercenary_hire_cost_mult = -0.9 #相同文化的雇佣兵消耗系数
+	same_culture_holy_order_hire_cost_mult = -0.9 #相同文化的骑士团消耗系数
+	opinion_of_same_culture = 100 #相同文化好感
+	opinion_of_different_culture = 50 #不同文化好感
+	general_opinion = 100 #大众好感
+	child_opinion = 1000 #孩子好感
+	min_combat_roll = 20 #最小战斗骰
+	hostile_scheme_resistance_add = 500 #敌对计谋阻力
+	personal_scheme_resistance_add = 500 #个人计谋阻力
+	cultural_head_fascination_mult = 3 #对于领导的文化的影响
+	ai_honor = very_high_positive_ai_value #AI对荣耀的重视
+}
+
+#森林之心
+super_nature_god = {
+	index = 1084 	  #索引
+	#####神的基本属性#####
+	good = yes		  #好的特质
+	immortal = yes    #不朽
+	health = 200	  #健康	
+	prowess = 100	  #勇武
+	no_prowess_loss_from_age = yes  #勇武不因年龄衰减（已经衰减的不能恢复）
+	stress_gain_mult = -1	#压力增加系数
+	stress_loss_mult = 1	#压力丢失系数
+	domain_limit = 100      #统治上限
+	vassal_limit = 200      #附庸上限
+	domain_tax_mult = 1     #直辖收入系数
+	vassal_tax_mult = 1     #附庸税收系数
+	diplomatic_range_mult = 10 #外交距离系数
+	knight_limit = 10       #骑士上限
+	knight_effectiveness_mult = 0.5   #骑士战斗力增加系数
+	same_faith_opinion = 100     #相同信仰好感
+	hostile_scheme_resistance_add = 200 #敌对计谋阻力
+	advantage = 100  #战斗优势
+	supply_capacity_add = 100000  #补给能力
+	monthly_prestige_gain_mult = 3 #每月威望系数
+	#####不同神的特殊属性#####
+	diplomacy = 50   #外交
+	martial = 50     #军事
+	stewardship = 50 #管理
+	intrigue = 50	  #谋略
+	learning = 50	  #智识
+	diplomacy_per_piety_level = 5 #每级奉献等级使得外交增加
+	martial_per_piety_level = 5 #每级奉献等级使得军事增加
+	stewardship_per_piety_level = 5 #每级奉献等级使得管理增加
+	intrigue_per_piety_level = 5 #每级奉献等级使得谋略增加
+	learning_per_piety_level = 5 #每级奉献等级使得学识增加
+	diplomacy_per_stress_level = -10 #每级压力等级使得外交增加
+	martial_per_stress_level = -10 #每级压力等级使得军事增加
+	stewardship_per_stress_level = -10 #每级压力等级使得管理增加
+	intrigue_per_stress_level = -10 #每级压力等级使得谋略增加
+	learning_per_stress_level = -10 #每级压力等级使得学识增加
+	prowess_per_stress_level = -10 #每级压力等级使得勇武增加
+	random_skills_per_child = 20 #每个孩子随机给予20个技能点
+	fertility = 100 #生育力增加
+	monthly_piety_gain_mult = 10 #每月虔诚增加系数
+	positive_random_genetic_chance = 1 #正面随机基因几率
+	opinion_of_different_faith = 20 #不同信仰好感
+	dynasty_opinion = 50 #宗族好感
+	personal_scheme_power_add = 300 #个人计谋强度
+	max_personal_schemes_add = 5 #最大个人计谋数量
+	hard_casualty_modifier = -0.5 #我方战死几率
+	cultural_head_fascination_mult = 1 #对于领导的文化的影响
+	ai_rationality = very_high_positive_ai_value #AI的理性程度
+	forest_attrition_mult = -1 #森林地形的损耗
+	forest_cancel_negative_supply = yes #移除在森林地形的补给惩罚
+	forest_advantage = 500 #森林地区的战斗优势
+}
+
+#救世之手
+super_belief_god = {
+	index = 1085 	  #索引
+	#####神的基本属性#####
+	good = yes		  #好的特质
+	immortal = yes    #不朽
+	health = 200	  #健康	
+	prowess = 100	  #勇武
+	no_prowess_loss_from_age = yes  #勇武不因年龄衰减（已经衰减的不能恢复）
+	stress_gain_mult = -1	#压力增加系数
+	stress_loss_mult = 1	#压力丢失系数
+	domain_limit = 100      #统治上限
+	vassal_limit = 200      #附庸上限
+	domain_tax_mult = 1     #直辖收入系数
+	vassal_tax_mult = 1     #附庸税收系数
+	diplomatic_range_mult = 10 #外交距离系数
+	knight_limit = 10       #骑士上限
+	knight_effectiveness_mult = 0.5   #骑士战斗力增加系数
+	same_faith_opinion = 100     #相同信仰好感
+	hostile_scheme_resistance_add = 200 #敌对计谋阻力
+	advantage = 100  #战斗优势
+	supply_capacity_add = 5000  #补给能力
+	monthly_piety_gain_mult = 10 #每月虔诚系数
+	monthly_prestige_gain_mult = 3 #每月威望系数
+	#####不同神的特殊属性#####
+	diplomacy = 50   #外交
+	martial = 50     #军事
+	stewardship = 50 #管理
+	intrigue = 50	  #谋略
+	learning = 50	  #智识
+	diplomacy_per_piety_level = 15 #每级奉献等级使得外交增加
+	martial_per_piety_level = 15 #每级奉献等级使得军事增加
+	stewardship_per_piety_level = 15 #每级奉献等级使得管理增加
+	intrigue_per_piety_level = 15 #每级奉献等级使得谋略增加
+	learning_per_piety_level = 15 #每级奉献等级使得学识增加
+	domain_tax_same_faith_mult = 5  #相同信仰的直辖收入
+	domain_tax_different_faith_mult = -1 #不同信仰的直辖收入
+	opinion_of_same_faith = 100 #相同信仰好感
+	opinion_of_different_faith = -100 #不同信仰好感
+	tolerance_advantage_mod = 200 #对敌对宗教的战斗优势
+	levy_reinforcement_rate_same_faith = 1 #相同宗教补兵效率
+	build_piety_cost = -1000 #建筑虔诚花费
+	ai_compassion = very_high_positive_ai_value #ai的同情心，很积极
+}
+
+#苍海领主
+super_sea_god = {
+	index = 1086 	  #索引
+	#####神的基本属性#####
+	good = yes		  #好的特质
+	immortal = yes    #不朽
+	health = 200	  #健康	
+	prowess = 100	  #勇武
+	no_prowess_loss_from_age = yes  #勇武不因年龄衰减（已经衰减的不能恢复）
+	stress_gain_mult = -1	#压力增加系数
+	stress_loss_mult = 1	#压力丢失系数
+	domain_limit = 100      #统治上限
+	vassal_limit = 200      #附庸上限
+	domain_tax_mult = 1     #直辖收入系数
+	vassal_tax_mult = 1     #附庸税收系数
+	diplomatic_range_mult = 10 #外交距离系数
+	knight_limit = 30       #骑士上限
+	knight_effectiveness_mult = 0.75   #骑士战斗力增加系数
+	same_faith_opinion = 100     #相同信仰好感
+	hostile_scheme_resistance_add = 200 #敌对计谋阻力
+	advantage = 150  #战斗优势
+	supply_capacity_add = 20000  #补给能力
+	monthly_piety_gain_mult = 3 #每月虔诚系数
+	monthly_prestige_gain_mult = 3 #每月威望系数
+	#####不同神的特殊属性#####
+	diplomacy = 50   #外交
+	martial = 70    #军事
+	stewardship = 70 #管理
+	intrigue = 70	  #谋略
+	learning = 50	  #智识
+	diplomacy_per_prestige_level = 5 #每级威望等级使外交增加
+	martial_per_prestige_level = 5 #每级威望等级使军事增加
+	stewardship_per_prestige_level = 5 #每级威望等级使管理增加
+	intrigue_per_prestige_level = 5 #每级威望等级使谋略增加
+	learning_per_prestige_level = 5 #每级威望等级使学识增加
+	monthly_prestige_gain_per_happy_powerful_vassal_mult = 1 #在内阁任职的强力封臣使威望增加系数
+	monthly_prestige_gain_per_knight_mult = 0.1 #每位骑士使每月威望增加
+	monthly_dynasty_prestige_mult = 5 #每月宗族威望增加系数
+	opinion_of_same_culture = 50 #相同文化好感
+	naval_movement_speed_mult = 20 #海军行军速度
+	no_water_crossing_penalty = yes #渡河无优势惩罚
+	ai_rationality = very_high_positive_ai_value #ai的理性程度 很积极
+}
+
+#命运终点
+super_destiny_god = {
+	index = 1087 	  #索引
+	#####神的基本属性#####
+	good = yes		  #好的特质
+	immortal = yes    #不朽
+	health = 200	  #健康	
+	diplomacy = 100   #外交
+	martial = 100     #军事
+	stewardship = 100 #管理
+	intrigue = 100	  #谋略
+	learning = 100	  #智识
+	prowess = 100	  #勇武
+	no_prowess_loss_from_age = yes  #勇武不因年龄衰减（已经衰减的不能恢复）
+	stress_gain_mult = -1	#压力增加系数
+	stress_loss_mult = 1	#压力丢失系数
+	domain_limit = 200      #统治上限
+	vassal_limit = 400      #附庸上限
+	domain_tax_mult = 10     #直辖收入系数
+	vassal_tax_mult = 10     #附庸税收系数
+	diplomatic_range_mult = 10 #外交距离系数
+	knight_limit = 100       #骑士上限
+	knight_effectiveness_mult = 5   #骑士战斗力增加系数
+	same_faith_opinion = 100     #相同信仰好感
+	hostile_scheme_resistance_add = 1000 #敌对计谋阻力
+	advantage = 1000  #战斗优势
+	supply_capacity_add = 50000  #补给能力
+	monthly_piety_gain_mult = 10 #每月虔诚系数
+	monthly_prestige_gain_mult = 10 #每月威望系数
+	#####不同神的特殊属性#####
+	max_personal_schemes_add = 5 #个人计谋最大数量增加
+	max_hostile_schemes_add = 5 #阴谋计谋最大数量增加
+	movement_speed = 10 #陆军行军速度
+	naval_movement_speed_mult = 10 #海军行军速度
+	ai_vengefulness = very_high_positive_ai_value #ai的复仇欲 极大
+}
+
+#时空之王
+super_time_god = {
+	index = 1088 	  #索引
+	#####神的基本属性#####
+	good = yes		  #好的特质
+	immortal = yes    #不朽
+	health = 200	  #健康	
+	diplomacy = 100   #外交
+	martial = 100     #军事
+	stewardship = 100 #管理
+	intrigue = 100	  #谋略
+	learning = 100	  #智识
+	prowess = 100	  #勇武
+	no_prowess_loss_from_age = yes  #勇武不因年龄衰减（已经衰减的不能恢复）
+	stress_gain_mult = -1	#压力增加系数
+	stress_loss_mult = 1	#压力丢失系数
+	domain_limit = 200      #统治上限
+	vassal_limit = 400      #附庸上限
+	domain_tax_mult = 10     #直辖收入系数
+	vassal_tax_mult = 10     #附庸税收系数
+	diplomatic_range_mult = 100 #外交距离系数
+	knight_limit = 100       #骑士上限
+	knight_effectiveness_mult = 5   #骑士战斗力增加系数
+	same_faith_opinion = 100     #相同信仰好感
+	hostile_scheme_resistance_add = 1000 #敌对计谋阻力
+	advantage = 300  #战斗优势
+	supply_capacity_add = 50000  #补给能力
+	monthly_piety_gain_mult = 10 #每月虔诚系数
+	monthly_prestige_gain_mult = 10 #每月威望系数
+	#####不同神的特殊属性#####
+	max_personal_schemes_add = 5 #个人计谋最大数量增加
+	max_hostile_schemes_add = 5 #阴谋计谋最大数量增加
+	movement_speed = 100 #陆军行军速度
+	naval_movement_speed_mult = 100 #海军行军速度
+	ai_rationality = very_high_positive_ai_value #ai的理性程度 很积极
+	
+}
+
+#希望之光
+super_sun_god = {
+	index = 1089 	  #索引
+	#####神的基本属性#####
+	good = yes		  #好的特质
+	immortal = yes    #不朽
+	health = 200	  #健康	
+	diplomacy = 100   #外交
+	martial = 100     #军事
+	stewardship = 100 #管理
+	intrigue = 100	  #谋略
+	learning = 100	  #智识
+	prowess = 100	  #勇武
+	no_prowess_loss_from_age = yes  #勇武不因年龄衰减（已经衰减的不能恢复）
+	stress_gain_mult = -1	#压力增加系数
+	stress_loss_mult = 1	#压力丢失系数
+	domain_limit = 200      #统治上限
+	vassal_limit = 400      #附庸上限
+	domain_tax_mult = 10     #直辖收入系数
+	vassal_tax_mult = 10     #附庸税收系数
+	diplomatic_range_mult = 10 #外交距离系数
+	knight_limit = 100       #骑士上限
+	knight_effectiveness_mult = 5   #骑士战斗力增加系数
+	same_faith_opinion = 100     #相同信仰好感
+	hostile_scheme_power_add = 2000  #阴谋计谋强度
+	hostile_scheme_resistance_add = 2000 #敌对计谋阻力
+	personal_scheme_resistance_add = 2000 #个人计谋阻力
+	personal_scheme_power_add = 2000 #个人计谋强度
+	advantage = 500  #战斗优势
+	supply_capacity_add = 50000  #补给能力
+	monthly_piety_gain_mult = 10 #每月虔诚系数
+	monthly_prestige_gain_mult = 10 #每月威望系数
+	#####不同神的特殊属性#####
+	max_personal_schemes_add = 15 #个人计谋最大数量增加
+	max_hostile_schemes_add = 15 #阴谋计谋最大数量增加
+	movement_speed = 3 #陆军行军速度
+	naval_movement_speed_mult = 3 #海军行军速度
+	ai_vengefulness = very_high_positive_ai_value #ai的复仇欲 极大
+	
+}
+
+#统御者
+super_highlander_god = {
+	index = 1090 	  #索引
+	#####神的基本属性#####
+	good = yes		  #好的特质
+	immortal = yes    #不朽
+	health = 200	  #健康	
+	diplomacy = 100   #外交
+	martial = 100     #军事
+	stewardship = 100 #管理
+	intrigue = 100	  #谋略
+	learning = 100	  #智识
+	prowess = 100	  #勇武
+	no_prowess_loss_from_age = yes  #勇武不因年龄衰减（已经衰减的不能恢复）
+	stress_gain_mult = -1	#压力增加系数
+	stress_loss_mult = 1	#压力丢失系数
+	domain_limit = 200      #统治上限
+	vassal_limit = 400      #附庸上限
+	domain_tax_mult = 10     #直辖收入系数
+	vassal_tax_mult = 10     #附庸税收系数
+	diplomatic_range_mult = 10 #外交距离系数
+	knight_limit = 100       #骑士上限
+	knight_effectiveness_mult = 5   #骑士战斗力增加系数
+	same_faith_opinion = 100     #相同信仰好感
+	hostile_scheme_resistance_add = 1000 #敌对计谋阻力
+	advantage = 1000  #战斗优势
+	monthly_piety_gain_mult = 10 #每月虔诚系数
+	monthly_prestige_gain_mult = 10 #每月威望系数
+	#####不同神的特殊属性#####
+	max_personal_schemes_add = 5 #个人计谋最大数量增加
+	max_hostile_schemes_add = 5 #阴谋计谋最大数量增加
+	movement_speed = 10 #陆军行军速度
+	naval_movement_speed_mult = 10 #海军行军速度
+	monthly_income_mult = 10
+	tyranny_loss_mult = 10
+	army_maintenance_mult = -1
+	men_at_arms_cap = 20
+	men_at_arms_limit = 10
+	vassal_tax_contribution_mult = 1
+	vassal_levy_contribution_mult = 1
+	hostile_scheme_power_add = 1000
+	owned_hostile_scheme_success_chance_add = 100
+	enemy_hostile_scheme_success_chance_add = -1000
+	hard_casualty_modifier = -0.5
+	supply_capacity_add = 100000
+	cultural_head_fascination_mult = 10
+	ai_boldness = 100
+	heavy_infantry_damage_mult = 1
+	pikemen_damage_mult = 1
+	archers_damage_mult = 1
+	light_cavalry_damage_mult = 1
+	heavy_cavalry_damage_mult = 1
+	skirmishers_damage_mult = 1
+	heavy_infantry_siege_value_add = 1
+	pikemen_siege_value_add = 1
+	archers_siege_value_add = 1
+	light_cavalry_siege_value_add = 1
+	skirmishers_siege_value_add = 1
+	immortal = yes	
+	ai_vengefulness = very_high_positive_ai_value #ai的复仇欲 极大
+}
+
+#征服者
+super_fight_god = {
+	index = 1091 	  #索引
+	#####神的基本属性#####
+	good = yes		  #好的特质
+	immortal = yes    #不朽
+	health = 200	  #健康	
+	diplomacy = 100   #外交
+	martial = 100     #军事
+	stewardship = 100 #管理
+	intrigue = 100	  #谋略
+	learning = 100	  #智识
+	prowess = 100	  #勇武
+	no_prowess_loss_from_age = yes  #勇武不因年龄衰减（已经衰减的不能恢复）
+	stress_gain_mult = -1	#压力增加系数
+	stress_loss_mult = 1	#压力丢失系数
+	domain_limit = 200      #统治上限
+	vassal_limit = 400      #附庸上限
+	domain_tax_mult = 10     #直辖收入系数
+	vassal_tax_mult = 10     #附庸税收系数
+	diplomatic_range_mult = 10 #外交距离系数
+	knight_limit = 100       #骑士上限
+	knight_effectiveness_mult = 5   #骑士战斗力增加系数
+	same_faith_opinion = 100     #相同信仰好感
+	hostile_scheme_resistance_add = 1000 #敌对计谋阻力
+	advantage = 1000  #战斗优势
+	supply_capacity_add = 50000  #补给能力
+	monthly_piety_gain_mult = 10 #每月虔诚系数
+	monthly_prestige_gain_mult = 10 #每月威望系数
+	#####不同神的特殊属性#####
+	max_personal_schemes_add = 5 #个人计谋最大数量增加
+	max_hostile_schemes_add = 5 #阴谋计谋最大数量增加
+	movement_speed = 10 #陆军行军速度
+	naval_movement_speed_mult = 10 #海军行军速度
+	ai_vengefulness = very_high_positive_ai_value #ai的复仇欲 极大
+
+	
+}
+
+#方舟
+super_ark_god = {
+	index = 1092	  #索引
+	#####神的基本属性#####
+	good = yes		  #好的特质
+	immortal = yes    #不朽
+	health = 200	  #健康	
+	diplomacy = 100   #外交
+	martial = 100     #军事
+	stewardship = 100 #管理
+	intrigue = 100	  #谋略
+	learning = 100	  #智识
+	prowess = 100	  #勇武
+	no_prowess_loss_from_age = yes  #勇武不因年龄衰减（已经衰减的不能恢复）
+	stress_gain_mult = -1	#压力增加系数
+	stress_loss_mult = 1	#压力丢失系数
+	domain_limit = 100      #统治上限
+	vassal_limit = 200      #附庸上限
+	domain_tax_mult = 2     #直辖收入系数
+	vassal_tax_mult = 2     #附庸税收系数
+	diplomatic_range_mult = 10 #外交距离系数
+	knight_limit = 20       #骑士上限
+	knight_effectiveness_mult = 1   #骑士战斗力增加系数
+	same_faith_opinion = 200     #相同信仰好感
+	hostile_scheme_resistance_add = 500 #敌对计谋阻力
+	advantage = 200  #战斗优势
+	supply_capacity_add = 10000  #补给能力
+	monthly_piety_gain_mult = 6 #每月虔诚系数
+	monthly_prestige_gain_mult = 6 #每月威望系数
+	#####不同神的特殊属性#####
+	general_opinion = 1000 #大众好感
+	religious_vassal_opinion = 1000 #宗教附庸好感
+	cultural_head_fascination_mult = 3 #对文化革新的促进
+	faith_conversion_piety_cost_mult = 100000 #改信需要花费的信仰系数
+	faith_creation_piety_cost_mult = 100000 #创教需要花费的信仰系数
+	ai_compassion = very_high_positive_ai_value #很积极
+}

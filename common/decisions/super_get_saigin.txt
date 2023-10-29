@@ -1,0 +1,89 @@
+﻿to_be_saint_in = {
+
+	title = to_be_saint_in_flesh   #决议名称的loc_key
+	desc = to_be_saint_in_flesh_desc  #决议的描述loc_key
+	selection_tooltip = to_be_saint_in_flesh_tip #决议的提示
+	confirm_text = to_be_saint_in_flesh_confirm #决议继续的文本
+	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"   #图片
+	
+	sort_order = 999 #决议的排列顺序 大则靠前
+	
+	major = yes #是否为重要决议
+	
+	ai_check_interval = 30 #ai的检查周期，单位是 月
+	
+	cost = {          #进行决议的消耗
+	}
+
+	cooldown = { days = 1825 } #决议的冷却时间
+	
+	is_shown = {       #显示决议的条件
+		AND = {
+			has_perk = saint_in_flesh
+			NOT = {
+				has_trait = saint_in_flesh_traits
+			}
+		}		
+		
+	}
+	
+	is_valid_showing_failures_only = {   #角色必须未被囚禁且为成人，且拥有贤者之石
+		AND = {
+			is_available_adult = yes
+			is_imprisoned = no
+		}	
+	}
+	
+	ai_potential = {     #ai是否检测这个决议
+		always = yes
+	}
+	
+	ai_will_do = {    #ai进行决议的概率
+		base = 60
+		modifier = {
+			add = 40
+			long_term_gold > 1500
+		}
+		modifier = {
+			add = -100
+			primary_title = {
+				tier < tier_duchy
+			}
+		}
+	}
+	effect = {
+		hidden_effect = {
+			trigger_event = {
+				id = be_angel_event.0002
+				days = { 2 3 }
+			}
+		}
+		remove_long_term_gold = {
+			add = 1500
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add = 1500
+			}
+		}
+		add_piety = {
+			add = -1500
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add = -1500
+			}
+		}
+		add_prestige = {
+			add = -1500
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add = -1500
+			}
+		}
+	}
+}

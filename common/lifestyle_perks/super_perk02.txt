@@ -1,0 +1,413 @@
+﻿#技能树
+
+#力量技能树
+
+#勇武之人
+Valor_of_man = {
+	lifestyle = super_lifestyle
+	tree = power_of_road_tree
+	position = { 1.5 0 }
+	icon = node_martial
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_power
+			}
+			add = 500
+		}
+	}
+	character_modifier = {
+		prowess = 10
+		no_prowess_loss_from_age = yes
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = Valor_of_man_perk_effect
+		}
+	}
+
+}
+
+#神力
+divine_power = {
+	lifestyle = super_lifestyle
+	tree = power_of_road_tree
+	position = { 0 1.25 }
+	icon = node_martial
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_power
+			}
+			add = 500
+		}
+	}
+	character_modifier = {
+		prowess = 10
+		prowess_per_piety_level = 2
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = divine_power_dec
+		}
+	}
+	parent = Valor_of_man
+}
+
+#威武震慑
+awe_inspiring = {
+	lifestyle = super_lifestyle
+	tree = power_of_road_tree
+	position = { 0 2 }
+	icon = node_martial
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_power
+			}
+			add = 500
+		}
+	}
+	character_modifier = {
+		knight_limit = 5
+		prowess = 5
+		knight_effectiveness_mult = 0.5
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = awe_inspiring_dec
+		}
+	}
+	parent = divine_power
+}
+
+#掌控者
+controller_perk = {
+	lifestyle = super_lifestyle
+	tree = power_of_road_tree
+	position = { 0 2.75 }
+	icon = node_martial
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_power
+			}
+			add = 500
+		}
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = controller_perk_dec
+		}
+		add_character_modifier = prowess_lei_it
+	}
+	parent = awe_inspiring	
+}
+
+#圣战士
+holy_warriorss = {
+	lifestyle = super_lifestyle
+	tree = power_of_road_tree
+	position = { 0 3.5 }
+	icon = node_martial
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_power
+			}
+			add = 500
+		}
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = holy_warriorss_dec
+		}
+		add_trait = the_gift_of_god
+	}
+	parent = controller_perk	
+}
+
+#统帅之才
+talent_of_commander = {
+	lifestyle = super_lifestyle
+	tree = power_of_road_tree
+	position = { 1.5 1.25 }
+	icon = node_martial
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_power
+			}
+			add = 500
+		}
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = talent_of_commander_dec
+		}
+	}
+	character_modifier = {
+		men_at_arms_cap = 3
+		men_at_arms_limit = 3
+		knight_limit = 5
+		men_at_arms_maintenance = -0.3
+		army_maintenance_mult = -0.2
+		advantage = 5
+		levy_size = 0.3
+	}
+	parent = Valor_of_man	
+}
+
+#来去自如
+come_and_go_as_you_please = {
+	lifestyle = super_lifestyle
+	tree = power_of_road_tree
+	position = { 1.5 2 }
+	icon = node_martial
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_power
+			}
+			add = 500
+		}
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = come_and_go_as_you_please_dec
+		}
+	}
+	character_modifier = {
+		naval_movement_speed_mult = 0.5
+		embarkation_cost_mult = -0.5
+		movement_speed = 0.5
+		retreat_losses = -0.25
+		raid_speed = 0.5
+		supply_capacity_add = 2000
+		no_water_crossing_penalty = yes
+		attacker_advantage = 10
+	}
+	parent = talent_of_commander	
+}
+
+#鹰之眼
+eagles_eye = {
+	lifestyle = super_lifestyle
+	tree = power_of_road_tree
+	position = { 1.5 2.75 }
+	icon = node_martial
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_power
+			}
+			add = 500
+		}
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = eagles_eye_dec
+		}
+	}
+	character_modifier = {
+		min_combat_roll = 8
+		advantage = 15
+		enemy_terrain_advantage = -5
+		retreat_losses = -0.35
+		counter_efficiency = 0.5
+		pursue_efficiency = 0.5
+		controlled_province_advantage = 15
+	}
+	parent = come_and_go_as_you_please	
+}
+
+#战神眷者         允许招募战神系列兵士
+son_of_god_of_war = {
+	lifestyle = super_lifestyle
+	tree = power_of_road_tree
+	position = { 1.5 3.5 }
+	icon = node_martial
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_power
+			}
+			add = 500
+		}
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = son_of_god_of_war_dec
+		}
+	}
+	character_modifier = {
+		heavy_infantry_damage_mult = 0.5
+		pikemen_damage_mult = 0.5
+		archers_damage_mult = 0.5
+		light_cavalry_damage_mult = 0.5
+		heavy_cavalry_damage_mult = 0.5
+		skirmishers_damage_mult = 0.5
+		heavy_infantry_toughness_mult = 0.5
+		pikemen_toughness_mult = 0.5
+		archers_toughness_mult = 0.5
+		light_cavalry_toughness_mult = 0.5
+		heavy_cavalry_toughness_mult = 0.5
+		skirmishers_toughness_mult = 0.5
+		knight_effectiveness_mult = 1		
+	}
+	parent = eagles_eye		
+}
+
+#善于治理
+good_governance = {
+	lifestyle = super_lifestyle
+	tree = power_of_road_tree
+	position = { 3 1.25 }
+	icon = node_martial
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_power
+			}
+			add = 500
+		}
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = good_governance_dec
+		}
+	}
+	character_modifier = {
+		stewardship = 6
+		diplomacy = 6
+		domain_tax_mult = 0.2
+		vassal_tax_contribution_mult = 0.35
+		monthly_county_control_change_factor = 0.3
+		development_growth_factor = 0.3
+	}
+	parent = Valor_of_man	
+}
+
+#教宗
+holy_father_perk = {
+	lifestyle = super_lifestyle
+	tree = power_of_road_tree
+	position = { 3 2 }
+	icon = node_martial
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_power
+			}
+			add = 500
+		}
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = holy_father_perk_dec
+		}
+	}
+	character_modifier = {
+		faith_creation_piety_cost_mult = -0.8
+		faith_conversion_piety_cost_mult = -0.8
+		monthly_county_control_change_factor = 0.1
+		same_faith_opinion = 30
+		holy_order_hire_cost_mult = -0.5
+		monthly_piety_gain_per_knight_add = 1
+		monthly_piety_gain_mult = 0.3
+		stewardship_per_piety_level = 3
+
+	}
+	parent = good_governance		
+}
+
+#文化领袖             考虑设置新的文化革新以及传统
+cultural_emphasis = {
+	lifestyle = super_lifestyle
+	tree = power_of_road_tree
+	position = { 3 2.75 }
+	icon = node_martial
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_power
+			}
+			add = 500
+		}
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = cultural_emphasis_dec
+		}
+	}
+	character_modifier = {
+		cultural_head_fascination_mult = 1
+		same_culture_mercenary_hire_cost_mult = -0.5
+		same_culture_opinion = 20
+	}
+	parent = holy_father_perk
+}
+
+
+#被爱戴者
+beloved_perk = {
+	lifestyle = super_lifestyle
+	tree = power_of_road_tree
+	position = { 3 3.5 }
+	icon = node_martial
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_power
+			}
+			add = 500
+		}
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = beloved_perk_dec
+		}
+		add_trait = beloved_perk_trait
+	}
+
+	parent = cultural_emphasis	
+}
+
+#肉身成圣，众望所归     解锁决议，尝试肉身成圣
+saint_in_flesh = {
+	lifestyle = super_lifestyle
+	tree = power_of_road_tree
+	position = { 1.5 4.8 }
+	icon = saint_in_flesh
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_power
+			}
+			add = 500
+		}
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = saint_in_flesh_dec
+		}
+	}
+	parent = beloved_perk	
+	parent = son_of_god_of_war
+	parent = holy_warriorss
+}

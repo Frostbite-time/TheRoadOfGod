@@ -1,0 +1,215 @@
+﻿namespace = be_angel_event
+
+#成为天使
+be_angel_event.0001 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = be_angel_event.0001.t  #事件标题
+	desc = be_angel_event.0001.desc   #事件描述
+	theme = dynasty        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+	immediate = {
+		root = {
+			add_trait = angel_traits
+		}	
+	}
+	option = {
+		name = be_angel_event.0001.a
+	}
+}
+
+#肉身成圣
+be_angel_event.0002 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = be_angel_event.0002.t  #事件标题
+	desc = be_angel_event.0002.desc   #事件描述
+	theme = dynasty        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+	immediate = {
+		root = {
+			add_trait = saint_in_flesh_traits
+		}	
+	}
+	option = {
+		name = be_angel_event.0002.a
+	}	
+}
+
+#获取魔性
+be_angel_event.0003 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = be_angel_event.0003.t  #事件标题
+	desc = be_angel_event.0003.desc   #事件描述
+	theme = prison        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+	immediate = {
+		root = {
+			add_trait = devilishness
+		}	
+	}
+	option = {
+		name = be_angel_event.0003.a
+	}		
+}
+
+
+#成神
+be_angel_event.0004 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = be_angel_event.0004.t  #事件标题
+	desc = be_angel_event.0004.desc   #事件描述
+	theme = dynasty        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+	immediate = {
+		root = {
+			add_trait = god_god
+		}	
+		hidden_effect = {
+			root = {
+				set_immortal_age = 20
+			}	
+		}	
+	}
+	option = {
+		name = be_angel_event.0004.a
+	}		
+}
+
+#摆脱使徒的身份  起始
+be_angel_event.0005 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = be_angel_event.0005.t  #事件标题
+	desc = be_angel_event.0005.desc   #事件描述
+	theme = death        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+	option = {
+		name = be_angel_event.0005.a
+		trigger_event = be_angel_event.0006
+	}		
+	option = {
+		name = be_angel_event.0005.b
+		custom_tooltip = {
+			text = give_up_out_of_apostle
+		}
+	}	
+}
+
+#摆脱使徒的身份  
+be_angel_event.0006 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = be_angel_event.0005.t  #事件标题
+	desc = be_angel_event.0006.desc   #事件描述
+	theme = death        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+	option = {
+		name = be_angel_event.0006.a
+		trigger_event = be_angel_event.0007
+	}
+}
+
+#摆脱使徒的身份   开始决斗
+be_angel_event.0007 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = be_angel_event.0005.t  #事件标题
+	desc = be_angel_event.0007.desc   #事件描述
+	theme = death        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+	right_portrait = scope:god_ll_a
+	immediate = {   #当事件触发时会发生的事情，优先级高于一切
+		create_character = {
+			name = god_name
+			trait = god_god
+			after_creation = {
+				save_scope_as = god_ll_a   
+			}
+		}
+		root = {
+			save_scope_as = be_sc_defender
+		}
+	}
+	option = {
+		name = be_angel_event.0007.a
+		## Finally, begin.
+		configure_start_single_combat_effect = {
+			SC_INITIATOR = scope:god_ll_a
+			SC_ATTACKER = scope:god_ll_a
+			SC_DEFENDER = scope:be_sc_defender
+			FATALITY = yes
+			FIXED = no
+			LOCALE = terrain_scope
+			OUTPUT_EVENT = be_angel_event.0008
+			INVALIDATION_EVENT = perk_interaction.0102
+		}
+	}
+	option = {
+		name = be_angel_event.0007.b
+		random_list = {
+			50 = {
+				death = {
+					death_reason = death_god_out_ap
+				}
+			}
+			50 = {
+				trigger_event = be_angel_event.0010
+			}
+		}
+	}
+}
+#摆脱使徒的身份  决斗效果
+be_angel_event.0008 = {
+	hidden = yes
+
+	immediate = {
+		# Fire the follow-up stuff; delay this by a day so the toasts appear _after_ the final event.
+		trigger_event = {
+			id = be_angel_event.0009
+			days = 1
+		}
+	}
+}
+#摆脱使徒的身份  决斗效果
+be_angel_event.0009 = {
+	hidden = yes
+
+	immediate = {
+		# Everyone puts their shirts back on.
+		single_combat_clean_shirtlessness_effect = {    #应该是进行决斗
+			ATTACKER = scope:god_ll_a
+			DEFENDER = scope:be_sc_defender
+		}
+		# Send out a toast to the victor.
+		scope:sc_victor = {
+			send_interface_toast = {
+				title = perk_interaction.0101.victor_toast.t
+				left_icon = scope:sc_victor
+				right_icon = scope:sc_loser
+				show_as_tooltip = { out_of_ap_effect = yes }
+			}
+		}
+		# And to the loser.
+		scope:sc_loser = {
+			send_interface_toast = {
+				title = perk_interaction.0101.loser_toast.t
+				left_icon = scope:sc_loser
+				right_icon = scope:sc_victor
+				show_as_tooltip = { out_of_ap_effect = yes }
+			}
+		}
+		# Then execute the actual effects.
+		out_of_ap_effect = yes
+	}
+}
+#摆脱使徒的身份   成功逃跑
+be_angel_event.0010 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = be_angel_event.0005.t  #事件标题
+	desc = be_angel_event.0010.desc   #事件描述
+	theme = death        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+	immediate = {
+		remove_ap_effect = yes
+		add_character_modifier = god_hated
+	}
+	option = {
+		name = be_angel_event.0010.a
+	}
+}

@@ -1,0 +1,33 @@
+﻿#神国降临  宣战理由
+god_kingdom_arrive_in = {
+	allowed_for_character = {
+		has_trait = god_god
+	}
+}
+
+#挑衅 宣战理由
+provoke_cb = {
+	allowed_for_character = {
+		this.faith ={
+			has_doctrine = fight_crazy
+		}
+	}
+}
+
+#侵略扩张 宣战理由
+aggressive_expansion ={
+	allowed_for_character = {
+		this.faith ={
+			has_doctrine = fight_crazy
+		}
+	}	
+}
+
+#征服 宣战理由
+conquest_cb_super = {
+	allowed_for_character = {
+		this.faith ={
+			has_doctrine = fight_crazy
+		}
+	}		
+}

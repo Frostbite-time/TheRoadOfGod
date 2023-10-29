@@ -1,0 +1,938 @@
+﻿
+#战神的弓箭手
+war_god_maa_archers = { 
+	type = archers   #兵士种类
+	can_recruit = {
+		has_perk = son_of_god_of_war
+	}
+	damage = 300
+	toughness = 50 #坚韧
+	pursuit = 20  #追击
+	screen = 20  #掩护
+	
+	terrain_bonus = {    #地形加成
+		hills = { damage = 50 toughness = 40 }
+		forest = { toughness = 40 screen = 80 }
+		taiga = { toughness = 40 screen = 80 }    
+	}
+
+	counters = {   #克制
+		skirmishers = 1
+	}
+
+	buy_cost = {    #招募花费
+		gold = 500
+		piety = 500
+		prestige = 500
+	}        
+	low_maintenance_cost = { gold = 2 } #最低维护费
+	high_maintenance_cost = { gold = 10 }#最高维护费
+	
+	stack = 80
+	ai_quality = { value = god_of_war_maa_weight }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
+	icon = war_god_maa_archers  # 图标放在\gfx\interface\icons\regimenttypes\name.dds
+}
+
+#战神的步兵
+war_god_maa_heavy_infantry = { 
+	type = heavy_infantry   #兵士种类
+	can_recruit = {
+		has_perk = son_of_god_of_war
+	}
+	damage = 100
+	toughness = 160 #坚韧
+	pursuit = 15  #追击
+	screen = 30  #掩护
+	
+	terrain_bonus = {    #地形加成
+  
+	}
+
+	counters = {   #克制
+		pikemen = 1
+	}
+
+	buy_cost = {    #招募花费
+		gold = 500
+		piety = 500
+		prestige = 500
+	}        
+	low_maintenance_cost = { gold = 2 } #最低维护费
+	high_maintenance_cost = { gold = 10 }#最高维护费
+	
+	stack = 80
+	ai_quality = { value = god_of_war_maa_weight }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
+	icon = war_god_maa_heavy_infantry  # 图标放在\gfx\interface\icons\regimenttypes\name.dds
+}
+
+#战神的骑士
+war_god_maa_heavy_cavalry = { 
+	type = heavy_cavalry   #兵士种类
+	can_recruit = {
+		has_perk = son_of_god_of_war
+	}
+	damage = 250
+	toughness = 75 #坚韧
+	pursuit = 100  #追击
+	screen = 10  #掩护
+	
+	terrain_bonus = {    #地形加成
+		plains = { damage = 30 }
+		drylands = { damage = 30 }
+		hills = { damage = -20 }
+		mountains = { damage = -75 }
+		desert_mountains = { damage = -75 }
+		wetlands = { damage = -75 toughness = -10 pursuit = -10 }  
+	}
+
+	counters = {   #克制
+		archers = 1
+	}
+
+	buy_cost = {    #招募花费
+		gold = 500
+		piety = 500
+		prestige = 500
+	}        
+	low_maintenance_cost = { gold = 2 } #最低维护费
+	high_maintenance_cost = { gold = 10 }#最高维护费
+	
+	stack = 80
+	ai_quality = { value = god_of_war_maa_weight }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
+	icon = war_god_maa_heavy_cavalry  # 图标放在\gfx\interface\icons\regimenttypes\name.dds
+}
+
+#亡灵军团，轻步兵
+undead_light = { 
+	type = skirmishers   #兵士种类
+	can_recruit = {
+		always = no
+	}
+	damage = 20
+	toughness = 20 #坚韧
+	pursuit = 2  #追击
+	screen = 0  #掩护
+	
+	terrain_bonus = {    #地形加成
+		plains = { damage = 15 }
+		drylands = { damage = 15 }
+	}
+
+	counters = {   #克制
+	}
+
+	buy_cost = {    #招募花费
+		gold = 100
+		piety = 100
+		prestige = 100
+	}        
+	low_maintenance_cost = { piety = 0.1 } #最低维护费
+	high_maintenance_cost = { piety = 0.5 }#最高维护费
+	
+	stack = 200
+	ai_quality = { value = 0 }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
+	icon = undead_light  # 图标放在\gfx\interface\icons\regimenttypes\name.dds
+}
+
+#亡灵军团，重步兵
+undead_heavy = { 
+	type = heavy_infantry   #兵士种类
+	can_recruit = {
+		always = no
+	}
+	damage = 60
+	toughness = 80 #坚韧
+	pursuit = 15  #追击
+	screen = 10  #掩护
+	
+	terrain_bonus = {    #地形加成
+		plains = { damage = 30 }
+		drylands = { damage = 35 }
+	}
+
+	counters = {   #克制
+	}
+
+	buy_cost = {    #招募花费
+		gold = 100
+		piety = 100
+		prestige = 100
+	}        
+	low_maintenance_cost = { piety = 0.2 } #最低维护费
+	high_maintenance_cost = { piety = 0.7 }#最高维护费
+	
+	stack = 100
+	ai_quality = { value = 0 }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
+	icon = undead_heavy  # 图标放在\gfx\interface\icons\regimenttypes\name.dds
+}
+
+#亡灵军团，重骑兵
+undead_heavy_cavalry = { 
+	type = heavy_cavalry   #兵士种类
+	can_recruit = {
+		always = no
+	}
+	damage = 160
+	toughness = 120 #坚韧
+	pursuit = 40  #追击
+	screen = 20  #掩护
+	
+	terrain_bonus = {    #地形加成
+	}
+
+	counters = {   #克制
+	}
+
+	buy_cost = {    #招募花费
+		gold = 100
+		piety = 100
+		prestige = 100
+	}        
+	low_maintenance_cost = { piety = 0.4 } #最低维护费
+	high_maintenance_cost = { piety = 1.2 }#最高维护费
+	
+	stack = 50
+	ai_quality = { value = 0 }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
+	icon = undead_heavy_cavalry  # 图标放在\gfx\interface\icons\regimenttypes\name.dds
+}
+
+#指引之鹰
+fate_eagle = {
+	type = archers   #兵士种类
+	can_recruit = {
+		faith = {
+			has_doctrine = fate_cannot_be_disobeyed
+		}	
+	}
+	damage = 60
+	toughness = 10 #坚韧
+	pursuit = 120  #追击
+	screen = 40  #掩护
+	
+	terrain_bonus = {    #地形加成
+	}
+
+	counters = {   #克制
+		light_cavalry = 1
+
+	}
+
+	buy_cost = {    #招募花费
+		gold = 100
+		piety = 100
+		prestige = 100
+	}        
+	low_maintenance_cost = { gold = archers_low_maint_cost }		# Maintenance paid when the regiment is unraised and fully reinforced or when reinforcement is disabled
+	high_maintenance_cost = { gold = archers_high_maint_cost }	# Maintenance paid when the regiment is raised or not fully reinforced
+	
+	stack = 50
+	ai_quality = {  value = 150  }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
+	icon = fate_eagle  # 图标放在\gfx\interface\icons\regimenttypes\name.dds
+}
+
+#磷火剑士
+phosphorus_fire_maa_type = {
+	type = heavy_infantry   #兵士种类
+	can_recruit = {
+		faith = {
+			has_doctrine = phosphorus_fire
+		}	
+	}
+	damage = 200
+	toughness = 30 #坚韧
+	pursuit = 20  #追击
+	screen = 0  #掩护
+	
+	terrain_bonus = {    #地形加成
+	}
+
+	counters = {   #克制
+		light_cavalry = 1
+		skirmishers = 1
+	}
+
+	buy_cost = {    #招募花费
+		gold = 100
+		piety = 100
+		prestige = 100
+	}        
+	low_maintenance_cost = { gold = heavy_infantry_low_maint_cost }		# Maintenance paid when the regiment is unraised and fully reinforced or when reinforcement is disabled
+	high_maintenance_cost = { gold = heavy_infantry_high_maint_cost }	# Maintenance paid when the regiment is raised or not fully reinforced
+	
+	stack = 50
+	ai_quality = { value = 150 }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
+	icon = war_god_maa_heavy_infantry  # 图标放在\gfx\interface\icons\regimenttypes\name.dds
+}
+
+#方舟徒
+ark_apprentice = {
+	type = skirmishers   #兵士种类
+	can_recruit = {
+		faith = {
+			has_doctrine = in_the_same_boat
+		}	
+	}
+	damage = 80
+	toughness = 80 #坚韧
+	pursuit = 20  #追击
+	screen = 80  #掩护
+	
+	terrain_bonus = {    #地形加成
+	}
+
+	counters = {   #克制
+	}
+
+	buy_cost = {    #招募花费
+		gold = 100
+		piety = 100
+		prestige = 100
+	}        
+	low_maintenance_cost = { gold = heavy_infantry_low_maint_cost }		# Maintenance paid when the regiment is unraised and fully reinforced or when reinforcement is disabled
+	high_maintenance_cost = { gold = heavy_infantry_high_maint_cost }	# Maintenance paid when the regiment is raised or not fully reinforced
+	
+	stack = 200
+	ai_quality = {  value = 150  }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
+	icon = skirmishers  # 图标放在\gfx\interface\icons\regimenttypes\name.dds
+}
+
+#木矢兵
+wooden_arrow = {
+	type = archers   #兵士种类
+	can_recruit = {
+		faith = {
+			has_doctrine = log_sharp_arrow
+		}	
+	}
+	damage = 30
+	toughness = 15 #坚韧
+	pursuit = 10  #追击
+	screen = 0  #掩护
+	
+	terrain_bonus = {    #地形加成
+	}
+
+	counters = {   #克制
+		skirmishers = 1
+	}
+
+	buy_cost = {    #招募花费
+		gold = 30
+		piety = 30
+		prestige = 30
+	}        
+	low_maintenance_cost = {  }		# Maintenance paid when the regiment is unraised and fully reinforced or when reinforcement is disabled
+	high_maintenance_cost = {  }	# Maintenance paid when the regiment is raised or not fully reinforced
+	
+	stack = 200
+	ai_quality = {  value = 150  }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
+	icon = wooden_arrow  # 图标放在\gfx\interface\icons\regimenttypes\name.dds
+}
+
+#狂战士
+crazy_soild = {
+	type = heavy_infantry   #兵士种类
+	can_recruit = {
+		faith = {
+			has_doctrine = fight_crazy
+		}	
+	}
+	damage = 120
+	toughness = 100 #坚韧
+	pursuit = 30  #追击
+	screen = 15  #掩护
+	
+	terrain_bonus = {    #地形加成
+	}
+
+	counters = {   #克制
+	}
+
+	buy_cost = {    #招募花费
+		gold = 200
+		piety = 200
+		prestige = 200
+	}        
+	low_maintenance_cost = { gold = heavy_infantry_low_maint_cost }		# Maintenance paid when the regiment is unraised and fully reinforced or when reinforcement is disabled
+	high_maintenance_cost = { gold = heavy_infantry_high_maint_cost }	# Maintenance paid when the regiment is raised or not fully reinforced
+	
+	stack = 70
+	ai_quality = {  value = 150  }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
+	icon = war_god_maa_heavy_infantry  # 图标放在\gfx\interface\icons\regimenttypes\name.dds
+}
+
+#秘法师
+wise_god_low = {
+	type = mage
+	can_recruit = {
+		has_trait = super_wisdom_god
+	}
+	damage = 1500
+	toughness = 750
+	pursuit = 1500
+	screen = 750
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 50
+	ai_quality = { value = gods_maa_weight }
+	icon = wise_god_low
+}
+
+#星海鲸
+wise_god_high = {
+	type = holy_beast
+	can_recruit = {
+		has_trait = super_wisdom_god
+	}
+	damage = 9000
+	toughness = 9000
+	pursuit = 4500
+	screen = 4500
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 10
+	ai_quality = { value = gods_maa_weight }
+	icon = wise_god_high
+}
+
+#战争巨兽
+war_god_low = {
+	type = holy_beast
+	can_recruit = {
+		has_trait = super_war_god
+	}
+	damage = 3000
+	toughness = 3000
+	pursuit = 1500
+	screen = 1500
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 25
+	ai_quality = { value = gods_maa_weight }
+	icon = war_god_low
+}
+
+#战争巨人
+war_god_high = {
+	type = creation
+	can_recruit = {
+		has_trait = super_war_god
+	}
+	damage = 6000
+	toughness = 3000
+	pursuit = 1500
+	screen = 1500
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 15
+	ai_quality = { value = gods_maa_weight }
+	icon = war_god_high
+}
+
+#深渊之魔
+dark_god_low = {
+	type = creation
+	can_recruit = {
+		has_trait = super_dark_god
+	}
+	damage = 2000
+	toughness = 100
+	pursuit = 2000
+	screen = 2000
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 45
+	ai_quality = { value = gods_maa_weight }
+	icon = dark_god_low
+}
+
+#无形之影
+dark_god_high = {
+	type = creation
+	can_recruit = {
+		has_trait = super_dark_god
+	}
+	damage = 3000
+	toughness = 100
+	pursuit = 3000
+	screen = 3000
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 30
+	ai_quality = { value = gods_maa_weight }
+	icon = dark_god_high
+}
+
+#林中兽群
+nature_god_low = {
+	type = beast
+	can_recruit = {
+		has_trait = super_nature_god
+	}
+	damage = 150
+	toughness = 75
+	pursuit = 150
+	screen = 75
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 300
+	ai_quality = { value = gods_maa_weight }
+	icon = nature_god_low
+}
+
+#森林泰坦
+nature_god_high = {
+	type = holy_beast
+	can_recruit = {
+		has_trait = super_nature_god
+	}
+	damage = 9000
+	toughness = 9000
+	pursuit = 1000
+	screen = 9000
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 10
+	ai_quality = { value = gods_maa_weight }
+	icon = nature_god_high
+}
+
+#深海战士
+sea_god_low = {
+	type = creation
+	can_recruit = {
+		has_trait = super_sea_god
+	}
+	damage = 500
+	toughness = 250
+	pursuit = 250
+	screen = 250
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 150
+	ai_quality = { value = gods_maa_weight }
+	icon = sea_god_low
+}
+
+#苍海蛟龙
+sea_god_high = {
+	type = holy_beast
+	can_recruit = {
+		has_trait = super_sea_god
+	}
+	damage = 9000
+	toughness = 4000
+	pursuit = 3000
+	screen = 1000
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 10
+	ai_quality = { value = gods_maa_weight }
+	icon = sea_god_high
+}
+
+#信仰战士
+belief_god_low = {
+	type = holy_heavy_infantry
+	can_recruit = {
+		has_trait = super_belief_god
+	}
+	damage = 200
+	toughness = 300
+	pursuit = 200
+	screen = 100
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 375
+	ai_quality = { value = gods_maa_weight }
+	icon = belief_god_low
+}
+
+#救世圣骑
+belief_god_high = {
+	type = holy_heavy_cavalry
+	can_recruit = {
+		has_trait = super_belief_god
+	}
+	damage = 800
+	toughness = 1000
+	pursuit = 1000
+	screen = 300
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 120
+	ai_quality = { value = gods_maa_weight }
+	icon = belief_god_high
+}
+
+#玩偶
+hope_god_low = {
+	type = creation
+	can_recruit = {
+		has_trait = super_sun_god
+	}
+	damage = 250
+	toughness = 100
+	pursuit = 100
+	screen = 25
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 300
+	ai_quality = { value = gods_maa_weight }
+	icon = hope_god_low
+}
+
+#未知之光
+hope_god_high = {
+	type = creation
+	can_recruit = {
+		has_trait = super_sun_god
+	}
+	damage = 7500
+	toughness = 0
+	pursuit = 9999
+	screen = 9999
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 12
+	ai_quality = { value = gods_maa_weight }
+	icon = hope_god_high
+}
+
+#裂隙制造者
+time_god_low = {
+	type = mage
+	can_recruit = {
+		has_trait = super_time_god
+	}
+	damage = 7500
+	toughness = 5000
+	pursuit = 8000
+	screen = 8000
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 12
+	ai_quality = { value = gods_maa_weight }
+	icon = time_god_low
+}
+
+#远古之人
+time_god_high = {
+	type = mage
+	can_recruit = {
+		has_trait = super_time_god
+	}
+	damage = 7500
+	toughness = 5000
+	pursuit = 8000
+	screen = 8000
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 12
+	ai_quality = { value = gods_maa_weight }
+	icon = time_god_high
+}
+
+#宿命军团
+destiny_god_low = {
+	type = holy_heavy_infantry
+	can_recruit = {
+		has_trait = super_destiny_god
+	}
+	damage = 750
+	toughness = 1200
+	pursuit = 750
+	screen = 750
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 100
+	ai_quality = { value = gods_maa_weight }
+	icon = destiny_god_low
+}
+
+#命定之子
+destiny_god_high = {
+	type = mage
+	can_recruit = {
+		has_trait = super_destiny_god
+	}
+	damage = 7500
+	toughness = 5000
+	pursuit = 8000
+	screen = 7500
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 12
+	ai_quality = { value = gods_maa_weight }
+	icon = destiny_god_high
+}
+
+#归信者
+ark_god_low = {
+	type = holy_skirmishers
+	can_recruit = {
+		has_trait = super_ark_god
+	}
+	damage = 500
+	toughness = 500
+	pursuit = 500
+	screen = 500
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 50
+	ai_quality = { value = gods_maa_weight }
+	icon = ark_god_low
+}
+
+#幻影高塔
+ark_god_high = {
+	type = creation
+	can_recruit = {
+		has_trait = super_ark_god
+	}
+	damage = 6000
+	toughness = 9999
+	pursuit = 0
+	screen = 0
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 15
+	ai_quality = { value = gods_maa_weight }
+	icon = ark_god_high
+}
+
+#域外之鬼
+fight_god_low = {
+	type = holy_skirmishers
+	can_recruit = {
+		has_trait = super_fight_god
+	}
+	damage = 500
+	toughness = 500
+	pursuit = 500
+	screen = 500
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 150
+	ai_quality = { value = gods_maa_weight }
+	icon = fight_god_low
+}
+
+#蒙古铁骑
+fight_god_high = {
+	type = holy_archer_cavalry
+	can_recruit = {
+		has_trait = super_fight_god
+	}
+	damage = 900
+	toughness = 900
+	pursuit = 900
+	screen = 900
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 100
+	ai_quality = { value = gods_maa_weight }
+	icon = fight_god_high
+}
+
+#毁灭者
+highlander_god_low = {
+	type = extraplanar_mage
+	can_recruit = {
+		has_trait = super_highlander_god
+	}
+	damage = 1800
+	toughness = 3600
+	pursuit = 3600
+	screen = 3600
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 100
+	ai_quality = { value = gods_maa_weight }
+	icon = highlander_god_low
+}
+
+#噬星者
+highlander_god_high = {
+	type = extraplanar_beast
+	can_recruit = {
+		has_trait = super_highlander_god
+	}
+	damage = 9999
+	toughness = 9999
+	pursuit = 9999
+	screen = 9999
+	terrain_bonus = {
+	}
+	counters = {
+	}
+	buy_cost = {
+		gold = 1000
+	}
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+	stack = 24
+	ai_quality = { value = gods_maa_weight }
+	icon = highlander_god_high
+}

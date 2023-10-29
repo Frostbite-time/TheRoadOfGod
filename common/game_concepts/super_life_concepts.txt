@@ -1,0 +1,23 @@
+﻿super_lifestyle = {
+	texture = "gfx/interface/icons/alerts/super_lifestyle.dds"
+	framesize = { 144 144 }
+	frame = 2
+	parent = focus
+}
+
+super_custom = {
+	texture = "gfx/interface/icons/icon_culture.dds"
+}
+
+super_skill ={
+	alias = { super_i super }
+	parent = skills
+
+	texture = "gfx/interface/icons/icon_skills.dds"
+	framesize = { 60 60 }
+	frame = 1
+}
+
+god_of_destiny = {
+}
+

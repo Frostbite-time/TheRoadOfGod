@@ -1,0 +1,7 @@
+﻿god_of_war_maa_weight = {
+	value = 250
+}
+
+gods_maa_weight = {
+	value = 1000
+}

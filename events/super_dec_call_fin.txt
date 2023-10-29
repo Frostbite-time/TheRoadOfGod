@@ -1,0 +1,458 @@
+﻿namespace = final_call_dec_events
+
+#没有时空之神祝福的起始事件
+final_call_dec_events.0001 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = final_call_dec_events.0001.t  #事件标题
+	desc = final_call_dec_events.0001.desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+	option = {
+		name = final_call_dec_events.0001.a   #如果主角是神的话
+		trigger = {
+			has_trait = god_god
+		}
+		trigger_event = final_call_dec_events.0003
+	}
+	option = {
+		name = final_call_dec_events.0001.b
+		trigger = {
+			NOT = {
+				has_trait = god_god
+			}	
+		}
+		remove_long_term_gold = {
+			add = 700
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add = 1300
+			}
+			if = {
+				limit = {
+					root.faith = {
+						has_doctrine = confusionism_in_space_time
+					}
+				}
+				add = -500
+			}
+		}
+		hidden_effect = {
+			random_list = {
+				100 = {
+					trigger_event = final_call_dec_events.0004
+				}
+				100 = {
+					trigger_event = final_call_dec_events.0005
+				}
+				100 = {
+					trigger_event = final_call_dec_events.0006
+				}
+				0 = {
+					trigger_event = final_call_dec_events.0007
+					modifier = {
+						add = 100
+						root.faith = {
+							has_doctrine = temporal_anchorism
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = final_call_dec_events.0001.c
+		trigger = {
+			NOT = {
+				has_trait = god_god
+			}	
+		}
+		add_piety = {
+			add = -1000
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add = -2000
+			}
+			if = {
+				limit = {
+					root.faith = {
+						has_doctrine = confusionism_in_space_time
+					}
+				}
+				add = 1000
+			}
+		}
+		hidden_effect = {
+			random_list = {
+				100 = {
+					trigger_event = final_call_dec_events.0004
+				}
+				100 = {
+					trigger_event = final_call_dec_events.0005
+				}
+				100 = {
+					trigger_event = final_call_dec_events.0006
+				}
+				0 = {
+					modifier = {
+						add = 100
+						root.faith = {
+							has_doctrine = temporal_anchorism
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#时空之神祝福的起始事件
+final_call_dec_events.0002 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = final_call_dec_events.0002.t  #事件标题
+	desc = final_call_dec_events.0002.desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+	immediate = {   #当事件触发时会发生的事情，优先级高于一切
+		create_character = {
+			name = rift_organisms_of_name
+			trait = rift_organisms
+			after_creation = {
+				save_scope_as = rift_organisms_used   
+			}
+		}		
+	}	
+	option = {
+		name = final_call_dec_events.0002.a
+		root = {
+			add_courtier = scope:rift_organisms_used
+		}		
+	}
+	option = {
+		name = final_call_dec_events.0002.b
+		hidden_effect = {
+			scope:rift_organisms_used = {
+				death = {
+					death_reason = death_vanished
+				}
+			}
+		}
+		trigger_event = final_call_dec_events.0005
+	}
+	option = {
+		name = final_call_dec_events.0002.c
+		hidden_effect = {
+			scope:rift_organisms_used = {
+				death = {
+					death_reason = death_vanished
+				}
+			}
+		}
+		trigger_event = final_call_dec_events.0006		
+	}
+	after = {
+		remove_character_modifier = time_god_use
+	}	
+}
+
+final_call_dec_events.0003 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = final_call_dec_events.0003.t  #事件标题
+	desc = final_call_dec_events.0003.desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+	immediate = {   #当事件触发时会发生的事情，优先级高于一切
+		create_character = {
+			name = rift_organisms_of_name
+			trait = rift_organisms
+			after_creation = {
+				save_scope_as = rift_organisms_used   
+			}
+		}		
+	}	
+	option = {
+		name = final_call_dec_events.0002.a
+		root = {
+			add_courtier = scope:rift_organisms_used
+		}		
+	}
+	option = {
+		name = final_call_dec_events.0002.b
+		hidden_effect = {
+			scope:rift_organisms_used = {
+				death = {
+					death_reason = death_vanished
+				}
+			}
+		}
+		trigger_event = final_call_dec_events.0005
+	}
+	option = {
+		name = final_call_dec_events.0002.c
+		hidden_effect = {
+			scope:rift_organisms_used = {
+				death = {
+					death_reason = death_vanished
+				}
+			}
+		}
+		trigger_event = final_call_dec_events.0006		
+	}	
+}
+
+
+#明天将0004事件:得到有rift_organisms特质的人，0005事件强大宝物（预计有头冠，武器，盔甲，以及可以在中心摆放的宫廷宝物），0006事件贤者之石结束
+final_call_dec_events.0004 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = final_call_dec_events.0004.t  #事件标题
+	desc = final_call_dec_events.0004.desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+	right_portrait = scope:rift_organisms_used
+	immediate = {   #当事件触发时会发生的事情，优先级高于一切
+		create_character = {
+			name = rift_organisms_of_name
+			trait = rift_organisms
+			after_creation = {
+				save_scope_as = rift_organisms_used   
+			}
+		}		
+	}	
+	option = {
+		name = final_call_dec_events.0004.a
+		root = {
+			add_courtier = scope:rift_organisms_used
+		}
+	}
+}
+
+final_call_dec_events.0005 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = final_call_dec_events.0005.t  #事件标题
+	desc = final_call_dec_events.0005.desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	right_portrait = root		#让角色出现在左边
+	artifact = {
+		target = scope:newly_created_artifact
+		position = lower_left_portrait
+	}	
+	immediate = {
+		random_list = {
+			10 = {
+				create_artifact = {
+					name = holy_sword_call
+					description = holy_sword_call_desc
+					type = sword
+					visuals = sword
+					rarity = illustrious
+					modifier = artifact_prowess_11_modifier
+					modifier = artifact_prowess_11_modifier
+					modifier = artifact_prowess_11_modifier
+					modifier = artifact_knight_effectiveness_12_modifier
+					modifier = artifact_controlled_province_advantage_8_modifier
+					wealth = 100
+					quality = 100
+					save_scope_as = newly_created_artifact
+				}
+			}
+			10 = {
+				create_artifact = {
+					name = dream_sword_call
+					description = dream_sword_call_desc
+					type = sword
+					visuals = sword
+					rarity = illustrious
+					modifier = artifact_prowess_11_modifier
+					modifier = artifact_prowess_11_modifier
+					modifier = artifact_retreat_losses_4_modifier
+					modifier = artifact_heavy_infantry_toughness_3_modifier
+					modifier = artifact_raid_speed_12_modifier
+					wealth = 100
+					quality = 100
+					save_scope_as = newly_created_artifact
+				}
+			}
+			10 = {
+				create_artifact = {
+					name = chaos_chopper_call
+					description = chaos_chopper_call_desc
+					type = axe
+					visuals = axe
+					rarity = illustrious
+					modifier = artifact_prowess_11_modifier
+					modifier = artifact_prowess_11_modifier
+					modifier = artifact_prowess_11_modifier
+					modifier = artifact_prowess_11_modifier
+					modifier = artifact_prowess_11_modifier
+					wealth = 100
+					quality = 100
+					save_scope_as = newly_created_artifact
+				}
+			}
+			10 = {
+				create_artifact = {
+					name = carved_armour_call
+					description = carved_armour_call_desc
+					type = armor_plate
+					visuals = armor
+					rarity = illustrious
+					modifier = artifact_vassal_opinion_4_modifier
+					modifier = artifact_vassal_opinion_4_modifier
+					modifier = artifact_monthly_prestige_8_modifier
+					modifier = artifact_dynasty_opinion_8_modifier
+					modifier = artifact_dynasty_opinion_8_modifier
+					wealth = 100
+					quality = 100
+					save_scope_as = newly_created_artifact
+				}
+			}
+			10 = {
+				create_artifact = {
+					name = brave_armour_call
+					description = brave_armour_call_desc
+					type = armor_plate
+					visuals = armor
+					rarity = illustrious
+					modifier = artifact_knight_effectiveness_12_modifier
+					modifier = artifact_knight_effectiveness_12_modifier
+					modifier = artifact_tolerance_advantage_mod_4_modifier
+					modifier = artifact_tolerance_advantage_mod_4_modifier
+					modifier = artifact_controlled_province_advantage_8_modifier
+					wealth = 100
+					quality = 100
+					save_scope_as = newly_created_artifact
+				}
+			}
+			10 = {
+				create_artifact = {
+					name = leaders_call
+					description = leaders_call_desc
+					type = armor_plate
+					visuals = armor
+					rarity = illustrious
+					modifier = artifact_knight_effectiveness_12_modifier
+					modifier = artifact_knight_effectiveness_12_modifier
+					modifier = artifact_heavy_cavalry_toughness_3_modifier
+					modifier = artifact_heavy_cavalry_toughness_3_modifier
+					modifier = artifact_heavy_cavalry_toughness_3_modifier
+					modifier = leader_am_modif
+					wealth = 100
+					quality = 100
+					save_scope_as = newly_created_artifact
+				}
+				modifier = {
+					add = -10
+					any_artifact = {
+						has_artifact_modifier = leader_am_fixed_modif
+					}
+				}
+			}
+			1 = {
+				create_artifact = {
+					name = the_book_of_the_dead
+					description = the_book_of_the_dead_desc
+					type = book
+					visuals = book
+					rarity = illustrious
+					modifier = artifact_dread_baseline_add_4_modifier
+					modifier = artifact_dread_baseline_add_4_modifier
+					modifier = artifact_dread_baseline_add_4_modifier
+					modifier = artifact_dread_baseline_add_4_modifier
+					modifier = artifact_dread_baseline_add_4_modifier
+					modifier = artifact_dread_baseline_add_4_modifier
+					modifier = artifact_dread_baseline_add_4_modifier
+					modifier = artifact_dread_baseline_add_4_modifier
+					modifier = artifact_dread_baseline_add_4_modifier
+					modifier = artifact_dread_baseline_add_4_modifier
+					wealth = 100
+					quality = 100
+					save_scope_as = newly_created_artifact
+				}
+			}
+			1 = {
+				create_artifact = {
+					name = sage_stone_name
+					description = sage_stone_name_desc
+					type = miscellaneous
+					visuals = sage_stone
+					rarity = illustrious
+					modifier = artifact_health_gain_4_modifier
+					modifier = artifact_health_gain_4_modifier
+					modifier = artifact_health_gain_4_modifier
+					modifier = artifact_health_gain_4_modifier
+					modifier = artifact_health_gain_4_modifier
+					modifier = artifact_health_gain_4_modifier
+					modifier = artifact_health_gain_4_modifier
+					modifier = artifact_health_gain_4_modifier
+					modifier = artifact_health_gain_4_modifier
+					modifier = artifact_health_gain_4_modifier
+					modifier = artifact_health_gain_4_modifier
+					modifier = artifact_health_gain_4_modifier
+					modifier = sage_stone_modif
+					wealth = 100
+					quality = 100
+					save_scope_as = newly_created_artifact
+				}
+			}	
+		}	
+	}
+	option = {
+		name = final_call_dec_events.0005.a
+	}
+}
+
+final_call_dec_events.0006 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = final_call_dec_events.0006.t  #事件标题
+	desc = final_call_dec_events.0006.desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	right_portrait = root		#让角色出现在左边
+	artifact = {
+		target = scope:newly_created_artifact
+		position = lower_left_portrait
+	}
+	immediate = {
+		create_artifact = {
+			name = sage_stone_name
+			description = sage_stone_name_desc
+			type = miscellaneous
+			visuals = sage_stone
+			rarity = illustrious
+			modifier = artifact_health_gain_4_modifier
+			modifier = artifact_health_gain_4_modifier
+			modifier = artifact_health_gain_4_modifier
+			modifier = artifact_health_gain_4_modifier
+			modifier = artifact_health_gain_4_modifier
+			modifier = artifact_health_gain_4_modifier
+			modifier = artifact_health_gain_4_modifier
+			modifier = artifact_health_gain_4_modifier
+			modifier = artifact_health_gain_4_modifier
+			modifier = artifact_health_gain_4_modifier
+			modifier = artifact_health_gain_4_modifier
+			modifier = artifact_health_gain_4_modifier
+			modifier = sage_stone_modif
+			wealth = 100
+			quality = 100
+			save_scope_as = newly_created_artifact
+		}
+	}
+	option = {
+		name = final_call_dec_events.0006.a
+	}
+}	
+
+#什么也没发生
+final_call_dec_events.0007 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = final_call_dec_events.0007.t  #事件标题
+	desc = final_call_dec_events.0007.desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	right_portrait = root		#让角色出现在左边
+	
+	option = {
+		name = final_call_dec_events.0007.a
+	}
+}	

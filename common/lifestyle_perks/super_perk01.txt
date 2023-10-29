@@ -1,0 +1,384 @@
+﻿#技能树
+
+#神学技能树
+
+#第一识
+first_of_learn = {   
+	lifestyle = super_lifestyle   #属于哪个生活方式
+	tree = learning_of_road_tree  #位于哪一条技能树，技能树不需要额外定义，直接在这边写就行
+	position = { 1.5 0 }  #在技能树中的相对位置
+	icon = node_learning  #使用的图标是什么  原版图标路径位于game\gfx\interface\icons\lifestyles_perks   # 注意：如果使用的是图标不是类似特质那种只有一个图像的请确保还有接着的技能，不然会导致ui错误
+	auto_selection_weight = {   #ai选择此技能的相对权重 
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_learning
+			}
+			add = 500
+		}
+	}
+	character_modifier = {  #选择了此技能的角色会得到什么样的修正
+		learning = 10
+	}
+	effect = {              #选择此技能后触发的effect
+		custom_description_no_bullet = {    #这边写本地化id  但是还需要去另一个文件里再定义  定义路径在common\effect_localization
+			text = first_of_learn_perk_effect
+		}
+	}
+
+}
+
+#长生之始
+long_life = {   
+	lifestyle = super_lifestyle
+	tree = learning_of_road_tree
+	position = { 0 1.25 }
+	icon = node_learning
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_learning
+			}
+			add = 500
+		}
+	}
+	
+	character_modifier = {   #巨大健康增益
+		health = 0.7
+	}
+	
+	effect = {
+		custom_description_no_bullet = {
+			text = long_life_perk_effect
+		}
+	}
+	
+	parent = first_of_learn
+
+}
+#唤神      解锁决议 召唤神灵
+call_to_God = {                      #该perk将会配合触发器使用
+	lifestyle = super_lifestyle
+	tree = learning_of_road_tree
+	position = { 1.5 1.25 }
+	icon = node_learning
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_learning
+			}
+			add = 500
+		}
+	}
+	
+	effect = {
+		custom_description_no_bullet = {
+			text = call_to_God_perk_effect
+		}
+	}
+	
+	parent = first_of_learn
+
+}
+
+#炼金术         解锁决议 炼金术
+Alchemy_perk = {                    #该perk将会配合触发器使用
+	lifestyle = super_lifestyle
+	tree = learning_of_road_tree
+	position = { 3 1.25 }
+	icon = node_learning
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_learning
+			}
+			add = 500
+		}
+	}
+		
+	effect = {
+		custom_description_no_bullet = {
+			text = Alchemy_perk_effect
+		}
+	}
+	
+	parent = first_of_learn
+
+}
+
+#圣血脉
+great_of_blood_perk = {
+	lifestyle = super_lifestyle
+	tree = learning_of_road_tree
+	position = { 0 2 }
+	icon = node_learning
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_learning
+			}
+			add = 500
+		}
+	}
+	
+	effect = {
+		custom_description_no_bullet = {
+			text = great_of_blood_dec
+		}
+		add_trait = great_blood_traits
+	}
+	parent = long_life
+}
+
+#更深入           解锁决议 拜访远古遗迹
+more_enter = {
+	lifestyle = super_lifestyle
+	tree = learning_of_road_tree
+	position = { 0 2.75 }
+	icon = node_learning
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_learning
+			}
+			add = 500
+		}
+	}
+	character_modifier = {
+		diplomacy = 5
+		learning = 5
+		stewardship = 5
+		intrigue = 5
+		martial = 5
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = more_enter_dec
+		}
+	}
+	parent = great_of_blood_perk
+}
+
+#全知者
+konw_all_thing = {
+	lifestyle = super_lifestyle
+	tree = learning_of_road_tree
+	position = { 0 3.5 }
+	icon = node_learning
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_learning
+			}
+			add = 500
+		}
+	}
+	
+	effect = {
+		custom_description_no_bullet = {
+			text = konw_all_thing_dec
+		}
+		add_trait = know_all_thing_traits
+	}
+	parent = more_enter
+}
+
+#邪恶典籍         事件使用，增加召唤神灵事件中邪神选项出现
+evil_codex = {
+	lifestyle = super_lifestyle
+	tree = learning_of_road_tree
+	position = { 1.5 2 }
+	icon = node_learning
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_learning
+			}
+			add = 500
+		}
+	}
+	
+	effect = {
+		custom_description_no_bullet = {
+			text = evil_codex_dec
+		}
+	}
+	
+	character_modifier = {   
+		learning = 5
+		intrigue = 5
+	}
+	
+	parent = call_to_God
+}
+
+#亡灵军团       解锁决议   召唤亡灵军团
+legion_of_the_undead = {
+	lifestyle = super_lifestyle
+	tree = learning_of_road_tree
+	position = { 1.5 2.75 }
+	icon = node_learning
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_learning
+			}
+			add = 500
+		}
+	}
+	
+	effect = {
+		custom_description_no_bullet = {
+			text = legion_of_the_undead_dec
+		}
+	}
+	
+	parent = evil_codex
+}
+
+#何为召唤      解锁决议  从世界裂隙召唤
+what_is_calling = {
+	lifestyle = super_lifestyle
+	tree = learning_of_road_tree
+	position = { 1.5 3.5 }
+	icon = node_learning
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_learning
+			}
+			add = 500
+		}
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = what_is_calling_dec
+		}
+	}
+	
+	character_modifier = {   
+		learning = 5
+	}
+	
+	parent = legion_of_the_undead	
+}
+
+#神器锻造者         
+artifact_forger = {          #解锁决议 允许你打造宝物
+	lifestyle = super_lifestyle
+	tree = learning_of_road_tree
+	position = { 3 2 }
+	icon = node_learning
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_learning
+			}
+			add = 500
+		}
+	}
+	
+	effect = {
+		custom_description_no_bullet = {
+			text = artifact_forger_dec
+		}
+	}
+	parent = Alchemy_perk
+}
+
+#知根知底        使得打造宝物和炼金会有更好的结果，可能有额外事件
+know_the_base = {
+	lifestyle = super_lifestyle
+	tree = learning_of_road_tree
+	position = { 3 2.75 }
+	icon = node_learning
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_learning
+			}
+			add = 500
+		}
+	}
+	character_modifier = {   
+		learning = 3
+		stewardship = 3
+		diplomacy = 3
+		martial = 3
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = know_the_base_dec
+		}
+	}
+	parent = artifact_forger	
+}
+ 
+#贤者之石         解锁决议  炼制贤者之石
+sage_stone = {    
+	lifestyle = super_lifestyle
+	tree = learning_of_road_tree
+	position = { 3 3.5 }
+	icon = node_learning
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_learning
+			}
+			add = 500
+		}
+	}
+	
+	character_modifier = {
+		learning = 15
+	}
+	
+	effect = {
+		custom_description_no_bullet = {
+			text = sage_stone_dec
+		}
+	}
+	
+	parent = know_the_base
+}
+
+#天使之路           解锁决议   成为天使
+angel_of_road = {
+	lifestyle = super_lifestyle
+	tree = learning_of_road_tree
+	position = { 1.5 4.8 }
+	icon = angel_traits
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_focus_learning
+			}
+			add = 500
+		}
+	}
+	character_modifier = {
+		health = 1
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = angel_of_road_dec
+		}
+	}
+	parent = sage_stone
+	parent = what_is_calling
+	parent = konw_all_thing
+	
+}

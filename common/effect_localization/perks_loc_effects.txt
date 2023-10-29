@@ -1,0 +1,180 @@
+﻿first_of_learn_perk_effect = {
+	global = HAVE_TEN_LEARNING
+	first = HAVE_TEN_LEARNING_ME
+	third = HAVE_TEN_LEARNING_THEY
+}
+
+Valor_of_man_perk_effect = {
+	global = YOUR_A_VALOR
+}
+
+In_the_Shadows_perk_effect = {
+	global = IN_SHADOWS
+}
+
+long_life_perk_effect = {
+	global = LONG_LIFE_PERK
+}
+
+call_to_God_perk_effect = {
+	global = CALL_GOD
+	first = YOU_CALL_GOD
+	third = THEY_CALL_GOD
+}
+
+Alchemy_perk_effect = {
+	global = CAN_ALCHEMY
+	first = YOU_CAN_ALCHEMY
+	third = TEHY_CAN_ALCHEMY
+}
+
+great_of_blood_dec = {
+	global = GREAT_BLOOD_PERK
+}
+
+more_enter_dec = {
+	global = MORE_ENTER_DESC
+	first = YOU_MORE_ENTER_DESC
+	third = THEY_MORE_ENTER_DESC
+}
+
+konw_all_thing_dec = {
+	global = KNOW_ALL_THING_DESC
+}
+
+evil_codex_dec = {
+	global = EVIL_CODEX_DESC
+}
+
+legion_of_the_undead_dec = {
+	global = LEGION_OF_THE_UNDEAD_DESC
+}
+
+what_is_calling_dec = {
+	global = WHAT_IS_CALLING_DESC
+}
+
+artifact_forger_dec = {
+	global = ARTIFACT_FORGER_DESC
+}
+
+know_the_base_dec = {
+	global = KNOW_THE_BASE_DESC
+}
+
+sage_stone_dec = {
+	global = SAGE_STONE_DESC
+}
+
+angel_of_road_dec = {
+	global = ANGEL_OF_ROAD_DESC
+}
+
+divine_power_dec = {
+	global = DIVINE_POWER_DESC
+}
+
+awe_inspiring_dec = {
+	global = AWE_INSPIRING_DESC
+}
+
+controller_perk_dec = {
+	global = CONTROLLER_PERK_DESC
+}
+
+holy_warriorss_dec = {
+	global = HOLY_WRRIOR_DESC
+}
+
+talent_of_commander_dec = {
+	global = TALENT_OF_COMMANDER_DESC
+}
+
+come_and_go_as_you_please_dec = {
+	global = COME_AND_GO_AS_YOU_PLEASE_DESC
+}
+
+eagles_eye_dec = {
+	global = EAGLE_EYE_DESC
+}
+
+son_of_god_of_war_dec = {
+	global = SON_OF_GOD_OF_WAR_DESC
+}
+
+good_governance_dec = {
+	global = GOOD_GOVERNANCE_DESC
+}
+
+holy_father_perk_dec = {
+	global = HOLY_FATHER_PERK_DESC
+}
+
+cultural_emphasis_dec = {
+	global = CULTURAL_EMPHASIS_DESC
+}
+
+beloved_perk_dec = {
+	global = BELOVED_PERK_DESC
+}
+
+saint_in_flesh_dec = {
+	global = SAINT_IN_FLESH_DESC
+}
+
+plan_master_dec = {
+	global = PLAN_MASTER_DESC
+}
+
+hidden_murder_dec = {
+	global = HIDDEN_MURDER_DESC
+}
+
+calm_and_easy_going_dec = {
+	global = CALM_AND_EASY_GOING_DESC
+}
+
+one_hand_cover_sky_dec = {
+	global = ONE_HAND_COVER_SKY_DESC
+}
+
+brain_scholar_dec = {
+	global = BRAIN_SCHOLAR_DESC
+}
+
+play_heart_and_mind_dec = {
+	global = PLAY_HEART_AND_MIND_DESC
+}
+
+wielding_dec = {
+	global = WIELDING_DESC
+}
+
+marionette_dec = {
+	global = MARIONETTLE_DESC
+}
+
+edge_of_darkness_dec = {
+	global = EDGE_OF_DARKNESS_DESC
+}
+
+world_rift_dec = {
+	global = WORLD_RIFT_DESC
+}
+
+precise_positioning_dec = {
+	global = PRECISE_POSITIONING_DESC
+}
+
+nothing_i_cant_dec = {
+	global = NOTHING_I_CANT_DESC
+}
+
+devilishness_dec = {
+	global = DEVILSHNESS_DESC
+}
+
+undead_tips = {
+	global = UNDEAD_TIPS
+}
+

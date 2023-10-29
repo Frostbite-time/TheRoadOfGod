@@ -1,0 +1,71 @@
+﻿#检测角色是否拥有贤者之石
+is_have_sage_stone = {
+	any_character_artifact = {
+		has_artifact_modifier = sage_stone_modif
+	}
+}
+
+#检测角色是否拥有十个以上的囚犯
+is_have_ten_prisoner = {
+	AND = {
+		any_prisoner = { count >= 10 }
+	}
+}
+
+#检测角色是否有5个以上囚犯
+is_have_five_prisoner = {
+	AND = {
+		any_prisoner = { count >= 5 }
+	}
+}
+
+
+#角色是否拥有任何高级特质
+is_character_has_any_great_traits = {
+	OR = {
+		has_trait = angel_traits
+		has_trait = saint_in_flesh_traits
+		has_trait = devilishness
+	}
+}
+
+#角色是否是神
+is_character_god = {
+	has_trait = god_god
+}
+
+#角色是否拥有强力技能特质
+is_character_has_any_perk_traits = {
+	OR = {
+		has_trait = know_all_thing_traits
+		has_trait = the_gift_of_god
+		has_trait = a_patriarch
+		has_trait = beloved_perk_trait
+	}
+}
+
+#角色有使徒特质
+has_apostle_trait = {
+	OR = {
+		has_trait = apostle_of_destiny
+		has_trait = apostle_of_hope
+		has_trait = apostle_of_evil
+		has_trait = apostle_of_time
+	}
+}
+
+#用于计谋  角色是否被目标思想操纵
+be_hooked_by_mind = {
+		scope:recipient = {
+			OR = {
+				has_hook_of_type = {
+					target = scope:actor
+					type = super_high_hook
+				}
+				has_hook_of_type = {
+					target = scope:actor
+					type = super_mid_hook
+				}
+			}	
+		}
+}

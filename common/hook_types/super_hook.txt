@@ -1,0 +1,11 @@
+﻿super_low_hook = {
+	expiration_days = 6650				
+}
+
+super_mid_hook = {
+	strong = yes		
+}
+
+super_high_hook = {
+	strong = yes		
+}

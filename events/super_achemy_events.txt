@@ -1,0 +1,122 @@
+﻿namespace = super_achemy
+
+super_achemy.0001 ={
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = super_achemy.0001.t  #事件标题
+	desc = super_achemy.0001.desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+	option = {
+		name = super_achemy.0001.a
+		hidden_effect = {
+			random_list = {
+				10 = {
+					modifier = {
+						add = -5
+						has_trait = know_all_thing_traits
+					}
+					modifier = {
+						add = -10
+						has_trait = god_god
+					}
+					modifier = {
+						add = -10
+						has_trait = angel_traits
+					}
+					modifier = {
+						add = -10
+						has_trait = saint_in_flesh_traits
+					}
+					modifier = {
+						add = -10
+						has_trait = devilishness
+					}
+					root = {
+						death = {
+							death_reason = a_super_achemy
+						}
+					}
+				}
+				90 = {
+					random_list = {
+						10 = {
+							modifier = {
+								add = 50
+								has_perk = know_the_base
+							}
+							trigger_event = super_achemy.0003
+						}
+						40 = {
+							modifier = {
+								add = -30
+								has_perk = know_the_base
+							}
+							trigger_event = super_achemy.0002
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+super_achemy.0002 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = super_achemy.0002.t  #事件标题
+	desc = super_achemy.0002.desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+	artifact = {
+		target = scope:newly_created_artifact
+		position = lower_right_portrait
+	}
+	immediate = {
+		random_list = {
+			60 = {create_alchemy_artifact_1 = yes}
+			35 = {create_alchemy_artifact_2 = yes}
+			5 = {create_alchemy_artifact_3 = yes}
+		}	
+	}
+	option = {
+		name = super_achemy.0002.a
+	}	
+}
+
+super_achemy.0003 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = super_achemy.0002.t  #事件标题
+	desc = super_achemy.0002.desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+	artifact = {
+		target = scope:newly_created_artifact
+		position = lower_right_portrait
+	}
+	immediate = {
+		random_list = {
+			50 = {create_alchemy_artifact_2 = yes}
+			50 = {create_alchemy_artifact_3 = yes}
+		}			
+	}
+	option = {
+		name = super_achemy.0002.a
+	}	
+}
+
+super_achemy.0004 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = super_achemy.0004.t  #事件标题
+	desc = super_achemy.0004.desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+	artifact = {
+		target = scope:newly_created_artifact
+		position = lower_right_portrait
+	}
+	immediate = {
+		create_sage_stone = yes
+	}
+	option = {
+		name = super_achemy.0004.a
+	}
+}

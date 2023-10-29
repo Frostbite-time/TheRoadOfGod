@@ -1,0 +1,122 @@
+以下是作者自己整理的宣战理由编写方式，可能有误
+
+
+
+
+#宣战理由  挑衅
+key = {
+	group = key 	# 这个宣战理由属于什么组
+
+	war_name = string            #本地化的键
+	my_war_name = string 
+	war_name_base = string
+	my_war_name_base = string
+	
+	# 这些值是基于定义的，如果*not*在CB本身设置的话
+	attacker_ticking_warscore_delay = { months = 12 }	# 攻击方的战争得分应该延迟多少才会增加?
+	defender_ticking_warscore_delay = { months = 12 }	# 对保卫者来说，战争分数应该延迟多少才会增加?
+	attacker_ticking_warscore = 0.1						# 攻击方的战争分数每天增加多少
+	defender_ticking_warscore = 0.1						# 防守方每天增加多少战争分数
+	attacker_wargoal_percentage = 0.75					# 攻击方需要占领多少战果才能获得战争得分。0.0意味着 "至少占领一个"
+	defender_wargoal_percentage = 0.75					# 防守方需要占据一个战役目标的多少，才能获得战争分数。0.0意味着 "至少占据一个"。
+	attacker_score_from_occupation_scale = 100			# 攻击方占领的由这个值来修改
+	defender_score_from_occupation_scale = 100			# 防守方占领的战争分数由这个值来修改
+	attacker_score_from_battles_scale = 40				# 攻击方赢得的战役的战争得分按这个数值修改
+	defender_score_from_battles_scale = 50				# 防守方在战斗中获得的战绩按此值修改
+	max_attacker_score_from_battles = 50				# 攻击方最多可以从战斗中获得多少战争得分
+	max_defender_score_from_battles = 100				# 防守方在战斗中可以获得最多多少战争得分？
+	max_attacker_score_from_occupation = 50				# 攻击方总共可以从占领中获得最多多少战争得分
+	max_defender_score_from_occupation = 100			# 防守方总共能从占领中获得最多多少战争得分
+	full_occupation_by_defender_gives_victory = no 		# 防守方完全占领能否自动获得100%的战争分数
+	full_occupation_by_attacker_gives_victory = no 		# 攻击方完全占领能否自动获得100%的战争分数
+	landless_attacker_needs_armies = no 				# 如果设置为 "否"，没有土地和军队也不会自动给对方带来100%的战争得分。
+
+	occupation_participation_mult = 1.0					# 占领方的参与得分要乘以什么？默认为1
+	siege_participation_mult = 1.0						# 攻城战的得分乘以什么？默认为1
+	battle_participation_mult = 1.0						# 战斗参与得分乘以什么？默认为1
+
+	cost = { }	# 宣战的成本是多少
+
+	attacker_capital_gives_war_score = no 				# 攻击方首都有没有战争得分
+	defender_capital_gives_war_score = no 				# 防守方的首都有没有战争得分
+	imprisonment_by_attacker_give_war_score = no 		# 攻击方监禁人员时有没有战争得分
+	imprisonment_by_defender_give_war_score = no 		# 保卫方监禁人员人时有没有战争分数
+
+	on_declaration = {  }                            #宣战时候触发的效果
+	on_victory = {  }								#当胜利的时候触发的效果
+	on_white_peace = {  }							#当无条件和平的时候触发的效果
+	on_defeat = {  }									#当战败的时候触发的效果
+	on_invalidated = {  }							#当战争无效的时候触发的效果
+
+	on_victory_desc = { }								#当各种情况下的描述，这些描述会在战争UI界面显示，一定要好好写
+	on_defeat_desc = { }
+	on_white_peace_desc = { }
+
+	should_invalidate = {  }           				#战争被无效化的条件
+	mutually_exclusive_titles = {  } # 如果评估为 "真"，则只能针对一个标题。
+	combine_into_one = yes				# 如果设置了，那么我们将显示该CB的所有实例（例如，X的圣战，Y的圣战，Z的圣战）作为一个单一条目，让你在不同的目标之间进行选择
+
+	allowed_for_character = {  }		#什么样的角色才能使用这个宣战理由
+	allowed_for_character_display_regardless = {  } # 什么样的角色才能使用这个宣战理由，但即使不符合条件也能显示在UI上
+
+	allowed_against_character = {  }					#允许对哪些角色使用这个宣战理由
+	allowed_against_character_display_regardless = {  } # 允许对哪些角色使用这个宣战理由，但即使不符合条件也能显示在UI上
+
+	
+	valid_to_start = {  }						# 能开战的条件
+	valid_to_start_display_regardless = {  } 	# 能开战的条件，但即使不符合条件也能显示在UI上
+
+
+	is_allowed_claim_title = {  }
+
+
+	target_titles = {}
+	#none/neighbor_land/neighbor_water/neighbor_land_or_water/de_jure_claim/title_claim/all  决定这个CB可以用来对付什么头衔。如果它针对的是一个领域而不是一个头衔，则为 "none"。
+	target_title_tier = tier # 如果设置了，CB只能针对这一级的头衔使用  以下是可用值barony/county/duchy/kingdom/empire
+	target_de_jure_regions_above = yes # 如果设置为真，那么对于这个拥有目标头衔范围内的土地的人，都可以对其发起攻击
+
+	use_de_jure_wargoal_only = yes # 如果设置为真，那么战争只能取得目标头衔
+
+
+
+	truce_days = int            #和平协议后休战的天数
+	ignore_effect = effect name # 这种效果在效果描述中被跳过。可以多次定义   例如 ignore_effect = change_title_holder
+
+	on_primary_attacker_death = invalidate/inherit/inherit_faction
+	on_primary_defender_death = invalidate/inherit/inherit_faction
+	transfer_behavior = invalidate/transfer
+
+	check_attacker_inheritance_validity = yes/no # 如果设置为 "否"，我们在做替换之前不检查是否有效。
+	check_defender_inheritance_validity = yes/no # 如果设置为 "否"，我们在进行替换之前不会检查替换是否有效。
+	attacker_allies_inherit = yes/no # 战争中的盟友应该继承在战争中的地位吗？
+	defender_allies_inherit = yes/no # 战争中的盟友应该继承在战争中的地位吗？
+
+	interface_priority = int # 决定了它在CB列表中的显示顺序。它越高，显示的位置就越高。平局是按定义顺序打破的
+
+	max_ai_diplo_distance_to_title = int # 如果头衔比这更高，AI将永远不会考虑它。
+
+	ai_only_against_liege = yes # 如果设置了，人工智能将只对其统治者检查这个CB
+	ai_only_against_neighbors = yes # 如果设置了，人工智能将只对其陆上和海上的邻居检查这个CB。
+	ai_can_target_all_titles = { # 如果使用，如果成功，人工智能将使用脚本中的标题目标，否则邻居_土地_或水
+		# Trigger, character scope
+	}
+	ai = no # 如果设置为否，人工智能将完全忽略这个CB。
+
+	white_peace_possible = no # 如果设置为 "否"，就不能发生无条件和平；只有胜利、失败或无效。
+	check_all_defenders_for_ticking_war_score = yes # 如果设置为 "是"，那么我们将检查所有防御者在战区内持有的土地。
+	ticking_war_score_targets_entire_realm = yes # 如果设置为 "是"，我们将检查整个领域而不是战争目标。
+
+	gui_attacker_faith_might_join = yes # 如果设置了，我们会显示一个警告，说攻击者信仰的其他人可能加入。没有实际游戏影响
+	gui_defender_faith_might_join = yes # 如果设置了，我们会显示一个警告，说防御者的信仰的其他人可能会加入。对游戏没有实际影响
+	defender_faith_can_join = yes # 如果设置了，游戏将添加相同信仰的防御者，如果他们满足can_defensively_join_holy_war脚本规则，并且holy_war_defensive_join_value对他们来说大于0。
+	is_great_holy_war = yes # 这是一场大圣战吗？
+	target_top_liege_if_outside_realm = no # 绕过检查，如果你不在一个王国里，你只能以最高统治者为目标。只用于脚本战争，如农民起义；在用户界面中不起作用。
+
+	should_check_for_interface_availability = no # 如果设置了，我们在检查你是否有可用的CB时不会显示检查这个CB（例如，使用触发器has_any_cb_on）。
+
+	ai_score = { # 脚本值，标准战争范围。添加到来自标题的硬编码得分，如果有的话
+	}
+
+	ai_score_mult = { # 脚本值，标准战争范围。与标题中的得分相乘
+	}
+}

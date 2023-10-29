@@ -1,0 +1,370 @@
+﻿#思想技能树
+
+#阴影之中
+In_the_Shadows = {   
+	lifestyle = super_lifestyle
+	tree = mind_of_road_tree
+	position = { 1.5 0 }
+	icon = node_intrigue
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_mind_power
+			}
+			add = 500
+		}
+	}
+	character_modifier = {
+		intrigue = 10
+		owned_scheme_secrecy_add = 50
+		hostile_scheme_resistance_add = 20
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = In_the_Shadows_perk_effect
+		}
+	}
+
+}
+
+#计划大师
+plan_master = {
+	lifestyle = super_lifestyle
+	tree = mind_of_road_tree
+	position = { 0 1.25 }
+	icon = node_intrigue
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_mind_power
+			}
+			add = 500
+		}
+	}
+	character_modifier = {
+		intrigue = 5
+		max_hostile_schemes_add = 2
+		hostile_scheme_power_add = 20
+		owned_hostile_scheme_success_chance_add = 10
+		owned_scheme_secrecy_add = 20
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = plan_master_dec
+		}
+	}
+	parent = In_the_Shadows
+}
+
+#循序渐进，暗藏杀机
+hidden_murder = {
+	lifestyle = super_lifestyle
+	tree = mind_of_road_tree
+	position = { 0 2 }
+	icon = node_intrigue
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_mind_power
+			}
+			add = 500
+		}
+	}
+	character_modifier = {
+		intrigue = 5
+		owned_hostile_scheme_success_chance_add = 15
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = hidden_murder_dec
+		}
+	}
+	parent = plan_master
+}
+
+#隐秘于心，安然自若
+calm_and_easy_going = {
+	lifestyle = super_lifestyle
+	tree = mind_of_road_tree
+	position = { 0 2.75 }
+	icon = node_intrigue
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_mind_power
+			}
+			add = 500
+		}
+	}
+	character_modifier = {
+		intrigue = 10
+		enemy_hostile_scheme_success_chance_add = -20
+		scheme_discovery_chance_mult = 0.5
+		owned_scheme_secrecy_add = 30
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = calm_and_easy_going_dec
+		}
+	}
+	parent = hidden_murder	
+}
+
+#既成一脉，只手遮天
+one_hand_cover_sky = {
+	lifestyle = super_lifestyle
+	tree = mind_of_road_tree
+	position = { 0 3.5 }
+	icon = node_intrigue
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_mind_power
+			}
+			add = 500
+		}
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = one_hand_cover_sky_dec
+		}
+		if = {
+			limit = {
+				has_trait = beloved_perk_trait
+			}
+			hidden_effect = {
+				remove_trait = beloved_perk_trait
+			}
+			hidden_effect = {
+				add_trait = a_patriarch
+			}
+			hidden_effect = {
+				add_trait = beloved_perk_trait
+			}
+		}
+		else = {
+			hidden_effect = {
+				add_trait = a_patriarch
+			}	
+		}
+	}
+	parent = calm_and_easy_going
+}
+
+#思维学者       解锁右键菜单，研究人物
+brain_scholar = {
+	lifestyle = super_lifestyle
+	tree = mind_of_road_tree
+	position = { 1.5 1.25 }
+	icon = node_intrigue
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_mind_power
+			}
+			add = 500
+		}
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = brain_scholar_dec
+		}
+	}
+	parent = In_the_Shadows
+}
+
+#玩弄人心      解锁右键菜单   玩弄人心
+play_heart_and_mind = {
+	lifestyle = super_lifestyle
+	tree = mind_of_road_tree
+	position = { 1.5 2 }
+	icon = node_intrigue
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_mind_power
+			}
+			add = 500
+		}
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = play_heart_and_mind_dec
+		}
+	}
+	parent = brain_scholar	
+}
+
+#执棋人      解锁右键菜单   提线木偶
+wielding = {
+	lifestyle = super_lifestyle
+	tree = mind_of_road_tree
+	position = { 1.5 2.75 }
+	icon = node_intrigue
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_mind_power
+			}
+			add = 500
+		}
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = wielding_dec
+		}
+	}
+	parent = play_heart_and_mind	
+}
+
+#提线木偶      被提线木偶控制的角色永远不会反抗你
+marionette = {
+	lifestyle = super_lifestyle
+	tree = mind_of_road_tree
+	position = { 1.5 3.5 }
+	icon = node_intrigue
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_mind_power
+			}
+			add = 500
+		}
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = marionette_dec
+		}
+	}
+	parent = wielding	
+}
+
+#黑暗边缘    作为一些邪神事件的触发器
+edge_of_darkness = {
+	lifestyle = super_lifestyle
+	tree = mind_of_road_tree
+	position = { 3 1.25 }
+	icon = node_intrigue
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_mind_power
+			}
+			add = 500
+		}
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = edge_of_darkness_dec
+		}
+	}
+	parent = In_the_Shadows	
+}
+
+#世界裂隙      
+world_rift = {
+	lifestyle = super_lifestyle
+	tree = mind_of_road_tree
+	position = { 3 2 }
+	icon = node_intrigue
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_mind_power
+			}
+			add = 500
+		}
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = world_rift_dec
+		}
+	}
+	character_modifier = {
+		diplomatic_range_mult = 1
+	}
+	parent = edge_of_darkness		
+}
+
+#精确定位     解锁右键菜单   通过世界裂隙绑架或者谋杀
+precise_positioning = {
+	lifestyle = super_lifestyle
+	tree = mind_of_road_tree
+	position = { 3 2.75 }
+	icon = node_intrigue
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_mind_power
+			}
+			add = 500
+		}
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = precise_positioning_dec
+		}
+	}
+	parent = world_rift		
+}
+
+#无我不能      在世界裂隙中游荡时候有更多选项
+nothing_i_cant =  {
+	lifestyle = super_lifestyle
+	tree = mind_of_road_tree
+	position = { 3 3.5 }
+	icon = node_intrigue
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_mind_power
+			}
+			add = 500
+		}
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = nothing_i_cant_dec
+		}
+	}
+	parent = precise_positioning		
+}
+
+#魔性         解锁决议   恶魔化
+devilishness = { 
+	lifestyle = super_lifestyle
+	tree = mind_of_road_tree
+	position = { 1.5 4.8 }
+	icon = devilishness
+	auto_selection_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_focus = super_perk_mind_power
+			}
+			add = 500
+		}
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = devilishness_dec
+		}
+	}
+	parent = nothing_i_cant
+	parent = marionette
+	parent = one_hand_cover_sky
+}

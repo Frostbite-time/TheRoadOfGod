@@ -1,0 +1,1060 @@
+﻿#移除贤者之石
+remove_sage_stone = {
+	random_artifact = {
+		limit = {
+			has_artifact_modifier = sage_stone_modif
+		}
+		save_scope_as = sage_stone_will_remove
+	}
+	destroy_artifact = scope:sage_stone_will_remove
+}
+
+#创建1级炼金术类宝物
+create_alchemy_artifact_1 = {
+	create_artifact = {
+		name = alchemy_artifact_1
+		description = alchemy_artifact_1_desc
+		type = miscellaneous
+		visuals = pocket_figurine
+		rarity = masterwork
+		wealth = 25
+		quality = 25
+		save_scope_as = newly_created_artifact
+		modifier = artifact_prowess_1_modifier
+	}
+	hidden_effect = {
+		scope:newly_created_artifact = {
+			random_list = {
+				10 = {
+					add_artifact_modifier = artifact_prowess_1_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_prowess_2_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_prowess_3_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_prowess_4_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_learning_1_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_diplomacy_1_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_martial_1_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_stewardship_1_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_intrigue_1_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_health_gain_1_modifier
+				}
+			}
+			random_list = {
+				10 = {
+					add_artifact_modifier = artifact_knight_limit_1_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_knight_effectiveness_1_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_knight_effectiveness_2_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_knight_effectiveness_3_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_knight_effectiveness_4_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_vassal_limit_1_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_vassal_opinion_1_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_vassal_opinion_2_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_domain_tax_mult_1_modifier
+				}
+			}
+			random_list = {
+				10 = {
+					add_artifact_modifier = artifact_stress_gain_1_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_stress_gain_1_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_stress_gain_2_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_fertility_gain_1_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_fertility_gain_1_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_fertility_gain_2_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_owned_hostile_scheme_success_chance_add_1_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_owned_hostile_scheme_success_chance_add_2_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_owned_hostile_scheme_success_chance_add_3_modifier
+				}
+			}
+		}
+	}	
+}
+
+#创建2级炼金术类宝物
+create_alchemy_artifact_2 = {
+	create_artifact = {
+		name = alchemy_artifact_2
+		description = alchemy_artifact_2_desc
+		type = miscellaneous
+		visuals = pocket_figurine
+		rarity = famed
+		wealth = 50
+		quality = 50
+		save_scope_as = newly_created_artifact
+		modifier = artifact_prowess_1_modifier
+	}
+	hidden_effect = {
+		scope:newly_created_artifact = {
+			random_list = {
+				10 = {
+					add_artifact_modifier = artifact_prowess_5_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_prowess_6_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_prowess_7_modifier
+				}
+				5 = {
+					add_artifact_modifier = artifact_prowess_8_modifier
+				}
+				5 = {
+					add_artifact_modifier = artifact_learning_1_modifier
+				}
+				5 = {
+					add_artifact_modifier = artifact_diplomacy_1_modifier
+				}
+				5 = {
+					add_artifact_modifier = artifact_martial_1_modifier
+				}
+				5 = {
+					add_artifact_modifier = artifact_stewardship_1_modifier
+				}
+				5 = {
+					add_artifact_modifier = artifact_intrigue_1_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_health_gain_2_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_health_gain_3_modifier
+				}
+			}
+			random_list = {
+				10 = {
+					add_artifact_modifier = artifact_prowess_5_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_prowess_6_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_prowess_7_modifier
+				}
+				5 = {
+					add_artifact_modifier = artifact_prowess_8_modifier
+				}
+				5 = {
+					add_artifact_modifier = artifact_learning_1_modifier
+				}
+				5 = {
+					add_artifact_modifier = artifact_diplomacy_1_modifier
+				}
+				5 = {
+					add_artifact_modifier = artifact_martial_1_modifier
+				}
+				5 = {
+					add_artifact_modifier = artifact_stewardship_1_modifier
+				}
+				5 = {
+					add_artifact_modifier = artifact_intrigue_1_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_health_gain_2_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_health_gain_3_modifier
+				}
+			}
+			random_list = {
+				10 = {
+					add_artifact_modifier = artifact_knight_limit_2_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_knight_effectiveness_5_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_knight_effectiveness_6_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_knight_effectiveness_7_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_knight_effectiveness_8_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_vassal_limit_2_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_vassal_opinion_2_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_domain_tax_mult_2_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_domain_tax_mult_3_modifier
+				}
+			}
+			random_list = {
+				10 = {
+					add_artifact_modifier = artifact_knight_limit_2_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_knight_effectiveness_5_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_knight_effectiveness_6_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_knight_effectiveness_7_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_knight_effectiveness_8_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_vassal_limit_2_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_vassal_opinion_2_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_domain_tax_mult_2_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_domain_tax_mult_3_modifier
+				}
+			}
+			random_list = {
+				10 = {
+					add_artifact_modifier = artifact_stress_gain_2_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_stress_gain_3_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_fertility_gain_2_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_fertility_gain_3_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_owned_hostile_scheme_success_chance_add_4_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_owned_hostile_scheme_success_chance_add_5_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_owned_hostile_scheme_success_chance_add_6_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_owned_hostile_scheme_success_chance_add_7_modifier
+				}
+			}
+		}
+	}	
+}
+
+#创建3级炼金术类宝物
+create_alchemy_artifact_3 = {
+	create_artifact = {
+		name = alchemy_artifact_3
+		description = alchemy_artifact_3_desc
+		type = miscellaneous
+		visuals = pocket_figurine
+		rarity = illustrious
+		wealth = 80
+		quality = 80
+		save_scope_as = newly_created_artifact
+		modifier = artifact_prowess_1_modifier
+	}
+	hidden_effect = {
+		scope:newly_created_artifact = {
+			random_list = {
+				10 = {
+					add_artifact_modifier = artifact_prowess_9_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_prowess_10_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_prowess_11_modifier
+				}
+				3 = {
+					add_artifact_modifier = artifact_learning_1_modifier
+				}
+				3 = {
+					add_artifact_modifier = artifact_diplomacy_1_modifier
+				}
+				3 = {
+					add_artifact_modifier = artifact_martial_1_modifier
+				}
+				3 = {
+					add_artifact_modifier = artifact_stewardship_1_modifier
+				}
+				3 = {
+					add_artifact_modifier = artifact_intrigue_1_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_health_gain_4_modifier
+				}
+			}
+			random_list = {
+				10 = {
+					add_artifact_modifier = artifact_prowess_9_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_prowess_10_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_prowess_11_modifier
+				}
+				3 = {
+					add_artifact_modifier = artifact_learning_1_modifier
+				}
+				3 = {
+					add_artifact_modifier = artifact_diplomacy_1_modifier
+				}
+				3 = {
+					add_artifact_modifier = artifact_martial_1_modifier
+				}
+				3 = {
+					add_artifact_modifier = artifact_stewardship_1_modifier
+				}
+				3 = {
+					add_artifact_modifier = artifact_intrigue_1_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_health_gain_4_modifier
+				}
+			}
+			random_list = {
+				10 = {
+					add_artifact_modifier = artifact_knight_limit_2_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_knight_effectiveness_9_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_knight_effectiveness_10_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_knight_effectiveness_11_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_knight_effectiveness_12_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_vassal_limit_8_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_vassal_opinion_4_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_domain_tax_mult_2_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_domain_tax_mult_4_modifier
+				}
+			}
+			random_list = {
+				10 = {
+					add_artifact_modifier = artifact_knight_limit_2_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_knight_effectiveness_9_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_knight_effectiveness_10_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_knight_effectiveness_11_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_knight_effectiveness_12_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_vassal_limit_8_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_vassal_opinion_4_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_domain_tax_mult_2_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_domain_tax_mult_4_modifier
+				}
+			}
+			random_list = {
+				10 = {
+					add_artifact_modifier = artifact_stress_gain_4_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_fertility_gain_4_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_owned_hostile_scheme_success_chance_add_9_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_owned_hostile_scheme_success_chance_add_10_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_owned_hostile_scheme_success_chance_add_11_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_owned_hostile_scheme_success_chance_add_12_modifier
+				}
+			}
+			random_list = {
+				10 = {
+					add_artifact_modifier = artifact_different_faith_opinion_12_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_monthly_piety_from_buildings_mult_12_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_same_faith_opinion_4_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_monthly_income_4_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_build_time_4_modifier
+				}
+				10 = {
+					add_artifact_modifier = artifact_men_at_arms_maintenance_8_modifier
+				}
+			}
+		}
+	}
+}
+
+#创造贤者之石
+create_sage_stone = {
+	create_artifact = {
+		name = sage_stone_name
+		description = sage_stone_name_desc
+		type = miscellaneous
+		visuals = sage_stone
+		rarity = illustrious
+		modifier = artifact_health_gain_4_modifier
+		modifier = artifact_health_gain_4_modifier
+		modifier = artifact_health_gain_4_modifier
+		modifier = artifact_health_gain_4_modifier
+		modifier = artifact_health_gain_4_modifier
+		modifier = artifact_health_gain_4_modifier
+		modifier = artifact_health_gain_4_modifier
+		modifier = artifact_health_gain_4_modifier
+		modifier = artifact_health_gain_4_modifier
+		modifier = artifact_health_gain_4_modifier
+		modifier = artifact_health_gain_4_modifier
+		modifier = artifact_health_gain_4_modifier
+		modifier = sage_stone_modif
+		wealth = 100
+		quality = 100
+		save_scope_as = newly_created_artifact
+	}
+}
+
+#给予随机高级修正
+give_random_advance_modif = {
+	hidden_effect = {
+		scope:newly_created_artifact = {
+			random_list = {
+				10 = { add_artifact_modifier = artifact_prowess_11_modifier}
+				10 = { add_artifact_modifier = artifact_prowess_10_modifier}
+				10 = { add_artifact_modifier = artifact_prowess_9_modifier}
+				10 = { add_artifact_modifier = artifact_prowess_no_decorations_high_tier_modifier}
+				10 = { add_artifact_modifier = artifact_knight_limit_2_modifier }
+				10 = { add_artifact_modifier = artifact_knight_effectiveness_12_modifier }
+				10 = { add_artifact_modifier = artifact_knight_effectiveness_11_modifier }
+				10 = { add_artifact_modifier = artifact_knight_effectiveness_10_modifier }
+				10 = { add_artifact_modifier = artifact_tolerance_advantage_mod_4_modifier }
+				10 = { add_artifact_modifier = artifact_controlled_province_advantage_8_modifier }
+				10 = { add_artifact_modifier = artifact_controlled_province_advantage_7_modifier }
+				10 = { add_artifact_modifier = artifact_levy_reinforcement_rate_2_modifier }
+				10 = { add_artifact_modifier = artifact_levy_reinforcement_rate_same_faith_12_modifier }
+				10 = { add_artifact_modifier = artifact_levy_reinforcement_rate_same_faith_11_modifier }
+				10 = { add_artifact_modifier = artifact_negate_prowess_penalty_add_8_modifier }
+				10 = { add_artifact_modifier = artifact_negate_prowess_penalty_add_7_modifier }
+				10 = { add_artifact_modifier = artifact_raid_speed_12_modifier }
+				10 = { add_artifact_modifier = artifact_raid_speed_11_modifier }
+
+				10 = { add_artifact_modifier = artifact_enemy_hard_casualty_modifier_12_modifier }
+				10 = { add_artifact_modifier = artifact_enemy_hard_casualty_modifier_11_modifier }
+				10 = { add_artifact_modifier = artifact_hard_casualty_modifier_12_modifier }
+				10 = { add_artifact_modifier = artifact_hard_casualty_modifier_11_modifier }
+				10 = { add_artifact_modifier = artifact_hard_casualty_modifier_10_modifier }
+				10 = { add_artifact_modifier = artifact_heavy_cavalry_toughness_3_modifier }
+				10 = { add_artifact_modifier = artifact_heavy_infantry_toughness_3_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_minor_prestige_8_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_minor_prestige_7_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_prestige_8_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_prestige_7_modifier }
+
+				10 = { add_artifact_modifier = artifact_short_reign_duration_mult_8_modifier }
+				10 = { add_artifact_modifier = artifact_short_reign_duration_mult_7_modifier }
+				10 = { add_artifact_modifier = artifact_court_grandeur_baseline_add_6_modifier }
+				10 = { add_artifact_modifier = artifact_dynasty_opinion_8_modifier }
+				10 = { add_artifact_modifier = artifact_dynasty_opinion_7_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_prestige_add_8_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_prestige_add_7_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_prestige_gain_per_dread_add_4_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_prestige_gain_per_knight_add_4_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_dynasty_prestige_4_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_prestige_gain_per_happy_powerful_vassal_add_4_modifier }
+
+				10 = { add_artifact_modifier = artifact_monthly_tyranny_8_modifier }
+				10 = { add_artifact_modifier = artifact_dread_baseline_add_4_modifier }
+				10 = { add_artifact_modifier = artifact_vassal_tax_contribution_mult_4_modifier }
+				10 = { add_artifact_modifier = artifact_happy_powerful_vassal_tax_contribution_mult_8_modifier }
+				10 = { add_artifact_modifier = artifact_happy_powerful_vassal_tax_contribution_mult_7_modifier }
+				10 = { add_artifact_modifier = artifact_general_opinion_1_modifier }
+				10 = { add_artifact_modifier = artifact_vassal_opinion_4_modifier }
+				10 = { add_artifact_modifier = artifact_powerful_vassal_opinion_8_modifier }
+				10 = { add_artifact_modifier = artifact_powerful_vassal_opinion_7_modifier }
+				10 = { add_artifact_modifier = artifact_independent_ruler_opinion_8_modifier }
+				10 = { add_artifact_modifier = artifact_independent_ruler_opinion_7_modifier }
+
+				10 = { add_artifact_modifier = artifact_men_at_arms_maintenance_8_modifier }
+				10 = { add_artifact_modifier = artifact_men_at_arms_maintenance_7_modifier }
+				10 = { add_artifact_modifier = artifact_domain_tax_mult_4_modifier }
+				10 = { add_artifact_modifier = artifact_domain_tax_mult_3_modifier }
+				10 = { add_artifact_modifier = artifact_build_gold_cost_8_modifier }
+				10 = { add_artifact_modifier = artifact_build_gold_cost_7_modifier }
+				10 = { add_artifact_modifier = artifact_courtier_and_guest_opinion_8_modifier }
+				10 = { add_artifact_modifier = artifact_courtier_and_guest_opinion_7_modifier }
+				10 = { add_artifact_modifier = artifact_attraction_opinion_4_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_income_4_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_piety_8_modifier }
+			}
+		}
+	}	
+}
+
+#给予随机1个中级修正
+give_random_mid_modif = {
+	hidden_effect = {
+		scope:newly_created_artifact = {
+			random_list = {
+				10 = { add_artifact_modifier = artifact_prowess_6_modifier}
+				10 = { add_artifact_modifier = artifact_prowess_7_modifier}
+				10 = { add_artifact_modifier = artifact_prowess_8_modifier}
+				10 = { add_artifact_modifier = artifact_knight_limit_1_modifier }
+				10 = { add_artifact_modifier = artifact_knight_effectiveness_9_modifier }
+				10 = { add_artifact_modifier = artifact_knight_effectiveness_8_modifier }
+				10 = { add_artifact_modifier = artifact_knight_effectiveness_7_modifier }
+				10 = { add_artifact_modifier = artifact_tolerance_advantage_mod_3_modifier }
+				10 = { add_artifact_modifier = artifact_controlled_province_advantage_6_modifier }
+				10 = { add_artifact_modifier = artifact_controlled_province_advantage_5_modifier }
+				10 = { add_artifact_modifier = artifact_levy_reinforcement_rate_1_modifier }
+				10 = { add_artifact_modifier = artifact_levy_reinforcement_rate_same_faith_10_modifier }
+				10 = { add_artifact_modifier = artifact_levy_reinforcement_rate_same_faith_9_modifier }
+				10 = { add_artifact_modifier = artifact_negate_prowess_penalty_add_6_modifier }
+				10 = { add_artifact_modifier = artifact_negate_prowess_penalty_add_5_modifier }
+				10 = { add_artifact_modifier = artifact_raid_speed_10_modifier }
+				10 = { add_artifact_modifier = artifact_raid_speed_9_modifier }
+
+				10 = { add_artifact_modifier = artifact_enemy_hard_casualty_modifier_10_modifier }
+				10 = { add_artifact_modifier = artifact_enemy_hard_casualty_modifier_9_modifier }
+				10 = { add_artifact_modifier = artifact_hard_casualty_modifier_9_modifier }
+				10 = { add_artifact_modifier = artifact_hard_casualty_modifier_8_modifier }
+				10 = { add_artifact_modifier = artifact_hard_casualty_modifier_7_modifier }
+				10 = { add_artifact_modifier = artifact_heavy_cavalry_toughness_2_modifier }
+				10 = { add_artifact_modifier = artifact_heavy_infantry_toughness_2_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_minor_prestige_6_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_minor_prestige_5_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_prestige_6_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_prestige_5_modifier }
+
+				10 = { add_artifact_modifier = artifact_short_reign_duration_mult_5_modifier }
+				10 = { add_artifact_modifier = artifact_short_reign_duration_mult_4_modifier }
+				10 = { add_artifact_modifier = artifact_court_grandeur_baseline_add_3_modifier }
+				10 = { add_artifact_modifier = artifact_dynasty_opinion_6_modifier }
+				10 = { add_artifact_modifier = artifact_dynasty_opinion_4_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_prestige_add_6_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_prestige_add_5_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_prestige_gain_per_dread_add_3_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_prestige_gain_per_knight_add_3_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_dynasty_prestige_3_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_prestige_gain_per_happy_powerful_vassal_add_3_modifier }
+
+				10 = { add_artifact_modifier = artifact_monthly_tyranny_6_modifier }
+				10 = { add_artifact_modifier = artifact_dread_baseline_add_3_modifier }
+				10 = { add_artifact_modifier = artifact_vassal_tax_contribution_mult_3_modifier }
+				10 = { add_artifact_modifier = artifact_happy_powerful_vassal_tax_contribution_mult_6_modifier }
+				10 = { add_artifact_modifier = artifact_happy_powerful_vassal_tax_contribution_mult_5_modifier }
+				10 = { add_artifact_modifier = artifact_vassal_opinion_3_modifier }
+				10 = { add_artifact_modifier = artifact_powerful_vassal_opinion_6_modifier }
+				10 = { add_artifact_modifier = artifact_powerful_vassal_opinion_5_modifier }
+				10 = { add_artifact_modifier = artifact_independent_ruler_opinion_6_modifier }
+				10 = { add_artifact_modifier = artifact_independent_ruler_opinion_5_modifier }
+
+				10 = { add_artifact_modifier = artifact_men_at_arms_maintenance_6_modifier }
+				10 = { add_artifact_modifier = artifact_men_at_arms_maintenance_5_modifier }
+				10 = { add_artifact_modifier = artifact_domain_tax_mult_1_modifier }
+				10 = { add_artifact_modifier = artifact_domain_tax_mult_2_modifier }
+				10 = { add_artifact_modifier = artifact_build_gold_cost_6_modifier }
+				10 = { add_artifact_modifier = artifact_build_gold_cost_5_modifier }
+				10 = { add_artifact_modifier = artifact_courtier_and_guest_opinion_5_modifier }
+				10 = { add_artifact_modifier = artifact_courtier_and_guest_opinion_6_modifier }
+				10 = { add_artifact_modifier = artifact_attraction_opinion_3_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_income_3_modifier }
+				10 = { add_artifact_modifier = artifact_monthly_piety_6_modifier }
+			}
+		}
+	}	
+}
+
+#销毁角色拥有的所有领军者甲
+destroy_leadr = {
+	root = {
+		random_character_artifact = {
+			limit = {
+				AND = {
+					has_artifact_modifier = leader_am_modif
+					NOT = {
+						has_artifact_modifier = leader_am_fixed_modif
+					}
+				}
+			}
+			save_scope_as = be_destroy_art
+		}
+	}
+	destroy_artifact = scope:be_destroy_art
+	root = {
+		random_character_artifact = {
+			limit = {
+				AND = {
+					has_artifact_modifier = leader_am_modif
+					NOT = {
+						has_artifact_modifier = leader_am_fixed_modif
+					}
+				}
+			}
+			save_scope_as = be_destroy_art
+		}
+	}
+	destroy_artifact = scope:be_destroy_art
+	root = {
+		random_character_artifact = {
+			limit = {
+				AND = {
+					has_artifact_modifier = leader_am_modif
+					NOT = {
+						has_artifact_modifier = leader_am_fixed_modif
+					}
+				}
+			}
+			save_scope_as = be_destroy_art
+		}
+	}
+	destroy_artifact = scope:be_destroy_art
+	root = {
+		random_character_artifact = {
+			limit = {
+				AND = {
+					has_artifact_modifier = leader_am_modif
+					NOT = {
+						has_artifact_modifier = leader_am_fixed_modif
+					}
+				}
+			}
+			save_scope_as = be_destroy_art
+		}
+	}
+	destroy_artifact = scope:be_destroy_art
+	root = {
+		random_character_artifact = {
+			limit = {
+				AND = {
+					has_artifact_modifier = leader_am_modif
+					NOT = {
+						has_artifact_modifier = leader_am_fixed_modif
+					}
+				}
+			}
+			save_scope_as = be_destroy_art
+		}
+	}
+	destroy_artifact = scope:be_destroy_art
+	root = {
+		random_character_artifact = {
+			limit = {
+				AND = {
+					has_artifact_modifier = leader_am_modif
+					NOT = {
+						has_artifact_modifier = leader_am_fixed_modif
+					}
+				}
+			}
+			save_scope_as = be_destroy_art
+		}
+	}
+	destroy_artifact = scope:be_destroy_art
+	root = {
+		random_character_artifact = {
+			limit = {
+				AND = {
+					has_artifact_modifier = leader_am_modif
+					NOT = {
+						has_artifact_modifier = leader_am_fixed_modif
+					}
+				}
+			}
+			save_scope_as = be_destroy_art
+		}
+	}
+	destroy_artifact = scope:be_destroy_art
+	root = {
+		random_character_artifact = {
+			limit = {
+				AND = {
+					has_artifact_modifier = leader_am_modif
+					NOT = {
+						has_artifact_modifier = leader_am_fixed_modif
+					}
+				}
+			}
+			save_scope_as = be_destroy_art
+		}
+	}
+	destroy_artifact = scope:be_destroy_art
+	root = {
+		random_character_artifact = {
+			limit = {
+				AND = {
+					has_artifact_modifier = leader_am_modif
+					NOT = {
+						has_artifact_modifier = leader_am_fixed_modif
+					}
+				}
+			}
+			save_scope_as = be_destroy_art
+		}
+	}
+	destroy_artifact = scope:be_destroy_art
+	root = {
+		random_character_artifact = {
+			limit = {
+				AND = {
+					has_artifact_modifier = leader_am_modif
+					NOT = {
+						has_artifact_modifier = leader_am_fixed_modif
+					}
+				}
+			}
+			save_scope_as = be_destroy_art
+		}
+	}
+	destroy_artifact = scope:be_destroy_art
+	root = {
+		random_character_artifact = {
+			limit = {
+				AND = {
+					has_artifact_modifier = leader_am_modif
+					NOT = {
+						has_artifact_modifier = leader_am_fixed_modif
+					}
+				}
+			}
+			save_scope_as = be_destroy_art
+		}
+	}
+	destroy_artifact = scope:be_destroy_art
+	root = {
+		random_character_artifact = {
+			limit = {
+				AND = {
+					has_artifact_modifier = leader_am_modif
+					NOT = {
+						has_artifact_modifier = leader_am_fixed_modif
+					}
+				}
+			}
+			save_scope_as = be_destroy_art
+		}
+	}
+	destroy_artifact = scope:be_destroy_art
+	root = {
+		random_character_artifact = {
+			limit = {
+				AND = {
+					has_artifact_modifier = leader_am_modif
+					NOT = {
+						has_artifact_modifier = leader_am_fixed_modif
+					}
+				}
+			}
+			save_scope_as = be_destroy_art
+		}
+	}
+	destroy_artifact = scope:be_destroy_art
+	root = {
+		random_character_artifact = {
+			limit = {
+				AND = {
+					has_artifact_modifier = leader_am_modif
+					NOT = {
+						has_artifact_modifier = leader_am_fixed_modif
+					}
+				}
+			}
+			save_scope_as = be_destroy_art
+		}
+	}
+	destroy_artifact = scope:be_destroy_art
+	root = {
+		random_character_artifact = {
+			limit = {
+				AND = {
+					has_artifact_modifier = leader_am_modif
+					NOT = {
+						has_artifact_modifier = leader_am_fixed_modif
+					}
+				}
+			}
+			save_scope_as = be_destroy_art
+		}
+	}
+	destroy_artifact = scope:be_destroy_art
+	root = {
+		random_character_artifact = {
+			limit = {
+				AND = {
+					has_artifact_modifier = leader_am_modif
+					NOT = {
+						has_artifact_modifier = leader_am_fixed_modif
+					}
+				}
+			}
+			save_scope_as = be_destroy_art
+		}
+	}
+	destroy_artifact = scope:be_destroy_art
+	root = {
+		random_character_artifact = {
+			limit = {
+				AND = {
+					has_artifact_modifier = leader_am_modif
+					NOT = {
+						has_artifact_modifier = leader_am_fixed_modif
+					}
+				}
+			}
+			save_scope_as = be_destroy_art
+		}
+	}
+	destroy_artifact = scope:be_destroy_art
+	root = {
+		random_character_artifact = {
+			limit = {
+				AND = {
+					has_artifact_modifier = leader_am_modif
+					NOT = {
+						has_artifact_modifier = leader_am_fixed_modif
+					}
+				}
+			}
+			save_scope_as = be_destroy_art
+		}
+	}
+	destroy_artifact = scope:be_destroy_art
+	root = {
+		random_character_artifact = {
+			limit = {
+				AND = {
+					has_artifact_modifier = leader_am_modif
+					NOT = {
+						has_artifact_modifier = leader_am_fixed_modif
+					}
+				}
+			}
+			save_scope_as = be_destroy_art
+		}
+	}
+	destroy_artifact = scope:be_destroy_art
+	root = {
+		random_character_artifact = {
+			limit = {
+				AND = {
+					has_artifact_modifier = leader_am_modif
+					NOT = {
+						has_artifact_modifier = leader_am_fixed_modif
+					}
+				}
+			}
+			save_scope_as = be_destroy_art
+		}
+	}
+	destroy_artifact = scope:be_destroy_art
+	root = {
+		random_character_artifact = {
+			limit = {
+				AND = {
+					has_artifact_modifier = leader_am_modif
+					NOT = {
+						has_artifact_modifier = leader_am_fixed_modif
+					}
+				}
+			}
+			save_scope_as = be_destroy_art
+		}
+	}
+	destroy_artifact = scope:be_destroy_art
+	root = {
+		random_character_artifact = {
+			limit = {
+				AND = {
+					has_artifact_modifier = leader_am_modif
+					NOT = {
+						has_artifact_modifier = leader_am_fixed_modif
+					}
+				}
+			}
+			save_scope_as = be_destroy_art
+		}
+	}
+	destroy_artifact = scope:be_destroy_art
+}
+
+#用于勇武决斗的effect
+brave_duel_effect = {
+	scope:sc_victor = {
+		every_character_war = {
+			limit = {
+				this.primary_attacker = scope:sc_loser
+			}
+			end_war = defender
+		}
+		every_character_war = {
+			limit = {
+				this.primary_defender = scope:sc_loser
+			}
+			end_war = attacker
+		}
+	}
+}
+
+#用于摆脱使徒身份的effect
+out_of_ap_effect = {
+	scope:sc_victor = {
+		if = {
+			limit = {
+				has_trait = apostle_of_destiny
+			}
+			remove_trait = apostle_of_destiny
+		}
+		else_if = {
+			limit = {
+				has_trait = apostle_of_evil
+			}
+			remove_trait = apostle_of_evil
+		}
+		else_if = {
+			limit = {
+				has_trait = apostle_of_time
+			}
+			remove_trait = apostle_of_time
+		}
+		else_if = {
+			limit = {
+				has_trait = apostle_of_hope
+			}
+			remove_trait = apostle_of_hope
+		}
+		if = {
+			limit = {
+				has_trait = god_god
+			}
+			death = {
+				death_reason = death_vanished
+			}
+		}
+	}
+	scope:sc_loser = {
+		if = {
+			limit = {
+				NOT = {
+					has_trait = god_god
+				}
+			}
+			death = {
+				death_reason = death_god_out_ap
+			}
+		}
+		else = {
+			death = {
+				death_reason = death_vanished
+			}
+		}
+		
+	}
+}
+
+#移除使徒特质的effect
+remove_ap_effect = {
+	if = {
+		limit = {
+			has_trait = apostle_of_destiny
+		}
+		remove_trait = apostle_of_destiny
+	}
+	else_if = {
+		limit = {
+			has_trait = apostle_of_evil
+		}
+		remove_trait = apostle_of_evil
+	}
+	else_if = {
+		limit = {
+			has_trait = apostle_of_time
+		}
+		remove_trait = apostle_of_time
+	}
+	else_if = {
+		limit = {
+			has_trait = apostle_of_hope
+		}
+		remove_trait = apostle_of_hope
+	}
+}
+
+

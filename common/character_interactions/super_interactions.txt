@@ -1,0 +1,1435 @@
+﻿#世界裂隙开始
+
+start_rift_murder_interaction = {
+	icon = icon_hostile
+	common_interaction = yes
+	interface_priority = 90
+	category = interaction_category_hostile
+	ai_frequency = 20
+	ai_target_quick_trigger = {
+		is_alive = yes
+	}
+	ai_targets = {
+		ai_recipients = liege
+		ai_recipients = vassals
+	}
+
+	ai_targets = {
+		ai_recipients = neighboring_rulers
+		ai_recipients = peer_vassals
+		max = 10
+	}
+	
+	ai_targets = {
+		ai_recipients = courtiers
+		max = 5
+	}
+	
+	ai_targets = {
+		ai_recipients = realm_characters
+		max = 30
+	}
+	ai_potential = {
+		ai_greed >= low_negative_ai_value
+		intrigue >= low_skill_rating
+		NOT = {
+			any_scheme = {
+				OR = {
+					scheme_type = murder
+					scheme_type = abduct
+					scheme_type = claim_throne
+					scheme_type = fabricate_hook
+					scheme_type = steal_back_artifact
+					scheme_type = world_rift_assassination
+					scheme_type = make_high_hook
+					scheme_type = make_mid_hook
+					scheme_type = make_low_hook
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		base = 10
+
+		modifier = {
+			add = {
+				value = 20
+				if = {
+					limit = {
+						exists = scope:recipient.cp:councillor_spymaster
+						scope:recipient.cp:councillor_spymaster = { intrigue < 10 }
+					}
+					add = 50
+				}
+			}
+			
+			scope:recipient = {
+				is_vassal_of = scope:actor
+				vassal_contract_has_modifiable_obligations = yes
+			}
+		}
+		
+		modifier = {
+			add = -50
+			
+			opinion = {
+				target = scope:recipient
+				value >= high_positive_opinion
+			}
+		}
+		
+		modifier = {
+			add = -40
+			
+			scope:recipient = {
+				is_landed = yes
+				NOT = {
+					is_vassal_of = scope:actor
+				}
+			}
+		}
+		
+		modifier = {
+			add = 50
+			
+			scope:recipient = {
+				is_landed = no
+				OR = {
+					liege = scope:actor.liege
+					liege = {
+						OR = {
+							has_relation_rival = scope:actor
+							has_relation_nemesis = scope:actor
+						}
+					}
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0
+			
+			scope:recipient = {
+				has_council_position = councillor_spymaster
+			}
+		}
+		start_hostile_scheme_ai_base_modifiers = yes # At the end so Cowed can block it completely
+	}
+
+	ignores_pending_interaction_block = yes
+
+	scheme = world_rift_assassination
+
+	send_name = START_SCHEME
+
+	is_shown = {
+		NOT = { scope:recipient = scope:actor }
+
+		NAND = { # Game Rules!
+			has_game_rule = no_players_multiplayer_murder_schemes
+			scope:actor = {
+				is_ai = no
+			}
+			scope:recipient = {
+				is_ai = no
+			}
+		}
+
+		NAND = {
+			has_game_rule = no_player_families_multiplayer_murder_schemes
+			scope:actor = {
+				is_ai = no
+			}
+			scope:recipient = {
+				OR = {
+					is_ai = no
+					any_close_family_member = {
+						AND = {
+							is_ai = no
+							NOT = { this = scope:actor }
+						}
+					}
+				}
+			}
+		}
+
+		AND = {
+			scope:actor = {
+				has_perk = precise_positioning
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			can_start_scheme = {
+				type = world_rift_assassination
+				target = scope:recipient
+			}
+		}
+		scope:recipient = { NOT = { has_strong_hook = scope:actor } }
+	}
+
+	desc = {
+		triggered_desc = {
+			trigger = {
+				scope:actor = {
+					can_start_scheme = {
+						type = world_rift_assassination
+						target = scope:recipient
+					}
+				}
+			}
+			desc = scheme_rift_interaction_tt_murder_approved
+		}
+	}
+
+	on_accept = {
+		scope:actor = {
+			stress_impact = {
+				compassionate = major_stress_impact_gain
+				honest = medium_stress_impact_gain
+				just = medium_stress_impact_gain
+			}
+		}
+		hidden_effect = {
+			scope:actor = {
+				send_interface_toast = {
+					title = start_murder_interaction_notification
+
+					left_icon = scope:actor					
+					right_icon = scope:recipient
+
+					start_scheme = {
+						type = world_rift_assassination
+						target = scope:recipient
+					}
+
+					show_as_tooltip = {
+						stress_impact = {
+							compassionate = major_stress_impact_gain
+							honest = medium_stress_impact_gain
+							just = medium_stress_impact_gain
+						}
+					}
+				}
+			}
+		}
+	}
+	cooldown_against_recipient = {
+		years = 10
+	}
+	
+	auto_accept = yes
+
+	# AI for murders is handled in event murder_scheme_maintenance.1, fired from the five_year_playable_pulse
+}
+
+#获取头衔或者附庸
+get_title_or_vass = {
+	icon = icon_hostile
+	common_interaction = yes
+	interface_priority = 90
+	category = interaction_category_hostile
+	ai_frequency = 6
+	ai_targets = {
+		ai_recipients = neighboring_rulers
+	}
+	ai_target_quick_trigger = {
+		adult = yes
+		is_ai = yes
+	}
+	ai_will_do = {
+		always = yes
+	}
+	ai_accept = {
+		always = yes
+	}
+	ai_potential = {
+		always = yes
+	}
+	ai_min_reply_days = 5
+	ai_max_reply_days = 10
+	ignores_pending_interaction_block = yes
+
+	is_shown = {
+		NOT = { scope:recipient = scope:actor }
+		AND = {
+			scope:actor = {
+				has_perk = marionette
+			}	
+		}
+		OR = {
+			scope:recipient.primary_title = {
+				tier = tier_empire
+			}
+			scope:recipient.primary_title = {
+				tier = tier_kingdom
+			}
+			scope:recipient.primary_title = {
+				tier = tier_duchy
+			}
+			scope:recipient.primary_title = {
+				tier = tier_county
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			has_hook_of_type = {
+				target = scope:recipient
+				type = super_high_hook
+			}
+		}	
+	}
+
+	desc = get_title_or_vass_desc
+
+	on_accept = {
+		scope:actor = {
+			use_hook = scope:recipient
+			add_hook_no_toast = {
+				target = scope:recipient
+				type = super_mid_hook
+			}
+			if = {
+				limit = {
+					scope:recipient.primary_title = {
+						tier = tier_empire
+					}
+				}
+				trigger_event = thelast.0001
+			}
+			else = {
+				trigger_event = thelast.0002
+			}
+		}
+		get_all_maintitle_and_join = yes
+	}
+}
+
+#制造高级牵制
+get_high_level_hook = {
+	icon = icon_hostile
+	common_interaction = yes
+	interface_priority = 90
+	category = interaction_category_hostile
+	ignores_pending_interaction_block = yes
+	#等待填充的阴谋
+	scheme = make_high_hook
+	####################AI行为############################  
+	ai_potential = {
+		is_imprisoned = no
+		ai_greed >= low_negative_ai_value
+		intrigue >= low_skill_rating
+		has_outstanding_artifact_claims = yes
+		NOT = {
+			any_scheme = {
+				OR = {
+					scheme_type = murder
+					scheme_type = abduct
+					scheme_type = claim_throne
+					scheme_type = fabricate_hook
+					scheme_type = steal_back_artifact
+					scheme_type = world_rift_assassination
+					scheme_type = make_high_hook
+					scheme_type = make_mid_hook
+					scheme_type = make_low_hook
+				}
+			}
+		}
+	}
+	
+	ai_target_quick_trigger = {
+		adult = yes
+	}
+	ai_targets = {
+		ai_recipients = liege
+		ai_recipients = vassals
+	}
+
+	ai_targets = {
+		ai_recipients = neighboring_rulers
+		ai_recipients = peer_vassals
+		max = 10
+	}
+	
+	ai_targets = {
+		ai_recipients = courtiers
+		max = 5
+	}
+	
+	ai_targets = {
+		ai_recipients = realm_characters
+		max = 30
+	}
+
+	ai_frequency = 12
+
+	ai_will_do = {
+		base = 10
+
+		modifier = {
+			add = {
+				value = 20
+				if = {
+					limit = {
+						exists = scope:recipient.cp:councillor_spymaster
+						scope:recipient.cp:councillor_spymaster = { intrigue < 10 }
+					}
+					add = 50
+				}
+			}
+			
+			scope:recipient = {
+				is_vassal_of = scope:actor
+				vassal_contract_has_modifiable_obligations = yes
+			}
+		}
+		
+		modifier = {
+			add = -50
+			
+			opinion = {
+				target = scope:recipient
+				value >= high_positive_opinion
+			}
+		}
+		
+		modifier = {
+			add = -40
+			
+			scope:recipient = {
+				is_landed = yes
+				NOT = {
+					is_vassal_of = scope:actor
+				}
+			}
+		}
+		
+		modifier = {
+			add = 50
+			
+			scope:recipient = {
+				is_landed = no
+				OR = {
+					liege = scope:actor.liege
+					liege = {
+						OR = {
+							has_relation_rival = scope:actor
+							has_relation_nemesis = scope:actor
+						}
+					}
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0
+			
+			scope:recipient = {
+				has_council_position = councillor_spymaster
+			}
+		}
+		start_hostile_scheme_ai_base_modifiers = yes # At the end so Cowed can block it completely
+	}
+
+	auto_accept = yes
+
+
+	####################显示条件以及效果############################   
+	is_shown = {
+		NOT = { scope:recipient = scope:actor }
+		AND = {
+			scope:actor = {
+				has_perk = marionette
+			}	
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			is_imprisoned = no
+			is_adult = yes
+		}
+	}
+
+	desc = {
+	}
+
+	on_accept = {
+		scope:actor = {
+			hidden_effect = {
+				send_interface_toast = {
+					title = make_high_hook
+					left_icon = scope:actor
+					right_icon = scope:recipient
+
+					start_scheme = {
+						target = scope:recipient
+						type = make_high_hook
+					}
+				}
+			}
+		}
+	}
+	cooldown_against_recipient = {
+		years = 8
+	}
+}
+
+#制造中级牵制
+get_mid_level_hook = {
+	icon = icon_hostile
+	common_interaction = yes
+	interface_priority = 90
+	category = interaction_category_hostile
+	ignores_pending_interaction_block = yes
+	#等待填充的阴谋
+	scheme = make_mid_hook
+	####################AI行为############################  
+	ai_potential = {
+		is_imprisoned = no
+		ai_greed >= low_negative_ai_value
+		intrigue >= low_skill_rating
+		has_outstanding_artifact_claims = yes
+		NOT = {
+			any_scheme = {
+				OR = {
+					scheme_type = murder
+					scheme_type = abduct
+					scheme_type = claim_throne
+					scheme_type = fabricate_hook
+					scheme_type = steal_back_artifact
+					scheme_type = world_rift_assassination
+					scheme_type = make_high_hook
+					scheme_type = make_mid_hook
+					scheme_type = make_low_hook
+				}
+			}
+		}
+	}
+	
+	ai_target_quick_trigger = {
+		adult = yes
+	}
+	ai_targets = {
+		ai_recipients = liege
+		ai_recipients = vassals
+	}
+
+	ai_targets = {
+		ai_recipients = neighboring_rulers
+		ai_recipients = peer_vassals
+		max = 10
+	}
+	
+	ai_targets = {
+		ai_recipients = courtiers
+		max = 5
+	}
+	
+	ai_targets = {
+		ai_recipients = realm_characters
+		max = 30
+	}
+
+	ai_frequency = 12
+
+	ai_will_do = {
+		base = 10
+
+		modifier = {
+			add = {
+				value = 20
+				if = {
+					limit = {
+						exists = scope:recipient.cp:councillor_spymaster
+						scope:recipient.cp:councillor_spymaster = { intrigue < 10 }
+					}
+					add = 50
+				}
+			}
+			
+			scope:recipient = {
+				is_vassal_of = scope:actor
+				vassal_contract_has_modifiable_obligations = yes
+			}
+		}
+		
+		modifier = {
+			add = -50
+			
+			opinion = {
+				target = scope:recipient
+				value >= high_positive_opinion
+			}
+		}
+		
+		modifier = {
+			add = -40
+			
+			scope:recipient = {
+				is_landed = yes
+				NOT = {
+					is_vassal_of = scope:actor
+				}
+			}
+		}
+		
+		modifier = {
+			add = 50
+			
+			scope:recipient = {
+				is_landed = no
+				OR = {
+					liege = scope:actor.liege
+					liege = {
+						OR = {
+							has_relation_rival = scope:actor
+							has_relation_nemesis = scope:actor
+						}
+					}
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0
+			
+			scope:recipient = {
+				has_council_position = councillor_spymaster
+			}
+		}
+		start_hostile_scheme_ai_base_modifiers = yes # At the end so Cowed can block it completely
+	}
+
+	auto_accept = yes
+
+
+	####################显示条件以及效果############################   
+	is_shown = {
+		NOT = { scope:recipient = scope:actor }
+		AND = {
+			scope:actor = {
+				has_perk = wielding
+			}	
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			is_imprisoned = no
+			is_adult = yes
+		}
+	}
+
+	desc = {
+	}
+
+	on_accept = {
+		scope:actor = {
+			hidden_effect = {
+				send_interface_toast = {
+					title = make_mid_hook
+					left_icon = scope:actor
+					right_icon = scope:recipient
+
+					start_scheme = {
+						target = scope:recipient
+						type = make_mid_hook
+					}
+				}
+			}
+		}
+	}
+	cooldown_against_recipient = {
+		years = 5
+	}
+}
+
+
+
+#制造低级牵制
+get_low_level_hook = {
+	icon = icon_hostile
+	common_interaction = yes
+	interface_priority = 90
+	category = interaction_category_hostile
+	ignores_pending_interaction_block = yes
+	#等待填充的阴谋
+	scheme = make_low_hook
+	####################AI行为############################  
+	ai_potential = {
+		is_imprisoned = no
+		ai_greed >= low_negative_ai_value
+		intrigue >= low_skill_rating
+		has_outstanding_artifact_claims = yes
+		NOT = {
+			any_scheme = {
+				OR = {
+					scheme_type = murder
+					scheme_type = abduct
+					scheme_type = claim_throne
+					scheme_type = fabricate_hook
+					scheme_type = steal_back_artifact
+					scheme_type = world_rift_assassination
+					scheme_type = make_high_hook
+					scheme_type = make_mid_hook
+					scheme_type = make_low_hook
+				}
+			}
+		}
+	}
+	
+	ai_target_quick_trigger = {
+		adult = yes
+	}
+	ai_targets = {
+		ai_recipients = liege
+		ai_recipients = vassals
+	}
+
+	ai_targets = {
+		ai_recipients = neighboring_rulers
+		ai_recipients = peer_vassals
+		max = 10
+	}
+	
+	ai_targets = {
+		ai_recipients = courtiers
+		max = 5
+	}
+	
+	ai_targets = {
+		ai_recipients = realm_characters
+		max = 30
+	}
+
+	ai_frequency = 12
+
+	ai_will_do = {
+		base = 10
+
+		modifier = {
+			add = {
+				value = 20
+				if = {
+					limit = {
+						exists = scope:recipient.cp:councillor_spymaster
+						scope:recipient.cp:councillor_spymaster = { intrigue < 10 }
+					}
+					add = 50
+				}
+			}
+			
+			scope:recipient = {
+				is_vassal_of = scope:actor
+				vassal_contract_has_modifiable_obligations = yes
+			}
+		}
+		
+		modifier = {
+			add = -50
+			
+			opinion = {
+				target = scope:recipient
+				value >= high_positive_opinion
+			}
+		}
+		
+		modifier = {
+			add = -40
+			
+			scope:recipient = {
+				is_landed = yes
+				NOT = {
+					is_vassal_of = scope:actor
+				}
+			}
+		}
+		
+		modifier = {
+			add = 50
+			
+			scope:recipient = {
+				is_landed = no
+				OR = {
+					liege = scope:actor.liege
+					liege = {
+						OR = {
+							has_relation_rival = scope:actor
+							has_relation_nemesis = scope:actor
+						}
+					}
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0
+			
+			scope:recipient = {
+				has_council_position = councillor_spymaster
+			}
+		}
+		start_hostile_scheme_ai_base_modifiers = yes # At the end so Cowed can block it completely
+	}
+
+	auto_accept = yes
+
+
+	####################显示条件以及效果############################   
+	is_shown = {
+		NOT = { scope:recipient = scope:actor }
+		AND = {
+			scope:actor = {
+				has_perk = brain_scholar
+			}	
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			is_imprisoned = no
+			is_adult = yes
+		}
+	}
+
+	desc = {
+	}
+
+	on_accept = {
+		scope:actor = {
+			hidden_effect = {
+				send_interface_toast = {
+					title = make_low_hook
+					left_icon = scope:actor
+					right_icon = scope:recipient
+
+					start_scheme = {
+						target = scope:recipient
+						type = make_low_hook
+					}
+				}
+			}
+		}
+	}
+	cooldown_against_recipient = {
+		years = 5
+	}
+}
+
+
+#要求付款
+ask_to_pay_super = {
+	icon = icon_hostile
+	common_interaction = yes
+	interface_priority = 90
+	category = interaction_category_hostile
+	ai_frequency = 3
+
+	ai_target_quick_trigger = {
+		adult = yes
+	}
+	ai_targets = {
+		ai_recipients = liege
+		ai_recipients = vassals
+	}
+
+	ai_targets = {
+		ai_recipients = neighboring_rulers
+		ai_recipients = peer_vassals
+		max = 10
+	}
+	
+	ai_targets = {
+		ai_recipients = courtiers
+		max = 5
+	}
+	
+	ai_targets = {
+		ai_recipients = realm_characters
+		max = 30
+	}
+
+	ai_target_quick_trigger = {
+		always = yes
+	}
+	ai_will_do = {
+		base = -300
+		modifier = {
+			desc = used_hook_super_desc
+			add = 360
+			scope:used_hook_super_low = yes
+		}
+		modifier = {
+			desc = used_hook_super_desc
+			add = 360
+			scope:used_hook_super_mid = yes
+		}
+		modifier = {
+			desc = used_hook_super_desc
+			add = 360
+			scope:used_hook_super_high = yes
+		}
+	}
+	ai_accept = {
+		base = -300
+		modifier = {
+			desc = used_hook_super_desc
+			add = 360
+			scope:used_hook_super_low = yes
+		}
+		modifier = {
+			desc = used_hook_super_desc
+			add = 360
+			scope:used_hook_super_mid = yes
+		}
+		modifier = {
+			desc = used_hook_super_desc
+			add = 360
+			scope:used_hook_super_high = yes
+		}
+	}
+	ai_potential = {
+		always = yes
+	}
+	ai_min_reply_days = 5
+	ai_max_reply_days = 10
+	ignores_pending_interaction_block = yes
+
+	is_shown = {
+		NOT = { scope:recipient = scope:actor }
+		AND = {
+			scope:actor = {
+				has_perk = brain_scholar
+			}	
+		}
+	}
+
+	is_valid_showing_failures_only = {	
+	}
+
+	desc = ask_to_pay_super_desc
+
+
+	send_option = {
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				has_hook_of_type = {
+					target = scope:recipient
+					type = super_low_hook
+				}
+			}
+		}
+		flag = used_hook_super_low
+		localization = super_low_hook
+	}
+	send_option = {
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				has_hook_of_type = {
+					target = scope:recipient
+					type = super_mid_hook
+				}
+			}
+		}
+		flag = used_hook_super_mid
+		localization = get_mid_level_hook
+	}
+
+	send_option = {
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				has_hook_of_type = {
+					target = scope:recipient
+					type = super_high_hook
+				}
+			}
+		}
+		flag = used_hook_super_high
+		localization = super_high_hook
+	}
+
+
+
+	on_accept = {
+		scope:recipient = {
+			pay_reserved_income = {
+				target = scope:actor 
+				years = 1
+			}
+		}
+		if = {
+			limit = {
+				scope:used_hook_super_low = yes
+			}
+			scope:actor = {
+				use_hook = scope:recipient
+				if = {
+					limit = {
+						has_perk = play_heart_and_mind
+					}
+					three_times_low = yes
+				}
+			}
+		}
+		else = {
+			scope:actor = {
+				use_hook = scope:recipient
+			}
+		}
+	}
+
+	cooldown_against_recipient = {  #要求付款后5年内不能再次要求防止经济崩溃
+		years = 5
+	}
+
+}
+
+#消除牵制
+run_out_hook = {
+	icon = icon_hostile
+	common_interaction = yes
+	interface_priority = 90
+	category = interaction_category_hostile
+	ai_frequency = 6
+	ai_target_quick_trigger = {
+		OR = {		
+			has_hook_of_type = {
+				target = scope:actor
+				type = super_mid_hook
+			}
+			has_hook_of_type = {
+				target = scope:actor
+				type = super_low_hook
+			}
+			has_hook_of_type = {
+				target = scope:actor
+				type = super_high_hook
+			}
+		}
+	}
+	ai_targets = {
+		ai_recipients = liege
+		ai_recipients = vassals
+	}
+
+	ai_targets = {
+		ai_recipients = neighboring_rulers
+		ai_recipients = peer_vassals
+		max = 10
+	}
+	
+	ai_targets = {
+		ai_recipients = courtiers
+		max = 5
+	}
+	
+	ai_targets = {
+		ai_recipients = realm_characters
+		max = 30
+	}
+	ai_will_do = {
+		base = 50
+		modifier = {
+			add = 25
+			stress < 100
+		}
+	}
+	ai_accept = {
+		base = -50
+		modifier = {
+			add = 60
+			scope:actor = {
+				is_character_has_any_great_traits = yes
+			}	
+		}
+		modifier = {
+			add = 30
+			scope:recipient = {
+				opinion = {
+					target = scope:actor
+					value > 30
+				}
+			}
+		}
+		modifier = {
+			add = 30
+			scope:recipient = {
+				opinion = {
+					target = scope:actor
+					value > 80
+				}
+			}
+		}
+	}
+	ai_potential = {
+		always = yes
+	}
+	ai_min_reply_days = 5
+	ai_max_reply_days = 10
+	ignores_pending_interaction_block = yes
+
+	is_shown = {
+		NOT = { scope:recipient = scope:actor }
+		OR = {
+			scope:recipient = {			
+					has_hook_of_type = {
+						target = scope:actor
+						type = super_mid_hook
+					}
+				
+			}
+			scope:recipient = {			
+					has_hook_of_type = {
+						target = scope:actor
+						type = super_low_hook
+					}
+				
+			}
+			scope:recipient = {			
+					has_hook_of_type = {
+						target = scope:actor
+						type = super_high_hook
+					}
+				
+			}
+		}	
+	}
+
+	is_valid_showing_failures_only = {	
+	}
+
+	desc = {}
+
+	on_accept = {
+		scope:actor = {
+			trigger_event = thelast.0011
+			add_stress = 150
+			remove_short_term_gold = {
+				add = 100
+				if = {
+					limit = {
+						is_ai = no
+					}
+					add = 150
+				}
+			}
+		}
+		scope:recipient = {
+			trigger_event = thelast.0012
+			remove_hook = {
+				target = scope:actor
+			}
+			remove_list_variable = {
+				name = be_hooked_people
+				target = scope:actor
+			}
+
+		}
+	}
+}
+
+
+#发起勇武决斗
+duel_to_super = {
+	icon = war_won_icon
+	common_interaction = yes
+	interface_priority = 90
+	category = interaction_category_diplomacy
+	ai_frequency = 6
+	desc = duel_to_super_desc
+	ai_target_quick_trigger = {
+	}
+	ai_targets = {
+		ai_recipients = liege
+		ai_recipients = vassals
+	}
+
+	ai_targets = {
+		ai_recipients = neighboring_rulers
+		ai_recipients = peer_vassals
+		max = 10
+	}
+	
+	ai_targets = {
+		ai_recipients = courtiers
+		max = 5
+	}
+	
+	ai_targets = {
+		ai_recipients = realm_characters
+		max = 30
+	}
+	ai_will_do = {
+		base = 50
+		modifier = {
+		}
+	}
+	ai_accept = {    #对手应该在什么时候接受勇武决斗   以下考虑了宗教、性格、勇武值等因素
+		base = -50
+		modifier = {
+			scope:recipient = {
+				is_adult = no
+			}
+			add = -50
+		}
+		modifier = {
+			scope:recipient.faith = {
+				has_doctrine = brave_duel
+			}
+			add = 100
+		}
+		modifier = {
+			scope:recipient = {
+				prowess < scope:actor.prowess
+			}
+			add = -20
+		}
+		modifier = {
+			scope:recipient = {
+				prowess > scope:actor.prowess
+			}
+			add = 40
+		}
+		modifier = {
+			scope:recipient = {
+				prowess = scope:actor.prowess
+			}
+			add = 15
+		}
+		modifier = {
+			scope:recipient = {
+				has_trait = brave
+			}
+			add = 30
+		}
+		modifier = {
+			scope:recipient = {
+				has_trait = calm
+			}
+			add = -15
+		}
+		modifier = {
+			scope:recipient = {
+				has_trait = content
+			}
+			add = -15
+		}
+		modifier = {
+			scope:recipient = {
+				has_trait = wrathful
+			}
+			add = 40
+		}
+		modifier = {
+			scope:recipient = {
+				has_trait = shy
+			}
+			add = -10
+		}
+		modifier = {
+			scope:recipient = {
+				has_trait = deceitful
+			}
+			add = -15
+		}
+		modifier = {
+			scope:recipient = {
+				has_trait = trusting
+			}
+			add = 30
+		}
+		modifier = {
+			scope:recipient = {
+				has_trait = just
+			}
+			add = -10
+		}
+		modifier = {
+			scope:recipient = {
+				has_trait = craven
+			}
+			add = -30
+		}
+		modifier = {
+			scope:recipient = {
+				has_trait = physique_good_1
+			}
+			add = 5
+		}
+		modifier = {
+			scope:recipient = {
+				has_trait = physique_good_2
+			}
+			add = 10
+		}
+		modifier = {
+			scope:recipient = {
+				has_trait = physique_good_3
+			}
+			add = 15
+		}
+		modifier = {
+			scope:recipient = {
+				has_trait = strong
+			}
+			add = 5
+		}
+		modifier = {
+			scope:recipient = {
+				has_trait = shrewd
+			}
+			add = -10
+		}
+		modifier = {
+			scope:recipient = {
+				has_trait = aggressive_attacker
+			}
+			add = 25
+		}
+		modifier = {
+			scope:recipient = {
+				has_trait = reckless
+			}
+			add = 15
+		}
+		modifier = {
+			scope:recipient = {
+				has_trait = improvident
+			}
+			add = 10
+		}
+		modifier = {
+			scope:recipient = {
+				has_trait = reclusive
+			}
+			add = -15
+		}
+		modifier = {
+			scope:recipient = {
+				has_trait = arbitrary
+			}
+			add = 15
+		}
+		modifier = {
+			scope:recipient = {
+				has_trait = arrogant
+			}
+			add = 20
+		}
+	}
+	ai_potential = {
+		always = yes
+	}
+	ai_min_reply_days = 5
+	ai_max_reply_days = 10
+	ignores_pending_interaction_block = yes
+
+	is_shown = {
+		scope:actor.faith = {
+			has_doctrine = brave_duel
+		}
+		scope:actor = {
+			is_at_war_with = scope:recipient	
+		}
+		OR = {
+			scope:actor = {
+				any_character_war = {
+					this.primary_attacker == scope:recipient
+				}
+			}
+			scope:actor = {
+				any_character_war = {
+					this.primary_defender == scope:recipient
+				}
+			}
+		}
+	}
+	
+	is_valid_showing_failures_only = {	
+	}
+
+	cooldown_against_recipient = {  #不能反复发动勇武决斗
+	years = 5
+	}
+
+
+	cost = {
+		prestige = medium_prestige_value
+	}
+
+	on_send = {
+		scope:actor = {
+			add_character_flag = {
+				flag = flag_hostile_actions_disabled_delay
+				days = 10
+			}
+		}
+	}
+
+	on_accept = {
+		# Set up the bout immediately.
+		## First inform.
+		scope:actor = {
+			custom_tooltip = challenge_to_single_combat_interaction.enter_non_lethal_bout.tt
+			custom_tooltip = duel_to_super_desc_1
+			custom_tooltip = duel_to_super_desc_2
+		}
+		## Finally, begin.
+		configure_start_single_combat_effect = {
+			SC_INITIATOR = scope:actor
+			SC_ATTACKER = scope:actor
+			SC_DEFENDER = scope:recipient
+			FATALITY = no
+			FIXED = no
+			LOCALE = terrain_scope
+			OUTPUT_EVENT = super_faith_event.0009
+			INVALIDATION_EVENT = perk_interaction.0102
+		}
+	}
+
+
+
+	on_decline = {    #在收件人拒绝的情况下执行
+		# Scope:actor decline processing.
+		scope:actor = {
+			# Inform them of the decline & scope:recipient loses some prestige.
+			send_interface_toast = {
+				title = challenge_to_single_combat_interaction.challenge_rejected.t
+				left_icon = scope:recipient
+				right_icon = scope:actor
+				scope:recipient = { add_prestige = medium_prestige_loss }
+				show_as_tooltip = {
+					add_prestige = medium_prestige_value
+				}
+			}
+			hidden_effect = {
+				add_prestige_no_experience = medium_prestige_value
+			}
+			# Cooldown is removed.
+			hidden_effect = { remove_interaction_cooldown = challenge_to_single_combat_interaction }
+			# Clear up hostile actions flag.
+			if = {
+				limit = {
+					has_character_flag = flag_hostile_actions_disabled_delay
+				}
+				remove_character_flag = flag_hostile_actions_disabled_delay
+			}
+		}
+	}
+
+}
+

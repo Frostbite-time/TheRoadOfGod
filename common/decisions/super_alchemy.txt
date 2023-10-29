@@ -1,0 +1,162 @@
+﻿start_alchemy_super = {
+	title = start_alchemy_super   #决议名称的loc_key
+	desc = start_alchemy_super_desc  #决议的描述loc_key
+	selection_tooltip = start_alchemy_super_tip #决议的提示
+	confirm_text = start_alchemy_super_confirm #决议继续的文本
+	picture = "gfx/interface/illustrations/decisions/decision_misc.dds"   #图片
+	
+	sort_order = 1000 #决议的排列顺序 大则靠前
+	
+	major = no #是否为重要决议
+	
+	ai_check_interval = 30 #ai的检查周期，单位是 月
+	
+	cost = {          #进行决议的消耗
+		gold = 350
+	}
+
+	cooldown = { days = 1825 } #决议的冷却时间
+	
+	is_shown = {       #显示决议的条件
+		has_perk = Alchemy_perk
+	}
+	
+	is_valid_showing_failures_only = {   #角色必须未被囚禁且为成人
+		AND = {
+			is_available_adult = yes
+			is_imprisoned = no
+		}	
+	}
+	
+	ai_potential = {     #ai是否检测这个决议
+		always = yes
+	}
+	
+	ai_will_do = {    #ai进行决议的概率
+		base = 20
+		modifier = {
+			add = 30
+			short_term_gold > 600
+		}
+	}
+	effect = {
+		hidden_effect = {
+			trigger_event = {
+				id = super_achemy.0001
+			}
+		}
+	}
+}
+
+#炼制贤者之石决议
+creat_sage_stone_dec = {
+	title = creat_sage_stone_dec   #决议名称的loc_key
+	desc = creat_sage_stone_dec_desc  #决议的描述loc_key
+	selection_tooltip = creat_sage_stone_dec_tip #决议的提示
+	confirm_text = creat_sage_stone_dec_confirm #决议继续的文本
+	picture = "gfx/interface/illustrations/decisions/decision_misc.dds"   #图片
+	
+	sort_order = 1000 #决议的排列顺序 大则靠前
+	
+	major = no #是否为重要决议
+	
+	ai_check_interval = 30 #ai的检查周期，单位是 月
+	
+	cost = {          #进行决议的消耗
+	}
+
+	cooldown = { days = 1825 } #决议的冷却时间
+	
+	is_shown = {       #显示决议的条件
+		has_perk = sage_stone
+	}
+	
+	is_valid_showing_failures_only = {   #角色必须未被囚禁且为成人
+		AND = {
+			is_available_adult = yes
+			is_imprisoned = no
+			is_have_sage_stone = no
+		}	
+	}
+	
+	ai_potential = {     #ai是否检测这个决议
+		always = yes
+	}
+	
+	ai_will_do = {    #ai进行决议的概率
+		base = 15
+		modifier = {
+			add = 15
+			long_term_gold > 1000
+		}
+	}
+	effect = {
+		hidden_effect = {
+			trigger_event = {
+				id = super_achemy.0004
+				days = { 20 80 }
+			}
+		}
+		remove_long_term_gold = {
+			add = 800
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add = 2200
+			}
+		}
+	}
+}
+
+#神器锻造的决议
+start_artic = {
+	title = start_artic_dec   #决议名称的loc_key
+	desc = start_artic_dec_desc  #决议的描述loc_key
+	selection_tooltip = start_artic_dec_tip #决议的提示
+	confirm_text = start_artic_dec_confirm #决议继续的文本
+	picture = "gfx/interface/illustrations/decisions/decision_smith.dds"   #图片
+	
+	sort_order = 1000 #决议的排列顺序 大则靠前
+	
+	major = no #是否为重要决议
+	
+	ai_check_interval = 30 #ai的检查周期，单位是 月
+	
+	cost = {          #进行决议的消耗
+	}
+
+	cooldown = { days = 1825 } #决议的冷却时间
+	
+	is_shown = {       #显示决议的条件
+		has_perk = artifact_forger
+	}
+	
+	is_valid_showing_failures_only = {   #角色必须未被囚禁且为成人
+		AND = {
+			is_available_adult = yes
+			is_imprisoned = no
+		}	
+	}
+	
+	ai_potential = {     #ai是否检测这个决议
+		always = yes
+	}
+	
+	ai_will_do = {    #ai进行决议的概率
+		base = 15
+		modifier = {
+			add = 15
+			short_term_gold > 600
+		}
+	}
+	effect = {
+		hidden_effect = {
+			trigger_event = {
+				id = super_art_cr_sup.0001
+				days = { 1 2 }
+			}
+		}
+	}	
+}
+

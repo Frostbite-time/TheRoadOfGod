@@ -1,0 +1,234 @@
+﻿namespace = undead_army
+undead_army.0005 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = undead_army  #事件标题
+	desc = undead_army_desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+	option = {
+		name = undead_army.a
+		ai_chance = {
+			base = 50
+		}
+		add_piety = -300
+		hidden_effect = {
+			random_list = {
+				25 = {trigger_event = {id = undead_army.0001}}
+				20 = {trigger_event = {id = undead_army.0002}}
+				10 = {trigger_event = {id = undead_army.0003}}
+				5 = {trigger_event = {id = undead_army.0004}}
+			}
+		}	
+	}
+	option = {
+		ai_chance = {
+			base = 60
+		}
+		add_stress = 100
+		name = undead_army.b
+		hidden_effect = {
+			random_list = {
+				20 = {trigger_event = {id = undead_army.0001}}
+				30 = {trigger_event = {id = undead_army.0002}}
+				30 = {trigger_event = {id = undead_army.0003}}
+				10 = {trigger_event = {id = undead_army.0004}}
+			}
+		}	
+	}
+	option = {
+		ai_chance = {
+			base = 25
+			modifier = {
+				multiply = 10
+				is_at_war = yes
+			}			
+		}
+		add_piety = -500
+		add_prestige = -500
+		remove_long_term_gold = 800
+		name = undead_army.c
+		hidden_effect = {
+			random_list = {
+				20 = {trigger_event = {id = undead_army.0001}}
+				25 = {trigger_event = {id = undead_army.0002}}
+				35 = {trigger_event = {id = undead_army.0003}}
+				40 = {trigger_event = {id = undead_army.0004}}
+			}
+		}	
+	}
+	option = {
+		ai_chance = {
+			base = 50
+			modifier = {
+				multiply = 0.1
+				is_at_war = yes
+			}
+		}
+		name = undead_army.d
+		hidden_effect = {
+			random_list = {
+				90 = {trigger_event = {id = undead_army.0001}}
+				5 = {trigger_event = {id = undead_army.0002}}
+				5 = {trigger_event = {id = undead_army.0003}}
+				1 = {trigger_event = {id = undead_army.0004}}
+			}
+		}	
+	}	
+}
+
+undead_army.0001 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = undead_army_use_t  #事件标题
+	desc = undead_army_use_desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root
+	immediate = {
+		random_character_war = {
+			save_scope_as = undead_over_war
+		}
+	}
+	option = {
+		name = undead_army_use
+		custom_description = {
+			text = undead_tips
+		}
+	}
+	after = {
+		root = {
+			spawn_army = {
+				men_at_arms = {
+					type = undead_light
+					stacks = 5
+				}
+				men_at_arms = {
+					type = undead_heavy
+					stacks = 1
+				}
+				location = root.location
+				name = undead_army_name_use
+				war = scope:undead_over_war
+			}
+		}
+		
+	}
+}
+
+undead_army.0002 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = undead_army_use_t  #事件标题
+	desc = undead_army_use_desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root
+	immediate = {
+		random_character_war = {
+			save_scope_as = undead_over_war
+		}
+	}
+	option = {
+		name = undead_army_use
+		custom_description = {
+			text = undead_tips
+		}
+	}
+	after = {
+		root = {
+			spawn_army = {
+				men_at_arms = {
+					type = undead_light
+					stacks = 10
+				}
+				men_at_arms = {
+					type = undead_heavy
+					stacks = 5
+				}
+				men_at_arms = {
+					type = undead_heavy_cavalry
+					stacks = 2
+				}
+				location = root.location
+				name = undead_army_name_use
+				war = scope:undead_over_war
+			}
+		}
+	}
+}
+
+undead_army.0003 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = undead_army_use_t  #事件标题
+	desc = undead_army_use_desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root
+	immediate = {
+		random_character_war = {
+			save_scope_as = undead_over_war
+		}
+	}
+	option = {
+		name = undead_army_use
+		custom_description = {
+			text = undead_tips
+		}
+	}
+	after = {
+		root = {
+			spawn_army = {
+				men_at_arms = {
+					type = undead_light
+					stacks = 20
+				}
+				men_at_arms = {
+					type = undead_heavy
+					stacks = 10
+				}
+				men_at_arms = {
+					type = undead_heavy_cavalry
+					stacks = 5
+				}
+				location = root.location
+				name = undead_army_name_use
+				war = scope:undead_over_war
+			}
+		}
+	}
+}
+
+undead_army.0004 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = undead_army_use_t  #事件标题
+	desc = undead_army_use_desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root
+	immediate = {
+		random_character_war = {
+			save_scope_as = undead_over_war
+		}
+	}
+	option = {
+		name = undead_army_use
+		custom_description = {
+			text = undead_tips
+		}
+	}
+	after = {
+		root = {
+			spawn_army = {
+				men_at_arms = {
+					type = undead_light
+					stacks = 40
+				}
+				men_at_arms = {
+					type = undead_heavy
+					stacks = 20
+				}
+				men_at_arms = {
+					type = undead_heavy_cavalry
+					stacks = 10
+				}
+				location = root.location
+				name = undead_army_name_use
+				war = scope:undead_over_war
+			}
+		}
+	}
+}

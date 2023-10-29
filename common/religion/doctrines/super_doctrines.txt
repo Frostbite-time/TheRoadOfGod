@@ -1,0 +1,558 @@
+﻿#超能之路的教义
+doctrine_super = { # The key will be used for the doctrine icon, combined with the path in the define FAITH_DOCTRINE_ICON_PATH
+	group = "core_tenets"			# GUI grouping
+	
+	is_available_on_create = {
+		always = yes
+	} # When should this doctrine group be shown when choosing doctrines? If not shown, the group will go away entirely on create if present on the old faith
+	number_of_picks = 3			# How many doctrines within the group does the player get to choose? Defaults to 1. The UI will ensure no duplicates
+	
+	#命运不可忤逆
+	fate_cannot_be_disobeyed = {
+		icon = core_tenet_sky_burials
+		visible = yes
+		piety_cost = faith_tenet_cost_mid	
+		
+		is_shown = {
+			always = yes
+		} 			
+		can_pick = {
+			always = yes
+
+		} 
+		parameters = {
+			can_ues_eag_fate = yes
+		}			
+	# 当创建新信仰时，教义应参考其他被选中的教义（例如，对于相互排斥的教义），使用。
+		# flag:required_doctrine = { is_in_list = selected_doctrines }
+		# "selected_doctrines "列表是当前在用户界面中选择的教义的列表。(它可能与#信仰中的教义不同。
+		# 信仰中的教义不同，因为玩家在创建一个信仰时可以改变多个教义）。
+			
+		character_modifier = {
+			learning = 2
+			prowess = 2
+			intrigue = 2
+			martial = 2
+			stewardship = 2
+			diplomacy = 2
+		}		# 这个信仰的所有角色都得到这个修改器
+		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+
+		traits = {}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。
+	}
+
+
+	#海神信仰
+	faith_in_neptune = {
+		icon = core_tenet_eastern_syncretism
+		visible = yes
+		piety_cost = faith_tenet_cost_mid	
+		
+		is_shown = {
+			always = yes
+		} 			
+		can_pick = {
+			always = yes
+
+		} 
+		parameters = {
+		}			
+	# 当创建新信仰时，教义应参考其他被选中的教义（例如，对于相互排斥的教义），使用。
+		# flag:required_doctrine = { is_in_list = selected_doctrines }
+		# "selected_doctrines "列表是当前在用户界面中选择的教义的列表。(它可能与#信仰中的教义不同。
+		# 信仰中的教义不同，因为玩家在创建一个信仰时可以改变多个教义）。
+			
+		character_modifier = {
+			naval_movement_speed_mult = 1
+			embarkation_cost_mult = -0.5
+			no_water_crossing_penalty = yes
+		}		# 这个信仰的所有角色都得到这个修改器
+		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+
+		traits = {}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。
+	}
+
+	#顺从主义
+	conformism_super = {
+		icon = core_tenet_rite
+		visible = yes
+		piety_cost = faith_tenet_cost_mid	
+		
+		is_shown = {
+			always = yes
+		} 			
+		can_pick = {
+			always = yes
+
+		} 
+		parameters = {
+			
+		}			
+		# 当创建新信仰时，教义应参考其他被选中的教义（例如，对于相互排斥的教义），使用。
+		# flag:required_doctrine = { is_in_list = selected_doctrines }
+		# "selected_doctrines "列表是当前在用户界面中选择的教义的列表。(它可能与#信仰中的教义不同。
+		# 信仰中的教义不同，因为玩家在创建一个信仰时可以改变多个教义）。
+			
+		character_modifier = {
+			dread_per_tyranny_mult = -1
+			tyranny_gain_mult = -1
+			tyranny_loss_mult = 1
+		}		# 这个信仰的所有角色都得到这个修改器
+		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+
+		traits = {}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。
+	}
+	
+
+	#追随自然
+	following_nature = {
+		icon = core_tenet_sanctity_of_nature   #图标
+		visible = yes           
+		piety_cost = faith_tenet_cost_mid	 #消耗的虔诚度
+		
+		is_shown = {
+			always = yes #什么时候显示
+		} 			
+		can_pick = {
+			always = yes #何时能被选择
+
+		} 
+		parameters = {
+			pilgrimage_to_the_god_of_the_forest = yes	#额外描述
+		}			
+		# 当创建新信仰时，教义应参考其他被选中的教义（例如，对于相互排斥的教义），使用。
+		# flag:required_doctrine = { is_in_list = selected_doctrines }
+		# "selected_doctrines "列表是当前在用户界面中选择的教义的列表。(它可能与#信仰中的教义不同。
+		# 信仰中的教义不同，因为玩家在创建一个信仰时可以改变多个教义）。
+			
+		character_modifier = {
+			movement_speed = 0.2
+			forest_advantage = 30
+			siege_phase_time = -0.1
+		}		# 这个信仰的所有角色都得到这个修改器
+		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+
+		traits = {
+
+		}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。
+	}
+
+
+	#磷离火
+	phosphorus_fire = {
+		icon = core_tenet_ritual_celebrations   #图标
+		visible = yes           
+		piety_cost = faith_tenet_cost_mid	 #消耗的虔诚度
+		
+		is_shown = {
+			always = yes #什么时候显示
+		} 			
+		can_pick = {
+			always = yes #何时能被选择
+
+		} 
+		parameters = {
+			phosphorus_fire_maa = yes	#额外描述
+		}			
+		# 当创建新信仰时，教义应参考其他被选中的教义（例如，对于相互排斥的教义），使用。
+		# flag:required_doctrine = { is_in_list = selected_doctrines }
+		# "selected_doctrines "列表是当前在用户界面中选择的教义的列表。(它可能与#信仰中的教义不同。
+		# 信仰中的教义不同，因为玩家在创建一个信仰时可以改变多个教义）。
+			
+		character_modifier = {
+			
+		}		# 这个信仰的所有角色都得到这个修改器
+		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+
+		traits = {
+
+		}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。
+	}
+
+	
+	#同舟共济
+	in_the_same_boat = {
+		icon = core_tenet_communal_identity   #图标
+		visible = yes           
+		piety_cost = faith_tenet_cost_mid	 #消耗的虔诚度
+		
+		is_shown = {
+			always = yes #什么时候显示
+		} 			
+		can_pick = {
+			always = yes #何时能被选择
+		} 
+		parameters = {
+			in_the_same_boat_invite = yes	#额外描述
+			in_the_same_boat_maa = yes	#额外描述
+		}			
+		# 当创建新信仰时，教义应参考其他被选中的教义（例如，对于相互排斥的教义），使用。
+		# flag:required_doctrine = { is_in_list = selected_doctrines }
+		# "selected_doctrines "列表是当前在用户界面中选择的教义的列表。(它可能与#信仰中的教义不同。
+		# 信仰中的教义不同，因为玩家在创建一个信仰时可以改变多个教义）。
+			
+		character_modifier = {
+			opinion_of_same_faith = 30
+		}		# 这个信仰的所有角色都得到这个修改器
+		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+
+		traits = {
+
+		}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。
+	}
+		
+
+	#时空锚定主义
+	temporal_anchorism = {
+		icon = core_tenet_inner_journey   #图标
+		visible = yes           
+		piety_cost = faith_tenet_cost_mid	 #消耗的虔诚度
+		
+		is_shown = {
+			always = yes #什么时候显示
+		} 			
+		can_pick = {
+			NOT = {
+				flag:confusionism_in_space_time = { is_in_list = selected_doctrines }
+			}
+		} 
+		parameters = {
+			temporal_anchorism_no_miss = yes	#额外描述
+			temporal_anchorism_easy_open_rift = yes	#额外描述
+		}			
+		# 当创建新信仰时，教义应参考其他被选中的教义（例如，对于相互排斥的教义），使用。
+		# flag:required_doctrine = { is_in_list = selected_doctrines }
+		# "selected_doctrines "列表是当前在用户界面中选择的教义的列表。(它可能与#信仰中的教义不同。
+		# 信仰中的教义不同，因为玩家在创建一个信仰时可以改变多个教义）。
+			
+		character_modifier = {
+			
+		}		# 这个信仰的所有角色都得到这个修改器
+		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+
+		traits = {
+
+		}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。
+	}
+
+
+	#时空混乱主义
+	confusionism_in_space_time = {
+		icon = core_tenet_adorcism   #图标
+		visible = yes           
+		piety_cost = faith_tenet_cost_mid	 #消耗的虔诚度
+		
+		is_shown = {
+			always = yes #什么时候显示
+		} 			
+		can_pick = {
+			NOT = {
+				flag:temporal_anchorism = { is_in_list = selected_doctrines }  
+			}
+		} 
+		parameters = {
+			confusionism_in_space_time_easy_miss = yes	#额外描述
+			confusionism_in_space_time_hard_open_rift = yes	#额外描述
+		}			
+		# 当创建新信仰时，教义应参考其他被选中的教义（例如，对于相互排斥的教义）
+		# flag:required_doctrine = { is_in_list = selected_doctrines }
+		# "selected_doctrines "列表是当前在用户界面中选择的教义的列表。(它可能与#信仰中的教义不同。
+		# 信仰中的教义不同，因为玩家在创建一个信仰时可以改变多个教义）。
+			
+		character_modifier = {
+			
+		}		# 这个信仰的所有角色都得到这个修改器
+		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+
+		traits = {
+
+		}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。
+	}
+
+	#侵蚀
+	erosion_dor = {
+		icon = core_tenet_sun_worship   #图标
+		visible = yes           
+		piety_cost = faith_tenet_cost_mid	 #消耗的虔诚度
+		
+		is_shown = {
+			always = yes #什么时候显示
+		} 			
+		can_pick = {
+			always = yes
+		} 
+		parameters = {
+			erosion_dor_war = yes	#额外描述
+		}			
+		# 当创建新信仰时，教义应参考其他被选中的教义（例如，对于相互排斥的教义），使用。
+		# flag:required_doctrine = { is_in_list = selected_doctrines }
+		# "selected_doctrines "列表是当前在用户界面中选择的教义的列表。(它可能与#信仰中的教义不同。
+		# 信仰中的教义不同，因为玩家在创建一个信仰时可以改变多个教义）。
+			
+		character_modifier = {
+			
+		}		# 这个信仰的所有角色都得到这个修改器
+		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+
+		traits = {
+
+		}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。
+
+	}
+
+	#原木利箭
+	log_sharp_arrow = {
+		icon = core_tenet_divine_marriage   #图标
+		visible = yes           
+		piety_cost = faith_tenet_cost_mid	 #消耗的虔诚度
+		
+		is_shown = {
+			always = yes #什么时候显示
+		} 			
+		can_pick = {
+			always = yes
+		} 
+		parameters = {
+			log_sharp_arrow_maa = yes	#额外描述
+		}			
+		# 当创建新信仰时，教义应参考其他被选中的教义（例如，对于相互排斥的教义），使用。
+		# flag:required_doctrine = { is_in_list = selected_doctrines }
+		# "selected_doctrines "列表是当前在用户界面中选择的教义的列表。(它可能与#信仰中的教义不同。
+		# 信仰中的教义不同，因为玩家在创建一个信仰时可以改变多个教义）。
+			
+		character_modifier = {
+			archers_max_size_add = 3
+		}		# 这个信仰的所有角色都得到这个修改器
+		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+
+		traits = {
+
+		}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。
+
+	}
+
+	#失序之治
+	the_rule_of_disorder = {
+		icon = core_tenet_pursuit_of_power   #图标
+		visible = yes           
+		piety_cost = faith_tenet_cost_mid	 #消耗的虔诚度
+		
+		is_shown = {
+			always = yes #什么时候显示
+		} 			
+		can_pick = {
+			always = yes
+		} 
+		parameters = {
+			the_rule_of_disorder_rule = yes	#额外描述
+		}			
+		# 当创建新信仰时，教义应参考其他被选中的教义（例如，对于相互排斥的教义），使用。
+		# flag:required_doctrine = { is_in_list = selected_doctrines }
+		# "selected_doctrines "列表是当前在用户界面中选择的教义的列表。(它可能与#信仰中的教义不同。
+		# 信仰中的教义不同，因为玩家在创建一个信仰时可以改变多个教义）。
+			
+		character_modifier = {
+			vassal_limit = 100
+			vassal_tax_contribution_mult = -0.2
+			vassal_levy_contribution_mult = -0.2
+		}		# 这个信仰的所有角色都得到这个修改器
+		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+
+		traits = {
+
+		}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。
+
+	}
+
+	#暗影制裁
+	sanctions_from_shadows = {
+		icon = core_tenet_gruesome_festivals
+		visible = yes
+		piety_cost = faith_tenet_cost_mid
+
+		is_shown = {
+			always = yes
+		}
+		can_pick = {
+			always = yes
+		}
+		parameters = {
+			sanctions_from_shadows_rule = yes	#额外描述
+		}
+		# 当创建新信仰时，教义应参考其他被选中的教义（例如，对于相互排斥的教义），使用。
+		# flag:required_doctrine = { is_in_list = selected_doctrines }
+		# "selected_doctrines "列表是当前在用户界面中选择的教义的列表。(它可能与#信仰中的教义不同。
+		# 信仰中的教义不同，因为玩家在创建一个信仰时可以改变多个教义）。
+		character_modifier = {
+			owned_hostile_scheme_success_chance_add = 10
+			ai_vengefulness = 10
+		}		# 这个信仰的所有角色都得到这些修正
+		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+
+		traits = {
+			sins = {beloved_perk_trait}
+		}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。
+
+
+	}
+
+	#仰望星空
+	look_up_sky = {
+		icon = core_tenet_astrology
+		visible = yes
+		piety_cost = faith_tenet_cost_mid
+
+		is_shown = {
+			always = yes
+		}
+		can_pick = {
+			always = yes
+		}
+		parameters = {
+			look_up_sky_rule = yes	#额外描述
+		}
+		# 当创建新信仰时，教义应参考其他被选中的教义（例如，对于相互排斥的教义），使用。
+		# flag:required_doctrine = { is_in_list = selected_doctrines }
+		# "selected_doctrines "列表是当前在用户界面中选择的教义的列表。(它可能与#信仰中的教义不同。
+		# 信仰中的教义不同，因为玩家在创建一个信仰时可以改变多个教义）。
+		character_modifier = {
+			learning = 10
+			life_expectancy = 30
+		}		# 这个信仰的所有角色都得到这些修正
+		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+
+		traits = {
+		}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。
+
+
+	}
+
+	#战以解忧
+	fight_crazy = {
+		icon = core_tenet_struggle_submission
+		visible = yes
+		piety_cost = faith_tenet_cost_mid
+
+		is_shown = {
+			always = yes
+		}
+		can_pick = {
+			always = yes
+		}
+		parameters = {
+			fight_crazy_rule = yes	# 可以招募新兵种     #额外描述
+			fight_crazy_rule_1 = yes  # 拥有独特的宣战理由
+			fight_crazy_rule_2 = yes   # 进入战争后每月减少10压力
+		}
+		# 当创建新信仰时，教义应参考其他被选中的教义（例如，对于相互排斥的教义），使用。
+		# flag:required_doctrine = { is_in_list = selected_doctrines }
+		# "selected_doctrines "列表是当前在用户界面中选择的教义的列表。(它可能与#信仰中的教义不同。
+		# 信仰中的教义不同，因为玩家在创建一个信仰时可以改变多个教义）。
+		character_modifier = {
+			men_at_arms_limit = 3
+			mercenary_hire_cost_mult = -0.2
+			army_maintenance_mult = -0.25
+
+		}		# 这个信仰的所有角色都得到这些修正
+		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+
+		traits = {
+		}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。
+
+
+	}
+
+	#无序之希望，未知之因果
+	conflict_hope_unknow_causal = {
+		icon = core_tenet_false_conversion_sanction
+		visible = yes
+		piety_cost = faith_tenet_cost_mid
+
+		is_shown = {
+			always = yes
+		}
+		can_pick = {
+			always = yes
+		}
+		parameters = {
+			conflict_hope_unknow_causal_rule = yes	# 可以招募新兵种     #额外描述
+		}
+		# 当创建新信仰时，教义应参考其他被选中的教义（例如，对于相互排斥的教义），使用。
+		# flag:required_doctrine = { is_in_list = selected_doctrines }
+		# "selected_doctrines "列表是当前在用户界面中选择的教义的列表。(它可能与#信仰中的教义不同。
+		# 信仰中的教义不同，因为玩家在创建一个信仰时可以改变多个教义）。
+		character_modifier = {
+			diplomacy = 5
+			martial = 5
+			stewardship = 5
+			intrigue = 5
+			learning = 5
+			prowess = 5
+		}		# 这个信仰的所有角色都得到这些修正
+		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+
+		traits = {
+		}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。
+
+	}
+
+	#传说崇拜
+	cult_legends = {
+		icon = core_tenet_pentarchy
+		visible = yes
+		piety_cost = faith_tenet_cost_mid
+
+		is_shown = {
+			always = yes
+		}
+		can_pick = {
+			always = yes
+		}
+		parameters = {
+			cult_legends_rule = yes	# 可以招募新兵种     #额外描述
+		}
+		# 当创建新信仰时，教义应参考其他被选中的教义（例如，对于相互排斥的教义），使用。
+		# flag:required_doctrine = { is_in_list = selected_doctrines }
+		# "selected_doctrines "列表是当前在用户界面中选择的教义的列表。(它可能与#信仰中的教义不同。
+		# 信仰中的教义不同，因为玩家在创建一个信仰时可以改变多个教义）。
+		character_modifier = {
+			knight_effectiveness_mult = 1
+		}		# 这个信仰的所有角色都得到这些修正
+		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+
+		traits = {
+			virtues = {
+				the_legendary_trait
+			}
+		}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。
+	}
+
+	#勇武决斗
+	brave_duel = {
+		icon = core_tenet_armed_pilgrimages
+		visible = yes
+		piety_cost = faith_tenet_cost_mid
+
+		is_shown = {
+			always = yes
+		}
+		can_pick = {
+			always = yes
+		}
+		parameters = {
+			brave_duel_rule = yes	# 可以招募新兵种     #额外描述
+		}
+		# 当创建新信仰时，教义应参考其他被选中的教义（例如，对于相互排斥的教义），使用。
+		# flag:required_doctrine = { is_in_list = selected_doctrines }
+		# "selected_doctrines "列表是当前在用户界面中选择的教义的列表。(它可能与#信仰中的教义不同。
+		# 信仰中的教义不同，因为玩家在创建一个信仰时可以改变多个教义）。
+		character_modifier = {
+			knight_effectiveness_mult = 0.2
+		}		# 这个信仰的所有角色都得到这些修正
+		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+
+		traits = {
+		}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。
+	}
+
+}

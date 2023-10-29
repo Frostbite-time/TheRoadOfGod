@@ -1,0 +1,4 @@
+﻿on_declaration_provoke = {
+	global = ON_DECLARATION_PROVOKE
+}
+

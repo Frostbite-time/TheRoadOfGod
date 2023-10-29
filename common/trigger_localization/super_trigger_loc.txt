@@ -1,0 +1,8 @@
+﻿cant_murder_tips = {
+    global_not = NOT_CANT_MURDER_TIPS
+    global = CANT_MURDER_TIPS
+}
+
+cant_murder_tips_1 = {
+    global = CANT_MURDER_TIPS_1
+}

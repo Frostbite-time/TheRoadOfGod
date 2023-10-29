@@ -1,0 +1,3 @@
+﻿sage_stone = {
+	icon = "sage_stone_name.dds"
+}

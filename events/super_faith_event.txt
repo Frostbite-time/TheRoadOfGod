@@ -1,0 +1,285 @@
+﻿namespace = super_faith_event
+
+#朝拜林中之神事件链开始
+#起始事件
+super_faith_event.0001 = {
+	type = character_event
+	title = super_faith_event.0001.t
+	desc = super_faith_event.0001.desc
+	theme = realm
+	left_portrait = root
+	override_background = {event_background = wilderness_forest}
+	
+	option = {
+		hidden_effect = {
+			random_list = {
+				90 = {
+					trigger_event = {      #理论上如果列表中不存在任何变量会百分百调用这个
+						id = super_faith_event.0002
+					}
+				}
+				0 = {
+					trigger_event = {     #如果存在变量会有百分之10的几率调用这个
+						id = super_faith_event.0003
+					}
+					
+					modifier = {
+						add = 10
+						trigger = {
+							any_in_list = {
+								variable = be_hooked_people
+								count > 0
+							}
+						}
+					}
+				}	
+			}	
+		}
+		name = super_faith_event.0001.a
+	}
+
+}
+
+#减少50压力
+super_faith_event.0002 = {
+	type = character_event
+	title = super_faith_event.0001.t
+	desc = super_faith_event.0002.desc
+	theme = realm
+	left_portrait = root
+	override_background = {event_background = wilderness_forest}
+	
+	option = {
+		add_stress = -50
+		name = super_faith_event.0002.a
+	}
+
+}
+
+#解除一个思维牵制
+super_faith_event.0003 = {
+	type = character_event
+	title = super_faith_event.0001.t
+	desc = super_faith_event.0003.desc
+	theme = realm
+	left_portrait = root
+	override_background = {event_background = wilderness_forest}
+	
+	option = {
+		root = {           #这里的root是之前的被执行者
+			random_in_list = {             #随机提取一个变量保存为作用域  
+				variable = be_hooked_people
+				save_scope_as = should_be_cancel_hook
+			}
+		}
+		scope:should_be_cancel_hook = {   #作用域角色移除对于root的前置并触发事件12
+			remove_hook = {
+				target = root
+			}
+			trigger_event = thelast.0012
+		}
+		root = {                      #root角色将其从列表中移除
+			remove_list_variable = {
+				name = be_hooked_people
+				target = scope:should_be_cancel_hook
+			}
+		}
+		name = super_faith_event.0003.a
+	}
+
+}
+
+#remove_hook = {
+#	target = root
+#}
+#trigger_event = thelast.0012
+
+#给予角色来自星空的庇护
+super_faith_event.0004 = {
+	type = character_event
+	title = super_faith_event.0004.t
+	desc = super_faith_event.0004.desc
+	theme = realm
+	left_portrait = root
+	override_background = {event_background = wilderness_forest}
+	
+	option = {
+		root = {          
+			add_character_modifier = {
+				modifier = assistance_from_stars
+				years = 1
+			}
+		}
+		name = super_faith_event.0004.a
+	}
+}
+
+#战以解忧的每月压力减少10实现
+super_faith_event.0005 = {
+	type = character_event
+	title = super_faith_event.0005.t
+	desc = super_faith_event.0005.desc
+	theme = realm
+	override_background = {event_background = wilderness_forest}
+	hidden = yes
+	trigger = {
+		root.faith = {
+			has_doctrine = fight_crazy
+		}
+	}
+	immediate = {
+		if = {
+			limit = {
+				AND = {
+					root = {
+						has_character_flag = super_in_wars
+					}
+					root = {
+						is_at_war = no
+					}
+				}	
+			}
+			root = {
+				remove_character_flag = super_in_wars
+			}
+		}
+		else_if = {
+			limit = { 
+				root = {
+					is_at_war = yes
+				}
+			}
+			root = {
+				add_stress = -10
+				trigger_event = {
+					id = super_faith_event.0005
+					months = 1
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = {
+						root = {
+							has_character_flag = super_in_wars
+						}
+					}	
+				}
+				root = {
+					add_character_flag = super_in_wars
+				}
+			}
+	
+		}	
+	}
+}
+
+#无序的buff
+super_faith_event.0006 = {
+	type = character_event
+	title = super_faith_event.0006.t
+	desc = super_faith_event.0006.desc
+	theme = intrigue
+	left_portrait = {
+		character = root
+		animation = fear
+	}
+	option = {
+		name = super_faith_event.0006.a
+		root = {
+			death = {
+				death_reason = death_from_confilct
+			}
+		}
+		trigger = {
+			root = {
+				NOT = {
+					has_trait = god_god
+				}
+			}
+		}
+	}
+	option = {
+		trigger = {
+			root = {
+				has_trait = god_god
+			}
+		}
+		name = super_faith_event.0006.b
+	}
+}
+
+#传说特质的事件  骑士获得特质
+super_faith_event.0007 = {
+	type = character_event
+	title = super_faith_event.0007.t
+	desc = super_faith_event.0007.desc
+	theme = war
+	left_portrait = {
+		character = root
+	}
+	option = {
+		name = super_faith_event.0007.a
+		root = {
+			add_trait = the_legendary_trait
+		}
+	}
+}
+#传说特质的事件  发送给领主
+super_faith_event.0008 = {
+	type = character_event
+	title = super_faith_event.0008.t
+	desc = super_faith_event.0008.desc
+	theme = realm
+	left_portrait = {
+		character = scope:legendary_knight
+	}
+	option = {
+		name = super_faith_event.0008.a
+	}
+}
+
+#勇武决斗的事件  用于发送决斗
+super_faith_event.0009 = {
+	hidden = yes
+
+	immediate = {
+		# Fire the follow-up stuff; delay this by a day so the toasts appear _after_ the final event.
+		trigger_event = {
+			id = super_faith_event.0010
+			days = 1
+		}
+	}
+}
+#勇武决斗的事件   实现决斗以及后续效果
+super_faith_event.0010 = {
+	hidden = yes
+
+	immediate = {
+		# Everyone puts their shirts back on.
+		single_combat_clean_shirtlessness_effect = {    #应该是进行决斗
+			ATTACKER = scope:actor  
+			DEFENDER = scope:recipient
+		}
+		# Send out a toast to the victor.
+		scope:sc_victor = {
+			send_interface_toast = {
+				title = perk_interaction.0101.victor_toast.t
+				left_icon = scope:sc_victor
+				right_icon = scope:sc_loser
+				show_as_tooltip = { brave_duel_effect = yes }
+			}
+		}
+		# And to the loser.
+		scope:sc_loser = {
+			send_interface_toast = {
+				title = perk_interaction.0101.loser_toast.t
+				left_icon = scope:sc_loser
+				right_icon = scope:sc_victor
+				show_as_tooltip = { brave_duel_effect = yes }
+			}
+		}
+		# Then execute the actual effects.
+		brave_duel_effect = yes
+	}
+}

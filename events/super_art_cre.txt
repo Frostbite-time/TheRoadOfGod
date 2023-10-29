@@ -1,0 +1,585 @@
+﻿namespace = super_art_cr_sup
+#神器锻造，开始
+super_art_cr_sup.0001 = {
+	type = character_event
+	title = super_art_cr_sup.0001.t
+	desc = super_art_cr_sup.0001.desc
+	theme = realm
+	override_background = { event_background = armory }
+	left_portrait = root
+	option = {
+		ai_chance = 50
+		name = super_art_cr_sup.0001.a     #王冠
+		root = {
+			set_variable = {
+				name = ar_type
+				value = 1
+			}
+			remove_short_term_gold = {
+				add = 150
+				if = {
+					limit = { is_ai = no }
+					add = 100
+				}
+			}
+		}
+		trigger_event = {
+			id = super_art_cr_sup.0002
+			days = { 20 80 }
+		}
+	}
+	option = {
+		ai_chance = 25
+		name = super_art_cr_sup.0001.b     #武器
+		root = {
+			set_variable = {
+				name = ar_type
+				value = 2
+			}
+			remove_short_term_gold = {
+				add = 250
+				if = {
+					limit = { is_ai = no }
+					add = 100
+				}
+			}
+		}
+		trigger_event = {
+			id = super_art_cr_sup.0002
+			days = { 20 80 }
+		}
+	}
+	option = {
+		ai_chance = 25
+		name = super_art_cr_sup.0001.c     #护甲
+		root = {
+			set_variable = {
+				name = ar_type
+				value = 3
+			}
+			remove_short_term_gold = {
+				add = 300
+				if = {
+					limit = { is_ai = no }
+					add = 100
+				}
+			}
+		}
+		trigger_event = {
+			id = super_art_cr_sup.0002
+			days = { 20 80 }
+		}
+	}
+}
+#第一次提升事件
+super_art_cr_sup.0002 = {
+	type = character_event
+	title = super_art_cr_sup.0002.t
+	desc = super_art_cr_sup.0002.desc
+	theme = realm
+	override_background = { event_background = armory }
+	left_portrait = root
+	option = {
+		ai_chance = 10
+		name = super_art_cr_sup.0002.a
+		root = {
+			set_variable = {
+				name = ar_one
+				value = 1
+			}
+			remove_short_term_gold = {
+				add = 200
+				if = {
+					limit = { is_ai = no }
+					add = 100
+				}
+			}
+		}
+		random_list = {
+			40 = {
+				trigger_event = {
+					id = super_art_cr_sup.0003
+					days = { 20 80 }
+				}
+				modifier = {
+					trigger_if = {
+						limit = { has_perk = know_the_base }
+					}
+					add = 560
+				}
+			}	
+			60 = {
+				trigger_event = {
+					id = super_art_cr_sup.0005
+					days = { 20 80 }
+				}
+			}	
+		}	
+	}
+	option = {
+		ai_chance = 20
+		name = super_art_cr_sup.0002.b
+		root = {
+			set_variable = {
+				name = ar_one
+				value = 1
+			}
+			add_piety = {
+				add = -400
+				if = {
+					limit = { is_ai = no }
+					add = -100
+				}
+			}
+		}
+		random_list = {
+			40 = {
+				trigger_event = {
+					id = super_art_cr_sup.0003
+					days = { 20 80 }
+				}
+				modifier = {
+					trigger_if = {
+						limit = { has_perk = know_the_base }
+					}
+					add = 560
+				}
+			}	
+			60 = {
+				trigger_event = {
+					id = super_art_cr_sup.0005
+					days = { 20 80 }
+				}
+			}	
+		}
+	}
+	option = {
+		ai_chance = 30
+		name = super_art_cr_sup.0002.c
+		root = {
+			set_variable = {
+				name = ar_one
+				value = 1
+			}
+			add_prestige = {
+				add = -400
+				if = {
+					limit = { is_ai = no }
+					add = -100
+				}
+			}
+		}
+		random_list = {
+			40 = {
+				trigger_event = {
+					id = super_art_cr_sup.0003
+					days = { 20 80 }
+				}
+				modifier = {
+					trigger_if = {
+						limit = { has_perk = know_the_base }
+					}
+					add = 560
+				}
+			}	
+			60 = {
+				trigger_event = {
+					id = super_art_cr_sup.0005
+					days = { 20 80 }
+				}
+			}	
+		}
+	}
+	option = {
+		ai_chance = 40
+		name = super_art_cr_sup.0002.d
+		root = {
+			set_variable = {
+				name = ar_one
+				value = 0
+			}
+		}
+		trigger_event = {
+			id = super_art_cr_sup.0005
+			days = { 20 80 }
+		}
+	}
+}
+
+#第二次提升事件
+super_art_cr_sup.0003 = {
+	type = character_event
+	title = super_art_cr_sup.0002.t
+	desc = super_art_cr_sup.0003.desc
+	theme = realm
+	override_background = { event_background = armory }
+	left_portrait = root
+	option = {
+		ai_chance = 20
+		name = super_art_cr_sup.0003.a
+		root = {
+			set_variable = {
+				name = ar_two
+				value = 1
+			}
+			add_stress = {
+				add = 70
+				if = {
+					limit = { is_ai = no }
+					add = 30
+				}
+			}
+		}
+		random_list = {
+			0 = {
+				trigger_event = {
+					id = super_art_cr_sup.0004
+					days = { 20 80 }
+				}
+				modifier = {
+					trigger_if = {
+						limit = { is_have_sage_stone = yes }
+					}
+					add = 50
+				}
+			}	
+			50 = {
+				trigger_event = {
+					id = super_art_cr_sup.0005
+					days = { 20 80 }
+				}
+			}	
+		}
+	}
+	option = {
+		ai_chance = 10
+		name = super_art_cr_sup.0003.b
+		root = {
+			set_variable = {
+				name = ar_two
+				value = 1
+			}
+			remove_short_term_gold = {
+				add = 200
+				if = {
+					limit = { is_ai = no }
+					add = 100
+				}
+			}
+		}
+		random_list = {
+			0 = {
+				trigger_event = {
+					id = super_art_cr_sup.0004
+					days = { 20 80 }
+				}
+				modifier = {
+					trigger_if = {
+						limit = { is_have_sage_stone = yes }
+					}
+					add = 50
+				}
+			}	
+			50 = {
+				trigger_event = {
+					id = super_art_cr_sup.0005
+					days = { 20 80 }
+				}
+			}	
+		}
+	}
+	option = {
+		ai_chance = 30
+		name = super_art_cr_sup.0003.c
+		root = {
+			set_variable = {
+				name = ar_two
+				value = 1
+			}
+			add_prestige = {
+				add = -400
+				if = {
+					limit = { is_ai = no }
+					add = -100
+				}
+			}
+		}
+		random_list = {
+			0 = {
+				trigger_event = {
+					id = super_art_cr_sup.0004
+					days = { 20 80 }
+				}
+				modifier = {
+					trigger_if = {
+						limit = { is_have_sage_stone = yes }
+					}
+					add = 50
+				}
+			}	
+			50 = {
+				trigger_event = {
+					id = super_art_cr_sup.0005
+					days = { 20 80 }
+				}
+			}	
+		}
+	}
+	option = {
+		ai_chance = 40
+		name = super_art_cr_sup.0003.d
+		root = {
+			set_variable = {
+				name = ar_two
+				value = 0
+			}
+		}
+		trigger_event = {
+			id = super_art_cr_sup.0005
+			days = { 20 80 }
+		}
+	}
+}
+
+#贤者之石提升事件
+super_art_cr_sup.0004 = {
+	type = character_event
+	title = super_art_cr_sup.0002.t
+	desc = super_art_cr_sup.0004.desc
+	theme = realm
+	override_background = { event_background = armory }
+	left_portrait = root
+	option = {
+		name = super_art_cr_sup.0004.a
+		root = {
+			set_variable = {
+				name = ar_three
+				value = 1
+			}
+			remove_sage_stone = yes
+		}
+		trigger_event = {
+			id = super_art_cr_sup.0005
+			days = { 20 80 }
+		}
+	}
+	option = {
+		name = super_art_cr_sup.0004.b
+		root = {
+			set_variable = {
+				name = ar_three
+				value = 0
+			}
+		}
+		trigger_event = {
+			id = super_art_cr_sup.0005
+			days = { 20 80 }
+		}
+	}
+}
+
+#生成实际的宝物
+super_art_cr_sup.0005 = {
+	type = character_event
+	title = super_art_cr_sup.0005.t
+	desc = super_art_cr_sup.0005.desc
+	theme = realm
+	override_background = { event_background = armory }
+	right_portrait = root
+	artifact = {
+		target = scope:newly_created_artifact
+		position = lower_left_portrait
+	}
+	immediate = {
+		create_artifact = {
+			name = shen_qi
+			description = shen_qi_desc
+			type = axe
+			visuals = axe
+			rarity = masterwork
+			modifier = artifact_prowess_1_modifier
+			wealth = 20
+			quality = 20
+			save_scope_as = newly_created_artifact
+		}
+		scope:newly_created_artifact = {
+			give_random_mid_modif = yes
+		}
+		scope:newly_created_artifact = {   #为工艺品设置名称
+			if = {
+				limit = {
+					root.var:ar_type = 1
+				}
+				if = {
+					limit = {
+						root.var:ar_three = 1
+					}
+					set_artifact_name = shen_guan_4
+				}
+				else_if = {
+					limit = {
+						root.var:ar_two = 1
+					}
+					set_artifact_name = shen_guan_3
+				}
+				else_if = {
+					limit = {
+						root.var:ar_one = 1
+					}
+					set_artifact_name = shen_guan_2
+				}
+				else_if = {
+					set_artifact_name = shen_guan_1
+				}
+			}
+			else_if = {
+				limit = {
+					root.var:ar_type = 2
+				}
+				if = {
+					limit = {
+						root.var:ar_three = 1
+					}
+					set_artifact_name = shen_wu_4
+				}
+				else_if = {
+					limit = {
+						root.var:ar_two = 1
+					}
+					set_artifact_name = shen_wu_3
+				}
+				else_if = {
+					limit = {
+						root.var:ar_one = 1
+					}
+					set_artifact_name = shen_wu_2
+				}
+				else_if = {
+					set_artifact_name = shen_wu_1
+				}
+			}
+			else_if = {
+				limit = {
+					root.var:ar_type = 3
+				}
+				if = {
+					limit = {
+						root.var:ar_three = 1
+					}
+					set_artifact_name = shen_jia_4
+				}
+				else_if = {
+					limit = {
+						root.var:ar_two = 1
+					}
+					set_artifact_name = shen_jia_3
+				}
+				else_if = {
+					limit = {
+						root.var:ar_one = 1
+					}
+					set_artifact_name = shen_jia_2
+				}
+				else_if = {
+					set_artifact_name = shen_jia_1
+				}
+			}
+		}
+		scope:newly_created_artifact = {    #设置稀有度等级
+			if = {
+				limit = {
+					root.var:ar_three = 1
+				}
+				reforge_artifact = {
+					rarity = illustrious
+					quality = 150
+					wealth = 150
+				}
+			}
+			else_if = {
+				limit = {
+					root.var:ar_two = 1
+				}
+				reforge_artifact = {
+					rarity = illustrious
+					quality = 110
+					wealth = 110
+				}
+			}
+			else_if = {
+				limit = {
+					root.var:ar_one = 1
+				}
+				reforge_artifact = {
+					rarity = famed
+					wealth = 68
+					quality = 68
+
+				}
+			}
+			else_if = {
+				reforge_artifact = {
+					rarity = masterwork
+				}
+			}
+		}
+		scope:newly_created_artifact = {   #重设宝物的类型
+			if = {
+				limit = {
+					root.var:ar_type = 1
+				}
+				reforge_artifact = {
+					type = helmet
+					visuals = crown
+				}
+			}
+			else_if = {
+				limit = {
+					root.var:ar_type = 2
+				}
+				reforge_artifact = {
+					type = sword
+					visuals = sword
+				}
+			}
+			else_if = {
+				limit = {
+					root.var:ar_type = 3
+				}
+				reforge_artifact = {
+					type = armor_plate
+					visuals = armor
+				}
+			}
+		}
+		scope:newly_created_artifact = {   #给予宝物修正
+			if = {
+				limit = {
+					root.var:ar_three = 1
+				}
+				give_random_mid_modif = yes
+				give_random_mid_modif = yes
+				give_random_advance_modif = yes
+				give_random_advance_modif = yes
+			}
+			if = {
+				limit = {
+					root.var:ar_two = 1
+				}
+				give_random_advance_modif = yes
+				give_random_advance_modif = yes
+			}
+			if = {
+				limit = {
+					root.var:ar_one = 1
+				}
+				give_random_advance_modif = yes
+				give_random_advance_modif = yes
+				give_random_advance_modif = yes
+			}
+		}
+	}
+	option = {
+		name = super_art_cr_sup.0005.a
+	}
+}

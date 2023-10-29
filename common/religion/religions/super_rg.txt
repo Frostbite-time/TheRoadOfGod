@@ -1,0 +1,235 @@
+#异域宗教 成吉思汗和其他侵略者专属
+exotic_rg = {
+	family = super_religion_familis  #属于什么宗教组
+	graphical_faith = "islamic_gfx"  #使用什么宗教图形
+	pagan_roots = yes				 #不太明白这个是什么
+	piety_icon_group = christian	 #宗教的虔诚值使用什么图标  信仰处可以再定义
+	#接下来是教义
+
+	#主要教义
+	doctrine = doctrine_temporal_head  #信仰领袖 世俗
+	doctrine = doctrine_gender_equal    #男女平等
+	doctrine = doctrine_pluralism_fundamentalist  #基要主义
+	doctrine = doctrine_theocracy_lay_clergy   #平信徒神职人员
+	doctrine = doctrine_pilgrimage_encouraged  #朝圣态度 鼓励
+
+	#婚姻教义
+	doctrine = doctrine_polygamy					#多配偶制
+	doctrine = doctrine_divorce_allowed				#允许离婚
+	doctrine = doctrine_bastardry_none				#没有人是私生子
+	doctrine = doctrine_consanguinity_unrestricted	#无限制婚姻
+
+	#罪行教义
+	doctrine = doctrine_homosexuality_accepted		#同性关系 接受
+	doctrine = doctrine_deviancy_accepted			#性变态 接纳
+	doctrine = doctrine_witchcraft_virtuous			#巫术 美德
+	doctrine = doctrine_adultery_men_accepted		#男性通奸 接纳
+	doctrine = doctrine_adultery_women_accepted		#女性通奸 接纳
+	doctrine = doctrine_kinslaying_any_dynasty_member_crime	#杀死宗族成员是犯罪
+
+	#神职人员教义
+	doctrine = doctrine_clerical_function_recruitment	#神职人员的作用 征兵
+	doctrine = doctrine_clerical_gender_either			#神职人员的性别 不限
+	doctrine = doctrine_clerical_marriage_allowed		#神职人员的婚姻 允许
+	doctrine = doctrine_clerical_succession_temporal_appointment	#神职人员的任命 世俗 可被剥夺
+
+	#该宗教下信仰可用的图标有哪些
+	custom_faith_icons = {
+		custom_faith_1 custom_faith_2 custom_faith_3 custom_faith_4 custom_faith_5 custom_faith_6 custom_faith_7 custom_faith_8 custom_faith_9 custom_faith_10 dualism_custom_1 zoroastrian_custom_1 zoroastrian_custom_2 buddhism_custom_1 buddhism_custom_2 buddhism_custom_3 buddhism_custom_4 taoism_custom_1 yazidi_custom_1 sunni_custom_2 sunni_custom_3 sunni_custom_4 muhakkima_1 muhakkima_2 muhakkima_4 muhakkima_5 muhakkima_6 judaism_custom_1 custom_faith_fp1_fenrir custom_faith_fp1_irminsul custom_faith_fp1_jormungandr custom_faith_fp1_odins_ravens custom_faith_fp1_runestone_moon custom_faith_fp1_thors_hammer custom_faith_fp1_valknut custom_faith_fp1_yggdrasil custom_faith_boromian_circles custom_faith_lotus custom_faith_aum_tibetan custom_faith_pentagram custom_faith_pentagram_inverted custom_faith_burning_bush custom_faith_allah custom_faith_gankyil custom_faith_eye_of_providence custom_faith_dove custom_faith_ichthys custom_faith_lamb custom_faith_black_sheep custom_faith_ankh custom_faith_chi_rho custom_faith_hamsa custom_faith_cool_s
+	}
+
+	traits = {}					#定义罪行和美德  信仰处可以再定义
+	reserved_male_names = {}	#为宗教保留的名称  男
+	reserved_female_names = {}	#为宗教保留的名称  女
+	holy_order_names = {}		#神圣的名字
+	holy_order_maa = {}			#神圣的军队
+
+	#以下是一些本地化
+	localization = {
+		#HighGod
+		HighGodName = exotic_rg_high_god_name
+		HighGodName2 = exotic_rg_high_god_name_2
+		HighGodNamePossessive = exotic_rg_high_god_name_possessive
+		HighGodNameSheHe = CHARACTER_SHEHE_HE
+		HighGodHerselfHimself = CHARACTER_HIMSELF
+		HighGodHerHis = CHARACTER_HERHIS_HIS
+		HighGodNameAlternate = exotic_rg_high_god_name_alternate
+		HighGodNameAlternatePossessive = exotic_rg_high_god_name_alternate_possessive
+
+		#Creator
+		CreatorName = exotic_rg_creator_god_name
+		CreatorNamePossessive = exotic_rg_creator_god_name_possessive
+		CreatorSheHe = CHARACTER_SHEHE_HE
+		CreatorHerHis = CHARACTER_HERHIS_HIS
+		CreatorHerHim = CHARACTER_HERHIM_HIM
+
+		#HealthGod
+		HealthGodName = exotic_rg_high_god_name
+		HealthGodNamePossessive = exotic_rg_high_god_name
+		HealthGodSheHe = CHARACTER_SHEHE_HE
+		HealthGodHerHis = CHARACTER_HERHIS_HIS
+		HealthGodHerHim = CHARACTER_HERHIM_HIM
+		
+		#FertilityGod
+		FertilityGodName = exotic_rg_high_god_name
+		FertilityGodNamePossessive = exotic_rg_high_god_name
+		FertilityGodSheHe = CHARACTER_SHEHE_SHE
+		FertilityGodHerHis = CHARACTER_HERHIS_HER
+		FertilityGodHerHim = CHARACTER_HERHIM_HER
+
+		#WealthGod
+		WealthGodName = exotic_rg_high_god_name
+		WealthGodNamePossessive = exotic_rg_high_god_name
+		WealthGodSheHe = CHARACTER_SHEHE_HE
+		WealthGodHerHis = CHARACTER_HERHIS_HIS
+		WealthGodHerHim = CHARACTER_HERHIM_HIM
+
+		#HouseholdGod
+		HouseholdGodName = exotic_rg_high_god_name
+		HouseholdGodNamePossessive = exotic_rg_high_god_name
+		HouseholdGodSheHe = CHARACTER_SHEHE_HE
+		HouseholdGodHerHis = CHARACTER_HERHIS_HIS
+		HouseholdGodHerHim = CHARACTER_HERHIM_HIM
+
+		#FateGod
+		FateGodName = exotic_rg_high_god_name
+		FateGodNamePossessive = exotic_rg_high_god_name
+		FateGodSheHe = CHARACTER_SHEHE_HE
+		FateGodHerHis = CHARACTER_HERHIS_HIS
+		FateGodHerHim = CHARACTER_HERHIM_HIM
+
+		#KnowledgeGod
+		KnowledgeGodName = exotic_rg_high_god_name
+		KnowledgeGodNamePossessive = exotic_rg_high_god_name
+		KnowledgeGodSheHe = CHARACTER_SHEHE_SHE
+		KnowledgeGodHerHis = CHARACTER_HERHIS_HER
+		KnowledgeGodHerHim = CHARACTER_HERHIM_HER
+
+		#WarGod
+		WarGodName = exotic_rg_high_god_name
+		WarGodNamePossessive = exotic_rg_high_god_name
+		WarGodSheHe = CHARACTER_SHEHE_HE
+		WarGodHerHis = CHARACTER_HERHIS_HIS
+		WarGodHerHim = CHARACTER_HERHIM_HIM
+
+		#TricksterGod
+		TricksterGodName = exotic_rg_high_god_name
+		TricksterGodNamePossessive = exotic_rg_high_god_name
+		TricksterGodSheHe = CHARACTER_SHEHE_HE
+		TricksterGodHerHis = CHARACTER_HERHIS_HIS
+		TricksterGodHerHim = CHARACTER_HERHIM_HIM
+
+		#NightGod
+		NightGodName = exotic_rg_high_god_name
+		NightGodNamePossessive = exotic_rg_high_god_name
+		NightGodSheHe = CHARACTER_SHEHE_SHE
+		NightGodHerHis = CHARACTER_HERHIS_HER
+		NightGodHerHim = CHARACTER_HERHIM_HER
+
+		#WaterGod
+		WaterGodName = exotic_rg_high_god_name
+		WaterGodNamePossessive = exotic_rg_high_god_name
+		WaterGodSheHe = CHARACTER_SHEHE_HE
+		WaterGodHerHis = CHARACTER_HERHIS_HIS
+		WaterGodHerHim = CHARACTER_HERHIM_HIM
+
+
+		PantheonTerm = exotic_rg_high_god_name
+		PantheonTerm2 = exotic_rg_high_god_name_2
+		PantheonTerm3 = exotic_rg_high_god_name_3
+		PantheonTermHasHave = pantheon_term_has
+		GoodGodNames = {
+			exotic_rg_high_god_name
+		}
+		DevilName = exotic_rg_devil_name
+		DevilNamePossessive = exotic_rg_devil_name_possessive
+		DevilSheHe = CHARACTER_SHEHE_HE
+		DevilHerHis = CHARACTER_HERHIS_HIS
+		DevilHerHis = CHARACTER_HERHIS_HIS
+		DevilHerselfHimself = CHARACTER_HIMSELF
+		EvilGodNames = {
+			exotic_rg_devil_name
+		}
+		HouseOfWorship = exotic_rg_house_of_worship
+		HouseOfWorship2 = exotic_rg_house_of_worship_2
+		HouseOfWorship3 = exotic_rg_house_of_worship_3
+		HouseOfWorshipPlural = exotic_rg_house_of_worship_plural
+		ReligiousSymbol = exotic_rg_religious_symbol
+		ReligiousSymbol2 = exotic_rg_religious_symbol_2
+		ReligiousSymbol3 = exotic_rg_religious_symbol_3
+		ReligiousText = exotic_rg_religious_text
+		ReligiousText2 = exotic_rg_religious_text_2
+		ReligiousText3 = exotic_rg_religious_text_3
+		ReligiousHeadName = exotic_rg_religious_head_title
+		ReligiousHeadTitleName = exotic_rg_religious_head_title_name
+		DevoteeMale = exotic_rg_devotee_male
+		DevoteeMalePlural = exotic_rg_devotee_male_plural
+		DevoteeFemale = exotic_rg_devotee_female
+		DevoteeFemalePlural = exotic_rg_devotee_female_plural
+		DevoteeNeuter = exotic_rg_devotee_neuter
+		DevoteeNeuterPlural = exotic_rg_devotee_neuter_plural
+		PriestMale = exotic_rg_priest_male
+		PriestMalePlural = exotic_rg_priest_male_plural
+		PriestFemale = exotic_rg_priest_male
+		PriestFemalePlural = exotic_rg_priest_male_plural
+		PriestNeuter = exotic_rg_priest_male
+		PriestNeuterPlural = exotic_rg_priest_male_plural
+		AltPriestTermPlural = exotic_rg_priest_alternate_plural
+		BishopMale = exotic_rg_bishop
+		BishopMalePlural = exotic_rg_bishop_plural
+		BishopFemale = exotic_rg_bishop
+		BishopFemalePlural = exotic_rg_bishop_plural
+		BishopNeuter = exotic_rg_bishop
+		BishopNeuterPlural = exotic_rg_bishop_plural
+		DivineRealm = exotic_rg_positive_afterlife
+		DivineRealm2 = exotic_rg_positive_afterlife_2
+		DivineRealm3 = exotic_rg_positive_afterlife_3
+		PositiveAfterLife = exotic_rg_positive_afterlife
+		PositiveAfterLife2 = exotic_rg_positive_afterlife_2
+		PositiveAfterLife3 = exotic_rg_positive_afterlife_3
+		NegativeAfterLife = exotic_rg_negative_afterlife
+		NegativeAfterLife2 = exotic_rg_negative_afterlife_2
+		NegativeAfterLife3 = exotic_rg_negative_afterlife_3
+		DeathDeityName = exotic_rg_death_deity_name
+		DeathDeityNamePossessive = exotic_rg_death_deity_name_possessive
+		DeathDeitySheHe = CHARACTER_SHEHE_HE
+		DeathDeityHerHis = CHARACTER_HERHIS_HIS
+		WitchGodName = exotic_rg_witchgodname_the_horned_god
+		WitchGodNamePossessive = exotic_rg_witchgodname_the_horned_god_possessive
+		WitchGodHerHis = CHARACTER_HERHIS_HIS
+		WitchGodSheHe = CHARACTER_SHEHE_HE
+		WitchGodHerHim = CHARACTER_HERHIM_HIM
+		WitchGodMistressMaster = master
+		WitchGodMotherFather = father
+
+		GHWName = exotic_rg_ghw_crusade
+		GHWNamePlural = exotic_rg_ghw_crusades
+	}
+
+
+
+
+	#接下来是这个宗教包含的信仰
+	faiths = {
+		#异域侵略者
+		exotic_fa = {
+			color = { 0 0 0 }  			#地图上显示为什么颜色 RGB值
+			icon = meshefaresism
+
+			#下面是宗教圣地  圣地可以在其他地方定义地点和效果  异域的圣地为  罗马，君士坦丁堡，巴黎，耶路撒冷，圣地亚哥
+			holy_site = jerusalem
+			holy_site = rome
+			holy_site = santiago
+			holy_site = constantinople
+			holy_site = paris_site_super
+
+			#教义  用于放置核心教义 也可以在这里放置其他教义以覆盖宗教的默认设置
+			doctrine = tenet_human_sacrifice	#人祭
+			doctrine = tenet_warmonger			#战争狂人
+			doctrine = tenet_tax_nonbelievers	#不信者税
+			doctrine = erosion_dor				#侵蚀
+			doctrine = the_rule_of_disorder		#失序之治
+			doctrine = fight_crazy				#战以解忧
+		}
+	}
+}

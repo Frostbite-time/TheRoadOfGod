@@ -1,0 +1,29 @@
+﻿death_god_fire = {
+	public_knowledge = yes
+	icon = "death_murder.dds"
+}
+
+a_super_achemy = {
+	public_knowledge = yes
+	icon = "death_murder.dds"
+}
+
+lost_of_world_rift = {
+	public_knowledge = yes
+	icon = "death_murder.dds"
+}
+
+death_from_evil = {
+	public_knowledge = yes
+	icon = "death_murder.dds"
+}
+
+death_from_confilct = {
+	public_knowledge = yes
+	icon = "death_murder.dds"
+}
+
+death_god_out_ap = {
+	public_knowledge = yes
+	icon = "death_murder.dds"
+}

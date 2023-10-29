@@ -1,0 +1,266 @@
+﻿
+#使弱牵制可以使用3次
+three_times_low = {
+	if = {
+		limit = {
+			scope:actor = {
+				has_character_flag = used_1
+			}
+		}
+		if = {
+			limit = {
+				scope:actor = {
+					has_character_flag = used_2
+				}
+			}
+			scope:actor = {
+				remove_character_flag = used_2
+				remove_character_flag = used_1
+			}
+		}
+		else = {
+			scope:actor = {
+				add_character_flag = used_2
+				add_hook_no_toast = {
+					type = super_low_hook
+					target = scope:recipient
+				}
+			}
+		}
+		
+	}
+	else = {
+		scope:actor = {
+			add_character_flag = used_1
+			add_hook_no_toast = {
+				type = super_low_hook
+				target = scope:recipient
+			}
+		}
+	}
+}
+
+
+#要求对方交出头衔并成为附庸
+get_all_maintitle_and_join = {
+	create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	if = {
+		limit = {
+			scope:recipient.primary_title = {
+				tier = tier_empire
+			}
+		}
+		get_the_vss = yes
+	}
+	else_if = {
+		limit = {
+			scope:recipient.primary_title = {
+				tier = tier_kingdom
+			}
+		}
+		scope:recipient = {
+			every_held_title = {
+				limit = {
+					tier = tier_kingdom
+				}
+				change_title_holder_include_vassals = {
+					holder = scope:actor
+					change = scope:change
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			scope:recipient.primary_title = {
+				tier = tier_duchy
+			}
+		}
+		scope:recipient = {
+			every_held_title = {
+				limit = {
+					tier = tier_duchy
+				}
+				change_title_holder_include_vassals = {
+					holder = scope:actor
+					change = scope:change
+				}
+			}
+		}	
+	}
+	else_if = {
+		limit = {
+			scope:recipient.primary_title = {
+				tier = tier_county
+			}
+		}
+		scope:recipient = {
+			every_held_title = {
+				limit = {
+					tier = tier_county
+				}
+				change_title_holder_include_vassals = {
+					holder = scope:actor
+					change = scope:change
+				}
+			}
+		}
+	}
+	scope:recipient = {
+		change_liege = {
+			liege = scope:actor
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+}
+
+#获取对方的一个封臣和这个封臣的主头衔
+get_the_vss = {
+	scope:recipient = {
+		random_powerful_vassal = {
+			save_scope_as = pow_use
+		}
+	}
+	if = {
+		limit = {
+			scope:pow_use.primary_title = {
+				tier = tier_kingdom
+			}
+		}
+		scope:pow_use = {
+			every_held_title = {
+				limit = {
+					tier = tier_kingdom
+				}
+				change_title_holder_include_vassals = {
+					holder = scope:actor
+					change = scope:change
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			scope:pow_use.primary_title = {
+				tier = tier_duchy
+			}
+		}
+		scope:pow_use = {
+			every_held_title = {
+				limit = {
+					tier = tier_duchy
+				}
+				change_title_holder_include_vassals = {
+					holder = scope:actor
+					change = scope:change
+				}
+			}
+		}	
+	}
+	else_if = {
+		limit = {
+			scope:pow_use.primary_title = {
+				tier = tier_county
+			}
+		}
+		scope:pow_use = {
+			every_held_title = {
+				limit = {
+					tier = tier_county
+				}
+				change_title_holder_include_vassals = {
+					holder = scope:actor
+					change = scope:change
+				}
+			}
+		}
+	}
+	scope:pow_use = {
+		change_liege = {
+			liege = scope:actor
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+}
+
+#用于唤神事件的头衔转变
+get_all_maintitle_and_join_call = {
+	create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	if = {
+		limit = {
+			scope:use_one_this.primary_title = {
+				tier = tier_empire
+			}
+		}
+		get_the_vss = yes
+	}
+	else_if = {
+		limit = {
+			scope:use_one_this.primary_title = {
+				tier = tier_kingdom
+			}
+		}
+		scope:use_one_this = {
+			every_held_title = {
+				limit = {
+					tier = tier_kingdom
+				}
+				change_title_holder_include_vassals = {
+					holder = root
+					change = scope:change
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			scope:use_one_this.primary_title = {
+				tier = tier_duchy
+			}
+		}
+		scope:use_one_this = {
+			every_held_title = {
+				limit = {
+					tier = tier_duchy
+				}
+				change_title_holder_include_vassals = {
+					holder = root
+					change = scope:change
+				}
+			}
+		}	
+	}
+	else_if = {
+		limit = {
+			scope:use_one_this.primary_title = {
+				tier = tier_county
+			}
+		}
+		scope:use_one_this = {
+			every_held_title = {
+				limit = {
+					tier = tier_county
+				}
+				change_title_holder_include_vassals = {
+					holder = root
+					change = scope:change
+				}
+			}
+		}
+	}
+	scope:use_one_this = {
+		change_liege = {
+			liege = root
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+}

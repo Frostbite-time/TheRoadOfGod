@@ -1,0 +1,323 @@
+﻿#神学重心
+super_perk_focus_learning = {
+	lifestyle = super_lifestyle
+
+	is_valid_showing_failures_only = {
+		trigger_if = {
+			limit = {
+				has_game_rule = normal_super_mod
+			}
+			always = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_player_super_mod
+			}
+			is_ai = no
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_ai_super_mod
+			}
+			is_ai = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = banned_for_all
+			}
+			always = no
+		}
+
+	}
+
+	modifier = {
+		learning = 5    #给予5点学识
+	}
+	
+	desc = {
+		desc = Super_perk_focus_learning_desc   #用于本地化的描述Key值
+		desc = line_break
+	}
+	
+	auto_selection_weight = {
+		value = 3000
+		if = {
+			limit = {
+				has_trait = great_blood_traits
+			}
+			add = 2000
+		}
+		if = {
+			limit = {
+				has_trait = calm
+			}
+			add = 2000
+		}
+		if = {
+			limit = {
+				has_trait = temperate
+			}
+			add = 2000
+		}
+		if = {
+			limit = {
+				has_trait = diligent  
+			}
+			multiply = 5
+		}
+		if = {
+			limit = {
+				has_trait = lazy
+			}
+			multiply = 0.1
+		}
+		if = {
+			limit = {
+				has_trait = humble
+			}
+			multiply = 3
+		}
+		if = {
+			limit = {
+				AND = {
+					has_perk = angel_of_road
+					has_perk = saint_in_flesh
+					has_perk = devilishness
+				}
+			}
+			multiply = 0
+		}
+	}
+	
+	icon = learning_scholarship_focus
+
+	focus_id = 15  #权重的id，不要重复
+}
+#力量重心
+super_perk_focus_power = {
+	lifestyle = super_lifestyle
+
+	is_valid_showing_failures_only = {
+		trigger_if = {
+			limit = {
+				has_game_rule = normal_super_mod
+			}
+			always = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_player_super_mod
+			}
+			is_ai = no
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_ai_super_mod
+			}
+			is_ai = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = banned_for_all
+			}
+			always = no
+		}
+
+	}
+
+	desc = {
+		desc = Super_perk_focus_power_desc
+		desc = line_break
+	}
+	
+	modifier = {
+		martial = 5   #给予5点军事
+		prowess = 5   #给予5点勇武
+	}
+
+	auto_selection_weight = {
+		value = 3000
+		if = {
+			limit = {
+				has_trait = great_blood_traits
+			}
+			add = 2000
+		}
+		if = {
+			limit = {
+				has_trait = brave
+			}
+			add = 2000
+		}
+		if = {
+			limit = {
+				has_trait = zealous
+			}
+			add = 3000
+		}
+		if = {
+			limit = {
+				has_trait = paranoid
+			}
+			add = 1000
+		}
+		if = {
+			limit = {
+				has_trait = wrathful
+			}
+			add = 1000
+		}
+		if = {
+			limit = {
+				has_trait = ambitious
+			}
+			multiply = 2
+		}
+		if = {
+			limit = {
+				has_trait = impatient
+			}
+			multiply = 4
+		}
+		if = {
+			limit = {
+				has_trait = arrogant
+			}
+			multiply = 5
+		}
+		if = {
+			limit = {
+				has_trait = craven
+			}
+			multiply = 0.2
+		}
+		if = {
+			limit = {
+				has_trait = shy
+			}
+			multiply = 0.1
+		}
+		if = {
+			limit = {
+				AND = {
+					has_perk = angel_of_road
+					has_perk = saint_in_flesh
+					has_perk = devilishness
+				}
+			}
+			multiply = 0
+		}		
+	}
+	
+	icon = martial_strategy_focus
+
+	focus_id = 16
+}
+#心智操控
+super_perk_mind_power = {
+	lifestyle = super_lifestyle
+
+	is_valid_showing_failures_only = {
+		trigger_if = {
+			limit = {
+				has_game_rule = normal_super_mod
+			}
+			always = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_player_super_mod
+			}
+			is_ai = no
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_ai_super_mod
+			}
+			is_ai = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = banned_for_all
+			}
+			always = no
+		}
+
+	}
+
+	desc = {
+		desc = Super_perk_focus_mind_desc
+		desc = line_break
+	}
+	
+	modifier = {
+		diplomacy = 3   #给予3点外交
+		intrigue = 3    #给予3点谋略
+	}
+
+	auto_selection_weight = {
+		value = 3000
+		if = {
+			limit = {
+				has_trait = great_blood_traits
+			}
+			add = 2000		
+		}
+		if = {
+			limit = {
+				has_trait = sadistic
+			}
+			add = 2000
+		}
+		if = {
+			limit = {
+				has_trait = deceitful
+			}
+			add = 2000
+		}
+		if = {
+			limit = {
+				has_trait = callous
+			}
+			multiply = 3
+		}
+		if = {
+			limit = {
+				has_trait = lustful
+			}
+			multiply = 4
+		}
+		if = {
+			limit = {
+				has_trait = fickle
+			}
+			multiply = 5
+		}	
+		if = {
+			limit = {
+				has_trait = vengeful
+			}
+			multiply = 6
+		}
+		if = {
+			limit = {
+				has_trait = compassionate
+			}
+			multiply = 0.1
+		}
+		if = {
+			limit = {
+				AND = {
+					has_perk = angel_of_road
+					has_perk = saint_in_flesh
+					has_perk = devilishness
+				}
+			}
+			multiply = 0
+		}		
+	}
+	
+	icon = stewardship_duty_focus
+
+	focus_id = 17
+}

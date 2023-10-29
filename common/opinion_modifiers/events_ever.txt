@@ -1,0 +1,20 @@
+﻿gratitude_title_re = {
+	opinion = 50
+	years = 10
+}
+hook_discoved_super_high = {
+	opinion = -100
+	years = 20
+}
+hook_discoved_super_mid = {
+	opinion = -50
+	years = 20
+}
+hook_discoved_super_low = {
+	opinion = -20
+	years = 20
+}
+hook_suessce_super_high = {
+	opinion = 200
+	years = 100
+}

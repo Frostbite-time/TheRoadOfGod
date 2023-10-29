@@ -1,0 +1,348 @@
+﻿#圣血
+great_blood_traits = {
+	index = 1066     #类似id
+	health = 1.5		#健康加成	
+	fertility = 0.2		#生育率加成	
+	inherit_chance = 50    #遗传概率
+	birth = 0		#自然出生的携带概率
+	random_creation = 5   #随机生成的携带概率   2代表百分之2
+	good = yes           #是好特质
+	stress_gain_mult = -0.2
+	stress_loss_mult = 0.2
+	monthly_piety_gain_mult = 0.1
+	same_opinion = 15      #相同特质角色增加好感
+	dynasty_opinion = 50
+	compatibility = {       #用于标记特质之间的相容性
+		great_blood_traits = @pos_compat_low
+	}
+}
+
+#全知者
+know_all_thing_traits = {
+	index = 1067     #类似id	
+	random_creation = 2   #随机生成的携带概率   2代表百分之2
+	good = yes           #是好特质
+	fame = yes #该特质为一个名声特质
+	health = 1
+	diplomacy = 10
+	martial = 10
+	stewardship = 10
+	intrigue = 10
+	learning = 20
+	prowess = 10
+	monthly_dynasty_prestige_mult = 0.1
+	monthly_prestige_gain_mult = 0.1
+	vassal_limit = 10
+	domain_limit = 3
+	max_hostile_schemes_add = 1
+	max_personal_schemes_add = 1
+	same_opinion = 15      #相同特质角色增加好感
+	compatibility = {       #用于标记特质之间的相容性
+		great_blood_traits = @pos_compat_low
+	}	
+	domain_tax_mult = 0.1
+}
+
+
+#天使
+angel_traits = {
+	index = 1068     #类似id
+	health = 10		#健康加成		
+	random_creation = 1   #随机生成的携带概率   2代表百分之2
+	good = yes           #是好特质
+	diplomacy = 15
+	martial = 15
+	stewardship = 15
+	intrigue = 15
+	learning = 15
+	prowess = 30
+	prestige_level_impact_mult = 0.3
+	monthly_piety_gain_mult = 0.3
+	monthly_dynasty_prestige_mult = 0.3
+	compatibility = {       #用于标记特质之间的相容性
+		great_blood_traits = @pos_compat_low
+	}
+	vassal_limit = 20
+	domain_limit = 5
+	no_prowess_loss_from_age = yes
+	diplomatic_range_mult = 0.5
+	clergy_opinion = 50
+	intrigue_scheme_resistance = 50
+	domain_tax_mult = 0.15
+}
+
+#神的恩赐
+the_gift_of_god = {
+	index = 1069     #类似id
+	health = 2		#健康加成	
+	fertility = 0.2		#生育率加成	
+	random_creation = 2   #随机生成的携带概率   2代表百分之2
+	good = yes           #是好特质
+	monthly_piety_gain_mult = 1
+	same_opinion = 30      #相同特质角色增加好感
+	martial_per_piety_level = 6
+	prowess_per_piety_level = 6
+	compatibility = {       #用于标记特质之间的相容性
+		great_blood_traits = @pos_compat_low
+	}
+	general_opinion = 30
+	religious_head_opinion = 50
+	realm_priest_opinion = 80
+	advantage = 20
+	movement_speed = 0.3
+	pursue_efficiency = 0.3
+	same_faith_opinion = 15
+}
+
+#肉身成圣
+saint_in_flesh_traits = {
+	index = 1070     #类似id
+	health = 12		#健康加成	
+	fertility = 0.2		#生育率加成	
+	inherit_chance = 1    #遗传概率
+	random_creation = 1   #随机生成的携带概率   2代表百分之2
+	good = yes           #是好特质
+	stress_gain_mult = -0.5
+	stress_loss_mult = 0.5
+	compatibility = {       #用于标记特质之间的相容性
+		great_blood_traits = @pos_compat_low
+	}
+	prowess = 35
+	monthly_prestige_gain_mult = 0.5
+	monthly_dynasty_prestige_mult = 0.5
+	dread_baseline_add = 99
+	intrigue_scheme_resistance = 150
+	advantage = 20
+}
+
+#一代宗师
+a_patriarch = {
+	index = 1071     #类似id		
+	random_creation = 2   #随机生成的携带概率   2代表百分之2
+	good = yes           #是好特质
+	stress_gain_mult = -0.1
+	stress_loss_mult = 0.1
+	compatibility = {       #用于标记特质之间的相容性
+		great_blood_traits = @pos_compat_low
+	}
+	opposite_opinion = -100
+	opposites = {
+		beloved_perk_trait
+	}
+	diplomatic_range_mult = 0.2
+	dread_per_tyranny_mult = 1
+	monthly_prestige_gain_per_dread_add = 1
+	intrigue = 10
+	intrigue_per_stress_level = 15
+	tyranny_loss_mult = 0.75
+	intimidated_vassal_tax_contribution_mult = 0.5
+	cowed_vassal_tax_contribution_mult = 0.4
+	hostile_scheme_power_mult = 1
+	hostile_scheme_resistance_mult = 1
+	max_hostile_schemes_add = 2
+	owned_hostile_scheme_success_chance_add = 20
+	owned_personal_scheme_success_chance_add = 20
+	enemy_hostile_scheme_success_chance_add = -35
+	ai_vengefulness = dominant_positive_ai_value
+}
+
+#被爱戴者
+beloved_perk_trait = {
+	index = 1072
+	random_creation = 2
+	good = yes
+	ignore_negative_culture_opinion = yes
+	same_culture_opinion = 30
+	opinion_of_same_faith = 20 
+	fellow_vassal_opinion = 20
+	general_opinion = 20
+	vassal_opinion = 20
+	dynasty_house_opinion = 50
+	knight_effectiveness_mult = 0.3
+	vassal_tax_contribution_mult = 0.3
+	development_growth = 0.15
+
+}
+
+#魔性
+devilishness = {
+	index = 1073
+	random_creation = 1
+	good = yes
+	health = 10	
+	prowess = 30
+	vassal_limit = 20
+	positive_inactive_inheritance_chance = 1
+	negative_inactive_inheritance_chance = -1
+	hostile_scheme_power_mult = 1
+	hostile_scheme_resistance_mult = 1
+	scheme_discovery_chance_mult = 1
+	max_hostile_schemes_add = 5
+	owned_hostile_scheme_success_chance_add = 100
+	dread_baseline_add = 100
+	dread_loss_mult = -1
+	intimidated_vassal_tax_contribution_mult = 1
+	cowed_vassal_tax_contribution_mult = 1
+	intimidated_vassal_levy_contribution_mult = 1
+	cowed_vassal_levy_contribution_mult = 1
+}
+
+#神
+god_god = {
+	index = 1074
+	good = yes
+	health = 200
+	diplomacy = 100
+	martial = 100
+	stewardship = 100
+	intrigue = 100
+	learning = 100
+	prowess = 100
+	monthly_prestige_gain_mult = 10
+	monthly_piety_gain_mult = 10
+	monthly_income_mult = 10
+	tyranny_loss_mult = 10
+	vassal_limit = 100
+	domain_limit = 100
+	domain_tax_mult = 1
+	army_maintenance_mult = -1
+	diplomatic_range_mult = 10
+	knight_limit = 100
+	knight_effectiveness_mult = 1
+	opinion_of_same_faith = 600
+	men_at_arms_cap = 20
+	men_at_arms_limit = 10
+	vassal_tax_contribution_mult = 1
+	vassal_levy_contribution_mult = 1
+	hostile_scheme_resistance_add = 1000
+	hostile_scheme_power_add = 1000
+	owned_hostile_scheme_success_chance_add = 100
+	enemy_hostile_scheme_success_chance_add = -1000
+	advantage = 100
+	movement_speed = 2
+	hard_casualty_modifier = -0.5
+	supply_capacity_add = 100000
+	cultural_head_fascination_mult = 10
+	ai_boldness = 100
+	heavy_infantry_damage_mult = 1
+	pikemen_damage_mult = 1
+	archers_damage_mult = 1
+	light_cavalry_damage_mult = 1
+	heavy_cavalry_damage_mult = 1
+	skirmishers_damage_mult = 1
+	heavy_infantry_siege_value_add = 1
+	pikemen_siege_value_add = 1
+	archers_siege_value_add = 1
+	light_cavalry_siege_value_add = 1
+	skirmishers_siege_value_add = 1
+	immortal = yes
+	ai_vengefulness = 100
+	ai_compassion = -100
+
+
+}
+
+#裂隙生物
+rift_organisms = {
+	index = 1075
+	good = yes
+	health = 20
+	diplomacy = 50
+	martial = 50
+	stewardship = 50
+	intrigue = 50
+	learning = 50
+	prowess = 50
+	no_prowess_loss_from_age = yes
+}
+
+#使徒特质
+
+#邪神
+apostle_of_evil = {
+	index = 1076
+	good = yes
+	health = 15
+	diplomacy = 20
+	martial = 20
+	stewardship = 20
+	intrigue = 20
+	learning = 20
+	prowess = 20
+	no_prowess_loss_from_age = yes	
+	opposite_opinion = -50
+	opposites = {
+		apostle_of_destiny
+		apostle_of_time
+		apostle_of_hope
+	}
+}
+#命运
+apostle_of_destiny = {
+	index = 1077
+	good = yes
+	health = 15
+	diplomacy = 20
+	martial = 20
+	stewardship = 20
+	intrigue = 20
+	learning = 20
+	prowess = 20
+	no_prowess_loss_from_age = yes
+	opposite_opinion = -25
+	opposites = {
+		apostle_of_evil
+		apostle_of_time
+		apostle_of_hope
+	}	
+}
+#时间
+apostle_of_time = {
+	index = 1078
+	good = yes
+	health = 15
+	diplomacy = 20
+	martial = 20
+	stewardship = 20
+	intrigue = 20
+	learning = 20
+	prowess = 20
+	no_prowess_loss_from_age = yes
+	opposite_opinion = -25
+	opposites = {
+		apostle_of_evil
+		apostle_of_destiny
+		apostle_of_hope
+	}	
+}
+#希望
+apostle_of_hope = {
+	index = 1079
+	good = yes
+	health = 15
+	diplomacy = 20
+	martial = 20
+	stewardship = 20
+	intrigue = 20
+	learning = 20
+	prowess = 20
+	no_prowess_loss_from_age = yes
+	opposite_opinion = -25
+	opposites = {
+		apostle_of_evil
+		apostle_of_destiny
+		apostle_of_time
+	}
+}
+
+#传说
+the_legendary_trait = {
+	index = 1080
+	good = yes
+	health = 2
+	martial = 5
+	prowess = 15
+	general_opinion = 30
+	attraction_opinion = 30
+	no_prowess_loss_from_age = yes
+}

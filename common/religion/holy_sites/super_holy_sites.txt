@@ -1,0 +1,8 @@
+#巴黎
+paris_site_super = {
+	county = c_ile_de_france
+	character_modifier = {
+		name = holy_site_aksum_effect_name
+		diplomacy_per_piety_level = 1
+	}
+}

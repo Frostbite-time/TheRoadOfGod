@@ -1,0 +1,63 @@
+﻿#修复战神之甲的决议
+fix_war_zhanjia = {
+	title = fix_war_zhanjia   #决议名称的loc_key
+	desc = fix_war_zhanjia_desc  #决议的描述loc_key
+	selection_tooltip = fix_war_zhanjia_tip #决议的提示
+	confirm_text = fix_war_zhanjia_confirm #决议继续的文本
+	picture = "gfx/interface/illustrations/decisions/decision_smith.dds"   #图片
+	
+	sort_order = 1000 #决议的排列顺序 大则靠前
+	
+	major = yes #是否为重要决议
+	
+	ai_check_interval = 24 #ai的检查周期，单位是 月
+	
+	cost = {          #进行决议的消耗
+		gold = 2000
+		prestige = 2000
+	}
+
+	cooldown = { days = 1825 } #决议的冷却时间
+	
+	is_shown = {       #显示决议的条件
+		any_character_artifact = {
+			has_artifact_modifier = leader_am_modif
+		}
+		NOT = {
+			any_artifact = {
+				has_artifact_modifier = leader_am_fixed_modif
+			}
+		}
+	}
+	
+	is_valid_showing_failures_only = {   #角色必须未被囚禁且为成人
+		is_imprisoned = no
+		is_adult = yes
+	}
+	
+	ai_potential = {     #ai是否检测这个决议
+		always = yes
+	}
+	
+	ai_will_do = {    #ai进行决议的概率
+		base = 100
+	}
+	effect = {
+		add_character_flag = fixed_war
+		trigger_event = {
+			id = fixed_war_arm.0001
+		}
+		every_living_character = {
+			limit = {
+				any_character_artifact = {
+					has_artifact_modifier = leader_am_modif
+				}
+			}
+			trigger_event = {
+				id = fixed_war_arm.0002
+				days = { 1 2 }
+			}
+		}
+		remove_character_flag = fixed_war
+	}
+}

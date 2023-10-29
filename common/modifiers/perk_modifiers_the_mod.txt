@@ -1,0 +1,140 @@
+﻿prowess_lei_it = {
+	icon = prowess_positive
+	vassal_opinion = 50
+	vassal_limit = 10
+	domain_limit = 5
+	vassal_tax_contribution_mult = 0.3
+	short_reign_duration_mult = -0.5
+	knight_limit = 5
+	knight_effectiveness_mult = 0.2
+	monthly_county_control_change_add = 10
+}
+
+#唤神事件buff   高健康
+call_god_1 = {
+	icon = health_positive
+	health = 3
+}
+call_god_2 = {
+	icon = health_positive
+	health = 2
+}
+call_god_3 = {
+	icon = health_positive
+	health = 1
+}
+call_god_10 = {
+	icon = health_positive
+	health = -2
+}
+#属性增加
+call_god_4 = {
+	icon = food_positive
+	diplomacy = 3
+	martial = 3
+	stewardship = 3
+	intrigue = 3
+	learning = 3
+	prowess = 3
+}
+call_god_5 = {
+	icon = food_positive
+	diplomacy = 5
+	martial = 5
+	stewardship = 5
+	intrigue = 5
+	learning = 5
+	prowess = 5
+}
+call_god_6 = {
+	icon = food_positive
+	diplomacy = 10
+	martial = 10
+	stewardship = 10
+	intrigue = 10
+	learning = 10
+	prowess = 10
+}
+call_god_11 = {
+	icon = food_positive
+	diplomacy = -5
+	martial = -5
+	stewardship = -5
+	intrigue = -5
+	learning = -5
+	prowess = -5
+}
+#压力降低
+call_god_7 = {
+	icon = dog_positive
+	stress_gain_mult = -0.5
+	stress_loss_mult = 0.5
+}
+
+call_god_8 = {
+	icon = dog_positive
+	stress_gain_mult = -0.3
+	stress_loss_mult = 0.3	
+}
+call_god_9 = {
+	icon = dog_positive
+	stress_gain_mult = -0.1
+	stress_loss_mult = 0.1	
+}
+call_god_12 = {
+	icon = dog_positive
+	stress_gain_mult = 0.3
+	stress_loss_mult = -0.3	
+}
+
+#时空之神的祝福
+time_god_use = {
+	icon = magic_positive
+}
+
+#贤者之石特有修正
+sage_stone_modif = {
+	icon = magic_positive
+}
+
+#未修复的领军者战甲修正
+leader_am_modif = {
+	icon = magic_positive
+}
+
+#已修复的领军者战甲特有修正
+leader_am_fixed_modif = {
+	icon = magic_positive
+	martial = 50
+	prowess = 50
+	no_prowess_loss_from_age = yes
+	health = 10
+	vassal_limit = 10
+	domain_limit = 10
+	domain_tax_mult = 0.15
+	men_at_arms_maintenance_per_dread_mult = -0.01
+	short_reign_duration_mult = -0.5
+	knight_limit = 15
+	knight_effectiveness_mult = 0.5
+	mercenary_hire_cost_mult = -0.5
+	men_at_arms_limit = 5
+}
+
+#星空的庇护
+assistance_from_stars = {
+	icon = magic_positive
+	advantage_against_coreligionists = 100
+	health = 10
+	stress_gain_mult = -1
+	stress_loss_mult = 1
+	monthly_lifestyle_xp_gain_mult = 5
+	learning = 15
+}
+
+#神明的侵蚀
+god_hated = {
+	icon = magic_negative
+	general_opinion = -10
+	opinion_of_same_faith = -10
+	opinion_of_different_faith = -10
+}

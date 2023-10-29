@@ -1,0 +1,321 @@
+#每年年初触发的自定义action有哪些  没有root
+yearly_global_pulse = {
+	on_actions = {
+		assistance_from_stars_pulse   #仰望星空的星空庇护赋予
+		confilct_effect_pulse		  #触发无序的效果的实现
+	}
+}
+
+#当战争开始时触发       可预用的作用域有scope:attacker  scope:defender
+on_war_started = {
+	on_actions = {
+		super_faith_fight_pulse  #战以解忧进入战争状态后每月压力减10
+	}
+}
+
+#作为其他人加入战争时     可以用的作用域有root（指加入者） scope:war（指加入的战争）
+on_join_war_as_secondary = {
+	on_actions = {
+		super_faith_fight_pulse_1  #战以解忧进入战争状态后每月压力减10
+	}
+}
+
+#当战争被转移到其他人身上时     可以用的作用域有root  scope:war   scope:defender   root指主要攻击者  scope:defender指新的防御者
+on_war_transferred = {
+	on_actions = {
+		super_faith_fight_pulse_2    #战以解忧进入战争状态后每月压力减10
+	}
+}
+
+#当一场战斗结束后对胜利方进行调用   root是胜利方的combat_side    scope:wipe不清楚是什么
+on_combat_end_winner = {
+	on_actions = {
+		super_faith_legendary_trait_pulse
+	}
+}
+
+#当一场战斗结束后对战败方进行调用   root是战败方的combat_side    scope:wipe不清楚是什么
+on_combat_end_loser = {
+	on_actions = {
+		super_faith_legendary_trait_pulse
+	}
+}
+
+assistance_from_stars_pulse = {   #仰望星空的星空庇护的实现
+	effect = {
+		random_living_character = {
+			limit = {
+				this.faith = {
+					has_doctrine = look_up_sky
+				}
+			}
+			trigger_event = {
+				id = super_faith_event.0004
+				days = { 1 364 }
+			}
+		}
+	}
+}
+
+super_faith_fight_pulse = {    #战以解忧进入战争状态后每月压力减10的实现
+	effect = {
+		scope:attacker = {
+			if = {
+				limit = {
+					scope:attacker.faith = {
+						has_doctrine = fight_crazy
+					}
+					NOT = {
+						scope:attacker = {
+							has_character_flag = super_in_wars
+						}
+					}
+				}
+				trigger_event = super_faith_event.0005
+			}
+			
+		}
+		scope:defender ={
+			if = {
+				limit = {
+					scope:defender.faith = {
+						has_doctrine = fight_crazy
+					}
+					NOT = {
+						scope:defender = {
+							has_character_flag = super_in_wars
+						}
+					}
+				}
+				trigger_event = super_faith_event.0005
+			}
+		}
+	}
+}
+
+super_faith_fight_pulse_1 = {     #战以解忧进入战争状态后每月压力减10的实现
+	effect = {
+		root = {
+			if = {
+				limit = {
+					root.faith = {
+						has_doctrine = fight_crazy
+					}
+					NOT = {
+						root = {
+							has_character_flag = super_in_wars
+						}
+					}
+				}
+				trigger_event = super_faith_event.0005
+			}
+		}
+	}
+}
+
+super_faith_fight_pulse_2 = {      #战以解忧进入战争状态后每月压力减10的实现
+	effect = {
+		root = {
+			if = {
+				limit = {
+					root.faith = {
+						has_doctrine = fight_crazy
+					}
+					NOT = {
+						root = {
+							has_character_flag = super_in_wars
+						}
+					}
+				}
+				trigger_event = super_faith_event.0005
+			}
+		}
+		scope:defender ={
+			if = {
+				limit = {
+					scope:defender.faith = {
+						has_doctrine = fight_crazy
+					}
+					NOT = {
+						scope:defender = {
+							has_character_flag = super_in_wars
+						}
+					}
+				}
+				trigger_event = super_faith_event.0005
+			}
+		}
+	}
+}
+
+confilct_effect_pulse = {       #触发无序的效果的实现
+	effect = {
+		every_living_character = {	
+			if = {
+				limit = {
+					this.faith = {
+						has_doctrine = conflict_hope_unknow_causal
+					}
+					NAND = {
+						has_character_flag = confilct_super_1
+						has_character_flag = confilct_super_2
+						has_character_flag = confilct_super_3
+						has_character_flag = confilct_super_4
+						has_character_flag = confilct_super_5
+						has_character_flag = confilct_super_6
+						has_character_flag = confilct_super_7
+						has_character_flag = confilct_super_8
+						has_character_flag = confilct_super_9
+						has_character_flag = confilct_super_10
+						has_character_flag = confilct_super_11
+						has_character_flag = confilct_super_12
+						has_character_flag = confilct_super_13
+						has_character_flag = confilct_super_14
+						has_character_flag = confilct_super_15
+						has_character_flag = confilct_super_16
+						has_character_flag = confilct_super_17
+						has_character_flag = confilct_super_18
+						has_character_flag = confilct_super_19
+						has_character_flag = confilct_super_20
+					}
+				}
+				add_character_flag = confilct_super_1
+			}
+			else_if = {
+				limit = { has_character_flag = confilct_super_1 }
+				add_character_flag = confilct_super_2
+				remove_character_flag = confilct_super_1
+			}
+			else_if = {
+				limit = { has_character_flag = confilct_super_2 }
+				add_character_flag = confilct_super_3
+				remove_character_flag = confilct_super_2
+			}
+			else_if = {
+				limit = { has_character_flag = confilct_super_3 }
+				add_character_flag = confilct_super_4
+				remove_character_flag = confilct_super_3
+			}
+			else_if = {
+				limit = { has_character_flag = confilct_super_4 }
+				add_character_flag = confilct_super_5
+				remove_character_flag = confilct_super_4
+			}
+			else_if = {
+				limit = { has_character_flag = confilct_super_5 }
+				add_character_flag = confilct_super_6
+				remove_character_flag = confilct_super_5
+			}
+			else_if = {
+				limit = { has_character_flag = confilct_super_6 }
+				add_character_flag = confilct_super_7
+				remove_character_flag = confilct_super_6
+			}
+			else_if = {
+				limit = { has_character_flag = confilct_super_7 }
+				add_character_flag = confilct_super_8
+				remove_character_flag = confilct_super_7
+			}
+			else_if = {
+				limit = { has_character_flag = confilct_super_8 }
+				add_character_flag = confilct_super_9
+				remove_character_flag = confilct_super_8
+			}
+			else_if = {
+				limit = { has_character_flag = confilct_super_9 }
+				add_character_flag = confilct_super_10
+				remove_character_flag = confilct_super_9
+			}
+			else_if = {
+				limit = { has_character_flag = confilct_super_10 }
+				add_character_flag = confilct_super_11
+				remove_character_flag = confilct_super_10
+			}
+			else_if = {
+				limit = { has_character_flag = confilct_super_11 }
+				add_character_flag = confilct_super_12
+				remove_character_flag = confilct_super_11
+			}
+			else_if = {
+				limit = { has_character_flag = confilct_super_12 }
+				add_character_flag = confilct_super_13
+				remove_character_flag = confilct_super_12
+			}
+			else_if = {
+				limit = { has_character_flag = confilct_super_13 }
+				add_character_flag = confilct_super_14
+				remove_character_flag = confilct_super_13
+			}
+			else_if = {
+				limit = { has_character_flag = confilct_super_14 }
+				add_character_flag = confilct_super_15
+				remove_character_flag = confilct_super_14
+			}
+			else_if = {
+				limit = { has_character_flag = confilct_super_15 }
+				add_character_flag = confilct_super_16
+				remove_character_flag = confilct_super_15
+			}
+			else_if = {
+				limit = { has_character_flag = confilct_super_16 }
+				add_character_flag = confilct_super_17
+				remove_character_flag = confilct_super_16
+			}
+			else_if = {
+				limit = { has_character_flag = confilct_super_17 }
+				add_character_flag = confilct_super_18
+				remove_character_flag = confilct_super_17
+			}
+			else_if = {
+				limit = { has_character_flag = confilct_super_18 }
+				add_character_flag = confilct_super_19
+				remove_character_flag = confilct_super_18
+			}
+			else_if = {
+				limit = { has_character_flag = confilct_super_19 }
+				add_character_flag = confilct_super_20
+				remove_character_flag = confilct_super_19
+			}
+			else_if = {
+				limit = { has_character_flag = confilct_super_20 }
+				add_character_flag = confilct_super_1
+				remove_character_flag = confilct_super_20
+				random_list = {
+					3 = {
+						trigger_event = super_faith_event.0006
+					}
+					97 = {}
+				}
+			}
+		}
+	}
+}
+
+
+#传说诞生的on_action实现
+super_faith_legendary_trait_pulse = {
+	effect = {
+		root = {
+			every_side_knight = {
+				limit = {
+					this.faith = {
+						has_doctrine = cult_legends
+					}
+					prowess > 20
+				}
+				add_trait = the_legendary_trait
+				random_list = {
+					5 = {
+						save_scope_as = legendary_knight
+						trigger_event = super_faith_event.0007
+						this.liege = {
+							trigger_event = super_faith_event.0008
+						}
+					}
+					95 = {}
+				}
+			}
+		}
+	}
+}
+

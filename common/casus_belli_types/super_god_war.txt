@@ -1,0 +1,835 @@
+﻿
+god_arr_in = {
+	group = god_kingdom_arrive_in
+
+	combine_into_one = yes
+	should_show_war_goal_subview = yes
+	mutually_exclusive_titles = { always = yes }
+
+	allowed_for_character = {
+	}
+
+	allowed_for_character_display_regardless = {
+	}
+	
+	allowed_against_character = {
+	}
+	target_titles = all
+	target_title_tier = all
+	target_de_jure_regions_above = yes
+	ignore_effect = change_title_holder
+
+	ai_can_target_all_titles = {
+		can_use_viking_invasion_cbs_trigger = yes
+	}
+	ai_score_mult = {
+		value = 80
+
+		# AI in struggles act insularly for wars that don't have a familial or legal basis.
+		multiply = struggle_wars_prioritise_struggle_targets_value
+	}
+
+	valid_to_start = {
+		scope:target = {
+			any_in_de_jure_hierarchy = {
+				tier = tier_county
+				neighboring_county_or_viking_conquest_trigger = { CHARACTER = root }
+			}
+		}
+	}
+
+	should_invalidate = {
+		NOT = {
+			any_in_list = {
+				list = target_titles
+				any_in_de_jure_hierarchy = {
+					tier = tier_county
+					holder = {
+						target_is_same_character_or_above = scope:defender
+					}
+				}
+			}
+		}
+	}
+
+	on_invalidated_desc = god_war_invalid
+	
+	on_invalidated = {
+		scope:attacker = {
+			if = {
+				limit = {
+					is_alive = yes
+				}
+				remove_character_flag = used_lifetime_invasion # If the war is invalidated, you should be permitted to try again
+			}
+		}
+	}
+
+	cost = {
+	}
+	
+	on_declaration = {
+		on_declared_war = yes
+	}	
+
+	on_victory_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:attacker = { is_local_player = yes } }
+				desc = invasion_war_victory_desc_attacker
+			}
+			desc = invasion_war_victory_desc
+		}
+	}
+	
+	on_victory = {
+		scope:attacker = { show_pow_release_message_effect = yes }
+		create_title_and_vassal_change = {
+			type = conquest
+			save_scope_as = change
+			add_claim_on_loss = yes
+		}
+		
+		setup_invasion_cb = {
+			titles = target_titles
+			attacker = scope:attacker
+			defender = scope:defender
+			change = scope:change
+			take_occupied = yes
+		}
+		resolve_title_and_vassal_change = scope:change
+
+		# Attacker gets Prestige Experience, Defender loses Prestige, all other participants gain Prestige based on their war contribution.
+		modify_all_participants_fame_values = {
+			WINNER = scope:attacker
+			LOSER = scope:defender
+			FAME_BASE = scope:cb_prestige_factor # Set by 'setup_invasion_cb'
+			IS_RELIGIOUS_WAR = no
+			WINNER_FAME_SCALE = 10
+			LOSER_FAME_SCALE = -10
+			WINNER_ALLY_FAME_SCALE = 10
+			LOSER_ALLY_FAME_SCALE = 10
+		}
+
+		# Truce
+		add_truce_attacker_victory_effect = yes
+
+		# FP1: note the victory for future memorialisation via stele (if applicable).
+		scope:attacker = { fp1_remember_recent_conquest_victory_effect = yes }
+	}
+
+	on_white_peace_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:defender = { is_local_player = yes } }
+				desc = invasion_war_white_peace_desc_defender
+			}
+			desc = invasion_war_white_peace_desc
+		}
+	}
+	
+	on_white_peace = {
+		scope:attacker = { show_pow_release_message_effect = yes }
+
+		# Allies on both sides get full prestige value for helping in the war, based on their war participation.
+		modify_allies_of_participants_fame_values = {
+			WINNER = scope:attacker # Not important as the scales are identical
+			FAME_BASE = major_prestige_value
+			IS_RELIGIOUS_WAR = no
+			WINNER_ALLY_FAME_SCALE = 1
+			LOSER_ALLY_FAME_SCALE = 1
+		}
+
+		# Truce
+		add_truce_white_peace_effect = yes
+
+		scope:attacker = {
+			add_prestige = mongol_invasion_cb_prestige_white_peace
+			stress_impact = {
+				ambitious = medium_stress_impact_gain
+				arrogant = medium_stress_impact_gain
+			}
+		}
+
+		scope:defender = {
+			stress_impact = {
+				arrogant = medium_stress_impact_gain
+			}
+		}
+	}
+
+	on_defeat_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:defender = { is_local_player = yes } }
+				desc = invasion_war_white_peace_desc_defender
+			}
+			desc = invasion_war_white_peace_desc
+		}
+	}
+	
+	on_defeat = {
+		scope:attacker = { show_pow_release_message_effect = yes }
+
+		# Prestige loss for the attacker
+		scope:attacker = {
+			pay_short_term_gold_reparations_effect = {
+				GOLD_VALUE = 5
+			}
+			add_prestige = {
+				value = massive_prestige_value
+				multiply = -1.0
+			}
+		}
+		
+		setup_invasion_cb = {
+			titles = target_titles
+			attacker = scope:attacker
+			defender = scope:defender
+			claimant = scope:claimant
+			victory = no
+		}
+
+		# Attacker loses Prestige, all other war participants gain Prestige (Defender gains full prestige, all allies on both sides gain based on war contribution).
+		modify_all_participants_fame_values = {
+			WINNER = scope:defender
+			LOSER = scope:attacker
+			FAME_BASE = scope:cb_prestige_factor # Set by 'setup_claim_cb'
+			IS_RELIGIOUS_WAR = no
+			WINNER_FAME_SCALE = scale_10_war_defender_win
+			LOSER_FAME_SCALE = -10
+			WINNER_ALLY_FAME_SCALE = 10
+			LOSER_ALLY_FAME_SCALE = 10
+		}
+	
+		add_truce_attacker_defeat_effect = yes
+		
+		scope:attacker = {
+			save_temporary_scope_as = loser
+		}
+		on_lost_aggression_war_discontent_loss = yes
+	}
+	
+	transfer_behavior = transfer
+	
+	on_primary_attacker_death = inherit
+	on_primary_defender_death = inherit
+	
+	attacker_allies_inherit = yes
+	defender_allies_inherit = yes
+	
+	war_name = "GOD_WAR_NAME"
+	war_name_base = "GOD_WAR_NAME"
+	cb_name = "GOD_WAR_NAME"
+	
+	interface_priority = 100
+	
+	use_de_jure_wargoal_only = yes
+	
+	attacker_wargoal_percentage = 0.8
+}
+
+
+
+
+
+
+
+#宣战理由  挑衅
+provoke = {
+	group = provoke_cb 	# 这个宣战理由属于什么组
+
+	war_name = provoke_name            #本地化的键
+	my_war_name = provoke_name 
+	war_name_base = provoke_name
+	my_war_name_base = provoke_name
+	
+	max_attacker_score_from_battles = 100				# 攻击方最多可以从战斗中获得多少战争得分
+	max_defender_score_from_battles = 100				# 防守方在战斗中可以获得最多多少战争得分？
+	max_attacker_score_from_occupation = 50				# 攻击方总共可以从占领中获得最多多少战争得分
+	max_defender_score_from_occupation = 50			# 防守方总共能从占领中获得最多多少战争得分
+	full_occupation_by_defender_gives_victory = no 		# 防守方完全占领能否自动获得100%的战争分数
+	full_occupation_by_attacker_gives_victory = no 		# 攻击方完全占领能否自动获得100%的战争分数
+	landless_attacker_needs_armies = no 				# 如果设置为 "否"，没有土地和军队也不会自动给对方带来100%的战争得分。
+
+	occupation_participation_mult = 1.0					# 占领方的参与得分要乘以什么？默认为1
+	siege_participation_mult = 1.0						# 攻城战的得分乘以什么？默认为1
+	battle_participation_mult = 1.0						# 战斗参与得分乘以什么？默认为1
+
+	cost = { 
+		prestige = 100
+	}	# 宣战的成本是多少
+
+	attacker_capital_gives_war_score = yes 				# 攻击方首都有没有战争得分
+	defender_capital_gives_war_score = yes 				# 防守方的首都有没有战争得分
+	imprisonment_by_attacker_give_war_score = yes 		# 攻击方监禁人员时有没有战争得分
+	imprisonment_by_defender_give_war_score = yes		# 保卫方监禁人员人时有没有战争分数
+
+	on_declaration = { 
+		on_declared_war = yes
+		scope:attacker = {
+			add_stress = -50
+		}
+	}                            #宣战时候触发的效果
+	on_victory = { 
+		add_truce_attacker_victory_effect = yes
+		scope:attacker = {
+			add_stress = -100
+		}
+		custom_description = {
+			text = on_declaration_provoke
+		}
+	}								#当胜利的时候触发的效果
+	on_white_peace = { 
+		add_truce_white_peace_effect = yes
+	 }							#当无条件和平的时候触发的效果
+	on_defeat = {
+		add_truce_attacker_defeat_effect = yes
+		scope:attacker = {
+			pay_reserved_income = {
+				target = scope:defender
+				years = 2
+			}
+			add_prestige_level = -1
+		}
+	}									#当战败的时候触发的效果
+	on_invalidated = {  }							#当战争无效的时候触发的效果
+
+	on_victory_desc = {
+ 		desc = provoke_victory
+	}								#当各种情况下的描述，这些描述会在战争UI界面显示，一定要好好写
+	on_defeat_desc = {
+		desc = provoke_defeated
+	}
+	on_white_peace_desc = { }
+
+	should_invalidate = {  }           				#战争被无效化的条件
+	mutually_exclusive_titles = { 
+		always = yes
+	 } # 如果评估为 "真"，则只能针对一个标题。
+	combine_into_one = yes				# 如果设置了，那么我们将显示该CB的所有实例（例如，X的圣战，Y的圣战，Z的圣战）作为一个单一条目，让你在不同的目标之间进行选择
+
+	allowed_for_character = { 
+		scope:attacker.faith = {
+			has_doctrine = fight_crazy
+		}
+	 }		#什么样的角色才能使用这个宣战理由
+
+	allowed_against_character = {  }					#允许对哪些角色使用这个宣战理由
+
+	
+	is_allowed_claim_title = {  }
+
+
+	target_titles = neighbor_land_or_water
+	#none/neighbor_land/neighbor_water/neighbor_land_or_water/de_jure_claim/title_claim/all  决定这个CB可以用来对付什么头衔。如果它针对的是一个领域而不是一个头衔，则为 "none"。
+	target_de_jure_regions_above = yes # 如果设置为真，那么对于这个拥有目标头衔范围内的土地的人，都可以对其发起攻击
+
+
+
+
+	truce_days = 180            #和平协议后休战的天数
+
+	on_primary_attacker_death = invalidate
+	on_primary_defender_death = inherit
+	transfer_behavior = transfer
+
+	attacker_allies_inherit = no # 战争中的盟友应该继承在战争中的地位吗？
+	defender_allies_inherit = no # 战争中的盟友应该继承在战争中的地位吗？
+
+	interface_priority = 60 # 决定了它在CB列表中的显示顺序。它越高，显示的位置就越高。平局是按定义顺序打破的
+
+	max_ai_diplo_distance_to_title = 1000 # 如果头衔比这更高，AI将永远不会考虑它。
+
+	ai_only_against_neighbors = yes # 如果设置了，人工智能将只对其陆上和海上的邻居检查这个CB。
+
+	white_peace_possible = no # 如果设置为 "否"，就不能发生无条件和平；只有胜利、失败或无效。
+	ticking_war_score_targets_entire_realm = yes # 如果设置为 "是"，我们将检查整个领域而不是战争目标。
+
+	target_top_liege_if_outside_realm = yes # 绕过检查，如果你不在一个王国里，你只能以最高统治者为目标。只用于脚本战争，如农民起义；在用户界面中不起作用。
+
+}
+
+
+
+
+
+
+
+
+
+#侵略扩张
+aggressive_expansion_cb = {
+	group = aggressive_expansion 	# 这个宣战理由属于什么组
+
+	war_name = aggressive_expansion_cb_name            #本地化的键
+	my_war_name = aggressive_expansion_cb_name 
+	war_name_base = aggressive_expansion_cb_name
+	my_war_name_base = aggressive_expansion_cb_name
+	
+	max_attacker_score_from_battles = 50				# 攻击方最多可以从战斗中获得多少战争得分
+	max_defender_score_from_battles = 100				# 防守方在战斗中可以获得最多多少战争得分？
+	max_attacker_score_from_occupation = 100				# 攻击方总共可以从占领中获得最多多少战争得分
+	max_defender_score_from_occupation = 100		# 防守方总共能从占领中获得最多多少战争得分
+	full_occupation_by_defender_gives_victory = no 		# 防守方完全占领能否自动获得100%的战争分数
+	full_occupation_by_attacker_gives_victory = no 		# 攻击方完全占领能否自动获得100%的战争分数
+	landless_attacker_needs_armies = no 				# 如果设置为 "否"，没有土地和军队也不会自动给对方带来100%的战争得分。
+
+
+	should_show_war_goal_subview = yes                  # 是否显示战争目标
+	occupation_participation_mult = 1.0					# 占领方的参与得分要乘以什么？默认为1
+	siege_participation_mult = 1.0						# 攻城战的得分乘以什么？默认为1
+	battle_participation_mult = 1.0						# 战斗参与得分乘以什么？默认为1
+
+	cost = { 
+		prestige = 500
+	}	# 宣战的成本是多少
+
+	attacker_capital_gives_war_score = yes 				# 攻击方首都有没有战争得分
+	defender_capital_gives_war_score = yes 				# 防守方的首都有没有战争得分
+	imprisonment_by_attacker_give_war_score = yes 		# 攻击方监禁人员时有没有战争得分
+	imprisonment_by_defender_give_war_score = yes		# 保卫方监禁人员人时有没有战争分数
+	
+
+	on_declaration = { 
+		on_declared_war = yes
+	}                            #宣战时候触发的效果
+	on_victory = {
+		add_truce_attacker_victory_effect = yes
+		scope:attacker = { show_pow_release_message_effect = yes }
+		create_title_and_vassal_change = {
+			type = conquest
+			save_scope_as = change
+			add_claim_on_loss = yes
+		}
+		every_in_list = {
+			list = target_titles
+			change_title_holder_include_vassals = {
+				holder = scope:attacker
+				change = scope:change
+			}
+		}
+		resolve_title_and_vassal_change = scope:change	
+	}								#当胜利的时候触发的效果
+	on_white_peace = { 
+		add_truce_white_peace_effect = yes
+		scope:attacker = { show_pow_release_message_effect = yes }
+		scope:attacker = {
+			add_prestige = -500
+		}
+	}							#当无条件和平的时候触发的效果
+	on_defeat = { 
+		add_truce_attacker_defeat_effect = yes
+		scope:attacker = { show_pow_release_message_effect = yes }
+		scope:attacker = {
+			add_prestige = -500
+			add_prestige_level = -1
+			pay_long_term_income = {
+				target = scope:defender
+				years = 4
+			}
+		}
+	}									#当战败的时候触发的效果
+	on_invalidated = {  }							#当战争无效的时候触发的效果
+
+	on_victory_desc = {
+		desc = aggressive_expansion_cb_victory
+	}								#当各种情况下的描述，这些描述会在战争UI界面显示，一定要好好写
+	on_defeat_desc = {
+		desc = aggressive_expansion_cb_defeat
+	}
+	on_white_peace_desc = { 
+		desc = aggressive_expansion_cb_peace
+	}
+
+	should_invalidate = {  }           				#战争被无效化的条件
+	mutually_exclusive_titles = { 
+		always = yes
+	 } # 如果评估为 "真"，则只能针对一个标题。
+	combine_into_one = yes				# 如果设置了，那么我们将显示该CB的所有实例（例如，X的圣战，Y的圣战，Z的圣战）作为一个单一条目，让你在不同的目标之间进行选择
+
+	allowed_for_character = { 
+		scope:attacker.faith = {
+			has_doctrine = fight_crazy
+		}
+	}		#什么样的角色才能使用这个宣战理由
+
+	allowed_against_character = { 
+		always = yes
+	}					#允许对哪些角色使用这个宣战理由
+
+	
+	is_allowed_claim_title = {
+	}
+
+	target_title_tier = duchy
+
+	target_titles = neighbor_land_or_water
+	#none/neighbor_land/neighbor_water/neighbor_land_or_water/de_jure_claim/title_claim/all  决定这个CB可以用来对付什么头衔。如果它针对的是一个领域而不是一个头衔，则为 "none"。
+	target_de_jure_regions_above = yes # 如果设置为真，那么对于这个拥有目标头衔范围内的土地的人，都可以对其发起攻击
+
+
+
+
+	truce_days = 360            #和平协议后休战的天数
+
+	on_primary_attacker_death = inherit      #战争各方死后的继承设置  可用的有invalidate/inherit/inherit_faction
+	on_primary_defender_death = inherit
+	transfer_behavior = transfer
+
+	attacker_allies_inherit = no # 战争中的盟友应该继承在战争中的地位吗？
+	defender_allies_inherit = no # 战争中的盟友应该继承在战争中的地位吗？
+
+	interface_priority = 60 # 决定了它在CB列表中的显示顺序。它越高，显示的位置就越高。平局是按定义顺序打破的
+
+	max_ai_diplo_distance_to_title = 1000 # 如果头衔比这更高，AI将永远不会考虑它。
+
+	ai_only_against_neighbors = yes # 如果设置了，人工智能将只对其陆上和海上的邻居检查这个CB。
+
+	white_peace_possible = yes # 如果设置为 "no"，就不能发生无条件和平；只有胜利、失败或无效。
+	ticking_war_score_targets_entire_realm = yes # 如果设置为 "是"，我们将检查整个领域而不是战争目标。
+
+	target_top_liege_if_outside_realm = yes # 绕过检查，如果你不在一个王国里，你只能以最高统治者为目标。只用于脚本战争，如农民起义；在用户界面中不起作用。
+
+}
+
+
+
+
+
+
+
+#征服 王国级
+conquest_cb_super_cb_kingdom = {
+	group = aggressive_expansion 	# 这个宣战理由属于什么组
+
+	war_name = conquest_cb_super_cb_kingdom_name            #本地化的键
+	my_war_name = conquest_cb_super_cb_kingdom_name 
+	war_name_base = conquest_cb_super_cb_kingdom_name
+	my_war_name_base = conquest_cb_super_cb_kingdom_name
+	
+	max_attacker_score_from_battles = 50				# 攻击方最多可以从战斗中获得多少战争得分
+	max_defender_score_from_battles = 100				# 防守方在战斗中可以获得最多多少战争得分？
+	max_attacker_score_from_occupation = 100				# 攻击方总共可以从占领中获得最多多少战争得分
+	max_defender_score_from_occupation = 100		# 防守方总共能从占领中获得最多多少战争得分
+	full_occupation_by_defender_gives_victory = no 		# 防守方完全占领能否自动获得100%的战争分数
+	full_occupation_by_attacker_gives_victory = no 		# 攻击方完全占领能否自动获得100%的战争分数
+	landless_attacker_needs_armies = no 				# 如果设置为 "否"，没有土地和军队也不会自动给对方带来100%的战争得分。
+
+
+	should_show_war_goal_subview = yes                  # 是否显示战争目标
+	occupation_participation_mult = 1.0					# 占领方的参与得分要乘以什么？默认为1
+	siege_participation_mult = 1.0						# 攻城战的得分乘以什么？默认为1
+	battle_participation_mult = 1.0						# 战斗参与得分乘以什么？默认为1
+
+	cost = { 
+		prestige = 1000
+	}	# 宣战的成本是多少
+
+	attacker_capital_gives_war_score = yes 				# 攻击方首都有没有战争得分
+	defender_capital_gives_war_score = yes 				# 防守方的首都有没有战争得分
+	imprisonment_by_attacker_give_war_score = yes 		# 攻击方监禁人员时有没有战争得分
+	imprisonment_by_defender_give_war_score = yes		# 保卫方监禁人员人时有没有战争分数
+	
+
+	on_declaration = { 
+		on_declared_war = yes
+	}                            #宣战时候触发的效果
+	on_victory = {
+		add_truce_attacker_victory_effect = yes
+		scope:attacker = { show_pow_release_message_effect = yes }
+		create_title_and_vassal_change = {
+			type = conquest
+			save_scope_as = change
+			add_claim_on_loss = yes
+		}
+		every_in_list = {
+			list = target_titles
+			change_title_holder = {
+				holder = scope:attacker
+				change = scope:change
+			}
+		}
+		every_in_list = {
+			list = target_titles
+			custom_tooltip = RELIGIOUS_CB_TITLE
+
+			conquest_cb_title_transfer = {
+				RELIGIOUS_WAR = yes
+			}
+		}
+
+		every_in_list = {
+			list = vassals_taken
+			change_liege = {
+				liege = scope:attacker
+				change = scope:change
+			}
+		}
+		
+		every_in_list = {
+			list = titles_taken
+			change_title_holder = {
+				holder = scope:attacker
+				change = scope:change
+				take_baronies = yes
+			}
+		}
+
+
+
+
+		resolve_title_and_vassal_change = scope:change	
+	}								#当胜利的时候触发的效果
+	on_white_peace = { 
+		add_truce_white_peace_effect = yes
+		scope:attacker = { show_pow_release_message_effect = yes }
+		scope:attacker = {
+			add_prestige = -1000
+		}	
+	}							#当无条件和平的时候触发的效果
+	on_defeat = { 
+		add_truce_attacker_defeat_effect = yes
+		scope:attacker = { show_pow_release_message_effect = yes }
+		scope:attacker = {
+			add_prestige = -1000
+			add_prestige_level = -1
+			pay_long_term_income = {
+				target = scope:defender
+				years = 6
+			}
+		}
+	}									#当战败的时候触发的效果
+	on_invalidated = {  }							#当战争无效的时候触发的效果
+
+	on_victory_desc = {
+		desc = conquest_cb_super_cb_kingdom_victory
+	}								#当各种情况下的描述，这些描述会在战争UI界面显示，一定要好好写
+	on_defeat_desc = {
+		desc = conquest_cb_super_cb_kingdom_defeat
+	}
+	on_white_peace_desc = { 
+		desc = conquest_cb_super_cb_kingdom_peace
+	}
+
+	should_invalidate = {  }           				#战争被无效化的条件
+	mutually_exclusive_titles = { 
+		always = yes
+	 } # 如果评估为 "真"，则只能针对一个标题。
+	combine_into_one = yes				# 如果设置了，那么我们将显示该CB的所有实例（例如，X的圣战，Y的圣战，Z的圣战）作为一个单一条目，让你在不同的目标之间进行选择
+
+	allowed_for_character = { 
+		scope:attacker.faith = {
+			has_doctrine = fight_crazy
+		}
+		scope:defender = {
+			highest_held_title_tier > tier_duchy
+		}
+	}		#什么样的角色才能使用这个宣战理由
+
+	allowed_against_character = { 
+	}					#允许对哪些角色使用这个宣战理由
+
+	
+	is_allowed_claim_title = {
+	}
+
+	target_title_tier = kingdom
+
+	target_titles = neighbor_land_or_water
+	#none/neighbor_land/neighbor_water/neighbor_land_or_water/de_jure_claim/title_claim/all  决定这个CB可以用来对付什么头衔。如果它针对的是一个领域而不是一个头衔，则为 "none"。
+	target_de_jure_regions_above = yes # 如果设置为真，那么对于这个拥有目标头衔范围内的土地的人，都可以对其发起攻击
+
+
+
+
+	truce_days = 480            #和平协议后休战的天数
+
+	on_primary_attacker_death = inherit      #战争各方死后的继承设置  可用的有invalidate/inherit/inherit_faction
+	on_primary_defender_death = inherit
+	transfer_behavior = transfer
+
+	attacker_allies_inherit = no # 战争中的盟友应该继承在战争中的地位吗？
+	defender_allies_inherit = no # 战争中的盟友应该继承在战争中的地位吗？
+
+	interface_priority = 60 # 决定了它在CB列表中的显示顺序。它越高，显示的位置就越高。平局是按定义顺序打破的
+
+	max_ai_diplo_distance_to_title = 1000 # 如果头衔比这更高，AI将永远不会考虑它。
+
+	ai_only_against_neighbors = yes # 如果设置了，人工智能将只对其陆上和海上的邻居检查这个CB。
+
+	white_peace_possible = yes # 如果设置为 "no"，就不能发生无条件和平；只有胜利、失败或无效。
+	ticking_war_score_targets_entire_realm = yes # 如果设置为 "是"，我们将检查整个领域而不是战争目标。
+
+	target_top_liege_if_outside_realm = yes # 绕过检查，如果你不在一个王国里，你只能以最高统治者为目标。只用于脚本战争，如农民起义；在用户界面中不起作用。
+
+}
+
+
+
+
+#征服  帝国级
+conquest_cb_super_cb_empire = {
+	group = aggressive_expansion 	# 这个宣战理由属于什么组
+
+	war_name = conquest_cb_super_cb_empire_name            #本地化的键
+	my_war_name = conquest_cb_super_cb_empire_name 
+	war_name_base = conquest_cb_super_cb_empire_name
+	my_war_name_base = conquest_cb_super_cb_empire_name
+	
+	max_attacker_score_from_battles = 50				# 攻击方最多可以从战斗中获得多少战争得分
+	max_defender_score_from_battles = 100				# 防守方在战斗中可以获得最多多少战争得分？
+	max_attacker_score_from_occupation = 100				# 攻击方总共可以从占领中获得最多多少战争得分
+	max_defender_score_from_occupation = 100		# 防守方总共能从占领中获得最多多少战争得分
+	full_occupation_by_defender_gives_victory = no 		# 防守方完全占领能否自动获得100%的战争分数
+	full_occupation_by_attacker_gives_victory = no 		# 攻击方完全占领能否自动获得100%的战争分数
+	landless_attacker_needs_armies = no 				# 如果设置为 "否"，没有土地和军队也不会自动给对方带来100%的战争得分。
+
+
+	should_show_war_goal_subview = yes                  # 是否显示战争目标
+	occupation_participation_mult = 1.0					# 占领方的参与得分要乘以什么？默认为1
+	siege_participation_mult = 1.0						# 攻城战的得分乘以什么？默认为1
+	battle_participation_mult = 1.0						# 战斗参与得分乘以什么？默认为1
+
+	cost = { 
+		prestige = 2000
+	}	# 宣战的成本是多少
+
+	attacker_capital_gives_war_score = yes 				# 攻击方首都有没有战争得分
+	defender_capital_gives_war_score = yes 				# 防守方的首都有没有战争得分
+	imprisonment_by_attacker_give_war_score = yes 		# 攻击方监禁人员时有没有战争得分
+	imprisonment_by_defender_give_war_score = yes		# 保卫方监禁人员人时有没有战争分数
+	
+
+	on_declaration = { 
+		on_declared_war = yes
+	}                            #宣战时候触发的效果
+	on_victory = {
+		add_truce_attacker_victory_effect = yes
+		scope:attacker = { show_pow_release_message_effect = yes }
+		create_title_and_vassal_change = {
+			type = conquest
+			save_scope_as = change
+			add_claim_on_loss = yes
+		}
+		every_in_list = {
+			list = target_titles
+			change_title_holder = {
+				holder = scope:attacker
+				change = scope:change
+			}
+		}
+		every_in_list = {
+			list = target_titles
+			custom_tooltip = RELIGIOUS_CB_TITLE
+
+			conquest_cb_title_transfer = {
+				RELIGIOUS_WAR = yes
+			}
+		}
+
+		every_in_list = {
+			list = vassals_taken
+			change_liege = {
+				liege = scope:attacker
+				change = scope:change
+			}
+		}
+		
+		every_in_list = {
+			list = titles_taken
+			change_title_holder = {
+				holder = scope:attacker
+				change = scope:change
+				take_baronies = yes
+			}
+		}
+
+
+
+
+		resolve_title_and_vassal_change = scope:change	
+	}								#当胜利的时候触发的效果
+	on_white_peace = { 
+		add_truce_white_peace_effect = yes
+		scope:attacker = { show_pow_release_message_effect = yes }
+		scope:attacker = {
+			add_prestige = -2000
+		}	
+	}							#当无条件和平的时候触发的效果
+	on_defeat = { 
+		add_truce_attacker_defeat_effect = yes
+		scope:attacker = { show_pow_release_message_effect = yes }
+		scope:attacker = {
+			add_prestige = -2000
+			add_prestige_level = -2
+			pay_long_term_income = {
+				target = scope:defender
+				years = 8
+			}
+		}
+	}									#当战败的时候触发的效果
+	on_invalidated = {  }							#当战争无效的时候触发的效果
+
+	on_victory_desc = {
+		desc = conquest_cb_super_cb_kingdom_victory
+	}								#当各种情况下的描述，这些描述会在战争UI界面显示，一定要好好写
+	on_defeat_desc = {
+		desc = conquest_cb_super_cb_kingdom_defeat
+	}
+	on_white_peace_desc = { 
+		desc = conquest_cb_super_cb_kingdom_peace
+	}
+
+	should_invalidate = {  }           				#战争被无效化的条件
+	mutually_exclusive_titles = { 
+		always = yes
+	 } # 如果评估为 "真"，则只能针对一个标题。
+	combine_into_one = yes				# 如果设置了，那么我们将显示该CB的所有实例（例如，X的圣战，Y的圣战，Z的圣战）作为一个单一条目，让你在不同的目标之间进行选择
+
+	allowed_for_character = { 
+		scope:attacker.faith = {
+			has_doctrine = fight_crazy
+		}
+		scope:defender = {
+			highest_held_title_tier > tier_kingdom
+		}
+	}		#什么样的角色才能使用这个宣战理由
+
+	allowed_against_character = { 
+	}					#允许对哪些角色使用这个宣战理由
+
+	
+	is_allowed_claim_title = {
+	}
+
+	target_title_tier = empire
+
+	target_titles = neighbor_land_or_water
+	#none/neighbor_land/neighbor_water/neighbor_land_or_water/de_jure_claim/title_claim/all  决定这个CB可以用来对付什么头衔。如果它针对的是一个领域而不是一个头衔，则为 "none"。
+	target_de_jure_regions_above = yes # 如果设置为真，那么对于这个拥有目标头衔范围内的土地的人，都可以对其发起攻击
+
+
+
+
+	truce_days = 720            #和平协议后休战的天数
+
+	on_primary_attacker_death = inherit      #战争各方死后的继承设置  可用的有invalidate/inherit/inherit_faction
+	on_primary_defender_death = inherit
+	transfer_behavior = transfer
+
+	attacker_allies_inherit = no # 战争中的盟友应该继承在战争中的地位吗？
+	defender_allies_inherit = no # 战争中的盟友应该继承在战争中的地位吗？
+
+	interface_priority = 60 # 决定了它在CB列表中的显示顺序。它越高，显示的位置就越高。平局是按定义顺序打破的
+
+	max_ai_diplo_distance_to_title = 1000 # 如果头衔比这更高，AI将永远不会考虑它。
+
+	ai_only_against_neighbors = yes # 如果设置了，人工智能将只对其陆上和海上的邻居检查这个CB。
+
+	white_peace_possible = yes # 如果设置为 "no"，就不能发生无条件和平；只有胜利、失败或无效。
+	ticking_war_score_targets_entire_realm = yes # 如果设置为 "是"，我们将检查整个领域而不是战争目标。
+
+	target_top_liege_if_outside_realm = yes # 绕过检查，如果你不在一个王国里，你只能以最高统治者为目标。只用于脚本战争，如农民起义；在用户界面中不起作用。
+
+}
