@@ -261,7 +261,7 @@ phosphorus_fire_maa_type = {
 	
 	stack = 50
 	ai_quality = { value = 150 }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
-	icon = war_god_maa_heavy_infantry  # 图标放在\gfx\interface\icons\regimenttypes\name.dds
+	icon = phosphorus_fire_maa_type  # 图标放在\gfx\interface\icons\regimenttypes\name.dds
 }
 
 #方舟徒
@@ -358,7 +358,7 @@ crazy_soild = {
 	
 	stack = 70
 	ai_quality = {  value = 150  }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
-	icon = war_god_maa_heavy_infantry  # 图标放在\gfx\interface\icons\regimenttypes\name.dds
+	icon = crazy_soild  # 图标放在\gfx\interface\icons\regimenttypes\name.dds
 }
 
 #秘法师
