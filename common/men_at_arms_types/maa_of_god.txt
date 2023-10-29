@@ -293,7 +293,7 @@ ark_apprentice = {
 	
 	stack = 200
 	ai_quality = {  value = 150  }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
-	icon = skirmishers  # 图标放在\gfx\interface\icons\regimenttypes\name.dds
+	icon = ark_apprentice  # 图标放在\gfx\interface\icons\regimenttypes\name.dds
 }
 
 #木矢兵

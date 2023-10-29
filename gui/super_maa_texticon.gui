@@ -1,0 +1,91 @@
+#Maa在军力界面的图标
+texticon = {
+	icon = war_god_maa_archers_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/war_god_maa_archers.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = war_god_maa_heavy_infantry_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/war_god_maa_heavy_infantry.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = war_god_maa_heavy_cavalry_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/war_god_maa_heavy_cavalry.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = undead_light_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/undead_light.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = undead_heavy_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/undead_heavy.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = fate_eagle_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/fate_eagle.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = phosphorus_fire_maa_type_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/phosphorus_fire_maa_type.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = ark_apprentice_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/ark_apprentice.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = wooden_arrow_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/wooden_arrow.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = crazy_soild_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/crazy_soild.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
