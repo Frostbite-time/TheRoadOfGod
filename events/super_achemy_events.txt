@@ -17,7 +17,9 @@ super_achemy.0001 ={
 					}
 					modifier = {
 						add = -10
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 					modifier = {
 						add = -10

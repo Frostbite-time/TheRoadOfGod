@@ -31,7 +31,9 @@ is_character_has_any_great_traits = {
 
 #角色是否是神
 is_character_god = {
-	has_trait = god_god
+	is_the_character_god = {
+		CHARACTER = this
+	}
 }
 
 #角色是否拥有强力技能特质

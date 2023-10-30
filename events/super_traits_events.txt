@@ -117,7 +117,9 @@ be_angel_event.0007 = {
 	immediate = {   #当事件触发时会发生的事情，优先级高于一切
 		create_character = {
 			name = god_name
-			trait = god_god
+			is_the_character_god = {
+				CHARACTER = this
+			}
 			after_creation = {
 				save_scope_as = god_ll_a   
 			}

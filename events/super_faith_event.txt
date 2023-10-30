@@ -194,7 +194,9 @@ super_faith_event.0006 = {
 		trigger = {
 			root = {
 				NOT = {
-					has_trait = god_god
+					is_the_character_god = {
+						CHARACTER = this
+					}
 				}
 			}
 		}
@@ -202,7 +204,9 @@ super_faith_event.0006 = {
 	option = {
 		trigger = {
 			root = {
-				has_trait = god_god
+				is_the_character_god = {
+					CHARACTER = this
+				}
 			}
 		}
 		name = super_faith_event.0006.b

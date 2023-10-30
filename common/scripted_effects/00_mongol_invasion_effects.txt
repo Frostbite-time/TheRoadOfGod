@@ -206,7 +206,7 @@ spawn_temujin_character_effect = {
 		}
 	}
 	scope:temujin = {  #super_ 修改在此处   此处使得铁木真开局获得3大特质  神特质  以及所有其他技能
-		add_trait = god_god
+		add_trait = super_fight_god
 		add_trait = saint_in_flesh_traits
 		add_trait = angel_traits
 		add_trait = devilishness

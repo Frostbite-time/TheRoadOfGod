@@ -720,7 +720,9 @@ out_of_ap_effect = {
 		}
 		if = {
 			limit = {
-				has_trait = god_god
+				is_the_character_god = {
+					CHARACTER = this
+				}
 			}
 			death = {
 				death_reason = death_vanished
@@ -731,7 +733,9 @@ out_of_ap_effect = {
 		if = {
 			limit = {
 				NOT = {
-					has_trait = god_god
+					is_the_character_god = {
+						CHARACTER = this
+					}
 				}
 			}
 			death = {

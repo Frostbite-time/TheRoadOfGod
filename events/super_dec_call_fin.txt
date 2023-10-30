@@ -10,7 +10,9 @@ final_call_dec_events.0001 = {
 	option = {
 		name = final_call_dec_events.0001.a   #如果主角是神的话
 		trigger = {
-			has_trait = god_god
+			is_the_character_god = {
+				CHARACTER = this
+			}
 		}
 		trigger_event = final_call_dec_events.0003
 	}
@@ -18,7 +20,9 @@ final_call_dec_events.0001 = {
 		name = final_call_dec_events.0001.b
 		trigger = {
 			NOT = {
-				has_trait = god_god
+				is_the_character_god = {
+					CHARACTER = this
+				}
 			}	
 		}
 		remove_long_term_gold = {
@@ -65,7 +69,9 @@ final_call_dec_events.0001 = {
 		name = final_call_dec_events.0001.c
 		trigger = {
 			NOT = {
-				has_trait = god_god
+				is_the_character_god = {
+					CHARACTER = this
+				}
 			}	
 		}
 		add_piety = {

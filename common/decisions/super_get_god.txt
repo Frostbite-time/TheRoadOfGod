@@ -26,7 +26,9 @@ to_be_god = {
 			has_trait = saint_in_flesh_traits
 			has_trait = devilishness
 			NOT = {
-				has_trait = god_god
+				is_the_character_god = {
+					CHARACTER = this
+				}
 			}
 		}	
 	}
@@ -94,7 +96,9 @@ out_of_apostle = {
 			has_trait = saint_in_flesh_traits
 			has_trait = devilishness
 			NOT = {
-				has_trait = god_god
+				is_the_character_god = {
+					CHARACTER = this
+				}
 			}
 			has_apostle_trait = yes
 		}	

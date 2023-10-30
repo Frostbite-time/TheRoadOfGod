@@ -31,7 +31,9 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 					modifier = {
 						multiply = 0
@@ -54,7 +56,9 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				20 = {       #好的回应
@@ -63,7 +67,9 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				20 = {    #平淡的回应
@@ -72,7 +78,9 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				5 = {   #怒火
@@ -81,7 +89,9 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				0 = {    #如果主角是神
@@ -90,7 +100,9 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						add = 1000
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 			}
@@ -120,7 +132,9 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 					modifier = {
 						multiply = 0
@@ -143,7 +157,9 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				20 = {       #好的回应
@@ -152,7 +168,9 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				20 = {    #平淡的回应
@@ -161,7 +179,9 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				10 = {   #怒火
@@ -170,7 +190,9 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				0 = {    #如果主角是神
@@ -179,7 +201,9 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						add = 1000
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 			}
@@ -209,7 +233,9 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 					modifier = {
 						multiply = 0
@@ -232,7 +258,9 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				20 = {       #好的回应
@@ -241,7 +269,9 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				10 = {   #怒火
@@ -250,7 +280,9 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				0 = {    #如果主角是神
@@ -259,7 +291,9 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						add = 1000
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				10 = {   #恶意追逐战
@@ -268,7 +302,9 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 			}
@@ -303,7 +339,9 @@ call_god_events.0001 = {
 				}
 				modifier = {
 					multiply = 0
-					has_trait = god_god
+					is_the_character_god = {
+							CHARACTER = this
+						}
 				}
 			}
 			70 = {
@@ -312,7 +350,9 @@ call_god_events.0001 = {
 				}
 				modifier = {
 					multiply = 0
-					has_trait = god_god
+					is_the_character_god = {
+							CHARACTER = this
+						}
 				}				
 			}
 			0 = {    #如果主角是神
@@ -321,7 +361,9 @@ call_god_events.0001 = {
 				}
 				modifier = {
 					add = 1000
-					has_trait = god_god
+					is_the_character_god = {
+							CHARACTER = this
+						}
 				}
 			}
 			
@@ -358,7 +400,9 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 					modifier = {
 						multiply = 0
@@ -381,7 +425,9 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				25 = {       #好的回应
@@ -390,7 +436,9 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				25 = {    #平淡的回应
@@ -399,7 +447,9 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				10 = {   #怒火
@@ -408,7 +458,9 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				0 = {    #如果主角是神
@@ -417,7 +469,9 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						add = 1000
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 			}
@@ -447,7 +501,9 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 					modifier = {
 						multiply = 0
@@ -470,7 +526,9 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				25 = {       #好的回应
@@ -479,7 +537,9 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				25 = {    #平淡的回应
@@ -488,7 +548,9 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				15 = {   #怒火
@@ -497,7 +559,9 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				0 = {    #如果主角是神
@@ -506,7 +570,9 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						add = 1000
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 			}
@@ -536,7 +602,9 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 					modifier = {
 						multiply = 0
@@ -559,7 +627,9 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				25 = {       #好的回应
@@ -568,7 +638,9 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				15 = {   #怒火
@@ -577,7 +649,9 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				0 = {    #如果主角是神
@@ -586,7 +660,9 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						add = 1000
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 				15 = {   #恶意追逐战
@@ -595,7 +671,9 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						multiply = 0
-						has_trait = god_god
+						is_the_character_god = {
+							CHARACTER = this
+						}
 					}
 				}
 			}
@@ -630,7 +708,9 @@ call_god_events.0004 = {
 				}
 				modifier = {
 					multiply = 0
-					has_trait = god_god
+					is_the_character_god = {
+							CHARACTER = this
+						}
 				}
 			}
 			70 = {
@@ -639,7 +719,9 @@ call_god_events.0004 = {
 				}
 				modifier = {
 					multiply = 0
-					has_trait = god_god
+					is_the_character_god = {
+							CHARACTER = this
+						}
 				}				
 			}
 			0 = {    #如果主角是神
@@ -648,7 +730,9 @@ call_god_events.0004 = {
 				}
 				modifier = {
 					add = 1000
-					has_trait = god_god
+					is_the_character_god = {
+							CHARACTER = this
+						}
 				}
 			}
 		}
@@ -703,7 +787,7 @@ call_god_events.0003 = {
 	immediate = {   #当事件触发时会发生的事情，优先级高于一切
 		create_character = {
 			name = god_of_destiny_name
-			trait = god_god
+			trait = super_destiny_god
 			after_creation = {
 				save_scope_as = god_ll_a   
 			}
@@ -949,7 +1033,7 @@ call_god_events.0011 = {
 	immediate = {   #当事件触发时会发生的事情，优先级高于一切
 		create_character = {
 			name = god_of_time_name
-			trait = god_god
+			trait = super_time_god
 			after_creation = {
 				save_scope_as = god_ll_a   
 			}
@@ -1105,7 +1189,7 @@ call_god_events.0014 = {
 	immediate = {
 		create_character = {
 			name = god_of_destiny_name
-			trait = god_god
+			trait = super_sun_god
 			after_creation = {
 				save_scope_as = god_ll_a   
 			}
@@ -1161,7 +1245,7 @@ call_god_events.0016 = {
 	immediate = {   #当事件触发时会发生的事情，优先级高于一切
 		create_character = {
 			name = god_of_so_name
-			trait = god_god
+			trait = super_sun_god
 			after_creation = {
 				save_scope_as = god_ll_a   
 			}
