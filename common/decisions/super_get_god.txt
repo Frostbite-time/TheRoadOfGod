@@ -1,4 +1,4 @@
-﻿#成为神明
+﻿#成为神明   已经废弃 不再使用
 to_be_god = {               
 	title = to_be_god   #决议名称的loc_key
 	desc = to_be_god_desc  #决议的描述loc_key
@@ -21,29 +21,8 @@ to_be_god = {
 	cooldown = { days = 1825 } #决议的冷却时间
 	
 	is_shown = {       #显示决议的条件
-		AND = {
-			has_trait = angel_traits
-			has_trait = saint_in_flesh_traits
-			has_trait = devilishness
-			NOT = {
-				is_the_character_god = {
-					CHARACTER = this
-				}
-			}
-		}	
-	}
-	
-	is_valid_showing_failures_only = {   #角色必须未被囚禁且为成人，且拥有贤者之石，不能为使徒，不能被侵蚀
-		AND = {
-			is_available_adult = yes
-			is_imprisoned = no
-			is_have_sage_stone = yes
-			has_apostle_trait = no
-		}	
-		NOT = {
-			has_character_modifier = god_hated
-		}
-	}
+		always = no
+	}	
 	
 	ai_potential = {     #ai是否检测这个决议
 		always = yes

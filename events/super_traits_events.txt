@@ -52,7 +52,7 @@ be_angel_event.0003 = {
 }
 
 
-#成神
+#成神   已经废弃
 be_angel_event.0004 = {
 	type = character_event #这是一个角色事件，会将root的范围设置为角色
 	title = be_angel_event.0004.t  #事件标题
