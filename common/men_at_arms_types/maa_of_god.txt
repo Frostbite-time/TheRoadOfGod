@@ -374,6 +374,10 @@ wise_god_low = {
 	terrain_bonus = {
 	}
 	counters = {
+		creation = 1
+		holy_heavy_infantry = 1
+		holy_heavy_cavalry = 1
+		holy_skirmishers = 1
 	}
 	buy_cost = {
 		gold = 1000
@@ -398,6 +402,7 @@ wise_god_high = {
 	terrain_bonus = {
 	}
 	counters = {
+		creation = 1
 	}
 	buy_cost = {
 		gold = 1000
@@ -422,6 +427,12 @@ war_god_low = {
 	terrain_bonus = {
 	}
 	counters = {
+		mage = 1
+		holy_beast = 1
+		holy_heavy_infantry = 1
+		holy_heavy_cavalry = 1
+		holy_skirmishers = 1
+		holy_archer_cavalry = 1
 	}
 	buy_cost = {
 		gold = 1000
@@ -446,6 +457,10 @@ war_god_high = {
 	terrain_bonus = {
 	}
 	counters = {
+		holy_beast = 1
+		creation = 1
+		holy_heavy_infantry = 1
+		holy_skirmishers = 1
 	}
 	buy_cost = {
 		gold = 1000
@@ -470,6 +485,10 @@ dark_god_low = {
 	terrain_bonus = {
 	}
 	counters = {
+		holy_heavy_infantry = 1
+		holy_heavy_cavalry = 1
+		holy_skirmishers = 1
+		holy_archer_cavalry = 1
 	}
 	buy_cost = {
 		gold = 1000
@@ -494,6 +513,8 @@ dark_god_high = {
 	terrain_bonus = {
 	}
 	counters = {
+		beast = 1
+		holy_heavy_infantry = 1
 	}
 	buy_cost = {
 		gold = 1000
@@ -518,6 +539,11 @@ nature_god_low = {
 	terrain_bonus = {
 	}
 	counters = {
+		mage = 1
+		holy_heavy_infantry = 1
+		holy_heavy_cavalry = 1
+		holy_skirmishers = 1
+		holy_archer_cavalry = 1
 	}
 	buy_cost = {
 		gold = 1000
@@ -542,6 +568,10 @@ nature_god_high = {
 	terrain_bonus = {
 	}
 	counters = {
+		mage = 1
+		creation = 1
+		holy_heavy_infantry = 1
+		holy_skirmishers = 1
 	}
 	buy_cost = {
 		gold = 1000
@@ -566,6 +596,8 @@ sea_god_low = {
 	terrain_bonus = {
 	}
 	counters = {
+		mage = 1
+		beast = 1
 	}
 	buy_cost = {
 		gold = 1000
@@ -590,6 +622,11 @@ sea_god_high = {
 	terrain_bonus = {
 	}
 	counters = {
+		mage = 1
+		holy_heavy_infantry = 1
+		holy_heavy_cavalry = 1
+		holy_skirmishers = 1
+		holy_archer_cavalry = 1
 	}
 	buy_cost = {
 		gold = 1000
@@ -614,6 +651,8 @@ belief_god_low = {
 	terrain_bonus = {
 	}
 	counters = {
+		beast = 1
+		holy_skirmishers = 1
 	}
 	buy_cost = {
 		gold = 1000
@@ -638,6 +677,10 @@ belief_god_high = {
 	terrain_bonus = {
 	}
 	counters = {
+		beast = 1
+		mage = 1
+		holy_skirmishers = 1
+		holy_heavy_infantry = 1
 	}
 	buy_cost = {
 		gold = 1000
@@ -662,6 +705,9 @@ hope_god_low = {
 	terrain_bonus = {
 	}
 	counters = {
+		holy_heavy_infantry = 1
+		holy_skirmishers = 1
+		mage = 1
 	}
 	buy_cost = {
 		gold = 1000
@@ -686,6 +732,8 @@ hope_god_high = {
 	terrain_bonus = {
 	}
 	counters = {
+		mage = 1
+		holy_beast = 1
 	}
 	buy_cost = {
 		gold = 1000
@@ -710,6 +758,10 @@ time_god_low = {
 	terrain_bonus = {
 	}
 	counters = {
+		creation = 1
+		holy_heavy_infantry = 1
+		holy_heavy_cavalry = 1
+		holy_archer_cavalry = 1
 	}
 	buy_cost = {
 		gold = 1000
@@ -734,6 +786,10 @@ time_god_high = {
 	terrain_bonus = {
 	}
 	counters = {
+		creation = 1
+		holy_heavy_infantry = 1
+		holy_heavy_cavalry = 1
+		holy_archer_cavalry = 1
 	}
 	buy_cost = {
 		gold = 1000
@@ -758,6 +814,7 @@ destiny_god_low = {
 	terrain_bonus = {
 	}
 	counters = {
+		holy_skirmishers = 1
 	}
 	buy_cost = {
 		gold = 1000
@@ -782,6 +839,10 @@ destiny_god_high = {
 	terrain_bonus = {
 	}
 	counters = {
+		creation = 1
+		holy_heavy_infantry = 1
+		holy_heavy_cavalry = 1
+		holy_archer_cavalry = 1
 	}
 	buy_cost = {
 		gold = 1000
@@ -806,6 +867,7 @@ ark_god_low = {
 	terrain_bonus = {
 	}
 	counters = {
+		mage = 1
 	}
 	buy_cost = {
 		gold = 1000
@@ -830,6 +892,9 @@ ark_god_high = {
 	terrain_bonus = {
 	}
 	counters = {
+		holy_skirmishers = 1
+		holy_heavy_infantry = 1
+		beast = 1
 	}
 	buy_cost = {
 		gold = 1000
@@ -854,6 +919,9 @@ fight_god_low = {
 	terrain_bonus = {
 	}
 	counters = {
+		beast = 1
+		holy_heavy_infantry = 1
+		holy_skirmishers = 1
 	}
 	buy_cost = {
 		gold = 1000
@@ -878,6 +946,9 @@ fight_god_high = {
 	terrain_bonus = {
 	}
 	counters = {
+		holy_skirmishers = 1
+		holy_heavy_infantry = 1
+		beast = 1
 	}
 	buy_cost = {
 		gold = 1000
@@ -902,6 +973,14 @@ highlander_god_low = {
 	terrain_bonus = {
 	}
 	counters = {
+		mage = 1
+		holy_beast = 1
+		creation = 1
+		beast = 1
+		holy_heavy_infantry = 1
+		holy_heavy_cavalry = 1
+		holy_skirmishers = 1
+		holy_archer_cavalry = 1
 	}
 	buy_cost = {
 		gold = 1000
@@ -926,6 +1005,14 @@ highlander_god_high = {
 	terrain_bonus = {
 	}
 	counters = {
+		mage = 1
+		holy_beast = 1
+		creation = 1
+		beast = 1
+		holy_heavy_infantry = 1
+		holy_heavy_cavalry = 1
+		holy_skirmishers = 1
+		holy_archer_cavalry = 1
 	}
 	buy_cost = {
 		gold = 1000
