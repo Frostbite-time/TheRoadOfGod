@@ -645,314 +645,32 @@ give_random_mid_modif = {
 
 #销毁角色拥有的所有领军者甲
 destroy_leadr = {
-	root = {
-		random_character_artifact = {
-			limit = {
-				AND = {
+	while = {
+		limit = {
+			root = {
+				any_character_artifact = {
 					has_artifact_modifier = leader_am_modif
 					NOT = {
 						has_artifact_modifier = leader_am_fixed_modif
 					}
 				}
 			}
-			save_scope_as = be_destroy_art
 		}
-	}
-	destroy_artifact = scope:be_destroy_art
-	root = {
-		random_character_artifact = {
-			limit = {
-				AND = {
-					has_artifact_modifier = leader_am_modif
-					NOT = {
-						has_artifact_modifier = leader_am_fixed_modif
+		root = {
+			random_character_artifact = {
+				limit = {
+					AND = {
+						has_artifact_modifier = leader_am_modif
+						NOT = {
+							has_artifact_modifier = leader_am_fixed_modif
+						}
 					}
 				}
+				save_scope_as = be_destroy_art
 			}
-			save_scope_as = be_destroy_art
 		}
-	}
-	destroy_artifact = scope:be_destroy_art
-	root = {
-		random_character_artifact = {
-			limit = {
-				AND = {
-					has_artifact_modifier = leader_am_modif
-					NOT = {
-						has_artifact_modifier = leader_am_fixed_modif
-					}
-				}
-			}
-			save_scope_as = be_destroy_art
-		}
-	}
-	destroy_artifact = scope:be_destroy_art
-	root = {
-		random_character_artifact = {
-			limit = {
-				AND = {
-					has_artifact_modifier = leader_am_modif
-					NOT = {
-						has_artifact_modifier = leader_am_fixed_modif
-					}
-				}
-			}
-			save_scope_as = be_destroy_art
-		}
-	}
-	destroy_artifact = scope:be_destroy_art
-	root = {
-		random_character_artifact = {
-			limit = {
-				AND = {
-					has_artifact_modifier = leader_am_modif
-					NOT = {
-						has_artifact_modifier = leader_am_fixed_modif
-					}
-				}
-			}
-			save_scope_as = be_destroy_art
-		}
-	}
-	destroy_artifact = scope:be_destroy_art
-	root = {
-		random_character_artifact = {
-			limit = {
-				AND = {
-					has_artifact_modifier = leader_am_modif
-					NOT = {
-						has_artifact_modifier = leader_am_fixed_modif
-					}
-				}
-			}
-			save_scope_as = be_destroy_art
-		}
-	}
-	destroy_artifact = scope:be_destroy_art
-	root = {
-		random_character_artifact = {
-			limit = {
-				AND = {
-					has_artifact_modifier = leader_am_modif
-					NOT = {
-						has_artifact_modifier = leader_am_fixed_modif
-					}
-				}
-			}
-			save_scope_as = be_destroy_art
-		}
-	}
-	destroy_artifact = scope:be_destroy_art
-	root = {
-		random_character_artifact = {
-			limit = {
-				AND = {
-					has_artifact_modifier = leader_am_modif
-					NOT = {
-						has_artifact_modifier = leader_am_fixed_modif
-					}
-				}
-			}
-			save_scope_as = be_destroy_art
-		}
-	}
-	destroy_artifact = scope:be_destroy_art
-	root = {
-		random_character_artifact = {
-			limit = {
-				AND = {
-					has_artifact_modifier = leader_am_modif
-					NOT = {
-						has_artifact_modifier = leader_am_fixed_modif
-					}
-				}
-			}
-			save_scope_as = be_destroy_art
-		}
-	}
-	destroy_artifact = scope:be_destroy_art
-	root = {
-		random_character_artifact = {
-			limit = {
-				AND = {
-					has_artifact_modifier = leader_am_modif
-					NOT = {
-						has_artifact_modifier = leader_am_fixed_modif
-					}
-				}
-			}
-			save_scope_as = be_destroy_art
-		}
-	}
-	destroy_artifact = scope:be_destroy_art
-	root = {
-		random_character_artifact = {
-			limit = {
-				AND = {
-					has_artifact_modifier = leader_am_modif
-					NOT = {
-						has_artifact_modifier = leader_am_fixed_modif
-					}
-				}
-			}
-			save_scope_as = be_destroy_art
-		}
-	}
-	destroy_artifact = scope:be_destroy_art
-	root = {
-		random_character_artifact = {
-			limit = {
-				AND = {
-					has_artifact_modifier = leader_am_modif
-					NOT = {
-						has_artifact_modifier = leader_am_fixed_modif
-					}
-				}
-			}
-			save_scope_as = be_destroy_art
-		}
-	}
-	destroy_artifact = scope:be_destroy_art
-	root = {
-		random_character_artifact = {
-			limit = {
-				AND = {
-					has_artifact_modifier = leader_am_modif
-					NOT = {
-						has_artifact_modifier = leader_am_fixed_modif
-					}
-				}
-			}
-			save_scope_as = be_destroy_art
-		}
-	}
-	destroy_artifact = scope:be_destroy_art
-	root = {
-		random_character_artifact = {
-			limit = {
-				AND = {
-					has_artifact_modifier = leader_am_modif
-					NOT = {
-						has_artifact_modifier = leader_am_fixed_modif
-					}
-				}
-			}
-			save_scope_as = be_destroy_art
-		}
-	}
-	destroy_artifact = scope:be_destroy_art
-	root = {
-		random_character_artifact = {
-			limit = {
-				AND = {
-					has_artifact_modifier = leader_am_modif
-					NOT = {
-						has_artifact_modifier = leader_am_fixed_modif
-					}
-				}
-			}
-			save_scope_as = be_destroy_art
-		}
-	}
-	destroy_artifact = scope:be_destroy_art
-	root = {
-		random_character_artifact = {
-			limit = {
-				AND = {
-					has_artifact_modifier = leader_am_modif
-					NOT = {
-						has_artifact_modifier = leader_am_fixed_modif
-					}
-				}
-			}
-			save_scope_as = be_destroy_art
-		}
-	}
-	destroy_artifact = scope:be_destroy_art
-	root = {
-		random_character_artifact = {
-			limit = {
-				AND = {
-					has_artifact_modifier = leader_am_modif
-					NOT = {
-						has_artifact_modifier = leader_am_fixed_modif
-					}
-				}
-			}
-			save_scope_as = be_destroy_art
-		}
-	}
-	destroy_artifact = scope:be_destroy_art
-	root = {
-		random_character_artifact = {
-			limit = {
-				AND = {
-					has_artifact_modifier = leader_am_modif
-					NOT = {
-						has_artifact_modifier = leader_am_fixed_modif
-					}
-				}
-			}
-			save_scope_as = be_destroy_art
-		}
-	}
-	destroy_artifact = scope:be_destroy_art
-	root = {
-		random_character_artifact = {
-			limit = {
-				AND = {
-					has_artifact_modifier = leader_am_modif
-					NOT = {
-						has_artifact_modifier = leader_am_fixed_modif
-					}
-				}
-			}
-			save_scope_as = be_destroy_art
-		}
-	}
-	destroy_artifact = scope:be_destroy_art
-	root = {
-		random_character_artifact = {
-			limit = {
-				AND = {
-					has_artifact_modifier = leader_am_modif
-					NOT = {
-						has_artifact_modifier = leader_am_fixed_modif
-					}
-				}
-			}
-			save_scope_as = be_destroy_art
-		}
-	}
-	destroy_artifact = scope:be_destroy_art
-	root = {
-		random_character_artifact = {
-			limit = {
-				AND = {
-					has_artifact_modifier = leader_am_modif
-					NOT = {
-						has_artifact_modifier = leader_am_fixed_modif
-					}
-				}
-			}
-			save_scope_as = be_destroy_art
-		}
-	}
-	destroy_artifact = scope:be_destroy_art
-	root = {
-		random_character_artifact = {
-			limit = {
-				AND = {
-					has_artifact_modifier = leader_am_modif
-					NOT = {
-						has_artifact_modifier = leader_am_fixed_modif
-					}
-				}
-			}
-			save_scope_as = be_destroy_art
-		}
-	}
-	destroy_artifact = scope:be_destroy_art
+		destroy_artifact = scope:be_destroy_art
+	}	
 }
 
 #用于勇武决斗的effect
