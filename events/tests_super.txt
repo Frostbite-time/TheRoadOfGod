@@ -1,25 +1,23 @@
 ﻿# namespace = ssdsd
-
+ 
 # ssdsd.0001 = {
-# 	type = character_event #这是一个角色事件，会将root的范围设置为角色
-# 	title = be_angel_event.0001.t  #事件标题
+#  	type = character_event #这是一个角色事件，会将root的范围设置为角色
+#  	title = be_angel_event.0001.t  #事件标题
 # 	desc = be_angel_event.0001.desc   #事件描述
 # 	theme = dynasty        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
 # 	left_portrait = root		#让角色出现在左边
-# 	immediate = {
-# 		root = {
-# 			remove_character_flag = used_11
-# 		}	
-# 	}
-# 	option = {
-# 		name = be_angel_event.0001.a
-# 		if = {
-# 			limit = {
-# 				has_character_flag = used_11
-# 			}
-# 			add_gold = 10000
-# 		}
-		
+#	immediate = {
+#	}
+#	option = {
+#		name = be_angel_event.0001.a
+#		if = {
+#			limit = {
+#				is_the_character_god = {
+#					CHARACTER = root
+#				}
+#			}
+#			add_gold = 10000
+#		}		
 # 	}
 # }
 

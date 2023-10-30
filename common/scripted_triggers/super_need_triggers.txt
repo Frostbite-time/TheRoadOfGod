@@ -56,16 +56,36 @@ has_apostle_trait = {
 
 #用于计谋  角色是否被目标思想操纵
 be_hooked_by_mind = {
-		scope:recipient = {
-			OR = {
-				has_hook_of_type = {
-					target = scope:actor
-					type = super_high_hook
-				}
-				has_hook_of_type = {
-					target = scope:actor
-					type = super_mid_hook
-				}
-			}	
+	scope:recipient = {
+		OR = {
+			has_hook_of_type = {
+				target = scope:actor
+				type = super_high_hook
+			}
+			has_hook_of_type = {
+				target = scope:actor
+				type = super_mid_hook
+			}
+		}	
+	}
+}
+
+#用于检测角色是不是神  输入一个角色作用域 如果是神，返回真
+is_the_character_god = {
+	$CHARACTER$ = {
+		OR = {
+			has_trait = super_war_god
+			has_trait = super_dark_god
+			has_trait = super_wisdom_god
+			has_trait = super_nature_god
+			has_trait = super_belief_god
+			has_trait = super_sea_god
+			has_trait = super_destiny_god
+			has_trait = super_time_god
+			has_trait = super_sun_god
+			has_trait = super_highlander_god
+			has_trait = super_fight_god
+			has_trait = super_ark_god
 		}
+	}
 }
