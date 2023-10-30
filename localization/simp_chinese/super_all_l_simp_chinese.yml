@@ -10,4 +10,45 @@ setting_only_for_ai_super_mod: "只对ai启用"
 setting_only_for_ai_super_mod_desc: "只有ai才能使用超能之路的生活方式"
 setting_banned_for_all: "禁用"
 setting_banned_for_all_desc: "没有人能使用超能之路的生活方式"
+#-----------------------------------------------------------
+super_to_be_war_god:
+super_to_be_war_god_desc:
+super_to_be_war_god_tip:
+super_to_be_war_god_confirm:
+super_to_be_dark_god:
+super_to_be_dark_god_desc:
+super_to_be_dark_god_tip:
+super_to_be_dark_god_confirm:
+super_to_be_wisdom_god:
+super_to_be_wisdom_god_desc:
+super_to_be_wisdom_god_tip:
+super_to_be_wisdom_god_confirm:
+super_to_be_nature_god:
+super_to_be_nature_god_desc:
+super_to_be_nature_god_tip:
+super_to_be_nature_god_confirm:
+super_to_be_blielif_god:
+super_to_be_blielif_god_desc:
+super_to_be_blielif_god_tip:
+super_to_be_blielif_god_confirm:
+super_to_be_sea_god:
+super_to_be_sea_god_desc:
+super_to_be_sea_god_tip:
+super_to_be_sea_god_confirm:
+super_to_be_destiny_god:
+super_to_be_destiny_god_desc:
+super_to_be_destiny_god_tip:
+super_to_be_destiny_god_confirm:
+super_to_be_time_god:
+super_to_be_time_god_desc:
+super_to_be_time_god_tip:
+super_to_be_time_god_confirm:
+super_to_be_hope_god:
+super_to_be_hope_god_desc:
+super_to_be_hope_god_tip:
+super_to_be_hope_god_confirm:
+super_to_be_ark_god:
+super_to_be_ark_god_desc:
+super_to_be_ark_god_tip:
+super_to_be_ark_god_confirm:
 
