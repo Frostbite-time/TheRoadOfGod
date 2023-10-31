@@ -11,44 +11,44 @@ setting_only_for_ai_super_mod_desc: "只有ai才能使用超能之路的生活�
 setting_banned_for_all: "禁用"
 setting_banned_for_all_desc: "没有人能使用超能之路的生活方式"
 #-----------------------------------------------------------
-super_to_be_war_god:
-super_to_be_war_god_desc:
-super_to_be_war_god_tip:
-super_to_be_war_god_confirm:
-super_to_be_dark_god:
-super_to_be_dark_god_desc:
-super_to_be_dark_god_tip:
-super_to_be_dark_god_confirm:
-super_to_be_wisdom_god:
-super_to_be_wisdom_god_desc:
-super_to_be_wisdom_god_tip:
-super_to_be_wisdom_god_confirm:
-super_to_be_nature_god:
-super_to_be_nature_god_desc:
-super_to_be_nature_god_tip:
-super_to_be_nature_god_confirm:
-super_to_be_blielif_god:
-super_to_be_blielif_god_desc:
-super_to_be_blielif_god_tip:
-super_to_be_blielif_god_confirm:
-super_to_be_sea_god:
-super_to_be_sea_god_desc:
-super_to_be_sea_god_tip:
-super_to_be_sea_god_confirm:
-super_to_be_destiny_god:
-super_to_be_destiny_god_desc:
-super_to_be_destiny_god_tip:
-super_to_be_destiny_god_confirm:
-super_to_be_time_god:
-super_to_be_time_god_desc:
-super_to_be_time_god_tip:
-super_to_be_time_god_confirm:
-super_to_be_hope_god:
-super_to_be_hope_god_desc:
-super_to_be_hope_god_tip:
-super_to_be_hope_god_confirm:
-super_to_be_ark_god:
-super_to_be_ark_god_desc:
-super_to_be_ark_god_tip:
-super_to_be_ark_god_confirm:
+super_to_be_war_god: "获取战神之力"
+super_to_be_war_god_desc: ""
+super_to_be_war_god_tip: "成为神明"
+super_to_be_war_god_confirm: "继续"
+super_to_be_dark_god: "获取黑暗之力"
+super_to_be_dark_god_desc: ""
+super_to_be_dark_god_tip: "成为神明"
+super_to_be_dark_god_confirm: "继续"
+super_to_be_wisdom_god: "获取智慧之力"
+super_to_be_wisdom_god_desc: ""
+super_to_be_wisdom_god_tip: "成为神明"
+super_to_be_wisdom_god_confirm: "继续"
+super_to_be_nature_god: "获取自然之力"
+super_to_be_nature_god_desc: ""
+super_to_be_nature_god_tip: "成为神明"
+super_to_be_nature_god_confirm: "继续"
+super_to_be_blielif_god: "获取信仰之力"
+super_to_be_blielif_god_desc: ""
+super_to_be_blielif_god_tip: "成为神明"
+super_to_be_blielif_god_confirm: "继续"
+super_to_be_sea_god: "获取海洋之力"
+super_to_be_sea_god_desc: ""
+super_to_be_sea_god_tip: "成为神明"
+super_to_be_sea_god_confirm: "继续"
+super_to_be_destiny_god: "获取命运神力"
+super_to_be_destiny_god_desc: ""
+super_to_be_destiny_god_tip: "成为神明"
+super_to_be_destiny_god_confirm: "继续"
+super_to_be_time_god: "获取时空神力"
+super_to_be_time_god_desc: ""
+super_to_be_time_god_tip: "成为神明"
+super_to_be_time_god_confirm: "继续"
+super_to_be_hope_god: "获取希望神力"
+super_to_be_hope_god_desc: ""
+super_to_be_hope_god_tip: "成为神明"
+super_to_be_hope_god_confirm: "继续"
+super_to_be_ark_god: "获取众生之力"
+super_to_be_ark_god_desc: ""
+super_to_be_ark_god_tip: "成为神明"
+super_to_be_ark_god_confirm: "继续"
 
