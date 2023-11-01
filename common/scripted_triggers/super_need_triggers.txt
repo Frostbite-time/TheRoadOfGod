@@ -91,3 +91,10 @@ is_the_character_god = {
 		}
 	}
 }
+
+#用于检测角色有没有战神之甲
+has_war_arm_fixed = {
+	any_character_artifact = {
+		has_artifact_modifier =  leader_am_fixed_modif
+	}
+}

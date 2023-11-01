@@ -6,3 +6,8 @@
 cant_murder_tips_1 = {
     global = CANT_MURDER_TIPS_1
 }
+
+has_war_arm_fixed = {
+    global = CAN_HAS_WAR_ARM_FIXED
+    global_not = NOT_CAN_HAS_WAR_ARM_FIXED
+}

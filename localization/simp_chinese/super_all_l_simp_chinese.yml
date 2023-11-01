@@ -35,4 +35,6 @@ super_to_be_sea_god: "获取海洋之力"
 super_to_be_sea_god_desc: "自海神权杖落入你手开始的那一天起你就能感受到它的躁动不安，但如今的你已经拥有了强大的力量以彻底将其吸收"
 super_to_be_sea_god_tip: "成为神明"
 super_to_be_sea_god_confirm: "继续"
+CAN_HAS_WAR_ARM_FIXED: "拥有战神之甲"
+NOT_CAN_HAS_WAR_ARM_FIXED: "你没有战神之甲"
 
