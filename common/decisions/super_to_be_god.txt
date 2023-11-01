@@ -228,7 +228,7 @@ super_to_be_sea_god = {
 	
 	ai_will_do = {    #ai进行决议的概率
 		base = 100
-	}
+	} 
 	effect = {
 		hidden_effect = {
 			trigger_event = {
