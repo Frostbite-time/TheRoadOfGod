@@ -11,3 +11,8 @@ has_war_arm_fixed = {
     global = CAN_HAS_WAR_ARM_FIXED
     global_not = NOT_CAN_HAS_WAR_ARM_FIXED
 }
+
+is_star_power_god = {
+    global = CAN_IS_STAR_POWER_GOD
+    global_not = NOT_CAN_IS_STAR_POWER_GOD
+}

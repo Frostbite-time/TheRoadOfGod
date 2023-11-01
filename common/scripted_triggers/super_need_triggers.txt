@@ -98,3 +98,15 @@ has_war_arm_fixed = {
 		has_artifact_modifier =  leader_am_fixed_modif
 	}
 }
+
+#检查是否拥有自然六神的神力
+is_star_power_god = {
+	OR = {
+		has_trait = super_war_god
+		has_trait = super_dark_god
+		has_trait = super_nature_god
+		has_trait = super_wisdom_god
+		has_trait = super_belief_god
+		has_trait = super_sea_god
+	}
+}

@@ -29,6 +29,7 @@ super_to_be_war_god = {
 	cooldown = { days = 1825 } #决议的冷却时间
 	
 	is_shown = {       #显示决议的条件
+		is_star_power_god = no
 		has_trait = saint_in_flesh_traits			
 	}
 	
@@ -47,7 +48,7 @@ super_to_be_war_god = {
 		custom_tooltip = you_get_war_god_effect
 		hidden_effect = {
 			trigger_event = {
-				id = fixed_war_arm.0001
+				id = super_be_war_god_event.0001
 				days = { 2 3 }
 			}
 		}	
@@ -74,6 +75,7 @@ super_to_be_dark_god = {
 	cooldown = { days = 1825 } #决议的冷却时间
 	
 	is_shown = {       #显示决议的条件
+		is_star_power_god = no
 	}	
 	
 	ai_potential = {     #ai是否检测这个决议
@@ -115,6 +117,7 @@ super_to_be_wisdom_god = {
 	cooldown = { days = 1825 } #决议的冷却时间
 	
 	is_shown = {       #显示决议的条件
+		is_star_power_god = no
 	}	
 	
 	ai_potential = {     #ai是否检测这个决议
@@ -156,6 +159,7 @@ super_to_be_nature_god = {
 	cooldown = { days = 1825 } #决议的冷却时间
 	
 	is_shown = {       #显示决议的条件
+		is_star_power_god = no
 	}	
 	
 	ai_potential = {     #ai是否检测这个决议
@@ -197,6 +201,7 @@ super_to_be_blielif_god = {
 	cooldown = { days = 1825 } #决议的冷却时间
 	
 	is_shown = {       #显示决议的条件
+		is_star_power_god = no
 	}	
 	
 	ai_potential = {     #ai是否检测这个决议
@@ -238,6 +243,7 @@ super_to_be_sea_god = {
 	cooldown = { days = 1825 } #决议的冷却时间
 	
 	is_shown = {       #显示决议的条件
+		is_star_power_god = no
 	}	
 	
 	ai_potential = {     #ai是否检测这个决议

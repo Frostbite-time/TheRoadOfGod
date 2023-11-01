@@ -1,0 +1,69 @@
+﻿namespace = super_be_war_god_event
+
+super_be_war_god_event.0001 = {
+    type = character_event
+    title = super_be_war_god_event.0001.t
+    desc = super_be_war_god_event.0001.desc
+    theme = realm
+    # other event details...
+
+    option = {
+        name = super_be_war_god_event.0001.1
+
+        trigger_event = {
+            id = super_be_war_god_event.0002
+        }
+            # option details...
+    }
+}
+
+
+super_be_war_god_event.0002 = {
+    type = character_event
+    title = super_be_war_god_event.0002.t
+    desc = super_be_war_god_event.0002.desc
+    theme = realm
+    # other event details...
+
+    option = {
+        name = super_be_war_god_event.0002.1
+
+        trigger_event = {
+            id = super_be_war_god_event.0003
+        }
+            # option details...
+    }
+}
+
+
+super_be_war_god_event.0003 = {
+    type = character_event
+    title = super_be_war_god_event.0003.t
+    desc = super_be_war_god_event.0003.desc
+    theme = realm
+    # other event details...
+
+    option = {
+        name = super_be_war_god_event.0003.1
+
+        trigger_event = {
+            id = super_be_war_god_event.0004
+        }
+            # option details...
+    }
+}
+
+
+super_be_war_god_event.0004 = {
+    type = character_event
+    title = super_be_war_god_event.0004.t
+    desc = super_be_war_god_event.0004.desc
+    theme = realm
+    # other event details...
+
+    option = {
+        name = super_be_war_god_event.0004.1
+        add_trait = super_war_god
+        # option details...
+    }
+}
