@@ -9,40 +9,40 @@ cant_murder_tips_1 = {
 }
 #拥有已经修复的战神之甲
 has_war_arm_fixed = {
-    global = CAN_HAS_WAR_ARM_FIXED
     global_not = NOT_CAN_HAS_WAR_ARM_FIXED
+    global = CAN_HAS_WAR_ARM_FIXED  
 }
-#拥有自然神力
+#该角色是否拥有自然六神神力
 is_star_power_god = {
-    global = CAN_IS_STAR_POWER_GOD
     global_not = NOT_CAN_IS_STAR_POWER_GOD
+    global = CAN_IS_STAR_POWER_GOD   
 }
-#有人拥有战争神力了吗
+#战争神力是否未被占据
 is_anyone_war_god = {
-    global = CAN_IS_ANYONE_WAR_GOD
     global_not = NOT_CAN_IS_ANYONE_WAR_GOD
+    global = CAN_IS_ANYONE_WAR_GOD  
 }
-#有人拥有自然神力了吗
+#自然神力是否未被占据
 is_anyone_nature_god = {
     global = CAN_IS_ANYONE_NATURE_GOD
     global_not = NOT_CAN_IS_ANYONE_NATURE_GOD
 }
-#有人拥有黑暗神力了吗
+#暗影神力是否未被占据
 is_anyone_dark_god = {
     global = CAN_IS_ANYONE_DARK_GOD
     global_not = NOT_CAN_IS_ANYONE_DARK_GOD
 }
-#有人拥有智慧神力了吗
+#智慧神力是否未被占据
 is_anyone_wisdom_god = {
     global = CAN_IS_ANYONE_WISDOM_GOD
     global_not = NOT_CAN_IS_ANYONE_WISDOM_GOD
 }
-#有人拥有信仰神力了吗
+#信仰神力是否未被占据
 is_anyone_belief_god = {
     global = CAN_IS_ANYONE_BELIEF_GOD
     global_not = NOT_CAN_IS_ANYONE_BELIEF_GOD
 }
-#有人拥有海洋神力了吗
+#海洋神力是否未被占据
 is_anyone_sea_god = {
     global = CAN_IS_ANYONE_SEA_GOD
     global_not = NOT_CAN_IS_ANYONE_SEA_GOD

@@ -31,14 +31,13 @@ super_to_be_war_god = {
 	is_shown = {       #显示决议的条件
 		is_star_power_god = no
 		has_trait = saint_in_flesh_traits
-		is_anyone_war_god = no			
+				
 	}
-	
-	is_valid_showing_failures_only = {
+	is_valid = {
 		has_war_arm_fixed = yes
-
+		is_anyone_war_god = yes
 	}
-	
+		
 	ai_potential = {     #ai是否检测这个决议
 		always = yes
 	}
@@ -78,8 +77,12 @@ super_to_be_dark_god = {
 	
 	is_shown = {       #显示决议的条件
 		is_star_power_god = no
-		is_anyone_dark_god = no
+		
 	}	
+
+	is_valid = {
+		is_anyone_dark_god = yes
+	}
 	
 	ai_potential = {     #ai是否检测这个决议
 		always = yes
@@ -121,9 +124,13 @@ super_to_be_wisdom_god = {
 	
 	is_shown = {       #显示决议的条件
 		is_star_power_god = no
-		is_anyone_wisdom_god = no
+		
 	}	
 	
+	is_valid = {
+		is_anyone_wisdom_god = yes
+	}
+
 	ai_potential = {     #ai是否检测这个决议
 		always = yes
 	}
@@ -164,8 +171,12 @@ super_to_be_nature_god = {
 	
 	is_shown = {       #显示决议的条件
 		is_star_power_god = no
-		is_anyone_nature_god = no
+		
 	}	
+
+	is_valid = {
+		is_anyone_nature_god = yes
+	}
 	
 	ai_potential = {     #ai是否检测这个决议
 		always = yes
@@ -207,8 +218,12 @@ super_to_be_blielif_god = {
 	
 	is_shown = {       #显示决议的条件
 		is_star_power_god = no
-		is_anyone_belief_god = no
+		
 	}	
+
+	is_valid = {
+		is_anyone_belief_god = yes
+	}
 	
 	ai_potential = {     #ai是否检测这个决议
 		always = yes
@@ -250,8 +265,12 @@ super_to_be_sea_god = {
 	
 	is_shown = {       #显示决议的条件
 		is_star_power_god = no
-		is_anyone_sea_god = no
+		
 	}	
+
+	is_valid = {
+		is_anyone_sea_god = yes
+	}
 	
 	ai_potential = {     #ai是否检测这个决议
 		always = yes

@@ -115,38 +115,50 @@ is_star_power_god = {
 
 #战争
 is_anyone_war_god = {
-	any_living_character = {
-		has_trait = super_war_god
-	}
+	NOT = {	
+		any_living_character = {
+			has_trait = super_war_god
+		}	
+	}	
 }
 #自然
 is_anyone_nature_god = {
-	any_living_character = {
-		has_trait = super_nature_god
-	}
+	NOT = {
+		any_living_character = {
+			has_trait = super_nature_god
+		}
+	}	
 }
 #智慧
 is_anyone_wisdom_god = {
-	any_living_character = {
-		has_trait = super_wisdom_god
+	NOT = {
+		any_living_character = {
+			has_trait = super_wisdom_god
+		}
 	}
 }
 #黑暗
 is_anyone_dark_god = {
-	any_living_character = {
-		has_trait = super_dark_god
-	}
+	NOT = {
+		any_living_character = {
+			has_trait = super_dark_god
+		}
+	}	
 }
 #信仰
 is_anyone_belief_god = {
-	any_living_character = {
-		has_trait = super_belief_god
-	}
+	NOT = {
+		any_living_character = {
+			has_trait = super_belief_god
+		}
+	}	
 }
 #海洋
 is_anyone_sea_god = {
-	any_living_character = {
-		has_trait = super_sea_god
-	}
+	NOT = {
+		any_living_character = {
+			has_trait = super_sea_god
+		}
+	}	
 }
 #---------------------------------------------------------------------------------------
