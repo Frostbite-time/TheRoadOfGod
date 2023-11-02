@@ -6,6 +6,19 @@ super_be_war_god_event.0001 = {
     desc = super_be_war_god_event.0001.desc
     theme = realm
     # other event details...
+    immediate = {
+        random_artifact = {
+            limit = {
+                has_artifact_modifier = leader_am_fixed_modif
+            }
+            save_scope_as = war_god_armour
+        }
+    }
+    left_portrait = root
+    artifact = {
+        target = scope:war_god_armour
+        position = lower_right_portrait
+    }
 
     option = {
         name = super_be_war_god_event.0001.1
