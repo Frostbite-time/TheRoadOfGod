@@ -1,5 +1,5 @@
 ﻿namespace = super_be_war_god_event
-
+#成为战神事件系列
 super_be_war_god_event.0001 = {
     type = character_event
     title = super_be_war_god_event.0001.t
@@ -23,6 +23,9 @@ super_be_war_god_event.0002 = {
     title = super_be_war_god_event.0002.t
     desc = super_be_war_god_event.0002.desc
     theme = realm
+    override_background = {
+        reference = super_to_be_war_god_2
+    }
     # other event details...
 
     option = {
@@ -41,6 +44,9 @@ super_be_war_god_event.0003 = {
     title = super_be_war_god_event.0003.t
     desc = super_be_war_god_event.0003.desc
     theme = realm
+    override_background = {
+        reference = super_to_be_war_god_3
+    }
     # other event details...
 
     option = {
@@ -59,7 +65,11 @@ super_be_war_god_event.0004 = {
     title = super_be_war_god_event.0004.t
     desc = super_be_war_god_event.0004.desc
     theme = realm
+    override_background = {
+        reference = super_to_be_war_god_4
+    }
     # other event details...
+    
 
     option = {
         name = super_be_war_god_event.0004.1
