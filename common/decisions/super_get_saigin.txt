@@ -10,7 +10,7 @@
 	
 	major = yes #是否为重要决议
 	
-	ai_check_interval = 30 #ai的检查周期，单位是 月
+	ai_check_interval = 1 #ai的检查周期，单位是 月
 	
 	cost = {          #进行决议的消耗
 	}

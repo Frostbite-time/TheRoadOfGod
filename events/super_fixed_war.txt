@@ -15,21 +15,23 @@ fixed_war_arm.0001 = {
 		hidden_effect = {
 			destroy_leadr = yes
 		}
-		create_artifact = {
-			name = war_arm
-			description = war_arm_desc
-			type = armor_plate
-			visuals = armor
-			rarity = illustrious
-			decaying = no
-			quality = 300
-			wealth = 300
-			modifier = leader_am_fixed_modif
-			max_durability = 1000
-			durability = 1000
-			save_scope_as = newly_created_artifact
-			template = war_armr_template
-		}		
+		root = {
+			create_artifact = {
+				name = war_arm
+				description = war_arm_desc
+				type = armor_plate
+				visuals = armor
+				rarity = illustrious
+				decaying = no
+				quality = 300
+				wealth = 300
+				modifier = leader_am_fixed_modif
+				max_durability = 1000
+				durability = 1000
+				save_scope_as = newly_created_artifact
+				template = war_armr_template
+			}		
+		}	
 	}
 	option = {
 		custom_tooltip = {
