@@ -778,5 +778,9 @@ remove_ap_effect = {
 		remove_trait = apostle_of_hope
 	}
 }
+#赋予一个flag告诉其他事件其将会成为暗影之神
+super_will_be_dark_god_effect = {
+	add_character_flag = super_will_be_dark_god_flag
+}
 
 

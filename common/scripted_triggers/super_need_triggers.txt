@@ -88,6 +88,7 @@ is_the_character_god = {
 			has_trait = super_highlander_god
 			has_trait = super_fight_god
 			has_trait = super_ark_god
+			has_character_flag = super_will_be_dark_god_flag #将要成为暗影之神
 		}
 	}
 }
