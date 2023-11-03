@@ -4,7 +4,32 @@ super_lifestyle = {
 	is_highlighted = {	
 		has_trait = great_blood_traits    #被突出显示的条件
 	}
-	
+	is_valid_showing_failures_only = {
+		trigger_if = {
+			limit = {
+				has_game_rule = normal_super_mod
+			}
+			always = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_player_super_mod
+			}
+			is_ai = no
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_ai_super_mod
+			}
+			is_ai = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = banned_for_all
+			}
+			always = no
+		}
+	}
 	xp_per_level = 1000   #每个技能点所需经验
 	base_xp_gain = 25     #每月基础经验获取
 }
