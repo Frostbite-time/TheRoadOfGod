@@ -1,4 +1,5 @@
-﻿ransom_interaction = {
+﻿#为了ai获取魔性以及成为暗影之神顺利而做的对售卖囚犯的限制 对玩家没有任何影响-----------------------------------------------------------------------------------------
+ransom_interaction = {
 	interface_priority = 50
 	common_interaction = yes
 	use_diplomatic_range = no
@@ -599,4 +600,6528 @@
 		flag = invalid
 		localization = "INVALID"
 	}
+}
+
+#对于本模组特制牵制的使用---------------------------------------------------------------------------------------------------------------------------------
+negotiate_alliance_interaction = {
+	category = interaction_category_diplomacy
+	ai_min_reply_days = 4
+	ai_max_reply_days = 9
+	icon = alliance
+
+	send_name = negotiate_alliance_interaction
+
+	interface_priority = 60
+	desc = negotiate_alliance_interaction_desc
+
+	greeting = positive
+	notification_text = NEGOTIATE_ALLIANCE_NOTIFICATION
+
+	is_shown = {
+		scope:recipient = {
+			NOT = { this = scope:actor }
+			NOT = { is_allied_to = scope:actor }
+			is_ruler = yes
+		}
+		scope:actor = {
+			is_ruler = yes
+			OR = {
+				is_ai = no
+				highest_held_title_tier >= 2
+			}
+			#childhood friendship with hostage event, where they swear to be friends forever
+			OR = {
+				is_any_family_relation_or_spouse_trigger = { CHARACTER = scope:recipient }
+				hostage_oath_of_friendship_trigger = yes
+			}
+		}
+	}
+	
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			is_landed = yes
+			is_imprisoned = no
+		}
+		scope:actor = {
+			is_landed = yes
+			is_imprisoned = no
+			NOT = {
+				is_at_war_with = scope:recipient
+			}
+		}
+		scope:recipient = { is_busy_in_events_localised = yes }
+		custom_description = {
+			text = "has_already_rejected_renegotiation"
+			subject = scope:recipient
+			NOT = {
+				scope:actor = {
+					has_opinion_modifier = {
+						modifier = refused_alliance_opinion
+						target = scope:recipient
+					}
+				}
+			}
+		}
+	}
+
+	is_valid = { #To give some clarity to the tooltip that states "blood ties"
+
+		OR = {
+			#Ruler has the defensive negotiations perk
+			scope:actor = { has_perk = defensive_negotiations_perk }
+			#Ruler is married to other ruler.
+			scope:actor = { is_spouse_of = scope:recipient }
+			#Ruler is relative of other ruler
+			scope:actor = { is_parent_of = scope:recipient }
+			scope:actor = { is_grandparent_of = scope:recipient }
+			scope:actor = { is_great_grandparent_of = scope:recipient }
+			scope:actor = { is_child_of = scope:recipient }
+			scope:actor = { is_grandchild_of = scope:recipient }
+			scope:actor = { is_great_grandchild_of = scope:recipient }
+			scope:actor = { is_uncle_or_aunt_of = scope:recipient }
+			scope:actor = { is_nibling_of = scope:recipient }
+			scope:actor = { is_sibling_of = scope:recipient }
+			#childhood friendship with hostage event, where they swear to be friends forever
+			scope:actor = {
+				hostage_oath_of_friendship_trigger = yes
+			}
+			
+
+			custom_description = {
+				text = rulers_family_is_married_to_other_ruler_trigger
+				subject = scope:recipient
+				object = scope:actor
+				#Ruler's child/parent/sibling/grandchild/grandparent/uncle/aunt/niece/nephew is married to other ruler.
+				scope:recipient = {
+					any_spouse = {
+						OR = {
+							is_close_family_of = scope:actor
+							is_nibling_of = scope:actor
+							is_uncle_or_aunt_of = scope:actor
+						}
+					}
+				}
+			}
+
+			custom_description = {
+				text = rulers_family_is_married_to_other_ruler_trigger
+				subject = scope:actor
+				object = scope:recipient
+				#Other ruler's child/parent/sibling/grandchild/grandparent/uncle/aunt/niece/nephew is married to first ruler.
+				scope:actor = {
+					any_spouse = {
+						OR = {
+							is_close_family_of = scope:recipient
+							is_nibling_of = scope:recipient
+							is_uncle_or_aunt_of = scope:recipient
+						}
+					}
+				}
+			}
+
+			custom_description = {
+				text = rulers_child_parent_sibling_is_married_to_other_rulers_trigger
+				subject = scope:recipient
+				object = scope:actor
+				# Ruler's child/parent/sibling is married to other ruler's child/parent/sibling.
+				scope:actor = {
+					any_close_family_member = {
+						OR = {
+							is_parent_of = scope:actor
+							is_child_of = scope:actor
+							is_sibling_of = scope:actor
+						}
+						any_spouse = {
+							OR = {
+								is_parent_of = scope:recipient
+								is_child_of = scope:recipient
+								is_sibling_of = scope:recipient
+							}
+						}
+					}
+				}
+			}
+
+			custom_description = {
+				text = hostage_oath_of_friendship_trigger
+				subject = scope:recipient
+				object = scope:actor
+				#Ruler's child/parent/sibling/grandchild/grandparent/uncle/aunt/niece/nephew is married to other ruler.
+				scope:actor = {
+					hostage_oath_of_friendship_trigger = yes
+				}
+			}
+		}
+	}
+
+	on_auto_accept = {
+		scope:recipient = {
+			trigger_event = char_interaction.0234
+		}
+	}
+
+	#Use hook
+	send_option = {
+		is_valid = {
+			scope:actor = {
+				has_usable_hook = scope:recipient
+			}
+		}
+		flag = hook	
+		localization = GENERIC_SPEND_A_HOOK
+	}
+	should_use_extra_icon = {
+		scope:actor = { has_usable_hook = scope:recipient }
+	}
+	extra_icon = "gfx/interface/icons/character_interactions/hook_icon.dds"
+
+	send_options_exclusive = no
+		
+	on_accept = {
+		scope:actor = {
+			trigger_event = char_interaction.0235
+
+			stress_impact = {
+				shy = minor_stress_impact_gain
+			}
+
+			if = {
+				limit = {
+					scope:hook = yes
+					has_hook = scope:recipient
+				}
+				use_hook = scope:recipient
+			}
+		}
+
+		scope:recipient = {
+			custom_tooltip = negotiate_alliance_effect_recipient_tooltip
+		}
+
+		#Set up alliance, depending on relation between rulers.
+		hidden_effect = {
+			#Prioritize marriage between rulers and/or direct blood relation between rulers first.
+			if = {
+				limit = {
+					scope:actor = {
+						OR = {
+							is_spouse_of = scope:recipient
+							is_child_of = scope:recipient
+							is_parent_of = scope:recipient
+							is_sibling_of = scope:recipient
+							is_grandparent_of = scope:recipient
+							is_great_grandparent_of = scope:recipient
+							is_grandchild_of = scope:recipient
+							is_great_grandchild_of = scope:recipient
+							is_uncle_or_aunt_of = scope:recipient
+							is_nibling_of = scope:recipient
+						}
+					}
+				}
+				scope:actor = {
+					create_alliance = {
+						target = scope:recipient
+						allied_through_owner = scope:actor
+						allied_through_target = scope:recipient
+					}
+				}
+			}
+			#...Then marriage between close family members and either actor or recipient.
+			else_if = {
+				limit = {
+					scope:recipient = {
+						any_spouse = {
+							OR = {
+								is_close_family_of = scope:actor
+								is_nibling_of = scope:actor
+								is_uncle_or_aunt_of = scope:actor
+							}
+						}
+					}
+				}
+				scope:recipient = {
+					random_spouse = {
+						limit = {
+							OR = {
+								is_close_family_of = scope:actor
+								is_nibling_of = scope:actor
+								is_uncle_or_aunt_of = scope:actor
+							}
+						}
+						save_scope_as = recipient_spouse
+					}
+				}
+				scope:actor = {
+					create_alliance = {
+						target = scope:recipient
+						allied_through_owner = scope:recipient_spouse
+						allied_through_target = scope:recipient
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					scope:actor = {
+						any_spouse = {
+							OR = {
+								is_close_family_of = scope:recipient
+								is_nibling_of = scope:recipient
+								is_uncle_or_aunt_of = scope:recipient
+							}
+						}
+					}
+				}
+				scope:actor = {
+					random_spouse = {
+						limit = {
+							OR = {
+								is_close_family_of = scope:recipient
+								is_nibling_of = scope:recipient
+								is_uncle_or_aunt_of = scope:recipient
+							}
+						}
+						save_scope_as = actor_spouse
+					}
+				}
+				scope:actor = {
+					create_alliance = {
+						target = scope:recipient
+						allied_through_owner = scope:actor
+						allied_through_target = scope:actor_spouse
+					}
+				}
+			}
+			#...And finally marriage between close relatives and close relatives.
+			else_if = {
+				limit = {
+					scope:actor = {
+						any_close_family_member = {
+							OR = {
+								is_child_of = scope:actor
+								is_parent_of = scope:actor
+								is_sibling_of = scope:actor
+							}
+							any_spouse = {
+								OR = {
+									is_child_of = scope:recipient
+									is_parent_of = scope:recipient
+									is_sibling_of = scope:recipient
+								}
+							}
+						}
+					}
+				}
+				scope:actor = {
+					random_close_family_member = {
+						limit = {
+							OR = {
+								is_child_of = scope:actor
+								is_parent_of = scope:actor
+								is_sibling_of = scope:actor
+							}
+							any_spouse = {
+								OR = {
+									is_child_of = scope:recipient
+									is_parent_of = scope:recipient
+									is_sibling_of = scope:recipient
+								}
+							}
+						}
+						save_scope_as = actor_spouse
+						random_spouse = {
+							limit = {
+								OR = {
+									is_child_of = scope:recipient
+									is_parent_of = scope:recipient
+									is_sibling_of = scope:recipient
+								}
+							}
+							save_scope_as = recipient_spouse
+						}
+					}
+				}
+				scope:actor = {
+					create_alliance = {
+						target = scope:recipient
+						allied_through_owner = scope:actor_spouse
+						allied_through_target = scope:recipient_spouse
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					scope:actor = { has_perk = defensive_negotiations_perk }
+				}
+				scope:actor = {
+					create_alliance = {
+						target = scope:recipient
+						allied_through_owner = scope:actor
+						allied_through_target = scope:recipient
+					}
+				}
+				scope:recipient = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+					add_opinion = {
+						modifier = perk_negotiated_alliance_opinion
+						target = scope:actor
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					scope:actor = {
+						hostage_oath_of_friendship_trigger = yes
+					}
+				}
+				scope:actor = {
+					create_alliance = {
+						target = scope:recipient
+						allied_through_owner = scope:actor
+						allied_through_target = scope:recipient
+					}
+				}
+			}
+		}
+	}
+	
+	on_decline = {
+		scope:actor = {
+			trigger_event = char_interaction.0236
+		}
+		scope:actor = {
+			add_opinion = {
+				modifier = refused_alliance_opinion
+				target = scope:recipient
+			}
+		}
+	}
+
+	auto_accept = {
+		custom_description = {
+			text = "spending_hook"
+			subject = scope:actor
+			object = scope:recipient
+			scope:hook = yes
+		}
+	}
+	ai_accept = {
+		base = 0
+
+		# Tier Difference 	(+/-)
+		# Inheritance 		(+)
+		# Opinion 			(+/-)
+		# Dynasty Prestige. (+)
+		# Different Faith.	(-)
+		# Liege is asking 	(+)
+		# Dread 			(+)
+		# Power difference 	(+/-)
+		# Claimants (+/-)
+		# Same House (+)
+		# Declared war opinion
+		# Actor is at war penalty
+		
+		#使得强牵制无论是否激活均有作用
+		modifier = {
+			scope:actor = {
+				OR = {
+					has_hook_of_type = {
+						target = scope:recipient
+						type = super_high_hook
+					}
+					has_hook_of_type = {
+						target = scope:recipient
+						type = super_mid_hook
+					}
+				}	
+			}
+			add = 600
+		}
+		
+		modifier = {
+			add = 20
+			scope:recipient = {
+				is_close_family_of = scope:actor
+			}
+			desc = CLOSE_FAMILY_REASON
+		}
+		
+		modifier = {
+			add = 10
+			scope:recipient = {
+				NOT = { is_close_family_of = scope:actor }
+				is_extended_family_of = scope:actor
+			}
+			desc = EXTENDED_FAMILY_REASON
+		}
+
+		modifier = {
+			add = -20
+			scope:recipient = {
+				NOT = { is_close_or_extended_family_of = scope:actor }
+				any_spouse = {
+					NOT = { is_close_family_of = scope:actor }
+					is_extended_family_of = scope:actor
+				}
+			}
+			desc = DISTANT_FAMILY_CONNECTION_REASON
+		}
+
+		# Tier Differences
+		modifier = {
+			scope:actor = {
+				tier_difference = {
+					target = scope:recipient
+					value >= 1
+				}
+			}
+			add = {
+				value = 30
+				if = {
+					limit = {
+						tier_difference = {
+							target = scope:recipient
+							value = 2
+						}
+					}
+					add = 30
+				}
+				if = {
+					limit = {
+						tier_difference = {
+							target = scope:recipient
+							value = 3
+						}
+					}
+					add = 60
+				}
+				if = {
+					limit = {
+						tier_difference = {
+							target = scope:recipient
+							value = 4
+						}
+					}
+					add = 90
+				}
+				if = {
+					limit = {
+						tier_difference = {
+							target = scope:recipient
+							value = 5
+						}
+					}
+					add = 120
+				}
+			}
+			desc = RANK_DIFFERENCE_REASON
+		}
+		modifier = {
+			scope:actor = {
+				tier_difference = {
+					target = scope:recipient
+					value <= -1
+				}
+			}
+			add = {
+				value = -30
+				if = {
+					limit = {
+						tier_difference = {
+							target = scope:recipient
+							value = -2
+						}
+					}
+					add = -30
+				}
+				if = {
+					limit = {
+						tier_difference = {
+							target = scope:recipient
+							value = -3
+						}
+					}
+					add = -60
+				}
+				if = {
+					limit = {
+						tier_difference = {
+							target = scope:recipient
+							value = -4
+						}
+					}
+					add = -90
+				}
+				if = {
+					limit = {
+						tier_difference = {
+							target = scope:recipient
+							value = -5
+						}
+					}
+					add = -120
+				}
+			}
+			desc = RANK_DIFFERENCE_REASON
+		}
+
+		modifier = {
+			scope:recipient = {
+				is_heir_of = scope:actor
+			}
+			scope:actor = {
+				tier_difference = {
+					target = scope:recipient
+					value > 0
+				}
+			}
+			add = {
+				value = 10
+				if = {
+					limit = {
+						scope:actor = { player_heir = scope:recipient }
+					}
+					add = 10
+				}
+			}
+			desc = IS_HEIR_REASON
+		}
+		opinion_modifier = { # More likely to accept if Recipient likes the Actor
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 1
+			desc = AI_OPINION_REASON
+		}
+
+		modifier = {
+			add = 20
+			scope:recipient = {
+				has_trait = loyal
+			}
+			desc = INTERACTION_LOYAL
+		}
+
+		modifier = {
+			add = 20
+			scope:recipient = {
+				has_trait = trusting
+			}
+			desc = INTERACTION_TRUSTING
+		}
+
+		modifier = {
+			add = 5
+			scope:recipient = {
+				has_trait = craven
+			}
+			desc = INTERACTION_CRAVEN
+		}
+
+		modifier = {
+			add = -20
+			scope:recipient = {
+				has_trait = paranoid
+			}
+			desc = INTERACTION_PARANOID
+		}
+
+		modifier = {
+			add = -20
+			scope:recipient = {
+				has_trait = arrogant
+			}
+			desc = INTERACTION_ARROGANT
+		}
+
+		modifier = {
+			add = -20
+			scope:recipient = {
+				has_trait = ambitious
+			}
+			desc = INTERACTION_AMBITIOUS
+		}
+
+		modifier = {
+			add = -40
+			scope:recipient = {
+				has_trait = disloyal
+			}
+			desc = INTERACTION_DISLOYAL
+		}
+
+		modifier = {
+			add = -10
+			scope:recipient = {
+				has_trait = fickle
+			}
+			desc = INTERACTION_FICKLE
+		}
+
+		# Rivalry
+		modifier = { # Say no to rivals
+			add = -100
+			scope:recipient = {
+				has_relation_rival = scope:actor
+				NOT = { has_relation_nemesis = scope:actor }
+			}
+			desc = "ACTOR_RIVAL_TO_ME_REASON"
+		}
+		modifier = { # Say no to nemesis
+			add = -300
+			scope:recipient = {
+				has_relation_nemesis = scope:actor
+			}
+			desc = "ACTOR_NEMESIS_TO_ME_REASON"
+		}
+		
+		# Dynasty Prestige Levels
+		modifier = {
+			add = -5
+			desc = AI_DYNASTY_PRESTIGE_REASON
+			scope:actor = { has_dynasty = yes }
+			NOT = { scope:actor.dynasty = scope:recipient.dynasty }
+			scope:actor.dynasty = { dynasty_prestige_level = 0 }
+		}
+		modifier = {
+			desc = AI_DYNASTY_PRESTIGE_REASON
+			scope:actor = { has_dynasty = yes }
+			NOT = { scope:actor.dynasty = scope:recipient.dynasty }
+			scope:actor.dynasty = { dynasty_prestige_level >= 2 }
+			add = {
+				value = 10
+				if = {
+					limit = {
+						scope:actor.dynasty = { dynasty_prestige_level >= 3 }
+					}
+					add = 5
+				}
+				if = {
+					limit = {
+						scope:actor.dynasty = { dynasty_prestige_level >= 4 }
+					}
+					add = 5
+				}
+				if = {
+					limit = {
+						scope:actor.dynasty = { dynasty_prestige_level >= 5 }
+					}
+					add = 5
+				}
+				if = {
+					limit = {
+						scope:actor.dynasty = { dynasty_prestige_level >= 6 }
+					}
+					add = 5
+				}
+				if = {
+					limit = {
+						scope:actor.dynasty = { dynasty_prestige_level >= 7 }
+					}
+					add = 5
+				}
+				if = {
+					limit = {
+						scope:actor.dynasty = { dynasty_prestige_level >= 8 }
+					}
+					add = 5
+				}
+				if = {
+					limit = {
+						scope:actor.dynasty = { dynasty_prestige_level >= 9 }
+					}
+					add = 5
+				}
+				if = {
+					limit = {
+						scope:actor.dynasty = { dynasty_prestige_level >= 10 }
+					}
+					add = 5
+				}
+			}
+		}
+		modifier = { #Faith compatibility
+			scope:recipient.faith = {
+				faith_hostility_level = {
+					target = scope:actor.faith
+					value > faith_fully_accepted_level
+				}
+			}
+			NOT = {
+				scope:recipient.ai_zeal <= -50
+			}
+			add = {
+				value = -20
+				if = {
+					limit = {
+						# Exempt certain struggle phases.
+						NOT = { is_struggle_parameter_active_interfaith_marriages_available_between_involved_characters_trigger = yes }
+					}
+					if = {
+						limit = {
+							scope:recipient.faith = {
+								faith_hostility_level = {
+									target = scope:actor.faith
+									value >= faith_astray_level
+								}
+							}
+						}
+						subtract = 20
+					}
+					if = {
+						limit = {
+							scope:recipient.faith = {
+								faith_hostility_level = {
+									target = scope:actor.faith
+									value >= faith_hostile_level
+								}
+							}
+						}
+						subtract = 40
+					}
+					if = {
+						limit = {
+							scope:recipient.faith = {
+								faith_hostility_level = {
+									target = scope:actor.faith
+									value >= faith_evil_level
+								}
+							}
+						}
+						subtract = 60
+					}
+					if = {
+						limit = {
+							scope:recipient.ai_zeal <= -25
+						}
+						divide = 2
+					}
+				}
+			}
+			desc = MARRY_DIFFERENT_FAITH_REASON
+		}
+
+		modifier = { # A Recipient is more likely to agree to an alliance requested by his liege.
+			add = 20
+			scope:recipient = {
+				target_is_liege_or_above = scope:actor
+			}
+			desc = LIEGE_REASON
+		}
+		
+		modifier = {
+	  	  	add = {
+				value = 1
+				subtract = {
+					value = scope:recipient.max_military_strength # For foreign diplomacy, consider recipients max
+					divide = { value = scope:actor.current_military_strength min = 1 }
+				}
+				multiply = 20
+				min = -1000
+				max = 100
+	  		}
+			desc = AI_MILITARY_BALANCE_REASON
+		}
+		# Recipient is a Claimant to Actor's titles.
+		modifier = {
+			scope:recipient = {
+				NOT = { government_has_flag = government_is_clan }
+				any_claim = {
+					holder = scope:actor
+				}
+				NOR = {
+					is_heir_of = scope:actor
+					ai_greed <= -25
+				}
+			}
+			add = {
+				value = -50
+				if = {
+					limit = {
+						scope:recipient.ai_greed >= 25
+					}
+					add = ai_greed
+				}
+				if = {
+					limit = {
+						NOT = {
+							scope:recipient.house = scope:actor.house
+						}
+					}
+					multiply = 2
+				}
+			}
+			desc = IS_CLAIMANT_TO_ACTORS_TITLES
+		}
+		#Actor has claims on recipient's titles.
+		modifier = {
+			scope:actor = {
+				any_claim = {
+					holder = scope:recipient
+				}
+			}
+			add = 25
+			desc = IS_CLAIMANT_TO_RECIPIENT_TITLES
+		}
+		modifier = {
+			scope:recipient = {
+				NOT = {
+					any_claim = {
+						holder = scope:actor
+					}
+				}
+			}
+			scope:recipient.house = scope:actor.house
+			add = 15
+			desc = IS_SAME_HOUSE_REASON
+		}
+		modifier = {
+			scope:recipient = {
+				has_opinion_modifier = {
+					target = scope:actor
+					modifier = declared_war
+				}
+			}
+			add = -100
+			desc = DECLARED_WAR_REASON
+		}
+
+		# Don't form new alliances with people already at war.
+		modifier = {
+			scope:actor = {
+				is_at_war = yes
+
+				# Since vassals and lieges can't call us into wars, this doesn't matter for us if we have that relationship. 
+				NOR = {
+					target_is_liege_or_above = scope:recipient
+					target_is_vassal_or_below = scope:recipient
+				}
+			}
+			add = -50
+			desc = IS_AT_WAR_REASON
+		}
+
+		#Bonus from Tradition Astute Diplomats
+		modifier = {
+			scope:actor.culture = { has_cultural_parameter = facilitate_alliance_acceptance }
+			add = 50 #should be in a file 00_traditions_values
+			desc = TRADITION_ASTUTE_DIPLOMATS_ACCEPTANCE_MODIFIER
+		}
+
+		# The AI doesn't want to form alliances with AI vassals within its capital duchy, so it can revoke them
+		modifier = {
+			scope:actor = {
+				is_ai = yes
+				is_vassal_or_below_of = scope:recipient
+				any_held_title = {
+					tier = tier_county
+					de_jure_liege = scope:actor.primary_title.title_capital_county.de_jure_liege
+				}
+			}
+			scope:recipient = {
+				is_ai = yes
+			}
+			add = -5000
+		}
+
+		# Feud
+		modifier = {
+			add = -25
+			scope:recipient = {
+				existing_feud_against_target_trigger = { TARGET = scope:actor }
+			}
+			desc = MARRY_FAMILY_FEUD_REASON
+		}
+
+		# Existing Alliances
+		modifier = {
+			add = {
+				scope:actor = {
+					every_ally = {
+						add = -15
+					}
+				}
+			}
+			scope:actor = {
+				any_ally = {
+					count >= 2
+				}
+			}
+			NAND = {
+				scope:recipient = {
+					government_has_flag = government_is_clan
+					is_vassal_or_below_of = scope:actor
+				}
+			}
+			desc = EXISTING_ALLIANCES_REASON
+		}
+
+		# Existing Alliances
+		modifier = {
+			add = {
+				scope:recipient = {
+					every_ally = {
+						add = -15
+					}
+				}
+			}
+			scope:recipient = {
+				any_ally = {
+					count >= 2
+				}
+			}
+			NAND = {
+				scope:recipient = {
+					government_has_flag = government_is_clan
+					is_vassal_or_below_of = scope:actor
+				}
+			}
+			desc = THEIR_EXISTING_ALLIANCES_REASON
+		}
+		
+		modifier = {
+			add = intimidated_reason_value
+			scope:recipient = {
+				target_is_liege_or_above = scope:actor
+				has_dread_level_towards = {
+					target = scope:actor
+					level = 1
+				}
+			}
+			desc = INTIMIDATED_REASON
+		}
+		modifier = {
+			add = cowed_reason_value
+			scope:recipient = {
+				target_is_liege_or_above = scope:actor
+				has_dread_level_towards = {
+					target = scope:actor
+					level = 2
+				}
+			}
+			desc = COWED_REASON
+		}
+		
+		modifier = {
+			add = intimidated_external_reason_value
+			scope:recipient = {
+				NOT = { target_is_liege_or_above = scope:actor }
+				has_dread_level_towards = {
+					target = scope:actor
+					level = 1
+				}
+			}
+			desc = INTIMIDATED_REASON
+		}
+		modifier = {
+			add = cowed_external_reason_value
+			scope:recipient = {
+				NOT = { target_is_liege_or_above = scope:actor }
+				has_dread_level_towards = {
+					target = scope:actor
+					level = 2
+				}
+			}
+			desc = COWED_REASON
+		}
+	}
+
+	ai_potential = {
+		is_at_war = no
+	}
+	
+	ai_targets = {
+		ai_recipients = dynasty
+		max = 20
+	}
+	
+	ai_targets = {
+		ai_recipients = family
+		max = 10
+	}
+	
+	ai_targets = {
+		ai_recipients = spouses
+	}
+	ai_frequency = 72
+	
+	ai_will_do = {
+		base = 0
+		
+		modifier = {
+			add = 100
+			any_ally = {
+				count < 2
+			}
+			scope:recipient = { # Don't propose alliances to tiny insignificant rulers just because
+				OR = {
+					current_military_strength >= scope:actor.eighty_percent_of_current_military_strength
+					primary_title.tier >= scope:actor.primary_title.tier
+					AND = {
+						primary_title.tier >= tier_duchy
+						scope:actor.primary_title.tier < tier_empire
+					}
+				}
+			}
+		}
+		
+		modifier = { # Clans always want alliances with Vassals
+			add = 100
+			scope:actor = {
+				government_has_flag = government_is_clan
+			}
+			scope:recipient = {
+				is_vassal_of = scope:actor
+			}
+		}
+		
+		modifier = { # The AI shouldn't propose to their Lieges
+			factor = 0
+			is_liege_or_above_of = scope:recipient
+		}
+		
+		modifier = { # The AI shouldn't propose to their Vassals unless Clan
+			factor = 0
+			scope:actor = {
+				NOT = { government_has_flag = government_is_clan }
+			}
+			scope:recipient = {
+				is_vassal_of = scope:actor
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------
+offer_vassalization_interaction = {
+	category = interaction_category_vassal
+	icon = icon_vassal
+
+	desc = offer_vassalization_interaction_desc
+
+	ai_targets = {
+		ai_recipients = neighboring_rulers
+	}
+	ai_target_quick_trigger = {
+		adult = yes
+	}
+	ai_frequency = 12
+
+	is_shown = {
+		scope:recipient = {
+			NOT = { this = scope:actor }
+			is_landed = yes
+			is_independent_ruler = yes
+			highest_held_title_tier < scope:actor.highest_held_title_tier
+			NOT = { government_has_flag = can_not_be_vassal_or_liege }
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			is_at_war = no
+
+			custom_description = {
+				text = was_recently_granted_independence
+				NOT = {
+					has_opinion_modifier = {
+						modifier = granted_independence_opinion
+						target = scope:actor
+					}
+				}
+			}
+		}
+	}
+
+	greeting = positive
+	notification_text = OFFER_VASSALIZATION_INTERACTION_NOTIFICATION
+
+	ai_min_reply_days = 5
+	ai_max_reply_days = 10
+
+	ai_accept = {
+		base = -50
+
+		modifier = {
+			scope:actor = {
+				OR = {
+					has_hook_of_type = {
+						target = scope:recipient
+						type = super_high_hook
+					}
+				}	
+			}
+			add = 600
+		}
+		
+		#MAIN
+		#Heretic/Infidel modifier.
+		#Tier difference modifier.
+		#Dejure modifier.
+		#Distant/Remote Realm modifier.
+		#Military power difference modifier.
+
+		#MINOR
+		#Rivalry modifier.
+		#Same Dynasty modifier.
+		#Cultural/Cultural Group modifiers.
+		#Ageism modifier vs kids.
+		#Ruler Legitimacy modifier.
+		#Claimant modifier.
+
+		#OPINION SCALES
+		#Dread
+		#Compare Opinion modifier.
+
+		# PERKS
+		modifier = { # Perk boost
+			desc = offer_vassalization_true_ruler_perk_tt
+			trigger = {
+				scope:actor = { has_perk = true_ruler_perk }
+			}
+			add = true_ruler_value
+		}
+		modifier = { # Education 5 boost
+			desc = offer_vassalization_education_diplomacy_5_tt
+			trigger = {
+				scope:actor = { has_trait_with_flag = offer_vassalisation_25 }
+			}
+			add = 25
+		}
+
+		# EVENTS - temporary bonuses gained by events
+		modifier = {
+			desc = event_bonus_to_vassal_accept_tt
+			trigger = {
+				scope:actor = { has_character_modifier = event_bonus_to_vassal_accept }
+			}
+			add = 20
+		}
+
+		modifier = { # Cultural Acceptance
+			add = offer_vassalage_acceptance_value
+			desc = cultural_acceptance_interaction_reason
+			trigger = {
+				scope:actor = {
+					NOT = { has_same_culture_as = scope:recipient }
+					culture = {
+						cultural_acceptance = { target = scope:recipient.culture value <= 90 }
+					}
+				}
+			}
+		}
+
+		# MAIN
+		modifier = { #Different faith, no pluralism.
+			desc = offer_vassalization_interaction_aibehavior_differentfaith_tt
+			trigger = {
+				scope:recipient = {
+					NOR = { #Of two different faiths AND the potential vassal's faith is not pluralistic.
+						faith = scope:actor.faith
+						faith = { has_doctrine = doctrine_pluralism_pluralistic }
+					}
+				}
+			}
+			add = {
+				value = -40
+				if = {
+					limit = {
+						scope:recipient.faith = {
+							faith_hostility_level = {
+								target = scope:actor.faith
+								value >= faith_hostile_level
+							}
+						}
+					}
+					add = -40
+				}
+				if = {
+					limit = {
+						scope:recipient.faith = {
+							faith_hostility_level = {
+								target = scope:actor.faith
+								value >= faith_evil_level
+							}
+						}
+					}
+					add = -40
+				}
+			}
+		}
+
+		modifier = { #Different faith, pluralism.
+			desc = offer_vassalization_interaction_aibehavior_differentfaith_tt
+			trigger = {
+				scope:recipient = {
+					NOT = {
+						faith = scope:actor.faith
+					}
+					NOT = {
+						scope:actor.faith = { has_doctrine = doctrine_pluralism_pluralistic }
+					}
+					faith = { has_doctrine = doctrine_pluralism_pluralistic }
+				}
+			}
+			add = {
+				value = -20
+				if = {
+					limit = {
+						scope:recipient.faith = {
+							faith_hostility_level = {
+								target = scope:actor.faith
+								value >= faith_hostile_level
+							}
+						}
+					}
+					add = -20
+				}
+				if = {
+					limit = {
+						scope:recipient.faith = {
+							faith_hostility_level = {
+								target = scope:actor.faith
+								value >= faith_evil_level
+							}
+						}
+					}
+					add = -20
+				}
+			}
+		}
+
+		modifier = { #Different faith, both have pluralism.
+			desc = offer_vassalization_interaction_aibehavior_differentfaith_tt
+			trigger = {
+				scope:recipient = {
+					NOT = {
+						faith = scope:actor.faith
+					}
+					scope:actor.faith = { has_doctrine = doctrine_pluralism_pluralistic }
+					faith = { has_doctrine = doctrine_pluralism_pluralistic }
+				}
+			}
+			add = {
+				value = -10
+				if = {
+					limit = {
+						scope:recipient.faith = {
+							faith_hostility_level = {
+								target = scope:actor.faith
+								value >= faith_hostile_level
+							}
+						}
+					}
+					add = -10
+				}
+				if = {
+					limit = {
+						scope:recipient.faith = {
+							faith_hostility_level = {
+								target = scope:actor.faith
+								value >= faith_evil_level
+							}
+						}
+					}
+					add = -10
+				}
+			}
+		}
+		modifier = { #I am a King!
+			desc = offer_vassalization_interaction_aibehavior_amkingtier_tt
+			trigger = {
+				scope:recipient = { highest_held_title_tier = tier_kingdom }
+			}
+			add = {
+				value = -50
+				if = {
+					limit = {
+						scope:recipient = {
+							OR = {
+								government_has_flag = government_is_republic
+								government_has_flag = government_is_theocracy
+							}
+						}
+					}
+					add = -50
+				}
+				if = {
+					limit = {
+						scope:recipient.sub_realm_size >= 5
+					}
+					add = -50
+				}
+				if = {
+					limit = {
+						scope:recipient.sub_realm_size >= 10
+					}
+					add = -100
+				}
+			}
+		}
+		modifier = { #We just fought against each other.
+			desc = offer_vassalization_interaction_aibehavior_recent_war_tt
+			trigger = {
+				scope:recipient = {
+					any_truce_holder = {
+						this = scope:actor
+					}
+				}
+			}
+			add = -50
+		}
+		modifier = { #I fought an independence war against you.
+			desc = offer_vassalization_interaction_aibehavior_independence_war_tt
+			trigger = {
+				scope:recipient = {
+					exists = var:independence_war_former_liege
+					var:independence_war_former_liege = scope:actor
+				}
+			}
+			add = -200
+		}
+		modifier = { # I am Tribal and you are not
+			desc = interaction_tribal_vs_nontribal
+			trigger = {
+				scope:recipient = {
+					government_has_flag = government_is_tribal
+				}
+				scope:actor = {
+					NOT = { government_has_flag = government_is_tribal }
+				}
+			}
+			add = -20
+		}
+		modifier = { # You are Tribal and I am not
+			desc = interaction_tribal_vs_nontribal
+			trigger = {
+				scope:actor = {
+					government_has_flag = government_is_tribal
+				}
+				scope:recipient = {
+					NOT = { government_has_flag = government_is_tribal }
+				}
+			}
+			add = -20
+		}
+		modifier = { # Isolationist tradition
+			desc = isolationist_reason
+			trigger = {
+				NOT = {
+					scope:actor.culture = scope:recipient.culture
+				}
+				scope:recipient.culture = {
+					has_cultural_tradition = tradition_isolationist
+				}
+			}
+			add = -20
+		}
+		modifier = { #Bankrupt
+			desc = bankrupt_reason
+			trigger = {
+				scope:actor.gold <= -1
+			}
+			add = -100
+		}
+		modifier = { #Wide difference in rank
+			desc = offer_vassalization_interaction_aibehavior_widetitletier_tt
+			trigger = {
+				scope:actor = {
+					tier_difference = {
+						target = scope:recipient
+						value > 1
+					}
+				}
+			}
+			add = 10
+		}
+		modifier = { # Allied
+			desc = offer_vassalization_interaction_aibehavior_allied_tt
+			trigger = {
+				scope:recipient = {
+					is_allied_to = scope:actor
+				}
+			}
+			add = 20
+		}
+		modifier = { # Is the Rightful Liege of recipient
+			desc = offer_vassalization_interaction_aibehavior_rightfulliegetitleholder_tt
+			trigger = {
+				is_rightful_liege_of_trigger = {
+					VASSAL = scope:recipient
+					LIEGE = scope:actor
+				}
+			}
+			add = 20
+		}
+		modifier = { #Is not the Rightful Liege of recipient
+			desc = offer_vassalization_interaction_aibehavior_not_rightfulliegetitleholder_tt
+			trigger = {
+				NOT = {
+					is_rightful_liege_of_trigger = {
+						VASSAL = scope:recipient
+						LIEGE = scope:actor
+					}
+				}
+			}
+			add = -20
+		}
+		modifier = { # Encircled
+			desc = offer_vassalization_interaction_aibehavior_encircled_tt
+			trigger = {
+				scope:recipient = {
+					NOT = {
+						any_neighboring_top_liege_realm_owner = {
+							NOT = {
+								this = scope:actor
+							}
+						}
+					}
+					NOT = {
+						any_realm_county = {
+							is_coastal_county = yes
+						}
+					}
+				}
+			}
+			add = 20
+		}
+		modifier = { #Distant Realm — Overseas Connection
+			desc = offer_vassalization_interaction_aibehavior_distantrealm_tt
+			trigger = {
+				scope:actor = {
+					character_is_realm_neighbor = scope:recipient
+					NOT = { #Ibiza should want to be a vassal of Mallorca, etc.
+						character_is_land_realm_neighbor = scope:recipient
+						is_rightful_liege_of_trigger = {
+							VASSAL = scope:recipient
+							LIEGE = scope:actor
+						}
+					}
+				}
+			}
+			add = -100
+		}
+		modifier = { #Distant Realm — No Connection
+			desc = offer_vassalization_interaction_aibehavior_distantrealm_tt
+			trigger = {
+				scope:actor = {
+					NOT = {
+						character_is_realm_neighbor = scope:recipient
+					}
+				}
+				scope:recipient.capital_province = { squared_distance = { target = scope:actor.capital_province value < 200000 } }
+			}
+			add = -250
+		}
+		modifier = { #Remote Realm.
+			desc = offer_vassalization_interaction_aibehavior_remoterealm_tt
+			trigger = {
+				scope:actor = {
+					NOT = {
+						character_is_realm_neighbor = scope:recipient
+					}
+				}
+				scope:recipient.capital_province = { squared_distance = { target = scope:actor.capital_province value >= 200000 } }
+			}
+			add = -500
+		}
+		modifier = {
+			desc = offer_vassalization_interaction_aibehavior_power_tt
+	  	  	add = {
+				value = 1
+				subtract = {
+					value = scope:recipient.max_military_strength # Intended for recipient to use max, to avoid having vassalizations become too easy for weakened realms
+					divide = { value = scope:actor.current_military_strength min = 1 }
+				}
+				multiply = 20
+				ceiling = yes
+	  		}
+		}
+		modifier = {
+			desc = offer_vassalization_interaction_aibehavior_vassal_opinion_tt
+			trigger = {
+				scope:actor = {
+				number_of_powerful_vassals >= 1
+				}
+			}
+
+	  	  	add = {
+				value = 0
+				scope:actor = {
+					every_powerful_vassal = {
+						if = {
+							limit = {
+								save_temporary_opinion_value_as = {
+									name = vassal_opinion
+									target = scope:actor
+								}
+							}
+							add = scope:vassal_opinion
+						}
+					}
+
+					if = {
+						limit = {
+							number_of_powerful_vassals > 0
+						}
+						divide = number_of_powerful_vassals
+					}
+					else = {
+						divide = 5
+					}
+				}
+
+				divide = 5
+	  		}
+		}
+
+		# MINOR
+		modifier = { #Friend modifier.
+			desc = offer_vassalization_interaction_aibehavior_friend_tt
+			trigger = {
+				scope:recipient = {
+					has_relation_friend = scope:actor
+					NOT = { has_relation_best_friend = scope:actor }
+				}
+			}
+			add = 10
+		}
+		modifier = { #Best Friend modifier.
+			desc = offer_vassalization_interaction_aibehavior_best_friend_tt
+			trigger = {
+				scope:recipient = {
+					has_relation_best_friend = scope:actor
+				}
+			}
+			add = 20
+		}
+		modifier = { #Lover modifier.
+			desc = interaction_lover
+			trigger = {
+				scope:recipient = {
+					has_relation_lover = scope:actor
+					NOT = { has_relation_soulmate = scope:actor }
+				}
+			}
+			add = 10
+		}
+		modifier = { #Soulmate modifier.
+			desc = interaction_soulmate
+			trigger = {
+				scope:recipient = {
+					has_relation_soulmate = scope:actor
+				}
+			}
+			add = 20
+		}
+		modifier = { #Rivalry modifier.
+			desc = offer_vassalization_interaction_aibehavior_rival_tt
+			trigger = {
+				scope:recipient = {
+					has_relation_rival = scope:actor
+					NOT = { has_relation_nemesis = scope:actor }
+				}
+			}
+			add = -100
+		}
+		modifier = { #Nemesis modifier.
+			desc = offer_vassalization_interaction_aibehavior_nemesis_tt
+			trigger = {
+				scope:recipient = {
+					has_relation_nemesis = scope:actor
+				}
+			}
+			add = -1000
+		}
+		modifier = { #Same Dynasty modifier.
+			desc = offer_vassalization_interaction_aibehavior_dynasty_tt
+			trigger = {
+				scope:recipient = {
+					dynasty = scope:actor.dynasty
+				}
+			}
+			add = 5
+		}
+
+		modifier = { # Same language
+			add = 5
+			desc = speaks_same_language_interaction_reason
+			trigger = {
+				scope:actor = {
+					knows_language_of_culture = scope:recipient.culture
+				}
+			}
+		}
+
+		modifier = { # Iberian Struggle, less likely for outsiders to vassalize inside
+			add = -35
+			desc = iberian_struggle_reason_reason
+			trigger = {
+				scope:actor = {
+					NOT = {
+						any_character_struggle = { is_struggle_type = iberian_struggle }
+					}
+				}
+				scope:recipient = {
+					any_character_struggle = { is_struggle_type = iberian_struggle }
+				}
+			}
+		}
+
+		modifier = { #Ageism modifier vs kids.
+			desc = offer_vassalization_interaction_aibehavior_child_tt
+			trigger = {
+				scope:actor = {
+					age < 12
+				}
+				scope:recipient = {
+					age > 16
+				}
+			}
+			add = -5
+		}
+		modifier = { #Illegitimacy modifier.
+			desc = offer_vassalization_interaction_aibehavior_illegitimate_tt
+			trigger = {
+				OR = {
+					AND = {
+						scope:actor = {
+							has_trait = bastard
+						}
+						scope:recipient = {
+							faith = { NOT = { has_doctrine = doctrine_bastardry_none } }
+						}
+					}
+					has_trait = denounced
+					has_trait = disinherited
+				}
+			}
+			add = -10
+		}
+
+		modifier = { #Claimant modifier.
+			desc = offer_vassalization_interaction_aibehavior_claimant_tt
+			trigger = {
+				scope:actor.primary_title = {
+					scope:recipient = {
+						has_claim_on = prev
+					}
+				}
+			}
+			add = -20
+		}
+
+		modifier = { # Ambitious
+			desc = TAKE_THE_VOWS_AMBITIOUS
+			trigger = {
+				scope:recipient = {
+					has_trait = ambitious
+				}
+			}
+			add = -20
+		}
+
+		modifier = { # Paranoid
+			desc = INTERACTION_PARANOID
+			trigger = {
+				scope:recipient = {
+					has_trait = paranoid
+				}
+			}
+			add = -20
+		}
+
+		modifier = { # Arrogant
+			desc = INTERACTION_ARROGANT
+			trigger = {
+				scope:recipient = {
+					has_trait = arrogant
+				}
+			}
+			add = -20
+		}
+
+		modifier = { # Fickle
+			desc = INTERACTION_FICKLE
+			trigger = {
+				scope:recipient = {
+					has_trait = fickle
+				}
+			}
+			add = -10
+		}
+
+		modifier = { # Stubborn
+			desc = INTERACTION_STUBBORN
+			trigger = {
+				scope:recipient = {
+					has_trait = stubborn
+				}
+			}
+			add = -10
+		}
+
+		modifier = { # Trusting
+			desc = TAKE_THE_VOWS_TRUSTING
+			trigger = {
+				scope:recipient = {
+					has_trait = trusting
+				}
+			}
+			add = 5
+		}
+
+		modifier = { # Content
+			desc = INTERACTION_CONTENT
+			trigger = {
+				scope:recipient = {
+					has_trait = content
+				}
+			}
+			add = 5
+		}
+
+		# OPINION INFLUENCE
+		modifier = {
+			add = intimidated_external_reason_value
+			scope:recipient = {
+				has_dread_level_towards = {
+					target = scope:actor
+					level = 1
+				}
+			}
+			desc = INTIMIDATED_REASON
+		}
+		modifier = {
+			add = cowed_external_reason_value
+			scope:recipient = {
+				has_dread_level_towards = {
+					target = scope:actor
+					level = 2
+				}
+			}
+			desc = COWED_REASON
+		}
+		opinion_modifier = { #Compare Opinion modifier - Clans care more about opinion
+			trigger = {
+				scope:actor = {
+					government_has_flag = government_is_clan
+				}
+				scope:recipient = {
+					government_has_flag = government_is_clan
+				}
+			}
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.7
+		}
+		opinion_modifier = { #Compare Opinion modifier.
+			trigger = {
+				OR = {
+					scope:actor = {
+						NOT = { government_has_flag = government_is_clan }
+					}
+					scope:recipient = {
+						NOT = { government_has_flag = government_is_clan }
+					}
+				}
+			}
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.35
+		}
+
+		# DIPLOMATIC COURT GRANDEUR BONUS
+		modifier = {
+			trigger = {
+				scope:actor = {
+					has_royal_court = yes
+					has_court_type = court_diplomatic
+					court_grandeur_current_level >= 1
+				}
+			}
+			add = {
+				value = scope:actor.court_grandeur_current
+				if = {
+					limit = { # Reduce the bonus if you are below your expected level
+						scope:actor = {
+							court_grandeur_current_level < court_grandeur_minimum_expected_level
+						}
+					}
+					multiply = 0.15
+				}
+				else = {
+					multiply = 0.3
+				}
+			}
+			desc = DIPLOMATIC_COURT_ACCEPTANCE_INCREASE_REASON
+		}
+
+		# CONTRACT OPTIONS
+		modifier = {
+			add = 60
+			scope:recipient = {	government_has_flag = government_is_feudal }
+			scope:religious_exemption = yes
+			desc = CONTRACT_RELIGIOUS_EXEMPTION_REASON
+		}
+		modifier = {
+			add = 30
+			scope:recipient = {	government_has_flag = government_is_clan }
+			scope:religious_exemption_clan = yes
+			desc = CONTRACT_RELIGIOUS_EXEMPTION_REASON
+		}
+		modifier = {
+			add = 30
+			scope:recipient = {	government_has_flag = government_is_feudal }
+			scope:low_obligations = yes
+			desc = CONTRACT_LOW_TAXES_REASON
+		}
+		modifier = {
+			add = -40
+			scope:recipient = {	government_has_flag = government_is_feudal }
+			scope:high_obligations = yes
+			desc = CONTRACT_HIGH_TAXES_REASON
+		}
+
+		modifier = { # AI-only weights, keep the pope from vassalizing too fast
+			trigger = {
+				exists = faith:catholic.religious_head
+				faith:catholic.religious_head = scope:actor
+				scope:actor = { is_ai = yes }
+			}
+			add = -50
+		}
+
+		#ALL these modifiers are also used in impress_intent_vassalization_acceptance_value, keep them synced
+	}
+
+	# Low starting obligations
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				government_has_flag = government_is_feudal
+			}
+		}
+		flag = low_obligations
+		localization = low_obligations
+	}
+
+	# Medium starting obligations
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				government_has_flag = government_is_feudal
+			}
+		}
+		flag = normal_obligations								# If selected then scope:flag_name will be set to yes
+		localization = normal_obligations				# Loc_key for option label
+		starts_enabled = { always = yes	}				# Trigger for whether this should be on when the window opens. If not defined, defaults to off
+
+	}
+
+	# High starting obligations
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				government_has_flag = government_is_feudal
+			}
+		}
+		flag = high_obligations								# If selected then scope:flag_name will be set to yes
+		localization = high_obligations					# Loc_key for option label
+	}
+
+	# Low starting obligations + religious exemption
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				government_has_flag = government_is_feudal
+			}
+		}
+		is_valid = {
+			NOT = { scope:recipient.faith = scope:actor.faith }
+		}
+		flag = religious_exemption
+		localization = religious_exemption
+	}
+
+	# Religious exemption, for clans
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				government_has_flag = government_is_clan
+			}
+		}
+		is_valid = {
+			NOT = { scope:recipient.faith = scope:actor.faith }
+		}
+		flag = religious_exemption_clan
+		localization = religious_exemption
+	}
+
+	# Nothing, for clans
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				government_has_flag = government_is_clan
+			}
+		}
+		is_valid = {
+			always = yes
+		}
+		flag = no_exemption_clan
+		localization = no_exemption
+	}
+
+	send_options_exclusive = yes
+
+	on_accept = {
+		offer_vassalization_interaction_effect = yes
+		scope:actor = {
+			trigger_event = char_interaction.0001
+			## Remove bonus, it's been used
+			if = {
+				limit = {
+					has_character_modifier = event_bonus_to_vassal_accept
+				}
+				remove_character_modifier = event_bonus_to_vassal_accept
+			}
+		}
+	}
+
+	on_decline = {
+		scope:actor = {
+			trigger_event = char_interaction.0002
+		}
+	}
+
+	ai_potential = {
+		is_adult = yes
+		is_independent_ruler = yes
+		highest_held_title_tier > tier_county
+	}
+
+	ai_will_do = {
+		base = 100
+
+		# AI prefers to receive higher obligations from their vassals when possible.
+		modifier = {
+			add = 2
+			scope:low_obligations = yes
+		}
+
+		modifier = {
+			add = 3
+			scope:normal_obligations = yes
+		}
+
+		modifier = {
+			add = 4
+			scope:high_obligations = yes
+		}
+
+		# Cynical rulers are happy to offer religious protection to potential vassals, but only when it makes them accept a vassalization offer they would otherwise refuse.
+		# Zealous rulers become increasingly reluctant to offer religious protection, as they want to enforce religious homogeneity in their realm.
+		modifier = {
+			add = {
+				value = ai_zeal
+				multiply = -2
+				max = 1
+			}
+			scope:religious_exemption = yes
+		}
+
+
+		modifier = { # If the recipient is a player, do not bother sending
+			factor = 0
+			scope:recipient = {
+				is_ai = no
+			}
+		}
+	}
+}
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------
+invite_to_court_interaction = {
+	category = interaction_category_vassal
+	icon = guest
+	
+	desc = invite_to_court_interaction_desc
+	
+	is_shown = {
+		scope:recipient = {
+			NOR = {
+				is_courtier_of = scope:actor
+				is_foreign_court_guest = yes
+				AND = {
+					exists = host
+					host = scope:actor
+				}
+				is_ruler = yes
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		can_recruit_character_to_court_trigger = {
+			RECRUITER = scope:actor
+			RECRUITEE = scope:recipient
+		}
+	}
+	
+	#Pay som gold to persuade a wandering character to come to your court
+	send_option = {
+		is_shown = {
+			exists = scope:recipient
+			scope:recipient = {
+				is_pool_guest = no
+				location.province_owner = {
+					OR = {
+						any_liege_or_above = { this = scope:actor }
+						this = scope:actor
+					}
+				}
+				NOR = {
+					has_relation_rival = scope:actor
+					exists = liege
+					is_child_of = scope:actor
+					has_character_modifier = lust_for_adventure
+				}
+			}
+		}
+		flag = cover_travel_expenses
+		localization = COVER_TRAVEL_EXPENSES
+	}
+
+	on_accept = {
+		hidden_effect = {
+			if = {
+				limit = {
+					exists = scope:recipient.liege
+				}
+				scope:recipient.liege = {
+					send_interface_message = {
+						type = event_generic_neutral
+						title = msg_courtier_left_court_interaction_title
+						
+						right_icon = scope:recipient
+
+						show_as_tooltip = {
+							remove_courtier_or_guest = scope:recipient
+						}
+					}
+				}
+			}
+		}
+		
+		scope:actor = {
+			send_interface_message = {
+				type = event_generic_neutral
+				title = invite_to_court_interaction_notification
+				right_icon = scope:recipient
+
+				scope:recipient = {
+					every_traveling_family_member = {
+						scope:actor = { add_courtier = prev }
+						hidden_effect = {
+							return_to_court = yes
+						}
+					}
+				}
+
+				if = {
+					limit = { always = scope:hook }
+					scope:actor = {
+						use_hook = scope:recipient
+					}
+				}
+
+				scope:actor = {
+					stress_impact = {
+						shy = minor_stress_impact_gain
+					}
+				}
+			}
+		}
+		
+		
+		if = {
+			limit = { always = scope:cover_travel_expenses }
+			scope:actor = {
+				pay_short_term_gold = {
+					gold = {
+						value = bribe_value
+						multiply = 0.5
+					}
+					target = scope:recipient
+				}
+				stress_impact = {
+					greedy = minor_stress_impact_gain
+				}
+			}
+		}
+	}
+
+	ai_accept = {
+ 		base = -50
+		#super 超能之路修改
+		modifier = {
+			trigger = {
+				scope:actor.faith = {
+					has_doctrine = in_the_same_boat
+				}
+			}
+			add = 30
+			
+		}
+ 		#Opinions
+ 		opinion_modifier = {
+ 			trigger = {
+ 				exists = liege
+ 				is_courtier_of = liege
+ 			}
+ 			opinion_target = liege
+ 			multiplier = -0.5
+ 			step = 5
+ 			max = 25
+ 		}
+ 		opinion_modifier = {
+ 			opinion_target = scope:actor
+ 			multiplier = 0.5
+ 			step = 5
+ 			max = 25
+ 		}
+
+ 		#Current roles
+ 		modifier = {
+ 			is_knight = yes
+ 			add = -20
+ 			desc = AI_MY_LIEGES_KNIGHT
+ 		}
+ 		modifier = {
+ 			is_commanding_army = yes
+ 			add = -30
+ 			desc = AI_MY_LIEGES_COMMANDER
+ 		}
+ 		modifier = {
+ 			is_councillor = yes
+ 			add = -40
+ 			desc = AI_ON_THE_COUNCIL
+ 		}
+		
+		modifier = {		
+			trigger = { scope:recipient = { has_court_position = court_physician_court_position } }			
+ 			add = -20
+ 			desc = AI_COURT_PHYSICIAN
+ 		}
+
+ 		#Relations & relatives (with actor)
+ 		modifier = {
+ 			has_relation_lover = scope:actor
+ 			add = 100
+ 			desc = AI_YOUR_LOVER
+ 		}
+
+ 		modifier = {
+ 			has_relation_friend = scope:actor
+ 			add = 75
+ 			desc = AI_YOUR_FRIEND
+ 		}
+
+ 		modifier = {
+ 			is_child_of = scope:actor
+ 			add = 160
+ 			desc = AI_YOUR_CHILD
+ 		}
+
+ 		modifier = {
+ 			this.dynasty.dynast = scope:actor
+ 			add = 30
+ 			desc = AI_YOU_ARE_THE_DYNAST
+ 		}
+
+ 		modifier = {
+ 			this.house.house_head = scope:actor
+ 			add = 30
+ 			desc = AI_YOU_ARE_THE_HOUSE_HEAD
+ 		}
+
+ 		modifier = {
+ 			NOT = { is_child_of = scope:actor }
+ 			is_close_family_of = scope:actor
+ 			add = 75
+ 			desc = AI_YOUR_RELATIVE
+ 		}
+
+ 		modifier = {
+ 			is_spouse_of = scope:actor
+ 			add = 160
+ 			desc = AI_YOUR_SPOUSE
+ 		}
+
+ 		#Relations & relatives (with host)
+ 		modifier = {
+ 			exists = liege
+ 			has_relation_lover = liege
+ 			add = -100
+ 			desc = AI_THEIR_LOVER
+ 		}
+
+ 		modifier = {
+ 			exists = liege
+ 			has_relation_friend = liege
+ 			add = -75
+ 			desc = AI_THEIR_FRIEND
+ 		}
+
+ 		modifier = {
+ 			exists = liege
+ 			is_child_of = liege
+ 			add = -100
+ 			desc = AI_THEIR_CHILD
+ 		}
+
+ 		modifier = {
+ 			exists = liege
+ 			NOT = { is_child_of = liege }
+ 			is_close_family_of = liege
+ 			add = -75
+ 			desc = AI_THEIR_RELATIVE
+ 		}
+
+ 		#Family (at location)
+ 		modifier = {
+ 			exists = location
+ 			any_consort_not_in_traveling_family_trigger = yes
+ 			desc = AI_LEAVING_MY_SPOUSE
+ 			add = -100
+ 		}
+
+ 		modifier = {
+ 			exists = location
+ 			any_child_not_in_traveling_family_trigger = yes
+ 			desc = AI_LEAVING_MY_CHILD
+ 			add = -100
+ 		}
+
+ 		modifier = {
+ 			add = -50
+ 			desc = AI_MARRIED_MATRILINIALLY
+ 			is_married = yes
+ 			is_male = yes
+ 			any_spouse = {
+ 				matrilinear_marriage = yes
+ 				host = scope:recipient.host
+ 			}
+ 		}
+
+ 		modifier = {
+ 			add = -50
+ 			desc = AI_MARRIED_PATRILINIALLY
+ 			is_married = yes
+ 			is_female = yes
+ 			any_spouse = {
+ 				patrilinear_marriage = yes
+ 				host = scope:recipient.host
+ 			}
+ 		}
+
+ 		modifier = {
+ 			add = -50
+ 			desc = AI_INSPIRED
+ 			exists = inspiration
+			inspiration = {
+				NOT = {
+					exists = inspiration_sponsor
+				}
+			}
+ 		}
+
+ 		modifier = {
+ 			add = -500
+ 			desc = AI_SPONSORED_INSPIRATION
+ 			exists = inspiration
+			inspiration = {
+				exists = inspiration_sponsor
+			}
+ 		}
+
+ 		modifier = {
+ 			add = -500
+ 			desc = AI_WANDERLUST
+			is_child_of = scope:actor
+ 			has_character_modifier = lust_for_adventure
+ 		}
+		
+		#Wandering characters (who aren't doing anything else)
+		modifier = {
+ 			add = {
+				value = 10
+				add = scope:actor.diplomacy
+				
+				if = {
+					limit = {
+						faith = scope:actor.faith
+					}
+					add = 10
+				}
+				else_if = {
+					limit = {
+						faith = { #Same religion - But faith should not be considered Hostile or Evil
+							religion = scope:actor.faith.religion
+							faith_hostility_level = {
+								target = scope:actor.faith
+								value < 2
+							}
+						}
+					}
+					add = 5
+				}
+				if = {
+					limit = {
+						culture = scope:actor.culture
+					}
+					add = 10
+				}
+				else_if = {
+					limit = {
+						culture = {
+							has_same_culture_heritage = scope:actor.culture
+						}
+					}
+					add = 5
+				}
+				if = {
+					limit = {
+						OR = {
+							has_trait = content
+							has_trait = lazy
+							has_trait = trusting
+						}
+					}
+					add = 10
+				}
+			}
+ 			desc = AI_CAN_BE_PERSUADED_TO_STAY
+			
+			is_pool_guest = no
+			location.province_owner = {
+				OR = {
+					any_liege_or_above = { this = scope:actor }
+					this = scope:actor
+				}
+			}
+			NOR = {
+				has_relation_rival = scope:actor
+				exists = liege
+				is_child_of = scope:actor
+				has_character_modifier = lust_for_adventure
+			}
+ 		}
+		
+		modifier = {
+			add = {
+				value = 20
+				if = {
+					limit = {
+						has_trait = greedy
+					}
+					multiply = 1.5
+				}
+				else_if = {
+					limit = {
+						has_trait = generous
+					}
+					multiply = 0.5
+				}
+			}
+			scope:cover_travel_expenses = yes
+			desc = AI_TRAVEL_EXPENSES
+		}
+
+ 		# Amenities impact
+ 		## Actor's amenities increases acceptance
+ 		modifier = {
+ 			add = {
+ 				value = 10
+ 				if = {
+ 					limit = {
+ 						scope:actor = {
+			 				has_royal_court = yes
+			 				amenity_level = { type = court_lodging_standards value >=  high_amenity_level }
+			 			}
+ 					}
+ 			 		add = 10
+ 				}
+ 				if = {
+ 					limit = {
+ 						scope:actor = {
+			 				amenity_level = { type = court_lodging_standards value >=  very_high_amenity_level }
+			 			}
+ 					}
+ 			 		add = 10
+ 				}
+ 				if = {
+ 					limit = {
+ 						scope:actor = {
+			 				amenity_level = { type = court_lodging_standards value >=  max_amenity_level }
+			 			}
+ 					}
+ 			 		add = 20
+ 				}
+ 			}
+ 			desc = AI_COURT_LODGING_STANDARDS_QUALITY
+			scope:actor = {
+			 	has_royal_court = yes
+				amenity_level = { type = court_lodging_standards value >=  medium_amenity_level }
+			}
+ 		}
+		## Target's liege amenities decreases acceptance 
+ 		modifier = {
+ 			add = {
+ 				value = -10
+				if = {
+					limit = {
+						liege = {
+							amenity_level = { type = court_lodging_standards value >=  high_amenity_level } 
+						}
+					}
+					add = -10
+				}
+				if = {
+					limit = {
+						liege = {
+							amenity_level = { type = court_lodging_standards value >=  very_high_amenity_level } 
+						}
+					}
+					add = -10
+				}
+				if = {
+					limit = {
+						liege = {
+							amenity_level = { type = court_lodging_standards value >=  max_amenity_level } 
+						}
+					}
+					add = -20
+				}
+ 			}
+ 			desc = AI_LIEGE_COURT_LODGING_STANDARDS_QUALITY
+			exists = liege
+			is_courtier_of = liege
+			liege = {
+				has_royal_court = yes
+				amenity_level = { type = court_lodging_standards value >=  medium_amenity_level }
+			}
+ 		}
+	}
+
+
+	auto_accept = {
+		custom_description = {
+			text = "spending_hook"
+			subject = scope:actor
+			object = scope:recipient
+			scope:hook = yes
+		}
+	}
+
+	send_option = {
+		is_valid = {
+			scope:actor = {
+				has_usable_hook = scope:recipient
+			}
+		}
+		flag = hook
+		localization = SCHEME_HOOK
+	}
+	should_use_extra_icon = {
+		scope:actor = { has_usable_hook = scope:recipient }
+	}
+	extra_icon = "gfx/interface/icons/character_interactions/hook_icon.dds"
+
+	send_options_exclusive = no
+}
+#---------------------------------------------------------------------------------------------------------------------------------------------------------
+arrange_marriage_interaction = {
+	icon = icon_marriage
+	category = interaction_category_diplomacy
+	common_interaction = yes
+
+	special_interaction = arrange_marriage_interaction
+	interface = marriage
+	use_diplomatic_range = {
+		trigger_if = {
+			limit = { exists = scope:secondary_actor.betrothed }
+			NOT = {
+				scope:secondary_actor = {
+					betrothed = scope:secondary_recipient
+				}
+			}
+		}
+	} 
+
+	recipient_recieve_cooldown = {
+		years = marriage_recieve_proposal_cooldown
+	}
+
+	ignore_recipient_recieve_cooldown = {
+		AND = {
+			is_ai = no
+			scope:recipient = { is_ai = no }
+		}
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					scope:actor = scope:recipient
+				}
+				desc = arrange_marriage_interaction_desc_ruler_at_own_court
+			}
+			triggered_desc = {
+				trigger = {
+					scope:actor = {
+						can_marry_character_trigger = {
+							CHARACTER = scope:recipient
+						}
+					}
+					scope:recipient = { is_ruler = yes }
+				}
+				desc = arrange_marriage_interaction_desc_both_rulers_can_marry
+			}
+			triggered_desc = {
+				trigger = {
+					scope:recipient = {
+						is_ruler = yes
+						can_marry_trigger = yes
+					}
+				}
+				desc = arrange_marriage_interaction_desc_both_rulers_recipient_only_can_marry
+			}
+			triggered_desc = {
+				trigger = {
+					scope:recipient = {
+						is_ruler = yes
+					}
+				}
+				desc = arrange_marriage_interaction_desc_both_rulers_recipient_neither_can_marry
+			}
+			triggered_desc = {
+				trigger = {
+					scope:actor = {
+						can_marry_character_trigger = {
+							CHARACTER = scope:recipient
+						}
+					}
+				}
+				desc = arrange_marriage_interaction_desc_one_ruler_can_marry
+			}
+			desc = arrange_marriage_interaction_desc_recipient_one_ruler_cannot_marry
+		}
+	}
+	
+	redirect = {
+		# If the define MARRIAGE_OWNER_IS_MATCHMAKER is set to yes, the actor must end up as the "matchmaker" link for courtiers
+		scope:actor = {
+			if = {
+				limit = {
+					exists = matchmaker
+					NOT = { this = matchmaker }
+				}
+				save_scope_as = secondary_actor
+				matchmaker = {
+					save_scope_as = actor
+				}
+			}
+			if = {
+				limit = {
+					is_betrothed = yes
+					betrothed = scope:recipient
+				}
+
+				save_scope_as = secondary_actor
+			}
+		}
+
+		scope:recipient = {
+			if = {
+				limit = {
+					is_betrothed = yes
+					betrothed.matchmaker = scope:actor
+					is_adult = yes
+					betrothed = {
+						is_adult = yes
+					}
+				}
+
+				save_scope_as = secondary_recipient
+				matchmaker = {
+					save_scope_as = recipient
+				}
+				betrothed = {
+					save_scope_as = secondary_actor
+				}
+			}
+			if = {
+				limit = {
+					exists = matchmaker
+					NOT = { this = matchmaker }
+				}
+				save_scope_as = secondary_recipient
+				matchmaker = {
+					save_scope_as = recipient
+				}
+			}
+		}
+	}
+
+	populate_actor_list = {
+		scope:actor = {
+			add_to_list = characters
+			every_courtier = {
+				limit = {
+					trigger_if = {
+						limit = {
+							is_concubine = yes
+						}
+						is_concubine_of = scope:actor
+						can_marry_character_trigger = { CHARACTER = scope:actor }
+					}
+				}
+				add_to_list = characters
+			}
+			every_courtier_away = {
+				limit = {
+					trigger_if = {
+						limit = {
+							is_concubine = yes
+						}
+						is_concubine_of = scope:actor
+						can_marry_character_trigger = { CHARACTER = scope:actor }
+					}
+				}
+				add_to_list = characters
+			}
+			every_child = {
+				even_if_dead = yes
+				if = {
+					limit = {
+						is_alive = yes
+						NOT = { is_in_list = characters }
+						trigger_if = {
+							limit = {
+								is_concubine = yes
+							}
+							is_concubine_of = scope:actor
+							can_marry_character_trigger = { CHARACTER = scope:actor }
+						}
+					}
+					add_to_list = characters
+				}
+				every_child = {
+					even_if_dead = yes
+					if = {
+						limit = {
+							is_alive = yes
+							NOT = { is_in_list = characters }
+							trigger_if = {
+								limit = {
+									is_concubine = yes
+								}
+								is_concubine_of = scope:actor
+								can_marry_character_trigger = { CHARACTER = scope:actor }
+							}
+						}
+						add_to_list = characters
+					}
+					every_child = {
+						if = {
+							limit = {
+								is_alive = yes
+								NOT = { is_in_list = characters }
+								trigger_if = {
+									limit = {
+										is_concubine = yes
+									}
+									is_concubine_of = scope:actor
+									can_marry_character_trigger = { CHARACTER = scope:actor }
+								}
+							}
+							add_to_list = characters
+						}
+					}
+				}
+			}
+		}
+	}
+
+	populate_recipient_list = {
+		scope:recipient = {
+			add_to_list = characters
+			every_courtier = {
+				add_to_list = characters
+			}
+			every_courtier_away = {
+				add_to_list = characters
+			}
+			every_child = {
+				limit = {
+					NOT = { is_in_list = characters }
+				}
+				add_to_list = characters
+			}
+		}
+	}
+
+	interface_priority = 60
+
+	cost = {
+		prestige = {
+			value = 0
+			if = {
+				limit = {
+					exists = scope:actor
+					exists = scope:recipient
+					exists = scope:secondary_recipient
+					exists = scope:secondary_actor
+					scope:secondary_actor = { is_close_family_of = scope:actor }
+					scope:recipient = {
+						OR = {
+							AND = {
+								vassal_contract_has_flag = vassal_contract_marriage_favor
+								is_allied_to = scope:actor
+							}
+							NOT = { vassal_contract_has_flag = vassal_contract_marriage_favor}
+						}
+					}
+				}
+				add = {
+					scope:actor = {
+						every_vassal = {
+							limit = {
+								vassal_contract_has_flag = vassal_contract_marriage_favor
+								NOT = { is_allied_to = scope:actor }
+								NOR = {
+									this = scope:recipient
+									this = scope:secondary_recipient
+								}
+							}
+							add = medium_prestige_value
+						}
+					}
+					desc = VASSAL_WITH_MARRIAGE_FAVOR
+				}
+			}
+
+		}
+	}
+
+	# actor, recipient ... characters arranging the marriage
+	# secondary_actor, secondary_recipient ... characters that should marry
+
+	is_shown = {
+		scope:actor = {
+			OR = {
+				is_landed = yes #Can arrange marriages for others
+				#You're just a courtier? Only use the interaction on characters you can marry
+				can_marry_character_trigger = { CHARACTER = scope:recipient }
+			}
+		}
+		# Block further marriage proposals for people who have a pending grand wedding
+		NOR = {
+			scope:secondary_actor ?= { has_been_promised_grand_wedding = yes }
+			scope:secondary_recipient ?= { has_been_promised_grand_wedding = yes }
+		}
+		#If you're interacting with someone who isn't their own matchmaker, only show the interaction if they can get married. (If someone isn't their own matchmaker, they will be set as secondary_recipient by code and their matchmaker becomes recipient)
+		trigger_if = {
+			limit = { exists = scope:secondary_recipient }
+			scope:secondary_recipient = {
+				OR = {
+					marriage_interaction_can_be_picked_trigger = yes #Can marry anyone
+					AND = {
+						ready_to_marry_betrothed_trigger = yes
+						OR = {
+							betrothed = scope:secondary_actor
+							trigger_if = {
+								limit = { exists = betrothed.liege }
+								betrothed.liege = scope:actor
+							}
+						}
+					}
+				}
+				#To account for a person marrying their concubines
+				trigger_if = {
+					limit = {
+						is_concubine = yes
+					}
+					is_concubine_of = scope:actor
+					can_marry_character_trigger = { CHARACTER = scope:actor }
+				}
+			}
+		}
+	}
+	
+	is_valid_showing_failures_only = {
+		#If we're opening this interaction through the interaction menu (i.e. not all scopes exist yet)
+		#This was giving double-warnings about a marry-able character existing so it's commented out for now
+		#custom_description = {
+		#	text = character_to_marry_exists
+		#	object = scope:recipient
+		#	scope:recipient = {
+		#		OR = {
+		#			any_courtier = {
+		#				is_at_home = yes
+		#				marriage_interaction_can_be_picked_trigger= yes
+		#			}
+		#			any_child = {
+		#				marriage_interaction_can_be_picked_trigger= yes
+		#			}
+		#		}
+		#	}
+		#}
+		trigger_if = {
+			limit = {
+				NAND = {
+					exists = scope:secondary_actor
+					exists = scope:secondary_recipient
+				}
+			}
+			#There is an available marriage
+			custom_description = {
+				text = "basic_can_marry_check_recipient"
+				subject = scope:actor
+				object = scope:recipient
+				scope:recipient = {
+					OR = {
+						AND = {
+							#Recipient can marry
+							can_marry_trigger = yes
+							#To account for a person marrying their concubines
+							trigger_if = {
+								limit = {
+									is_concubine = yes
+								}
+								is_concubine_of = scope:actor
+								can_marry_character_trigger = { CHARACTER = scope:actor }
+							}
+						}
+						AND = {
+							is_ruler = yes #(Following are only for rulers)
+							OR = {
+								any_child = {
+									matchmaker = scope:actor
+									OR = {
+										#Any of recipient's children can marry
+										AND = {
+											can_marry_trigger = yes
+											#To account for a person marrying their concubines
+											trigger_if = {
+												limit = {
+													is_concubine = yes
+												}
+												is_concubine_of = scope:actor
+											}
+										}
+										#Any of recipient's children are ready to marry their betrothed
+										AND = {
+											ready_to_marry_betrothed_trigger = yes
+											betrothed.matchmaker = scope:actor
+										}
+									}
+								}
+								any_courtier = {
+									OR = {
+										#Any of recipient's courtiers can marry
+										AND = {
+											can_marry_trigger = yes
+											#To account for a person marrying their concubines
+											trigger_if = {
+												limit = {
+													is_concubine = yes
+												}
+												is_concubine_of = scope:actor
+											}
+										}
+										#Any of recipient's courtiers are ready to marry their betrothed
+										AND = {
+											ready_to_marry_betrothed_trigger = yes
+											betrothed.matchmaker = scope:actor
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		#Diplomatic availability & prison
+		scope:recipient = {
+			is_busy_in_events_localised = yes
+			is_imprisoned = no
+		}
+		NOT = {
+			scope:actor = {
+				is_at_war_with = scope:recipient
+			}
+		}
+		trigger_if = { #(must be here because secondary_recipient can be set at the start)
+			limit = {
+				exists = scope:secondary_recipient
+				NOT = { scope:secondary_recipient = scope:recipient }
+			}
+			scope:secondary_recipient = {
+				is_busy_in_events_localised = yes
+				is_imprisoned = no
+				bp2_valid_for_standard_interactions_trigger = yes
+			}
+		}
+		trigger_if = { #(must be here because secondary_recipient can be set at the start)
+			limit = {
+				exists = scope:secondary_actor
+				NOT = { scope:secondary_actor = scope:actor }
+			}
+			scope:secondary_actor = {
+				is_busy_in_events_localised = yes
+				is_imprisoned = no
+				bp2_valid_for_standard_interactions_trigger = yes
+			}
+		}
+		# Account for regents being bolshy.
+		marriage_interaction_non_loyal_diarchs_refuse_secondary_marriage_trigger = { TARGET = secondary_actor }
+		marriage_interaction_non_loyal_diarchs_refuse_secondary_marriage_trigger = { TARGET = secondary_recipient }
+		marriage_interaction_non_loyal_diarchs_refuse_secondary_marriage_trigger = { TARGET = actor }
+		marriage_interaction_non_loyal_diarchs_refuse_secondary_marriage_trigger = { TARGET = recipient }
+	}
+	
+	# whether a character can be picked for the interaction, interface only (e.g. picking the first character in the marriage interaction)
+	# in character scope, actor and recipient event targets can be used, but not the secondary characters (because none exist yet)
+	can_be_picked = {
+		OR = {
+			marriage_interaction_can_be_picked_trigger = yes
+			AND = {
+				exists = scope:secondary_actor
+				exists = scope:secondary_recipient
+				scope:secondary_actor.betrothed = scope:secondary_recipient
+			}
+		}
+	}
+
+	#Is evaluated only after secondary_recipient and secondary_actor are both chosen
+	has_valid_target_showing_failures_only = {
+		marriage_interaction_valid_target_trigger = yes  #Checks marriage status, betrothed, gender, consanguinity, faith hostility etc.
+
+		#Blocks AI from marrying player guests
+		scope:secondary_recipient = {
+			trigger_if = {
+				limit = {
+					is_pool_guest = yes
+					host = {
+						is_ai = no
+						NOT = { this = scope:actor }
+					}
+				}
+				NOT = { is_pool_guest_of = host }
+			}
+		}
+		
+		#Blocks most AI's from marrying Evil faiths
+		trigger_if = {
+			limit = {
+				scope:actor = {
+					is_ai = yes
+					NOT = { has_trait = cynical }
+					#AI should honor betrothal even if faiths change
+					NOT = { scope:secondary_actor.betrothed = scope:secondary_recipient }
+				}
+			}
+			scope:recipient.faith = {
+				faith_hostility_level = {
+					target = scope:actor.faith
+					value < faith_hostility_prevents_marriage_level
+				}
+			}
+		}
+
+		#Blocks AI from marrying single mayors in their area unless they are also mayors
+		trigger_if = {
+			limit = {
+				scope:actor = {
+					is_ai = yes
+					NOT = { government_has_flag = government_is_republic }
+				}
+			}
+			NOT = {
+				scope:recipient = { government_has_flag = government_is_republic }
+			}
+		}
+		
+		trigger_if = { # Cultural Traditions, for AI
+			limit = {
+				scope:actor = {
+					is_ai = yes
+					culture = {
+						has_cultural_parameter = dislikes_marrying_outside_of_culture
+					}
+				}
+			}
+			OR = {
+				scope:actor.culture = scope:recipient.culture
+				scope:actor.culture = scope:secondary_recipient.culture
+			}
+		}
+	}
+
+	pre_auto_accept = {
+		if = {
+			limit = {
+				NOR = {
+					scope:recipient = scope:actor
+					scope:secondary_actor = { has_been_promised_grand_wedding = yes }
+					scope:secondary_recipient = { has_been_promised_grand_wedding = yes }
+				}
+			}
+			scope:recipient = {
+				if = {
+					limit = { scope:secondary_actor.betrothed = scope:secondary_recipient }
+					send_interface_toast = {
+						type = msg_betrothal_fulfilled
+						left_icon = scope:secondary_actor
+						right_icon = scope:secondary_recipient
+					}
+				}
+				else = {
+					send_interface_toast = {
+						type = msg_marriage_forced
+						left_icon = scope:secondary_actor
+						right_icon = scope:secondary_recipient
+					}
+				}
+			}
+		}
+	}
+
+	on_send = {
+		if = {
+			limit = {
+				scope:grand_wedding_promise = yes
+			}
+			scope:actor = { 
+				set_variable = {
+					name = grand_wedding_promise_pending
+					days = 10
+				}
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					remove_short_term_gold = ai_wedding_promise_gold_actor
+				}
+				#if = { # Activity count debugging, left in for QA purposes
+				#	limit = {
+				#		NOT = {
+				#			exists = global_var:wedding_promise
+				#		}
+				#	}
+				#	set_global_variable = {
+				#		name = wedding_promise
+				#		value = 1
+				#	}
+				#}
+				#else = {
+				#	change_global_variable = {
+				#		name = wedding_promise
+				#		add = 1
+				#	}
+				#}
+			}
+		}
+	}
+
+	on_accept = {
+		marriage_interaction_on_accept_effect = yes
+		scope:actor = { 
+			if = {
+				limit = {
+					has_variable = grand_wedding_promise_pending
+				}
+				remove_variable = grand_wedding_promise_pending
+			}
+		}	
+	}
+
+	on_decline = {
+		scope:actor = {
+			if = {	
+				limit = { NOT = { this = scope:recipient } }
+				trigger_event = marriage_interaction.0011	
+			}
+			if = {
+				limit = {
+					has_variable = grand_wedding_promise_pending
+				}
+				remove_variable = grand_wedding_promise_pending
+			}
+		}
+		scope:secondary_actor = {
+			add_character_flag = {
+				flag = player_declined_marriage
+				years = 5
+			}
+		}
+	}
+
+	auto_accept = {
+		marriage_interaction_auto_accept_trigger = yes #Strong hook conditions
+	}
+
+	ai_accept = {
+		base = 0
+		modifier = {
+			scope:actor = {
+				OR = {
+					has_hook_of_type = {
+						target = scope:recipient
+						type = super_high_hook
+					}
+					has_hook_of_type = {
+						target = scope:recipient
+						type = super_mid_hook
+					}
+				}	
+			}
+			add = 1000
+		}
+		marriage_ai_accept_modifier = yes
+	}
+
+	# If you want the AI to set these options then it needs to be hooked into the code as well
+	send_option = {
+		flag = grand_wedding_promise
+		localization = GRAND_WEDDING_PROMISE
+
+		is_shown = {
+			scope:actor = { #Can organize a Grand Wedding
+				highest_held_title_tier > tier_barony
+				is_landed = yes
+				trigger_if = {
+					limit = {
+						is_ai = yes
+					}
+					is_at_war = no
+				}
+				# DLC locked
+				has_dlc_feature = tours_and_tournaments
+				has_dlc_feature = advanced_activities
+			}
+		}
+
+		current_description = {
+			desc = "GRAND_WEDDING_PROMISE_INFO"
+		}
+
+		is_valid = {
+			scope:actor = {
+				gold >= real_wedding_cost_actor_scope
+				is_available = yes
+				custom_tooltip = {
+					text = grand_wedding_already_promised_tt
+					NOR = {
+						AND = {
+							has_variable = promised_grand_wedding_marriage_countdown
+							var:promised_grand_wedding_marriage_countdown = { is_alive = yes }
+						}
+						has_variable = grand_wedding_promise_pending
+					}
+				}
+			}
+			trigger_if = {
+				limit = {
+					exists = scope:secondary_actor
+				}
+				custom_tooltip = {
+					text = grand_wedding_only_dominant_side
+					trigger_if = {
+						limit = {
+							scope:secondary_actor ?= {
+								is_female = yes
+							}
+						}
+						OR = {
+							scope:secondary_actor ?= { matrilinear_betrothal = yes }
+							scope:matrilineal = yes
+						}
+					}
+					trigger_else = {
+						NOR = {
+							scope:secondary_actor ?= { matrilinear_betrothal = yes }
+							scope:matrilineal = yes
+						}
+					}
+				}
+				custom_tooltip = {
+					text = grand_wedding_only_family
+					scope:secondary_actor ?= {
+						is_close_or_extended_family_of = scope:actor
+					}
+				}
+				# Cannot promise grand weddings with regents due to regency and travel limitations
+				custom_tooltip = {
+					text = grand_wedding_secondary_regent
+					NOT = {
+						scope:secondary_actor.liege = {
+							diarch = scope:secondary_actor
+							has_active_diarchy = yes
+						}
+					}
+				}
+			}
+			# Safety check because players shouldn't be spouse_2
+			trigger_if = {
+				limit = {
+					has_multiple_players = yes
+				}
+				custom_tooltip = {
+					text = grand_wedding_mp_ai
+					trigger_if = {
+						limit = {
+							OR = {
+								scope:actor = { is_ai = no }
+								scope:secondary_actor ?= { is_ai = no }
+							}
+						}
+						scope:secondary_recipient ?= {
+							is_ai = yes
+						}
+					}
+				}
+			}
+			trigger_if = {
+				limit = {
+					exists = scope:secondary_recipient.liege
+					scope:secondary_recipient.liege = {
+						diarch = scope:secondary_recipient
+						has_active_diarchy = yes
+					}
+				}
+				# Cannot promise grand weddings with regents due to regency and travel limitations
+				custom_tooltip = {
+					text = grand_wedding_secondary_regent
+					NOT = {
+						scope:secondary_recipient.liege = {
+							diarch = scope:secondary_recipient
+							has_active_diarchy = yes
+						}
+					}
+				}
+			}
+		}
+	}
+
+	send_option = {
+		flag = matrilineal
+		localization = MATRILINEAL_OFFER
+		is_shown = {
+			OR = {
+				NOT = { exists = scope:secondary_actor }
+				NOT = { exists = scope:secondary_recipient }
+				scope:secondary_actor = { sex_opposite_of = scope:secondary_recipient }
+			}
+		}
+		current_description = {
+			triggered_desc = {
+				trigger = {
+					exists = scope:secondary_actor
+					scope:secondary_actor = {
+						betrothed = scope:secondary_recipient
+						matrilinear_betrothal = yes
+					}
+				}
+				desc = "MATRILINEAL_OFFER_BETROTHAL_INFO"
+			}
+		}
+		can_be_changed = {
+			trigger_if = {
+				limit = {
+					exists = scope:secondary_actor
+				}
+				OR = {
+					NOT = {
+						exists = scope:secondary_recipient
+					}
+					scope:secondary_actor = {
+						NOT = {
+							betrothed = scope:secondary_recipient
+						}
+					}
+				}
+			}
+		}
+		starts_enabled = {
+			trigger_if = {
+				limit = {
+					exists = scope:secondary_actor
+					scope:secondary_actor = {
+						betrothed = scope:secondary_recipient
+					}
+				}
+				scope:secondary_actor = {
+					matrilinear_betrothal = yes
+				}
+			}
+			trigger_else_if = {
+				limit = {
+					exists = scope:secondary_actor
+					scope:actor = scope:secondary_actor
+					is_female = yes
+					is_ai = no
+				}
+				always = yes
+			}
+			trigger_else = {
+				scope:actor = {
+					OR= {
+						faith = {
+							has_doctrine = doctrine_gender_female_dominated
+						}
+						AND = {
+							this = scope:recipient
+							exists = scope:secondary_recipient
+							scope:secondary_recipient = {
+								is_female = yes
+							}
+							faith = { has_doctrine = doctrine_gender_equal }
+						}
+						AND = {
+							exists = scope:secondary_actor
+							scope:actor = scope:secondary_actor
+							is_female = yes
+							is_ai = no
+						}
+					}
+				}
+			}
+		}
+	}	
+
+	send_option = {
+		is_shown = {
+			scope:secondary_actor = {
+				NOT = {
+					betrothed = scope:secondary_recipient
+				}
+			}
+		}
+		is_valid = {
+			scope:actor = {
+				has_usable_hook = scope:recipient
+			}
+		}
+		flag = hook
+		localization = MARRIAGE_HOOK
+	}
+
+	should_use_extra_icon = {
+		scope:actor = { has_usable_hook = scope:recipient }
+	}
+	extra_icon = "gfx/interface/icons/character_interactions/hook_icon.dds"
+	
+	send_options_exclusive = no
+	
+	show_effects_in_notification = no
+	greeting = positive
+	
+	notification_text = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					scope:secondary_actor = {
+						is_adult = yes
+					}
+					scope:secondary_recipient = {
+						is_adult = yes
+					}
+					NOR = {
+						scope:secondary_actor = { has_been_promised_grand_wedding = yes }
+						scope:secondary_recipient = { has_been_promised_grand_wedding = yes }
+					}
+				}
+				desc = {
+					first_valid = {	
+						triggered_desc = {
+							trigger = {
+								scope:matrilineal = yes
+								scope:secondary_actor = scope:actor
+								scope:secondary_recipient = scope:recipient
+							}
+							desc = MARRIAGE_NOTIFICATION_BOTH_PERSONAL_MATRI
+						}
+						triggered_desc = {
+							trigger = {
+								scope:matrilineal = yes
+								scope:secondary_actor = scope:actor
+							}
+							desc = MARRIAGE_NOTIFICATION_ACTOR_PERSONAL_MATRI
+						}
+						triggered_desc = {
+							trigger = {
+								scope:matrilineal = yes
+								scope:secondary_recipient = scope:recipient
+							}
+							desc = MARRIAGE_NOTIFICATION_RECIPIENT_PERSONAL_MATRI
+						}
+						triggered_desc = {
+							trigger = {
+								scope:matrilineal = yes
+							}
+							desc = MARRIAGE_NOTIFICATION_MATRI
+						}
+						triggered_desc = {
+							trigger = {
+								scope:secondary_actor = scope:actor
+								scope:secondary_recipient = scope:recipient
+							}
+							desc = MARRIAGE_NOTIFICATION_BOTH_PERSONAL
+						}
+						triggered_desc = {
+							trigger = {
+								scope:secondary_actor = scope:actor
+							}
+							desc = MARRIAGE_NOTIFICATION_ACTOR_PERSONAL
+						}
+						triggered_desc = {
+							trigger = {
+								scope:secondary_recipient = scope:recipient
+							}
+							desc = MARRIAGE_NOTIFICATION_RECIPIENT_PERSONAL
+						}
+						desc = MARRIAGE_NOTIFICATION
+					}
+				}
+			}
+			desc = {
+				first_valid = {	
+					triggered_desc = {
+						trigger = {
+							scope:matrilineal = yes
+							scope:secondary_actor = scope:actor
+							scope:secondary_recipient = scope:recipient
+						}
+						desc = BETROTHAL_NOTIFICATION_BOTH_PERSONAL_MATRI
+					}
+					triggered_desc = {
+						trigger = {
+							scope:matrilineal = yes
+							scope:secondary_actor = scope:actor
+						}
+						desc = BETROTHAL_NOTIFICATION_ACTOR_PERSONAL_MATRI
+					}
+					triggered_desc = {
+						trigger = {
+							scope:matrilineal = yes
+							scope:secondary_recipient = scope:recipient
+						}
+						desc = BETROTHAL_NOTIFICATION_RECIPIENT_PERSONAL_MATRI
+					}
+					triggered_desc = {
+						trigger = {
+							scope:matrilineal = yes
+						}
+						desc = BETROTHAL_NOTIFICATION_MATRI
+					}
+					triggered_desc = {
+						trigger = {
+							scope:secondary_actor = scope:actor
+							scope:secondary_recipient = scope:recipient
+						}
+						desc = BETROTHAL_NOTIFICATION_BOTH_PERSONAL
+					}
+					triggered_desc = {
+						trigger = {
+							scope:secondary_actor = scope:actor
+						}
+						desc = BETROTHAL_NOTIFICATION_ACTOR_PERSONAL
+					}
+					triggered_desc = {
+						trigger = {
+							scope:secondary_recipient = scope:recipient
+						}
+						desc = BETROTHAL_NOTIFICATION_RECIPIENT_PERSONAL
+					}
+					desc = BETROTHAL_NOTIFICATION
+				}
+			}
+		}
+	}
+}
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------
+request_excommunication_interaction = {
+	category = interaction_category_hostile
+	icon = excommunication
+
+	desc = request_excommunication_interaction_desc
+	redirect = {
+		if = {
+			limit = {
+				exists = scope:actor.faith.religious_head
+			}
+			scope:recipient = {
+				save_scope_as = secondary_recipient
+			}
+			scope:actor.faith.religious_head = {
+				save_scope_as = recipient
+			}
+		}
+		scope:actor.faith = {
+			if = {
+				limit = { exists = religious_head }
+				religious_head = {
+					save_scope_as = recipient
+				}
+			}
+		}
+	}
+
+	notification_text = RELIGIOUS_HEAD_REQUEST_EXCOMMUNICATION
+
+	is_shown = {
+		exists = scope:actor.faith.religious_head
+		NOR = {
+			scope:actor = scope:secondary_recipient
+			scope:actor.faith.religious_head = scope:actor
+			scope:actor.faith.religious_head = scope:secondary_recipient
+		}
+		scope:actor.faith = {
+			exists = religious_head
+			this = scope:secondary_recipient.faith
+			has_doctrine = tenet_communion
+			has_doctrine = doctrine_spiritual_head
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			piety >= massive_piety_value
+		}
+		scope:secondary_recipient = { #Excommunication target
+			NOT = { has_trait = excommunicated }
+			age >= 12
+		}
+		scope:actor = {
+			custom_description = {
+				text = "hof_interaction_unreformed_faith"
+				NOT = {
+					faith = { has_doctrine_parameter = unreformed }
+				}
+			}
+			NOT = {
+				is_at_war_with = scope:recipient
+			}
+		}
+		scope:recipient = { is_busy_in_events_localised = yes }
+		scope:secondary_recipient = { NOT = { has_strong_hook = scope:actor } }
+		custom_tooltip = {
+			text = cannot_take_overt_hostile_actions_against_diarch.tt
+			NOT = { scope:recipient ?= scope:actor.diarch }
+		}
+	}
+
+	send_option = {
+		is_valid = {
+			scope:actor = {
+				has_usable_hook = scope:recipient
+			}
+		}
+		flag = excommunication_hook
+		localization = EXCOMMUNICATION_HOOK
+	}
+	should_use_extra_icon = {
+		scope:actor = { has_usable_hook = scope:recipient }
+	}
+	extra_icon = "gfx/interface/icons/character_interactions/hook_icon.dds"
+
+	send_options_exclusive = no
+
+	auto_accept = {
+		custom_description = {
+			text = "spending_hook"
+			subject = scope:actor
+			object = scope:recipient
+			scope:excommunication_hook = yes
+			scope:actor = { has_strong_hook = scope:recipient }
+		}
+	}
+
+	ai_accept = {
+		base = -50
+			
+		modifier = {
+			scope:actor = {
+				OR = {
+					has_hook_of_type = {
+						target = scope:recipient
+						type = super_high_hook
+					}
+					has_hook_of_type = {
+						target = scope:recipient
+						type = super_mid_hook
+					}
+				}	
+			}
+			add = 600
+		}	
+		modifier = {
+			scope:excommunication_hook = yes
+			add = 50
+			desc = SCHEME_WEAK_HOOK_USED
+		}
+		opinion_modifier = {
+			who = scope:actor.faith.religious_head
+			opinion_target = scope:actor
+			multiplier = 1
+		}
+		opinion_modifier = {
+			who = scope:actor.faith.religious_head
+			opinion_target = scope:secondary_recipient #Excommunication target
+			multiplier = -1
+			min = 0
+		}
+		modifier = {
+			add = -100
+			scope:actor.faith.religious_head = {
+				opinion = {
+					value > 0
+					target = scope:secondary_recipient #Excommunication target
+				}
+			}
+			desc = EXCOMMUNICATION_OPINION
+		}
+		modifier = {
+			add = {
+				add = -10
+				multiply = scope:secondary_recipient.num_virtuous_traits
+			}
+			scope:secondary_recipient.num_virtuous_traits > 0
+			desc = EXCOMMUNICATION_VIRTUES
+		}
+		modifier = {
+			add = {
+				add = 10
+				multiply = scope:secondary_recipient.num_sinful_traits
+			}
+			scope:secondary_recipient.num_sinful_traits > 0
+			desc = EXCOMMUNICATION_SINS
+		}
+		modifier = {
+			desc = RELIGIOUS_HEAD_INTERACTION_PARAGON
+			add = 15
+			scope:actor = {
+				has_trait = paragon
+			}
+		}
+		modifier = {
+			desc = RELIGIOUS_HEAD_INTERACTION_CONSECRATED_BLOOD
+			add = 5
+			scope:actor = {
+				has_trait = consecrated_blood
+			}
+		}
+	}
+	
+	ai_min_reply_days = 1
+	ai_max_reply_days = 5
+
+	on_accept = {
+		if = {
+			limit = {
+				scope:secondary_recipient = { is_alive = yes }
+			}
+			if = {
+				limit = { scope:excommunication_hook = yes }
+				scope:actor = {
+					use_hook = scope:recipient
+				}
+			}
+
+			scope:actor = {
+				#Spend piety for the excommunication.
+				add_piety = massive_piety_loss
+
+				#Letter event to inform character the pope agreed to their request.
+				trigger_event = {
+					id = religious_interaction.1022
+				}
+			}
+			excommunicate_character = {
+				TARGET_CHARACTER = scope:secondary_recipient
+				REQUESTING_CHARACTER = scope:actor
+			}
+			scope:secondary_recipient = {
+				#Letter event to inform character that they have been excommunicated.
+				trigger_event = {
+					id = religious_interaction.1020
+				}
+				hidden_effect = { #Nudge towards rivalry
+					if = {
+						limit = {
+							NOR = {
+								has_relation_rival = scope:actor
+								has_relation_potential_rival = scope:actor
+							}
+							scope:actor = { is_alive = yes }
+						}
+						set_relation_potential_rival = scope:actor
+					}
+				}
+			}
+		}
+	}
+
+	on_decline = {
+		scope:actor = {
+			#Letter event to inform character the pope refused their request.
+			trigger_event = {
+				id = religious_interaction.1023
+			}
+		}
+	}
+	
+	# AI will do
+	
+	ai_potential = {
+		is_adult = yes
+		piety >= major_piety_value
+	}
+	
+	ai_target_quick_trigger = {
+		adult = yes
+	}
+
+	ai_targets = {
+		ai_recipients = scripted_relations
+		ai_recipients = primary_war_enemies
+	}
+	
+	ai_frequency = 36
+
+	ai_will_do = {
+		base = 25
+
+		ai_value_modifier = { # +50 to -50
+			who = scope:actor
+			ai_vengefulness = 0.5
+		}
+		
+		modifier = {
+			factor = 0
+			scope:secondary_recipient = {
+				NOR = {
+					has_relation_rival = scope:actor
+					has_relation_nemesis = scope:actor
+					is_at_war_with = scope:actor
+				}
+			}
+		}
+	}
+}
+
+
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------
+hof_ask_for_claim_interaction = {
+	category = interaction_category_diplomacy
+	icon = religious_claim
+
+	desc = hof_ask_for_claim_interaction_desc
+	target_type = title
+	target_filter = secondary_recipient_domain_titles
+	redirect = {
+		if = {
+			limit = {
+				exists = scope:actor.faith.religious_head
+			}
+			scope:recipient = {
+				save_scope_as = secondary_recipient
+			}
+			scope:actor.faith.religious_head = {
+				save_scope_as = recipient
+			}
+		}
+	}
+
+	has_valid_target_showing_failures_only = {
+		scope:target = { tier >= tier_county }
+	}
+	
+	is_shown = {
+		exists = scope:actor.faith.religious_head
+		scope:actor.faith = scope:secondary_recipient.faith
+		NOR = {
+			scope:actor = scope:secondary_recipient
+			scope:secondary_recipient = scope:recipient
+		}
+		exists = scope:actor.faith.religious_head
+		scope:actor.faith = {
+			has_doctrine = doctrine_spiritual_head
+		}
+		scope:secondary_recipient = {
+			is_landed = yes
+			primary_title = { tier >= tier_county }
+			NOT = { government_has_flag = government_is_holy_order }
+		}
+	}
+	
+	is_valid_showing_failures_only = {
+		trigger_if = { # Can't request on titles you already have a pressed claim on
+			limit = {
+				exists = scope:target
+				scope:actor = {
+					has_strong_claim_on = scope:target
+				}
+			}
+			custom_description = {
+				text = "hof_ask_for_claim_has_pressed_claim_already"
+				always = no
+			}
+		}
+		trigger_if = { # Can't request claims on baronies
+			limit = {
+				OR = {
+					scope:recipient.highest_held_title_tier = tier_barony
+					AND = {
+						exists = scope:target
+						scope:target = {
+							tier = tier_barony
+						}
+					}
+				}
+			}
+			custom_description = {
+				text = "hof_ask_for_claim_no_baronies"
+				always = no
+			}
+		}
+		trigger_if = { # Can't request claims on theocratic lessees or theocracies (= Prince-Bishops)
+			limit = {
+				scope:secondary_recipient = { 
+					government_has_flag = government_is_theocracy
+				}
+			}
+			custom_description = {
+				text = "hof_ask_for_claim_theocratic_lessee"
+				always = no	
+			}	
+		}
+		scope:actor = { # Variable piety cost depending on tier
+			trigger_if = {
+				limit = {
+					exists = scope:target
+				}
+				piety >= claim_piety_value
+			}
+			custom_description = {
+				text = "hof_ask_for_claim_excommunicated"
+				NOT = { has_trait = excommunicated }
+			}
+			NOT = {
+				is_at_war_with = scope:recipient
+			}
+		}
+		scope:actor = {
+			custom_description = {
+				text = "hof_interaction_unreformed_faith"
+				NOT = {
+					faith = { has_doctrine_parameter = unreformed }
+				}
+			}
+		}
+		scope:recipient = { is_busy_in_events_localised = yes }
+		scope:secondary_recipient = { NOT = { has_strong_hook = scope:actor } }
+	}
+	
+	ai_targets = {
+		ai_recipients = neighboring_rulers
+		ai_recipients = peer_vassals
+		ai_recipients = liege
+	}
+	ai_frequency = 36
+	
+	ai_potential = {
+		is_landed = yes
+		OR = {
+			ai_greed >= 50
+			ai_has_warlike_personality = yes
+		}
+		piety >= major_piety_value
+		NOT = { has_trait = excommunicated }
+		exists = faith.religious_head
+		highest_held_title_tier > tier_barony
+	}
+
+	ai_will_do = {
+		base = 0
+
+		modifier = {
+			add = scope:actor.ai_greed
+		}
+
+		modifier = {
+			add = scope:target.tier
+		}
+
+		modifier = {
+			add = -100
+			scope:actor = {
+				OR = {
+					has_relation_friend = scope:secondary_recipient
+					has_relation_lover = scope:secondary_recipient
+					opinion = {
+						target = scope:secondary_recipient
+						value >= high_positive_opinion
+					}
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0
+			NOT = {
+				scope:target = {
+					is_neighbor_to_realm = scope:actor
+				}
+			}
+		}
+	}
+	
+	ai_accept = {
+		base = 0 # Should be 0 for all interactions
+		modifier = {
+			scope:actor = {
+				OR = {
+					has_hook_of_type = {
+						target = scope:recipient
+						type = super_high_hook
+					}
+					has_hook_of_type = {
+						target = scope:recipient
+						type = super_mid_hook
+					}
+				}	
+			}
+			add = 800
+		}
+		modifier = {
+			scope:claim_hook = yes
+			add = 100
+			desc = SCHEME_WEAK_HOOK_USED
+		}
+		
+		modifier = {
+			add = -50
+			desc = BASE_RELUCTANCE
+		}
+		
+		modifier = { # Practically impossible to claim Kingdoms/Empires when already King/Emperor
+			add = -1000
+			desc = I_AM_ALREADY_HIGH_TIER
+			scope:actor.primary_title = {
+				tier >= tier_kingdom
+			}
+			scope:target = {
+				tier >= tier_kingdom
+			}
+		}
+		
+		modifier = { # Characters with a pressed claim on a kingdom or empire already has a reduced chance of getting a claim on a kingdom or empire
+			add = -200
+			desc = I_ALREADY_HAVE_A_KINGDOM_OR_EMPIRE_CLAIM
+			scope:actor = {
+				any_claim = {
+					pressed = yes
+					tier >= tier_kingdom
+				}
+			}
+			scope:target = {
+				tier >= tier_kingdom
+			}
+		}
+		
+		opinion_modifier = { # More likely if Recipient likes Actor
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.5
+			desc = AI_OPINION_REASON
+		}
+		
+		modifier = { # Same language
+			add = 5
+			desc = speaks_same_language_interaction_reason
+			trigger = {
+				scope:actor = {
+					knows_language_of_culture = scope:recipient.culture
+				}
+			}
+		}
+		
+		opinion_modifier = { # Unlikely if Recipient likes Secondary Recipient
+			who = scope:recipient
+			opinion_target = scope:secondary_recipient
+			multiplier = -1
+			desc = AI_OPINION_REASON
+		}
+		
+		modifier = { # Less likely the lower their tier is compared to you
+			add = {
+				add = -10
+				if = {
+					limit = {
+						scope:actor = {
+							tier_difference = {
+								target = scope:secondary_recipient
+								value >= 2
+							}
+						}
+					}
+					add = -10
+				}
+				if = {
+					limit = {
+						scope:actor = {
+							tier_difference = {
+								target = scope:secondary_recipient
+								value >= 3
+							}
+						}
+					}
+					add = -10
+				}
+			}
+			desc = THEY_ARE_LOWER_TIER
+			scope:actor = {
+				tier_difference = {
+					target = scope:secondary_recipient
+					value >= 1
+				}
+			}
+		}
+		
+		modifier = { # Penalty for asking claims on your own vassals
+			add = -50
+			desc = THEY_ARE_YOUR_VASSAL
+			scope:actor = {
+				any_vassal_or_below = {
+					this = scope:secondary_recipient
+				}
+			}
+		}
+		
+		modifier = { # Bonus for adults to ask on children
+			add = 25
+			desc = THEY_ARE_A_CHILD
+			scope:secondary_recipient = {
+				is_adult = no
+			}
+			scope:actor = {
+				is_adult = yes
+			}
+		}
+		
+		modifier = { # Penalty for children to ask on adults
+			add = -25
+			desc = I_AM_A_CHILD
+			scope:secondary_recipient = {
+				is_adult = yes
+			}
+			scope:actor = {
+				is_adult = no
+			}
+		}
+		
+		modifier = { # Bonus for men if a woman under male preference
+			add = 15
+			desc = THEY_ARE_FEMALE_WHEN_MALE_IS_PREFERRED
+			scope:secondary_recipient = {
+				is_adult = yes
+				is_female = yes
+			}
+			scope:actor = {
+				is_adult = yes
+				is_female = no
+				faith = {
+					has_doctrine = doctrine_gender_male_dominated
+				}
+			}
+		}
+		
+		modifier = { # Bonus for women if a man under female preference
+			add = 15
+			desc = THEY_ARE_MALE_WHEN_FEMALE_IS_PREFERRED
+			scope:secondary_recipient = {
+				is_adult = yes
+				is_female = no
+			}
+			scope:actor = {
+				is_adult = yes
+				is_female = yes
+				faith = {
+					has_doctrine = doctrine_gender_female_dominated
+				}
+			}
+		}
+		
+		modifier = { # Penalty for women to ask claims on men under male preference
+			add = -15
+			desc = I_AM_FEMALE_WHEN_MALE_IS_PREFERRED
+			scope:actor = {
+				is_adult = yes
+				is_female = yes
+				faith = {
+					has_doctrine = doctrine_gender_male_dominated
+				}
+			}
+			scope:secondary_recipient = {
+				is_adult = yes
+				is_female = no
+			}
+		}
+		
+		modifier = { # Penalty for men to ask claims on women under female preference
+			add = -15
+			desc = I_AM_MALE_WHEN_FEMALE_IS_PREFERRED
+			scope:actor = {
+				is_adult = yes
+				is_female = no
+				faith = {
+					has_doctrine = doctrine_gender_female_dominated
+				}
+			}
+			scope:secondary_recipient = {
+				is_adult = yes
+				is_female = yes
+			}
+		}
+		
+		modifier = { # They are Excommunicated
+			add = 25
+			desc = THEY_ARE_EXCOMMUNICATED
+			scope:secondary_recipient = {
+				has_trait = excommunicated
+			}
+		}
+		
+		modifier = { # I am a Kinslayer
+			add = -15
+			desc = I_AM_A_KINSLAYER
+			scope:actor = {
+				has_trait_rank = {
+					trait = kinslayer
+					rank >= 1
+				}
+			}
+		}
+		
+		modifier = { # They are a Kinslayer
+			add = 15
+			desc = THEY_ARE_A_KINSLAYER
+			scope:secondary_recipient = {
+				has_trait_rank = {
+					trait = kinslayer
+					rank >= 1
+				}
+			}
+		}
+		
+		modifier = { # They are of the same dynasty as the Head of Faith
+			add = -5
+			desc = THEY_ARE_MY_DYNASTY_MEMBER
+			scope:recipient = {
+				is_lowborn = no
+				dynasty = scope:secondary_recipient.dynasty
+				NOR = {
+					house = scope:secondary_recipient.house
+					is_close_or_extended_family_of = scope:actor
+					is_cousin_of = scope:actor
+					is_child_of = scope:actor	
+					scope:recipient.dynasty = scope:actor.dynasty
+				}
+			}
+		}
+		
+		modifier = { # You are of the same dynasty as the Head of Faith
+			add = 5
+			desc = YOU_ARE_MY_DYNASTY_MEMBER
+			scope:recipient = {
+				is_lowborn = no
+				dynasty = scope:actor.dynasty
+				NOR = {
+					is_close_or_extended_family_of = scope:actor
+					is_cousin_of = scope:actor
+					is_child_of = scope:actor
+					scope:recipient.dynasty = scope:secondary_recipient.dynasty
+				}
+			}
+		}
+		
+		modifier = { # They are of the same house as the Head of Faith
+			add = -10
+			desc = THEY_ARE_MY_HOUSE_MEMBER
+			scope:recipient = {
+				is_lowborn = no
+				house = scope:secondary_recipient.house
+				NOR = {
+					house = scope:actor.house
+					is_close_or_extended_family_of = scope:actor
+					is_cousin_of = scope:actor
+					is_child_of = scope:actor	
+					scope:recipient.house = scope:actor.house
+				}
+			}
+		}
+		
+		modifier = { # You are of the same house as the Head of Faith
+			add = 10
+			desc = YOU_ARE_MY_HOUSE_MEMBER
+			scope:recipient = {
+				is_lowborn = no
+				house = scope:actor.house
+				NOR = {
+					is_close_or_extended_family_of = scope:actor
+					is_cousin_of = scope:actor
+					is_child_of = scope:actor
+					scope:recipient.house = scope:secondary_recipient.house
+				}
+			}
+		}
+		
+		modifier = { # Related to the Head of Faith
+			add = 25
+			desc = YOU_ARE_MY_RELATIVE
+			scope:recipient = {
+				OR = {
+					is_close_or_extended_family_of = scope:actor
+					is_cousin_of = scope:actor
+				}
+				NOT = { is_child_of = scope:actor }
+			}
+		}
+		
+		modifier = { # Parent of the Head of Faith
+			add = 50
+			desc = YOU_ARE_MY_PARENT
+			scope:recipient = {
+				is_child_of = scope:actor
+			}
+		}
+		
+		modifier = { # Friend of the Head of Faith
+			add = 15
+			desc = WE_ARE_FRIENDS
+			scope:recipient = {
+				has_relation_friend = scope:actor
+			}
+		}
+		
+		modifier = { # Best Friend of the Head of Faith
+			add = 20
+			desc = WE_ARE_BEST_FRIENDS
+			scope:recipient = {
+				has_relation_best_friend = scope:actor
+			}
+		}
+		
+		modifier = { # Lover of the Head of Faith
+			add = 10
+			desc = WE_ARE_LOVERS
+			scope:recipient = {
+				has_relation_lover = scope:actor
+			}
+		}
+		
+		modifier = { # Rival of the Head of Faith
+			add = -100
+			desc = WE_ARE_RIVALS
+			scope:recipient = {
+				has_relation_rival = scope:actor
+			}
+		}
+		
+		modifier = { # Nemesis of the Head of Faith
+			add = -500
+			desc = WE_ARE_NEMESES
+			scope:recipient = {
+				has_relation_nemesis = scope:actor
+			}
+		}
+		
+		modifier = {
+			add = {
+				add = 10
+				multiply = scope:actor.num_virtuous_traits
+			}
+			scope:actor.num_virtuous_traits > 0
+			desc = I_AM_VIRTUOUS
+		}
+		
+		modifier = {
+			add = {
+				add = -10
+				multiply = scope:secondary_recipient.num_virtuous_traits
+			}
+			scope:secondary_recipient.num_virtuous_traits > 0
+			desc = THEY_ARE_VIRTUOUS
+		}
+		
+		modifier = {
+			add = {
+				add = -10
+				multiply = scope:actor.num_sinful_traits
+			}
+			scope:actor.num_sinful_traits > 0
+			desc = I_AM_SINFUL
+		}
+		
+		modifier = {
+			add = {
+				add = 10
+				multiply = scope:secondary_recipient.num_sinful_traits
+			}
+			scope:secondary_recipient.num_sinful_traits > 0
+			desc = THEY_ARE_SINFUL
+		}
+		modifier = {
+			desc = RELIGIOUS_HEAD_INTERACTION_SAVIOR
+			add = 15
+			scope:actor = {
+				has_trait = savior
+			}
+		}
+		modifier = {
+			desc = RELIGIOUS_HEAD_INTERACTION_DIVINE_BLOOD
+			add = 5
+			scope:actor = {
+				has_trait = divine_blood
+			}
+		}
+		modifier = {
+			desc = RELIGIOUS_HEAD_INTERACTION_PARAGON
+			add = 15
+			scope:actor = {
+				has_trait = paragon
+			}
+		}
+		modifier = {
+			desc = RELIGIOUS_HEAD_INTERACTION_CONSECRATED_BLOOD
+			add = 5
+			scope:actor = {
+				has_trait = consecrated_blood
+			}
+		}
+	}
+
+	auto_accept = {
+		custom_description = {
+			text = "spending_hook"
+			subject = scope:actor
+			object = scope:recipient
+			scope:claim_hook = yes
+			scope:actor = { has_strong_hook = scope:recipient }
+		}
+	}
+
+	
+	send_option = {
+		is_shown = {
+			NOT = { scope:actor = scope:recipient }
+		}
+		is_valid = {
+			scope:actor = {
+				has_usable_hook = scope:recipient
+			}
+		}
+		flag = claim_hook
+		localization = GENERIC_SPEND_A_HOOK
+	}
+	should_use_extra_icon = {
+		scope:actor = { has_usable_hook = scope:recipient }
+	}
+	extra_icon = "gfx/interface/icons/character_interactions/hook_icon.dds"
+	
+	send_options_exclusive = no
+	
+	ai_min_reply_days = 1
+	ai_max_reply_days = 5
+	
+	on_accept = {
+		hof_ask_for_claim_interaction_effect = yes
+		scope:secondary_recipient = {
+			trigger_event = religious_interaction.5
+		}
+		scope:actor = {
+			trigger_event = religious_interaction.4
+		}
+	}
+
+	on_decline = {
+		scope:actor = {
+			trigger_event = religious_interaction.42
+		}
+	}
+}
+
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------
+revoke_title_interaction = {
+
+	category = interaction_category_vassal
+	common_interaction = yes
+	highlighted_reason = HIGHLIGHTED_HAS_REVOKE_TITLE_REASON
+	notification_text = REVOKE_TITLE_PROPOSAL
+
+	desc = revoke_title_interaction_desc
+
+	special_interaction = revoke_title_interaction
+	interface = revoke_title
+	target_type = title
+	target_filter = recipient_domain_titles
+	ai_maybe = yes
+	can_send_despite_rejection = yes
+	popup_on_receive = yes
+	pause_on_receive = yes
+	icon = revoke_title
+
+	interface_priority = 60
+	ai_min_reply_days = 4
+	ai_max_reply_days = 9
+
+	on_decline_summary = general_rebellion_decline_summary
+
+	# actor character giving the titles
+	# recipient character receiving the titles
+
+	is_shown = {
+		scope:recipient = {
+			is_landed = yes
+			# should be shown but be disabled for indirect vassals
+			target_is_liege_or_above = scope:actor
+			# is_vassal_of = scope:actor
+		}
+	}
+	
+	is_valid_showing_failures_only = {
+		title_revocation_standard_valid_showing_failures_only_trigger = yes
+		# Plus make sure there's a legal right to revoke.
+		scope:actor = {
+			trigger_if = {
+				limit = { government_has_flag = government_is_tribal }
+				custom_description = {
+					text = "has_law_allowing_title_revocation_tribal"
+					has_realm_law_flag = title_revocation_allowed
+				}
+			}
+			trigger_if = {
+				limit = {
+					NOT = { government_has_flag = government_is_tribal }
+				}
+				custom_description = {
+					text = "has_law_allowing_title_revocation_crown"
+					has_realm_law_flag = title_revocation_allowed
+				}
+			}
+		}
+		trigger_if = {
+			limit = {
+				scope:recipient = {
+					vassal_contract_has_flag = vassal_contract_cannot_revoke_titles
+				}
+			}
+			custom_description = {
+				text = vassal_contract_forbids_revocation
+				scope:recipient = {
+					NOT = { vassal_contract_has_flag = vassal_contract_cannot_revoke_titles }
+				}
+			}
+		}
+		# And uhh... the sensible check.
+		scope:recipient = {
+			is_vassal_of = scope:actor
+			is_busy_in_events_localised = yes
+			NOT = { has_strong_hook = scope:actor }
+		}
+		custom_tooltip = {
+			text = cannot_take_overt_hostile_actions_against_diarch.tt
+			NOT = { scope:recipient ?= scope:actor.diarch }
+		}
+	}
+
+	can_send = {
+		scope:actor = {
+			custom_description = {
+				text = "character_interactions_hostile_actions_disabled_delay"
+				NOT = { has_character_flag = flag_hostile_actions_disabled_delay }
+			}
+		}
+	}
+	
+	# Highlighted in the interaction menu when right-clicking a character
+	is_highlighted = {
+		OR = {
+			scope:actor = {
+				has_revoke_title_reason = scope:recipient
+			}
+			scope:recipient = {
+			 	any_held_title = {
+					scope:actor = {
+						has_claim_on = prev
+					}
+				}
+				NOT = {
+					any_ally = {
+						this = scope:actor
+					}
+				}
+			}
+		}
+	}
+		
+	can_be_picked_title = {
+		scope:target = { title_revocation_standard_can_pick_title_trigger = yes }
+	}
+
+	#Use hook
+	send_option = {
+		is_valid = {
+			scope:actor = {
+				has_usable_hook = scope:recipient
+			}
+		}
+		flag = hook
+		localization = SCHEME_HOOK
+	}
+	should_use_extra_icon = {
+		scope:actor = { has_usable_hook = scope:recipient }
+	}
+	extra_icon = "gfx/interface/icons/character_interactions/hook_icon.dds"
+
+	send_options_exclusive = no
+
+	cost = {
+		# Usually, this action is free, but during certain diarchies, we want it to cost.
+		prestige = liege_diarchy_surcharge_interaction_revoke_title_interaction_value
+	}
+
+	on_send = {
+		scope:actor = {
+			add_character_flag = {
+				flag = flag_hostile_actions_disabled_delay
+				days = 10
+			}
+		}
+	}
+
+	on_auto_accept = {
+		scope:recipient = {
+			trigger_event = char_interaction.0200
+		}
+	}
+
+	on_accept = {
+		save_scope_value_as = {
+			name = revoke_title_interaction
+			value = yes
+		}
+		
+		scope:actor = {
+			trigger_event = char_interaction.0199
+		}
+		revoke_title_interaction_effect = yes
+
+		if = {
+			limit = {
+				scope:actor = { has_character_flag = flag_hostile_actions_disabled_delay }
+			}
+			scope:actor = { remove_character_flag = flag_hostile_actions_disabled_delay }
+		}
+	}
+
+	on_decline = {
+		if = {
+			limit = {
+				scope:landed_title.tier != tier_barony
+			}
+			scope:actor = {
+				revocation_tyranny_effect = yes
+				title_revocation_stress_effect = yes
+			}
+		}
+		war_for_revoke_effect = yes
+		scope:recipient = {
+			add_opinion = {
+				target = scope:actor
+				modifier = revoked_title
+			}
+		}
+		if = {
+			limit = {
+				scope:actor = { has_realm_law_flag = vassal_refusal_is_treason }
+			}
+			scope:actor = {
+				add_opinion = {
+					target = scope:recipient
+					modifier = treasonous_revoke_refusal
+				}
+			}
+		}
+		if = {
+			limit = {
+				scope:actor = { has_character_flag = flag_hostile_actions_disabled_delay }
+			}
+			scope:actor = { remove_character_flag = flag_hostile_actions_disabled_delay }
+		}
+	}
+
+	auto_accept = {
+		scope:recipient = {
+			calc_true_if = {
+				amount >= 1
+				custom_description = {
+					text = "baron_revocation"
+					highest_held_title_tier = tier_barony
+				}
+				custom_description = {
+					text = "prisoner_revocation"
+					is_imprisoned_by = scope:actor
+				}
+				custom_description = {
+					text = "spending_hook"
+					subject = scope:actor
+					object = scope:recipient
+					scope:hook = yes
+					scope:actor = { has_strong_hook = scope:recipient }
+				}
+				custom_description = {
+					text = "foreign_prison_revocation"
+					subject = scope:actor
+					object = scope:recipient
+					scope:recipient = {
+						is_imprisoned = yes
+						NOT = { is_imprisoned_by = scope:actor }
+					}
+				}
+			}
+		}
+	}
+	ai_accept = {
+		base = 0 # Try to make it 0 for most interactions
+		modifier = {
+			scope:actor = {
+				OR = {
+					has_hook_of_type = {
+						target = scope:recipient
+						type = super_high_hook
+					}
+				}	
+			}
+			add = 600
+		}
+		modifier = {
+			scope:hook = yes
+			add = 40
+			desc = SCHEME_WEAK_HOOK_USED
+		}
+
+		opinion_modifier = { # Opinion Factor
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.8
+			desc = AI_OPINION_REASON
+		}
+		
+		modifier = {
+			add = 20
+			scope:actor = {
+				has_realm_law_flag = vassal_refusal_is_treason
+			}
+			desc = AI_REFUSAL_IS_TREASON
+		}
+		
+		modifier = {
+			add = 20
+			scope:recipient = {
+				has_trait = trusting
+			}
+			desc = TAKE_THE_VOWS_TRUSTING
+		}
+		
+		modifier = {
+			add = 20
+			scope:recipient = {
+				has_trait = content
+			}
+			desc = INTERACTION_CONTENT
+		}
+		
+		modifier = {
+			add = 20
+			scope:actor.current_military_strength > scope:recipient.current_military_strength
+			scope:recipient = {
+				has_trait = craven
+			}
+			desc = INTERACTION_CRAVEN
+		}
+		
+		modifier = {
+			exists = scope:actor.primary_title.title_capital_county
+			OR = {
+				scope:landed_title = scope:actor.primary_title.title_capital_county
+				scope:landed_title = scope:actor.primary_title.title_capital_county.de_jure_liege
+			}
+			add = 50
+			desc = AI_TITLE_IS_REALM_CAPITAL
+		}
+		
+		modifier = {
+			exists = scope:actor.primary_title.title_capital_county
+			NOR = {
+				scope:landed_title = scope:actor.primary_title.title_capital_county
+				scope:landed_title = scope:actor.primary_title.title_capital_county.de_jure_liege
+			}
+			scope:landed_title.de_jure_liege = scope:actor.primary_title.title_capital_county.de_jure_liege
+			add = 30
+			desc = AI_TITLE_IS_IN_CAPITAL_DUCHY
+		}
+		
+		modifier = {
+			add = 30
+			scope:actor = {
+				has_claim_on = scope:landed_title
+			}
+			desc = AI_LIEGE_HAS_CLAIM_ON_TITLE
+		}
+
+		ai_value_modifier = {
+			who = scope:recipient
+			ai_greed = {
+				if = {
+					limit = {
+						scope:recipient = { NOT = { ai_greed = 0 } }
+					}
+					value = -0.75
+				}
+			}
+			ai_honor  = {
+				if = {
+					limit = {
+						scope:recipient = { #If AI is honorable and the law compels to obey the liege, AI will be more likely to obey.
+							ai_honor > 0
+						}
+						scope:actor = {
+							has_realm_law_flag = vassal_refusal_is_treason
+						}
+					}
+					value = 0.5
+				}
+			}
+		}
+		modifier = { #I am a King!
+			desc = offer_vassalization_interaction_aibehavior_amkingtier_tt
+			trigger = {
+				scope:recipient = { highest_held_title_tier = tier_kingdom }
+			}
+			add = -20
+		}
+		modifier = { #Title is part of vassal's primary title de-jure.
+			add = -25
+			scope:recipient.primary_title.tier > tier_county
+			OR = {
+				scope:recipient.primary_title = {
+					is_de_jure_liege_or_above_target = scope:landed_title
+				}
+				scope:recipient.primary_title = scope:landed_title
+			}
+			desc = AI_REFUSAL_IS_DE_JURE_UNDER
+		}
+		modifier = {
+			add = intimidated_halved_reason_value
+			scope:recipient = {
+				has_dread_level_towards = {
+					target = scope:actor
+					level = 1
+				}
+			}
+			desc = INTIMIDATED_REASON
+		}
+		modifier = {
+			add = cowed_halved_reason_value
+			scope:recipient = {
+				has_dread_level_towards = {
+					target = scope:actor
+					level = 2
+				}
+			}
+			desc = COWED_REASON
+		}
+		modifier = { #Comparative military strength.
+			desc = offer_vassalization_interaction_aibehavior_power_tt
+	  	  	add = {
+				value = 1
+				subtract = {
+					value = scope:recipient.current_military_strength
+					divide = { value = scope:actor.current_military_strength min = 1 }
+				}
+				multiply = 50
+				max = 20
+	  		}
+		}
+		modifier = { # Legalistic tradition
+			desc = tradition_legalistic_name
+			scope:actor = {
+				has_revoke_title_reason = scope:recipient
+				culture = { has_cultural_parameter = vassals_more_likely_accept_punishments }
+			}
+			add = legalistic_vassal_punishment_acceptance
+		}
+		modifier = { # AI Mongols, tyranny wars just delay the inevitable fun!
+			scope:actor = {
+				is_ai = yes
+				OR = {
+					has_trait = greatest_of_khans
+					has_character_modifier = the_great_khan_modifier
+				}
+			}
+			scope:recipient = {
+				is_ai = yes
+			}
+			add = 500
+		}
+	}
+
+	# AI
+	ai_targets = {
+		ai_recipients = vassals
+	}
+	ai_frequency = 0 # This is handled via code instead; see REVOKE_TITLE_TICK in the AI defines. All the logic for *if* to send a revoke though is scripted below
+
+	ai_potential = {
+		has_realm_law_flag = title_revocation_allowed
+		primary_title.tier >= tier_county
+	}
+
+	ai_will_do = {
+		base = -1000
+
+		# We want to avoid tyranny unless we've got a good reason
+		# And even if we can avoid tyranny we don't want to revoke just because we can, so this only gets us to -10
+		# Certain characters will revoke despite tyranny, if their rationality is sufficiently low
+		modifier = {
+			scope:actor = {
+				OR = {
+					NOT = {
+						title_revocation_is_tyrannical_trigger = yes
+					}
+					AND = {
+						ai_rationality <= very_high_negative_ai_value
+						OR = {
+							has_trait = lunatic
+							has_trait = possessed
+							has_trait = arbitrary
+						}
+					}
+				}
+			}
+
+			add = 990
+		}
+		# Only certain rulers won't revoke vassals who have revolted against them
+		modifier = {
+			scope:actor = {
+				ai_compassion <= 75
+				ai_greed >= -50
+				ai_honor <= 50
+				scope:recipient = {
+					is_imprisoned = yes
+					is_ai = yes # Be kinder to players
+					opinion = {
+						target = scope:actor
+						value <= 0
+					}
+				}
+				NOT = {
+					title_revocation_is_tyrannical_trigger = yes
+				}
+				OR = {
+					has_opinion_modifier = {
+						modifier = rebellious_vassal_opinion
+						target = scope:recipient
+					}
+					has_opinion_modifier = {
+						modifier = vassal_lost_faction_revolt_war
+						target = scope:recipient
+					}
+					has_opinion_modifier = {
+						modifier = vassal_wp_faction_revolt_war
+						target = scope:recipient
+					}
+				}
+			}
+			add = {
+				value = 100
+				add = scope:actor.ai_greed
+				add = {
+					value = scope:actor.ai_honor
+					multiply = -1
+				}
+				if = {
+					limit = {
+						scope:actor.ai_vengefulness > 0
+					}
+					add = scope:actor.ai_vengefulness
+				}
+			}
+		}
+		# Vengeful AI's want to revoke
+		modifier = {
+			scope:actor = {
+				ai_vengefulness > 0
+				scope:recipient = {
+					is_imprisoned = yes
+				}
+				NOT = {
+					title_revocation_is_tyrannical_trigger = yes
+				}
+			}
+			add = {
+				value = scope:actor.ai_vengefulness
+				multiply = 2
+			}
+		}
+		# Always revoke preferred capital and capital duchy
+		modifier = {
+			years_from_game_start >= 3
+			OR = {
+				scope:actor = {
+					is_at_war = no
+					gold > 0
+				}
+				scope:recipient = {
+					is_imprisoned_by = scope:actor
+				}
+			}
+			scope:actor = { # The HRE doesn't need endless civil wars
+				NOT = {
+					primary_title = title:e_hre
+				}
+			}
+			exists = scope:actor.primary_title.title_capital_county
+			OR = {
+				scope:landed_title = scope:actor.primary_title.title_capital_county
+				scope:landed_title = scope:actor.primary_title.title_capital_county.de_jure_liege
+			}
+			NAND = { # Don't revoke player titles tyranically, it must be possible to play and succeed as Ulm!
+				scope:landed_title.holder = {
+					is_ai = no
+				}
+				scope:actor = {
+					title_revocation_is_tyrannical_trigger = yes
+				}
+			}
+			add = 1100
+		}
+		# If below domain limit, try to revoke counties in your capital duchy despite tyranny, sometimes
+		modifier = {
+			years_from_game_start >= 3
+			OR = {
+				scope:actor = {
+					is_at_war = no
+					gold > 0
+				}
+				scope:recipient = {
+					is_imprisoned_by = scope:actor
+				}
+			}
+			scope:actor = { # The HRE doesn't need endless civil wars
+				NOT = {
+					primary_title = title:e_hre
+				}
+			}
+			scope:actor.domain_size < scope:actor.domain_limit
+			scope:actor.primary_title.tier > tier_county
+			trigger_if = {
+				limit = {
+					scope:actor = {
+						title_revocation_is_tyrannical_trigger = yes
+						domain_size > 3
+					}
+				}
+				scope:actor = {
+					NOR = {
+						has_trait = generous
+						has_trait = just
+					}
+				}
+			}
+			exists = scope:actor.primary_title.title_capital_county
+			OR = {
+				scope:actor.primary_title.title_capital_county.holder = scope:actor # You have your de jure capital already
+				NOT = {
+					scope:actor.primary_title.title_capital_county.holder.top_liege = scope:actor.top_liege # Or your De Jure capital isn't in your realm
+				}
+			}
+			scope:landed_title.tier = tier_county # Only Counties
+			OR = { # The AI gives away wrong-holding counties almost instantly, so we restrict to counties with holdings they can hold
+				scope:landed_title.title_province = { has_holding_type = castle_holding } # Everyone is valid for castles
+				AND = {
+					scope:actor = {
+						government_has_flag = government_is_tribal
+					}
+					scope:landed_title.title_province = { has_holding_type = tribal_holding }
+				}
+				AND = {
+					scope:actor = {
+						government_has_flag = government_is_republic
+					}
+					scope:landed_title.title_province = { has_holding_type = city_holding }
+				}
+				AND = {
+					scope:actor = {
+						OR = {
+							government_has_flag = government_is_clan
+							government_has_flag = government_is_theocracy
+						}
+					}
+					scope:landed_title.title_province = { has_holding_type = church_holding }
+				}
+			}
+			OR = { # And the capital duchy, if it exists at all
+				AND = {
+					exists = scope:actor.primary_title.title_capital_county.de_jure_liege.holder
+					scope:actor.primary_title.title_capital_county.de_jure_liege.holder = scope:actor
+				}
+				AND = {
+					exists = scope:actor.primary_title.title_capital_county.de_jure_liege.holder
+					NOT = {
+						scope:actor.primary_title.title_capital_county.de_jure_liege.holder.top_liege = scope:actor.top_liege
+					}
+				}
+				scope:actor.primary_title.title_capital_county.de_jure_liege = {
+					is_title_created = no
+				}
+			}
+			
+			scope:landed_title.de_jure_liege = scope:actor.primary_title.title_capital_county.de_jure_liege # Under the same Duchy as your capital
+			
+			scope:recipient = { # Not from players
+				is_ai = yes
+			}
+			
+			OR = { # Tyranny tolerance is based on rationality
+				AND = {
+					scope:actor.ai_rationality < 0
+					scope:actor.tyranny <= 15 # Don't go crazy with tyranny, just a bit is fine
+				}
+				AND = {
+					scope:actor.ai_rationality >= 0
+					scope:actor.ai_rationality < 50
+					scope:actor.tyranny <= 5 # Don't go crazy with tyranny, just a bit is fine
+				}
+				AND = {
+					scope:actor.ai_rationality >= 50
+					scope:actor.tyranny <= 0 # Don't go crazy with tyranny, just a bit is fine
+				}
+				AND = {
+					scope:actor.ai_rationality >= 0
+					scope:recipient = {
+						is_imprisoned_by = scope:actor
+					}
+					scope:actor = { has_revoke_title_reason = scope:recipient }
+				}
+				AND = {
+					scope:actor.ai_rationality < 0
+					scope:recipient = {
+						is_imprisoned_by = scope:actor
+					}
+				}
+			}
+			# To do this, the target must be weak or willing in some way
+			OR = {
+				scope:actor.current_military_strength > scope:recipient.current_military_strength # Must be stronger
+				scope:recipient = {
+					is_imprisoned_by = scope:actor
+				}
+			}
+			scope:recipient = {
+				OR = {
+					AND = {
+						scope:recipient.primary_title.tier <= tier_county
+						scope:actor.primary_title.tier >= tier_duchy
+					}
+					has_trait = craven
+					has_trait = content
+					has_trait = trusting
+					has_dread_level_towards = {
+						target = scope:actor
+						level >= 1
+					}
+					opinion = { target = scope:actor value >= 40 }
+					is_imprisoned_by = scope:actor
+					scope:actor = { has_revoke_title_reason = scope:recipient }
+				}
+			}
+			
+			add = 1100
+		}
+		# Revoke counties we're dejure liege of if below domain limit
+		modifier = {
+			scope:actor.domain_size < scope:actor.domain_limit
+			scope:landed_title.tier = tier_county
+			scope:landed_title.de_jure_liege.holder = scope:actor
+			add = 500
+		}
+		# Revoke appropriate baronies if below domain limit, it's tyranny free
+		modifier = {
+			scope:actor.domain_size < scope:actor.domain_limit
+			scope:recipient = { highest_held_title_tier = tier_barony }
+			scope:landed_title.tier = tier_barony
+			OR = {
+				scope:landed_title.title_province = { has_holding_type = castle_holding }
+				AND = {
+					OR = {
+						scope:actor = { government_has_flag = government_is_clan }
+						scope:actor = { government_has_flag = government_is_theocracy }
+					}
+					scope:landed_title.title_province = { has_holding_type = church_holding }
+				}
+				AND = {
+					scope:actor = { government_has_flag = government_is_republic }
+					scope:landed_title.title_province = { has_holding_type = city_holding }
+				}
+			}
+			add = 1100
+		}
+		# Revoke from vassals of the wrong faith if you can do it without tyranny
+		modifier = {
+			NOT = { scope:actor.faith = scope:recipient.faith }
+			OR = {
+				NOT = { scope:actor.faith.religion = scope:recipient.faith.religion }
+				scope:actor.ai_zeal >= low_negative_ai_value
+				NOT = {
+					scope:actor.faith = { has_doctrine = doctrine_pluralism_pluralistic }
+				}
+			}
+			OR = { # Chill a bit until you've dealth with the ones already in your prison
+				scope:recipient = {
+					is_imprisoned_by = scope:actor
+				}
+				NOT = {
+					any_vassal = {
+						NOT = { faith = scope:actor.faith }
+						primary_title.tier > tier_barony
+						is_imprisoned_by = scope:actor
+						time_in_prison < { years = 1 }
+					}
+				}
+			}
+			add = 100
+		}
+		# Revoke from characters you dislike if you can do it without tyranny
+		modifier = {
+			scope:actor = {
+				OR = {
+					has_relation_rival = scope:recipient
+					has_relation_nemesis = scope:recipient
+				}
+			}
+			add = 100
+		}
+		# Slight preference for higher-tier titles
+		modifier = {
+			add = scope:landed_title.tier
+		}
+		# Do not revoke titles from certain characters
+		modifier = {
+			scope:actor = {
+				OR = {
+					has_relation_friend = scope:recipient
+					has_relation_best_friend = scope:recipient
+					has_relation_lover = scope:recipient
+					has_relation_soulmate = scope:recipient
+					is_parent_of = scope:recipient
+					is_grandparent_of = scope:recipient
+					is_great_grandparent_of = scope:recipient
+				}
+			}
+			add = -5000
+		}
+		# Do not revoke titles when the chance of success if exceedingly low
+		modifier = {
+			NOR = {
+				scope:recipient = {
+					is_imprisoned_by = scope:actor
+				}
+				scope:recipient = {
+					highest_held_title_tier = tier_barony
+				}
+			}
+			scope:actor = {
+				OR = {
+					gold < minimum_ai_gold_value_for_tyranny_wars
+					AND = {
+						scope:actor.current_military_strength < scope:recipient.current_military_strength
+						gold < comfortable_ai_gold_value_for_tyranny_wars
+					}
+				}
+			}
+			add = -2000
+		}
+		
+		modifier = { # The AI will always use a Hook if they can
+			scope:hook = yes
+			add = 1
+		}
+
+		modifier = { # The AI shouldn't ruin the player's fun
+			add = -5000
+			scope:recipient = { has_character_flag = is_party_baron }
+		}
+
+		modifier = { # Avoid triggering Tyranny wars mid-war
+			factor = 0
+			scope:actor = {
+				is_at_war = yes
+			}
+			NOR = {
+				scope:recipient = {
+					is_imprisoned_by = scope:actor
+				}
+				scope:recipient = {
+					highest_held_title_tier = tier_barony
+				}
+			}
+		}
+
+		modifier = { # Avoid triggering Tyranny wars mid-grand activity
+			factor = 0
+			scope:actor = {
+				has_ongoing_grand_activity_trigger = yes
+			}
+			NOR = {
+				scope:recipient = {
+					is_imprisoned_by = scope:actor
+				}
+				scope:recipient = {
+					highest_held_title_tier = tier_barony
+				}
+			}
+		}
+	}
+}
+
+
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------
+start_murder_interaction = {
+	icon = icon_hostile
+	common_interaction = yes
+	interface_priority = 90
+	category = interaction_category_hostile
+
+	ignores_pending_interaction_block = yes
+
+	scheme = murder
+
+	send_name = START_SCHEME
+
+	is_shown = {
+		NOT = { scope:recipient = scope:actor }
+
+		NAND = { # Game Rules!
+			has_game_rule = no_players_multiplayer_murder_schemes
+			scope:actor = {
+				is_ai = no
+			}
+			scope:recipient = {
+				is_ai = no
+			}
+		}
+
+		NAND = {
+			has_game_rule = no_player_families_multiplayer_murder_schemes
+			scope:actor = {
+				is_ai = no
+			}
+			scope:recipient = {
+				OR = {
+					is_ai = no
+					any_close_family_member = {
+						AND = {
+							is_ai = no
+							NOT = { this = scope:actor }
+						}
+					}
+				}
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {  #super_此处以有较大改动，主要在于使暗影制裁的描述生效
+		custom_description = {
+			text = cant_murder_tips
+			OR = {
+				
+				AND = {
+					scope:actor.faith = {
+						has_doctrine = sanctions_from_shadows
+					}
+					be_hooked_by_mind = no
+					text = cant_murder_tips_1
+				}
+				
+				AND = {
+					scope:actor = {
+						can_start_scheme = {
+							type = murder
+							target = scope:recipient
+						}
+					}
+					scope:recipient = { NOT = { has_strong_hook = scope:actor } }
+				}
+					
+			}
+		}	
+	}
+
+	desc = {
+		triggered_desc = {
+			trigger = {
+				scope:actor = {
+					can_start_scheme = {
+						type = murder
+						target = scope:recipient
+					}
+				}
+			}
+			desc = scheme_interaction_tt_murder_approved
+		}
+	}
+
+	on_accept = {  #super_此处以有较大改动，主要在于使暗影制裁的描述生效
+		if = {
+			limit ={
+				NOT = {
+					scope:actor.faith = {
+						has_doctrine = sanctions_from_shadows
+					}
+				}
+			}
+		
+			scope:actor = {
+				stress_impact = {
+					compassionate = major_stress_impact_gain
+					honest = medium_stress_impact_gain
+					just = medium_stress_impact_gain
+				}
+			}
+		}	
+		hidden_effect = {
+			scope:actor = {
+				if = {
+					limit ={
+						NOT = {
+							scope:actor.faith = {
+								has_doctrine = sanctions_from_shadows
+							}
+						}
+					}
+					send_interface_toast = {
+						title = start_murder_interaction_notification
+
+						left_icon = scope:actor					
+						right_icon = scope:recipient
+
+						start_scheme = {
+							type = murder
+							target = scope:recipient
+						}
+
+						show_as_tooltip = {
+							stress_impact = {
+								compassionate = major_stress_impact_gain
+								honest = medium_stress_impact_gain
+								just = medium_stress_impact_gain
+							}
+						}
+					}
+				}	
+				# Plus any on_start modifiers we may need.
+				if = {
+					limit = { var:feast_events_ewan_0001_bonus_value ?= scope:recipient }
+					# Hand over the modifier.
+					random_scheme = {
+						limit = {
+							scheme_type = murder
+							scheme_target = scope:recipient
+						}
+						add_scheme_modifier = { type = feast_learnt_habits_modifier }
+					}
+					# Remove the variable now that we're done with it.
+					remove_variable = feast_events_ewan_0001_bonus_value
+				}
+			}
+		}
+	}
+	
+	auto_accept = yes
+
+	# AI for murders is handled in event murder_scheme_maintenance.1, fired from the five_year_playable_pulse
+}
+
+
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------
+retract_vassal_interaction = {
+	category = interaction_category_vassal
+	special_interaction = retract_vassal_interaction
+	interface = transfer_vassal
+	ai_maybe = yes
+	ai_min_reply_days = 4
+	ai_max_reply_days = 9
+	popup_on_receive = yes
+	pause_on_receive = yes
+	icon = icon_liege
+
+	desc = retract_vassal_interaction_desc
+
+	on_decline_summary = general_rebellion_decline_summary
+	
+	prompt = RETRACT_VASSAL_SELECT_VASSAL_TO_RETRACT
+
+	notification_text = RETRACT_VASSAL_PROPOSAL
+
+	populate_recipient_list = {
+		scope:recipient = {
+			every_vassal = {
+				add_to_list = characters
+			}
+		}
+	}
+
+	is_shown = {
+		NOT = { scope:recipient = scope:actor }
+		scope:recipient = {
+			highest_held_title_tier > tier_barony
+			liege = scope:actor
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		vassal_retraction_standard_valid_showing_failures_only_trigger = yes
+		# Make sure this exactly matches "can_be_picked" section below
+		scope:recipient = {
+			custom_description = {
+				text = "basic_vassal_to_retract"
+				any_vassal = {
+					highest_held_title_tier > tier_barony
+				}
+			}
+		}
+		# Plus make sure there's a legal right to retract.
+		scope:actor = {
+			trigger_if = {
+				limit = { government_has_flag = government_is_tribal }
+				custom_description = {
+					text = "has_law_allowing_vassal_retraction_tribal"
+					has_realm_law_flag = vassal_retraction_allowed
+				}
+			}
+			trigger_if = {
+				limit = {
+					NOT = { government_has_flag = government_is_tribal }
+				}
+				custom_description = {
+					text = "has_law_allowing_vassal_retraction_crown"
+					has_realm_law_flag = vassal_retraction_allowed
+				}
+			}
+		}
+		scope:recipient = { is_busy_in_events_localised = yes }
+		trigger_if = {
+			limit = { exists = scope:secondary_recipient }
+			scope:secondary_recipient = { is_busy_in_events_localised = yes }
+		}
+		scope:recipient = {
+			NOT = { has_strong_hook = scope:actor }
+		}
+		custom_tooltip = {
+			text = cannot_take_overt_hostile_actions_against_diarch.tt
+			NOT = { scope:recipient ?= scope:actor.diarch }
+		}
+	}
+
+	can_send = {
+		scope:actor = {
+			custom_description = {
+				text = "character_interactions_hostile_actions_disabled_delay"
+				NOT = { has_character_flag = flag_hostile_actions_disabled_delay }
+			}
+		}
+	}
+	
+	can_be_picked = {
+		highest_held_title_tier > tier_barony
+	}
+
+	cost = {
+		# Usually, this action is free, but during certain diarchies, we want it to cost.
+		prestige = liege_diarchy_surcharge_interaction_retract_vassal_interaction_value
+	}
+
+	on_send = {
+		scope:actor = {
+			add_character_flag = {
+				flag = flag_hostile_actions_disabled_delay
+				days = 10
+			}
+		}
+		hidden_effect = {
+			scope:secondary_recipient = {
+				add_character_flag = {
+					flag = ai_should_not_transfer
+					years = 3
+				}
+			}
+		}
+	}
+
+	on_accept = {
+		retract_vassal_interaction_effect = yes
+		
+		if = {
+			limit = {
+				scope:actor = { has_character_flag = flag_hostile_actions_disabled_delay }
+			}
+			scope:actor = { remove_character_flag = flag_hostile_actions_disabled_delay }
+		}
+
+		scope:actor = {
+			trigger_event = char_interaction.0220
+		}
+	}
+
+	on_decline = {
+		scope:actor = { vassal_revocation_tyranny_effect = yes }
+		war_for_retraction_effect = yes
+		scope:recipient = {
+			add_opinion = {
+				target = scope:actor
+				modifier = retracted_vassal
+			}
+		}
+		if = {
+			limit = {
+				scope:actor = { has_realm_law_flag = vassal_refusal_is_treason }
+			}
+			scope:actor = {
+				add_opinion = {
+					target = scope:recipient
+					modifier = treasonous_retract_refusal
+				}
+			}
+		}
+		if = {
+			limit = {
+				scope:actor = { has_character_flag = flag_hostile_actions_disabled_delay }
+			}
+			scope:actor = { remove_character_flag = flag_hostile_actions_disabled_delay }
+		}
+	}
+
+	auto_accept = {
+		OR = {
+			scope:recipient = {
+				is_imprisoned_by = scope:actor
+			}
+			custom_description = {
+				text = "spending_hook"
+				subject = scope:actor
+				object = scope:recipient
+				scope:hook = yes
+				scope:actor = { has_strong_hook = scope:recipient }
+			}
+		}
+	}
+	
+	can_be_blocked = {
+		custom_description = { #Hook from Recipient can counteract, but only if Actor is not forcing the action via Strong Hook.
+			text = "spending_hook"
+			subject = scope:recipient
+			object = scope:actor
+			scope:recipient = { has_hook = scope:actor }
+			NAND = {
+				scope:hook = yes
+				scope:actor = { has_strong_hook = scope:recipient }
+			}
+		}
+	}
+
+	on_blocked_effect = {
+		scope:recipient = {
+			remove_hook = {
+				target = scope:actor
+			}
+		}
+	}
+
+	ai_accept = {
+		base = 0 # Try to make it 0 for most interactions
+		modifier = {
+			scope:actor = {
+				OR = {
+					has_hook_of_type = {
+						target = scope:recipient
+						type = super_high_hook
+					}
+					has_hook_of_type = {
+						target = scope:recipient
+						type = super_mid_hook
+					}
+				}	
+			}
+			add = 600
+		}
+		modifier = {
+			scope:hook = yes
+			add = 40
+			desc = SCHEME_WEAK_HOOK_USED
+		}
+		
+		opinion_modifier = { # Opinion Factor
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 1.0
+			desc = AI_OPINION_REASON
+		}
+		
+		modifier = {
+			add = 25
+			scope:actor = {
+				has_realm_law_flag = vassal_refusal_is_treason
+			}
+			desc = AI_REFUSAL_IS_TREASON
+		}
+		
+		modifier = {
+			add = 20
+			scope:recipient = {
+				has_trait = trusting
+			}
+			desc = TAKE_THE_VOWS_TRUSTING
+		}
+		
+		modifier = {
+			add = 20
+			scope:recipient = {
+				has_trait = content
+			}
+			desc = INTERACTION_CONTENT
+		}
+		
+		modifier = {
+			add = 20
+			scope:actor.current_military_strength > scope:recipient.current_military_strength
+			scope:recipient = {
+				has_trait = craven
+			}
+			desc = INTERACTION_CRAVEN
+		}
+
+		ai_value_modifier = {
+			who = scope:recipient
+			ai_greed = {
+				if = {
+					limit = {
+						scope:recipient = { NOT = { ai_greed = 0 } }
+					}
+					value = -0.25
+				}
+			}
+			ai_honor  = {
+				if = {
+					limit = {
+						scope:recipient = { #If AI is honorable and the law compels to obey the liege, AI will be more likely to obey.
+							ai_honor > 0
+						}
+						scope:actor = {
+							has_realm_law_flag = vassal_refusal_is_treason
+						}
+					}
+					value = 0.75
+				}
+			}
+		}
+		modifier = {
+			exists = scope:actor.primary_title.title_capital_county
+			scope:secondary_recipient = {
+				OR = {
+					any_sub_realm_county = {
+						this = scope:actor.primary_title.title_capital_county
+					}
+					any_sub_realm_duchy = {
+						this = scope:actor.primary_title.title_capital_county.de_jure_liege
+					}
+				}
+			}
+			add = 50
+			desc = AI_VASSAL_HOLDS_REALM_CAPITAL
+		}
+		
+		modifier = {
+			exists = scope:actor.primary_title.title_capital_county
+			scope:secondary_recipient = {
+				NOR = {
+					any_sub_realm_county = {
+						this = scope:actor.primary_title.title_capital_county
+					}
+					any_sub_realm_duchy = {
+						this = scope:actor.primary_title.title_capital_county.de_jure_liege
+					}
+				}
+				primary_title.tier = tier_county
+				any_sub_realm_county = {
+					de_jure_liege = scope:actor.primary_title.title_capital_county.de_jure_liege
+				}
+			}
+			add = 30
+			desc = AI_VASSAL_IS_IN_CAPITAL_DUCHY
+		}
+		
+		modifier = { #Sub-Vassal is NOT De jure of current Vassal.
+			add = 25
+			NOT = {
+				scope:recipient = {
+					any_held_title = {
+						is_de_jure_liege_or_above_target = scope:secondary_recipient.primary_title
+					}
+				}
+			}
+			desc = AI_REFUSAL_IS_NOT_DE_JURE_LIEGE
+		}
+		modifier = { #Sub-Vassal is De jure of liege title.
+			add = 15
+			scope:actor = {
+				any_held_title = {
+					this = scope:secondary_recipient.primary_title.de_jure_liege
+				}
+			}
+			desc = AI_REFUSAL_IS_DE_JURE_LIEGE
+		}
+		modifier = {
+			add = intimidated_halved_reason_value
+			scope:recipient = {
+				has_dread_level_towards = {
+					target = scope:actor
+					level = 1
+				}
+			}
+			desc = INTIMIDATED_REASON
+		}
+		modifier = {
+			add = cowed_halved_reason_value
+			scope:recipient = {
+				has_dread_level_towards = {
+					target = scope:actor
+					level = 2
+				}
+			}
+			desc = COWED_REASON
+		}
+		modifier = { #Comparative military strength.
+			desc = offer_vassalization_interaction_aibehavior_power_tt
+			add = {
+				value = 1
+				subtract = {
+					value = scope:recipient.current_military_strength
+					divide = { value = scope:actor.current_military_strength min = 1 }
+				}
+				multiply = 100
+			}
+		}
+		modifier = { #Different faith, no pluralism.
+			desc = AI_REFUSAL_SPLITTING_SAME_FAITH_VASSALS
+			trigger = {
+				scope:actor.faith = scope:secondary_recipient.faith #Will not care as much if the vassal being retracted is of a different faith.
+				scope:actor = {
+					NOR = { #Of two different faiths AND the potential vassal's faith is not pluralistic.
+						faith = scope:recipient.faith
+						faith = { has_doctrine = doctrine_pluralism_pluralistic }
+					}
+				}
+			}
+			add = {
+				value = -25
+				if = {
+					limit = {
+						scope:actor.faith = {
+							faith_hostility_level = {
+								target = scope:recipient.faith
+								value >= faith_hostile_level
+							}
+						}
+					}
+					add = -10
+				}
+				if = {
+					limit = {
+						scope:actor.faith = {
+							faith_hostility_level = {
+								target = scope:recipient.faith
+								value >= faith_evil_level
+							}
+						}
+					}
+					add = -25
+				}
+			}
+		}
+		modifier = { # AI Mongols, tyranny wars just delay the inevitable fun!
+			scope:actor = {
+				is_ai = yes
+				OR = {
+					has_trait = greatest_of_khans
+					has_character_modifier = the_great_khan_modifier
+				}
+			}
+			scope:recipient = {
+				is_ai = yes
+			}
+			add = 500
+		}
+	}
+
+	#Use hook
+	send_option = {
+		is_valid = {
+			scope:actor = {
+				has_usable_hook = scope:recipient
+			}
+		}
+		flag = hook
+		localization = SCHEME_HOOK
+	}
+	should_use_extra_icon = {
+		scope:actor = { has_usable_hook = scope:recipient }
+	}
+	extra_icon = "gfx/interface/icons/character_interactions/hook_icon.dds"
+
+	send_options_exclusive = no
+	
+	can_send_despite_rejection = yes
+	
+	# AI
+	ai_targets = {
+		ai_recipients = vassals
+	}
+	ai_frequency = 12
+
+	ai_potential = {
+		has_realm_law_flag = title_revocation_allowed
+		primary_title.tier > tier_county
+	}
+
+	ai_will_do = {
+		base = -1000
+
+		# We want to avoid tyranny unless we've got a good reason
+		# And even if we can avoid tyranny we don't want to retract just because we can, so this only gets us to -10
+		# Certain characters will retract despite tyranny, if their rationality is sufficiently low
+		modifier = {
+			scope:actor = {
+				OR = {
+					has_revoke_title_reason = scope:recipient
+					AND = {
+						ai_rationality <= very_high_negative_ai_value
+						OR = {
+							has_trait = lunatic
+							has_trait = possessed
+							has_trait = arbitrary
+						}
+					}
+				}
+			}
+
+			add = 990
+		}
+		# Always retract preferred capital if you hold the duchy, or the duchy is uncreated
+		modifier = {
+			years_from_game_start >= 3
+			OR = {
+				scope:actor = {
+					is_at_war = no
+					gold > 0
+				}
+				scope:recipient = {
+					is_imprisoned_by = scope:actor
+				}
+			}
+			scope:actor = { # The HRE doesn't need endless civil wars
+				NOT = {
+					primary_title = title:e_hre
+				}
+			}
+			exists = scope:actor.primary_title.title_capital_county
+			OR = {
+				scope:actor = {
+					any_held_title = {
+						this = scope:actor.primary_title.title_capital_county.de_jure_liege
+					}
+				}
+				scope:actor.primary_title.title_capital_county.de_jure_liege = {
+					is_title_created = no
+				}
+			}
+			scope:secondary_recipient = {
+				any_sub_realm_county = {
+					this = scope:actor.primary_title.title_capital_county
+				}
+			}
+			NAND = { # Don't retract player vassals tyrannically
+				scope:recipient = {
+					is_ai = no
+				}
+				scope:actor = {
+					NOT = { has_revoke_title_reason = scope:recipient }
+				}
+			}
+			add = 1100
+		}
+		# If below domain limit, try to revoke counties in your capital duchy despite tyranny, sometimes
+		modifier = {
+			years_from_game_start >= 3
+			scope:actor = { is_at_war = no }
+			scope:actor = { # The HRE doesn't need endless civil wars
+				NOT = {
+					primary_title = title:e_hre
+				}
+			}
+			scope:actor.domain_size < scope:actor.domain_limit
+			scope:actor.primary_title.tier >= tier_kingdom
+			trigger_if = {
+				limit = {
+					scope:actor = {
+						domain_size > 3
+					}
+				}
+				scope:actor = {
+					NOR = {
+						has_trait = generous
+						has_trait = just
+					}
+				}
+			}
+			exists = scope:actor.primary_title.title_capital_county
+			OR = {
+				scope:actor.primary_title.title_capital_county.holder = scope:actor # You have your de jure capital already
+				NOT = {
+					scope:actor.primary_title.title_capital_county.holder.top_liege = scope:actor.top_liege # Or your De Jure capital isn't in your realm
+				}
+			}
+			scope:secondary_recipient = {
+				primary_title.tier = tier_county
+				any_sub_realm_county = {
+					de_jure_liege = scope:actor.primary_title.title_capital_county.de_jure_liege # Under the same Duchy as your capital
+				}
+			}
+			OR = { # And the capital duchy, if it exists at all
+				AND = {
+					exists = scope:actor.primary_title.title_capital_county.de_jure_liege.holder
+					scope:actor.primary_title.title_capital_county.de_jure_liege.holder = scope:actor
+				}
+				AND = {
+					exists = scope:actor.primary_title.title_capital_county.de_jure_liege.holder
+					NOT = {
+						scope:actor.primary_title.title_capital_county.de_jure_liege.holder.top_liege = scope:actor.top_liege
+					}
+				}
+				scope:actor.primary_title.title_capital_county.de_jure_liege = {
+					is_title_created = no
+				}
+			}
+			
+			scope:recipient = { # Not from players
+				is_ai = yes
+			}
+			
+			OR = { # Tyranny tolernance is based on rationality
+				AND = {
+					scope:actor.ai_rationality < 0
+					scope:actor.tyranny <= 15 # Don't go crazy with tyranny, just a bit is fine
+				}
+				AND = {
+					scope:actor.ai_rationality >= 0
+					scope:actor.ai_rationality < 50
+					scope:actor.tyranny <= 5 # Don't go crazy with tyranny, just a bit is fine
+				}
+				AND = {
+					scope:actor.ai_rationality >= 50
+					scope:actor.tyranny <= 0 # Don't go crazy with tyranny, just a bit is fine
+				}
+				AND = {
+					scope:actor.ai_rationality >= 0
+					scope:recipient = {
+						is_imprisoned_by = scope:actor
+					}
+					scope:actor = { has_revoke_title_reason = scope:recipient }
+				}
+				AND = {
+					scope:actor.ai_rationality < 0
+					scope:recipient = {
+						is_imprisoned_by = scope:actor
+					}
+				}
+			}
+			# To do this, the target must be weak or willing in some way
+			OR = {
+				scope:actor.current_military_strength > scope:recipient.current_military_strength # Must be stronger
+				scope:recipient = {
+					is_imprisoned_by = scope:actor
+				}
+			}
+			scope:recipient = {
+				OR = {
+					has_trait = craven
+					has_trait = content
+					has_trait = trusting
+					has_dread_level_towards = {
+						target = scope:actor
+						level >= 1
+					}
+					opinion = { target = scope:actor value >= 40 }
+					is_imprisoned_by = scope:actor
+					scope:actor = { has_revoke_title_reason = scope:recipient }
+				}
+			}
+			
+			add = 1100
+		}
+		# Always retract preferred capital duchy
+		modifier = {
+			exists = scope:actor.primary_title.title_capital_county
+			scope:secondary_recipient = {
+				any_sub_realm_duchy = {
+					this = scope:actor.primary_title.title_capital_county.de_jure_liege
+				}
+			}
+			NAND = { # Don't retract player vassals tyranically
+				scope:recipient = {
+					is_ai = no
+				}
+				scope:actor = {
+					NOT = { has_revoke_title_reason = scope:recipient }
+				}
+			}
+			add = 1000
+		}
+		# Retract vassal we're dejure liege of if below domain limit
+		modifier = {
+			scope:actor = {
+				vassal_limit_available > 0
+			}
+			scope:secondary_recipient.primary_title.de_jure_liege.holder = scope:actor
+			add = 500
+		}
+		# Retract non-De Jure vassals from Megadukes (only if a revoke reason is present, so we don't end up in massive tyranny war spirals)
+		modifier = {
+			scope:actor = {
+				has_revoke_title_reason = scope:recipient
+			}
+			scope:recipient = {
+				primary_title.tier = tier_duchy
+				any_sub_realm_county = {
+					count > 30
+				}
+			}
+			NOT = {
+				scope:secondary_recipient.primary_title.de_jure_liege.holder = scope:recipient
+			}
+			add = 500
+		}
+		# Do not revoke titles from certain characters
+		modifier = {
+			scope:actor = {
+				OR = {
+					has_relation_friend = scope:recipient
+					has_relation_best_friend = scope:recipient
+					has_relation_lover = scope:recipient
+					has_relation_soulmate = scope:recipient
+					is_heir_of = scope:recipient
+				}
+			}
+			add = -2000
+		}
+		# Do not revoke titles when the chance of success if exceedingly low
+		modifier = {
+			NOT = {
+				scope:recipient = {
+					is_imprisoned_by = scope:actor
+				}
+			}
+			scope:actor = {
+				OR = {
+					gold < minimum_ai_gold_value_for_tyranny_wars
+					AND = {
+						scope:actor.current_military_strength < scope:recipient.current_military_strength
+						gold < comfortable_ai_gold_value_for_tyranny_wars
+					}
+				}
+			}
+			add = -2000
+		}
+		
+		modifier = { # The AI will only use a Hook if they couldn't otherwise do this
+			scope:hook = yes
+			add = -1
+		}
+
+		modifier = { # The AI shouldn't ruin the player's fun
+			add = -2000
+			scope:recipient = { has_character_flag = is_party_baron }
+		}
+
+		modifier = { # Avoid triggering Tyranny wars mid-war
+			factor = 0
+			scope:actor = {
+				is_at_war = yes
+			}
+			scope:recipient = {
+				NOT = {
+					is_imprisoned_by = scope:actor
+				}
+			}
+		}
+
+		modifier = { # Avoid triggering Tyranny wars mid-grand activity
+			factor = 0
+			scope:actor = {
+				has_ongoing_grand_activity_trigger = yes
+			}
+			NOR = {
+				scope:recipient = {
+					is_imprisoned_by = scope:actor
+				}
+				scope:recipient = {
+					highest_held_title_tier = tier_barony
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------
+declare_war_interaction = {
+	category = interaction_category_diplomacy
+	common_interaction = yes
+	special_interaction = declare_war_interaction
+	interface = declare_war
+	interface_priority = 70
+	popup_on_receive = yes
+	pause_on_receive = no # this is handled by the interface instead
+
+	desc = declare_war_desc
+
+	is_shown = {
+		NOT = {
+			scope:recipient = scope:actor
+		}
+		scope:recipient = {
+			is_landed = yes
+		}
+		scope:actor = {
+			NOT = {
+				is_at_war_with = scope:recipient
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {    #_super  此处有较大改动
+		trigger_if = {
+			limit = {
+				NOT = {
+					scope:actor.faith = {  #主要添加在此处   
+						has_doctrine = erosion_dor
+					}
+				}
+			}   #此处下方的为原版的条件
+			scope:actor = {
+				NOT = { has_trait = incapable }
+				can_attack_in_hierarchy = scope:recipient
+				NOT = {
+					has_raised_armies = yes
+				}
+				has_any_display_cb_on = scope:recipient
+				NOT = {
+					is_allied_in_war = scope:recipient
+				}
+				custom_description = {
+					text = "is_not_bankrupt"
+					gold > 0
+				}
+				NOT = {
+					custom_description = {
+						text = "is_in_an_activity"
+						exists = involved_activity
+					}
+				}
+				trigger_if = {
+					limit = {
+						culture = { has_cultural_parameter = cannot_attack_allies }
+					}
+					NOT = {
+						is_allied_to = scope:recipient
+					}
+				}
+				trigger_if = {
+					limit = {
+						culture = { has_cultural_parameter = cannot_attack_truces }
+					}
+					NOT = {
+						has_truce = scope:recipient
+					}
+				}
+				is_imprisoned = no
+				trigger_if = {
+					limit = {
+						has_variable_list = subjugation_offer_under_consideration
+					}
+					custom_description = {
+						text = is_not_considering_offer_of_subjugation
+						NOT = {
+							is_target_in_variable_list = {
+								name = subjugation_offer_under_consideration
+								target = scope:recipient
+							}
+						}
+					}
+				}
+
+			}
+			scope:recipient = { NOT = { has_strong_hook = scope:actor } }
+			scope:recipient = {
+				trigger_if = {
+					limit = { is_imprisoned = yes }
+					NOT = {
+						imprisoner = scope:actor
+					}
+				}
+			}#原版条件一直到此结束
+		}
+		trigger_else = {
+			scope:actor.faith = {  #主要添加在此处   
+				has_doctrine = erosion_dor
+			}
+		}
+	}
+
+	has_valid_target_showing_failures_only = {
+		custom_description = {
+			text = "declare_war_hook_on_liege"
+			OR = {
+				war_declarer_needs_hook_on_liege = no
+				always = scope:hook
+			}
+		}
+		scope:actor = {
+			NOR = {
+				is_at_war_with = scope:recipient
+				custom_description = { #A vassal cannot go to war against someone their Liege is already at war with
+					text = liege_is_at_war_with_recipient
+					object = scope:recipient
+					liege = {
+						is_at_war_with = scope:recipient
+					}
+				}
+			}
+		}
+	}
+
+	send_options_exclusive = no
+	send_option = {
+		is_shown = {
+			war_declarer_needs_hook_on_liege = yes
+		}
+		is_valid = {
+			scope:actor = {
+				has_usable_hook = liege
+			}
+		}
+		flag = hook
+		localization = WAR_LIEGE_HOOK
+		can_invalidate_interaction = yes
+	}
+	should_use_extra_icon = {
+		war_declarer_needs_hook_on_liege = yes
+		scope:actor = { has_usable_hook = liege }
+	}
+	extra_icon = "gfx/interface/icons/character_interactions/hook_icon.dds"
+	
+	on_accept = {
+
+		scope:actor = {
+			#Feedback!
+			hidden_effect = {
+				send_interface_toast = {
+					title = declare_war_interaction_notification
+
+					left_icon = scope:actor					
+					right_icon = scope:recipient
+
+					custom_tooltip = declare_war_interaction_notification_tooltip
+
+					show_as_tooltip = {
+						if = {
+							limit = { always = scope:hook }
+							use_hook = liege
+						}
+					}
+				}
+			}
+
+			#Has the instigator promised a vassal a war (vassal.2601)?
+			if = {
+				limit = {
+					exists = var:promised_war
+					var:promised_war = {
+						is_alive = yes
+						NOT = { this = scope:recipient }
+					}
+				}
+				trigger_event = {
+					id = vassal.2610
+					days = { 7 10 }
+				}
+			}
+
+			if = {
+				limit = { always = scope:hook }
+				use_hook = liege
+			}
+
+			#Send break up event if they are your lover
+			if = {
+				limit = {
+					has_relation_lover = scope:recipient
+					NOT = { has_relation_rival = scope:recipient } #To enable really strange love stories
+					any_character_war = {
+						casus_belli = {
+							primary_attacker = scope:actor
+							primary_defender = scope:recipient
+							any_target_title = { count >= 1 }
+						}
+					}
+				}
+				scope:recipient = {
+					trigger_event = {
+						id = lover.0103
+						days = { 14 30 }
+					}
+				}
+			}
+
+			#Invalidate any wars your vassals have going against recipient atm
+			scope:recipient = {
+				if = {
+					limit = {
+						any_character_war = {
+							primary_attacker = {
+								is_vassal_or_below_of = scope:actor
+								trigger_if = { #Ai should never invalidate a player's war!
+									limit = {
+										this = { is_ai = no }
+									}
+									scope:actor = {
+										is_ai = no
+									}
+								}
+							}
+						}
+					}
+					every_character_war = {
+						limit = {
+							primary_attacker = {
+								is_vassal_or_below_of = scope:actor
+								trigger_if = { #Ai should never invalidate a player's war!
+									limit = {
+										this = { is_ai = no }
+									}
+									scope:actor = {
+										is_ai = no
+									}
+								}
+							}
+						}
+						show_as_tooltip = { end_war = invalidated } #Actually ended in the event
+						primary_attacker = { trigger_event = war_event.1001 }
+					}
+				}
+			}
+			#Notify defender's vassals if the war is targeting one or more of their titles
+			scope:recipient = {
+				if = {
+					limit = {
+						any_vassal = {
+							save_temporary_scope_as = attacked_vassal
+							any_character_war = {
+								casus_belli = {
+									primary_attacker = scope:actor
+									primary_defender = scope:recipient
+									any_target_title = {
+										holder = {
+											OR = {
+												this = scope:attacked_vassal
+												is_vassal_or_below_of = scope:attacked_vassal
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					every_vassal = {
+						save_temporary_scope_as = attacked_vassal
+						limit = {
+							any_character_war = {
+								casus_belli = {
+									primary_attacker = scope:actor
+									primary_defender = scope:recipient
+									any_target_title = {
+										holder = {
+											OR = {
+												this = scope:attacked_vassal
+												is_vassal_or_below_of = scope:attacked_vassal
+											}
+										}
+									}
+								}
+							}
+						}
+						send_interface_toast = {
+							title = declare_war_interaction_notification
+
+							left_icon = scope:actor					
+							right_icon = scope:recipient
+
+							custom_tooltip = declare_war_interaction_notification_tooltip
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	auto_accept = yes
 }
