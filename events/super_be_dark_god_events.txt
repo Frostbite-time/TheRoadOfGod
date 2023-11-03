@@ -10,6 +10,12 @@ super_be_dark_god_events.0001 = {
     option = {
         name = super_be_dark_god_events.0001.1
 
+        every_prisoner = {
+			death = {
+				killer = root
+				death_reason = death_for_be_dark_god
+			}
+		}
         trigger_event = {
             id = super_be_dark_god_events.0002
         }
@@ -45,7 +51,8 @@ super_be_dark_god_events.0003 = {
 
     option = {
         name = super_be_dark_god_events.0003.1
-        super_will_be_dark_god_effect = yes
+        custom_tooltip = super_will_be_dark_god_effect
+        add_character_flag = super_will_be_dark_god_flag
         trigger_event = {
             months = { 8 14 }
             id = super_be_dark_god_events.0004

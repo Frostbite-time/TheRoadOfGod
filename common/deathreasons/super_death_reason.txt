@@ -27,3 +27,8 @@ death_god_out_ap = {
 	public_knowledge = yes
 	icon = "death_murder.dds"
 }
+
+death_for_be_dark_god = {
+	public_knowledge = no
+	icon = "death_murder.dds"
+}

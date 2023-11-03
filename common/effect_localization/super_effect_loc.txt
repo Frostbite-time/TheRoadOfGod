@@ -1,7 +1,3 @@
 ﻿on_declaration_provoke = {
 	global = ON_DECLARATION_PROVOKE
 }
-
-super_will_be_dark_god_effect = {
-	global = SUPER_WILL_BE_DARK_GOD_EFFECT
-}
