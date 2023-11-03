@@ -88,7 +88,7 @@
 		every_prisoner = {
 			death = {
 				killer = root
-				death_reason = death_head_ripped_off
+				death_reason = death_for_be_devilness
 			}
 		}
 	}

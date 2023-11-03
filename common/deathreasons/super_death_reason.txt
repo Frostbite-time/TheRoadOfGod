@@ -1,4 +1,7 @@
-﻿death_god_fire = {
+﻿#每个死亡原因都有2个loc键 分别是<death_reason>以及<death_reason>_killer 分别对应他人和杀手看到的视角，如果确定不会用于有杀手的情况可以不写后一种
+
+#死于神明的怒火
+death_god_fire = {
 	public_knowledge = yes
 	icon = "death_murder.dds"
 }
@@ -7,12 +10,12 @@ a_super_achemy = {
 	public_knowledge = yes
 	icon = "death_murder.dds"
 }
-
+#在世界裂隙迷失
 lost_of_world_rift = {
 	public_knowledge = yes
 	icon = "death_murder.dds"
 }
-
+#死于邪神的怒火
 death_from_evil = {
 	public_knowledge = yes
 	icon = "death_murder.dds"
@@ -22,13 +25,23 @@ death_from_confilct = {
 	public_knowledge = yes
 	icon = "death_murder.dds"
 }
-
+#死于摆脱使徒身份的过程
 death_god_out_ap = {
 	public_knowledge = yes
 	icon = "death_murder.dds"
 }
-
+#死于获取暗影神力的献祭
 death_for_be_dark_god = {
 	public_knowledge = no
 	icon = "death_murder.dds"
+}
+#死于获取魔性的献祭
+death_for_be_devilness = {
+	public_knowledge = no
+	icon = "death_murder.dds"
+}
+#死于他人通过世界裂隙的暗杀
+death_for_murder_bt_rift = {
+	public_knowledge = no
+	icon ="death_murder.dds"
 }

@@ -543,6 +543,7 @@ rift_events_world.0005 = {
 		scope:target = {
 			death = {
 				killer = root
+				death_reason = death_for_murder_bt_rift
 			}
 		}
 	}
