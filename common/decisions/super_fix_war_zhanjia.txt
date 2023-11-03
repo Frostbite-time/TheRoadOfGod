@@ -13,8 +13,24 @@ fix_war_zhanjia = {
 	ai_check_interval = 24 #ai的检查周期，单位是 月
 	
 	cost = {          #进行决议的消耗
-		gold = 2000
-		prestige = 2000
+		gold = {
+			value = 1000
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add = 1000
+			}
+		}
+		prestige = {
+			value = 1000
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add = 1000
+			}
+		}
 	}
 
 	cooldown = { days = 1825 } #决议的冷却时间

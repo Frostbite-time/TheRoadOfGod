@@ -30,21 +30,21 @@ call_god_events.0001 = {
 					days = { 1 2 }
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						has_trait = devilishness
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						has_trait = saint_in_flesh_traits
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						has_trait = angel_traits
 					}
 					
@@ -55,7 +55,7 @@ call_god_events.0001 = {
 					id = call_god_events.0003
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -66,7 +66,7 @@ call_god_events.0001 = {
 					id = call_god_events.0007
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -77,7 +77,7 @@ call_god_events.0001 = {
 					id = call_god_events.0008
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -88,7 +88,7 @@ call_god_events.0001 = {
 					id = call_god_events.0009
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -131,21 +131,21 @@ call_god_events.0001 = {
 					days = { 1 2 }
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						has_trait = devilishness
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						has_trait = saint_in_flesh_traits
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						has_trait = angel_traits
 					}
 					
@@ -156,7 +156,7 @@ call_god_events.0001 = {
 					id = call_god_events.0011
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -167,7 +167,7 @@ call_god_events.0001 = {
 					id = call_god_events.0007
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -178,7 +178,7 @@ call_god_events.0001 = {
 					id = call_god_events.0008
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -189,7 +189,7 @@ call_god_events.0001 = {
 					id = call_god_events.0009
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -232,21 +232,21 @@ call_god_events.0001 = {
 					days = { 1 2 }
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						has_trait = devilishness
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						has_trait = saint_in_flesh_traits
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						has_trait = angel_traits
 					}
 					
@@ -257,7 +257,7 @@ call_god_events.0001 = {
 					id = call_god_events.0011
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -268,7 +268,7 @@ call_god_events.0001 = {
 					id = call_god_events.0007
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -279,7 +279,7 @@ call_god_events.0001 = {
 					id = call_god_events.0009
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -301,7 +301,7 @@ call_god_events.0001 = {
 					id = call_god_events.0017
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -338,7 +338,7 @@ call_god_events.0001 = {
 					id = call_god_events.0012
 				}
 				modifier = {
-					multiply = 0
+					factor = 0
 					is_the_character_god = {
 							CHARACTER = this
 						}
@@ -349,7 +349,7 @@ call_god_events.0001 = {
 					id = call_god_events.0013
 				}
 				modifier = {
-					multiply = 0
+					factor = 0
 					is_the_character_god = {
 							CHARACTER = this
 						}
@@ -399,21 +399,21 @@ call_god_events.0004 = {
 					days = { 1 2 }
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						has_trait = devilishness
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						has_trait = saint_in_flesh_traits
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						has_trait = angel_traits
 					}
 					
@@ -424,7 +424,7 @@ call_god_events.0004 = {
 					id = call_god_events.0003
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -435,7 +435,7 @@ call_god_events.0004 = {
 					id = call_god_events.0007
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -446,7 +446,7 @@ call_god_events.0004 = {
 					id = call_god_events.0008
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -457,7 +457,7 @@ call_god_events.0004 = {
 					id = call_god_events.0009
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -500,21 +500,21 @@ call_god_events.0004 = {
 					days = { 1 2 }
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						has_trait = devilishness
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						has_trait = saint_in_flesh_traits
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						has_trait = angel_traits
 					}
 					
@@ -525,7 +525,7 @@ call_god_events.0004 = {
 					id = call_god_events.0011
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -536,7 +536,7 @@ call_god_events.0004 = {
 					id = call_god_events.0007
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -547,7 +547,7 @@ call_god_events.0004 = {
 					id = call_god_events.0008
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -558,7 +558,7 @@ call_god_events.0004 = {
 					id = call_god_events.0009
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -601,21 +601,21 @@ call_god_events.0004 = {
 					days = { 1 2 }
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						has_trait = devilishness
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						has_trait = saint_in_flesh_traits
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						has_trait = angel_traits
 					}
 					
@@ -626,7 +626,7 @@ call_god_events.0004 = {
 					id = call_god_events.0011
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -637,7 +637,7 @@ call_god_events.0004 = {
 					id = call_god_events.0007
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -648,7 +648,7 @@ call_god_events.0004 = {
 					id = call_god_events.0009
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -670,7 +670,7 @@ call_god_events.0004 = {
 					id = call_god_events.0017
 					}
 					modifier = {
-						multiply = 0
+						factor = 0
 						is_the_character_god = {
 							CHARACTER = this
 						}
@@ -707,7 +707,7 @@ call_god_events.0004 = {
 					id = call_god_events.0012
 				}
 				modifier = {
-					multiply = 0
+					factor = 0
 					is_the_character_god = {
 							CHARACTER = this
 						}
@@ -718,7 +718,7 @@ call_god_events.0004 = {
 					id = call_god_events.0013
 				}
 				modifier = {
-					multiply = 0
+					factor = 0
 					is_the_character_god = {
 							CHARACTER = this
 						}

@@ -166,7 +166,7 @@ final_call_dec = {
 					days = { 2 3 }
 					}     #效果:开始此事件
 					modifier = {
-						multiply = 0
+						factor = 0
 						has_character_modifier = time_god_use
 					}
 				}
