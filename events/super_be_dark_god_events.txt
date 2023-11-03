@@ -5,6 +5,9 @@ super_be_dark_god_events.0001 = {
     title = super_be_dark_god_events.0001.t
     desc = super_be_dark_god_events.0001.desc
     theme = realm
+    override_background = {
+        reference = super_to_be_dark_god_1
+    }
     # other event details...
 
     option = {
@@ -29,6 +32,9 @@ super_be_dark_god_events.0002 = {
     title = super_be_dark_god_events.0002.t
     desc = super_be_dark_god_events.0002.desc
     theme = realm
+    override_background = {
+        reference = super_to_be_dark_god_2
+    }
     # other event details...
 
     option = {
@@ -47,6 +53,9 @@ super_be_dark_god_events.0003 = {
     title = super_be_dark_god_events.0003.t
     desc = super_be_dark_god_events.0003.desc
     theme = realm
+    override_background = {
+        reference = council_chamber
+    }
     # other event details...
 
     option = {
