@@ -115,7 +115,7 @@ is_star_power_god = {
 #检查地图上是否有其他人拥有自然神力--------------------------------------------------------
 
 #战争
-is_anyone_war_god = {
+not_is_anyone_war_god = {
 	NOT = {	
 		any_living_character = {
 			has_trait = super_war_god
@@ -123,7 +123,7 @@ is_anyone_war_god = {
 	}	
 }
 #自然
-is_anyone_nature_god = {
+not_is_anyone_nature_god = {
 	NOT = {
 		any_living_character = {
 			has_trait = super_nature_god
@@ -131,7 +131,7 @@ is_anyone_nature_god = {
 	}	
 }
 #智慧
-is_anyone_wisdom_god = {
+not_is_anyone_wisdom_god = {
 	NOT = {
 		any_living_character = {
 			has_trait = super_wisdom_god
@@ -139,7 +139,7 @@ is_anyone_wisdom_god = {
 	}
 }
 #黑暗
-is_anyone_dark_god = {
+not_is_anyone_dark_god = {
 	NOT = {
 		any_living_character = {
 			has_trait = super_dark_god
@@ -147,7 +147,7 @@ is_anyone_dark_god = {
 	}	
 }
 #信仰
-is_anyone_belief_god = {
+not_is_anyone_belief_god = {
 	NOT = {
 		any_living_character = {
 			has_trait = super_belief_god
@@ -155,7 +155,7 @@ is_anyone_belief_god = {
 	}	
 }
 #海洋
-is_anyone_sea_god = {
+not_is_anyone_sea_god = {
 	NOT = {
 		any_living_character = {
 			has_trait = super_sea_god

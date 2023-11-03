@@ -18,32 +18,32 @@ is_star_power_god = {
     global = CAN_IS_STAR_POWER_GOD   
 }
 #战争神力是否未被占据
-is_anyone_war_god = {
+not_is_anyone_war_god = {
     global_not = NOT_CAN_IS_ANYONE_WAR_GOD
     global = CAN_IS_ANYONE_WAR_GOD  
 }
 #自然神力是否未被占据
-is_anyone_nature_god = {
+not_is_anyone_nature_god = {
     global = CAN_IS_ANYONE_NATURE_GOD
     global_not = NOT_CAN_IS_ANYONE_NATURE_GOD
 }
 #暗影神力是否未被占据
-is_anyone_dark_god = {
+not_is_anyone_dark_god = {
     global = CAN_IS_ANYONE_DARK_GOD
     global_not = NOT_CAN_IS_ANYONE_DARK_GOD
 }
 #智慧神力是否未被占据
-is_anyone_wisdom_god = {
+not_is_anyone_wisdom_god = {
     global = CAN_IS_ANYONE_WISDOM_GOD
     global_not = NOT_CAN_IS_ANYONE_WISDOM_GOD
 }
 #信仰神力是否未被占据
-is_anyone_belief_god = {
+not_is_anyone_belief_god = {
     global = CAN_IS_ANYONE_BELIEF_GOD
     global_not = NOT_CAN_IS_ANYONE_BELIEF_GOD
 }
 #海洋神力是否未被占据
-is_anyone_sea_god = {
+not_is_anyone_sea_god = {
     global = CAN_IS_ANYONE_SEA_GOD
     global_not = NOT_CAN_IS_ANYONE_SEA_GOD
 }

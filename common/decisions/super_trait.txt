@@ -26,7 +26,7 @@
 		}	
 	}
 	
-	is_valid_showing_failures_only = {   #角色必须未被囚禁且为成人，且拥有贤者之石
+	is_valid_showing_failures_only = {   #角色必须未被囚禁且为成人，且拥有足够的囚犯
 		AND = {
 			is_available_adult = yes
 			is_imprisoned = no
