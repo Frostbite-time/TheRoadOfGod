@@ -1,4 +1,4 @@
-#此文件下放置适用性大的游戏规则
+﻿#此文件下放置适用性大的游戏规则
 is_open_super_mod = {
 	categories = {     #分类在ai和difficult下
 		difficulty ai

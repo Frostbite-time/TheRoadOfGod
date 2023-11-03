@@ -90,7 +90,7 @@ super_faith_event.0008.desc: "在战争的洗礼下，一个英雄诞生了!"
 super_faith_event.0008.a: "真是耀眼的光辉"
 cult_legends_name: "传说崇拜"
 cult_legends_desc: "此信仰的人们倾慕于传说之中的英雄"
-doctrine_parameter_cult_legends_rule: "浴血奋战的骑士可能会成为传说（特质）"\
+doctrine_parameter_cult_legends_rule: "浴血奋战的骑士可能会成为传说（特质）"
 brave_duel_name: "勇武决斗"
 brave_duel_desc: "以力量决定一切，以荣誉宣誓尊严"
 doctrine_parameter_brave_duel_rule: "可以邀请交战方进行决斗，以此来结束战争"

@@ -222,8 +222,8 @@ fate_eagle = {
 		piety = 100
 		prestige = 100
 	}        
-	low_maintenance_cost = { gold = archers_low_maint_cost }		# Maintenance paid when the regiment is unraised and fully reinforced or when reinforcement is disabled
-	high_maintenance_cost = { gold = archers_high_maint_cost }	# Maintenance paid when the regiment is raised or not fully reinforced
+	low_maintenance_cost = { gold = heavy_infantry_low_maint_cost }		# Maintenance paid when the regiment is unraised and fully reinforced or when reinforcement is disabled
+	high_maintenance_cost = { gold = heavy_infantry_high_maint_cost }	# Maintenance paid when the regiment is raised or not fully reinforced
 	
 	stack = 50
 	ai_quality = {  value = 150  }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中

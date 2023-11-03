@@ -47,7 +47,13 @@ not_is_anyone_sea_god = {
     global = CAN_IS_ANYONE_SEA_GOD
     global_not = NOT_CAN_IS_ANYONE_SEA_GOD
 }
+#是否拥有五十个以上囚犯
 is_have_fifty_prisoner = {
     global = CAN_IS_HAVE_FIFTY_PRISONER
     global_not = NOT_CAN_IS_HAVE_FIFTY_PRISONER
+}
+#是否拥有贤者之石
+is_have_sage_stone = {
+    global = CAN_IS_HAVE_SAGE_STONE
+    global_not = NOT_CAN_IS_HAVE_SAGE_STONE
 }
