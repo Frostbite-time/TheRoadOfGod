@@ -1,3 +1,4 @@
+
 #每年年初触发的自定义action有哪些  没有root
 yearly_global_pulse = {
 	on_actions = {
@@ -318,4 +319,5 @@ super_faith_legendary_trait_pulse = {
 		}
 	}
 }
+
 

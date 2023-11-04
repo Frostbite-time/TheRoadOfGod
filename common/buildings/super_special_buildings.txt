@@ -1,0 +1,509 @@
+﻿super_wisdom_god_star_building_0 = {	
+	
+	# 修建时间，单位：天
+	construction_time = 730
+	
+	type = special	# 建筑的种类
+	
+	# 建筑使用哪个资产
+	asset = {
+		#  'pdxmesh' 或 'entity'，指定使用网格还是实体。网格的性能更好，应该首选。
+		type = pdxmesh
+		# 网格或实体的名称
+		name = "western_castle_01_level_03_mesh"
+		#  在县视图中显示的插图路径，纹理可以在GUI中访问："[Holding.GetIllustration]"
+		illustration = "path/to/image.dds"
+	}
+	
+	# 这个建筑是否启用？如果不启用，它不会给持有者带来任何效果，也不能被建造（下面参见 can_construct*）。
+	# 如果 is_graphical_background = yes，这将控制是否可以在省份中显示该建筑。
+	# 作用域说明：root 代表省份；scope:holder 是省份的持有者； county 是省份所属的县级标题。
+	is_enabled = {
+		always = yes
+	}
+	
+	# 建筑是否可以被建造。
+	# 如果你希望统治者在获得土地后可以“使用”该建筑，但不允许他们建造它，那么请使用此选项而不是 is_enabled。
+	# can_construct_potential 控制建筑是否出现在建造菜单中。对于升级，它与 can_construct_showing_failures_only 相同。
+	# 请注意，is_enabled（参见上文）被加到了 can_construct_potential。
+	# 如果 is_graphical_background = yes，则不使用此选项。
+	# 作用域说明：root 代表省份；scope:holder 是省份的持有者；county 是省份所属的县级标题。
+	can_construct_potential = {
+		always = yes
+	}
+	can_construct = {
+		always = yes
+	}
+	
+	# 建筑的花费
+	cost = { 
+		gold = {
+			value = 300
+			if = {
+				limit = {
+					scope:holder = {
+						is_ai = no
+					}	
+				}
+				add = 700
+			}
+		}
+	}
+	
+	# 这个建筑解锁的下一个建筑链中的建筑。
+	next_building = super_wisdom_god_star_building_1
+
+	# 建筑间接提供效果的自定义描述。
+	# root指的是建筑所在的省份。
+	effect_desc = super_wisdom_god_building_desc
+	
+	# 应用于建筑的所有者的修饰符。
+	character_modifier = {
+	}
+	
+	# 应用于建筑物所在省份的修饰符。
+	province_modifier = {
+	}
+	
+	# 建筑的flag
+	flag = super_wisdom_god_building_flag_0
+
+	# 建筑完成时应用的效果
+	# scopes: root 指的是建筑的省份
+	on_complete = {
+		
+	}
+	
+	# AI对建筑的欣赏程度
+	ai_value = {
+		base = 100
+	}
+	
+	# 如果设置为是，该建筑将被用来确定应该显示哪个背景资源（墙壁/没有墙壁等）
+	is_graphical_background = no
+}
+
+super_wisdom_god_star_building_1 = {	
+	
+	# 修建时间，单位：天
+	construction_time = 730
+	
+	type = special	# 建筑的种类
+	
+	# 建筑使用哪个资产
+	asset = {
+		#  'pdxmesh' 或 'entity'，指定使用网格还是实体。网格的性能更好，应该首选。
+		type = pdxmesh
+		# 网格或实体的名称
+		name = "western_castle_01_level_03_mesh"
+		#  在县视图中显示的插图路径，纹理可以在GUI中访问："[Holding.GetIllustration]"
+		illustration = "path/to/image.dds"
+	}
+	
+	# 这个建筑是否启用？如果不启用，它不会给持有者带来任何效果，也不能被建造（下面参见 can_construct*）。
+	# 如果 is_graphical_background = yes，这将控制是否可以在省份中显示该建筑。
+	# 作用域说明：root 代表省份；scope:holder 是省份的持有者； county 是省份所属的县级标题。
+	is_enabled = {
+		always = yes
+	}
+	
+	# 建筑是否可以被建造。
+	# 如果你希望统治者在获得土地后可以“使用”该建筑，但不允许他们建造它，那么请使用此选项而不是 is_enabled。
+	# can_construct_potential 控制建筑是否出现在建造菜单中。对于升级，它与 can_construct_showing_failures_only 相同。
+	# 请注意，is_enabled（参见上文）被加到了 can_construct_potential。
+	# 如果 is_graphical_background = yes，则不使用此选项。
+	# 作用域说明：root 代表省份；scope:holder 是省份的持有者；county 是省份所属的县级标题。
+	can_construct_potential = {
+		always = yes
+	}
+	can_construct = {
+		always = yes
+	}
+	
+	# 建筑的花费
+	cost = { 
+		gold = {
+			value = 300
+			if = {
+				limit = {
+					scope:holder = {
+						is_ai = no
+					}	
+				}
+				add = 700
+			}
+		}
+	}
+	
+	# 这个建筑解锁的下一个建筑链中的建筑。
+	next_building = super_wisdom_god_star_building_2
+
+	# 建筑间接提供效果的自定义描述。
+	# root指的是建筑所在的省份。
+	effect_desc = super_wisdom_god_building_desc
+	
+	# 应用于建筑的所有者的修饰符。
+	character_modifier = {
+	}
+	
+	# 应用于建筑物所在省份的修饰符。
+	province_modifier = {
+	}
+	
+	# 建筑的flag
+	flag = super_wisdom_god_building_flag_1
+
+	# 建筑完成时应用的效果
+	# scopes: root 指的是建筑的省份
+	on_complete = {
+		
+	}
+	
+	# AI对建筑的欣赏程度
+	ai_value = {
+		base = 100
+	}
+	
+	# 如果设置为是，该建筑将被用来确定应该显示哪个背景资源（墙壁/没有墙壁等）
+	is_graphical_background = no
+}
+
+super_wisdom_god_star_building_2 = {	
+	
+	# 修建时间，单位：天
+	construction_time = 730
+	
+	type = special	# 建筑的种类
+	
+	# 建筑使用哪个资产
+	asset = {
+		#  'pdxmesh' 或 'entity'，指定使用网格还是实体。网格的性能更好，应该首选。
+		type = pdxmesh
+		# 网格或实体的名称
+		name = "western_castle_01_level_03_mesh"
+		#  在县视图中显示的插图路径，纹理可以在GUI中访问："[Holding.GetIllustration]"
+		illustration = "path/to/image.dds"
+	}
+	
+	# 这个建筑是否启用？如果不启用，它不会给持有者带来任何效果，也不能被建造（下面参见 can_construct*）。
+	# 如果 is_graphical_background = yes，这将控制是否可以在省份中显示该建筑。
+	# 作用域说明：root 代表省份；scope:holder 是省份的持有者； county 是省份所属的县级标题。
+	is_enabled = {
+		always = yes
+	}
+	
+	# 建筑是否可以被建造。
+	# 如果你希望统治者在获得土地后可以“使用”该建筑，但不允许他们建造它，那么请使用此选项而不是 is_enabled。
+	# can_construct_potential 控制建筑是否出现在建造菜单中。对于升级，它与 can_construct_showing_failures_only 相同。
+	# 请注意，is_enabled（参见上文）被加到了 can_construct_potential。
+	# 如果 is_graphical_background = yes，则不使用此选项。
+	# 作用域说明：root 代表省份；scope:holder 是省份的持有者；county 是省份所属的县级标题。
+	can_construct_potential = {
+		always = yes
+	}
+	can_construct = {
+		always = yes
+	}
+	
+	# 建筑的花费
+	cost = { 
+		gold = {
+			value = 300
+			if = {
+				limit = {
+					scope:holder = {
+						is_ai = no
+					}	
+				}
+				add = 700
+			}
+		}
+	}
+	
+	# 这个建筑解锁的下一个建筑链中的建筑。
+	next_building = super_wisdom_god_star_building_3
+
+	# 建筑间接提供效果的自定义描述。
+	# root指的是建筑所在的省份。
+	effect_desc = super_wisdom_god_building_desc
+	
+	# 应用于建筑的所有者的修饰符。
+	character_modifier = {
+	}
+	
+	# 应用于建筑物所在省份的修饰符。
+	province_modifier = {
+	}
+	
+	# 建筑的flag
+	flag = super_wisdom_god_building_flag_2
+
+	# 建筑完成时应用的效果
+	# scopes: root 指的是建筑的省份
+	on_complete = {
+		
+	}
+	
+	# AI对建筑的欣赏程度
+	ai_value = {
+		base = 100
+	}
+	
+	# 如果设置为是，该建筑将被用来确定应该显示哪个背景资源（墙壁/没有墙壁等）
+	is_graphical_background = no
+}
+
+super_wisdom_god_star_building_3 = {	
+	
+	# 修建时间，单位：天
+	construction_time = 730
+	
+	type = special	# 建筑的种类
+	
+	# 建筑使用哪个资产
+	asset = {
+		#  'pdxmesh' 或 'entity'，指定使用网格还是实体。网格的性能更好，应该首选。
+		type = pdxmesh
+		# 网格或实体的名称
+		name = "western_castle_01_level_03_mesh"
+		#  在县视图中显示的插图路径，纹理可以在GUI中访问："[Holding.GetIllustration]"
+		illustration = "path/to/image.dds"
+	}
+	
+	# 这个建筑是否启用？如果不启用，它不会给持有者带来任何效果，也不能被建造（下面参见 can_construct*）。
+	# 如果 is_graphical_background = yes，这将控制是否可以在省份中显示该建筑。
+	# 作用域说明：root 代表省份；scope:holder 是省份的持有者； county 是省份所属的县级标题。
+	is_enabled = {
+		always = yes
+	}
+	
+	# 建筑是否可以被建造。
+	# 如果你希望统治者在获得土地后可以“使用”该建筑，但不允许他们建造它，那么请使用此选项而不是 is_enabled。
+	# can_construct_potential 控制建筑是否出现在建造菜单中。对于升级，它与 can_construct_showing_failures_only 相同。
+	# 请注意，is_enabled（参见上文）被加到了 can_construct_potential。
+	# 如果 is_graphical_background = yes，则不使用此选项。
+	# 作用域说明：root 代表省份；scope:holder 是省份的持有者；county 是省份所属的县级标题。
+	can_construct_potential = {
+		always = yes
+	}
+	can_construct = {
+		always = yes
+	}
+	
+	# 建筑的花费
+	cost = { 
+		gold = {
+			value = 300
+			if = {
+				limit = {
+					scope:holder = {
+						is_ai = no
+					}	
+				}
+				add = 700
+			}
+		}
+	}
+	
+	# 这个建筑解锁的下一个建筑链中的建筑。
+	next_building = super_wisdom_god_star_building_4
+
+	# 建筑间接提供效果的自定义描述。
+	# root指的是建筑所在的省份。
+	effect_desc = super_wisdom_god_building_desc
+	
+	# 应用于建筑的所有者的修饰符。
+	character_modifier = {
+	}
+	
+	# 应用于建筑物所在省份的修饰符。
+	province_modifier = {
+	}
+	
+	# 建筑的flag
+	flag = super_wisdom_god_building_flag_3
+
+	# 建筑完成时应用的效果
+	# scopes: root 指的是建筑的省份
+	on_complete = {
+		
+	}
+	
+	# AI对建筑的欣赏程度
+	ai_value = {
+		base = 100
+	}
+	
+	# 如果设置为是，该建筑将被用来确定应该显示哪个背景资源（墙壁/没有墙壁等）
+	is_graphical_background = no
+}
+
+super_wisdom_god_star_building_4 = {	
+	
+	# 修建时间，单位：天
+	construction_time = 730
+	
+	type = special	# 建筑的种类
+	
+	# 建筑使用哪个资产
+	asset = {
+		#  'pdxmesh' 或 'entity'，指定使用网格还是实体。网格的性能更好，应该首选。
+		type = pdxmesh
+		# 网格或实体的名称
+		name = "western_castle_01_level_03_mesh"
+		#  在县视图中显示的插图路径，纹理可以在GUI中访问："[Holding.GetIllustration]"
+		illustration = "path/to/image.dds"
+	}
+	
+	# 这个建筑是否启用？如果不启用，它不会给持有者带来任何效果，也不能被建造（下面参见 can_construct*）。
+	# 如果 is_graphical_background = yes，这将控制是否可以在省份中显示该建筑。
+	# 作用域说明：root 代表省份；scope:holder 是省份的持有者； county 是省份所属的县级标题。
+	is_enabled = {
+		always = yes
+	}
+	
+	# 建筑是否可以被建造。
+	# 如果你希望统治者在获得土地后可以“使用”该建筑，但不允许他们建造它，那么请使用此选项而不是 is_enabled。
+	# can_construct_potential 控制建筑是否出现在建造菜单中。对于升级，它与 can_construct_showing_failures_only 相同。
+	# 请注意，is_enabled（参见上文）被加到了 can_construct_potential。
+	# 如果 is_graphical_background = yes，则不使用此选项。
+	# 作用域说明：root 代表省份；scope:holder 是省份的持有者；county 是省份所属的县级标题。
+	can_construct_potential = {
+		always = yes
+	}
+	can_construct = {
+		always = yes
+	}
+	
+	# 建筑的花费
+	cost = { 
+		gold = {
+			value = 300
+			if = {
+				limit = {
+					scope:holder = {
+						is_ai = no
+					}	
+				}
+				add = 700
+			}
+		}
+	}
+	
+	# 这个建筑解锁的下一个建筑链中的建筑。
+	next_building = super_wisdom_god_star_building_5
+
+	# 建筑间接提供效果的自定义描述。
+	# root指的是建筑所在的省份。
+	effect_desc = super_wisdom_god_building_desc
+	
+	# 应用于建筑的所有者的修饰符。
+	character_modifier = {
+	}
+	
+	# 应用于建筑物所在省份的修饰符。
+	province_modifier = {
+	}
+	
+	# 建筑的flag
+	flag = super_wisdom_god_building_flag_4
+
+	# 建筑完成时应用的效果
+	# scopes: root 指的是建筑的省份
+	on_complete = {
+		
+	}
+	
+	# AI对建筑的欣赏程度
+	ai_value = {
+		base = 100
+	}
+	
+	# 如果设置为是，该建筑将被用来确定应该显示哪个背景资源（墙壁/没有墙壁等）
+	is_graphical_background = no
+}
+
+super_wisdom_god_star_building_5 = {	
+	
+	# 修建时间，单位：天
+	construction_time = 730
+	
+	type = special	# 建筑的种类
+	
+	# 建筑使用哪个资产
+	asset = {
+		#  'pdxmesh' 或 'entity'，指定使用网格还是实体。网格的性能更好，应该首选。
+		type = pdxmesh
+		# 网格或实体的名称
+		name = "western_castle_01_level_03_mesh"
+		#  在县视图中显示的插图路径，纹理可以在GUI中访问："[Holding.GetIllustration]"
+		illustration = "path/to/image.dds"
+	}
+	
+	# 这个建筑是否启用？如果不启用，它不会给持有者带来任何效果，也不能被建造（下面参见 can_construct*）。
+	# 如果 is_graphical_background = yes，这将控制是否可以在省份中显示该建筑。
+	# 作用域说明：root 代表省份；scope:holder 是省份的持有者； county 是省份所属的县级标题。
+	is_enabled = {
+		always = yes
+	}
+	
+	# 建筑是否可以被建造。
+	# 如果你希望统治者在获得土地后可以“使用”该建筑，但不允许他们建造它，那么请使用此选项而不是 is_enabled。
+	# can_construct_potential 控制建筑是否出现在建造菜单中。对于升级，它与 can_construct_showing_failures_only 相同。
+	# 请注意，is_enabled（参见上文）被加到了 can_construct_potential。
+	# 如果 is_graphical_background = yes，则不使用此选项。
+	# 作用域说明：root 代表省份；scope:holder 是省份的持有者；county 是省份所属的县级标题。
+	can_construct_potential = {
+		always = yes
+	}
+	can_construct = {
+		always = yes
+	}
+	
+	# 建筑的花费
+	cost = { 
+		gold = {
+			value = 300
+			if = {
+				limit = {
+					scope:holder = {
+						is_ai = no
+					}	
+				}
+				add = 700
+			}
+		}
+	}
+	
+	# 这个建筑解锁的下一个建筑链中的建筑。
+	#next_building = castle_02
+
+	# 建筑间接提供效果的自定义描述。
+	# root指的是建筑所在的省份。
+	effect_desc = super_wisdom_god_building_desc
+	
+	# 应用于建筑的所有者的修饰符。
+	character_modifier = {
+	}
+	
+	# 应用于建筑物所在省份的修饰符。
+	province_modifier = {
+	}
+	
+	# 建筑的flag
+	flag = super_wisdom_god_building_flag_5
+
+	# 建筑完成时应用的效果
+	# scopes: root 指的是建筑的省份
+	on_complete = {
+		
+	}
+	
+	# AI对建筑的欣赏程度
+	ai_value = {
+		base = 100
+	}
+	
+	# 如果设置为是，该建筑将被用来确定应该显示哪个背景资源（墙壁/没有墙壁等）
+	is_graphical_background = no
+}

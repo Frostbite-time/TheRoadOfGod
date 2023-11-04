@@ -12,7 +12,7 @@ super_to_be_war_god = {
 	
 	major = yes #是否为重要决议
 	
-	ai_check_interval = 1 #ai的检查周期，单位是 月
+	ai_check_interval = 3 #ai的检查周期，单位是 月
 	
 	cost = {          #进行决议的消耗
 		gold = {
@@ -68,7 +68,7 @@ super_to_be_dark_god = {
 	
 	major = yes #是否为重要决议
 	
-	ai_check_interval = 1 #ai的检查周期，单位是 月
+	ai_check_interval = 3 #ai的检查周期，单位是 月
 	
 	cost = {          #进行决议的消耗
 		gold = {
@@ -144,7 +144,7 @@ super_to_be_wisdom_god = {
 	
 	major = yes #是否为重要决议
 	
-	ai_check_interval = 1 #ai的检查周期，单位是 月
+	ai_check_interval = 3 #ai的检查周期，单位是 月
 	
 	cost = {          #进行决议的消耗
 	}
@@ -153,11 +153,12 @@ super_to_be_wisdom_god = {
 	
 	is_shown = {       #显示决议的条件
 		is_star_power_god = no
-		
+		has_trait = angel_traits
 	}	
 	
 	is_valid = {
 		not_is_anyone_wisdom_god = yes
+		is_have_sage_stone = yes
 	}
 
 	ai_potential = {     #ai是否检测这个决议
@@ -175,7 +176,7 @@ super_to_be_wisdom_god = {
 				days = { 2 3 }
 			}
 		}
-		#remove_sage_stone = yes	
+		remove_sage_stone = yes	
 	}
 }
 
@@ -191,7 +192,7 @@ super_to_be_nature_god = {
 	
 	major = yes #是否为重要决议
 	
-	ai_check_interval = 1 #ai的检查周期，单位是 月
+	ai_check_interval = 3 #ai的检查周期，单位是 月
 	
 	cost = {          #进行决议的消耗
 	}
@@ -238,7 +239,7 @@ super_to_be_blielif_god = {
 	
 	major = yes #是否为重要决议
 	
-	ai_check_interval = 1 #ai的检查周期，单位是 月
+	ai_check_interval = 3 #ai的检查周期，单位是 月
 	
 	cost = {          #进行决议的消耗
 	}
@@ -285,7 +286,7 @@ super_to_be_sea_god = {
 	
 	major = yes #是否为重要决议
 	
-	ai_check_interval = 1 #ai的检查周期，单位是 月
+	ai_check_interval = 3 #ai的检查周期，单位是 月
 	
 	cost = {          #进行决议的消耗
 	}
