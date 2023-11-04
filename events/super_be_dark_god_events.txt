@@ -84,4 +84,44 @@ super_be_dark_god_events.0004 = {
         remove_character_flag = super_will_be_dark_god_flag
         # option details...
     }
+    after = {
+        root = {
+            save_scope_as = super_dark_god_now
+        }
+        every_living_character = {
+            limit = {
+                is_landed = yes
+                NOT = {
+                    has_trait = super_dark_god
+                }
+            }
+            trigger_event = {
+                id = super_be_dark_god_events.0005
+                days = { 2 10 }
+            }
+        }
+    }
+}
+
+super_be_dark_god_events.0005 = {
+    type = character_event
+    title = super_be_dark_god_events.0005.t
+    desc = super_be_dark_god_events.0005.desc
+    theme = realm
+    theme = realm
+    right_portrait = {
+        character = this
+        animation = fear
+    }
+    left_portrait = scope:super_dark_god_now
+    override_background = {
+        reference = super_to_be_dark_god_5
+    }
+    # other event details...
+
+    option = {
+        name = super_be_dark_god_events.0005.1
+        custom_tooltip = dark_god_is_taken_effect
+        # option details...
+    }
 }
