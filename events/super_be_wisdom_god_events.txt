@@ -34,3 +34,91 @@ super_be_wisdom_god_events.0002 = {
         # option details...
     }
 }
+
+super_be_wisdom_god_events.0003 = {
+    type = character_event
+    title = super_be_wisdom_god_events.0003.t
+    desc = super_be_wisdom_god_events.0003.desc
+    theme = realm
+    # other event details...
+
+    option = {
+        name = super_be_wisdom_god_events.0003.1
+
+        trigger_event = {
+            id = super_be_wisdom_god_events.0004
+        }
+            # option details...
+    }
+}
+
+
+super_be_wisdom_god_events.0004 = {
+    type = character_event
+    title = super_be_wisdom_god_events.0004.t
+    desc = super_be_wisdom_god_events.0004.desc
+    theme = realm
+    # other event details...
+
+    option = {
+        name = super_be_wisdom_god_events.0004.1
+
+        trigger_event = {
+            id = super_be_wisdom_god_events.0005
+        }
+            # option details...
+    }
+}
+
+
+super_be_wisdom_god_events.0005 = {
+    type = character_event
+    title = super_be_wisdom_god_events.0005.t
+    desc = super_be_wisdom_god_events.0005.desc
+    theme = realm
+    # other event details...
+	override_background = {
+		event_background = super_to_be_wisdom_god_5
+	}
+
+    option = {
+        name = super_be_wisdom_god_events.0005.1
+		add_trait = super_wisdom_god
+        # option details...
+    }
+	after = {
+		root = {
+			save_scope_as = super_wisdom_god_now
+		}
+		every_living_character = {
+			limit = {
+				is_landed = yes
+				NOT = {
+					has_trait = super_wisdom_god
+				}
+			}
+			trigger_event = {
+				days = { 2 10 }
+				id = super_be_wisdom_god_events.0006
+			}
+		}	
+	}
+}
+
+super_be_wisdom_god_events.0006 = {
+    type = character_event
+    title = super_be_wisdom_god_events.0006.t
+    desc = super_be_wisdom_god_events.0006.desc
+    theme = realm
+    # other event details...
+	right_portrait = {
+		character = root
+		animation = fear
+	}
+	left_portrait = scope:super_wisdom_god_now
+
+    option = {
+        name = super_be_wisdom_god_events.0006.1
+        # option details...
+    }
+}
