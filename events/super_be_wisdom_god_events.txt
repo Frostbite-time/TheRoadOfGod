@@ -61,8 +61,11 @@ super_be_wisdom_god_events.0004 = {
     title = super_be_wisdom_god_events.0004.t
     desc = super_be_wisdom_god_events.0004.desc
     theme = realm
+    override_background = {
+		event_background = super_to_be_wisdom_god_4
+	}
     # other event details...
-
+    
     option = {
         name = super_be_wisdom_god_events.0004.1
 
@@ -87,6 +90,7 @@ super_be_wisdom_god_events.0005 = {
     option = {
         name = super_be_wisdom_god_events.0005.1
 		add_trait = super_wisdom_god
+        super_remove_all_bad_trait = yes
         # option details...
     }
 	after = {

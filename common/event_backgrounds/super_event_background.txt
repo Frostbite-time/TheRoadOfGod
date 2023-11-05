@@ -70,6 +70,14 @@ super_to_be_wisdom_god_3 = {
 	}
 }
 
+super_to_be_wisdom_god_4 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/super_to_be_wisdom_god_4.dds"
+		environment = "environment_frontend_west_main"
+		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
+	}
+}
+
 super_to_be_wisdom_god_5 = {
 	background = {
 		reference = "gfx/interface/illustrations/event_scenes/super_to_be_wisdom_god_5.dds"

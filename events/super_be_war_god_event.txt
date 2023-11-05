@@ -87,6 +87,7 @@ super_be_war_god_event.0004 = {
     option = {
         name = super_be_war_god_event.0004.1
         add_trait = super_war_god
+        super_remove_all_bad_trait = yes
         # option details...
     }
 
