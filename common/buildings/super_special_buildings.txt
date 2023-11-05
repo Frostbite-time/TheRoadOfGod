@@ -115,9 +115,6 @@ super_wisdom_god_star_building_1 = {
 		development_growth_factor = 0.2
 	}
 	
-	# 建筑的flag
-	flag = super_wisdom_god_building_flag_1
-	
 	# AI对建筑的欣赏程度
 	ai_value = {
 		base = 100
@@ -186,9 +183,6 @@ super_wisdom_god_star_building_2 = {
 	county_modifier = {
 		development_growth_factor = 0.4
 	}
-	
-	# 建筑的flag
-	flag = super_wisdom_god_building_flag_2
 	
 	# AI对建筑的欣赏程度
 	ai_value = {
@@ -262,9 +256,6 @@ super_wisdom_god_star_building_3 = {
 	county_modifier = {
 		development_growth_factor = 0.6
 	}
-	
-	# 建筑的flag
-	flag = super_wisdom_god_building_flag_3
 
 	# AI对建筑的欣赏程度
 	ai_value = {
@@ -335,9 +326,6 @@ super_wisdom_god_star_building_4 = {
 	county_modifier = {
 		development_growth_factor = 0.8
 	}
-	
-	# 建筑的flag
-	flag = super_wisdom_god_building_flag_4
 
 	# 建筑完成时应用的效果
 	# scopes: root 指的是建筑的省份

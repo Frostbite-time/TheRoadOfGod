@@ -153,10 +153,16 @@ super_to_be_wisdom_god = {
 	
 	is_shown = {       #显示决议的条件
 		is_star_power_god = no
-		has_trait = angel_traits
+		any_directly_owned_province = {
+			limit = {
+				always = yes
+			}
+			has_building = super_wisdom_god_star_building_5
+		}
 	}	
 	
 	is_valid = {
+		has_trait = angel_traits
 		not_is_anyone_wisdom_god = yes
 		is_have_sage_stone = yes
 	}
