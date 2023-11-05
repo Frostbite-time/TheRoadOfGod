@@ -10,6 +10,8 @@
 common\character_interactions\super_vanilla_reset_character_interactions.txt
 common\scripted_effects\super_vanilla_reset_scripted_effects.txt
 common\laws\00_realm_laws.txt    #此文件几乎完全修改，没有再度添加其他文件的必要，故直接保留
+common\holdings\super_vanilla_reset_holdings.txt
+history\provinces\super_vanilla_reset_provinces_history.txt
 
 以下是修改过的gui文件，这部分文件基本没有以super_来做前缀  按照需求更新
 gui\window_character_lifestyle.gui    添加了一个滑条，增加了组件长度

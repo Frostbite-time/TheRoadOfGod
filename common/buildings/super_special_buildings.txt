@@ -1,27 +1,14 @@
 ﻿super_wisdom_god_star_building_0 = {	
 	
 	# 修建时间，单位：天
-	construction_time = 730
+	construction_time = 365  
 	
-	type = special	# 建筑的种类
-	
-	# 建筑使用哪个资产
-	asset = {
-		#  'pdxmesh' 或 'entity'，指定使用网格还是实体。网格的性能更好，应该首选。
-		type = pdxmesh
-		# 网格或实体的名称
-		name = "western_castle_01_level_03_mesh"
-		#  在县视图中显示的插图路径，纹理可以在GUI中访问："[Holding.GetIllustration]"
-		illustration = "path/to/image.dds"
-	}
-	
-	# 这个建筑是否启用？如果不启用，它不会给持有者带来任何效果，也不能被建造（下面参见 can_construct*）。
-	# 如果 is_graphical_background = yes，这将控制是否可以在省份中显示该建筑。
-	# 作用域说明：root 代表省份；scope:holder 是省份的持有者； county 是省份所属的县级标题。
-	is_enabled = {
-		always = yes
-	}
-	
+	type = regular	# 建筑的种类  该种类为正常
+
+	type_icon = "icon_building_ramparts.dds"  #图标
+			
+	# 这个建筑解锁的下一个建筑链中的建筑。
+	next_building = super_wisdom_god_star_building_1
 	# 建筑是否可以被建造。
 	# 如果你希望统治者在获得土地后可以“使用”该建筑，但不允许他们建造它，那么请使用此选项而不是 is_enabled。
 	# can_construct_potential 控制建筑是否出现在建造菜单中。对于升级，它与 can_construct_showing_failures_only 相同。
@@ -29,29 +16,27 @@
 	# 如果 is_graphical_background = yes，则不使用此选项。
 	# 作用域说明：root 代表省份；scope:holder 是省份的持有者；county 是省份所属的县级标题。
 	can_construct_potential = {
-		always = yes
+		root = {
+			this = title:b_constantinople.title_province
+		}
+	}
+	can_construct_showing_failures_only = {
+		root = {
+			this = title:b_constantinople.title_province
+		}
 	}
 	can_construct = {
-		always = yes
+		root = {
+			this = title:b_constantinople.title_province
+		}
 	}
 	
 	# 建筑的花费
 	cost = { 
-		gold = {
-			value = 300
-			if = {
-				limit = {
-					scope:holder = {
-						is_ai = no
-					}	
-				}
-				add = 700
-			}
-		}
+		gold = 100
 	}
 	
-	# 这个建筑解锁的下一个建筑链中的建筑。
-	next_building = super_wisdom_god_star_building_1
+	
 
 	# 建筑间接提供效果的自定义描述。
 	# root指的是建筑所在的省份。
@@ -79,8 +64,7 @@
 		base = 100
 	}
 	
-	# 如果设置为是，该建筑将被用来确定应该显示哪个背景资源（墙壁/没有墙壁等）
-	is_graphical_background = no
+
 }
 
 super_wisdom_god_star_building_1 = {	
@@ -88,7 +72,7 @@ super_wisdom_god_star_building_1 = {
 	# 修建时间，单位：天
 	construction_time = 730
 	
-	type = special	# 建筑的种类
+	type = regular	# 建筑的种类
 	
 	# 建筑使用哪个资产
 	asset = {
@@ -99,13 +83,11 @@ super_wisdom_god_star_building_1 = {
 		#  在县视图中显示的插图路径，纹理可以在GUI中访问："[Holding.GetIllustration]"
 		illustration = "path/to/image.dds"
 	}
+
+
+	# 这个建筑解锁的下一个建筑链中的建筑。
+	next_building = super_wisdom_god_star_building_2
 	
-	# 这个建筑是否启用？如果不启用，它不会给持有者带来任何效果，也不能被建造（下面参见 can_construct*）。
-	# 如果 is_graphical_background = yes，这将控制是否可以在省份中显示该建筑。
-	# 作用域说明：root 代表省份；scope:holder 是省份的持有者； county 是省份所属的县级标题。
-	is_enabled = {
-		always = yes
-	}
 	
 	# 建筑是否可以被建造。
 	# 如果你希望统治者在获得土地后可以“使用”该建筑，但不允许他们建造它，那么请使用此选项而不是 is_enabled。
@@ -114,29 +96,22 @@ super_wisdom_god_star_building_1 = {
 	# 如果 is_graphical_background = yes，则不使用此选项。
 	# 作用域说明：root 代表省份；scope:holder 是省份的持有者；county 是省份所属的县级标题。
 	can_construct_potential = {
-		always = yes
+		root = {
+			this = title:b_constantinople.title_province
+		}
 	}
 	can_construct = {
-		always = yes
+		root = {
+			this = title:b_constantinople.title_province
+		}
 	}
 	
 	# 建筑的花费
 	cost = { 
-		gold = {
-			value = 300
-			if = {
-				limit = {
-					scope:holder = {
-						is_ai = no
-					}	
-				}
-				add = 700
-			}
-		}
+		gold = 300
 	}
 	
-	# 这个建筑解锁的下一个建筑链中的建筑。
-	next_building = super_wisdom_god_star_building_2
+
 
 	# 建筑间接提供效果的自定义描述。
 	# root指的是建筑所在的省份。
@@ -164,16 +139,15 @@ super_wisdom_god_star_building_1 = {
 		base = 100
 	}
 	
-	# 如果设置为是，该建筑将被用来确定应该显示哪个背景资源（墙壁/没有墙壁等）
-	is_graphical_background = no
+
 }
 
 super_wisdom_god_star_building_2 = {	
 	
 	# 修建时间，单位：天
-	construction_time = 730
+	construction_time = 1460
 	
-	type = special	# 建筑的种类
+	type = regular	# 建筑的种类
 	
 	# 建筑使用哪个资产
 	asset = {
@@ -184,13 +158,9 @@ super_wisdom_god_star_building_2 = {
 		#  在县视图中显示的插图路径，纹理可以在GUI中访问："[Holding.GetIllustration]"
 		illustration = "path/to/image.dds"
 	}
-	
-	# 这个建筑是否启用？如果不启用，它不会给持有者带来任何效果，也不能被建造（下面参见 can_construct*）。
-	# 如果 is_graphical_background = yes，这将控制是否可以在省份中显示该建筑。
-	# 作用域说明：root 代表省份；scope:holder 是省份的持有者； county 是省份所属的县级标题。
-	is_enabled = {
-		always = yes
-	}
+
+	# 这个建筑解锁的下一个建筑链中的建筑。
+	next_building = super_wisdom_god_star_building_3
 	
 	# 建筑是否可以被建造。
 	# 如果你希望统治者在获得土地后可以“使用”该建筑，但不允许他们建造它，那么请使用此选项而不是 is_enabled。
@@ -199,29 +169,22 @@ super_wisdom_god_star_building_2 = {
 	# 如果 is_graphical_background = yes，则不使用此选项。
 	# 作用域说明：root 代表省份；scope:holder 是省份的持有者；county 是省份所属的县级标题。
 	can_construct_potential = {
-		always = yes
+		root = {
+			this = title:b_constantinople.title_province
+		}
 	}
 	can_construct = {
-		always = yes
+		root = {
+			this = title:b_constantinople.title_province
+		}
 	}
 	
 	# 建筑的花费
 	cost = { 
-		gold = {
-			value = 300
-			if = {
-				limit = {
-					scope:holder = {
-						is_ai = no
-					}	
-				}
-				add = 700
-			}
-		}
+		gold = 800
 	}
 	
-	# 这个建筑解锁的下一个建筑链中的建筑。
-	next_building = super_wisdom_god_star_building_3
+
 
 	# 建筑间接提供效果的自定义描述。
 	# root指的是建筑所在的省份。
@@ -249,16 +212,15 @@ super_wisdom_god_star_building_2 = {
 		base = 100
 	}
 	
-	# 如果设置为是，该建筑将被用来确定应该显示哪个背景资源（墙壁/没有墙壁等）
-	is_graphical_background = no
+
 }
 
 super_wisdom_god_star_building_3 = {	
 	
 	# 修建时间，单位：天
-	construction_time = 730
+	construction_time = 2190
 	
-	type = special	# 建筑的种类
+	type = regular	# 建筑的种类
 	
 	# 建筑使用哪个资产
 	asset = {
@@ -270,12 +232,8 @@ super_wisdom_god_star_building_3 = {
 		illustration = "path/to/image.dds"
 	}
 	
-	# 这个建筑是否启用？如果不启用，它不会给持有者带来任何效果，也不能被建造（下面参见 can_construct*）。
-	# 如果 is_graphical_background = yes，这将控制是否可以在省份中显示该建筑。
-	# 作用域说明：root 代表省份；scope:holder 是省份的持有者； county 是省份所属的县级标题。
-	is_enabled = {
-		always = yes
-	}
+	# 这个建筑解锁的下一个建筑链中的建筑。
+	next_building = super_wisdom_god_star_building_4
 	
 	# 建筑是否可以被建造。
 	# 如果你希望统治者在获得土地后可以“使用”该建筑，但不允许他们建造它，那么请使用此选项而不是 is_enabled。
@@ -284,29 +242,22 @@ super_wisdom_god_star_building_3 = {
 	# 如果 is_graphical_background = yes，则不使用此选项。
 	# 作用域说明：root 代表省份；scope:holder 是省份的持有者；county 是省份所属的县级标题。
 	can_construct_potential = {
-		always = yes
+		root = {
+			this = title:b_constantinople.title_province
+		}
 	}
 	can_construct = {
-		always = yes
+		root = {
+			this = title:b_constantinople.title_province
+		}
 	}
 	
 	# 建筑的花费
 	cost = { 
-		gold = {
-			value = 300
-			if = {
-				limit = {
-					scope:holder = {
-						is_ai = no
-					}	
-				}
-				add = 700
-			}
-		}
+		gold = 1200
 	}
 	
-	# 这个建筑解锁的下一个建筑链中的建筑。
-	next_building = super_wisdom_god_star_building_4
+	
 
 	# 建筑间接提供效果的自定义描述。
 	# root指的是建筑所在的省份。
@@ -334,16 +285,15 @@ super_wisdom_god_star_building_3 = {
 		base = 100
 	}
 	
-	# 如果设置为是，该建筑将被用来确定应该显示哪个背景资源（墙壁/没有墙壁等）
-	is_graphical_background = no
+
 }
 
 super_wisdom_god_star_building_4 = {	
 	
 	# 修建时间，单位：天
-	construction_time = 730
+	construction_time = 2920
 	
-	type = special	# 建筑的种类
+	type = regular	# 建筑的种类
 	
 	# 建筑使用哪个资产
 	asset = {
@@ -354,13 +304,10 @@ super_wisdom_god_star_building_4 = {
 		#  在县视图中显示的插图路径，纹理可以在GUI中访问："[Holding.GetIllustration]"
 		illustration = "path/to/image.dds"
 	}
+
+	# 这个建筑解锁的下一个建筑链中的建筑。
+	next_building = super_wisdom_god_star_building_5
 	
-	# 这个建筑是否启用？如果不启用，它不会给持有者带来任何效果，也不能被建造（下面参见 can_construct*）。
-	# 如果 is_graphical_background = yes，这将控制是否可以在省份中显示该建筑。
-	# 作用域说明：root 代表省份；scope:holder 是省份的持有者； county 是省份所属的县级标题。
-	is_enabled = {
-		always = yes
-	}
 	
 	# 建筑是否可以被建造。
 	# 如果你希望统治者在获得土地后可以“使用”该建筑，但不允许他们建造它，那么请使用此选项而不是 is_enabled。
@@ -369,29 +316,22 @@ super_wisdom_god_star_building_4 = {
 	# 如果 is_graphical_background = yes，则不使用此选项。
 	# 作用域说明：root 代表省份；scope:holder 是省份的持有者；county 是省份所属的县级标题。
 	can_construct_potential = {
-		always = yes
+		root = {
+			this = title:b_constantinople.title_province
+		}
 	}
 	can_construct = {
-		always = yes
+		root = {
+			this = title:b_constantinople.title_province
+		}
 	}
 	
 	# 建筑的花费
 	cost = { 
-		gold = {
-			value = 300
-			if = {
-				limit = {
-					scope:holder = {
-						is_ai = no
-					}	
-				}
-				add = 700
-			}
-		}
+		gold = 1700
 	}
 	
-	# 这个建筑解锁的下一个建筑链中的建筑。
-	next_building = super_wisdom_god_star_building_5
+	
 
 	# 建筑间接提供效果的自定义描述。
 	# root指的是建筑所在的省份。
@@ -419,16 +359,15 @@ super_wisdom_god_star_building_4 = {
 		base = 100
 	}
 	
-	# 如果设置为是，该建筑将被用来确定应该显示哪个背景资源（墙壁/没有墙壁等）
-	is_graphical_background = no
+
 }
 
 super_wisdom_god_star_building_5 = {	
 	
 	# 修建时间，单位：天
-	construction_time = 730
+	construction_time = 3650
 	
-	type = special	# 建筑的种类
+	type = regular	# 建筑的种类
 	
 	# 建筑使用哪个资产
 	asset = {
@@ -440,12 +379,6 @@ super_wisdom_god_star_building_5 = {
 		illustration = "path/to/image.dds"
 	}
 	
-	# 这个建筑是否启用？如果不启用，它不会给持有者带来任何效果，也不能被建造（下面参见 can_construct*）。
-	# 如果 is_graphical_background = yes，这将控制是否可以在省份中显示该建筑。
-	# 作用域说明：root 代表省份；scope:holder 是省份的持有者； county 是省份所属的县级标题。
-	is_enabled = {
-		always = yes
-	}
 	
 	# 建筑是否可以被建造。
 	# 如果你希望统治者在获得土地后可以“使用”该建筑，但不允许他们建造它，那么请使用此选项而不是 is_enabled。
@@ -454,29 +387,20 @@ super_wisdom_god_star_building_5 = {
 	# 如果 is_graphical_background = yes，则不使用此选项。
 	# 作用域说明：root 代表省份；scope:holder 是省份的持有者；county 是省份所属的县级标题。
 	can_construct_potential = {
-		always = yes
+		root = {
+			this = title:b_constantinople.title_province
+		}
 	}
 	can_construct = {
-		always = yes
+		root = {
+			this = title:b_constantinople.title_province
+		}
 	}
 	
 	# 建筑的花费
 	cost = { 
-		gold = {
-			value = 300
-			if = {
-				limit = {
-					scope:holder = {
-						is_ai = no
-					}	
-				}
-				add = 700
-			}
-		}
+		gold = 2300
 	}
-	
-	# 这个建筑解锁的下一个建筑链中的建筑。
-	#next_building = castle_02
 
 	# 建筑间接提供效果的自定义描述。
 	# root指的是建筑所在的省份。
@@ -503,7 +427,5 @@ super_wisdom_god_star_building_5 = {
 	ai_value = {
 		base = 100
 	}
-	
-	# 如果设置为是，该建筑将被用来确定应该显示哪个背景资源（墙壁/没有墙壁等）
-	is_graphical_background = no
+
 }
