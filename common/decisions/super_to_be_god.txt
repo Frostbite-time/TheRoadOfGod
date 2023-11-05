@@ -178,7 +178,7 @@ super_to_be_wisdom_god = {
 		custom_tooltip = you_get_wise_god_effect
 		hidden_effect = {
 			trigger_event = {
-				id = ssdsd.0001
+				id = super_be_wisdom_god_events.0003
 				days = { 2 3 }
 			}
 		}
