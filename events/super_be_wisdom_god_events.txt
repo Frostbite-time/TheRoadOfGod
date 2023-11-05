@@ -1,0 +1,36 @@
+namespace = super_be_wisdom_god_events
+
+super_be_wisdom_god_events.0001 = {
+	type = character_event
+    title = super_be_wisdom_god_events.0001.t
+    desc = super_be_wisdom_god_events.0001.desc
+    theme = realm
+    override_background = {
+        reference = super_to_be_wisdom_god_1
+    }
+    # other event details...
+    
+
+    option = {
+        name = super_be_wisdom_god_events.0001.1
+        # option details...
+    }
+}
+
+super_be_wisdom_god_events.0002 = {
+	type = character_event
+    title = super_be_wisdom_god_events.0002.t
+    desc = super_be_wisdom_god_events.0002.desc
+    theme = realm
+    override_background = {
+        reference = super_to_be_wisdom_god_1
+    }
+    # other event details...
+    
+
+    option = {
+        name = super_be_wisdom_god_events.0002.1
+		custom_tooltip = super_could_get_wisdom_god_effect
+        # option details...
+    }
+}

@@ -30,35 +30,20 @@
 			this = title:b_constantinople.title_province
 		}
 	}
+
+	#当前伯爵领
+	county_modifier = {
+		development_growth_factor = 0.1
+	}
 	
 	# 建筑的花费
 	cost = { 
 		gold = 100
 	}
-	
-	
 
-	# 建筑间接提供效果的自定义描述。
-	# root指的是建筑所在的省份。
-	effect_desc = super_wisdom_god_building_desc
-	
-	# 应用于建筑的所有者的修饰符。
-	character_modifier = {
-	}
-	
-	# 应用于建筑物所在省份的修饰符。
-	province_modifier = {
-	}
-	
 	# 建筑的flag
 	flag = super_wisdom_god_building_flag_0
 
-	# 建筑完成时应用的效果
-	# scopes: root 指的是建筑的省份
-	on_complete = {
-		
-	}
-	
 	# AI对建筑的欣赏程度
 	ai_value = {
 		base = 100
@@ -111,28 +96,27 @@ super_wisdom_god_star_building_1 = {
 		gold = 300
 	}
 	
-
-
-	# 建筑间接提供效果的自定义描述。
-	# root指的是建筑所在的省份。
-	effect_desc = super_wisdom_god_building_desc
-	
 	# 应用于建筑的所有者的修饰符。
 	character_modifier = {
+		prowess = 4
+		diplomacy = 4
+		martial = 4
+		stewardship = 4
+		intrigue = 4
+		learning = 4
 	}
 	
-	# 应用于建筑物所在省份的修饰符。
+	# 此处地产
 	province_modifier = {
+		monthly_income = 10
+	}
+	#当前伯爵领
+	county_modifier = {
+		development_growth_factor = 0.2
 	}
 	
 	# 建筑的flag
 	flag = super_wisdom_god_building_flag_1
-
-	# 建筑完成时应用的效果
-	# scopes: root 指的是建筑的省份
-	on_complete = {
-		
-	}
 	
 	# AI对建筑的欣赏程度
 	ai_value = {
@@ -184,28 +168,27 @@ super_wisdom_god_star_building_2 = {
 		gold = 800
 	}
 	
-
-
-	# 建筑间接提供效果的自定义描述。
-	# root指的是建筑所在的省份。
-	effect_desc = super_wisdom_god_building_desc
-	
 	# 应用于建筑的所有者的修饰符。
 	character_modifier = {
+		prowess = 8
+		diplomacy = 8
+		martial = 8
+		stewardship = 8
+		intrigue = 8
+		learning = 8
 	}
 	
-	# 应用于建筑物所在省份的修饰符。
+	# 此处地产
 	province_modifier = {
+		monthly_income = 20
+	}
+	#当前伯爵领
+	county_modifier = {
+		development_growth_factor = 0.4
 	}
 	
 	# 建筑的flag
 	flag = super_wisdom_god_building_flag_2
-
-	# 建筑完成时应用的效果
-	# scopes: root 指的是建筑的省份
-	on_complete = {
-		
-	}
 	
 	# AI对建筑的欣赏程度
 	ai_value = {
@@ -252,34 +235,37 @@ super_wisdom_god_star_building_3 = {
 		}
 	}
 	
+	# 建筑间接提供效果的自定义描述。
+	# root指的是建筑所在的省份。
+	effect_desc = super_wisdom_god_building_desc_3
+
 	# 建筑的花费
 	cost = { 
 		gold = 1200
 	}
 	
-	
-
-	# 建筑间接提供效果的自定义描述。
-	# root指的是建筑所在的省份。
-	effect_desc = super_wisdom_god_building_desc
-	
 	# 应用于建筑的所有者的修饰符。
 	character_modifier = {
+		prowess = 12
+		diplomacy = 12
+		martial = 12
+		stewardship = 12
+		intrigue = 12
+		learning = 12
 	}
 	
-	# 应用于建筑物所在省份的修饰符。
+	# 此处地产
 	province_modifier = {
+		monthly_income = 30
+	}
+	#当前伯爵领
+	county_modifier = {
+		development_growth_factor = 0.6
 	}
 	
 	# 建筑的flag
 	flag = super_wisdom_god_building_flag_3
 
-	# 建筑完成时应用的效果
-	# scopes: root 指的是建筑的省份
-	on_complete = {
-		
-	}
-	
 	# AI对建筑的欣赏程度
 	ai_value = {
 		base = 100
@@ -331,18 +317,23 @@ super_wisdom_god_star_building_4 = {
 		gold = 1700
 	}
 	
-	
-
-	# 建筑间接提供效果的自定义描述。
-	# root指的是建筑所在的省份。
-	effect_desc = super_wisdom_god_building_desc
-	
 	# 应用于建筑的所有者的修饰符。
 	character_modifier = {
+		prowess = 16
+		diplomacy = 16
+		martial = 16
+		stewardship = 16
+		intrigue = 16
+		learning = 16
 	}
 	
-	# 应用于建筑物所在省份的修饰符。
+	# 此处地产
 	province_modifier = {
+		monthly_income = 40
+	}
+	#当前伯爵领
+	county_modifier = {
+		development_growth_factor = 0.8
 	}
 	
 	# 建筑的flag
@@ -351,7 +342,9 @@ super_wisdom_god_star_building_4 = {
 	# 建筑完成时应用的效果
 	# scopes: root 指的是建筑的省份
 	on_complete = {
-		
+		scope:holder = {
+			trigger_event = super_be_wisdom_god_events.0001
+		}
 	}
 	
 	# AI对建筑的欣赏程度
@@ -404,23 +397,36 @@ super_wisdom_god_star_building_5 = {
 
 	# 建筑间接提供效果的自定义描述。
 	# root指的是建筑所在的省份。
-	effect_desc = super_wisdom_god_building_desc
+	effect_desc = super_wisdom_god_building_desc_5
 	
 	# 应用于建筑的所有者的修饰符。
 	character_modifier = {
+		prowess = 20
+		diplomacy = 20
+		martial = 20
+		stewardship = 20
+		intrigue = 20
+		learning = 20
+		
 	}
 	
-	# 应用于建筑物所在省份的修饰符。
+	# 此处地产
 	province_modifier = {
+		monthly_income = 50
 	}
-	
+	#当前伯爵领
+	county_modifier = {
+		development_growth_factor = 1
+	}
 	# 建筑的flag
 	flag = super_wisdom_god_building_flag_5
 
 	# 建筑完成时应用的效果
 	# scopes: root 指的是建筑的省份
 	on_complete = {
-		
+		scope:holder = {
+			trigger_event = super_be_wisdom_god_events.0002
+		}
 	}
 	
 	# AI对建筑的欣赏程度
