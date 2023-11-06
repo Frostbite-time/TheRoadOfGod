@@ -201,17 +201,37 @@ super_to_be_nature_god = {
 	ai_check_interval = 3 #ai的检查周期，单位是 月
 	
 	cost = {          #进行决议的消耗
+		gold = {
+			value = 2000
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add = 3000
+			}
+		}
 	}
 
 	cooldown = { days = 1825 } #决议的冷却时间
 	
 	is_shown = {       #显示决议的条件
 		is_star_power_god = no
-		
+		has_trait = saint_in_flesh_traits
+		has_trait = angel_traits
 	}	
 
 	is_valid = {
 		not_is_anyone_nature_god = yes
+		is_have_sage_stone = yes
+		trigger_if = {
+			limit = { 
+				is_ai = yes
+			}
+			has_least_five_foest_province = yes
+		}
+		trigger_else = {
+			has_least_fifty_foest_province = yes
+		}
 	}
 	
 	ai_potential = {     #ai是否检测这个决议
@@ -229,7 +249,7 @@ super_to_be_nature_god = {
 				days = { 2 3 }
 			}
 		}
-		#remove_sage_stone = yes	
+		remove_sage_stone = yes	
 	}
 }
 

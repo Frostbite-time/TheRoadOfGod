@@ -57,3 +57,11 @@ is_have_sage_stone = {
     global = CAN_IS_HAVE_SAGE_STONE
     global_not = NOT_CAN_IS_HAVE_SAGE_STONE
 }
+#至少拥有5个直属森林男爵领
+has_least_five_foest_province = {
+    global = CAN_HAS_LEAST_FIVE_FOEST_PROVINCE
+}
+#至少拥有15个直属森林男爵领
+has_least_fifty_foest_province = {
+    global = CAN_HAS_LEAST_FIFTY_FOEST_PROVINCE
+}

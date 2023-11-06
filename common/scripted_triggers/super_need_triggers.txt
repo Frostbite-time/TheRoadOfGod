@@ -176,3 +176,39 @@ is_have_fifty_prisoner = {
 		any_prisoner = { count >= 20 }
 	}
 }
+
+#至少拥有5个直属森林男爵领
+has_least_five_foest_province = {
+	OR = {
+		any_directly_owned_province = {
+			count >= 5
+			terrain = forest
+		}
+		any_directly_owned_province = {
+			count >= 5
+			terrain = taiga
+		}
+		any_directly_owned_province = {
+			count >= 5
+			terrain = jungle
+		}
+	}
+}	
+
+#至少拥有15个直属森林男爵领
+has_least_fifty_foest_province = {
+	OR = {
+		any_directly_owned_province = {
+			count >= 15
+			terrain = forest
+		}
+		any_directly_owned_province = {
+			count >= 15
+			terrain = taiga
+		}
+		any_directly_owned_province = {
+			count >= 15
+			terrain = jungle
+		}
+	}
+}
