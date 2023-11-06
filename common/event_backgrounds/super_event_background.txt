@@ -85,3 +85,36 @@ super_to_be_wisdom_god_5 = {
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}
 }
+
+#成为自然之神  系列
+super_to_be_nature_god_1 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/super_to_be_nature_god_1.dds"
+		environment = "environment_frontend_west_main"
+		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
+	}
+}
+
+super_to_be_nature_god_2 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/super_to_be_nature_god_2.dds"
+		environment = "environment_frontend_west_main"
+		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
+	}
+}
+
+super_to_be_nature_god_3 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/bp1_jungle.dds"
+		environment = "environment_frontend_west_main"
+		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
+	}
+}
+
+super_to_be_nature_god_4 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/super_to_be_nature_god_4.dds"
+		environment = "environment_frontend_west_main"
+		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
+	}
+}

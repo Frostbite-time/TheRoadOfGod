@@ -1,0 +1,97 @@
+﻿namespace = super_be_nature_events
+
+super_be_nature_events.0001 = {
+    type = character_event
+    title = super_be_nature_events.0001.t
+    desc = super_be_nature_events.0001.desc
+    theme = realm
+    override_background = {
+        reference = super_to_be_nature_god_1
+    }
+    # other event details...
+
+    option = {
+        name = super_be_nature_events.0001.1
+        trigger_event = {
+            id = super_be_nature_events.0002
+        }
+            # option details...
+    }
+}
+
+
+super_be_nature_events.0002 = {
+    type = character_event
+    title = super_be_nature_events.0002.t
+    desc = super_be_nature_events.0002.desc
+    theme = realm
+    override_background = {
+        reference = super_to_be_nature_god_2
+    }
+    # other event details...
+
+    option = {
+        name = super_be_nature_events.0002.1
+
+        trigger_event = {
+            id = super_be_nature_events.0003
+            days = { 2 10 }
+        }
+            # option details...
+    }
+}
+
+
+super_be_nature_events.0003 = {
+    type = character_event
+    title = super_be_nature_events.0003.t
+    desc = super_be_nature_events.0003.desc
+    theme = realm
+    override_background = {
+        reference = super_to_be_nature_god_3
+    }
+    # other event details...
+
+    option = {
+        name = super_be_nature_events.0003.1
+        add_trait = super_nature_god
+        root = {
+            save_scope_as = super_nature_god_now
+        }
+
+        every_living_character = {
+            limit = {
+                is_landed = yes
+                NOT = {
+                    has_trait = super_nature_god
+                }
+            }
+            trigger_event = {
+                id = super_be_nature_events.0004
+            }
+        }
+            # option details...
+    }
+}
+
+
+super_be_nature_events.0004 = {
+    type = character_event
+    title = super_be_nature_events.0004.t
+    desc = super_be_nature_events.0004.desc
+    theme = realm
+    override_background = {
+        reference = super_to_be_nature_god_4
+    }
+    # other event details...
+    left_portrait = scope:super_nature_god_now
+    right_portrait = {
+        character = root
+        animation = fear
+    }
+
+    option = {
+        name = super_be_nature_events.0004.1
+        # option details...
+    }
+}
