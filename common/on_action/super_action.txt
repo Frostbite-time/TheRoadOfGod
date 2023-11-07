@@ -1,7 +1,7 @@
 #游戏开始的时候触发的action
 on_game_start = {
 	on_actions = {
-		super_add_building_slot_constantinople
+		super_add_building_slot_constantinople  #为君士坦丁堡添加星盘
 	}
 }
 #每年年初触发的自定义action有哪些  没有root
@@ -325,6 +325,8 @@ super_faith_legendary_trait_pulse = {
 	}
 }
 
+
+#为君士坦丁堡添加星盘
 super_add_building_slot_constantinople = {
 	effect = {
 		title:b_constantinople.title_province = {
@@ -346,6 +348,20 @@ super_add_building_slot_constantinople = {
 			}
 			title:b_constantinople.title_province = {
 				add_building = super_wisdom_god_star_building_2
+			}	
+		}
+	}
+}
+
+#海神权杖现世！
+the_sea_scepter_uncover = {
+	effect = {
+		if = {
+			limit = {
+				current_date >= 1112.1.1
+			}
+			title:b_venezia.owner = {
+				trigger_event = super_be_sea_god_events.0001
 			}	
 		}
 	}

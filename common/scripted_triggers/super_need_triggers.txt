@@ -196,18 +196,18 @@ has_least_five_foest_province = {
 }	
 
 #至少拥有15个直属森林男爵领
-has_least_fifty_foest_province = {
+has_least_twelve_foest_province = {
 	OR = {
 		any_directly_owned_province = {
-			count >= 15
+			count >= 12
 			terrain = forest
 		}
 		any_directly_owned_province = {
-			count >= 15
+			count >= 12
 			terrain = taiga
 		}
 		any_directly_owned_province = {
-			count >= 15
+			count >= 12
 			terrain = jungle
 		}
 	}

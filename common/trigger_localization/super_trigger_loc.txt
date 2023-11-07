@@ -62,6 +62,6 @@ has_least_five_foest_province = {
     global = CAN_HAS_LEAST_FIVE_FOEST_PROVINCE
 }
 #至少拥有15个直属森林男爵领
-has_least_fifty_foest_province = {
-    global = CAN_HAS_LEAST_FIFTY_FOEST_PROVINCE
+has_least_twelve_foest_province = {
+    global = CAN_HAS_LEAST_TWELVE_FOEST_PROVINCE
 }
