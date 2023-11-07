@@ -1,3 +1,9 @@
-﻿sage_stone = {
+﻿#贤者之石
+sage_stone = {
 	icon = "sage_stone_name.dds"
+}
+
+#海神权杖
+neptune_scepter = {
+	icon = "neptune_scepter_name.dds"
 }

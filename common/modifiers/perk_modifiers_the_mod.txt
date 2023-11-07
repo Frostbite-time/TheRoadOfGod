@@ -138,3 +138,19 @@ god_hated = {
 	opinion_of_same_faith = -10
 	opinion_of_different_faith = -10
 }
+
+#海神权杖
+neptune_scepter_modifier = {
+	icon = magic_positive
+	prowess = 50
+	no_prowess_loss_from_age = yes
+	health = 3
+	vassal_limit = 10
+	domain_limit = 5
+	domain_tax_mult = 0.10
+	men_at_arms_maintenance_per_dread_mult = -0.01
+	short_reign_duration_mult = -0.5
+	knight_limit = 20
+	knight_effectiveness_mult = 0.3
+	mercenary_hire_cost_mult = -0.3
+}

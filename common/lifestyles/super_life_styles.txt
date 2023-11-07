@@ -31,5 +31,5 @@ super_lifestyle = {
 		}
 	}
 	xp_per_level = 1000   #每个技能点所需经验
-	base_xp_gain = 25     #每月基础经验获取
+	base_xp_gain = 30     #每月基础经验获取
 }
