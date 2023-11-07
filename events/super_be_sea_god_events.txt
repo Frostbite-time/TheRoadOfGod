@@ -13,43 +13,47 @@ super_be_sea_god_events.0001 = {
 	}
     left_portrait = root
     immediate = {
-        create_artifact = {
-			name = neptune_scepter_name
-			description = neptune_scepter_desc
-			type = axe
-			visuals = neptune_scepter
-			rarity = illustrious
-			decaying = no
-			quality = 300
-			wealth = 300
-			modifier = neptune_scepter_modifier
-			max_durability = 1000
-			durability = 1000
-			save_scope_as = newly_created_artifact
-			template = neptune_scepter_template
-			save_scope_as = newly_created_artifact
-		}
+        root = {
+            create_artifact = {
+                name = neptune_scepter_name
+                description = neptune_scepter_desc
+                type = axe
+                visuals = neptune_scepter
+                rarity = illustrious
+                decaying = no
+                quality = 300
+                wealth = 300
+                modifier = neptune_scepter_modifier
+                max_durability = 1000
+                durability = 1000
+                save_scope_as = newly_created_artifact
+                template = neptune_scepter_template
+                save_scope_as = newly_created_artifact
+            }
+        }    
     }
     option = {
         name = super_be_sea_god_events.0001.1
-
+        root = {
+            save_scope_as = super_sea_scepter_holder
+        }  
         every_living_character = {   #确保拿到宣称的都是野心家
             limit = {
                 is_landed = yes
                 is_adult = yes
                 is_available_adult = yes
 			    is_imprisoned = no
+                NOT = {
+                    any_character_artifact = {
+                        has_artifact_modifier = neptune_scepter_modifier
+                    }
+                }    
             }
             trigger_event = {
                 days = { 5 20 }
                 id = super_be_sea_god_events.0002
             }
         }
-            
-            # option details...
-    }
-    after = {
-        save_scope_as = super_sea_scepter_holder
     }
 }
 
@@ -60,11 +64,41 @@ super_be_sea_god_events.0002 = {
     title = super_be_sea_god_events.0002.t
     desc = super_be_sea_god_events.0002.desc
     theme = realm
+    right_portrait = scope:super_sea_scepter_holder
     # other event details...
 
     option = {
         name = super_be_sea_god_events.0002.1
         # option details...
         add_personal_artifact_claim = scope:newly_created_artifact
+        add_unpressed_claim = title:c_venezia
     }
 }
+
+#获取海神之力  提醒持有者
+super_be_sea_god_events.0003 = {
+    type = character_event
+    title = super_be_sea_god_events.0003.t
+    desc = super_be_sea_god_events.0003.desc
+    theme = realm
+    left_portrait = root
+    artifact = {
+		target = scope:super_neptune_scepter_now
+		position = lower_right_portrait
+	}
+    # other event details...
+    immediate = {
+        random_character_artifact = {
+            limit = {
+                has_artifact_modifier = neptune_scepter_modifier
+            }
+            save_scope_as = super_neptune_scepter_now
+        }
+    }
+    option = {
+        name = super_be_sea_god_events.0003.1
+        # option details...
+        custom_tooltip = super_can_get_sea_god_power_effect
+    }
+}
+

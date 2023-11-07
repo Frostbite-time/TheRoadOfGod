@@ -55,6 +55,7 @@ super_be_nature_events.0003 = {
     option = {
         name = super_be_nature_events.0003.1
         add_trait = super_nature_god
+        super_remove_all_bad_trait = yes
         root = {
             save_scope_as = super_nature_god_now
         }

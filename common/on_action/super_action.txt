@@ -9,6 +9,8 @@ yearly_global_pulse = {
 	on_actions = {
 		assistance_from_stars_pulse   #仰望星空的星空庇护赋予
 		confilct_effect_pulse		  #触发无序的效果的实现
+		the_sea_scepter_uncover       #获取海神权杖
+		super_can_get_sea_god_power_action #可以获取海神之力
 	}
 }
 
@@ -358,11 +360,35 @@ the_sea_scepter_uncover = {
 	effect = {
 		if = {
 			limit = {
-				current_date >= 1112.1.1
+				current_date > 1112.1.1
+				NOT = { has_global_variable = super_sea_scepter_uncovered }
 			}
-			title:b_venezia.owner = {
+			set_global_variable = {
+				name = super_sea_scepter_uncovered
+				value = yes
+			}
+			title:b_venezia.holder = {
 				trigger_event = super_be_sea_god_events.0001
 			}	
+		}
+	}
+}
+
+#可以获取海神之力
+super_can_get_sea_god_power_action = {
+	effect = {
+		if = {
+			limit = {
+				current_date > 1130.1.1
+			}
+			random_living_character = {
+				limit = {
+					any_character_artifact = {
+                        has_artifact_modifier = neptune_scepter_modifier
+                    }
+				}
+				trigger_event = super_be_sea_god_events.0003
+			}
 		}
 	}
 }
