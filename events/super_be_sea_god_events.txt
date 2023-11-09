@@ -28,7 +28,6 @@ super_be_sea_god_events.0001 = {
                 durability = 1000
                 save_scope_as = newly_created_artifact
                 template = neptune_scepter_template
-                save_scope_as = newly_created_artifact
             }
         }    
     }
@@ -65,6 +64,10 @@ super_be_sea_god_events.0002 = {
     desc = super_be_sea_god_events.0002.desc
     theme = realm
     right_portrait = scope:super_sea_scepter_holder
+    artifact = {
+		target = scope:newly_created_artifact
+		position = lower_left_portrait
+	}
     # other event details...
 
     option = {

@@ -333,6 +333,7 @@ super_to_be_sea_god = {
 		any_character_artifact = {
 			has_artifact_modifier = neptune_scepter_modifier
 		}
+		current_date > 1130.1.1
 	}	
 
 	is_valid = {

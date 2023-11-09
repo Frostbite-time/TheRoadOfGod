@@ -15,7 +15,7 @@ god_arr_in = {
 	allowed_against_character = {
 	}
 	target_titles = all
-	target_title_tier = all
+	target_title_tier = kingdom
 	target_de_jure_regions_above = yes
 	ignore_effect = change_title_holder
 

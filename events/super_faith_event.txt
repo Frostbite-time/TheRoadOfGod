@@ -287,3 +287,32 @@ super_faith_event.0010 = {
 		brave_duel_effect = yes
 	}
 }
+
+
+#对角色进行无序效果的标记，用以触发无序
+super_faith_event.0011 = {
+	hidden = yes
+	type = character_event
+	immediate = {
+		if = {
+			limit = {
+				this.faith = {
+					has_doctrine = conflict_hope_unknow_causal
+				}
+			}
+			random_list = {
+				3 = {
+					trigger_event = {
+						id = super_faith_event.0006
+						years = 20
+					}
+				}
+				97 = {}
+			}
+			trigger_event = {
+				id = super_faith_event.0011
+				years = 20
+			}
+		}	
+	}
+}

@@ -44,7 +44,7 @@
 	# 建筑的flag
 	flag = super_wisdom_god_building_flag_0
 
-	# AI对建筑的欣赏程度
+	# AI对建筑的欣赏程度  这应该决定了AI是否优先修建该建筑(实测100是很高的值，如果有其他疑问应该去看原版文件)
 	ai_value = {
 		base = 100
 	}

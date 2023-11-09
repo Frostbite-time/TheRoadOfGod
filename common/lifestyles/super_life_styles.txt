@@ -4,7 +4,7 @@ super_lifestyle = {
 	is_highlighted = {	
 		has_trait = great_blood_traits    #被突出显示的条件
 	}
-	is_valid_showing_failures_only = {
+	is_valid_showing_failures_only = {		#利用开局设置的游戏规则来调整是否启用该生活方式
 		trigger_if = {
 			limit = {
 				has_game_rule = normal_super_mod

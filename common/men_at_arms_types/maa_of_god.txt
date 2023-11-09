@@ -998,10 +998,10 @@ highlander_god_high = {
 	can_recruit = {
 		has_trait = super_highlander_god
 	}
-	damage = 9999
-	toughness = 9999
-	pursuit = 9999
-	screen = 9999
+	damage = 99999
+	toughness = 99999
+	pursuit = 99999
+	screen = 99999
 	terrain_bonus = {
 	}
 	counters = {

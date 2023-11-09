@@ -31,21 +31,21 @@ on_join_war_as_secondary = {
 #当战争被转移到其他人身上时     可以用的作用域有root  scope:war   scope:defender   root指主要攻击者  scope:defender指新的防御者
 on_war_transferred = {
 	on_actions = {
-		super_faith_fight_pulse_2    #战以解忧进入战争状态后每月压力减10
+		super_faith_fight_pulse_2    #战以解忧进入战争状态后每月压力减10     
 	}
 }
 
 #当一场战斗结束后对胜利方进行调用   root是胜利方的combat_side    scope:wipe不清楚是什么
 on_combat_end_winner = {
 	on_actions = {
-		super_faith_legendary_trait_pulse
+		super_faith_legendary_trait_pulse     #传说的出现
 	}
 }
 
 #当一场战斗结束后对战败方进行调用   root是战败方的combat_side    scope:wipe不清楚是什么
 on_combat_end_loser = {
 	on_actions = {
-		super_faith_legendary_trait_pulse
+		super_faith_legendary_trait_pulse	#传说的出现
 	}
 }
 
@@ -156,7 +156,7 @@ super_faith_fight_pulse_2 = {      #战以解忧进入战争状态后每月压�
 	}
 }
 
-confilct_effect_pulse = {       #触发无序的效果的实现
+confilct_effect_pulse = {       #触发无序的效果的实现    目前应该已经解决性能问题
 	effect = {
 		every_living_character = {	
 			if = {
@@ -164,143 +164,24 @@ confilct_effect_pulse = {       #触发无序的效果的实现
 					this.faith = {
 						has_doctrine = conflict_hope_unknow_causal
 					}
-					NAND = {
-						has_character_flag = confilct_super_1
-						has_character_flag = confilct_super_2
-						has_character_flag = confilct_super_3
-						has_character_flag = confilct_super_4
-						has_character_flag = confilct_super_5
-						has_character_flag = confilct_super_6
-						has_character_flag = confilct_super_7
-						has_character_flag = confilct_super_8
-						has_character_flag = confilct_super_9
-						has_character_flag = confilct_super_10
-						has_character_flag = confilct_super_11
-						has_character_flag = confilct_super_12
-						has_character_flag = confilct_super_13
-						has_character_flag = confilct_super_14
-						has_character_flag = confilct_super_15
-						has_character_flag = confilct_super_16
-						has_character_flag = confilct_super_17
-						has_character_flag = confilct_super_18
-						has_character_flag = confilct_super_19
-						has_character_flag = confilct_super_20
+				}	
+				if = {
+					limit = {
+						has_character_flag = confilct_effect_pulse_is_triggered_flag
 					}
 				}
-				add_character_flag = confilct_super_1
-			}
-			else_if = {
-				limit = { has_character_flag = confilct_super_1 }
-				add_character_flag = confilct_super_2
-				remove_character_flag = confilct_super_1
-			}
-			else_if = {
-				limit = { has_character_flag = confilct_super_2 }
-				add_character_flag = confilct_super_3
-				remove_character_flag = confilct_super_2
-			}
-			else_if = {
-				limit = { has_character_flag = confilct_super_3 }
-				add_character_flag = confilct_super_4
-				remove_character_flag = confilct_super_3
-			}
-			else_if = {
-				limit = { has_character_flag = confilct_super_4 }
-				add_character_flag = confilct_super_5
-				remove_character_flag = confilct_super_4
-			}
-			else_if = {
-				limit = { has_character_flag = confilct_super_5 }
-				add_character_flag = confilct_super_6
-				remove_character_flag = confilct_super_5
-			}
-			else_if = {
-				limit = { has_character_flag = confilct_super_6 }
-				add_character_flag = confilct_super_7
-				remove_character_flag = confilct_super_6
-			}
-			else_if = {
-				limit = { has_character_flag = confilct_super_7 }
-				add_character_flag = confilct_super_8
-				remove_character_flag = confilct_super_7
-			}
-			else_if = {
-				limit = { has_character_flag = confilct_super_8 }
-				add_character_flag = confilct_super_9
-				remove_character_flag = confilct_super_8
-			}
-			else_if = {
-				limit = { has_character_flag = confilct_super_9 }
-				add_character_flag = confilct_super_10
-				remove_character_flag = confilct_super_9
-			}
-			else_if = {
-				limit = { has_character_flag = confilct_super_10 }
-				add_character_flag = confilct_super_11
-				remove_character_flag = confilct_super_10
-			}
-			else_if = {
-				limit = { has_character_flag = confilct_super_11 }
-				add_character_flag = confilct_super_12
-				remove_character_flag = confilct_super_11
-			}
-			else_if = {
-				limit = { has_character_flag = confilct_super_12 }
-				add_character_flag = confilct_super_13
-				remove_character_flag = confilct_super_12
-			}
-			else_if = {
-				limit = { has_character_flag = confilct_super_13 }
-				add_character_flag = confilct_super_14
-				remove_character_flag = confilct_super_13
-			}
-			else_if = {
-				limit = { has_character_flag = confilct_super_14 }
-				add_character_flag = confilct_super_15
-				remove_character_flag = confilct_super_14
-			}
-			else_if = {
-				limit = { has_character_flag = confilct_super_15 }
-				add_character_flag = confilct_super_16
-				remove_character_flag = confilct_super_15
-			}
-			else_if = {
-				limit = { has_character_flag = confilct_super_16 }
-				add_character_flag = confilct_super_17
-				remove_character_flag = confilct_super_16
-			}
-			else_if = {
-				limit = { has_character_flag = confilct_super_17 }
-				add_character_flag = confilct_super_18
-				remove_character_flag = confilct_super_17
-			}
-			else_if = {
-				limit = { has_character_flag = confilct_super_18 }
-				add_character_flag = confilct_super_19
-				remove_character_flag = confilct_super_18
-			}
-			else_if = {
-				limit = { has_character_flag = confilct_super_19 }
-				add_character_flag = confilct_super_20
-				remove_character_flag = confilct_super_19
-			}
-			else_if = {
-				limit = { has_character_flag = confilct_super_20 }
-				add_character_flag = confilct_super_1
-				remove_character_flag = confilct_super_20
-				random_list = {
-					3 = {
-						trigger_event = super_faith_event.0006
-					}
-					97 = {}
+				else = {
+					trigger_event = super_faith_event.0011
+					add_character_flag = confilct_effect_pulse_is_triggered_flag
 				}
+
 			}
 		}
 	}
 }
 
 
-#传说诞生的on_action实现
+#传说诞生的on_action实现    对该效果持保留态度，不一定是这个效果不生效，很大可能是自然游戏中没有ai进行教改的原因（目前状态：大概率有效）
 super_faith_legendary_trait_pulse = {
 	effect = {
 		root = {
@@ -328,7 +209,7 @@ super_faith_legendary_trait_pulse = {
 }
 
 
-#为君士坦丁堡添加星盘
+#为君士坦丁堡添加星盘		目前状态，完美使用
 super_add_building_slot_constantinople = {
 	effect = {
 		title:b_constantinople.title_province = {
@@ -355,7 +236,7 @@ super_add_building_slot_constantinople = {
 	}
 }
 
-#海神权杖现世！
+#海神权杖现世！			目前状态，完美使用
 the_sea_scepter_uncover = {
 	effect = {
 		if = {
@@ -374,7 +255,7 @@ the_sea_scepter_uncover = {
 	}
 }
 
-#可以获取海神之力
+#可以获取海神之力		目前状态，完美使用
 super_can_get_sea_god_power_action = {
 	effect = {
 		if = {

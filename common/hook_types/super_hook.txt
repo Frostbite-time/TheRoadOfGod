@@ -1,4 +1,5 @@
-﻿super_low_hook = {
+﻿#这几个是超能之路的牵制类型
+super_low_hook = {
 	expiration_days = 6650				
 }
 
