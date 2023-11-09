@@ -301,7 +301,7 @@ super_to_be_blielif_god = {
 		custom_tooltip = you_get_belief_god_effect
 		hidden_effect = {
 			trigger_event = {
-				id = ssdsd.0001
+				id = super_be_belief_god_events.0001
 				days = { 2 3 }
 			}
 		}

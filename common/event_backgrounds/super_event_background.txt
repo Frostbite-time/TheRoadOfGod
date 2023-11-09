@@ -135,3 +135,28 @@ super_to_be_sea_god_5 = {
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}
 }
+
+#成为信仰之神  系列
+super_to_be_belief_god_1 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/super_to_be_belief_god_1.dds"
+		environment = "environment_frontend_west_main"
+		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
+	}
+}
+
+super_to_be_belief_god_2 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/super_to_be_belief_god_2.dds"
+		environment = "environment_frontend_west_main"
+		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
+	}
+}
+
+super_to_be_belief_god_3 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/super_to_be_belief_god_3.dds"
+		environment = "environment_frontend_west_main"
+		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
+	}
+}

@@ -1,0 +1,93 @@
+﻿namespace = super_be_belief_god_events
+
+super_be_belief_god_events.0001 = {
+    type = character_event
+    title = super_be_belief_god_events.0001.t
+    desc = super_be_belief_god_events.0001.desc
+    theme = realm
+    # other event details...
+    override_background = {
+        reference = super_to_be_belief_god_1
+    }
+
+    option = {
+        name = super_be_belief_god_events.0001.1
+
+        trigger_event = {
+            id = super_be_belief_god_events.0002
+        }
+            # option details...
+    }
+}
+
+
+super_be_belief_god_events.0002 = {
+    type = character_event
+    title = super_be_belief_god_events.0002.t
+    desc = super_be_belief_god_events.0002.desc
+    theme = realm
+    # other event details...
+    override_background = {
+        reference = super_to_be_belief_god_2
+    }
+
+    option = {
+        name = super_be_belief_god_events.0002.1
+
+        trigger_event = {
+            id = super_be_belief_god_events.0003
+        }
+            # option details...
+    }
+}
+
+
+super_be_belief_god_events.0003 = {
+    type = character_event
+    title = super_be_belief_god_events.0003.t
+    desc = super_be_belief_god_events.0003.desc
+    theme = realm
+    # other event details...
+    override_background = {
+        reference = super_to_be_belief_god_3
+    }
+    immediate = {
+        add_trait = super_belief_god
+        save_scope_as = super_belief_god_now
+    }
+
+    option = {
+        name = super_be_belief_god_events.0003.1
+        # option details...
+    }
+
+    after = {
+        every_living_character = {
+            limit = {
+                is_landed = yes
+                NOT = {
+                    has_trait = super_belief_god
+                }
+            }
+            trigger_event = super_be_belief_god_events.0004
+        }
+    }
+}
+
+super_be_belief_god_events.0004 = {
+    type = character_event
+    title = super_be_belief_god_events.0004.t
+    desc = super_be_belief_god_events.0004.desc
+    theme = realm
+    # other event details...
+    left_portrait = root
+    right_portrait = {
+        character = scope:super_belief_god_now
+        animation = fear
+    }
+
+    option = {
+        name = super_be_belief_god_events.0004.1
+            # option details...
+    }
+}
