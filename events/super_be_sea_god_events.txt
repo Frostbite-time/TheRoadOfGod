@@ -102,3 +102,70 @@ super_be_sea_god_events.0003 = {
     }
 }
 
+#成为海洋之神
+super_be_sea_god_events.0004 = {
+    type = character_event
+    title = super_be_sea_god_events.0004.t
+    desc = super_be_sea_god_events.0004.desc
+    theme = realm
+    override_background = {
+        reference = super_to_be_sea_god_4
+    }
+    # other event details...
+    option = {
+        name = super_be_sea_god_events.0004.1
+        trigger_event = super_be_sea_god_events.0005
+    }
+}
+
+#成为海洋之神
+super_be_sea_god_events.0005 = {
+    type = character_event
+    title = super_be_sea_god_events.0005.t
+    desc = super_be_sea_god_events.0005.desc
+    theme = realm
+    override_background = {
+        reference = super_to_be_sea_god_5
+    }
+    # other event details...
+    immediate = {
+        add_trait = super_sea_god
+        super_remove_all_bad_trait = yes
+    }
+    option = {
+        name = super_be_sea_god_events.0005.1
+        save_scope_as = super_sea_god_now
+    }
+    after = {
+        every_living_character = {
+            limit = {
+                is_landed = yes
+                NOT = {
+                    has_trait = super_sea_god
+                }
+            }
+            trigger_event = {
+                id = super_be_sea_god_events.0006
+                days = { 2 10 }
+            }
+        }
+    }
+}
+
+#成为海洋之神   广播事件
+super_be_sea_god_events.0006 = {
+    type = character_event
+    title = super_be_sea_god_events.0006.t
+    desc = super_be_sea_god_events.0006.desc
+    theme = realm
+    left_portrait = scppe:super_sea_god_now
+    right_portrait = {
+        character = root
+        animation = fear
+    }
+    # other event details...
+    option = {
+        name = super_be_sea_god_events.0006.1
+    }
+}
+
