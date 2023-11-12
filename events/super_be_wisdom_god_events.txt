@@ -1,4 +1,4 @@
-namespace = super_be_wisdom_god_events
+﻿namespace = super_be_wisdom_god_events
 
 super_be_wisdom_god_events.0001 = {
 	type = character_event
