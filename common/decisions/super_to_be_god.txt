@@ -281,13 +281,14 @@ super_to_be_blielif_god = {
 	
 	is_shown = {       #显示决议的条件
 		is_star_power_god = no
-		
+		faith = faith:super_belief_fa
 	}	
 
 	is_valid = {
 		not_is_anyone_belief_god = yes
 		is_have_sage_stone = yes
 		has_trait = angel_traits
+		super_at_least_two_hundreds_county_faith_belief_fa = yes
 	}
 	
 	ai_potential = {     #ai是否检测这个决议

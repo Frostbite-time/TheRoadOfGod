@@ -7,7 +7,7 @@ art_events_super.0001 = {
     desc = yidong_desc
     theme = intrigue
     left_portrait = root
-	immediate = 	{
+	immediate = {
 
 	}	
 	option = {

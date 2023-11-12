@@ -58,6 +58,9 @@ super_be_belief_god_events.0003 = {
 
     option = {
         name = super_be_belief_god_events.0003.1
+        faith:super_belief_fa = {
+			set_religious_head_title = root.primary_title
+		}
         # option details...
     }
 

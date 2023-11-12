@@ -65,3 +65,7 @@ has_least_five_foest_province = {
 has_least_twelve_foest_province = {
     global = CAN_HAS_LEAST_TWELVE_FOEST_PROVINCE
 }
+#至少200个伯爵领信仰 信仰之神教会 
+super_at_least_two_hundreds_county_faith_belief_fa = {
+    global = CAN_SUPER_AT_LEAST_TWO_HUNDREDS_COUNTY_FAITH_BELIEF_FA
+}
