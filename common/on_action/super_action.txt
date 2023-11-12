@@ -275,7 +275,7 @@ super_can_get_sea_god_power_action = {
 	}
 }
 
-#使得开局有一部分角色成为信仰之神教会的人
+#使得开局有一部分角色成为信仰之神教会的人   
 super_change_faith_to_belief_god = {
 	effect = {
 		if = {
@@ -286,17 +286,89 @@ super_change_faith_to_belief_god = {
 				every_neighboring_top_liege_realm_owner = {
 					set_character_faith_with_conversion = faith:super_belief_fa
 				}
+				every_realm_county = {
+					set_county_faith = faith:super_belief_fa
+				}
 				set_character_faith_with_conversion = faith:super_belief_fa
 			}
 			character:248710 = {
 				every_neighboring_top_liege_realm_owner = {
 					set_character_faith_with_conversion = faith:super_belief_fa
 				}
+				every_realm_county = {
+					set_county_faith = faith:super_belief_fa
+				}
 				set_character_faith_with_conversion = faith:super_belief_fa
 			}
 			character:248770 = {
 				every_neighboring_top_liege_realm_owner = {
 					set_character_faith_with_conversion = faith:super_belief_fa
+				}
+				every_realm_county = {
+					set_county_faith = faith:super_belief_fa
+				}
+				set_character_faith_with_conversion = faith:super_belief_fa
+			}
+			character:bobo0071 = {
+				every_neighboring_top_liege_realm_owner = {
+					set_character_faith_with_conversion = faith:super_belief_fa
+				}
+				every_realm_county = {
+					set_county_faith = faith:super_belief_fa
+				}
+				set_character_faith_with_conversion = faith:super_belief_fa
+			}
+			character:mel0011 = {
+				every_neighboring_top_liege_realm_owner = {
+					set_character_faith_with_conversion = faith:super_belief_fa
+				}
+				every_realm_county = {
+					set_county_faith = faith:super_belief_fa
+				}
+				set_character_faith_with_conversion = faith:super_belief_fa
+			}
+			character:942069 = {
+				every_neighboring_top_liege_realm_owner = {
+					set_character_faith_with_conversion = faith:super_belief_fa
+				}
+				every_realm_county = {
+					set_county_faith = faith:super_belief_fa
+				}
+				set_character_faith_with_conversion = faith:super_belief_fa
+			}
+			character:yoruba0004 = {
+				every_neighboring_top_liege_realm_owner = {
+					set_character_faith_with_conversion = faith:super_belief_fa
+				}
+				every_realm_county = {
+					set_county_faith = faith:super_belief_fa
+				}
+				set_character_faith_with_conversion = faith:super_belief_fa
+			}
+			character:tagelmust0012 = {
+				every_neighboring_top_liege_realm_owner = {
+					set_character_faith_with_conversion = faith:super_belief_fa
+				}
+				every_realm_county = {
+					set_county_faith = faith:super_belief_fa
+				}
+				set_character_faith_with_conversion = faith:super_belief_fa
+			}
+			character:273072 = {
+				every_neighboring_top_liege_realm_owner = {
+					set_character_faith_with_conversion = faith:super_belief_fa
+				}
+				every_realm_county = {
+					set_county_faith = faith:super_belief_fa
+				}
+				set_character_faith_with_conversion = faith:super_belief_fa
+			}
+			character:161047 = {
+				every_neighboring_top_liege_realm_owner = {
+					set_character_faith_with_conversion = faith:super_belief_fa
+				}
+				every_realm_county = {
+					set_county_faith = faith:super_belief_fa
 				}
 				set_character_faith_with_conversion = faith:super_belief_fa
 			}
@@ -306,17 +378,80 @@ super_change_faith_to_belief_god = {
 				every_neighboring_top_liege_realm_owner = {
 					set_character_faith_with_conversion = faith:super_belief_fa
 				}
+				every_realm_county = {
+					set_county_faith = faith:super_belief_fa
+				}
+				set_character_faith_with_conversion = faith:super_belief_fa
+			}
+			character:1144670 = {
+				every_neighboring_top_liege_realm_owner = {
+					set_character_faith_with_conversion = faith:super_belief_fa
+				}
+				every_realm_county = {
+					set_county_faith = faith:super_belief_fa
+				}
+				set_character_faith_with_conversion = faith:super_belief_fa
+			}
+			character:gur0052 = {
+				every_neighboring_top_liege_realm_owner = {
+					set_character_faith_with_conversion = faith:super_belief_fa
+				}
+				every_realm_county = {
+					set_county_faith = faith:super_belief_fa
+				}
+				set_character_faith_with_conversion = faith:super_belief_fa
+			}
+			character:bozo0025 = {
+				every_neighboring_top_liege_realm_owner = {
+					set_character_faith_with_conversion = faith:super_belief_fa
+				}
+				every_realm_county = {
+					set_county_faith = faith:super_belief_fa
+				}
+				set_character_faith_with_conversion = faith:super_belief_fa
+			}
+			character:gur0042 = {
+				every_neighboring_top_liege_realm_owner = {
+					set_character_faith_with_conversion = faith:super_belief_fa
+				}
+				every_realm_county = {
+					set_county_faith = faith:super_belief_fa
+				}
+				set_character_faith_with_conversion = faith:super_belief_fa
+			}
+			character:gur0012 = {
+				every_neighboring_top_liege_realm_owner = {
+					set_character_faith_with_conversion = faith:super_belief_fa
+				}
+				every_realm_county = {
+					set_county_faith = faith:super_belief_fa
+				}
+				set_character_faith_with_conversion = faith:super_belief_fa
+			}
+			character:161056 = {
+				every_neighboring_top_liege_realm_owner = {
+					set_character_faith_with_conversion = faith:super_belief_fa
+				}
+				every_realm_county = {
+					set_county_faith = faith:super_belief_fa
+				}
 				set_character_faith_with_conversion = faith:super_belief_fa
 			}
 			character:248716 = {
 				every_neighboring_top_liege_realm_owner = {
 					set_character_faith_with_conversion = faith:super_belief_fa
 				}
+				every_realm_county = {
+					set_county_faith = faith:super_belief_fa
+				}
 				set_character_faith_with_conversion = faith:super_belief_fa
 			}
 			character:969420 = {
 				every_neighboring_top_liege_realm_owner = {
 					set_character_faith_with_conversion = faith:super_belief_fa
+				}
+				every_realm_county = {
+					set_county_faith = faith:super_belief_fa
 				}
 				set_character_faith_with_conversion = faith:super_belief_fa
 			}
