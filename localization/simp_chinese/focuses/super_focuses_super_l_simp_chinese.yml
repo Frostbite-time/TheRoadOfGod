@@ -1,17 +1,17 @@
 ﻿l_simp_chinese:
-    #古典重心
-    super_perk_focus_learning:0 "钻研古典"
-    Super_perk_focus_learning_desc:0 "着重于阅读古代经书，从中获得匪夷所思的知识和力量"
-    super_perk_focus_learning_modifier:1 "[GetFocus('super_perk_focus_learning').GetName]"
-    super_perk_focus_learning_effect_desc:0 "钻研古典为你带来了："
-    #力量重心
-    super_perk_focus_power:0 "潜心力量"
-    Super_perk_focus_power_desc:0 "统治世界最直接的方法"
-    super_perk_focus_power_modifier:1 "[GetFocus('super_perk_focus_power').GetName]"
-    super_perk_focus_power_effect_desc:0 "潜心于力量，不可自拔："
-    #心智操纵
-    super_perk_mind_power:0 "思维学者"
-    Super_perk_focus_mind_desc:0 "众生皆是提线木偶"
-    super_perk_mind_power_modifier:1 "[GetFocus('super_perk_mind_power').GetName]"
-    super_perk_mind_power_effect_desc:0 "思想之深邃，绝非易事："
+#古典重心
+super_perk_focus_learning:0 "钻研古典"
+Super_perk_focus_learning_desc:0 "着重于阅读古代经书，从中获得匪夷所思的知识和力量"
+super_perk_focus_learning_modifier:1 "[GetFocus('super_perk_focus_learning').GetName]"
+super_perk_focus_learning_effect_desc:0 "钻研古典为你带来了："
+#力量重心
+super_perk_focus_power:0 "潜心力量"
+Super_perk_focus_power_desc:0 "统治世界最直接的方法"
+super_perk_focus_power_modifier:1 "[GetFocus('super_perk_focus_power').GetName]"
+super_perk_focus_power_effect_desc:0 "潜心于力量，不可自拔："
+#心智操纵
+super_perk_mind_power:0 "思维学者"
+Super_perk_focus_mind_desc:0 "众生皆是提线木偶"
+super_perk_mind_power_modifier:1 "[GetFocus('super_perk_mind_power').GetName]"
+super_perk_mind_power_effect_desc:0 "思想之深邃，绝非易事："
     
