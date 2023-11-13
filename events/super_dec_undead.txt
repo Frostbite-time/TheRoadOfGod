@@ -4,6 +4,9 @@ undead_army.0005 = {
 	title = undead_army  #事件标题
 	desc = undead_army_desc   #事件描述
 	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	override_background = {
+        reference = super_call_undead_5
+    }
 	left_portrait = root		#让角色出现在左边
 	option = {
 		name = undead_army.a
@@ -81,6 +84,9 @@ undead_army.0001 = {
 	title = undead_army_use_t  #事件标题
 	desc = undead_army_use_desc   #事件描述
 	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	override_background = {
+        reference = super_call_undead_1
+    }
 	left_portrait = root
 	immediate = {
 		random_character_war = {
@@ -118,6 +124,9 @@ undead_army.0002 = {
 	title = undead_army_use_t  #事件标题
 	desc = undead_army_use_desc   #事件描述
 	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	override_background = {
+        reference = super_call_undead_1
+    }
 	left_portrait = root
 	immediate = {
 		random_character_war = {
@@ -158,6 +167,9 @@ undead_army.0003 = {
 	title = undead_army_use_t  #事件标题
 	desc = undead_army_use_desc   #事件描述
 	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	override_background = {
+        reference = super_call_undead_1
+    }
 	left_portrait = root
 	immediate = {
 		random_character_war = {
@@ -196,8 +208,11 @@ undead_army.0003 = {
 undead_army.0004 = {
 	type = character_event #这是一个角色事件，会将root的范围设置为角色
 	title = undead_army_use_t  #事件标题
-	desc = undead_army_use_desc   #事件描述
+	desc = undead_army_use_desc_1   #事件描述
 	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	override_background = {
+        reference = super_call_undead_2
+    }
 	left_portrait = root
 	immediate = {
 		random_character_war = {

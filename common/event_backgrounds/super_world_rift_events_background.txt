@@ -1,0 +1,45 @@
+﻿
+#世界裂隙   迷幻风暴
+super_rift_world_background_1 = {
+	background = {	#FP3
+		reference = "gfx/interface/illustrations/event_scenes/super_rift_world_background_1.dds"
+		environment = "environment_event_fp3_courtyard_night" 
+		ambience = "event:/SFX/Events/Backgrounds/castle_corridor_night"
+	}
+}
+
+#世界裂隙   重色之域
+super_rift_world_background_2 = {
+	background = {	#FP3
+		reference = "gfx/interface/illustrations/event_scenes/super_rift_world_background_2.dds"
+		environment = "environment_event_fp3_courtyard_night" 
+		ambience = "event:/SFX/Events/Backgrounds/castle_corridor_night"
+	}
+}
+
+#世界裂隙   废弃城市
+super_rift_world_background_3 = {
+	background = {	#FP3
+		reference = "gfx/interface/illustrations/event_scenes/super_rift_world_background_3.dds"
+		environment = "environment_event_fp3_courtyard_night" 
+		ambience = "event:/SFX/Events/Backgrounds/castle_corridor_night"
+	}
+}
+
+#世界裂隙   圣殿
+super_rift_world_background_4 = {
+	background = {	#FP3
+		reference = "gfx/interface/illustrations/event_scenes/super_rift_world_background_4.dds"
+		environment = "environment_event_fp3_courtyard_night" 
+		ambience = "event:/SFX/Events/Backgrounds/castle_corridor_night"
+	}
+}
+
+#世界裂隙   邪神殿
+super_rift_world_background_5 = {
+	background = {	#FP3
+		reference = "gfx/interface/illustrations/event_scenes/super_rift_world_background_5.dds"
+		environment = "environment_event_fp3_courtyard_night" 
+		ambience = "event:/SFX/Events/Backgrounds/castle_corridor_night"
+	}
+}
