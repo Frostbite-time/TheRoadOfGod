@@ -1,6 +1,6 @@
 ﻿#移除贤者之石
 remove_sage_stone = {
-	random_artifact = {
+	random_character_artifact = {
 		limit = {
 			has_artifact_modifier = sage_stone_modif
 		}
