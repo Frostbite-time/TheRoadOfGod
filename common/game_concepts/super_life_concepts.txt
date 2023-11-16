@@ -18,5 +18,41 @@ super_skill ={
 	frame = 1
 }
 
+#召唤神明
+super_call_god_decision = { 
+	parent = decision
+}
+#亡灵大军
+super_call_undead_decision = {
+	parent = decision
+}
+#何为召唤
+super_fin_call_decision = {
+	parent = decision
+}
+#炼金术
+super_alchemy_decision = {
+	parent = decision
+}
+#神器锻造
+super_forger_artifcirt_decision = {
+	parent = decision
+}
+#贤者之石
+super_sage_stone_decision = {
+	parent = decision
+}
+#天使
+super_be_angel_decision = {
+	parent = decision
+}
+#肉身成圣
+super_be_saint_decision = {
+	parent = decision
+}
+#魔化
+super_be_devileness_decision = {
+	parent = decision
+}
 
 

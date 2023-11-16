@@ -35,7 +35,7 @@ super_mod_helper_dec = {
 		hidden_effect = {
 			trigger_event = {
 				id = super_mod_helper_events.0001
-				days = { 2 3 }
+				days = 1
 			}
 		}
 	}
