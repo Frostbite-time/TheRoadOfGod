@@ -1,0 +1,292 @@
+﻿namespace = super_mod_helper_events
+
+super_mod_helper_events.0001 = {
+    type = character_event
+    title = super_mod_helper_events.0001.t
+    desc = super_mod_helper_events.0001.desc
+    theme = realm
+    # other event details...
+
+    option = {
+        name = super_mod_helper_events.0001.1
+
+        trigger_event = {
+            id = super_mod_helper_events.0002
+        }
+            # option details...
+    }
+
+    option = {
+        name = super_mod_helper_events.0001.2
+
+        trigger_event = {
+            id = super_mod_helper_events.0003
+        }
+            # option details...
+    }
+
+    option = {
+        name = super_mod_helper_events.0001.3
+
+        trigger_event = {
+            id = super_mod_helper_events.0004
+        }
+            # option details...
+    }
+
+    option = {
+        name = super_mod_helper_events.0001.4
+        # option details...
+    }
+}
+
+
+super_mod_helper_events.0002 = {
+    type = character_event
+    title = super_mod_helper_events.0002.t
+    desc = super_mod_helper_events.0002.desc
+    theme = realm
+    # other event details...
+
+    option = {
+        name = super_mod_helper_events.0002.1
+
+        trigger_event = {
+            id = super_mod_helper_events.0001
+        }
+            # option details...
+    }
+}
+
+
+super_mod_helper_events.0003 = {
+    type = character_event
+    title = super_mod_helper_events.0003.t
+    desc = super_mod_helper_events.0003.desc
+    theme = realm
+    # other event details...
+
+    option = {
+        name = super_mod_helper_events.0003.1
+
+        trigger_event = {
+            id = super_mod_helper_events.0005
+        }
+            # option details...
+    }
+
+    option = {
+        name = super_mod_helper_events.0003.2
+
+        trigger_event = {
+            id = super_mod_helper_events.0006
+        }
+            # option details...
+    }
+
+    option = {
+        name = super_mod_helper_events.0003.3
+
+        trigger_event = {
+            id = super_mod_helper_events.0007
+        }
+            # option details...
+    }
+
+    option = {
+        name = super_mod_helper_events.0003.4
+
+        trigger_event = {
+            id = super_mod_helper_events.0008
+        }
+            # option details...
+    }
+
+    option = {
+        name = super_mod_helper_events.0003.5
+
+        trigger_event = {
+            id = super_mod_helper_events.0009
+        }
+            # option details...
+    }
+
+    option = {
+        name = super_mod_helper_events.0003.6
+
+        trigger_event = {
+            id = super_mod_helper_events.0010
+        }
+            # option details...
+    }
+
+    option = {
+        name = super_mod_helper_events.0003.7
+
+        trigger_event = {
+            id = super_mod_helper_events.0001
+        }
+            # option details...
+    }
+}
+
+
+super_mod_helper_events.0004 = {
+    type = character_event
+    title = super_mod_helper_events.0004.t
+    desc = super_mod_helper_events.0004.desc
+    theme = realm
+    # other event details...
+
+    option = {
+        name = super_mod_helper_events.0004.1
+
+        trigger_event = {
+            id = super_mod_helper_events.0001
+        }
+            # option details...
+    }
+
+    option = {
+        name = super_mod_helper_events.0004.2
+        # option details...
+    }
+}
+
+
+super_mod_helper_events.0005 = {
+    type = character_event
+    title = super_mod_helper_events.0005.t
+    desc = super_mod_helper_events.0005.desc
+    theme = realm
+    # other event details...
+
+    option = {
+        name = super_mod_helper_events.0005.1
+
+        trigger_event = {
+            id = super_mod_helper_events.0003
+        }
+            # option details...
+    }
+
+    option = {
+        name = super_mod_helper_events.0005.2
+        # option details...
+    }
+}
+
+
+super_mod_helper_events.0006 = {
+    type = character_event
+    title = super_mod_helper_events.0006.t
+    desc = super_mod_helper_events.0006.desc
+    theme = realm
+    # other event details...
+
+    option = {
+        name = super_mod_helper_events.0006.1
+
+        trigger_event = {
+            id = super_mod_helper_events.0003
+        }
+            # option details...
+    }
+
+    option = {
+        name = super_mod_helper_events.0006.2
+        # option details...
+    }
+}
+
+
+super_mod_helper_events.0007 = {
+    type = character_event
+    title = super_mod_helper_events.0007.t
+    desc = super_mod_helper_events.0007.desc
+    theme = realm
+    # other event details...
+
+    option = {
+        name = super_mod_helper_events.0007.1
+
+        trigger_event = {
+            id = super_mod_helper_events.0003
+        }
+            # option details...
+    }
+
+    option = {
+        name = super_mod_helper_events.0007.2
+        # option details...
+    }
+}
+
+
+super_mod_helper_events.0008 = {
+    type = character_event
+    title = super_mod_helper_events.0008.t
+    desc = super_mod_helper_events.0008.desc
+    theme = realm
+    # other event details...
+
+    option = {
+        name = super_mod_helper_events.0008.1
+
+        trigger_event = {
+            id = super_mod_helper_events.0003
+        }
+            # option details...
+    }
+
+    option = {
+        name = super_mod_helper_events.0008.2
+        # option details...
+    }
+}
+
+
+super_mod_helper_events.0009 = {
+    type = character_event
+    title = super_mod_helper_events.0009.t
+    desc = super_mod_helper_events.0009.desc
+    theme = realm
+    # other event details...
+
+    option = {
+        name = super_mod_helper_events.0009.1
+
+        trigger_event = {
+            id = super_mod_helper_events.0003
+        }
+            # option details...
+    }
+
+    option = {
+        name = super_mod_helper_events.0009.2
+        # option details...
+    }
+}
+
+
+super_mod_helper_events.0010 = {
+    type = character_event
+    title = super_mod_helper_events.0010.t
+    desc = super_mod_helper_events.0010.desc
+    theme = realm
+    # other event details...
+
+    option = {
+        name = super_mod_helper_events.0010.1
+
+        trigger_event = {
+            id = super_mod_helper_events.0003
+        }
+            # option details...
+    }
+
+    option = {
+        name = super_mod_helper_events.0010.2
+        # option details...
+    }
+}

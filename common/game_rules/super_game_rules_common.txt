@@ -1,5 +1,8 @@
 ﻿#此文件下放置适用性大的游戏规则
+
+#是否开启此mod
 is_open_super_mod = {
+	
 	categories = {     #分类在ai和difficult下
 		difficulty ai
 	}
@@ -19,6 +22,24 @@ is_open_super_mod = {
 	}
 
 	banned_for_all = {
+
+	}
+}
+
+#是否开启模组帮助
+super_is_open_mod_helper = {
+
+	categories = {     #分类在difficult下
+		difficulty 
+	}
+
+	default = super_is_open_mod_helper_opened
+
+	super_is_open_mod_helper_opened = {
+
+	}
+
+	super_is_open_mod_helper_banned = {
 
 	}
 }
