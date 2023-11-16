@@ -18,6 +18,5 @@ super_skill ={
 	frame = 1
 }
 
-god_of_destiny = {
-}
+
 

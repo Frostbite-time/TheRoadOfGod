@@ -1,0 +1,69 @@
+﻿#神
+super_god = {
+}
+
+#本源神
+super_base_god = {
+	parent = super_god
+}
+
+#自然六神
+super_six_nature_god = {
+	parent = super_god
+}
+
+#域外神
+super_otherworld_god = {
+	parent = super_god
+}
+
+#具体神位
+
+#命运
+god_of_destiny = {
+	parent = super_base_god
+}
+#时空
+god_of_time = {
+	parent = super_base_god
+}
+#希望
+god_of_sun = {
+	parent = super_base_god
+}
+#自然
+god_of_nature = {
+	parent = super_six_nature_god
+}
+#黑暗
+god_of_dark = {
+	parent = super_six_nature_god
+}
+#智慧
+god_of_wisdom = {
+	parent = super_six_nature_god
+}
+#海洋
+god_of_sea = {
+	parent = super_six_nature_god
+}
+#信仰
+god_of_belief = {
+	parent = super_six_nature_god
+}
+#战争
+god_of_war = {
+	parent = super_six_nature_god
+}
+#方舟
+god_of_ark = {
+	parent = super_base_god
+}
+#征服
+god_of_fighter = {
+	parent = super_otherworld_god
+}
+#统御
+god_of_highlander = {
+	parent = super_otherworld_god
+}
