@@ -1,7 +1,7 @@
 l_korean:
- duel_to_super: "Initiate a Valor Duel"
- duel_to_super_action: "Initiate a Valor Duel"
- duel_to_super_desc: "Invite the opponent to a duel to end the war"
- duel_to_super_desc_1: "The winner gains the war objective"
- duel_to_super_desc_2: "The loser will be forced to surrender"
- get_title_or_vass_desc: "You need a puppet-level hook to use this"
+duel_to_super: "결투 시작"
+duel_to_super_action: "결투 시작"
+duel_to_super_desc: "상대에게 결투를 제안하고 그로 인해 전쟁을 끝냅니다"
+duel_to_super_desc_1: "승자가 전쟁 목표를 획득합니다"
+duel_to_super_desc_2: "패자는 항복하게 됩니다"
+get_title_or_vass_desc: "각국의 지도자 전장 강화를 구하기 위해서는 조작 상호작용으로 얻은 후크가 필요합니다"
