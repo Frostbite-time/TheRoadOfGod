@@ -1,0 +1,13 @@
+l_french:
+ super_perk_focus_learning:0 "Studying the Classics"
+ Super_perk_focus_learning_desc:0 "Focus on reading ancient scriptures and gaining unimaginable knowledge and power from them"
+ super_perk_focus_learning_modifier:1 "[GetFocus('super_perk_focus_learning').GetName]"
+ super_perk_focus_learning_effect_desc:0 "Drill Classics brings you:"
+ super_perk_focus_power:0 "Focus on strength"
+ Super_perk_focus_power_desc:0 "The most direct method of world domination"
+ super_perk_focus_power_modifier:1 "[GetFocus('super_perk_focus_power').GetName]"
+ super_perk_focus_power_effect_desc:0 "Diving into the power of the unstoppable:"
+ super_perk_mind_power:0 "Exploring heart"
+ Super_perk_focus_mind_desc:0 "All beings are puppets on strings"
+ super_perk_mind_power_modifier:1 "[GetFocus('super_perk_mind_power').GetName]"
+ super_perk_mind_power_effect_desc:0 "The depth of thought is by no means easy:"

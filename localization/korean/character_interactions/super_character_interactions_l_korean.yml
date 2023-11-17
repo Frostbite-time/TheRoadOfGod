@@ -1,0 +1,7 @@
+l_korean:
+ duel_to_super: "Initiate a Valor Duel"
+ duel_to_super_action: "Initiate a Valor Duel"
+ duel_to_super_desc: "Invite the opponent to a duel to end the war"
+ duel_to_super_desc_1: "The winner gains the war objective"
+ duel_to_super_desc_2: "The loser will be forced to surrender"
+ get_title_or_vass_desc: "You need a puppet-level hook to use this"
