@@ -62,7 +62,7 @@ super_be_wisdom_god_events.0004 = {
     desc = super_be_wisdom_god_events.0004.desc
     theme = realm
     override_background = {
-		event_background = super_to_be_wisdom_god_4
+		reference = super_to_be_wisdom_god_4
 	}
     # other event details...
     
@@ -84,7 +84,7 @@ super_be_wisdom_god_events.0005 = {
     theme = realm
     # other event details...
 	override_background = {
-		event_background = super_to_be_wisdom_god_5
+		reference = super_to_be_wisdom_god_5
 	}
 
     option = {

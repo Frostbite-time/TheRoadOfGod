@@ -7,7 +7,6 @@ undead_army.0005 = {
 	override_background = {
         reference = super_call_undead_5
     }
-	left_portrait = root		#让角色出现在左边
 	option = {
 		name = undead_army.a
 		ai_chance = {
@@ -87,7 +86,6 @@ undead_army.0001 = {
 	override_background = {
         reference = super_call_undead_1
     }
-	left_portrait = root
 	immediate = {
 		random_character_war = {
 			save_scope_as = undead_over_war
@@ -127,7 +125,6 @@ undead_army.0002 = {
 	override_background = {
         reference = super_call_undead_1
     }
-	left_portrait = root
 	immediate = {
 		random_character_war = {
 			save_scope_as = undead_over_war
@@ -170,7 +167,6 @@ undead_army.0003 = {
 	override_background = {
         reference = super_call_undead_1
     }
-	left_portrait = root
 	immediate = {
 		random_character_war = {
 			save_scope_as = undead_over_war
@@ -213,7 +209,6 @@ undead_army.0004 = {
 	override_background = {
         reference = super_call_undead_2
     }
-	left_portrait = root
 	immediate = {
 		random_character_war = {
 			save_scope_as = undead_over_war
