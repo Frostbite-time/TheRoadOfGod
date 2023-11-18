@@ -5,7 +5,7 @@ super_mod_helper_dec = {
 	confirm_text = super_mod_helper_dec_confirm #决议继续的文本
 	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"   #图片
 	
-	sort_order = 1000 #决议的排列顺序 大则靠前
+	sort_order = 1100 #决议的排列顺序 大则靠前
 	
 	major = no #是否为重要决议
 	

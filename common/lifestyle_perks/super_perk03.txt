@@ -6,6 +6,32 @@ In_the_Shadows = {
 	tree = mind_of_road_tree
 	position = { 1.5 0 }
 	icon = node_intrigue
+	can_be_auto_selected = {
+		trigger_if = {
+			limit = {
+				has_game_rule = normal_super_mod
+			}
+			always = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_player_super_mod
+			}
+			is_ai = no
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_ai_super_mod
+			}
+			is_ai = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = banned_for_all
+			}
+			always = no
+		}
+	}
 	auto_selection_weight = {
 		value = 100
 		if = {
@@ -34,6 +60,32 @@ plan_master = {
 	tree = mind_of_road_tree
 	position = { 0 1.25 }
 	icon = node_intrigue
+	can_be_auto_selected = {
+		trigger_if = {
+			limit = {
+				has_game_rule = normal_super_mod
+			}
+			always = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_player_super_mod
+			}
+			is_ai = no
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_ai_super_mod
+			}
+			is_ai = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = banned_for_all
+			}
+			always = no
+		}
+	}
 	auto_selection_weight = {
 		value = 100
 		if = {
@@ -64,6 +116,32 @@ hidden_murder = {
 	tree = mind_of_road_tree
 	position = { 0 2 }
 	icon = node_intrigue
+	can_be_auto_selected = {
+		trigger_if = {
+			limit = {
+				has_game_rule = normal_super_mod
+			}
+			always = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_player_super_mod
+			}
+			is_ai = no
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_ai_super_mod
+			}
+			is_ai = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = banned_for_all
+			}
+			always = no
+		}
+	}
 	auto_selection_weight = {
 		value = 100
 		if = {
@@ -91,6 +169,32 @@ calm_and_easy_going = {
 	tree = mind_of_road_tree
 	position = { 0 2.75 }
 	icon = node_intrigue
+	can_be_auto_selected = {
+		trigger_if = {
+			limit = {
+				has_game_rule = normal_super_mod
+			}
+			always = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_player_super_mod
+			}
+			is_ai = no
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_ai_super_mod
+			}
+			is_ai = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = banned_for_all
+			}
+			always = no
+		}
+	}
 	auto_selection_weight = {
 		value = 100
 		if = {
@@ -120,6 +224,32 @@ one_hand_cover_sky = {
 	tree = mind_of_road_tree
 	position = { 0 3.5 }
 	icon = node_intrigue
+	can_be_auto_selected = {
+		trigger_if = {
+			limit = {
+				has_game_rule = normal_super_mod
+			}
+			always = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_player_super_mod
+			}
+			is_ai = no
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_ai_super_mod
+			}
+			is_ai = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = banned_for_all
+			}
+			always = no
+		}
+	}
 	auto_selection_weight = {
 		value = 100
 		if = {
@@ -163,6 +293,32 @@ brain_scholar = {
 	tree = mind_of_road_tree
 	position = { 1.5 1.25 }
 	icon = node_intrigue
+	can_be_auto_selected = {
+		trigger_if = {
+			limit = {
+				has_game_rule = normal_super_mod
+			}
+			always = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_player_super_mod
+			}
+			is_ai = no
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_ai_super_mod
+			}
+			is_ai = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = banned_for_all
+			}
+			always = no
+		}
+	}
 	auto_selection_weight = {
 		value = 100
 		if = {
@@ -186,6 +342,32 @@ play_heart_and_mind = {
 	tree = mind_of_road_tree
 	position = { 1.5 2 }
 	icon = node_intrigue
+	can_be_auto_selected = {
+		trigger_if = {
+			limit = {
+				has_game_rule = normal_super_mod
+			}
+			always = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_player_super_mod
+			}
+			is_ai = no
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_ai_super_mod
+			}
+			is_ai = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = banned_for_all
+			}
+			always = no
+		}
+	}
 	auto_selection_weight = {
 		value = 100
 		if = {
@@ -209,6 +391,32 @@ wielding = {
 	tree = mind_of_road_tree
 	position = { 1.5 2.75 }
 	icon = node_intrigue
+	can_be_auto_selected = {
+		trigger_if = {
+			limit = {
+				has_game_rule = normal_super_mod
+			}
+			always = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_player_super_mod
+			}
+			is_ai = no
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_ai_super_mod
+			}
+			is_ai = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = banned_for_all
+			}
+			always = no
+		}
+	}
 	auto_selection_weight = {
 		value = 100
 		if = {
@@ -232,6 +440,32 @@ marionette = {
 	tree = mind_of_road_tree
 	position = { 1.5 3.5 }
 	icon = node_intrigue
+	can_be_auto_selected = {
+		trigger_if = {
+			limit = {
+				has_game_rule = normal_super_mod
+			}
+			always = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_player_super_mod
+			}
+			is_ai = no
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_ai_super_mod
+			}
+			is_ai = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = banned_for_all
+			}
+			always = no
+		}
+	}
 	auto_selection_weight = {
 		value = 100
 		if = {
@@ -255,6 +489,32 @@ edge_of_darkness = {
 	tree = mind_of_road_tree
 	position = { 3 1.25 }
 	icon = node_intrigue
+	can_be_auto_selected = {
+		trigger_if = {
+			limit = {
+				has_game_rule = normal_super_mod
+			}
+			always = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_player_super_mod
+			}
+			is_ai = no
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_ai_super_mod
+			}
+			is_ai = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = banned_for_all
+			}
+			always = no
+		}
+	}
 	auto_selection_weight = {
 		value = 100
 		if = {
@@ -278,6 +538,32 @@ world_rift = {
 	tree = mind_of_road_tree
 	position = { 3 2 }
 	icon = node_intrigue
+	can_be_auto_selected = {
+		trigger_if = {
+			limit = {
+				has_game_rule = normal_super_mod
+			}
+			always = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_player_super_mod
+			}
+			is_ai = no
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_ai_super_mod
+			}
+			is_ai = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = banned_for_all
+			}
+			always = no
+		}
+	}
 	auto_selection_weight = {
 		value = 100
 		if = {
@@ -304,6 +590,32 @@ precise_positioning = {
 	tree = mind_of_road_tree
 	position = { 3 2.75 }
 	icon = node_intrigue
+	can_be_auto_selected = {
+		trigger_if = {
+			limit = {
+				has_game_rule = normal_super_mod
+			}
+			always = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_player_super_mod
+			}
+			is_ai = no
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_ai_super_mod
+			}
+			is_ai = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = banned_for_all
+			}
+			always = no
+		}
+	}
 	auto_selection_weight = {
 		value = 100
 		if = {
@@ -327,6 +639,32 @@ nothing_i_cant =  {
 	tree = mind_of_road_tree
 	position = { 3 3.5 }
 	icon = node_intrigue
+	can_be_auto_selected = {
+		trigger_if = {
+			limit = {
+				has_game_rule = normal_super_mod
+			}
+			always = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_player_super_mod
+			}
+			is_ai = no
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_ai_super_mod
+			}
+			is_ai = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = banned_for_all
+			}
+			always = no
+		}
+	}
 	auto_selection_weight = {
 		value = 100
 		if = {
@@ -350,6 +688,32 @@ devilishness = {
 	tree = mind_of_road_tree
 	position = { 1.5 4.8 }
 	icon = devilishness
+	can_be_auto_selected = {
+		trigger_if = {
+			limit = {
+				has_game_rule = normal_super_mod
+			}
+			always = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_player_super_mod
+			}
+			is_ai = no
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = only_for_ai_super_mod
+			}
+			is_ai = yes
+		}
+		trigger_if = {
+			limit = {
+				has_game_rule = banned_for_all
+			}
+			always = no
+		}
+	}
 	auto_selection_weight = {
 		value = 100
 		if = {

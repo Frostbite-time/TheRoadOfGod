@@ -30,12 +30,13 @@
 		watermills_01
 		caravanserai_01
 		workshops_01
-		wind_furnace_01	
+		wind_furnace_01
 
 		common_tradeport_01
 		hall_of_heroes_01
 		special_sicilian_parliament_01
-		#special_greenhouse_01
+		special_greenhouse_01
+		qanats_01
 
 		#super_新增
 		super_wisdom_god_star_building_0
