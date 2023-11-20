@@ -154,3 +154,15 @@ neptune_scepter_modifier = {
 	knight_effectiveness_mult = 0.3
 	mercenary_hire_cost_mult = -0.3
 }
+
+#加强警惕
+super_add_vigilance_modifier = {
+	icon = spoon_positive
+	hostile_scheme_resistance_mult = 0.25
+}
+
+#降低警惕
+super_reduce_vigilance_modifier = {
+	icon = spoon_positive
+	hostile_scheme_resistance_mult = -0.15
+}

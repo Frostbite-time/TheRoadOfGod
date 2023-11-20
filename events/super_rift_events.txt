@@ -704,3 +704,309 @@ rift_events_world.0007 = {
 		}
 	}
 }
+
+#给予一个提醒
+rift_events_world.0017 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = rift_events_world.0017.t  #事件标题
+	desc = rift_events_world.0017.desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+
+	option = {
+		name = rift_events_world.0017.1
+		add_character_modifier = {
+			modifier = super_add_vigilance_modifier
+			years = 1
+		}
+		add_stress = 30
+	}
+
+	option = {
+		trigger = {
+			has_trait = know_all_thing_traits
+		}
+		trait = know_all_thing_traits
+		name = rift_events_world.0017.2
+		custom_tooltip = rift_ass_be_konws
+		hidden_effect = {
+			trigger_event = {
+				id = rift_events_world.0009
+				months = { 1 2 }
+			}
+		}
+	}
+} 
+
+#揭示这个阴谋
+rift_events_world.0009 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = rift_events_world.0009.t  #事件标题
+	desc = rift_events_world.0009.desc   #事件描述
+	theme = dynasty        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+
+	immediate = {
+		random_vassal_or_below = {
+			save_scope_as = super_probable_ass_1
+		}
+		random_vassal_or_below = {
+			save_scope_as = super_probable_ass_2
+		}
+	}
+	
+
+	option = {
+		name = rift_events_world.0009.1
+		trigger = {
+			exists = scope:super_probable_ass_1
+		}
+		trigger_event = {
+			id = rift_events_world.0010
+			days = { 1 8 }
+		}
+	}
+	option = {
+		name = rift_events_world.0009.2
+		random_list = {
+			50 = {
+				trigger_event = {
+					id = rift_events_world.0011
+					days = { 1 8 }
+				}
+			}
+			50 = {
+				trigger_event = {
+					id = rift_events_world.0015
+					days = { 1 8 }
+				}
+			}	
+		}	
+	}
+	option = {
+		name = rift_events_world.0009.3
+		trigger = {
+			exists = scope:super_probable_ass_2
+		}
+		trigger_event = {
+			id = rift_events_world.0016
+			days = { 1 8 }
+		}
+	}
+}
+
+#揭示失败
+rift_events_world.0010 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = rift_events_world.0010.t  #事件标题
+	desc = rift_events_world.0010.desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+	right_portrait = scope:super_probable_ass_1
+	option = {
+		name = rift_events_world.0010.1
+		add_character_modifier = {
+			modifier = super_reduce_vigilance_modifier
+			years = 1
+		}
+		add_stress = -30
+	}
+}
+
+#揭示成功
+rift_events_world.0011 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = rift_events_world.0011.t  #事件标题
+	desc = rift_events_world.0011.desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+	right_portrait = scope:actor
+	option = {
+		name = rift_events_world.0011.1
+		scope:actor = {
+			random_scheme = {
+				limit = {
+					scheme_target = root
+					scheme_owner = scope:actor
+				}
+				expose_scheme = yes
+				end_scheme = yes
+			}
+		}
+	}
+	option = {
+		name = rift_events_world.0011.2
+		custom_tooltip = super_rift_events_world_remind
+	}
+	option = {
+		name = rift_events_world.0011.3 
+		random_list = {
+			50 = {
+				scope:actor = {
+					death = {
+						killer = root
+						death_reason = death_murder
+					}
+				}
+				modifier = {
+					add = {
+						value = root.prowess
+					}
+					always = yes
+				}	
+			}
+			50 = {
+				death = {
+					killer = scope:actor
+					death_reason = death_murder
+				}
+				modifier = {
+					add = {
+						value = scope:actor.prowess
+					}
+					always = yes
+				}
+			}
+		}
+	}
+}
+
+#试探
+rift_events_world.0012 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = rift_events_world.0012.t  #事件标题
+	desc = rift_events_world.0012.desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+	right_portrait = scope:recipient
+	option = {
+		name = rift_events_world.0012.1
+	}
+	
+	after = {
+		hidden_effect = {
+			random_list = {
+				90 = {}
+				20 = {
+					trigger_event = {
+						id = rift_events_world.0013
+						days = { 3 9 }
+					}
+				}
+				15 = {
+					trigger_event = rift_events_world.0014
+				}
+			}
+		}
+	}
+}
+
+#计谋败露
+rift_events_world.0013 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = rift_events_world.0013.t  #事件标题
+	desc = rift_events_world.0013.desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+	option = {
+		name = rift_events_world.0013.1
+		root =  {
+			random_scheme = {
+				limit = {
+					scheme_target = scope:recipient
+					scheme_owner = root
+				}
+				expose_scheme = yes
+				end_scheme = yes
+			}
+		}
+	}
+}
+#计谋败露直接发起攻击
+rift_events_world.0014 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = rift_events_world.0014.t  #事件标题
+	desc = rift_events_world.0014.desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = {
+		character = root
+		animation = war_defender
+	}		#让角色出现在左边
+	right_portrait = {
+		character = scope:recipient
+		animation = war_attacker
+	}
+	option = {
+		name = rift_events_world.0014.1
+	}
+	option = {
+		name = rift_events_world.0014.2
+		50 = {
+			scope:recipient = {
+				death = {
+					killer = root
+					death_reason = death_murder
+				}
+			}
+			modifier = {
+				add = {
+					value = root.prowess
+				}
+				always = yes
+			}	
+		}
+		50 = {
+			death = {
+				killer = scope:recipient
+				death_reason = death_murder
+			}
+			modifier = {
+				add = {
+					value = scope:recipient.prowess
+				}
+				always = yes
+			}
+		}
+	}
+}
+
+#揭示失败
+rift_events_world.0015 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = rift_events_world.0015.t  #事件标题
+	desc = rift_events_world.0015.desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+	right_portrait = scope:actor
+	option = {
+		name = rift_events_world.0015.1
+		add_character_modifier = {
+			modifier = super_reduce_vigilance_modifier
+			years = 1
+		}
+		add_stress = -30
+	}
+}
+
+
+#揭示失败
+rift_events_world.0016 = {
+	type = character_event #这是一个角色事件，会将root的范围设置为角色
+	title = rift_events_world.0016.t  #事件标题
+	desc = rift_events_world.0016.desc   #事件描述
+	theme = intrigue        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
+	left_portrait = root		#让角色出现在左边
+	right_portrait = scope:super_probable_ass_2
+	option = {
+		name = rift_events_world.0016.1
+		add_character_modifier = {
+			modifier = super_reduce_vigilance_modifier
+			years = 1
+		}
+		add_stress = -30
+	}
+}
+
+
+
+#######截至上个事件实际已经用掉了0017，下个事件从0018开始

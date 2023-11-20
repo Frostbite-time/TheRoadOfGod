@@ -91,6 +91,19 @@ world_rift_assassination = {
 	}
 
 	on_monthly = {
+		if = {
+			limit = {
+				scope:target = {
+					is_ai = yes
+				}	
+			}
+			random = {
+				chance = 3
+				scheme_owner = {
+					trigger_event = rift_events_world.0012
+				}
+			}
+		}	
 	}
 
 	

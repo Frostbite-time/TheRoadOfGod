@@ -62,11 +62,6 @@ start_rift_murder_interaction = {
 					add = 50
 				}
 			}
-			
-			scope:recipient = {
-				is_vassal_of = scope:actor
-				vassal_contract_has_modifiable_obligations = yes
-			}
 		}
 		
 		modifier = {
@@ -214,6 +209,64 @@ start_rift_murder_interaction = {
 					}
 				}
 			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					scope:recipient = {
+						#is_ai = no
+					}
+				}
+				random_list = {
+					5 = {
+						scope:recipient = {
+							trigger_event = {
+								id = rift_events_world.0017
+								days = { 2 3 }
+							}
+						}
+						modifier = {
+							add = 20
+							scope:recipient = {
+								has_trait = know_all_thing_traits
+							}					
+						}
+						modifier = {
+							add = 30
+							scope:recipient = {
+								has_perk = nothing_i_cant
+							}							
+						}
+						modifier = {
+							add = 20
+							scope:recipient = {
+								has_trait = a_patriarch
+							}							
+						}
+						modifier = {
+							add = 30
+							scope:recipient = {
+								has_trait = devilishness
+							}							
+						}
+						modifier = {
+							add = 20
+							scope:recipient = {
+								has_trait = angel_traits
+							}							
+						}
+						modifier = {
+							factor = 0
+							is_the_character_god = {
+								CHARACTER = scope:recipient
+							}
+						}
+					}
+					90 = {
+
+					}
+				}	
+			}	
 		}
 	}
 	cooldown_against_recipient = {
