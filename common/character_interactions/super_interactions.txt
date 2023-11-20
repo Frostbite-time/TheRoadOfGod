@@ -163,6 +163,11 @@ start_rift_murder_interaction = {
 			}
 		}
 		scope:recipient = { NOT = { has_strong_hook = scope:actor } }
+		NOT = {
+			is_the_character_god = {
+				CHARACTER = scope:recipient
+			}
+		}
 	}
 
 	desc = {

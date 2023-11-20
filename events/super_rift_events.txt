@@ -940,6 +940,13 @@ rift_events_world.0014 = {
 		name = rift_events_world.0014.1
 	}
 	option = {
+		trigger = {
+			NOT = {
+				is_the_character_god = {
+					CHARACTER = root
+				}
+			}	
+		}
 		name = rift_events_world.0014.2
 		50 = {
 			scope:recipient = {
@@ -965,6 +972,20 @@ rift_events_world.0014 = {
 					value = scope:recipient.prowess
 				}
 				always = yes
+			}
+		}
+	}
+	option = {
+		name = rift_events_world.0014.3
+		trigger = {
+			is_the_character_god = {
+				CHARACTER = root
+			}
+		}
+		scope:recipient = {
+			death = {
+				killer = root
+				death_reason = death_murder
 			}
 		}
 	}
