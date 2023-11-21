@@ -841,7 +841,7 @@ rift_events_world.0011 = {
 	option = {
 		name = rift_events_world.0011.3 
 		random_list = {
-			50 = {
+			10 = {
 				scope:actor = {
 					death = {
 						killer = root
@@ -855,7 +855,7 @@ rift_events_world.0011 = {
 					always = yes
 				}	
 			}
-			50 = {
+			10 = {
 				death = {
 					killer = scope:actor
 					death_reason = death_murder
@@ -948,7 +948,7 @@ rift_events_world.0014 = {
 			}	
 		}
 		name = rift_events_world.0014.2
-		50 = {
+		10 = {
 			scope:recipient = {
 				death = {
 					killer = root
@@ -962,7 +962,7 @@ rift_events_world.0014 = {
 				always = yes
 			}	
 		}
-		50 = {
+		10 = {
 			death = {
 				killer = scope:recipient
 				death_reason = death_murder
