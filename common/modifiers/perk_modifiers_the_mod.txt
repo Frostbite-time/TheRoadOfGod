@@ -166,3 +166,26 @@ super_reduce_vigilance_modifier = {
 	icon = spoon_positive
 	hostile_scheme_resistance_mult = -0.15
 }
+
+#对于不同游戏规则下对于超能之路生活方式经验加成
+super_lifestyle_xp_gain_1_modifier = {
+	monthly_super_lifestyle_xp_gain_mult = 0.1
+}
+super_lifestyle_xp_gain_2_modifier = {
+	monthly_super_lifestyle_xp_gain_mult = 0.2
+}
+super_lifestyle_xp_gain_3_modifier = {
+	monthly_super_lifestyle_xp_gain_mult = 0.3
+}
+super_lifestyle_xp_gain_4_modifier = {
+	monthly_super_lifestyle_xp_gain_mult = 0.4
+}
+super_lifestyle_xp_gain_5_modifier = {
+	monthly_super_lifestyle_xp_gain_mult = 0.5
+}
+super_lifestyle_xp_gain_6_modifier = {
+	monthly_super_lifestyle_xp_gain_mult = 1
+}
+super_lifestyle_xp_gain_7_modifier = {
+	monthly_super_lifestyle_xp_gain_mult = 2
+}

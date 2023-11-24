@@ -43,3 +43,34 @@ super_is_open_mod_helper = {
 
 	}
 }
+
+#对于超能之路经验的获取速度
+super_get_lifestyle_xp_rate = { 
+	categories = {     #分类在difficult下
+		difficulty ai
+	}
+	default = super_get_lifestyle_xp_rate_low
+	super_get_lifestyle_xp_rate_same = {
+	}
+	super_get_lifestyle_xp_rate_low = {
+		apply_modifier = ai:super_lifestyle_xp_gain_1_modifier
+	}
+	super_get_lifestyle_xp_rate_lower_mid = {
+		apply_modifier = ai:super_lifestyle_xp_gain_2_modifier
+	}
+	super_get_lifestyle_xp_rate_mid = {
+		apply_modifier = ai:super_lifestyle_xp_gain_3_modifier
+	}
+	super_get_lifestyle_xp_rate_lower_high = {
+		apply_modifier = ai:super_lifestyle_xp_gain_4_modifier
+	}
+	super_get_lifestyle_xp_rate_high = {
+		apply_modifier = ai:super_lifestyle_xp_gain_5_modifier
+	}
+	super_get_lifestyle_xp_rate_very_high = {
+		apply_modifier = ai:super_lifestyle_xp_gain_6_modifier
+	}
+	super_get_lifestyle_xp_rate_super_high = {
+		apply_modifier = ai:super_lifestyle_xp_gain_7_modifier
+	}
+}
