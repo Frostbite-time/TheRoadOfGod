@@ -104,6 +104,7 @@ super_wisdom_god_star_building_1 = {
 		stewardship = 4
 		intrigue = 4
 		learning = 4
+		monthly_lifestyle_xp_gain_mult = 0.05
 	}
 	
 	# 此处地产
@@ -173,6 +174,7 @@ super_wisdom_god_star_building_2 = {
 		stewardship = 8
 		intrigue = 8
 		learning = 8
+		monthly_lifestyle_xp_gain_mult = 0.1
 	}
 	
 	# 此处地产
@@ -246,6 +248,7 @@ super_wisdom_god_star_building_3 = {
 		stewardship = 12
 		intrigue = 12
 		learning = 12
+		monthly_lifestyle_xp_gain_mult = 0.15
 	}
 	
 	# 此处地产
@@ -316,6 +319,7 @@ super_wisdom_god_star_building_4 = {
 		stewardship = 16
 		intrigue = 16
 		learning = 16
+		monthly_lifestyle_xp_gain_mult = 0.2
 	}
 	
 	# 此处地产
@@ -395,7 +399,7 @@ super_wisdom_god_star_building_5 = {
 		stewardship = 20
 		intrigue = 20
 		learning = 20
-		
+		monthly_lifestyle_xp_gain_mult = 0.25
 	}
 	
 	# 此处地产
