@@ -233,7 +233,7 @@ super_art_cr_sup.0003 = {
 		random_list = {
 			0 = {
 				trigger_event = {
-					id = super_art_cr_sup.0004
+					id = super_art_cr_sup.0006
 					days = { 20 80 }
 				}
 				modifier = {
@@ -270,7 +270,7 @@ super_art_cr_sup.0003 = {
 		random_list = {
 			0 = {
 				trigger_event = {
-					id = super_art_cr_sup.0004
+					id = super_art_cr_sup.0006
 					days = { 20 80 }
 				}
 				modifier = {
@@ -307,7 +307,7 @@ super_art_cr_sup.0003 = {
 		random_list = {
 			0 = {
 				trigger_event = {
-					id = super_art_cr_sup.0004
+					id = super_art_cr_sup.0006
 					days = { 20 80 }
 				}
 				modifier = {
@@ -581,5 +581,22 @@ super_art_cr_sup.0005 = {
 	}
 	option = {
 		name = super_art_cr_sup.0005.a
+	}
+}
+
+#贤者之石提升事件   在实际执行之前先行判断
+super_art_cr_sup.0006 = {
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				is_have_sage_stone = yes
+			}
+			trigger_event = super_art_cr_sup.0004
+		}
+		else = {
+			trigger_event = super_art_cr_sup.0005
+		}
 	}
 }
