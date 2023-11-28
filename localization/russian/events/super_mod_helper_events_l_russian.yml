@@ -27,7 +27,7 @@ l_russian:
  super_mod_helper_events.0005.t: "Become the God of War"
  super_mod_helper_events.0006.1: "Return"
  super_mod_helper_events.0006.2: "Exit"
- super_mod_helper_events.0006.desc: "Way to Godhood: A special building slot (Astrolabe) is added in Constantinople. The Astrolabe has 5 levels, each upgrade taking 6 years, costing 1000, 1500, 2000, 2500, 3000 money (AI 300, 800, 1200, 1700, 2300). Possessing a level 5 Astrolabe and spending a Philosopher's Stone turns one into the Inscriptor of the Stellar Seas (must possess at least the additional trait 'Angel'). In 867, the Astrolabe starts at level 0, and at level 2 in 1066."
+ super_mod_helper_events.0006.desc: "Method of Becoming a God: Constantinople gains an additional special building slot (Star Realm Compass), which has 6 levels in total. Upon owning a level 6 Star Realm Compass, consume a Sage's Stone to become a Star Sea Engraver (must have at least one additional trait: Angel). The Star Realm Compass starts at level 1 in the year 867 and at level 3 in the year 1066."
  super_mod_helper_events.0006.t: "Become the God of Wisdom"
  super_mod_helper_events.0007.1: "Return"
  super_mod_helper_events.0007.2: "Exit"
