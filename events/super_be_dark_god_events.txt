@@ -89,6 +89,9 @@ super_be_dark_god_events.0004 = {
         root = {
             save_scope_as = super_dark_god_now
         }
+        hidden_effect = {
+            set_immortal_age = 25
+        }
         every_living_character = {
             limit = {
                 is_landed = yes

@@ -59,6 +59,9 @@ super_be_nature_events.0003 = {
         root = {
             save_scope_as = super_nature_god_now
         }
+        hidden_effect = {
+            set_immortal_age = 25
+        }
 
         every_living_character = {
             limit = {

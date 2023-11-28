@@ -140,6 +140,9 @@ super_be_sea_god_events.0005 = {
         save_scope_as = super_sea_god_now
     }
     after = {
+        hidden_effect = {
+            set_immortal_age = 25
+        }
         every_living_character = {
             limit = {
                 is_landed = yes

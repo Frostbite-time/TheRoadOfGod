@@ -92,6 +92,9 @@ super_be_war_god_event.0004 = {
     }
 
     after = {
+        hidden_effect = {
+            set_immortal_age = 25
+        }
         root = {
             save_scope_as = super_war_god_now
         }

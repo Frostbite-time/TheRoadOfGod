@@ -94,6 +94,9 @@ super_be_wisdom_god_events.0005 = {
         # option details...
     }
 	after = {
+        hidden_effect = {
+            set_immortal_age = 25
+        }
 		root = {
 			save_scope_as = super_wisdom_god_now
 		}

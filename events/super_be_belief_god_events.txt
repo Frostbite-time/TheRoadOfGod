@@ -65,6 +65,9 @@ super_be_belief_god_events.0003 = {
     }
 
     after = {
+        hidden_effect = {
+            set_immortal_age = 25
+        }
         every_living_character = {
             limit = {
                 is_landed = yes
