@@ -195,7 +195,25 @@ has_least_five_foest_province = {
 	}
 }	
 
-#至少拥有15个直属森林男爵领
+#至少拥有10个直属森林男爵领
+has_least_ten_foest_province = {
+	OR = {
+		any_directly_owned_province = {
+			count >= 10
+			terrain = forest
+		}
+		any_directly_owned_province = {
+			count >= 10
+			terrain = taiga
+		}
+		any_directly_owned_province = {
+			count >= 10
+			terrain = jungle
+		}
+	}
+}
+
+#至少拥有12个直属森林男爵领
 has_least_twelve_foest_province = {
 	OR = {
 		any_directly_owned_province = {
@@ -208,6 +226,78 @@ has_least_twelve_foest_province = {
 		}
 		any_directly_owned_province = {
 			count >= 12
+			terrain = jungle
+		}
+	}
+}
+
+#至少拥有15个直属森林男爵领
+has_least_fifteen_foest_province = {
+	OR = {
+		any_directly_owned_province = {
+			count >= 15
+			terrain = forest
+		}
+		any_directly_owned_province = {
+			count >= 15
+			terrain = taiga
+		}
+		any_directly_owned_province = {
+			count >= 15
+			terrain = jungle
+		}
+	}
+}
+
+#至少拥有20个直属森林男爵领
+has_least_twenty_foest_province = {
+	OR = {
+		any_directly_owned_province = {
+			count >= 20
+			terrain = forest
+		}
+		any_directly_owned_province = {
+			count >= 20
+			terrain = taiga
+		}
+		any_directly_owned_province = {
+			count >= 20
+			terrain = jungle
+		}
+	}
+}
+
+#至少拥有25个直属森林男爵领
+has_least_twentyfive_foest_province = {
+	OR = {
+		any_directly_owned_province = {
+			count >= 25
+			terrain = forest
+		}
+		any_directly_owned_province = {
+			count >= 25
+			terrain = taiga
+		}
+		any_directly_owned_province = {
+			count >= 25
+			terrain = jungle
+		}
+	}
+}
+
+#至少拥有30个直属森林男爵领
+has_least_thirty_foest_province = {
+	OR = {
+		any_directly_owned_province = {
+			count >= 30
+			terrain = forest
+		}
+		any_directly_owned_province = {
+			count >= 30
+			terrain = taiga
+		}
+		any_directly_owned_province = {
+			count >= 30
 			terrain = jungle
 		}
 	}

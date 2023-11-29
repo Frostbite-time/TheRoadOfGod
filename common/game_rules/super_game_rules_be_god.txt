@@ -1,0 +1,19 @@
+﻿#此文件下放置用于调控成神难度的游戏规则
+
+#是否开启此mod
+super_how_diffculty_be_nature_god_for_player = {
+	
+	categories = {     
+		difficulty
+	}
+
+	default = super_25_forest_be_god
+
+	super_5_forest_be_god = {}
+	super_10_forest_be_god = {}
+	super_12_forest_be_god = {}
+	super_15_forest_be_god = {}
+	super_20_forest_be_god = {}
+	super_25_forest_be_god = {}
+	super_30_forest_be_god = {}
+}

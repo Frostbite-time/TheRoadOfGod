@@ -227,8 +227,47 @@ super_to_be_nature_god = {
 			}
 			has_least_five_foest_province = yes
 		}
-		trigger_else = {
+		trigger_else_if = {
+			limit = {
+				has_game_rule = super_5_forest_be_god
+			}
+			has_least_five_foest_province = yes
+		}
+		trigger_else_if = {
+			limit = {
+				has_game_rule = super_10_forest_be_god
+			}
+			has_least_ten_foest_province = yes
+		}
+		trigger_else_if = {
+			limit = {
+				has_game_rule = super_12_forest_be_god
+			}
 			has_least_twelve_foest_province = yes
+		}
+		trigger_else_if = {
+			limit = {
+				has_game_rule = super_15_forest_be_god
+			}
+			has_least_fifteen_foest_province = yes
+		}
+		trigger_else_if = {
+			limit = {
+				has_game_rule = super_20_forest_be_god
+			}
+			has_least_twenty_foest_province = yes
+		}
+		trigger_else_if = {
+			limit = {
+				has_game_rule = super_25_forest_be_god
+			}
+			has_least_twentyfive_foest_province = yes
+		}
+		trigger_else = {
+			limit = {
+				has_game_rule = super_30_forest_be_god
+			}
+			has_least_thirty_foest_province = yes
 		}
 	}
 	
