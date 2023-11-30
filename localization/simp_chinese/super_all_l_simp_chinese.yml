@@ -99,6 +99,11 @@ setting_super_25_forest_be_god: "略高难度"
 setting_super_25_forest_be_god_desc: "直辖25座森林地产"
 setting_super_30_forest_be_god: "高难度"
 setting_super_30_forest_be_god_desc: "直辖30座森林地产"
+CAN_HAS_LEAST_TEN_FOEST_PROVINCE: "至少直辖10座森林地产"
+CAN_HAS_LEAST_FIFTEEN_FOEST_PROVINCE: " 至少直辖15座森林地产"
+CAN_HAS_LEAST_TWENTY_FOEST_PROVINCE: "至少直辖20座森林地产"
+CAN_HAS_LEAST_TWENTYFIVE_FOEST_PROVINCE: "至少直辖25座森林地产"
+CAN_HAS_LEAST_THIRTY_FOEST_PROVINCE: "至少直辖30座森林地产"
 
 
 

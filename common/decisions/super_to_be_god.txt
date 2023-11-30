@@ -184,7 +184,7 @@ super_to_be_wisdom_god = {
 	}
 }
 
-#成为自然之神
+#成为森林之神
 super_to_be_nature_god = {               
 	title = super_to_be_nature_god   #决议名称的loc_key
 	desc = super_to_be_nature_god_desc  #决议的描述loc_key

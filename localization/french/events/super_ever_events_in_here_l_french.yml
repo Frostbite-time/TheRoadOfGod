@@ -107,7 +107,7 @@ l_french:
  be_angel_event.0004.t: "Becoming a God"
  be_angel_event.0004.desc: "Congratulations, you have acquired the most powerful trait of this mod. This is the endpoint of this mod. \nHowever, you can also explore different fun, like playing a sea-watching game, seeing who among the AIs wins in the end after constant skirmishes, or dueling with another AI possessing this trait. \nIf such an AI doesn't appear, then wait for the Mongol invasion, as the Mongol Khan will sweep through with divine traits."
  be_angel_event.0004.a: "Continue the journey"
- super_faith_event.0001.t: "Worshiping the Nature God"
+ super_faith_event.0001.t: "Worshiping the forest God"
  super_faith_event.0001.desc: "I walk in this mysterious forest, surrounded by towering ancient trees and dense bushes. \nI remember my family and friends telling me about the greatness of this deity, who can control the entire forest and let life thrive under his guidance. \nThe path ahead seems long and endless."
  super_faith_event.0001.a: " Praise nature, praise life"
  super_faith_event.0002.desc: "I feel a cool breeze, as if I've merged with the world"

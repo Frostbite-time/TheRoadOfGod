@@ -22,7 +22,7 @@ not_is_anyone_war_god = {
     global_not = NOT_CAN_IS_ANYONE_WAR_GOD
     global = CAN_IS_ANYONE_WAR_GOD  
 }
-#自然神力是否未被占据
+#森林神力是否未被占据
 not_is_anyone_nature_god = {
     global = CAN_IS_ANYONE_NATURE_GOD
     global_not = NOT_CAN_IS_ANYONE_NATURE_GOD
@@ -61,9 +61,29 @@ is_have_sage_stone = {
 has_least_five_foest_province = {
     global = CAN_HAS_LEAST_FIVE_FOEST_PROVINCE
 }
-#至少拥有15个直属森林男爵领
+#至少拥有10个直属森林男爵领
+has_least_ten_foest_province = {
+    global = CAN_HAS_LEAST_TEN_FOEST_PROVINCE
+}
+#至少拥有12个直属森林男爵领
 has_least_twelve_foest_province = {
     global = CAN_HAS_LEAST_TWELVE_FOEST_PROVINCE
+}
+#至少拥有15个直属森林男爵领
+has_least_fifteen_foest_province = {
+    global = CAN_HAS_LEAST_FIFTEEN_FOEST_PROVINCE
+}
+#至少拥有20个直属森林男爵领
+has_least_twenty_foest_province = {
+    global = CAN_HAS_LEAST_TWENTY_FOEST_PROVINCE
+}
+#至少拥有25个直属森林男爵领
+has_least_twentyfive_foest_province = {
+    global = CAN_HAS_LEAST_TWENTYFIVE_FOEST_PROVINCE
+}
+#至少拥有30个直属森林男爵领
+has_least_thirty_foest_province = {
+    global = CAN_HAS_LEAST_THIRTY_FOEST_PROVINCE
 }
 #至少200个伯爵领信仰 信仰之神教会 
 super_at_least_two_hundreds_county_faith_belief_fa = {

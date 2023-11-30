@@ -31,7 +31,7 @@ god_of_time = {
 god_of_sun = {
 	parent = super_base_god
 }
-#自然
+#森林
 god_of_nature = {
 	parent = super_six_nature_god
 }

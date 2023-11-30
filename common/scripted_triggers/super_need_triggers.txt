@@ -122,7 +122,7 @@ not_is_anyone_war_god = {
 		}	
 	}	
 }
-#自然
+#森林
 not_is_anyone_nature_god = {
 	NOT = {
 		any_living_character = {
