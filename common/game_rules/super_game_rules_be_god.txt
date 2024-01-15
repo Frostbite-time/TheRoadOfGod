@@ -4,7 +4,7 @@
 super_how_diffculty_be_nature_god_for_player = {
 	
 	categories = {     
-		difficulty
+		super_rule_group
 	}
 
 	default = super_25_forest_be_god

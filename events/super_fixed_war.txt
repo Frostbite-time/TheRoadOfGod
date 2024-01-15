@@ -15,21 +15,21 @@ fixed_war_arm.0001 = {
 		hidden_effect = {
 			destroy_leadr = yes
 		}
-		root = {
-			create_artifact = {
-				name = war_arm
-				description = war_arm_desc
-				type = armor_plate
-				visuals = armor
-				rarity = illustrious
-				decaying = no
-				quality = 300
-				wealth = 300
-				modifier = leader_am_fixed_modif
-				max_durability = 1000
-				durability = 1000
-				save_scope_as = newly_created_artifact
-				template = war_armr_template
+		root = {  #创造的宝物会被这个作用域角色获得
+			create_artifact = {  #创建宝物
+				name = war_arm  			#宝物名称 这是一个本地化键
+				description = war_arm_desc	#宝物描述 这是一个本地化键
+				type = armor_plate			#宝物类型
+				visuals = armor				#宝物外观  需要去artifacts/visuals文件夹下定义  也可以用原版的
+				rarity = illustrious		#宝物稀有度  这里是卓越
+				decaying = no				#宝物是否会腐朽，即耐久度是否会下降，这不能阻止事件使其降低耐久 
+				quality = 300				#宝物品质  影响ai对宝物的评估
+				wealth = 300				#宝物价值  忘记干啥的了
+				modifier = leader_am_fixed_modif  #宝物的修正  这个在modifiers文件夹下定义 你也可以直接写具体的修正，这样就不用额外定义
+				max_durability = 1000		#宝物最大耐久度
+				durability = 1000			#宝物耐久度
+				save_scope_as = newly_created_artifact	#将创建的宝物作为作用域  以便后面的事件使用（如果在事件的immediate中创造也可以直接被当前事件调用）
+				template = war_armr_template			#宝物模板  这个在artifacts/templates文件夹下定义  也可以用原版的  非必须 可以不写
 			}		
 		}	
 	}

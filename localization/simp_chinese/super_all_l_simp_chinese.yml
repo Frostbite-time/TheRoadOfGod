@@ -105,5 +105,8 @@ CAN_HAS_LEAST_TWENTY_FOEST_PROVINCE: "至少直辖20座森林地产"
 CAN_HAS_LEAST_TWENTYFIVE_FOEST_PROVINCE: "至少直辖25座森林地产"
 CAN_HAS_LEAST_THIRTY_FOEST_PROVINCE: "至少直辖30座森林地产"
 
+#-------------------------------------------------------------------------------------------
+game_rule_category_super_rule_group: "超能之路规则组"
+
 
 

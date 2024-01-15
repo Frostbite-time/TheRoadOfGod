@@ -4,7 +4,7 @@
 is_open_super_mod = {
 	
 	categories = {     #分类在ai和difficult下
-		difficulty ai
+		super_rule_group
 	}
 
 	default = normal_super_mod
@@ -30,7 +30,7 @@ is_open_super_mod = {
 super_is_open_mod_helper = {
 
 	categories = {     #分类在difficult下
-		difficulty 
+		super_rule_group 
 	}
 
 	default = super_is_open_mod_helper_opened
@@ -47,7 +47,7 @@ super_is_open_mod_helper = {
 #对于超能之路经验的获取速度
 super_get_lifestyle_xp_rate = { 
 	categories = {     #分类在difficult下
-		difficulty ai
+		super_rule_group
 	}
 	default = super_get_lifestyle_xp_rate_low
 	super_get_lifestyle_xp_rate_same = {
