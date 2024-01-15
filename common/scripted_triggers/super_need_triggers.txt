@@ -303,7 +303,7 @@ has_least_thirty_foest_province = {
 	}
 }
 
-#至少有200个伯爵领信仰 信仰之神教会
+#至少有200个伯爵领信仰 生灵之神教会
 super_at_least_two_hundreds_county_faith_belief_fa = {
 	faith:super_belief_fa = {
 		num_county_followers >= 200

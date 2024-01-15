@@ -37,7 +37,7 @@ not_is_anyone_wisdom_god = {
     global = CAN_IS_ANYONE_WISDOM_GOD
     global_not = NOT_CAN_IS_ANYONE_WISDOM_GOD
 }
-#信仰神力是否未被占据
+#生灵神力是否未被占据
 not_is_anyone_belief_god = {
     global = CAN_IS_ANYONE_BELIEF_GOD
     global_not = NOT_CAN_IS_ANYONE_BELIEF_GOD
@@ -85,7 +85,7 @@ has_least_twentyfive_foest_province = {
 has_least_thirty_foest_province = {
     global = CAN_HAS_LEAST_THIRTY_FOEST_PROVINCE
 }
-#至少200个伯爵领信仰 信仰之神教会 
+#至少200个伯爵领信仰 生灵之神教会 
 super_at_least_two_hundreds_county_faith_belief_fa = {
     global = CAN_SUPER_AT_LEAST_TWO_HUNDREDS_COUNTY_FAITH_BELIEF_FA
 }

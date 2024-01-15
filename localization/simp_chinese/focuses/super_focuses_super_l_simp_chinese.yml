@@ -11,7 +11,7 @@ super_perk_focus_power_modifier:1 "[GetFocus('super_perk_focus_power').GetName]"
 super_perk_focus_power_effect_desc:0 "潜心于力量，不可自拔："
 #心智操纵
 super_perk_mind_power:0 "思维学者"
-Super_perk_focus_mind_desc:0 "众生皆是提线木偶"
+Super_perk_focus_mind_desc:0 "研究心灵的智慧，众生皆是提线木偶"
 super_perk_mind_power_modifier:1 "[GetFocus('super_perk_mind_power').GetName]"
 super_perk_mind_power_effect_desc:0 "思想之深邃，绝非易事："
     

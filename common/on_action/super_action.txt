@@ -2,7 +2,7 @@
 on_game_start = {
 	on_actions = {
 		super_add_building_slot_constantinople  #为君士坦丁堡添加星盘
-		super_change_faith_to_belief_god   		#使得开局有一些随机的角色成为信仰之神教会的人
+		super_change_faith_to_belief_god   		#使得开局有一些随机的角色成为生灵之神教会的人
 	}
 }
 #每年年初触发的自定义action有哪些  没有root
@@ -275,7 +275,7 @@ super_can_get_sea_god_power_action = {
 	}
 }
 
-#使得开局有一部分角色成为信仰之神教会的人   
+#使得开局有一部分角色成为生灵之神教会的人   
 super_change_faith_to_belief_god = {
 	effect = {
 		if = {

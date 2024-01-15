@@ -86,7 +86,7 @@ super_to_be_wisdom_god_5 = {
 	}
 }
 
-#成为自然之神  系列
+#成为森林之神  系列
 super_to_be_nature_god_1 = {
 	background = {
 		reference = "gfx/interface/illustrations/event_scenes/super_to_be_nature_god_1.dds"
@@ -136,7 +136,7 @@ super_to_be_sea_god_5 = {
 	}
 }
 
-#成为信仰之神  系列
+#成为生灵之神  系列
 super_to_be_belief_god_1 = {
 	background = {
 		reference = "gfx/interface/illustrations/event_scenes/super_to_be_belief_god_1.dds"

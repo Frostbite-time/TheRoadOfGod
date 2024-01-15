@@ -290,7 +290,7 @@ super_to_be_nature_god = {
 	}
 }
 
-#成为信仰之神
+#成为生灵之神
 super_to_be_blielif_god = {               
 	title = super_to_be_blielif_god   #决议名称的loc_key
 	desc = super_to_be_blielif_god_desc  #决议的描述loc_key

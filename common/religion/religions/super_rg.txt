@@ -237,7 +237,7 @@ exotic_rg = {
 
 
 
-#信仰之神教会
+#生灵之神教会
 super_belief_rg = {
 	family = super_religion_familis  #属于什么宗教组
 	graphical_faith = "islamic_gfx"  #使用什么宗教图形
@@ -452,7 +452,7 @@ super_belief_rg = {
 
 	#接下来是这个宗教包含的信仰
 	faiths = {
-		#信仰之神教会
+		#生灵之神教会
 		super_belief_fa = {
 			color = { 62 35 74 }  			#地图上显示为什么颜色 RGB值
 			icon = meshefaresism
