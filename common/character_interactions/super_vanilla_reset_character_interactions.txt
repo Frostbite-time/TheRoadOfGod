@@ -5976,7 +5976,6 @@ start_murder_interaction = {
 		custom_description = {
 			text = cant_murder_tips
 			OR = {
-				
 				AND = {
 					scope:actor.faith = {
 						has_doctrine = sanctions_from_shadows
@@ -5995,6 +5994,11 @@ start_murder_interaction = {
 					scope:recipient = { NOT = { has_strong_hook = scope:actor } }
 				}
 					
+			}
+		}
+		NOT = {
+			scope:recipient = {
+				is_character_god = yes
 			}
 		}	
 	}

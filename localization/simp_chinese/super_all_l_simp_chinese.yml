@@ -156,5 +156,7 @@ super_heart_fear_modifier: "心有余悸"
 super_soul_stone_modifier: "灵魂晶石"
 CAN_IS_EQUIQ_SOUL_STONE: "装备灵魂晶石"
 NOT_CAN_IS_EQUIQ_SOUL_STONE: "没有装备灵魂晶石"
+CAN_IS_CHARACTER_GOD: "该角色是神"
+NOT_CAN_IS_CHARACTER_GOD: "该角色不是神"
 
 

@@ -107,3 +107,9 @@ is_equiq_soul_stone = {
     global = CAN_IS_EQUIQ_SOUL_STONE
     global_not = NOT_CAN_IS_EQUIQ_SOUL_STONE
 }
+
+# 该角色是神
+is_character_god = {
+    global = CAN_IS_CHARACTER_GOD
+    global_not = NOT_CAN_IS_CHARACTER_GOD
+}
