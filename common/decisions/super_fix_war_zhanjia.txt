@@ -37,11 +37,11 @@ fix_war_zhanjia = {
 	
 	is_shown = {       #显示决议的条件
 		any_character_artifact = {
-			has_artifact_modifier = leader_am_modif
+			has_artifact_modifier = 领军者战甲_修正
 		}
 		NOT = {
 			any_artifact = {
-				has_artifact_modifier = leader_am_fixed_modif
+				has_artifact_modifier = 战神之甲_修正
 			}
 		}
 	}
@@ -66,7 +66,7 @@ fix_war_zhanjia = {
 		every_living_character = {
 			limit = {
 				any_character_artifact = {
-					has_artifact_modifier = leader_am_modif
+					has_artifact_modifier = 领军者战甲_修正
 				}
 			}
 			trigger_event = {

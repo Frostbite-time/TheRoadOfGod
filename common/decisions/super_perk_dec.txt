@@ -150,7 +150,7 @@ final_call_dec = {
 		modifier = {
 			multiply = 0.1
 			any_character_artifact = {
-				has_artifact_modifier = sage_stone_modif
+				has_artifact_modifier = 贤者之石_修正
 			}
 		}
 	}
@@ -167,7 +167,7 @@ final_call_dec = {
 					}     #效果:开始此事件
 					modifier = {
 						factor = 0
-						has_character_modifier = time_god_use
+						has_character_modifier = 时空之神的祝福_修正
 					}
 				}
 				0 = {
@@ -177,7 +177,7 @@ final_call_dec = {
 					}     #效果:开始此事件
 					modifier = {
 						add = 1000
-						has_character_modifier = time_god_use
+						has_character_modifier = 时空之神的祝福_修正
 					}
 				}	
 			}		

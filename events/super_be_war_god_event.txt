@@ -9,7 +9,7 @@ super_be_war_god_event.0001 = {
     immediate = {
         random_artifact = {
             limit = {
-                has_artifact_modifier = leader_am_fixed_modif
+                has_artifact_modifier = 战神之甲_修正
             }
             save_scope_as = war_god_armour
         }

@@ -6,7 +6,7 @@
 		type = miscellaneous
 		visuals = soul_stone
 		rarity = illustrious
-		modifier = super_soul_stone_modifier
+		modifier = 灵魂晶石_修正
 		wealth = 100
 		quality = 100
 		save_scope_as = newly_created_artifact

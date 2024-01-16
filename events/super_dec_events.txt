@@ -844,7 +844,7 @@ call_god_events.0007 = {
 			100 = {
 				root = {
 					add_character_modifier = { 
-						modifier = call_god_1
+						modifier = 神恩赐福1
 						years = 5
 					}
 				}	
@@ -852,7 +852,7 @@ call_god_events.0007 = {
 			100 = {
 				root = {
 					add_character_modifier = { 
-						modifier = call_god_6
+						modifier = 神恩赐福6
 						years = 5
 					}
 				}	
@@ -860,7 +860,7 @@ call_god_events.0007 = {
 			100 = {
 				root = {
 					add_character_modifier = { 
-						modifier = call_god_7
+						modifier = 神恩赐福7
 						years = 5
 					}
 				}
@@ -898,7 +898,7 @@ call_god_events.0008 = {
 			100 = {
 				root = {
 					add_character_modifier = { 
-						modifier = call_god_3
+						modifier = 神恩赐福3
 						years = 2
 					}
 				}	
@@ -906,7 +906,7 @@ call_god_events.0008 = {
 			100 = {
 				root = {
 					add_character_modifier = { 
-						modifier = call_god_4
+						modifier = 神恩赐福4
 						years = 2
 					}
 				}	
@@ -914,7 +914,7 @@ call_god_events.0008 = {
 			100 = {
 				root = {
 					add_character_modifier = { 
-						modifier = call_god_9
+						modifier = 神恩赐福9
 						years = 2
 					}
 				}
@@ -957,7 +957,7 @@ call_god_events.0009 = {
 			200 = {
 				root = {
 					add_character_modifier = { 
-						modifier = call_god_10
+						modifier = 神之诅咒1
 						years = 5
 					}
 				}	
@@ -965,7 +965,7 @@ call_god_events.0009 = {
 			200 = {
 				root = {
 					add_character_modifier = { 
-						modifier = call_god_11
+						modifier = 神之诅咒2
 						years = 5
 					}
 				}	
@@ -973,7 +973,7 @@ call_god_events.0009 = {
 			200 = {
 				root = {
 					add_character_modifier = { 
-						modifier = call_god_12
+						modifier = 神之诅咒3
 						years = 5
 					}
 				}
@@ -1061,7 +1061,7 @@ call_god_events.0011 = {
 		name = call_god_events.0011.d		#给予修正
 		hidden_effect = {
 			add_character_modifier = {
-				modifier = time_god_use
+				modifier = 时空之神的祝福_修正
 				years = 5
 			}
 		}
@@ -1214,7 +1214,7 @@ call_god_events.0015 = {
 			100 = {
 				root = {
 					add_character_modifier = { 
-						modifier = call_god_1 
+						modifier = 神恩赐福1 
 						years = 5
 					}
 				}
@@ -1222,7 +1222,7 @@ call_god_events.0015 = {
 			100 = {
 				root = {
 					add_character_modifier = { 
-						modifier = call_god_6 
+						modifier = 神恩赐福6 
 						years = 5
 					}
 				}

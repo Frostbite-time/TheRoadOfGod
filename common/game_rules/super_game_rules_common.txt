@@ -53,24 +53,24 @@ super_get_lifestyle_xp_rate = {
 	super_get_lifestyle_xp_rate_same = {
 	}
 	super_get_lifestyle_xp_rate_low = {
-		apply_modifier = ai:super_lifestyle_xp_gain_1_modifier
+		apply_modifier = ai:超能之路月度生活方式经验增加百分10_修正
 	}
 	super_get_lifestyle_xp_rate_lower_mid = {
-		apply_modifier = ai:super_lifestyle_xp_gain_2_modifier
+		apply_modifier = ai:超能之路月度生活方式经验增加百分20_修正
 	}
 	super_get_lifestyle_xp_rate_mid = {
-		apply_modifier = ai:super_lifestyle_xp_gain_3_modifier
+		apply_modifier = ai:超能之路月度生活方式经验增加百分30_修正
 	}
 	super_get_lifestyle_xp_rate_lower_high = {
-		apply_modifier = ai:super_lifestyle_xp_gain_4_modifier
+		apply_modifier = ai:超能之路月度生活方式经验增加百分40_修正
 	}
 	super_get_lifestyle_xp_rate_high = {
-		apply_modifier = ai:super_lifestyle_xp_gain_5_modifier
+		apply_modifier = ai:超能之路月度生活方式经验增加百分50_修正
 	}
 	super_get_lifestyle_xp_rate_very_high = {
-		apply_modifier = ai:super_lifestyle_xp_gain_6_modifier
+		apply_modifier = ai:超能之路月度生活方式经验增加百分100_修正
 	}
 	super_get_lifestyle_xp_rate_super_high = {
-		apply_modifier = ai:super_lifestyle_xp_gain_7_modifier
+		apply_modifier = ai:超能之路月度生活方式经验增加百分200_修正
 	}
 }

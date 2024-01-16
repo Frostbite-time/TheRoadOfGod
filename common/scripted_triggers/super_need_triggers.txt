@@ -1,21 +1,21 @@
 ﻿#检测角色是否拥有贤者之石
 是否有贤者之石 = {
 	any_character_artifact = {
-		has_artifact_modifier = sage_stone_modif
+		has_artifact_modifier = 贤者之石_修正
 	}
 }
 
 # 检测角色是否拥有灵魂晶石
 是否有灵魂晶石 = {
 	any_character_artifact = {
-		has_artifact_modifier = super_soul_stone_modifier
+		has_artifact_modifier = 灵魂晶石_修正
 	}
 }
 
 # 检测角色是否装备了灵魂晶石
 是否装备了灵魂晶石 = {
 	any_equipped_character_artifact = {
-		has_artifact_modifier = super_soul_stone_modifier
+		has_artifact_modifier = 灵魂晶石_修正
 	}
 }
 #检测角色是否拥有十个以上的囚犯
@@ -109,7 +109,7 @@
 #用于检测角色有没有战神之甲
 角色有没有战神之甲 = {
 	any_character_artifact = {
-		has_artifact_modifier =  leader_am_fixed_modif
+		has_artifact_modifier =  战神之甲_修正
 	}
 }
 

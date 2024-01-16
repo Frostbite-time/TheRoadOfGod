@@ -29,7 +29,7 @@ super_random_events.0001 = {
 	option = {
 		name = super_random_events.0001.2
 		add_character_modifier = {
-			modifier = super_defense_magic_modifier
+			modifier = 防御法阵_修正
 			years = 2
 		}
 		add_character_flag = super_seed_is_done_flag
@@ -60,7 +60,7 @@ super_random_events.0002 = {
 		name = super_random_events.0002.2
 		add_character_flag = super_seed_is_done_flag
 		add_character_modifier = {
-			modifier = super_heart_fear_modifier
+			modifier = 心有余悸_修正
 			years = 5
 		}
 	}
@@ -197,7 +197,7 @@ super_random_events.0005 = {
 	option = {
 		name = super_random_events.0005.1
 		add_character_modifier = {
-			modifier = super_defense_magic_modifier
+			modifier = 防御法阵_修正
 			years = 10
 		}
 		add_character_flag = super_seed_is_done_flag
@@ -219,7 +219,7 @@ super_random_events.0006 = {
 	option = {
 		name = super_random_events.0006.1
 		add_character_modifier = {
-			modifier = super_seed_modifier
+			modifier = 洞悉之种_修正
 		}
 		add_character_flag = super_seed_is_done_flag
 	}
@@ -239,7 +239,7 @@ super_random_events.0007 = {
 	option = {
 		name = super_random_events.0007.1
 		add_character_modifier = {
-			modifier = super_seed_modifier
+			modifier = 洞悉之种_修正
 		}
 		add_character_flag = super_seed_is_done_flag
 	}

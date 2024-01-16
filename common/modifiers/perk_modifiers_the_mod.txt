@@ -1,4 +1,4 @@
-﻿prowess_lei_it = {
+﻿掌控者 = {
 	icon = prowess_positive
 	vassal_opinion = 50
 	vassal_limit = 10
@@ -11,24 +11,24 @@
 }
 
 #唤神事件buff   高健康
-call_god_1 = {
+神恩赐福1 = {
 	icon = health_positive
 	health = 3
 }
-call_god_2 = {
+神恩赐福2 = {
 	icon = health_positive
 	health = 2
 }
-call_god_3 = {
+神恩赐福3 = {
 	icon = health_positive
 	health = 1
 }
-call_god_10 = {
+神之诅咒1 = {
 	icon = health_positive
 	health = -2
 }
 #属性增加
-call_god_4 = {
+神恩赐福4 = {
 	icon = food_positive
 	diplomacy = 3
 	martial = 3
@@ -37,7 +37,7 @@ call_god_4 = {
 	learning = 3
 	prowess = 3
 }
-call_god_5 = {
+神恩赐福5 = {
 	icon = food_positive
 	diplomacy = 5
 	martial = 5
@@ -46,7 +46,7 @@ call_god_5 = {
 	learning = 5
 	prowess = 5
 }
-call_god_6 = {
+神恩赐福6 = {
 	icon = food_positive
 	diplomacy = 10
 	martial = 10
@@ -55,7 +55,7 @@ call_god_6 = {
 	learning = 10
 	prowess = 10
 }
-call_god_11 = {
+神之诅咒2 = {
 	icon = food_positive
 	diplomacy = -5
 	martial = -5
@@ -65,45 +65,45 @@ call_god_11 = {
 	prowess = -5
 }
 #压力降低
-call_god_7 = {
+神恩赐福7 = {
 	icon = dog_positive
 	stress_gain_mult = -0.5
 	stress_loss_mult = 0.5
 }
 
-call_god_8 = {
+神恩赐福8 = {
 	icon = dog_positive
 	stress_gain_mult = -0.3
 	stress_loss_mult = 0.3	
 }
-call_god_9 = {
+神恩赐福9 = {
 	icon = dog_positive
 	stress_gain_mult = -0.1
 	stress_loss_mult = 0.1	
 }
-call_god_12 = {
+神之诅咒3 = {
 	icon = dog_positive
 	stress_gain_mult = 0.3
 	stress_loss_mult = -0.3	
 }
 
 #时空之神的祝福
-time_god_use = {
+时空之神的祝福_修正 = {
 	icon = magic_positive
 }
 
 #贤者之石特有修正
-sage_stone_modif = {
+贤者之石_修正 = {
 	icon = magic_positive
 }
 
 #未修复的领军者战甲修正
-leader_am_modif = {
+领军者战甲_修正 = {
 	icon = magic_positive
 }
 
 #已修复的领军者战甲特有修正
-leader_am_fixed_modif = {
+战神之甲_修正 = {
 	icon = magic_positive
 	martial = 50
 	prowess = 50
@@ -121,7 +121,7 @@ leader_am_fixed_modif = {
 }
 
 #星空的庇护
-assistance_from_stars = {
+来自星空的庇护_修正 = {
 	icon = magic_positive
 	advantage_against_coreligionists = 100
 	health = 10
@@ -132,7 +132,7 @@ assistance_from_stars = {
 }
 
 #神明的侵蚀
-god_hated = {
+神明的侵蚀_修正 = {
 	icon = magic_negative
 	general_opinion = -10
 	opinion_of_same_faith = -10
@@ -140,7 +140,7 @@ god_hated = {
 }
 
 #海神权杖
-neptune_scepter_modifier = {
+海神权杖_修正 = {
 	icon = magic_positive
 	prowess = 50
 	no_prowess_loss_from_age = yes
@@ -156,60 +156,60 @@ neptune_scepter_modifier = {
 }
 
 #加强警惕
-super_add_vigilance_modifier = {
+灵性警觉_修正 = {
 	icon = spoon_positive
 	hostile_scheme_resistance_mult = 0.25
 }
 
 #降低警惕
-super_reduce_vigilance_modifier = {
+灵性放松_修正 = {
 	icon = spoon_positive
 	hostile_scheme_resistance_mult = -0.15
 }
 
 #对于不同游戏规则下对于超能之路生活方式经验加成
-super_lifestyle_xp_gain_1_modifier = {
+超能之路月度生活方式经验增加百分10_修正 = {
 	monthly_super_lifestyle_xp_gain_mult = 0.1
 }
-super_lifestyle_xp_gain_2_modifier = {
+超能之路月度生活方式经验增加百分20_修正 = {
 	monthly_super_lifestyle_xp_gain_mult = 0.2
 }
-super_lifestyle_xp_gain_3_modifier = {
+超能之路月度生活方式经验增加百分30_修正 = {
 	monthly_super_lifestyle_xp_gain_mult = 0.3
 }
-super_lifestyle_xp_gain_4_modifier = {
+超能之路月度生活方式经验增加百分40_修正 = {
 	monthly_super_lifestyle_xp_gain_mult = 0.4
 }
-super_lifestyle_xp_gain_5_modifier = {
+超能之路月度生活方式经验增加百分50_修正 = {
 	monthly_super_lifestyle_xp_gain_mult = 0.5
 }
-super_lifestyle_xp_gain_6_modifier = {
+超能之路月度生活方式经验增加百分100_修正 = {
 	monthly_super_lifestyle_xp_gain_mult = 1
 }
-super_lifestyle_xp_gain_7_modifier = {
+超能之路月度生活方式经验增加百分200_修正 = {
 	monthly_super_lifestyle_xp_gain_mult = 2
 }
 
 # 洞悉之种
-super_seed_modifier = {
+洞悉之种_修正 = {
 	icon = magic_positive
 	monthly_super_lifestyle_xp_gain_mult = 0.2
 }
 
 # 防御法阵
-super_defense_magic_modifier = {
+防御法阵_修正 = {
 	icon = magic_positive
 	hostile_scheme_resistance_add = 20
 }
 
 # 心有余悸
-super_heart_fear_modifier = {
+心有余悸_修正 = {
 	icon = magic_negative
 	health = -0.8
 }
 
 # 灵魂晶石
-super_soul_stone_modifier = {
+灵魂晶石_修正 = {
 	icon = magic_positive
 	health = -1
 }

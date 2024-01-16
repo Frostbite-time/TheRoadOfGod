@@ -380,7 +380,7 @@ super_to_be_sea_god = {
 	is_shown = {       #显示决议的条件
 		是否拥有自然六神的神力 = no
 		any_character_artifact = {
-			has_artifact_modifier = neptune_scepter_modifier
+			has_artifact_modifier = 海神权杖_修正
 		}
 		current_date > 1130.1.1
 	}	

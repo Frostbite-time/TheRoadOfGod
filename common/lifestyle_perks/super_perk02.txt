@@ -208,7 +208,7 @@ controller_perk = {
 		custom_description_no_bullet = {
 			text = controller_perk_dec
 		}
-		add_character_modifier = prowess_lei_it
+		add_character_modifier = 掌控者
 	}
 	parent = awe_inspiring	
 }
