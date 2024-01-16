@@ -89,3 +89,15 @@ has_least_thirty_foest_province = {
 super_at_least_two_hundreds_county_faith_belief_fa = {
     global = CAN_SUPER_AT_LEAST_TWO_HUNDREDS_COUNTY_FAITH_BELIEF_FA
 }
+
+# 拥有灵魂晶石
+is_have_soul_stone = {
+    global = CAN_IS_HAVE_SOUL_STONE
+    global_not = NOT_CAN_IS_HAVE_SOUL_STONE
+}
+
+# 该角色十分强大
+is_powerful_super_one = {
+    global = CAN_IS_POWERFUL_SUPER_ONE
+    global_not = NOT_CAN_IS_POWERFUL_SUPER_ONE
+}

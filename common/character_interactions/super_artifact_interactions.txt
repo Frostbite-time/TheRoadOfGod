@@ -1,0 +1,59 @@
+﻿# 夺取对方的灵魂
+super_take_his_soul = {
+	icon = icon_hostile
+	desc = super_take_his_soul_desc
+	common_interaction = yes
+	interface_priority = 90
+	category = interaction_category_hostile
+	auto_accept = yes
+	ai_frequency = 6
+	ai_targets = {
+		ai_recipients = neighboring_rulers
+	}
+	ai_target_quick_trigger = {
+		adult = yes
+	}
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = 100
+			scope:actor = {
+				is_at_war_with = scope:recipient
+			}
+		}
+	}
+	ai_potential = {
+		always = yes
+	}
+	ignores_pending_interaction_block = yes
+
+	cooldown = {
+		years = 3
+	}
+
+	is_shown = {
+		NOT = { scope:recipient = scope:actor }
+		scope:actor = {
+			is_have_soul_stone = yes
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		NOT = {
+			scope:recipient = {
+				is_powerful_super_one = yes
+			}
+		}		
+	}
+
+	
+
+	on_accept = {
+		scope:recipient = {
+			death = {
+				death_reason = death_for_lost_your_soul
+				killer = scope:actor
+			}
+		}
+	}
+}

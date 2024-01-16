@@ -1406,12 +1406,12 @@ duel_to_super = {
 		OR = {
 			scope:actor = {
 				any_character_war = {
-					this.primary_attacker == scope:recipient
+					this.primary_attacker = scope:recipient
 				}
 			}
 			scope:actor = {
 				any_character_war = {
-					this.primary_defender == scope:recipient
+					this.primary_defender = scope:recipient
 				}
 			}
 		}
@@ -1421,7 +1421,7 @@ duel_to_super = {
 	}
 
 	cooldown_against_recipient = {  #不能反复发动勇武决斗
-	years = 5
+		years = 5
 	}
 
 

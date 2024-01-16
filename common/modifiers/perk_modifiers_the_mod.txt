@@ -189,3 +189,27 @@ super_lifestyle_xp_gain_6_modifier = {
 super_lifestyle_xp_gain_7_modifier = {
 	monthly_super_lifestyle_xp_gain_mult = 2
 }
+
+# 洞悉之种
+super_seed_modifier = {
+	icon = magic_positive
+	monthly_super_lifestyle_xp_gain_mult = 0.1
+}
+
+# 防御法阵
+super_defense_magic_modifier = {
+	icon = magic_positive
+	hostile_scheme_resistance_add = 20
+}
+
+# 心有余悸
+super_heart_fear_modifier = {
+	icon = magic_negative
+	health = -0.8
+}
+
+# 灵魂晶石
+super_soul_stone_modifier = {
+	icon = magic_positive
+	health = -1
+}

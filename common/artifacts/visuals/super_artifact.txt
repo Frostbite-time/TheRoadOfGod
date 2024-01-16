@@ -7,3 +7,8 @@ sage_stone = {
 neptune_scepter = {
 	icon = "neptune_scepter_name.dds"
 }
+
+# 灵魂晶石
+soul_stone = {
+	icon = "soul_stone_name.dds"
+}

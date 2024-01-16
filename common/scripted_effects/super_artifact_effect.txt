@@ -1,0 +1,14 @@
+﻿# 创造灵魂晶石
+create_soul_stone = {
+	create_artifact = {
+		name = soul_stone_name
+		description = soul_stone_desc
+		type = miscellaneous
+		visuals = soul_stone
+		rarity = illustrious
+		modifier = super_soul_stone_modifier
+		wealth = 100
+		quality = 100
+		save_scope_as = newly_created_artifact
+	}
+}

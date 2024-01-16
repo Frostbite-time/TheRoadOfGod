@@ -45,3 +45,15 @@ death_for_murder_bt_rift = {
 	public_knowledge = no
 	icon ="death_murder.dds"
 }
+
+# 死于他人利用魔性的谋杀
+death_for_murder_by_devilishness_close_one = {
+	public_knowledge = no
+	icon = "death_murder"
+}
+
+# 你失去了你的灵魂
+death_for_lost_your_soul ={
+	public_knowledge = yes
+	icon = "death_murder"
+}

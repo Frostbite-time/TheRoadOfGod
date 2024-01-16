@@ -5,6 +5,13 @@ is_have_sage_stone = {
 	}
 }
 
+# 检测角色是否拥有灵魂晶石
+is_have_soul_stone = {
+	any_character_artifact = {
+		has_artifact_modifier = super_soul_stone_modifier
+	}
+}
+
 #检测角色是否拥有十个以上的囚犯
 is_have_ten_prisoner = {
 	AND = {
@@ -109,6 +116,16 @@ is_star_power_god = {
 		has_trait = super_wisdom_god
 		has_trait = super_belief_god
 		has_trait = super_sea_god
+	}
+}
+
+# 角色是否拥有足够强大的实力
+is_powerful_super_one = {
+	OR = {
+		has_war_arm_fixed = yes
+		is_character_god = yes
+		has_apostle_trait = yes
+		is_character_has_any_great_traits = yes
 	}
 }
 

@@ -1,0 +1,34 @@
+﻿# 每年伯爵以及以上角色 有概率 能触发的on_action
+random_yearly_playable_pulse = {
+	on_actions = {
+		super_visit_from_other  #来自其他超能人物的拜访   随机事件仅给予效果，不严重影响游戏
+		super_visit_from_belief_god  #来自生灵之神教会的拜访   随机事件可能导致角色的信仰改变
+	}
+}
+
+# 来自其他超能人物的拜访
+super_visit_from_other = {
+	effect = {
+		random_list = {
+			1 = {
+				trigger_event = {
+					id = super_random_events.0001	# 洞悉之种的事件链
+					days = { 1 180 }
+				}
+			}
+			1 = {}
+		}
+	}	
+}
+
+# 来自生灵之神教会的拜访
+super_visit_from_belief_god = {
+	effect = {
+		random_list = {
+			1 = {
+				
+			}
+			1 = {}
+		}
+	}
+}

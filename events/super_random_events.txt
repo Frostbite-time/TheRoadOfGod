@@ -1,0 +1,210 @@
+﻿namespace = super_random_events
+
+# 洞悉之种的事件链
+super_random_events.0001 = {
+	type = character_event
+	title = super_random_events.0001.t
+	desc = super_random_events.0001.desc
+	theme = realm
+
+	trigger = {
+		NOT = {
+			OR = {
+				is_the_character_god = {
+					CHARACTER = root
+				}
+				has_character_flag = super_seed_is_done_flag
+			}	
+		}
+	}
+
+	option = {
+		name = super_random_events.0001.1
+		trigger_event = super_random_events.0002
+	}
+
+	option = {
+		name = super_random_events.0001.2
+		add_character_modifier = {
+			modifier = super_defense_magic_modifier
+			years = 2
+		}
+		add_character_flag = super_seed_is_done_flag
+	}
+}
+
+super_random_events.0002 = {
+	type = character_event
+	title = super_random_events.0002.t
+	desc = super_random_events.0002.desc
+	theme = realm
+
+	option = {
+		name = super_random_events.0002.1
+		trigger_event = super_random_events.0003
+	}
+	
+	option = {
+		name = super_random_events.0002.2
+		add_character_flag = super_seed_is_done_flag
+		add_character_modifier = {
+			modifier = super_heart_fear_modifier
+			years = 5
+		}
+	}
+}
+
+
+
+super_random_events.0003 = {
+	type = character_event
+	title = super_random_events.0003.t
+	desc = super_random_events.0003.desc
+	theme = realm
+
+	option = {
+		name = super_random_events.0003.1
+		trigger = {
+			has_trait = devilishness
+		}
+		every_close_family_member = {
+			limit = {
+				NOT = {
+					is_powerful_super_one = yes
+				}
+			}
+			death = {
+				death_reason = death_for_murder_by_devilishness_close_one
+				killer = root
+			}
+		}
+		trigger_event = {
+			id = super_random_events.0004
+			days = { 1 6 }
+		}
+	}
+
+	option = {
+		name = super_random_events.0003.2
+		trigger = {
+			has_trait = saint_in_flesh_traits
+		}
+		trigger_event = super_random_events.0005
+	}
+	
+
+	option = {
+		name = super_random_events.0003.3
+		trigger = {
+			has_trait = angel_traits
+		}
+		trigger_event = super_random_events.0006
+	}
+
+	option = {
+		name = super_random_events.0003.4
+		death = {
+			death_reason = death_for_lost_your_soul
+		}
+	}
+	
+	option = {
+		name = super_random_events.0003.5
+		random_list = {
+			1 ={
+				death = {
+					death_reason = death_for_lost_your_soul
+				}
+			}
+			1 = {
+				trigger_event = super_random_events.0007
+			}
+		}
+	}
+
+	option = {
+		name = super_random_events.0003.6
+		trigger_event = super_random_events.0008
+	}
+	
+}
+
+
+super_random_events.0004 = {
+	type = character_event
+	title = super_random_events.0004.t
+	desc = super_random_events.0004.desc
+	theme = realm
+
+	artifact = {
+		target = scope:newly_created_artifact
+		position = lower_left_portrait
+	}	
+
+	immediate = {
+		create_soul_stone = yes
+	}
+
+	option = {
+		name = super_random_events.0004.1
+		add_character_flag = super_seed_is_done_flag
+	}
+}
+
+super_random_events.0005 = {
+	type = character_event
+	title = super_random_events.0005.t
+	desc = super_random_events.0005.desc
+	theme = realm
+
+	option = {
+		name = super_random_events.0005.1
+		add_character_modifier = {
+			modifier = super_defense_magic_modifier
+			years = 10
+		}
+		add_character_flag = super_seed_is_done_flag
+	}
+}
+
+super_random_events.0006 = {
+	type = character_event
+	title = super_random_events.0006.t
+	desc = super_random_events.0006.desc
+	theme = realm
+
+	option = {
+		name = super_random_events.0006.1
+		add_character_modifier = {
+			modifier = super_seed_modifier
+		}
+		add_character_flag = super_seed_is_done_flag
+	}
+}
+
+super_random_events.0007 = {
+	type = character_event
+	title = super_random_events.0007.t
+	desc = super_random_events.0007.desc
+	theme = realm
+
+	option = {
+		name = super_random_events.0007.1
+		add_character_modifier = {
+			modifier = super_seed_modifier
+		}
+		add_character_flag = super_seed_is_done_flag
+	}
+}
+
+super_random_events.0008 = {
+	type = character_event
+	title = super_random_events.0008.t
+	desc = super_random_events.0008.desc
+	theme = realm
+
+	option = {
+		name = super_random_events.0008.1
+		add_character_flag = super_seed_is_done_flag
+	}
+}
