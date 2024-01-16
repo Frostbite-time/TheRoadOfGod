@@ -12,6 +12,12 @@ is_have_soul_stone = {
 	}
 }
 
+# 检测角色是否装备了灵魂晶石
+is_equiq_soul_stone = {
+	any_equipped_character_artifact = {
+		has_artifact_modifier = super_soul_stone_modifier
+	}
+}
 #检测角色是否拥有十个以上的囚犯
 is_have_ten_prisoner = {
 	AND = {

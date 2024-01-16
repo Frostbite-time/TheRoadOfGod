@@ -138,6 +138,7 @@ super_random_events.0006.t: "神秘的拜访"
 super_random_events.0006.desc: "一道圣光降下，荡涤了这里的一切，随后你还发现了他们的力量之源，你毫不犹豫的将其吸收殆尽。"
 super_random_events.0006.1: "离开这里"
 death_for_lost_your_soul: "灵魂被夺取"
+death_for_lost_your_soul_killer: "你夺取了他的灵魂"
 super_random_events.0007.t: "神秘的拜访"
 super_random_events.0007.desc: "在灵魂的交锋中，你获得了胜利，声声咒文反而将力量注入到了你的身体中。"
 super_random_events.0007.1: "离开这里"
@@ -153,5 +154,7 @@ super_take_his_soul_desc: "通过灵魂晶石，你将他的灵魂吸收殆尽�
 super_defense_magic_modifier: "防御法阵"
 super_heart_fear_modifier: "心有余悸"
 super_soul_stone_modifier: "灵魂晶石"
+CAN_IS_EQUIQ_SOUL_STONE: "装备灵魂晶石"
+NOT_CAN_IS_EQUIQ_SOUL_STONE: "没有装备灵魂晶石"
 
 

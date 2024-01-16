@@ -101,3 +101,9 @@ is_powerful_super_one = {
     global = CAN_IS_POWERFUL_SUPER_ONE
     global_not = NOT_CAN_IS_POWERFUL_SUPER_ONE
 }
+
+# 角色是否装备有灵魂晶石
+is_equiq_soul_stone = {
+    global = CAN_IS_EQUIQ_SOUL_STONE
+    global_not = NOT_CAN_IS_EQUIQ_SOUL_STONE
+}

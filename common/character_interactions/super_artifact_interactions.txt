@@ -34,7 +34,7 @@ super_take_his_soul = {
 	is_shown = {
 		NOT = { scope:recipient = scope:actor }
 		scope:actor = {
-			is_have_soul_stone = yes
+			is_equiq_soul_stone = yes
 		}
 	}
 
