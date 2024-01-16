@@ -17,7 +17,7 @@ super_achemy.0001 ={
 					}
 					modifier = {
 						add = -10
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -74,9 +74,9 @@ super_achemy.0002 = {
 	}
 	immediate = {
 		random_list = {
-			60 = {create_alchemy_artifact_1 = yes}
-			35 = {create_alchemy_artifact_2 = yes}
-			5 = {create_alchemy_artifact_3 = yes}
+			60 = {创造宝物_1级炼金术类 = yes}
+			35 = {创造宝物_2级炼金术类 = yes}
+			5 = {创造宝物_3级炼金术类 = yes}
 		}	
 	}
 	option = {
@@ -96,8 +96,8 @@ super_achemy.0003 = {
 	}
 	immediate = {
 		random_list = {
-			50 = {create_alchemy_artifact_2 = yes}
-			50 = {create_alchemy_artifact_3 = yes}
+			50 = {创造宝物_2级炼金术类 = yes}
+			50 = {创造宝物_3级炼金术类 = yes}
 		}			
 	}
 	option = {
@@ -116,7 +116,7 @@ super_achemy.0004 = {
 		position = lower_right_portrait
 	}
 	immediate = {
-		create_sage_stone = yes
+		创造宝物_贤者之石 = yes
 	}
 	option = {
 		name = super_achemy.0004.a

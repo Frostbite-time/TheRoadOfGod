@@ -164,7 +164,7 @@ start_rift_murder_interaction = {
 		}
 		scope:recipient = { NOT = { has_strong_hook = scope:actor } }
 		NOT = {
-			is_the_character_god = {
+			角色是不是神_接受参数 = {
 				CHARACTER = scope:recipient
 			}
 		}
@@ -262,7 +262,7 @@ start_rift_murder_interaction = {
 						}
 						modifier = {
 							factor = 0
-							is_the_character_god = {
+							角色是不是神_接受参数 = {
 								CHARACTER = scope:recipient
 							}
 						}
@@ -363,7 +363,7 @@ get_title_or_vass = {
 				trigger_event = thelast.0002
 			}
 		}
-		get_all_maintitle_and_join = yes
+		要求对方交出头衔并成为附庸_在互动可用 = yes
 	}
 }
 
@@ -1039,7 +1039,7 @@ ask_to_pay_super = {
 					limit = {
 						has_perk = play_heart_and_mind
 					}
-					three_times_low = yes
+					使得思维学者牵制可以使用3次 = yes
 				}
 			}
 		}
@@ -1111,7 +1111,7 @@ run_out_hook = {
 		modifier = {
 			add = 60
 			scope:actor = {
-				is_character_has_any_great_traits = yes
+				是否拥有三大特质之一 = yes
 			}	
 		}
 		modifier = {

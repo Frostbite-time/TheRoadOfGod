@@ -13,7 +13,7 @@ super_random_events.0001 = {
 	trigger = {
 		NOT = {
 			OR = {
-				is_the_character_god = {
+				角色是不是神_接受参数 = {
 					CHARACTER = root
 				}
 				has_character_flag = super_seed_is_done_flag
@@ -86,7 +86,7 @@ super_random_events.0003 = {
 			every_close_family_member = {
 				limit = {
 					NOT = {
-						is_powerful_super_one = yes
+						是否拥有足够强大的实力 = yes
 					}
 				}
 				death = {
@@ -175,7 +175,7 @@ super_random_events.0004 = {
 	}	
 
 	immediate = {
-		create_soul_stone = yes
+		创造宝物_灵魂晶石 = yes
 	}
 
 	option = {

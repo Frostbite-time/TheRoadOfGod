@@ -13,7 +13,7 @@ fixed_war_arm.0001 = {
 	}	
 	immediate = {
 		hidden_effect = {
-			destroy_leadr = yes
+			摧毁宝物_全部的领军者战甲 = yes
 		}
 		root = {  #创造的宝物会被这个作用域角色获得
 			create_artifact = {  #创建宝物
@@ -50,7 +50,7 @@ fixed_war_arm.0002 = {
 	left_portrait = root
 	immediate = {
 		hidden_effect = {
-			destroy_leadr = yes
+			摧毁宝物_全部的领军者战甲 = yes
 		}
 	}			
 	option = {

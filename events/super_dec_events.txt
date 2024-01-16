@@ -31,7 +31,7 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -56,7 +56,7 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -67,7 +67,7 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -78,7 +78,7 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -89,7 +89,7 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -100,7 +100,7 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						add = 1000
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -132,7 +132,7 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -157,7 +157,7 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -168,7 +168,7 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -179,7 +179,7 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -190,7 +190,7 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -201,7 +201,7 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						add = 1000
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -233,7 +233,7 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -258,7 +258,7 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -269,7 +269,7 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -280,7 +280,7 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -291,7 +291,7 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						add = 1000
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -302,7 +302,7 @@ call_god_events.0001 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -339,7 +339,7 @@ call_god_events.0001 = {
 				}
 				modifier = {
 					factor = 0
-					is_the_character_god = {
+					角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 				}
@@ -350,7 +350,7 @@ call_god_events.0001 = {
 				}
 				modifier = {
 					factor = 0
-					is_the_character_god = {
+					角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 				}				
@@ -361,7 +361,7 @@ call_god_events.0001 = {
 				}
 				modifier = {
 					add = 1000
-					is_the_character_god = {
+					角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 				}
@@ -400,7 +400,7 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -425,7 +425,7 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -436,7 +436,7 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -447,7 +447,7 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -458,7 +458,7 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -469,7 +469,7 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						add = 1000
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -501,7 +501,7 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -526,7 +526,7 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -537,7 +537,7 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -548,7 +548,7 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -559,7 +559,7 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -570,7 +570,7 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						add = 1000
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -602,7 +602,7 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -627,7 +627,7 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -638,7 +638,7 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -649,7 +649,7 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -660,7 +660,7 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						add = 1000
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -671,7 +671,7 @@ call_god_events.0004 = {
 					}
 					modifier = {
 						factor = 0
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -708,7 +708,7 @@ call_god_events.0004 = {
 				}
 				modifier = {
 					factor = 0
-					is_the_character_god = {
+					角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 				}
@@ -719,7 +719,7 @@ call_god_events.0004 = {
 				}
 				modifier = {
 					factor = 0
-					is_the_character_god = {
+					角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 				}				
@@ -730,7 +730,7 @@ call_god_events.0004 = {
 				}
 				modifier = {
 					add = 1000
-					is_the_character_god = {
+					角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 				}
@@ -1122,7 +1122,7 @@ call_god_events.0006 = {
 	
 	option = {
 		name = call_god_events.0006.a
-		get_all_maintitle_and_join_call = yes	
+		要求对方交出头衔并成为附庸_仅用于召唤神明的事件链 = yes	
 		
 	}
 	option = {

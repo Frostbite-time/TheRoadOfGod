@@ -44,7 +44,7 @@ to_be_god = {
 				days = { 2 3 }
 			}
 		}
-		remove_sage_stone = yes	
+		摧毁宝物_贤者之石 =yes	
 	}
 }
 
@@ -75,18 +75,18 @@ out_of_apostle = {
 			has_trait = saint_in_flesh_traits
 			has_trait = devilishness
 			NOT = {
-				is_the_character_god = {
+				角色是不是神_接受参数 = {
 					CHARACTER = this
 				}
 			}
-			has_apostle_trait = yes
+			是否有使徒特质 = yes
 		}	
 	}
 	
 	is_valid_showing_failures_only = {   #角色必须未被囚禁且为成人，且拥有贤者之石
 		AND = {
 			is_imprisoned = no
-			is_have_sage_stone = yes
+			是否有贤者之石 = yes
 		}	
 	}
 	
@@ -102,6 +102,6 @@ out_of_apostle = {
 		hidden_effect = {
 			trigger_event = be_angel_event.0005
 		}
-		remove_sage_stone = yes	
+		摧毁宝物_贤者之石 =yes	
 	}
 }

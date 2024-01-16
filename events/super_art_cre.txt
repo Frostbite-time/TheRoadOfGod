@@ -12,7 +12,7 @@ super_art_cr_sup.0001 = {
 		name = super_art_cr_sup.0001.a     #王冠
 		root = {
 			set_variable = {
-				name = ar_type
+				name = 神器类型
 				value = 1
 			}
 			remove_short_term_gold = {
@@ -33,7 +33,7 @@ super_art_cr_sup.0001 = {
 		name = super_art_cr_sup.0001.b     #武器
 		root = {
 			set_variable = {
-				name = ar_type
+				name = 神器类型
 				value = 2
 			}
 			remove_short_term_gold = {
@@ -54,7 +54,7 @@ super_art_cr_sup.0001 = {
 		name = super_art_cr_sup.0001.c     #护甲
 		root = {
 			set_variable = {
-				name = ar_type
+				name = 神器类型
 				value = 3
 			}
 			remove_short_term_gold = {
@@ -79,13 +79,21 @@ super_art_cr_sup.0002 = {
 	theme = realm
 	override_background = { event_background = armory }
 	left_portrait = root
+	immediate = {
+		root = {
+			set_variable = {
+				name = 神器宝物提升次数
+				value = 0
+			}
+		}
+	}
 	option = {
 		ai_chance = 10
 		name = super_art_cr_sup.0002.a
 		root = {
-			set_variable = {
-				name = ar_one
-				value = 1
+			change_variable = {
+				name = 神器宝物提升次数
+				add = 1
 			}
 			remove_short_term_gold = {
 				add = 200
@@ -120,9 +128,9 @@ super_art_cr_sup.0002 = {
 		ai_chance = 20
 		name = super_art_cr_sup.0002.b
 		root = {
-			set_variable = {
-				name = ar_one
-				value = 1
+			change_variable = {
+				name = 神器宝物提升次数
+				add = 1
 			}
 			add_piety = {
 				add = -400
@@ -157,9 +165,9 @@ super_art_cr_sup.0002 = {
 		ai_chance = 30
 		name = super_art_cr_sup.0002.c
 		root = {
-			set_variable = {
-				name = ar_one
-				value = 1
+			change_variable = {
+				name = 神器宝物提升次数
+				add = 1
 			}
 			add_prestige = {
 				add = -400
@@ -193,12 +201,6 @@ super_art_cr_sup.0002 = {
 	option = {
 		ai_chance = 40
 		name = super_art_cr_sup.0002.d
-		root = {
-			set_variable = {
-				name = ar_one
-				value = 0
-			}
-		}
 		trigger_event = {
 			id = super_art_cr_sup.0005
 			days = { 20 80 }
@@ -218,9 +220,9 @@ super_art_cr_sup.0003 = {
 		ai_chance = 20
 		name = super_art_cr_sup.0003.a
 		root = {
-			set_variable = {
-				name = ar_two
-				value = 1
+			change_variable = {
+				name = 神器宝物提升次数
+				add = 1
 			}
 			add_stress = {
 				add = 70
@@ -238,7 +240,7 @@ super_art_cr_sup.0003 = {
 				}
 				modifier = {
 					trigger_if = {
-						limit = { is_have_sage_stone = yes }
+						limit = { 是否有贤者之石 = yes }
 					}
 					add = 50
 				}
@@ -255,9 +257,9 @@ super_art_cr_sup.0003 = {
 		ai_chance = 10
 		name = super_art_cr_sup.0003.b
 		root = {
-			set_variable = {
-				name = ar_two
-				value = 1
+			change_variable = {
+				name = 神器宝物提升次数
+				add = 1
 			}
 			remove_short_term_gold = {
 				add = 200
@@ -275,7 +277,7 @@ super_art_cr_sup.0003 = {
 				}
 				modifier = {
 					trigger_if = {
-						limit = { is_have_sage_stone = yes }
+						limit = { 是否有贤者之石 = yes }
 					}
 					add = 50
 				}
@@ -292,9 +294,9 @@ super_art_cr_sup.0003 = {
 		ai_chance = 30
 		name = super_art_cr_sup.0003.c
 		root = {
-			set_variable = {
-				name = ar_two
-				value = 1
+			change_variable = {
+				name = 神器宝物提升次数
+				add = 1
 			}
 			add_prestige = {
 				add = -400
@@ -312,7 +314,7 @@ super_art_cr_sup.0003 = {
 				}
 				modifier = {
 					trigger_if = {
-						limit = { is_have_sage_stone = yes }
+						limit = { 是否有贤者之石 = yes }
 					}
 					add = 50
 				}
@@ -328,12 +330,6 @@ super_art_cr_sup.0003 = {
 	option = {
 		ai_chance = 40
 		name = super_art_cr_sup.0003.d
-		root = {
-			set_variable = {
-				name = ar_two
-				value = 0
-			}
-		}
 		trigger_event = {
 			id = super_art_cr_sup.0005
 			days = { 20 80 }
@@ -352,11 +348,11 @@ super_art_cr_sup.0004 = {
 	option = {
 		name = super_art_cr_sup.0004.a
 		root = {
-			set_variable = {
-				name = ar_three
-				value = 1
+			change_variable = {
+				name = 神器宝物提升次数
+				add = 1
 			}
-			remove_sage_stone = yes
+			摧毁宝物_贤者之石 =yes
 		}
 		trigger_event = {
 			id = super_art_cr_sup.0005
@@ -365,12 +361,6 @@ super_art_cr_sup.0004 = {
 	}
 	option = {
 		name = super_art_cr_sup.0004.b
-		root = {
-			set_variable = {
-				name = ar_three
-				value = 0
-			}
-		}
 		trigger_event = {
 			id = super_art_cr_sup.0005
 			days = { 20 80 }
@@ -403,28 +393,28 @@ super_art_cr_sup.0005 = {
 			save_scope_as = newly_created_artifact
 		}
 		scope:newly_created_artifact = {
-			give_random_mid_modif = yes
+			添加修正_宝物_中级 = yes
 		}
 		scope:newly_created_artifact = {   #为工艺品设置名称
 			if = {
 				limit = {
-					root.var:ar_type = 1
+					root.var:神器类型 = 1
 				}
 				if = {
 					limit = {
-						root.var:ar_three = 1
+						root.var:神器宝物提升次数 >= 3
 					}
 					set_artifact_name = shen_guan_4
 				}
 				else_if = {
 					limit = {
-						root.var:ar_two = 1
+						root.var:神器宝物提升次数 >= 2
 					}
 					set_artifact_name = shen_guan_3
 				}
 				else_if = {
 					limit = {
-						root.var:ar_one = 1
+						root.var:神器宝物提升次数 >= 1
 					}
 					set_artifact_name = shen_guan_2
 				}
@@ -434,23 +424,23 @@ super_art_cr_sup.0005 = {
 			}
 			else_if = {
 				limit = {
-					root.var:ar_type = 2
+					root.var:神器类型 = 2
 				}
 				if = {
 					limit = {
-						root.var:ar_three = 1
+						root.var:神器宝物提升次数 >= 3
 					}
 					set_artifact_name = shen_wu_4
 				}
 				else_if = {
 					limit = {
-						root.var:ar_two = 1
+						root.var:神器宝物提升次数 >= 2
 					}
 					set_artifact_name = shen_wu_3
 				}
 				else_if = {
 					limit = {
-						root.var:ar_one = 1
+						root.var:神器宝物提升次数 >= 1
 					}
 					set_artifact_name = shen_wu_2
 				}
@@ -460,23 +450,23 @@ super_art_cr_sup.0005 = {
 			}
 			else_if = {
 				limit = {
-					root.var:ar_type = 3
+					root.var:神器类型 = 3
 				}
 				if = {
 					limit = {
-						root.var:ar_three = 1
+						root.var:神器宝物提升次数 >= 3
 					}
 					set_artifact_name = shen_jia_4
 				}
 				else_if = {
 					limit = {
-						root.var:ar_two = 1
+						root.var:神器宝物提升次数 >= 2
 					}
 					set_artifact_name = shen_jia_3
 				}
 				else_if = {
 					limit = {
-						root.var:ar_one = 1
+						root.var:神器宝物提升次数 >= 1
 					}
 					set_artifact_name = shen_jia_2
 				}
@@ -488,7 +478,7 @@ super_art_cr_sup.0005 = {
 		scope:newly_created_artifact = {    #设置稀有度等级
 			if = {
 				limit = {
-					root.var:ar_three = 1
+					root.var:神器宝物提升次数 >= 3
 				}
 				reforge_artifact = {
 					rarity = illustrious
@@ -498,7 +488,7 @@ super_art_cr_sup.0005 = {
 			}
 			else_if = {
 				limit = {
-					root.var:ar_two = 1
+					root.var:神器宝物提升次数 >= 2
 				}
 				reforge_artifact = {
 					rarity = illustrious
@@ -508,7 +498,7 @@ super_art_cr_sup.0005 = {
 			}
 			else_if = {
 				limit = {
-					root.var:ar_one = 1
+					root.var:神器宝物提升次数 >= 1
 				}
 				reforge_artifact = {
 					rarity = famed
@@ -526,7 +516,7 @@ super_art_cr_sup.0005 = {
 		scope:newly_created_artifact = {   #重设宝物的类型
 			if = {
 				limit = {
-					root.var:ar_type = 1
+					root.var:神器类型 = 1
 				}
 				reforge_artifact = {
 					type = helmet
@@ -535,7 +525,7 @@ super_art_cr_sup.0005 = {
 			}
 			else_if = {
 				limit = {
-					root.var:ar_type = 2
+					root.var:神器类型 = 2
 				}
 				reforge_artifact = {
 					type = sword
@@ -544,7 +534,7 @@ super_art_cr_sup.0005 = {
 			}
 			else_if = {
 				limit = {
-					root.var:ar_type = 3
+					root.var:神器类型 = 3
 				}
 				reforge_artifact = {
 					type = armor_plate
@@ -555,27 +545,27 @@ super_art_cr_sup.0005 = {
 		scope:newly_created_artifact = {   #给予宝物修正
 			if = {
 				limit = {
-					root.var:ar_three = 1
+					root.var:神器宝物提升次数 >= 3
 				}
-				give_random_mid_modif = yes
-				give_random_mid_modif = yes
-				give_random_advance_modif = yes
-				give_random_advance_modif = yes
+				添加修正_宝物_中级 = yes
+				添加修正_宝物_中级 = yes
+				添加修正_宝物_高级 = yes
+				添加修正_宝物_高级 = yes
 			}
 			if = {
 				limit = {
-					root.var:ar_two = 1
+					root.var:神器宝物提升次数 >= 2
 				}
-				give_random_advance_modif = yes
-				give_random_advance_modif = yes
+				添加修正_宝物_高级 = yes
+				添加修正_宝物_高级 = yes
 			}
 			if = {
 				limit = {
-					root.var:ar_one = 1
+					root.var:神器宝物提升次数 >= 1
 				}
-				give_random_advance_modif = yes
-				give_random_advance_modif = yes
-				give_random_advance_modif = yes
+				添加修正_宝物_高级 = yes
+				添加修正_宝物_高级 = yes
+				添加修正_宝物_高级 = yes
 			}
 		}
 	}
@@ -591,7 +581,7 @@ super_art_cr_sup.0006 = {
 	immediate = {
 		if = {
 			limit = {
-				is_have_sage_stone = yes
+				是否有贤者之石 = yes
 			}
 			trigger_event = super_art_cr_sup.0004
 		}

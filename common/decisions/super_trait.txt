@@ -34,10 +34,10 @@
 				limit = {
 					is_ai = yes
 				}
-				is_have_five_prisoner = yes
+				是否有5个以上囚犯 = yes
 			}
 			trigger_else = {
-				is_have_ten_prisoner = yes
+				是否拥有十个以上的囚犯 = yes
 			}
 		}	
 	}

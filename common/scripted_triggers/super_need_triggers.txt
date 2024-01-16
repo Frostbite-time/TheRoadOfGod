@@ -1,32 +1,32 @@
 ﻿#检测角色是否拥有贤者之石
-is_have_sage_stone = {
+是否有贤者之石 = {
 	any_character_artifact = {
 		has_artifact_modifier = sage_stone_modif
 	}
 }
 
 # 检测角色是否拥有灵魂晶石
-is_have_soul_stone = {
+是否有灵魂晶石 = {
 	any_character_artifact = {
 		has_artifact_modifier = super_soul_stone_modifier
 	}
 }
 
 # 检测角色是否装备了灵魂晶石
-is_equiq_soul_stone = {
+是否装备了灵魂晶石 = {
 	any_equipped_character_artifact = {
 		has_artifact_modifier = super_soul_stone_modifier
 	}
 }
 #检测角色是否拥有十个以上的囚犯
-is_have_ten_prisoner = {
+是否拥有十个以上的囚犯 = {
 	AND = {
 		any_prisoner = { count >= 10 }
 	}
 }
 
 #检测角色是否有5个以上囚犯
-is_have_five_prisoner = {
+是否有5个以上囚犯 = {
 	AND = {
 		any_prisoner = { count >= 5 }
 	}
@@ -34,7 +34,7 @@ is_have_five_prisoner = {
 
 
 #角色是否拥有任何高级特质
-is_character_has_any_great_traits = {
+是否拥有三大特质之一 = {
 	OR = {
 		has_trait = angel_traits
 		has_trait = saint_in_flesh_traits
@@ -43,14 +43,14 @@ is_character_has_any_great_traits = {
 }
 
 #角色是否是神
-is_character_god = {
-	is_the_character_god = {
+是否是神 = {
+	角色是不是神_接受参数 = {
 		CHARACTER = this
 	}
 }
 
 #角色是否拥有强力技能特质
-is_character_has_any_perk_traits = {
+是否拥有强力技能或特质 = {
 	OR = {
 		has_trait = know_all_thing_traits
 		has_trait = the_gift_of_god
@@ -60,7 +60,7 @@ is_character_has_any_perk_traits = {
 }
 
 #角色有使徒特质
-has_apostle_trait = {
+是否有使徒特质 = {
 	OR = {
 		has_trait = apostle_of_destiny
 		has_trait = apostle_of_hope
@@ -70,7 +70,7 @@ has_apostle_trait = {
 }
 
 #用于计谋  角色是否被目标思想操纵
-be_hooked_by_mind = {
+是否被目标思想操纵_用于计谋 = {
 	scope:recipient = {
 		OR = {
 			has_hook_of_type = {
@@ -86,7 +86,7 @@ be_hooked_by_mind = {
 }
 
 #用于检测角色是不是神  输入一个角色作用域 如果是神，返回真
-is_the_character_god = {
+角色是不是神_接受参数 = {
 	$CHARACTER$ = {
 		OR = {
 			has_trait = super_war_god
@@ -107,14 +107,14 @@ is_the_character_god = {
 }
 
 #用于检测角色有没有战神之甲
-has_war_arm_fixed = {
+角色有没有战神之甲 = {
 	any_character_artifact = {
 		has_artifact_modifier =  leader_am_fixed_modif
 	}
 }
 
 #检查是否拥有自然六神的神力
-is_star_power_god = {
+是否拥有自然六神的神力 = {
 	OR = {
 		has_trait = super_war_god
 		has_trait = super_dark_god
@@ -126,20 +126,20 @@ is_star_power_god = {
 }
 
 # 角色是否拥有足够强大的实力
-is_powerful_super_one = {
+是否拥有足够强大的实力 = {
 	OR = {
-		has_war_arm_fixed = yes
-		is_character_god = yes
-		has_apostle_trait = yes
-		is_character_has_any_great_traits = yes
-		is_character_has_any_perk_traits = yes
+		角色有没有战神之甲 = yes
+		是否是神 = yes
+		是否有使徒特质 = yes
+		是否拥有三大特质之一 = yes
+		是否拥有强力技能或特质 = yes
 	}
 }
 
 #检查地图上是否有其他人拥有自然神力--------------------------------------------------------
 
 #战争
-not_is_anyone_war_god = {
+没有人拥有战争神力 = {
 	NOT = {	
 		any_living_character = {
 			has_trait = super_war_god
@@ -147,7 +147,7 @@ not_is_anyone_war_god = {
 	}	
 }
 #森林
-not_is_anyone_nature_god = {
+没有人拥有森林神力 = {
 	NOT = {
 		any_living_character = {
 			has_trait = super_nature_god
@@ -155,7 +155,7 @@ not_is_anyone_nature_god = {
 	}	
 }
 #智慧
-not_is_anyone_wisdom_god = {
+没有人拥有智慧神力 = {
 	NOT = {
 		any_living_character = {
 			has_trait = super_wisdom_god
@@ -163,7 +163,7 @@ not_is_anyone_wisdom_god = {
 	}
 }
 #黑暗
-not_is_anyone_dark_god = {
+没有人拥有暗影神力 = {
 	NOT = {
 		any_living_character = {
 			has_trait = super_dark_god
@@ -171,7 +171,7 @@ not_is_anyone_dark_god = {
 	}	
 }
 #信仰
-not_is_anyone_belief_god = {
+没有人拥有生灵神力 = {
 	NOT = {
 		any_living_character = {
 			has_trait = super_belief_god
@@ -179,7 +179,7 @@ not_is_anyone_belief_god = {
 	}	
 }
 #海洋
-not_is_anyone_sea_god = {
+没有人拥有海洋神力 = {
 	NOT = {
 		any_living_character = {
 			has_trait = super_sea_god
@@ -189,7 +189,7 @@ not_is_anyone_sea_god = {
 #---------------------------------------------------------------------------------------
 
 #专为成为暗影之神准备的触发器
-is_have_fifty_prisoner = {
+暗影之神成神条件_囚犯数量 = {
 	trigger_if = {
 		limit = {
 			is_ai = no
@@ -202,7 +202,7 @@ is_have_fifty_prisoner = {
 }
 
 #至少拥有5个直属森林男爵领
-has_least_five_foest_province = {
+至少拥有5个直属森林男爵领 = {
 	OR = {
 		any_directly_owned_province = {
 			count >= 5
@@ -220,7 +220,7 @@ has_least_five_foest_province = {
 }	
 
 #至少拥有10个直属森林男爵领
-has_least_ten_foest_province = {
+至少拥有10个直属森林男爵领 = {
 	OR = {
 		any_directly_owned_province = {
 			count >= 10
@@ -238,7 +238,7 @@ has_least_ten_foest_province = {
 }
 
 #至少拥有12个直属森林男爵领
-has_least_twelve_foest_province = {
+至少拥有12个直属森林男爵领 = {
 	OR = {
 		any_directly_owned_province = {
 			count >= 12
@@ -256,7 +256,7 @@ has_least_twelve_foest_province = {
 }
 
 #至少拥有15个直属森林男爵领
-has_least_fifteen_foest_province = {
+至少拥有15个直属森林男爵领 = {
 	OR = {
 		any_directly_owned_province = {
 			count >= 15
@@ -274,7 +274,7 @@ has_least_fifteen_foest_province = {
 }
 
 #至少拥有20个直属森林男爵领
-has_least_twenty_foest_province = {
+至少拥有20个直属森林男爵领 = {
 	OR = {
 		any_directly_owned_province = {
 			count >= 20
@@ -292,7 +292,7 @@ has_least_twenty_foest_province = {
 }
 
 #至少拥有25个直属森林男爵领
-has_least_twentyfive_foest_province = {
+至少拥有25个直属森林男爵领 = {
 	OR = {
 		any_directly_owned_province = {
 			count >= 25
@@ -310,7 +310,7 @@ has_least_twentyfive_foest_province = {
 }
 
 #至少拥有30个直属森林男爵领
-has_least_thirty_foest_province = {
+至少拥有30个直属森林男爵领 = {
 	OR = {
 		any_directly_owned_province = {
 			count >= 30
@@ -328,7 +328,7 @@ has_least_thirty_foest_province = {
 }
 
 #至少有200个伯爵领信仰 生灵之神教会
-super_at_least_two_hundreds_county_faith_belief_fa = {
+生灵之神教会至少拥有200块伯爵领信仰 = {
 	faith:super_belief_fa = {
 		num_county_followers >= 200
 	}

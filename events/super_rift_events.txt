@@ -13,7 +13,7 @@ rift_events_world.0001 = {
 		name = rift_events_world.0001.a
 		trigger = {
 			scope:target = {
-				is_character_god = no
+				是否是神 = no
 			}	
 		}
 		hidden_effect = {
@@ -56,7 +56,7 @@ rift_events_world.0001 = {
 					}
 					modifier = {
 						add = -10
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -85,7 +85,7 @@ rift_events_world.0001 = {
 		name = rift_events_world.0001.b
 		trigger = {
 			scope:target = {
-				is_character_god = yes
+				是否是神 = yes
 			}	
 		}
 	}
@@ -127,7 +127,7 @@ rift_events_world.0002 = {
 					}
 					modifier = {
 						add = -10
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -167,7 +167,7 @@ rift_events_world.0002 = {
 					}
 					modifier = {
 						add = -10
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -223,7 +223,7 @@ rift_events_world.0002 = {
 					}
 					modifier = {
 						add = -10
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -270,7 +270,7 @@ rift_events_world.0003 = {
 					}
 					modifier = {
 						trigger_if = {
-							limit = { scope:target = { is_character_has_any_perk_traits = yes } }
+							limit = { scope:target = { 是否拥有强力技能或特质 = yes } }
 							add = -5
 						}
 					}
@@ -287,7 +287,7 @@ rift_events_world.0003 = {
 					}
 					modifier = {
 						add = -10
-						is_the_character_god = {
+						角色是不是神_接受参数 = {
 							CHARACTER = this
 						}
 					}
@@ -348,7 +348,7 @@ rift_events_world.0003 = {
 				}
 				modifier = {
 					add = -10
-					is_the_character_god = {
+					角色是不是神_接受参数 = {
 						CHARACTER = this
 					}
 				}
@@ -399,7 +399,7 @@ rift_events_world.0003 = {
 				}
 				modifier = {
 					add = -10
-					is_the_character_god = {
+					角色是不是神_接受参数 = {
 						CHARACTER = this
 					}
 				}
@@ -455,7 +455,7 @@ rift_events_world.0003 = {
 				}
 				modifier = {
 					add = -10
-					is_the_character_god = {
+					角色是不是神_接受参数 = {
 						CHARACTER = this
 					}
 				}
@@ -495,7 +495,7 @@ rift_events_world.0004 = {
 		name = rift_events_world.0004.a
 		trigger = {
 			NOT = {
-				is_the_character_god = {
+				角色是不是神_接受参数 = {
 					CHARACTER = this
 				}
 			}
@@ -520,7 +520,7 @@ rift_events_world.0004 = {
 		name = rift_events_world.0004.b
 		trigger = {
 			NOT = {
-				is_the_character_god = {
+				角色是不是神_接受参数 = {
 					CHARACTER = this
 				}
 			}
@@ -529,7 +529,7 @@ rift_events_world.0004 = {
 	option = {
 		name = rift_events_world.0004.c
 		trigger = {
-			is_the_character_god = {
+			角色是不是神_接受参数 = {
 				CHARACTER = this
 			}
 		}
@@ -598,7 +598,7 @@ rift_events_world.0008 = {
 		}
 		trigger = {
 			NOT = {
-				is_the_character_god = {
+				角色是不是神_接受参数 = {
 					CHARACTER = this
 				}
 			}
@@ -608,7 +608,7 @@ rift_events_world.0008 = {
 		name = rift_events_world.0008.b
 		trigger = {
 			NOT = {
-				is_the_character_god = {
+				角色是不是神_接受参数 = {
 					CHARACTER = this
 				}
 			}
@@ -623,7 +623,7 @@ rift_events_world.0008 = {
 				}
 				modifier = {
 					add = -10
-					is_the_character_god = {
+					角色是不是神_接受参数 = {
 						CHARACTER = this
 					}
 				}
@@ -645,7 +645,7 @@ rift_events_world.0008 = {
 	option = {
 		name = rift_events_world.0008.c
 		trigger = {
-			is_the_character_god = {
+			角色是不是神_接受参数 = {
 				CHARACTER = this
 			}
 		}
@@ -942,7 +942,7 @@ rift_events_world.0014 = {
 	option = {
 		trigger = {
 			NOT = {
-				is_the_character_god = {
+				角色是不是神_接受参数 = {
 					CHARACTER = root
 				}
 			}	
@@ -978,7 +978,7 @@ rift_events_world.0014 = {
 	option = {
 		name = rift_events_world.0014.3
 		trigger = {
-			is_the_character_god = {
+			角色是不是神_接受参数 = {
 				CHARACTER = root
 			}
 		}

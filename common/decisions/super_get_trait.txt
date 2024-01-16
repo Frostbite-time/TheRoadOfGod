@@ -29,7 +29,7 @@
 		AND = {
 			is_available_adult = yes
 			is_imprisoned = no
-			is_have_sage_stone = yes
+			是否有贤者之石 = yes
 
 			
 		}
@@ -69,7 +69,7 @@
 				days = { 2 3 }
 			}
 		}
-		remove_sage_stone = yes	#此类效果必须放在最后运行
+		摧毁宝物_贤者之石 =yes	#此类效果必须放在最后运行
 	}
 }
 

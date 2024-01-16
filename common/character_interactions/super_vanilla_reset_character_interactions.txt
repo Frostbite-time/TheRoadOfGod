@@ -58,9 +58,9 @@ ransom_interaction = {
 			trigger_else_if = {
 				limit = {
 					scope:actor = {
-						is_star_power_god = no
+						是否拥有自然六神的神力 = no
 						has_trait = devilishness
-						not_is_anyone_dark_god = yes
+						没有人拥有暗影神力 = yes
 					}						
 				}
 				always = no
@@ -5980,7 +5980,7 @@ start_murder_interaction = {
 					scope:actor.faith = {
 						has_doctrine = sanctions_from_shadows
 					}
-					be_hooked_by_mind = no
+					是否被目标思想操纵_用于计谋 = no
 					text = cant_murder_tips_1
 				}
 				
@@ -5998,7 +5998,7 @@ start_murder_interaction = {
 		}
 		NOT = {
 			scope:recipient = {
-				is_character_god = yes
+				是否是神 = yes
 			}
 		}	
 	}

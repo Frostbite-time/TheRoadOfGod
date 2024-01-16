@@ -1,6 +1,6 @@
 ﻿
 #使弱牵制可以使用3次
-three_times_low = {
+使得思维学者牵制可以使用3次 = {
 	if = {
 		limit = {
 			scope:actor = {
@@ -42,7 +42,7 @@ three_times_low = {
 
 
 #要求对方交出头衔并成为附庸
-get_all_maintitle_and_join = {
+要求对方交出头衔并成为附庸_在互动可用 = {
 	create_title_and_vassal_change = {
 		type = swear_fealty
 		save_scope_as = change
@@ -53,7 +53,7 @@ get_all_maintitle_and_join = {
 				tier = tier_empire
 			}
 		}
-		get_the_vss = yes
+		获取对方的一个封臣和这个封臣的主头衔_在互动可用 = yes
 	}
 	else_if = {
 		limit = {
@@ -119,7 +119,7 @@ get_all_maintitle_and_join = {
 }
 
 #获取对方的一个封臣和这个封臣的主头衔
-get_the_vss = {
+获取对方的一个封臣和这个封臣的主头衔_在互动可用 = {
 	scope:recipient = {
 		random_powerful_vassal = {
 			save_scope_as = pow_use
@@ -189,7 +189,7 @@ get_the_vss = {
 }
 
 #用于唤神事件的头衔转变
-get_all_maintitle_and_join_call = {
+要求对方交出头衔并成为附庸_仅用于召唤神明的事件链 = {
 	create_title_and_vassal_change = {
 		type = swear_fealty
 		save_scope_as = change
@@ -200,7 +200,7 @@ get_all_maintitle_and_join_call = {
 				tier = tier_empire
 			}
 		}
-		get_the_vss = yes
+		获取对方的一个封臣和这个封臣的主头衔_在互动可用 = yes
 	}
 	else_if = {
 		limit = {

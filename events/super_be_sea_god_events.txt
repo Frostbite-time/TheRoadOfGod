@@ -133,7 +133,7 @@ super_be_sea_god_events.0005 = {
     # other event details...
     immediate = {
         add_trait = super_sea_god
-        super_remove_all_bad_trait = yes
+        移除所有负面特质_不包括名声和性格特质 = yes
     }
     option = {
         name = super_be_sea_god_events.0005.1

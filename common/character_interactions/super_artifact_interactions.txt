@@ -34,14 +34,14 @@ super_take_his_soul = {
 	is_shown = {
 		NOT = { scope:recipient = scope:actor }
 		scope:actor = {
-			is_equiq_soul_stone = yes
+			是否装备了灵魂晶石 = yes
 		}
 	}
 
 	is_valid_showing_failures_only = {
 		NOT = {
 			scope:recipient = {
-				is_powerful_super_one = yes
+				是否拥有足够强大的实力 = yes
 			}
 		}		
 	}

@@ -187,7 +187,7 @@ spawn_temujin_character_effect = {
 		add_trait = saint_in_flesh_traits
 		add_trait = angel_traits
 		add_trait = devilishness
-		get_all_super_perk = yes
+		获得所有超能之路技能 = yes
 		set_character_faith = faith:exotic_fa   #改变了角色的信仰
 	}
 	every_player = {

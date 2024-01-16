@@ -81,7 +81,7 @@ super_be_dark_god_events.0004 = {
     option = {
         name = super_be_dark_god_events.0004.1
         add_trait = super_dark_god
-        super_remove_all_bad_trait = yes
+        移除所有负面特质_不包括名声和性格特质 = yes
         remove_character_flag = super_will_be_dark_god_flag
         # option details...
     }

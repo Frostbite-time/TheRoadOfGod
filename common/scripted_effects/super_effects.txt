@@ -1,5 +1,4 @@
-﻿#移除贤者之石
-remove_sage_stone = {
+﻿摧毁宝物_贤者之石 ={
 	random_character_artifact = {
 		limit = {
 			has_artifact_modifier = sage_stone_modif
@@ -9,8 +8,7 @@ remove_sage_stone = {
 	destroy_artifact = scope:sage_stone_will_remove
 }
 
-#创建1级炼金术类宝物
-create_alchemy_artifact_1 = {
+创造宝物_1级炼金术类 = {
 	create_artifact = {
 		name = alchemy_artifact_1
 		description = alchemy_artifact_1_desc
@@ -118,8 +116,7 @@ create_alchemy_artifact_1 = {
 	}	
 }
 
-#创建2级炼金术类宝物
-create_alchemy_artifact_2 = {
+创造宝物_2级炼金术类 = {
 	create_artifact = {
 		name = alchemy_artifact_2
 		description = alchemy_artifact_2_desc
@@ -291,8 +288,7 @@ create_alchemy_artifact_2 = {
 	}	
 }
 
-#创建3级炼金术类宝物
-create_alchemy_artifact_3 = {
+创造宝物_3级炼金术类 = {
 	create_artifact = {
 		name = alchemy_artifact_3
 		description = alchemy_artifact_3_desc
@@ -466,8 +462,7 @@ create_alchemy_artifact_3 = {
 	}
 }
 
-#创造贤者之石
-create_sage_stone = {
+创造宝物_贤者之石 = {
 	create_artifact = {
 		name = sage_stone_name
 		description = sage_stone_name_desc
@@ -493,8 +488,7 @@ create_sage_stone = {
 	}
 }
 
-#给予随机高级修正
-give_random_advance_modif = {
+添加修正_宝物_高级 = {
 	hidden_effect = {
 		scope:newly_created_artifact = {
 			random_list = {
@@ -569,8 +563,7 @@ give_random_advance_modif = {
 	}	
 }
 
-#给予随机1个中级修正
-give_random_mid_modif = {
+添加修正_宝物_中级 = {
 	hidden_effect = {
 		scope:newly_created_artifact = {
 			random_list = {
@@ -643,11 +636,10 @@ give_random_mid_modif = {
 	}	
 }
 
-#销毁角色拥有的所有领军者甲
-destroy_leadr = {
+摧毁宝物_全部的领军者战甲 = {
 	while = {
 		limit = {
-			root = {
+			this = {
 				any_character_artifact = {
 					has_artifact_modifier = leader_am_modif
 					NOT = {
@@ -656,7 +648,7 @@ destroy_leadr = {
 				}
 			}
 		}
-		root = {
+		this = {
 			random_character_artifact = {
 				limit = {
 					AND = {
@@ -673,8 +665,7 @@ destroy_leadr = {
 	}	
 }
 
-#用于勇武决斗的effect
-brave_duel_effect = {
+勇武决斗的效果 = {
 	scope:sc_victor = {
 		every_character_war = {
 			limit = {
@@ -691,8 +682,7 @@ brave_duel_effect = {
 	}
 }
 
-#用于摆脱使徒身份的effect
-out_of_ap_effect = {
+摆脱使徒身份的决斗效果 = {
 	scope:sc_victor = {
 		if = {
 			limit = {
@@ -720,7 +710,7 @@ out_of_ap_effect = {
 		}
 		if = {
 			limit = {
-				is_the_character_god = {
+				角色是不是神_接受参数 = {
 					CHARACTER = this
 				}
 			}
@@ -733,7 +723,7 @@ out_of_ap_effect = {
 		if = {
 			limit = {
 				NOT = {
-					is_the_character_god = {
+					角色是不是神_接受参数 = {
 						CHARACTER = this
 					}
 				}
@@ -751,8 +741,7 @@ out_of_ap_effect = {
 	}
 }
 
-#移除使徒特质的effect
-remove_ap_effect = {
+移除所有种类的使徒特质 = {
 	if = {
 		limit = {
 			has_trait = apostle_of_destiny
@@ -779,8 +768,7 @@ remove_ap_effect = {
 	}
 }
 
-#移除所有的负面特质（不移除名声特质和性格特质等）
-super_remove_all_bad_trait = {
+移除所有负面特质_不包括名声和性格特质 = {
 	if = {
 		limit = {
 			has_trait = depressed_1
