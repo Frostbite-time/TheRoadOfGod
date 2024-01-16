@@ -6,6 +6,9 @@ super_random_events.0001 = {
 	title = super_random_events.0001.t
 	desc = super_random_events.0001.desc
 	theme = realm
+	override_background = {
+        reference = super_random_events_1
+    }
 
 	trigger = {
 		NOT = {
@@ -38,6 +41,15 @@ super_random_events.0002 = {
 	title = super_random_events.0002.t
 	desc = super_random_events.0002.desc
 	theme = realm
+	
+	right_portrait = {
+		character = root
+		animation = fear
+	}
+
+	override_background = {
+        reference = super_random_events_2
+    }
 
 	option = {
 		name = super_random_events.0002.1
@@ -62,26 +74,31 @@ super_random_events.0003 = {
 	desc = super_random_events.0003.desc
 	theme = realm
 
+	override_background = {
+        reference = super_random_events_3
+    }
 	option = {
 		name = super_random_events.0003.1
 		trigger = {
 			has_trait = devilishness
 		}
-		every_close_family_member = {
-			limit = {
-				NOT = {
-					is_powerful_super_one = yes
+		hidden_effect = {
+			every_close_family_member = {
+				limit = {
+					NOT = {
+						is_powerful_super_one = yes
+					}
+				}
+				death = {
+					death_reason = death_for_murder_by_devilishness_close_one
+					killer = root
 				}
 			}
-			death = {
-				death_reason = death_for_murder_by_devilishness_close_one
-				killer = root
+			trigger_event = {
+				id = super_random_events.0004
+				days = { 1 6 }
 			}
-		}
-		trigger_event = {
-			id = super_random_events.0004
-			days = { 1 6 }
-		}
+		}	
 	}
 
 	option = {
@@ -89,7 +106,9 @@ super_random_events.0003 = {
 		trigger = {
 			has_trait = saint_in_flesh_traits
 		}
-		trigger_event = super_random_events.0005
+		hidden_effect = {
+			trigger_event = super_random_events.0005
+		}
 	}
 	
 
@@ -98,33 +117,43 @@ super_random_events.0003 = {
 		trigger = {
 			has_trait = angel_traits
 		}
-		trigger_event = super_random_events.0006
+		hidden_effect = {
+			trigger_event = super_random_events.0006
+		}
+		
 	}
 
 	option = {
 		name = super_random_events.0003.4
-		death = {
-			death_reason = death_for_lost_your_soul
+		hidden_effect = {
+			death = {
+				death_reason = death_for_lost_your_soul
+			}
 		}
 	}
 	
 	option = {
 		name = super_random_events.0003.5
-		random_list = {
-			1 ={
-				death = {
-					death_reason = death_for_lost_your_soul
+		hidden_effect = {
+			random_list = {
+				1 ={
+					death = {
+						death_reason = death_for_lost_your_soul
+					}
+				}
+				1 = {
+					trigger_event = super_random_events.0007
 				}
 			}
-			1 = {
-				trigger_event = super_random_events.0007
-			}
 		}
+		
 	}
 
 	option = {
 		name = super_random_events.0003.6
-		trigger_event = super_random_events.0008
+		hidden_effect = {
+			trigger_event = super_random_events.0008
+		}
 	}
 	
 }
@@ -135,6 +164,10 @@ super_random_events.0004 = {
 	title = super_random_events.0004.t
 	desc = super_random_events.0004.desc
 	theme = realm
+
+	override_background = {
+        reference = super_random_events_4
+    }
 
 	artifact = {
 		target = scope:newly_created_artifact
@@ -157,6 +190,10 @@ super_random_events.0005 = {
 	desc = super_random_events.0005.desc
 	theme = realm
 
+	override_background = {
+        reference = super_random_events_5
+    }
+
 	option = {
 		name = super_random_events.0005.1
 		add_character_modifier = {
@@ -173,6 +210,12 @@ super_random_events.0006 = {
 	desc = super_random_events.0006.desc
 	theme = realm
 
+	right_portrait = root
+
+	override_background = {
+        reference = super_random_events_6
+    }
+
 	option = {
 		name = super_random_events.0006.1
 		add_character_modifier = {
@@ -187,6 +230,11 @@ super_random_events.0007 = {
 	title = super_random_events.0007.t
 	desc = super_random_events.0007.desc
 	theme = realm
+	right_portrait = root
+
+	override_background = {
+        reference = super_random_events_7
+    }
 
 	option = {
 		name = super_random_events.0007.1
@@ -202,6 +250,12 @@ super_random_events.0008 = {
 	title = super_random_events.0008.t
 	desc = super_random_events.0008.desc
 	theme = realm
+
+	right_portrait = {
+		character = root
+		animation = fear
+	}
+
 
 	option = {
 		name = super_random_events.0008.1

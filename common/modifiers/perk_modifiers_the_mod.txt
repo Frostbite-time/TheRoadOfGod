@@ -193,7 +193,7 @@ super_lifestyle_xp_gain_7_modifier = {
 # 洞悉之种
 super_seed_modifier = {
 	icon = magic_positive
-	monthly_super_lifestyle_xp_gain_mult = 0.1
+	monthly_super_lifestyle_xp_gain_mult = 0.2
 }
 
 # 防御法阵

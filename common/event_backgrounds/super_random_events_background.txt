@@ -1,0 +1,50 @@
+﻿# 洞悉之种的事件背景
+super_random_events_1 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/super_random_events_1.dds"
+		environment = "environment_frontend_west_main"
+		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
+	}
+}
+super_random_events_2 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/super_random_events_2.dds"
+		environment = "environment_frontend_west_main"
+		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
+	}
+}
+super_random_events_3 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/super_random_events_3.dds"
+		environment = "environment_frontend_west_main"
+		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
+	}
+}
+super_random_events_4 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/super_random_events_4.dds"
+		environment = "environment_frontend_west_main"
+		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
+	}
+}
+super_random_events_5 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/super_random_events_5.dds"
+		environment = "environment_frontend_west_main"
+		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
+	}
+}
+super_random_events_6 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/super_random_events_6.dds"
+		environment = "environment_frontend_west_main"
+		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
+	}
+}
+super_random_events_7 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/super_random_events_7.dds"
+		environment = "environment_frontend_west_main"
+		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
+	}
+}
