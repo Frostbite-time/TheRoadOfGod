@@ -66,3 +66,9 @@ be_random_apostle = {
 		1 = {add_trait = apostle_of_hope}
 	}
 }
+
+给予三大主要特质 = {
+	add_trait = devilishness
+	add_trait = saint_in_flesh_traits
+	add_trait = angel_traits
+}

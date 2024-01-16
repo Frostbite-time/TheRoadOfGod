@@ -7,6 +7,7 @@ ssdsd.0001 = {
 	theme = dynasty        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
 	left_portrait = root		#让角色出现在左边
 	immediate = {
+		给予三大主要特质 = yes
 	}
 	option = {
 		name = be_angel_event.0001.a
