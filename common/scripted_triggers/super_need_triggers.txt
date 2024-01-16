@@ -55,7 +55,7 @@ is_character_has_any_perk_traits = {
 		has_trait = know_all_thing_traits
 		has_trait = the_gift_of_god
 		has_trait = a_patriarch
-		has_trait = beloved_perk_trait
+		has_perk = nothing_i_cant
 	}
 }
 
@@ -132,6 +132,7 @@ is_powerful_super_one = {
 		is_character_god = yes
 		has_apostle_trait = yes
 		is_character_has_any_great_traits = yes
+		is_character_has_any_perk_traits = yes
 	}
 }
 
