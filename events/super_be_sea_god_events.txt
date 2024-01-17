@@ -144,9 +144,9 @@ super_be_sea_god_events.0005 = {
     }
     option = {
         name = super_be_sea_god_events.0005.1
-        save_scope_as = super_sea_god_now
     }
     after = {
+        save_scope_as = super_sea_god_now
         hidden_effect = {
             set_immortal_age = 25
         }

@@ -41,7 +41,7 @@ undead_army.0005 = {
 		ai_chance = {
 			base = 25
 			modifier = {
-				multiply = 10
+				factor = 10
 				is_at_war = yes
 			}			
 		}
@@ -62,7 +62,7 @@ undead_army.0005 = {
 		ai_chance = {
 			base = 50
 			modifier = {
-				multiply = 0.1
+				factor = 0.1
 				is_at_war = yes
 			}
 		}

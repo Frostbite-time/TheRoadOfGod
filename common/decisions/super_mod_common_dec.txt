@@ -1,4 +1,4 @@
-super_mod_helper_dec = {
+﻿super_mod_helper_dec = {
 	title = super_mod_helper_dec   #决议名称的loc_key
 	desc = super_mod_helper_dec_desc  #决议的描述loc_key
 	selection_tooltip = super_mod_helper_dec_tip #决议的提示

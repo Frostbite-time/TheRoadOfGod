@@ -154,9 +154,6 @@ super_to_be_wisdom_god = {
 	is_shown = {       #显示决议的条件
 		是否拥有自然六神的神力 = no
 		any_directly_owned_province = {
-			limit = {
-				always = yes
-			}
 			has_building = super_wisdom_god_star_building_5
 		}
 	}	

@@ -56,7 +56,6 @@ summoning_the_undead = {
 	title = summoning_the_undead   #决议名称的loc_key
 	desc = summoning_the_undead_desc  #决议的描述loc_key
 	selection_tooltip = summoning_the_undead_tip #决议的提示
-	selection_tooltip = summoning_the_undead_tip_1 #决议的提示
 	confirm_text = summoning_the_undead_confirm #决议继续的文本
 	
 	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"   #图片
@@ -148,7 +147,7 @@ final_call_dec = {
 			short_term_gold > 700
 		}
 		modifier = {
-			multiply = 0.1
+			factor = 0.1
 			any_character_artifact = {
 				has_artifact_modifier = 贤者之石_修正
 			}

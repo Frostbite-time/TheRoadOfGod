@@ -65,6 +65,10 @@ rift_events_world.0001 = {
 						has_perk = nothing_i_cant
 					}
 					modifier = {
+						add = -1
+						是否拥有足够强大的实力 = yes
+					}
+					modifier = {
 						add = -5
 						root.faith = {
 							has_doctrine = temporal_anchorism
@@ -91,13 +95,13 @@ rift_events_world.0001 = {
 	}
 	option = {
 		ai_chance = {
-			base = 50
+			base = 25
 		}
 		name = rift_events_world.0001.c
 		trigger = {
 			root = {
 				is_ai = yes
-			}	
+			}
 		}
 	}
 }
@@ -124,6 +128,10 @@ rift_events_world.0002 = {
 				2 = {
 					death = {
 						death_reason = lost_of_world_rift
+					}
+					modifier = {
+						add = -1
+						是否拥有足够强大的实力 = yes
 					}
 					modifier = {
 						add = -10
@@ -164,6 +172,10 @@ rift_events_world.0002 = {
 				2 = {
 					death = {
 						death_reason = lost_of_world_rift
+					}
+					modifier = {
+						add = -1
+						是否拥有足够强大的实力 = yes
 					}
 					modifier = {
 						add = -10
@@ -222,6 +234,10 @@ rift_events_world.0002 = {
 						death_reason = lost_of_world_rift
 					}
 					modifier = {
+						add = -1
+						是否拥有足够强大的实力 = yes
+					}
+					modifier = {
 						add = -10
 						角色是不是神_接受参数 = {
 							CHARACTER = this
@@ -269,10 +285,8 @@ rift_events_world.0003 = {
 						days = { 2 3 }
 					}
 					modifier = {
-						trigger_if = {
-							limit = { scope:target = { 是否拥有强力技能或特质 = yes } }
-							add = -5
-						}
+						scope:target = { 是否拥有强力技能或特质 = yes } 
+						add = -5
 					}
 				}
 				20 = {
@@ -284,6 +298,10 @@ rift_events_world.0003 = {
 				3 = {
 					death = {
 						death_reason = lost_of_world_rift
+					}
+					modifier = {
+						add = -1
+						是否拥有足够强大的实力 = yes
 					}
 					modifier = {
 						add = -10
@@ -347,6 +365,10 @@ rift_events_world.0003 = {
 					death_reason = lost_of_world_rift
 				}
 				modifier = {
+					add = -1
+					是否拥有足够强大的实力 = yes
+				}
+				modifier = {
 					add = -10
 					角色是不是神_接受参数 = {
 						CHARACTER = this
@@ -396,6 +418,10 @@ rift_events_world.0003 = {
 			3 = {
 				death = {
 					death_reason = lost_of_world_rift
+				}
+				modifier = {
+					add = -1
+					是否拥有足够强大的实力 = yes
 				}
 				modifier = {
 					add = -10
@@ -452,6 +478,10 @@ rift_events_world.0003 = {
 			3 = {
 				death = {
 					death_reason = lost_of_world_rift
+				}
+				modifier = {
+					add = -1
+					是否拥有足够强大的实力 = yes
 				}
 				modifier = {
 					add = -10
@@ -620,6 +650,10 @@ rift_events_world.0008 = {
 					death = {
 						death_reason = death_from_evil
 					}
+				}
+				modifier = {
+					add = -1
+					是否拥有足够强大的实力 = yes
 				}
 				modifier = {
 					add = -10

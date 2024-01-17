@@ -6,9 +6,6 @@ start_rift_murder_interaction = {
 	interface_priority = 90
 	category = interaction_category_hostile
 	ai_frequency = 20
-	ai_target_quick_trigger = {
-		is_alive = yes
-	}
 	ai_targets = {
 		ai_recipients = liege
 		ai_recipients = vassals
@@ -295,14 +292,11 @@ get_title_or_vass = {
 	}
 	ai_target_quick_trigger = {
 		adult = yes
-		is_ai = yes
 	}
 	ai_will_do = {
-		always = yes
+		base = 100
 	}
-	ai_accept = {
-		always = yes
-	}
+	auto_accept = yes
 	ai_potential = {
 		always = yes
 	}
@@ -311,6 +305,16 @@ get_title_or_vass = {
 	ignores_pending_interaction_block = yes
 
 	is_shown = {
+		trigger_if = {
+			limit = {
+				scope:actor = {
+					is_ai = yes
+				}
+			}
+			scope:recipient = {
+				is_ai = yes
+			}
+		}
 		NOT = { scope:recipient = scope:actor }
 		AND = {
 			scope:actor = {
@@ -912,9 +916,6 @@ ask_to_pay_super = {
 		max = 30
 	}
 
-	ai_target_quick_trigger = {
-		always = yes
-	}
 	ai_will_do = {
 		base = -300
 		modifier = {
@@ -1063,22 +1064,6 @@ run_out_hook = {
 	interface_priority = 90
 	category = interaction_category_hostile
 	ai_frequency = 6
-	ai_target_quick_trigger = {
-		OR = {		
-			has_hook_of_type = {
-				target = scope:actor
-				type = super_mid_hook
-			}
-			has_hook_of_type = {
-				target = scope:actor
-				type = super_low_hook
-			}
-			has_hook_of_type = {
-				target = scope:actor
-				type = super_high_hook
-			}
-		}
-	}
 	ai_targets = {
 		ai_recipients = liege
 		ai_recipients = vassals

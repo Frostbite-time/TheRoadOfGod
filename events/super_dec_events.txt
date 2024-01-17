@@ -1131,7 +1131,6 @@ call_god_events.0006 = {
 			add_opinion = {
 				modifier = gratitude_title_re
 				target = root
-				single = yes
 			}
 		}		
 	}

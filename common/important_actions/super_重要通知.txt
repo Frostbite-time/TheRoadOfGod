@@ -1,0 +1,27 @@
+﻿超能之路生活方式_可以添加技能 = {
+	type = alert
+	check_create_action = {
+		
+		if = {
+			limit = {
+				是否有超能之路生活方式重心 = yes
+				perk_points > 0
+				is_adult = yes
+			}
+			try_create_important_action = {
+				important_action_type = 超能之路生活方式_可以添加技能
+				actor = root
+			}
+		}
+		
+	}
+
+	effect = {
+		scope:actor = {
+			open_view_data = {
+				view = lifestyle
+			}
+		}
+	}
+}
+

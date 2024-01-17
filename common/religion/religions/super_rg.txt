@@ -1,4 +1,4 @@
-#异域宗教 成吉思汗和其他侵略者专属
+﻿#异域宗教 成吉思汗和其他侵略者专属
 exotic_rg = {
 	family = super_religion_familis  #属于什么宗教组
 	graphical_faith = "islamic_gfx"  #使用什么宗教图形

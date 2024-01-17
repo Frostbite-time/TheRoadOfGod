@@ -5973,27 +5973,27 @@ start_murder_interaction = {
 	}
 
 	is_valid_showing_failures_only = {  #super_此处以有较大改动，主要在于使暗影制裁的描述生效
-		custom_description = {
-			text = cant_murder_tips
-			OR = {
-				AND = {
-					scope:actor.faith = {
-						has_doctrine = sanctions_from_shadows
-					}
-					是否被目标思想操纵_用于计谋 = no
-					text = cant_murder_tips_1
+		trigger_if = {
+			limit = {
+				scope:actor.faith = {
+					has_doctrine = sanctions_from_shadows
 				}
-				
-				AND = {
-					scope:actor = {
-						can_start_scheme = {
-							type = murder
-							target = scope:recipient
-						}
+			}
+			custom_description = {
+				text = cant_murder_tips_1
+				是否被目标思想操纵_用于计谋 = no
+			}
+		}
+		trigger_else = {
+			custom_description = {
+				text = cant_murder_tips
+				scope:actor = {
+					can_start_scheme = {
+						type = murder
+						target = scope:recipient
 					}
-					scope:recipient = { NOT = { has_strong_hook = scope:actor } }
 				}
-					
+				scope:recipient = { NOT = { has_strong_hook = scope:actor } }
 			}
 		}
 		NOT = {

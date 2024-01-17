@@ -301,6 +301,28 @@ namespace = 无名邪火事件链
 	}
 
 	trigger = {
+		
+		trigger_if = {
+			limit = {
+				root = {
+					is_independent_ruler = yes
+				}
+			}
+			NOT = {
+				root.faith = faith:exotic_fa
+			}
+			NOT = {
+				root.faith = faith:super_belief_fa
+			}
+		}
+		trigger_else = {
+			NOT = {
+				root.top_liege.faith = faith:exotic_fa
+			}
+			NOT = {
+				root.top_liege.faith = faith:super_belief_fa
+			}
+		}
 		OR = {
 			AND = {
 				current_date >= 870.1.1
@@ -609,19 +631,19 @@ namespace = 无名邪火事件链
 				name = 地狱毁灭军团
 				men_at_arms = {
 					type = 暗炎法师
-					stacks = 10
+					stacks = 5
 				}
 				men_at_arms = {
 					type = undead_light
-					stacks = 10
+					stacks = 5
 				}
 				men_at_arms = {
 					type = undead_heavy
-					stacks = 5
+					stacks = 3
 				}
 				men_at_arms = {
 					type = undead_heavy_cavalry
-					stacks = 5
+					stacks = 3
 				}
 				location = scope:神秘的黑衣人.location
 				origin = scope:神秘的黑衣人.location
@@ -794,19 +816,19 @@ namespace = 无名邪火事件链
 					name = 地狱毁灭军团
 					men_at_arms = {
 						type = 暗炎法师
-						stacks = 10
+						stacks = 5
 					}
 					men_at_arms = {
 						type = undead_light
-						stacks = 10
+						stacks = 5
 					}
 					men_at_arms = {
 						type = undead_heavy
-						stacks = 5
+						stacks = 3
 					}
 					men_at_arms = {
 						type = undead_heavy_cavalry
-						stacks = 5
+						stacks = 3
 					}
 					location = this.location
 				}
@@ -816,19 +838,19 @@ namespace = 无名邪火事件链
 					name = 焚炎灭世军团
 					men_at_arms = {
 						type = 暗炎法师
-						stacks = 10
+						stacks = 5
 					}
 					men_at_arms = {
 						type = undead_light
-						stacks = 10
+						stacks = 5
 					}
 					men_at_arms = {
 						type = undead_heavy
-						stacks = 5
+						stacks = 3
 					}
 					men_at_arms = {
 						type = undead_heavy_cavalry
-						stacks = 5
+						stacks = 3
 					}
 					location = this.location
 				}
@@ -838,19 +860,19 @@ namespace = 无名邪火事件链
 					name = 毁灭之火军团
 					men_at_arms = {
 						type = 暗炎法师
-						stacks = 10
+						stacks = 5
 					}
 					men_at_arms = {
 						type = undead_light
-						stacks = 10
+						stacks = 5
 					}
 					men_at_arms = {
 						type = undead_heavy
-						stacks = 5
+						stacks = 3
 					}
 					men_at_arms = {
 						type = undead_heavy_cavalry
-						stacks = 5
+						stacks = 3
 					}
 					location = this.location
 				}
@@ -865,19 +887,19 @@ namespace = 无名邪火事件链
 					name = 地狱毁灭军团
 					men_at_arms = {
 						type = 暗炎法师
-						stacks = 10
+						stacks = 5
 					}
 					men_at_arms = {
 						type = undead_light
-						stacks = 10
+						stacks = 5
 					}
 					men_at_arms = {
 						type = undead_heavy
-						stacks = 5
+						stacks = 3
 					}
 					men_at_arms = {
 						type = undead_heavy_cavalry
-						stacks = 5
+						stacks = 3
 					}
 					location = this.location
 				}
@@ -887,19 +909,19 @@ namespace = 无名邪火事件链
 					name = 焚炎灭世军团
 					men_at_arms = {
 						type = 暗炎法师
-						stacks = 10
+						stacks = 5
 					}
 					men_at_arms = {
 						type = undead_light
-						stacks = 10
+						stacks = 5
 					}
 					men_at_arms = {
 						type = undead_heavy
-						stacks = 5
+						stacks = 3
 					}
 					men_at_arms = {
 						type = undead_heavy_cavalry
-						stacks = 5
+						stacks = 3
 					}
 					location = this.location
 				}
@@ -1075,19 +1097,19 @@ namespace = 无名邪火事件链
 					name = 地狱毁灭军团
 					men_at_arms = {
 						type = 暗炎法师
-						stacks = 10
+						stacks = 5
 					}
 					men_at_arms = {
 						type = undead_light
-						stacks = 10
+						stacks = 5
 					}
 					men_at_arms = {
 						type = undead_heavy
-						stacks = 5
+						stacks = 3
 					}
 					men_at_arms = {
 						type = undead_heavy_cavalry
-						stacks = 5
+						stacks = 3
 					}
 					location = scope:神秘的黑衣人.location
 					origin = scope:神秘的黑衣人.location
@@ -1098,19 +1120,19 @@ namespace = 无名邪火事件链
 					name = 焚炎灭世军团
 					men_at_arms = {
 						type = 暗炎法师
-						stacks = 10
+						stacks = 5
 					}
 					men_at_arms = {
 						type = undead_light
-						stacks = 10
+						stacks = 5
 					}
 					men_at_arms = {
 						type = undead_heavy
-						stacks = 5
+						stacks = 3
 					}
 					men_at_arms = {
 						type = undead_heavy_cavalry
-						stacks = 5
+						stacks = 3
 					}
 					location = scope:神秘的黑衣人.location
 					origin = scope:神秘的黑衣人.location
@@ -1121,19 +1143,19 @@ namespace = 无名邪火事件链
 					name = 毁灭之火军团
 					men_at_arms = {
 						type = 暗炎法师
-						stacks = 10
+						stacks = 5
 					}
 					men_at_arms = {
 						type = undead_light
-						stacks = 10
+						stacks = 5
 					}
 					men_at_arms = {
 						type = undead_heavy
-						stacks = 5
+						stacks = 3
 					}
 					men_at_arms = {
 						type = undead_heavy_cavalry
-						stacks = 5
+						stacks = 3
 					}
 					location = scope:神秘的黑衣人.location
 					origin = scope:神秘的黑衣人.location
@@ -1149,19 +1171,19 @@ namespace = 无名邪火事件链
 					name = 地狱毁灭军团
 					men_at_arms = {
 						type = 暗炎法师
-						stacks = 10
+						stacks = 5
 					}
 					men_at_arms = {
 						type = undead_light
-						stacks = 10
+						stacks = 5
 					}
 					men_at_arms = {
 						type = undead_heavy
-						stacks = 5
+						stacks = 3
 					}
 					men_at_arms = {
 						type = undead_heavy_cavalry
-						stacks = 5
+						stacks = 3
 					}
 					location = scope:神秘的黑衣人.location
 					origin = scope:神秘的黑衣人.location
@@ -1172,19 +1194,19 @@ namespace = 无名邪火事件链
 					name = 焚炎灭世军团
 					men_at_arms = {
 						type = 暗炎法师
-						stacks = 10
+						stacks = 5
 					}
 					men_at_arms = {
 						type = undead_light
-						stacks = 10
+						stacks = 5
 					}
 					men_at_arms = {
 						type = undead_heavy
-						stacks = 5
+						stacks = 3
 					}
 					men_at_arms = {
 						type = undead_heavy_cavalry
-						stacks = 5
+						stacks = 3
 					}
 					location = scope:神秘的黑衣人.location
 					origin = scope:神秘的黑衣人.location

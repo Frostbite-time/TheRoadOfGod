@@ -1,0 +1,34 @@
+﻿action_can_spend_perk_point = {
+	type = alert
+	check_create_action = {
+		
+		if = {
+			limit = { # Future-proofing
+				has_any_focus = yes
+				NOR = {
+					has_focus_intrigue = yes
+					has_focus_diplomacy = yes
+					has_focus_learning = yes
+					has_focus_martial = yes
+					has_focus_stewardship = yes
+					是否有超能之路生活方式重心 = yes
+				}
+				perk_points > 0
+				is_adult = yes
+			}
+			try_create_important_action = {
+				important_action_type = action_can_spend_perk_point
+				actor = root
+			}
+		}
+		
+	}
+
+	effect = {
+		scope:actor = {
+			open_view_data = {
+				view = lifestyle
+			}
+		}
+	}
+}
