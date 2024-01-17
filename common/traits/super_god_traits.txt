@@ -194,7 +194,6 @@ super_nature_god = {
 	intrigue_per_stress_level = -10 #每级压力等级使得谋略增加
 	learning_per_stress_level = -10 #每级压力等级使得学识增加
 	prowess_per_stress_level = -10 #每级压力等级使得勇武增加
-	random_skills_per_child = 20 #每个孩子随机给予20个技能点
 	fertility = 100 #生育力增加
 	monthly_piety_gain_mult = 10 #每月虔诚增加系数
 	positive_random_genetic_chance = 1 #正面随机基因几率
