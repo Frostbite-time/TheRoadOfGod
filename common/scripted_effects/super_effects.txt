@@ -1168,7 +1168,7 @@
 }
 
 毁灭之火_焚烧小王国 = {		# 接受一个人物，使人物所在地的公国内所有人全部死亡
-	this = {
+	scope:actor = {
 		save_scope_as = 使用毁灭之火的凶手
 	}
 	this.location = {

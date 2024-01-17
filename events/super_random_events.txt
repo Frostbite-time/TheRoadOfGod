@@ -23,17 +23,19 @@ namespace = 无名邪火事件链
 	}
 
 	option = {
-		name = 洞悉之种事件链.0001.1
+		name = 洞悉之种事件链.0001.1		#前往探查
 		trigger_event = 洞悉之种事件链.0002
+		ai_chance = 20
 	}
 
 	option = {
-		name = 洞悉之种事件链.0001.2
+		name = 洞悉之种事件链.0001.2		#加强防御
 		add_character_modifier = {
 			modifier = 防御法阵_修正
 			years = 2
 		}
 		add_character_flag = super_seed_is_done_flag
+		ai_chance = 80
 	}
 }
 
@@ -53,12 +55,12 @@ namespace = 无名邪火事件链
     }
 
 	option = {
-		name = 洞悉之种事件链.0002.1
+		name = 洞悉之种事件链.0002.1	#前往探查
 		trigger_event = 洞悉之种事件链.0003
 	}
 	
 	option = {
-		name = 洞悉之种事件链.0002.2
+		name = 洞悉之种事件链.0002.2	#逃离
 		add_character_flag = super_seed_is_done_flag
 		add_character_modifier = {
 			modifier = 心有余悸_修正
@@ -77,6 +79,7 @@ namespace = 无名邪火事件链
         reference = 洞悉之种事件链_3
     }
 	option = {
+		ai_chance = 500
 		name = 洞悉之种事件链.0003.1
 		trigger = {
 			has_trait = devilishness
@@ -101,6 +104,7 @@ namespace = 无名邪火事件链
 	}
 
 	option = {
+		ai_chance = 500
 		name = 洞悉之种事件链.0003.2
 		trigger = {
 			has_trait = saint_in_flesh_traits
@@ -112,6 +116,7 @@ namespace = 无名邪火事件链
 	
 
 	option = {
+		ai_chance = 500
 		name = 洞悉之种事件链.0003.3
 		trigger = {
 			has_trait = angel_traits
@@ -123,6 +128,7 @@ namespace = 无名邪火事件链
 	}
 
 	option = {
+		ai_chance = 20
 		name = 洞悉之种事件链.0003.4
 		hidden_effect = {
 			death = {
@@ -132,6 +138,7 @@ namespace = 无名邪火事件链
 	}
 	
 	option = {
+		ai_chance = 50
 		name = 洞悉之种事件链.0003.5
 		hidden_effect = {
 			random_list = {
@@ -149,6 +156,7 @@ namespace = 无名邪火事件链
 	}
 
 	option = {
+		ai_chance = 30
 		name = 洞悉之种事件链.0003.6
 		hidden_effect = {
 			trigger_event = 洞悉之种事件链.0008
@@ -439,6 +447,7 @@ namespace = 无名邪火事件链
     }
 
 	option = {
+		ai_chance = 20
 		name = 无名邪火事件链.0003.1	#派兵搜查
 		random_list = {
 			7 = {
@@ -466,6 +475,7 @@ namespace = 无名邪火事件链
 	}
 
 	option = {
+		ai_chance = 80
 		name = 无名邪火事件链.0003.2	#占卜术
 		trigger = {
 			has_trait = know_all_thing_traits
@@ -513,6 +523,7 @@ namespace = 无名邪火事件链
 
 	option = {
 		name = 无名邪火事件链.0004.1		#接受贿赂
+		ai_chance = 50
 		trigger_event = {
 			id = 无名邪火事件链.0005
 			years = { 3 4 }
@@ -550,6 +561,8 @@ namespace = 无名邪火事件链
 	option = {
 		name = 无名邪火事件链.0004.2		#当场翻脸
 
+		ai_chance = 25
+
 		configure_start_single_combat_effect = {
 			SC_INITIATOR = root
 			SC_ATTACKER = root
@@ -567,6 +580,8 @@ namespace = 无名邪火事件链
 
 	option = {
 		name = 无名邪火事件链.0004.3		#派兵围剿
+
+		ai_chance = 5
 
 		create_title_and_vassal_change = {
 			type = usurped
@@ -646,6 +661,9 @@ namespace = 无名邪火事件链
 
 	option = {
 		name = 无名邪火事件链.0004.4		#警告对方
+
+		ai_chance = 20
+
 		trigger_event = {
 			id = 无名邪火事件链.0005
 			years = { 1 3 }
@@ -671,6 +689,21 @@ namespace = 无名邪火事件链
 		add_character_flag = 无名邪火事件链已经完成
 	}
 
+	option = {
+		name = 无名邪火事件链.0004.5		#抹杀他
+		ai_chance = 1000
+		trigger = {
+			是否是神 = yes
+		}
+		scope:神秘的黑衣人 = {
+			death = {
+				death_reason = death_god_fire
+				killer = root
+			}
+		}
+		创造宝物_毁灭之火 = yes
+		add_character_flag = 无名邪火事件链已经完成
+	}
 }
 
 无名邪火事件链.0005 = {			# 如果不清缴邪教，一段时间后此地爆发兵变
@@ -1212,6 +1245,10 @@ namespace = 无名邪火事件链
 			id = 无名邪火事件链.0011
 			years = 1
 		}
+		trigger_event = {
+			id = 无名邪火事件链.0012
+			years = 70
+		}
 	}
 }
 
@@ -1242,5 +1279,25 @@ namespace = 无名邪火事件链
 			id = 无名邪火事件链.0011
 			months = 2
 		}
+	}
+}
+
+无名邪火事件链.0012 = {
+	type = character_event
+	title = 无名邪火事件链.0012.t
+	desc = 无名邪火事件链.0012.desc
+	theme = realm
+
+	override_background = {
+		reference = 毁灭之火事件广播_2
+	}
+
+	right_portrait = {
+		character = scope:actor
+		animation = idle
+	}
+
+	option = {
+		name = 无名邪火事件链.0012.1
 	}
 }
