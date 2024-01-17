@@ -213,3 +213,8 @@
 	icon = magic_positive
 	health = -1
 }
+
+毁灭之火_修正 = {
+	icon = magic_positive
+	advantage = 20
+}

@@ -346,3 +346,13 @@ the_legendary_trait = {
 	attraction_opinion = 30
 	no_prowess_loss_from_age = yes
 }
+
+#毁灭之火的供奉者
+毁灭之火的供奉者_特质 = {
+	good = yes
+	health = 10
+	martial = 10
+	prowess = 50
+	intrigue = 10
+	no_prowess_loss_from_age = yes
+}

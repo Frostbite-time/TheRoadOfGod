@@ -332,4 +332,10 @@
 	faith:super_belief_fa = {
 		num_county_followers >= 200
 	}
-}	
+}
+
+是否拥有毁灭之火 = {
+	any_character_artifact = {
+		has_artifact_modifier = 毁灭之火_修正
+	}
+}

@@ -7,6 +7,28 @@ ssdsd.0001 = {
 	theme = dynasty        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
 	left_portrait = root		#让角色出现在左边
 	immediate = {
+		spawn_army = {
+			uses_supply = no
+			inheritable = yes
+			name = 地狱毁灭军团
+			men_at_arms = {
+				type = 暗炎法师
+				stacks = 10
+			}
+			men_at_arms = {
+				type = undead_light
+				stacks = 10
+			}
+			men_at_arms = {
+				type = undead_heavy
+				stacks = 5
+			}
+			men_at_arms = {
+				type = undead_heavy_cavalry
+				stacks = 5
+			}
+			location = this.location
+		}
 	}
 	option = {
 		name = be_angel_event.0001.a

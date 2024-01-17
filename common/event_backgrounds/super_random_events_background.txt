@@ -1,50 +1,106 @@
 ﻿# 洞悉之种的事件背景
-super_random_events_1 = {
+洞悉之种事件链_1 = {
 	background = {
-		reference = "gfx/interface/illustrations/event_scenes/super_random_events_1.dds"
+		reference = "gfx/interface/illustrations/event_scenes/洞悉之种事件链_1.dds"
 		environment = "environment_frontend_west_main"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}
 }
-super_random_events_2 = {
+洞悉之种事件链_2 = {
 	background = {
-		reference = "gfx/interface/illustrations/event_scenes/super_random_events_2.dds"
+		reference = "gfx/interface/illustrations/event_scenes/洞悉之种事件链_2.dds"
 		environment = "environment_frontend_west_main"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}
 }
-super_random_events_3 = {
+洞悉之种事件链_3 = {
 	background = {
-		reference = "gfx/interface/illustrations/event_scenes/super_random_events_3.dds"
+		reference = "gfx/interface/illustrations/event_scenes/洞悉之种事件链_3.dds"
 		environment = "environment_frontend_west_main"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}
 }
-super_random_events_4 = {
+洞悉之种事件链_4 = {
 	background = {
-		reference = "gfx/interface/illustrations/event_scenes/super_random_events_4.dds"
+		reference = "gfx/interface/illustrations/event_scenes/洞悉之种事件链_4.dds"
 		environment = "environment_frontend_west_main"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}
 }
-super_random_events_5 = {
+洞悉之种事件链_5 = {
 	background = {
-		reference = "gfx/interface/illustrations/event_scenes/super_random_events_5.dds"
+		reference = "gfx/interface/illustrations/event_scenes/洞悉之种事件链_5.dds"
 		environment = "environment_frontend_west_main"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}
 }
-super_random_events_6 = {
+洞悉之种事件链_6 = {
 	background = {
-		reference = "gfx/interface/illustrations/event_scenes/super_random_events_6.dds"
+		reference = "gfx/interface/illustrations/event_scenes/洞悉之种事件链_6.dds"
 		environment = "environment_frontend_west_main"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}
 }
-super_random_events_7 = {
+洞悉之种事件链_7 = {
 	background = {
-		reference = "gfx/interface/illustrations/event_scenes/super_random_events_7.dds"
+		reference = "gfx/interface/illustrations/event_scenes/洞悉之种事件链_7.dds"
 		environment = "environment_frontend_west_main"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
+	}
+}
+
+无名邪火事件链_1 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/无名邪火事件链_1.dds"
+		environment = "environment_frontend_west_main"
+		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
+	}
+}
+
+无名邪火事件链_2 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/无名邪火事件链_2.dds"
+		environment = "environment_frontend_west_main"
+		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
+	}
+}
+
+无名邪火事件链_3 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/无名邪火事件链_3.dds"
+		environment = "environment_frontend_west_main"
+		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
+	}
+}
+
+无名邪火事件链_4 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/无名邪火事件链_4.dds"
+		environment = "environment_frontend_west_main"
+		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
+	}
+}
+
+无名邪火事件链_5 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/无名邪火事件链_5.dds"
+		environment = "environment_frontend_west_main"
+		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"	
+	}
+}
+
+毁灭之火事件广播_1 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/毁灭之火事件广播_1.dds"
+		environment = "environment_frontend_west_main"
+		ambience = "event:/SFX/Events/Backgrounds/ambience_fire"
+	}
+}
+
+毁灭之火事件广播_2 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/毁灭之火事件广播_2.dds"
+		environment = "environment_frontend_west_main"
+		ambience = "event:/SFX/Events/Backgrounds/ambience_fire"
 	}
 }

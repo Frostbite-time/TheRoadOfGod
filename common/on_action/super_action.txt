@@ -12,6 +12,7 @@ yearly_global_pulse = {
 		confilct_effect_pulse		  #触发无序的效果的实现
 		the_sea_scepter_uncover       #获取海神权杖
 		super_can_get_sea_god_power_action #可以获取海神之力
+		提醒玩家有关无名邪火的动作
 	}
 }
 
@@ -455,6 +456,23 @@ super_change_faith_to_belief_god = {
 				}
 				set_character_faith_with_conversion = faith:super_belief_fa
 			}
+		}
+	}
+}
+
+提醒玩家有关无名邪火的动作 = {
+	effect = {
+		if = {
+			limit = {
+				current_date >= 868.1.1
+			}
+			every_living_character = {
+				limit = {
+					is_ai = no
+				}
+				trigger_event = 无名邪火事件链.0010
+			}
+			
 		}
 	}
 }

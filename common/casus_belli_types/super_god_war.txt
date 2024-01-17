@@ -477,8 +477,8 @@ aggressive_expansion_cb = {
 	on_primary_defender_death = inherit
 	transfer_behavior = transfer
 
-	attacker_allies_inherit = no # 战争中的盟友应该继承在战争中的地位吗？
-	defender_allies_inherit = no # 战争中的盟友应该继承在战争中的地位吗？
+	attacker_allies_inherit = yes # 战争中的盟友应该继承在战争中的地位吗？
+	defender_allies_inherit = yes # 战争中的盟友应该继承在战争中的地位吗？
 
 	interface_priority = 60 # 决定了它在CB列表中的显示顺序。它越高，显示的位置就越高。平局是按定义顺序打破的
 

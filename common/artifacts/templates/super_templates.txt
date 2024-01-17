@@ -105,3 +105,38 @@ soul_stone_template = {
 	# 使用此模板的人工制品是否显示为 独特的(即周围一圈有金边) 宝物，默认为否
 	unique = no
 }
+
+# 毁灭之火的模板
+毁灭之火_模板 = {
+	can_equip = {
+		always = yes
+	}
+
+	# 角色是否能获取宝物的全部增益
+	can_benefit = {
+		always = yes
+	}
+	
+	# 是否允许重新锻造宝物
+	can_reforge = {
+		always = no
+	}
+
+	# 是否允许修复宝物的耐久度
+	can_repair = {
+		always = no
+	}
+
+	# 如果 can_benefit 触发器未能通过，角色将获得以下修正作为增益
+	fallback = {
+	}
+
+	# 将最终值添加到AI装备得分中，注意在AI装备时，can_benefit 优先于得分
+	# game/common/scripted_values/00_artifact_values.txt 中的 artifact_ai_will_equip_score 也会影响最终得分
+	ai_score = {
+		value = 100
+	}
+
+	# 使用此模板的人工制品是否显示为 独特的(即周围一圈有金边) 宝物，默认为否
+	unique = no
+}

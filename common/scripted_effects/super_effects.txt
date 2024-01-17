@@ -1167,3 +1167,45 @@
 	}
 }
 
+毁灭之火_焚烧小王国 = {		# 接受一个人物，使人物所在地的公国内所有人全部死亡
+	this = {
+		save_scope_as = 使用毁灭之火的凶手
+	}
+	this.location = {
+		duchy = {
+			save_scope_as = 将被焚毁的公国
+		}
+	}
+
+	every_living_character = {
+		limit = {
+			this.location.duchy = scope:将被焚毁的公国
+			NOT = {
+				OR = {
+					是否拥有三大特质之一 = yes
+					是否是神 = yes
+				}
+			}
+		}
+		death = {
+			death_reason = 死于毁灭之火
+			killer = scope:使用毁灭之火的凶手
+		}
+	}
+
+
+}
+
+
+# 使得该角色独立    给需要独立的角色使用
+使角色独立 = {
+	create_title_and_vassal_change = {
+		type = independency
+		save_scope_as = change
+		add_claim_on_loss = yes
+	}
+	becomes_independent = {
+		change = scope:change
+	}
+	resolve_title_and_vassal_change = scope:change
+}

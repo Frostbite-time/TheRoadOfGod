@@ -89,6 +89,12 @@ super_be_sea_god_events.0003 = {
 		target = scope:super_neptune_scepter_now
 		position = lower_right_portrait
 	}
+
+    trigger = {
+        NOT = {
+            has_character_flag = 已经提醒过可以获取海神之力
+        }
+    }
     # other event details...
     immediate = {
         random_character_artifact = {
@@ -101,6 +107,7 @@ super_be_sea_god_events.0003 = {
     option = {
         name = super_be_sea_god_events.0003.1
         # option details...
+        add_character_flag = 已经提醒过可以获取海神之力
         custom_tooltip = super_can_get_sea_god_power_effect
     }
 }

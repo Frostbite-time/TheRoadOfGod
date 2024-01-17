@@ -12,3 +12,7 @@ neptune_scepter = {
 soul_stone = {
 	icon = "soul_stone_name.dds"
 }
+
+毁灭之火_图标 = {
+	icon = "毁灭之火_图标.dds"
+}

@@ -57,3 +57,13 @@ death_for_lost_your_soul ={
 	public_knowledge = yes
 	icon = "death_murder"
 }
+
+死于毁灭之火 = {
+	public_knowledge = yes
+	icon = "death_murder"
+}
+
+死于神秘的黑暗法师 = {
+	public_knowledge = yes
+	icon = "death_murder"
+}

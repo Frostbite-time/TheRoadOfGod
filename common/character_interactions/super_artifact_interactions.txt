@@ -57,3 +57,86 @@ super_take_his_soul = {
 		}
 	}
 }
+
+# 使用毁灭之火
+使用毁灭之火 = {
+	icon = icon_hostile
+	desc = 使用毁灭之火_描述
+	common_interaction = yes
+	interface_priority = 90
+	category = interaction_category_hostile
+	auto_accept = yes
+	ai_frequency = 6
+	ai_targets = {
+		ai_recipients = neighboring_rulers
+	}
+	ai_target_quick_trigger = {
+		adult = yes
+	}
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = 100
+			scope:actor = {
+				is_at_war_with = scope:recipient
+			}
+		}
+	}
+	ai_potential = {
+		always = yes
+	}
+	ignores_pending_interaction_block = yes
+
+	cooldown = {
+		years = 3
+	}
+
+	is_shown = {
+		NOT = { scope:recipient = scope:actor }
+		scope:actor = {
+			是否拥有毁灭之火 = yes
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		always = yes
+	}
+
+	
+
+	on_accept = {
+		scope:actor = {
+			random_character_artifact = {
+				limit = {
+					has_artifact_modifier = 毁灭之火_修正
+				}
+				destroy_artifact = this
+			}
+		}
+		scope:recipient = {
+			this.location = {
+				duchy = {
+					save_scope_as = 被焚毁的公国
+				}
+			}
+			毁灭之火_焚烧小王国 = yes
+		}
+
+		every_living_character = {
+			limit = {
+				is_landed = yes
+				NOT = {
+					this = scope:recipient
+				}
+				NOT = {
+					this = scope:actor
+				}
+			}
+			trigger_event = {
+				id = 无名邪火事件链.0009
+				days = { 1 20 }
+			}
+
+		}
+	}
+}

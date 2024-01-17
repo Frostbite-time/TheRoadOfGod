@@ -7,8 +7,28 @@
 		visuals = soul_stone
 		rarity = illustrious
 		modifier = 灵魂晶石_修正
+		wealth = 120
+		quality = 120
+		max_durability = 1000		#宝物最大耐久度
+		durability = 1000			#宝物耐久度
+		save_scope_as = newly_created_artifact	#将创建的宝物作为作用域  以便后面的事件使用（如果在事件的immediate中创造也可以直接被当前事件调用）
+		template = soul_stone_template			#宝物模板  这个在artifacts/templates文件夹下定义  也可以用原版的  非必须 可以不写
+	}
+}
+
+创造宝物_毁灭之火 = {
+	create_artifact = {
+		name = 毁灭之火_名称
+		description = 毁灭之火_描述
+		type = miscellaneous
+		visuals = 毁灭之火_图标
+		rarity = illustrious
+		modifier = 毁灭之火_修正
 		wealth = 100
 		quality = 100
-		save_scope_as = newly_created_artifact
+		max_durability = 1000		#宝物最大耐久度
+		durability = 1000			#宝物耐久度
+		save_scope_as = newly_created_artifact	#将创建的宝物作为作用域  以便后面的事件使用（如果在事件的immediate中创造也可以直接被当前事件调用）
+		template = 毁灭之火_模板			#宝物模板  这个在artifacts/templates文件夹下定义  也可以用原版的  非必须 可以不写
 	}
 }

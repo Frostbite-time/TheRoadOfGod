@@ -1023,3 +1023,36 @@ highlander_god_high = {
 	ai_quality = { value = gods_maa_weight }
 	icon = highlander_god_high
 }
+
+暗炎法师 = {
+	type = mage
+	can_recruit = {
+		always = no
+	}
+	damage = 300
+	toughness = 15
+	pursuit = 30
+	screen = 0
+
+	terrain_bonus = {
+	}
+
+	counters = {
+		creation = 1
+		holy_heavy_infantry = 1
+		holy_heavy_cavalry = 1
+		holy_skirmishers = 1
+	}
+
+	buy_cost = {
+		gold = 200
+	}
+
+	low_maintenance_cost = { gold = 2 }
+	high_maintenance_cost = { gold = 10 }
+
+	stack = 50
+	ai_quality = { value = god_of_war_maa_weight }
+	icon = 暗炎法师
+
+}

@@ -1,0 +1,19 @@
+﻿黑衣人_毁灭之火持有者 = {
+	age = { 30 60 }
+	gender = male
+	trait = 毁灭之火的供奉者_特质
+	random_traits_list = {
+		count = 1
+		education_intrigue_2 = {}
+		education_intrigue_3 = {}
+		education_intrigue_4 = {}
+	}
+	random_traits_list = {
+		count = 2
+		arrogant = {}
+		ambitious = {}
+		vengeful = {}
+		wrathful = {}
+		cynical = {}
+	}
+}

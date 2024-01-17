@@ -1,13 +1,14 @@
-﻿namespace = super_random_events
+﻿namespace = 洞悉之种事件链
+namespace = 无名邪火事件链
 
 # 洞悉之种的事件链
-super_random_events.0001 = {
+洞悉之种事件链.0001 = {
 	type = character_event
-	title = super_random_events.0001.t
-	desc = super_random_events.0001.desc
+	title = 洞悉之种事件链.0001.t
+	desc = 洞悉之种事件链.0001.desc
 	theme = realm
 	override_background = {
-        reference = super_random_events_1
+        reference = 洞悉之种事件链_1
     }
 
 	trigger = {
@@ -22,12 +23,12 @@ super_random_events.0001 = {
 	}
 
 	option = {
-		name = super_random_events.0001.1
-		trigger_event = super_random_events.0002
+		name = 洞悉之种事件链.0001.1
+		trigger_event = 洞悉之种事件链.0002
 	}
 
 	option = {
-		name = super_random_events.0001.2
+		name = 洞悉之种事件链.0001.2
 		add_character_modifier = {
 			modifier = 防御法阵_修正
 			years = 2
@@ -36,10 +37,10 @@ super_random_events.0001 = {
 	}
 }
 
-super_random_events.0002 = {
+洞悉之种事件链.0002 = {
 	type = character_event
-	title = super_random_events.0002.t
-	desc = super_random_events.0002.desc
+	title = 洞悉之种事件链.0002.t
+	desc = 洞悉之种事件链.0002.desc
 	theme = realm
 	
 	right_portrait = {
@@ -48,16 +49,16 @@ super_random_events.0002 = {
 	}
 
 	override_background = {
-        reference = super_random_events_2
+        reference = 洞悉之种事件链_2
     }
 
 	option = {
-		name = super_random_events.0002.1
-		trigger_event = super_random_events.0003
+		name = 洞悉之种事件链.0002.1
+		trigger_event = 洞悉之种事件链.0003
 	}
 	
 	option = {
-		name = super_random_events.0002.2
+		name = 洞悉之种事件链.0002.2
 		add_character_flag = super_seed_is_done_flag
 		add_character_modifier = {
 			modifier = 心有余悸_修正
@@ -66,19 +67,17 @@ super_random_events.0002 = {
 	}
 }
 
-
-
-super_random_events.0003 = {
+洞悉之种事件链.0003 = {
 	type = character_event
-	title = super_random_events.0003.t
-	desc = super_random_events.0003.desc
+	title = 洞悉之种事件链.0003.t
+	desc = 洞悉之种事件链.0003.desc
 	theme = realm
 
 	override_background = {
-        reference = super_random_events_3
+        reference = 洞悉之种事件链_3
     }
 	option = {
-		name = super_random_events.0003.1
+		name = 洞悉之种事件链.0003.1
 		trigger = {
 			has_trait = devilishness
 		}
@@ -95,36 +94,36 @@ super_random_events.0003 = {
 				}
 			}
 			trigger_event = {
-				id = super_random_events.0004
+				id = 洞悉之种事件链.0004
 				days = { 1 6 }
 			}
 		}	
 	}
 
 	option = {
-		name = super_random_events.0003.2
+		name = 洞悉之种事件链.0003.2
 		trigger = {
 			has_trait = saint_in_flesh_traits
 		}
 		hidden_effect = {
-			trigger_event = super_random_events.0005
+			trigger_event = 洞悉之种事件链.0005
 		}
 	}
 	
 
 	option = {
-		name = super_random_events.0003.3
+		name = 洞悉之种事件链.0003.3
 		trigger = {
 			has_trait = angel_traits
 		}
 		hidden_effect = {
-			trigger_event = super_random_events.0006
+			trigger_event = 洞悉之种事件链.0006
 		}
 		
 	}
 
 	option = {
-		name = super_random_events.0003.4
+		name = 洞悉之种事件链.0003.4
 		hidden_effect = {
 			death = {
 				death_reason = death_for_lost_your_soul
@@ -133,7 +132,7 @@ super_random_events.0003 = {
 	}
 	
 	option = {
-		name = super_random_events.0003.5
+		name = 洞悉之种事件链.0003.5
 		hidden_effect = {
 			random_list = {
 				1 ={
@@ -142,7 +141,7 @@ super_random_events.0003 = {
 					}
 				}
 				1 = {
-					trigger_event = super_random_events.0007
+					trigger_event = 洞悉之种事件链.0007
 				}
 			}
 		}
@@ -150,23 +149,22 @@ super_random_events.0003 = {
 	}
 
 	option = {
-		name = super_random_events.0003.6
+		name = 洞悉之种事件链.0003.6
 		hidden_effect = {
-			trigger_event = super_random_events.0008
+			trigger_event = 洞悉之种事件链.0008
 		}
 	}
 	
 }
 
-
-super_random_events.0004 = {
+洞悉之种事件链.0004 = {
 	type = character_event
-	title = super_random_events.0004.t
-	desc = super_random_events.0004.desc
+	title = 洞悉之种事件链.0004.t
+	desc = 洞悉之种事件链.0004.desc
 	theme = realm
 
 	override_background = {
-        reference = super_random_events_4
+        reference = 洞悉之种事件链_4
     }
 
 	artifact = {
@@ -179,23 +177,23 @@ super_random_events.0004 = {
 	}
 
 	option = {
-		name = super_random_events.0004.1
+		name = 洞悉之种事件链.0004.1
 		add_character_flag = super_seed_is_done_flag
 	}
 }
 
-super_random_events.0005 = {
+洞悉之种事件链.0005 = {
 	type = character_event
-	title = super_random_events.0005.t
-	desc = super_random_events.0005.desc
+	title = 洞悉之种事件链.0005.t
+	desc = 洞悉之种事件链.0005.desc
 	theme = realm
 
 	override_background = {
-        reference = super_random_events_5
+        reference = 洞悉之种事件链_5
     }
 
 	option = {
-		name = super_random_events.0005.1
+		name = 洞悉之种事件链.0005.1
 		add_character_modifier = {
 			modifier = 防御法阵_修正
 			years = 10
@@ -204,20 +202,20 @@ super_random_events.0005 = {
 	}
 }
 
-super_random_events.0006 = {
+洞悉之种事件链.0006 = {
 	type = character_event
-	title = super_random_events.0006.t
-	desc = super_random_events.0006.desc
+	title = 洞悉之种事件链.0006.t
+	desc = 洞悉之种事件链.0006.desc
 	theme = realm
 
 	right_portrait = root
 
 	override_background = {
-        reference = super_random_events_6
+        reference = 洞悉之种事件链_6
     }
 
 	option = {
-		name = super_random_events.0006.1
+		name = 洞悉之种事件链.0006.1
 		add_character_modifier = {
 			modifier = 洞悉之种_修正
 		}
@@ -225,19 +223,19 @@ super_random_events.0006 = {
 	}
 }
 
-super_random_events.0007 = {
+洞悉之种事件链.0007 = {
 	type = character_event
-	title = super_random_events.0007.t
-	desc = super_random_events.0007.desc
+	title = 洞悉之种事件链.0007.t
+	desc = 洞悉之种事件链.0007.desc
 	theme = realm
 	right_portrait = root
 
 	override_background = {
-        reference = super_random_events_7
+        reference = 洞悉之种事件链_7
     }
 
 	option = {
-		name = super_random_events.0007.1
+		name = 洞悉之种事件链.0007.1
 		add_character_modifier = {
 			modifier = 洞悉之种_修正
 		}
@@ -245,10 +243,10 @@ super_random_events.0007 = {
 	}
 }
 
-super_random_events.0008 = {
+洞悉之种事件链.0008 = {
 	type = character_event
-	title = super_random_events.0008.t
-	desc = super_random_events.0008.desc
+	title = 洞悉之种事件链.0008.t
+	desc = 洞悉之种事件链.0008.desc
 	theme = realm
 
 	right_portrait = {
@@ -258,7 +256,991 @@ super_random_events.0008 = {
 
 
 	option = {
-		name = super_random_events.0008.1
+		name = 洞悉之种事件链.0008.1
 		add_character_flag = super_seed_is_done_flag
+	}
+}
+
+
+无名邪火事件链.0001 = {			# 领主得到消息
+	type = character_event
+	title = 无名邪火事件链.0001.t
+	desc = 无名邪火事件链.0001.desc
+	theme = realm
+
+	override_background = {
+        reference = 无名邪火事件链_1
+    }
+
+	right_portrait = {
+		character = root
+	}
+
+	immediate = {
+		set_variable = {
+			name = 毁灭之火的起兵力度
+			value = 1
+		}
+		random_directly_owned_province = {
+			limit = {
+				this.county != root.capital_county
+			}
+			county = {
+				change_development_level = -20
+				save_scope_as = 邪火肆虐的伯爵领
+			}
+		}
+	}
+
+	trigger = {
+		OR = {
+			AND = {
+				current_date >= 870.1.1
+				current_date <= 930.1.1
+			}
+			AND = {
+				current_date >= 1070.1.1
+				current_date <= 1130.1.1
+			}
+		}
+		any_county = {
+			limit = {
+				this.holder = root
+			}
+			count >= 2
+		}
+		primary_title = {		
+			tier >= tier_duchy
+		}
+		NOT = {
+			has_character_flag = 无名邪火事件链已经完成
+		}
+	}
+
+	option = {
+		name = 无名邪火事件链.0001.1	#前往探查
+		add_prestige = 100
+		trigger_event = {
+			id = 无名邪火事件链.0002
+			days = { 1 3 }
+		}
+	}
+
+	option = {
+		name = 无名邪火事件链.0001.2	#不管
+		add_character_flag = 无名邪火事件链已经完成
+		scope:邪火肆虐的伯爵领 = {
+			add_county_modifier = {
+				modifier = 邪火肆虐_修正
+				years = 1
+			}
+			add_county_modifier = {
+				modifier = 背弃了民众的领主_修正
+				years = 10
+			}
+		}
+		custom_tooltip = 无名邪火事件链.0001.2.事态严重
+		trigger_event = {
+			id = 无名邪火事件链.0005
+			years = { 1 3 }
+		}
+	}
+}
+
+无名邪火事件链.0002 = {			# 前往被烧毁的村庄
+	type = character_event
+	title = 无名邪火事件链.0002.t
+	desc = 无名邪火事件链.0002.desc
+	theme = realm
+
+	override_background = {
+        reference = 无名邪火事件链_2
+    }
+
+	right_portrait = {
+		character = root
+		animation = idle
+	}
+
+	option = {
+		name = 无名邪火事件链.0002.1	#亲自调查
+		trigger_event = {
+			id = 无名邪火事件链.0003
+			days = { 2 8 }
+		}
+	}
+
+	option = {
+		name = 无名邪火事件链.0002.2	#给予抚恤金
+		remove_long_term_gold = 200
+		trigger_event = {
+			id = 无名邪火事件链.0005
+			years = { 3 6 }
+		}
+		scope:邪火肆虐的伯爵领 = {
+			add_county_modifier = {
+				modifier = 缓慢恢复的伯爵领_修正
+				years = 3
+			}
+		}
+		custom_tooltip = 无名邪火事件链.0002.2.事态逐渐平息
+
+		add_character_flag = 无名邪火事件链已经完成
+	}
+
+	option = {
+		name = 无名邪火事件链.0002.3	#让当地组织民兵
+		trigger_event = {
+			id = 无名邪火事件链.0005
+			years = { 2 5 }
+		}
+		scope:邪火肆虐的伯爵领 = {
+			add_county_modifier = {
+				modifier = 缓慢恢复的伯爵领_修正
+				years = 2
+			}
+			add_county_modifier = {
+				modifier = 拥兵自重_修正
+				years = 5
+			}
+		}
+		custom_tooltip = 无名邪火事件链.0002.3.事态逐渐平息
+
+		add_character_flag = 无名邪火事件链已经完成
+	}
+
+	option = {
+		name = 无名邪火事件链.0002.4	#不管
+
+		trigger_event = {
+			id = 无名邪火事件链.0005
+			years = { 1 3 }
+		}
+		scope:邪火肆虐的伯爵领 = {
+			add_county_modifier = {
+				modifier = 邪火肆虐_修正
+				years = 1
+			}
+		}
+		custom_tooltip = 无名邪火事件链.0002.4.事态严重
+
+		add_character_flag = 无名邪火事件链已经完成
+	}
+}
+
+无名邪火事件链.0003 = {			# 开始调查
+	type = character_event
+	title = 无名邪火事件链.0003.t
+	desc = 无名邪火事件链.0003.desc
+	theme = realm
+
+	override_background = {
+        reference = 无名邪火事件链_3
+    }
+
+	option = {
+		name = 无名邪火事件链.0003.1	#派兵搜查
+		random_list = {
+			7 = {
+				trigger_event = {
+					id = 无名邪火事件链.0005
+					years = { 1 3 }
+				}
+				scope:邪火肆虐的伯爵领 = {
+					add_county_modifier = {
+						modifier = 邪火肆虐_修正
+						years = 1
+					}
+				}
+				custom_tooltip = 无名邪火事件链.0002.4.事态严重
+				add_character_flag = 无名邪火事件链已经完成
+			}
+			3 = {
+				trigger_event = {
+					id = 无名邪火事件链.0004
+					days = { 1 3 }
+				}
+				custom_tooltip = 无名邪火事件链.0003.1.调查结果
+			}
+		}
+	}
+
+	option = {
+		name = 无名邪火事件链.0003.2	#占卜术
+		trigger = {
+			has_trait = know_all_thing_traits
+		}
+		trigger_event = {
+			id = 无名邪火事件链.0004
+			days = { 1 3 }
+		}
+		custom_tooltip = 无名邪火事件链.0003.1.调查结果
+	}
+
+}
+
+无名邪火事件链.0004 = {			# 是否清缴邪教
+	type = character_event
+	title = 无名邪火事件链.0004.t
+	desc = 无名邪火事件链.0004.desc
+	theme = realm
+
+	override_background = {
+        reference = 无名邪火事件链_4
+    }
+
+	right_portrait = {
+		character = scope:神秘的黑衣人
+		animation = scheme
+	}
+
+	immediate = {
+		create_character = {
+			location = scope:邪火肆虐的伯爵领.title_province
+			template = 黑衣人_毁灭之火持有者
+			faith = faith:exotic_fa
+			culture = root.culture
+			save_scope_as = 神秘的黑衣人
+		}
+		scope:神秘的黑衣人 = {
+			add_character_flag = {
+				flag = use_stealth_clothes
+				days = 1
+			}
+		}
+	}
+
+
+	option = {
+		name = 无名邪火事件链.0004.1		#接受贿赂
+		trigger_event = {
+			id = 无名邪火事件链.0005
+			years = { 3 4 }
+		}
+		change_variable = {
+			name = 毁灭之火的起兵力度
+			add = 1
+		}
+		add_gold = 1000
+		scope:邪火肆虐的伯爵领 = {
+			add_county_modifier = {
+				modifier = 邪火肆虐_修正
+				years = 3
+			}
+			add_county_modifier = {
+				modifier = 出卖了了民众的领主_修正
+				years = 30
+			}
+		}
+		custom_tooltip = 无名邪火事件链.0004.1.收取贿赂
+
+		hidden_effect = {
+			scope:神秘的黑衣人 = {
+				death = {
+					death_reason = death_vanished
+				}
+			}
+		}
+			
+
+
+		add_character_flag = 无名邪火事件链已经完成
+	}
+
+	option = {
+		name = 无名邪火事件链.0004.2		#当场翻脸
+
+		configure_start_single_combat_effect = {
+			SC_INITIATOR = root
+			SC_ATTACKER = root
+			SC_DEFENDER = scope:神秘的黑衣人
+			FATALITY = yes
+			FIXED = no
+			LOCALE = terrain_scope
+			OUTPUT_EVENT = 无名邪火事件链.0006
+			INVALIDATION_EVENT = perk_interaction.0102
+		}
+
+		
+		add_character_flag = 无名邪火事件链已经完成
+	}
+
+	option = {
+		name = 无名邪火事件链.0004.3		#派兵围剿
+
+		create_title_and_vassal_change = {
+			type = usurped
+			save_scope_as = change
+		}
+
+		scope:邪火肆虐的伯爵领 = {
+			change_title_holder_include_vassals = {
+				holder = scope:神秘的黑衣人
+				change = scope:change
+			}
+		}
+
+		resolve_title_and_vassal_change = scope:change
+
+		scope:神秘的黑衣人 = {
+			使角色独立 = yes
+		}
+
+		scope:神秘的黑衣人 = {
+
+			spawn_army = {
+				uses_supply = no
+				inheritable = yes
+				name = 地狱毁灭军团
+				men_at_arms = {
+					type = 暗炎法师
+					stacks = 10
+				}
+				men_at_arms = {
+					type = undead_light
+					stacks = 10
+				}
+				men_at_arms = {
+					type = undead_heavy
+					stacks = 5
+				}
+				men_at_arms = {
+					type = undead_heavy_cavalry
+					stacks = 5
+				}
+				location = scope:神秘的黑衣人.location
+				origin = scope:神秘的黑衣人.location
+			}
+			if = {
+				limit = {
+					scope:邪火肆虐的伯爵领.duchy.holder = {
+						is_independent_ruler = yes
+					}
+				}
+				start_war = {
+					target = scope:邪火肆虐的伯爵领.duchy.holder
+					casus_belli = aggressive_expansion_cb
+					target_title = scope:邪火肆虐的伯爵领.duchy
+				}	
+			}
+			else = {
+				start_war = {
+					target = scope:邪火肆虐的伯爵领.duchy.holder.top_liege
+					casus_belli = aggressive_expansion_cb
+					target_title = scope:邪火肆虐的伯爵领.duchy
+				}
+				scope:神秘的黑衣人 = {
+					every_character_war = {
+						hidden_effect = {
+							set_called_to = root
+						}
+						add_defender = root
+					}
+				}
+			}
+			
+		}
+		
+		add_character_flag = 无名邪火事件链已经完成
+	}
+
+	option = {
+		name = 无名邪火事件链.0004.4		#警告对方
+		trigger_event = {
+			id = 无名邪火事件链.0005
+			years = { 1 3 }
+		}
+
+		scope:邪火肆虐的伯爵领 = {
+			add_county_modifier = {
+				modifier = 邪火肆虐_修正
+				years = 1
+			}
+		}
+
+		hidden_effect = {
+			scope:神秘的黑衣人 = {
+				death = {
+					death_reason = death_vanished
+				}
+			}
+		}
+
+		custom_tooltip = 无名邪火事件链.0004.4.警告对方
+
+		add_character_flag = 无名邪火事件链已经完成
+	}
+
+}
+
+无名邪火事件链.0005 = {			# 如果不清缴邪教，一段时间后此地爆发兵变
+	type = character_event
+	title = 无名邪火事件链.0005.t
+	desc = 无名邪火事件链.0005.desc
+	theme = realm
+
+	override_background = {
+        reference = 无名邪火事件链_5
+    }
+
+	right_portrait = {
+		character = scope:神秘的黑衣人
+		animation = scheme
+	}
+
+
+	immediate = {
+		create_character = {
+			location = scope:邪火肆虐的伯爵领.title_province
+			template = 黑衣人_毁灭之火持有者
+			faith = faith:exotic_fa
+			culture = root.culture
+			save_scope_as = 神秘的黑衣人
+		}
+		scope:神秘的黑衣人 = {
+			add_character_flag = {
+				flag = use_stealth_clothes
+				days = 1
+			}
+		}
+
+		create_title_and_vassal_change = {
+			type = usurped
+			save_scope_as = change
+		}
+
+		scope:邪火肆虐的伯爵领 = {
+			change_title_holder_include_vassals = {
+				holder = scope:神秘的黑衣人
+				change = scope:change
+			}
+		}
+
+		resolve_title_and_vassal_change = scope:change
+
+		scope:神秘的黑衣人 = {
+			使角色独立 = yes
+			if = {
+				limit = {
+					scope:邪火肆虐的伯爵领.duchy.holder = {
+						is_independent_ruler = yes
+					}
+				}
+				start_war = {
+					target = scope:邪火肆虐的伯爵领.duchy.holder
+					casus_belli = aggressive_expansion_cb
+					target_title = scope:邪火肆虐的伯爵领.duchy
+					
+				}	
+			}
+			else = {
+				start_war = {
+					target = scope:邪火肆虐的伯爵领.duchy.holder.top_liege
+					casus_belli = aggressive_expansion_cb
+					target_title = scope:邪火肆虐的伯爵领.duchy
+				}
+				scope:神秘的黑衣人 = {
+					every_character_war = {
+						hidden_effect = {
+							set_called_to = root
+						}
+						add_defender = root
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				root.var:毁灭之火的起兵力度 = 2
+			}
+			scope:神秘的黑衣人 = {
+				spawn_army = {
+					uses_supply = no
+					inheritable = yes
+					name = 地狱毁灭军团
+					men_at_arms = {
+						type = 暗炎法师
+						stacks = 10
+					}
+					men_at_arms = {
+						type = undead_light
+						stacks = 10
+					}
+					men_at_arms = {
+						type = undead_heavy
+						stacks = 5
+					}
+					men_at_arms = {
+						type = undead_heavy_cavalry
+						stacks = 5
+					}
+					location = this.location
+				}
+				spawn_army = {
+					uses_supply = no
+					inheritable = yes
+					name = 焚炎灭世军团
+					men_at_arms = {
+						type = 暗炎法师
+						stacks = 10
+					}
+					men_at_arms = {
+						type = undead_light
+						stacks = 10
+					}
+					men_at_arms = {
+						type = undead_heavy
+						stacks = 5
+					}
+					men_at_arms = {
+						type = undead_heavy_cavalry
+						stacks = 5
+					}
+					location = this.location
+				}
+				spawn_army = {
+					uses_supply = no
+					inheritable = yes
+					name = 毁灭之火军团
+					men_at_arms = {
+						type = 暗炎法师
+						stacks = 10
+					}
+					men_at_arms = {
+						type = undead_light
+						stacks = 10
+					}
+					men_at_arms = {
+						type = undead_heavy
+						stacks = 5
+					}
+					men_at_arms = {
+						type = undead_heavy_cavalry
+						stacks = 5
+					}
+					location = this.location
+				}
+			}
+		}
+		else_if = {
+			limit = {root.var:毁灭之火的起兵力度 = 1 }
+			scope:神秘的黑衣人 = {
+				spawn_army = {
+					uses_supply = no
+					inheritable = yes
+					name = 地狱毁灭军团
+					men_at_arms = {
+						type = 暗炎法师
+						stacks = 10
+					}
+					men_at_arms = {
+						type = undead_light
+						stacks = 10
+					}
+					men_at_arms = {
+						type = undead_heavy
+						stacks = 5
+					}
+					men_at_arms = {
+						type = undead_heavy_cavalry
+						stacks = 5
+					}
+					location = this.location
+				}
+				spawn_army = {
+					uses_supply = no
+					inheritable = yes
+					name = 焚炎灭世军团
+					men_at_arms = {
+						type = 暗炎法师
+						stacks = 10
+					}
+					men_at_arms = {
+						type = undead_light
+						stacks = 10
+					}
+					men_at_arms = {
+						type = undead_heavy
+						stacks = 5
+					}
+					men_at_arms = {
+						type = undead_heavy_cavalry
+						stacks = 5
+					}
+					location = this.location
+				}
+			}
+		}
+	}
+
+	option = {
+		name = 无名邪火事件链.0005.1
+	}
+}
+
+无名邪火事件链.0006 = {
+	hidden = yes
+
+	immediate = {
+		# Fire the follow-up stuff; delay this by a day so the toasts appear _after_ the final event.
+		trigger_event = {
+			id = 无名邪火事件链.0007
+			days = 1
+		}
+	}
+}
+
+无名邪火事件链.0007 = {
+	hidden = yes
+
+	immediate = {
+		# Everyone puts their shirts back on.
+		single_combat_clean_shirtlessness_effect = {    #应该是进行决斗
+			ATTACKER = root
+			DEFENDER = scope:神秘的黑衣人
+		}
+		# Send out a toast to the victor.
+		scope:sc_victor = {
+			send_interface_toast = {
+				title = perk_interaction.0101.victor_toast.t
+				left_icon = scope:sc_victor
+				right_icon = scope:sc_loser
+				show_as_tooltip = {
+					if = {
+						limit = {
+							scope:sc_victor = root
+						}
+						创造宝物_毁灭之火 = yes
+					}
+					else = {
+						scope:邪火肆虐的伯爵领.duchy.holder = {
+							trigger_event = {
+								id = 无名邪火事件链.0005
+								days = 3
+							}
+						}
+					}
+				}
+			}
+		}
+		# And to the loser.
+		scope:sc_loser = {
+			send_interface_toast = {
+				title = perk_interaction.0101.loser_toast.t
+				left_icon = scope:sc_loser
+				right_icon = scope:sc_victor
+				show_as_tooltip = {
+					if = {
+						limit = {
+							scope:sc_loser = root
+						}
+						death = {
+							death_reason = 死于神秘的黑暗法师
+							killer = scope:sc_victor
+						}
+					}
+					else = {
+						death = {
+							death_reason = death_vanished
+							killer = scope:sc_victor
+						}
+					}
+				}
+			}
+		}
+		# Then execute the actual effects.
+		if = {
+			limit = {
+				scope:sc_victor = root
+			}
+			创造宝物_毁灭之火 = yes
+		}
+		else = {
+			scope:神秘的黑衣人 =  {
+				trigger_event = {
+					id = 无名邪火事件链.0008
+					days = 3
+				}
+			}
+		}
+		if = {
+			limit = {
+				scope:sc_loser = root
+			}
+			death = {
+				death_reason = 死于神秘的黑暗法师
+				killer = scope:sc_victor
+			}
+		}
+		else = {
+			death = {
+				death_reason = death_vanished
+				killer = scope:sc_victor
+			}
+		}
+	}
+}
+
+无名邪火事件链.0008 = {
+	hidden = yes
+
+	immediate = {
+		create_title_and_vassal_change = {
+			type = usurped
+			save_scope_as = change
+		}
+
+		scope:邪火肆虐的伯爵领 = {
+			change_title_holder_include_vassals = {
+				holder = scope:神秘的黑衣人
+				change = scope:change
+			}
+		}
+
+		resolve_title_and_vassal_change = scope:change
+
+		scope:神秘的黑衣人 = {
+			使角色独立 = yes
+			if = {
+				limit = {
+					scope:邪火肆虐的伯爵领.duchy.holder = {
+						is_independent_ruler = yes
+					}
+				}
+				start_war = {
+					target = scope:邪火肆虐的伯爵领.duchy.holder
+					casus_belli = aggressive_expansion_cb
+					target_title = scope:邪火肆虐的伯爵领.duchy
+				}	
+			}
+			else = {
+				start_war = {
+					target = scope:邪火肆虐的伯爵领.duchy.holder.top_liege
+					casus_belli = aggressive_expansion_cb
+					target_title = scope:邪火肆虐的伯爵领.duchy
+				}
+				scope:神秘的黑衣人 = {
+					every_character_war = {
+						hidden_effect = {
+							set_called_to = scope:邪火肆虐的伯爵领.duchy.holder
+						}
+						add_defender = scope:邪火肆虐的伯爵领.duchy.holder
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				root.var:毁灭之火的起兵力度 = 2
+			}
+			scope:神秘的黑衣人 = {
+				spawn_army = {
+					uses_supply = no
+					inheritable = yes
+					name = 地狱毁灭军团
+					men_at_arms = {
+						type = 暗炎法师
+						stacks = 10
+					}
+					men_at_arms = {
+						type = undead_light
+						stacks = 10
+					}
+					men_at_arms = {
+						type = undead_heavy
+						stacks = 5
+					}
+					men_at_arms = {
+						type = undead_heavy_cavalry
+						stacks = 5
+					}
+					location = scope:神秘的黑衣人.location
+					origin = scope:神秘的黑衣人.location
+				}
+				spawn_army = {
+					uses_supply = no
+					inheritable = yes
+					name = 焚炎灭世军团
+					men_at_arms = {
+						type = 暗炎法师
+						stacks = 10
+					}
+					men_at_arms = {
+						type = undead_light
+						stacks = 10
+					}
+					men_at_arms = {
+						type = undead_heavy
+						stacks = 5
+					}
+					men_at_arms = {
+						type = undead_heavy_cavalry
+						stacks = 5
+					}
+					location = scope:神秘的黑衣人.location
+					origin = scope:神秘的黑衣人.location
+				}
+				spawn_army = {
+					uses_supply = no
+					inheritable = yes
+					name = 毁灭之火军团
+					men_at_arms = {
+						type = 暗炎法师
+						stacks = 10
+					}
+					men_at_arms = {
+						type = undead_light
+						stacks = 10
+					}
+					men_at_arms = {
+						type = undead_heavy
+						stacks = 5
+					}
+					men_at_arms = {
+						type = undead_heavy_cavalry
+						stacks = 5
+					}
+					location = scope:神秘的黑衣人.location
+					origin = scope:神秘的黑衣人.location
+				}
+			}
+		}
+		else_if = {
+			limit = {root.var:毁灭之火的起兵力度 = 1 }
+			scope:神秘的黑衣人 = {
+				spawn_army = {
+					uses_supply = no
+					inheritable = yes
+					name = 地狱毁灭军团
+					men_at_arms = {
+						type = 暗炎法师
+						stacks = 10
+					}
+					men_at_arms = {
+						type = undead_light
+						stacks = 10
+					}
+					men_at_arms = {
+						type = undead_heavy
+						stacks = 5
+					}
+					men_at_arms = {
+						type = undead_heavy_cavalry
+						stacks = 5
+					}
+					location = scope:神秘的黑衣人.location
+					origin = scope:神秘的黑衣人.location
+				}
+				spawn_army = {
+					uses_supply = no
+					inheritable = yes
+					name = 焚炎灭世军团
+					men_at_arms = {
+						type = 暗炎法师
+						stacks = 10
+					}
+					men_at_arms = {
+						type = undead_light
+						stacks = 10
+					}
+					men_at_arms = {
+						type = undead_heavy
+						stacks = 5
+					}
+					men_at_arms = {
+						type = undead_heavy_cavalry
+						stacks = 5
+					}
+					location = scope:神秘的黑衣人.location
+					origin = scope:神秘的黑衣人.location
+				}
+			}
+			
+		}
+	}
+
+}
+
+无名邪火事件链.0009 = {
+	type = character_event
+	title = 无名邪火事件链.0009.t
+	desc = 无名邪火事件链.0009.desc
+	theme = realm
+
+	override_background = {
+		reference = 毁灭之火事件广播_1
+	}
+
+	right_portrait = {
+		character = scope:actor
+		animation = idle
+	}
+
+	option = {
+		name = 无名邪火事件链.0009.1
+	}
+}
+
+无名邪火事件链.0010 = {
+	type = character_event
+	title = 无名邪火事件链.0010.t
+	desc = 无名邪火事件链.0010.desc
+	theme = realm
+
+	trigger = {
+		NOT = {
+			has_character_flag = 已经提醒过无名邪火事件链
+		}
+	}
+
+	override_background = {
+		reference = 毁灭之火事件广播_2
+	}
+
+	right_portrait = {
+		character = scope:actor
+		animation = idle
+	}
+
+	option = {
+		name = 无名邪火事件链.0010.1
+		custom_tooltip = 无名邪火事件链.0010.1.提醒
+		add_character_flag = 已经提醒过无名邪火事件链
+		trigger_event = {
+			id = 无名邪火事件链.0011
+			years = 1
+		}
+	}
+}
+
+无名邪火事件链.0011 = {
+	hidden = yes
+
+	trigger = {
+		current_date <= 1066.1.1
+		NOT = {
+			has_character_flag = 已经重置过提醒过无名邪火事件链
+		}	
+	}
+
+
+
+	immediate = {
+
+		if = {
+			limit = {
+				current_date >= 1065.1.1
+				current_date <= 1066.1.1
+			}
+			add_character_flag = 已经重置过提醒过无名邪火事件链
+			remove_character_flag = 已经提醒过无名邪火事件链
+		}
+
+		trigger_event = {
+			id = 无名邪火事件链.0011
+			months = 2
+		}
 	}
 }
