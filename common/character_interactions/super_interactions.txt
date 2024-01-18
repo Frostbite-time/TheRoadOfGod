@@ -934,24 +934,7 @@ ask_to_pay_super = {
 			scope:used_hook_super_high = yes
 		}
 	}
-	ai_accept = {
-		base = -300
-		modifier = {
-			desc = used_hook_super_desc
-			add = 360
-			scope:used_hook_super_low = yes
-		}
-		modifier = {
-			desc = used_hook_super_desc
-			add = 360
-			scope:used_hook_super_mid = yes
-		}
-		modifier = {
-			desc = used_hook_super_desc
-			add = 360
-			scope:used_hook_super_high = yes
-		}
-	}
+	auto_accept = yes
 	ai_potential = {
 		always = yes
 	}
@@ -1123,7 +1106,6 @@ run_out_hook = {
 	}
 	ai_min_reply_days = 5
 	ai_max_reply_days = 10
-	ignores_pending_interaction_block = yes
 
 	is_shown = {
 		NOT = { scope:recipient = scope:actor }
@@ -1379,7 +1361,6 @@ duel_to_super = {
 	}
 	ai_min_reply_days = 5
 	ai_max_reply_days = 10
-	ignores_pending_interaction_block = yes
 
 	is_shown = {
 		scope:actor.faith = {

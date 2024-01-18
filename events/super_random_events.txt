@@ -334,9 +334,7 @@ namespace = 无名邪火事件链
 			}
 		}
 		any_county = {
-			limit = {
-				this.holder = root
-			}
+			this.holder = root
 			count >= 2
 		}
 		primary_title = {		

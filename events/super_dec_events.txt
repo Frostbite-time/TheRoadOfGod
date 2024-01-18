@@ -254,7 +254,7 @@ call_god_events.0001 = {
 				
 				10 = {          #现身
 					trigger_event = {
-					id = call_god_events.0011
+					id = call_god_events.0016
 					}
 					modifier = {
 						factor = 0
@@ -265,7 +265,18 @@ call_god_events.0001 = {
 				}
 				20 = {       #好的回应
 					trigger_event = {
-					id = call_god_events.0007
+					id = call_god_events.0014
+					}
+					modifier = {
+						factor = 0
+						角色是不是神_接受参数 = {
+							CHARACTER = this
+						}
+					}
+				}
+				20 = {       #好的回应2
+					trigger_event = {
+					id = call_god_events.0015
 					}
 					modifier = {
 						factor = 0
@@ -623,7 +634,7 @@ call_god_events.0004 = {
 				
 				10 = {          #现身
 					trigger_event = {
-					id = call_god_events.0011
+						id = call_god_events.0016
 					}
 					modifier = {
 						factor = 0
@@ -788,6 +799,8 @@ call_god_events.0003 = {
 		create_character = {
 			name = god_of_destiny_name
 			trait = super_destiny_god
+			gender = male
+			location = root.location
 			after_creation = {
 				save_scope_as = god_ll_a   
 			}
@@ -1034,6 +1047,8 @@ call_god_events.0011 = {
 		create_character = {
 			name = god_of_time_name
 			trait = super_time_god
+			gender = male
+			location = root.location
 			after_creation = {
 				save_scope_as = god_ll_a   
 			}
@@ -1187,8 +1202,10 @@ call_god_events.0014 = {
 	right_portrait = scope:god_ll_a
 	immediate = {
 		create_character = {
-			name = god_of_destiny_name
+			name = god_of_so_name
 			trait = super_sun_god
+			gender = male
+			location = root.location
 			after_creation = {
 				save_scope_as = god_ll_a   
 			}
@@ -1245,14 +1262,19 @@ call_god_events.0016 = {
 		create_character = {
 			name = god_of_so_name
 			trait = super_sun_god
+			gender = male
+			location = root.location
 			after_creation = {
 				save_scope_as = god_ll_a   
 			}
 		}
 		create_character = {
-			name = god_of_destiny_name
+			name = 希望使徒
 			trait = angel_traits
+			trait = apostle_of_hope
 			age = 20
+			gender = male
+			location = root.location
 			after_creation = {
 				save_scope_as = god_ll_b   
 			}

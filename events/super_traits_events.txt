@@ -118,6 +118,8 @@ be_angel_event.0007 = {
 		create_character = {
 			name = god_name
 			trait = god_god
+			gender = male
+			location = root.location
 			after_creation = {
 				save_scope_as = god_ll_a   
 			}

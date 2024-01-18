@@ -1,0 +1,10 @@
+﻿# 以下修正因为未知原因被原版弃用了，但是仍然可以使用
+artifact_vassal_opinion_1_modifier = { vassal_opinion = 1 }
+artifact_vassal_opinion_2_modifier = { vassal_opinion = 2 }
+artifact_vassal_opinion_3_modifier = { vassal_opinion = 3 }
+artifact_vassal_opinion_4_modifier = { vassal_opinion = 4 }
+artifact_build_gold_cost_5_modifier = { build_gold_cost = -0.05 }
+artifact_build_gold_cost_6_modifier = { build_gold_cost = -0.06 }
+artifact_build_gold_cost_7_modifier = { build_gold_cost = -0.07 }
+artifact_build_gold_cost_8_modifier = { build_gold_cost = -0.08 }
+artifact_vassal_tax_contribution_mult_3_modifier = { vassal_tax_contribution_mult = 0.03 }

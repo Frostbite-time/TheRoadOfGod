@@ -2,7 +2,6 @@
 super_war_god = {
 	index = 1081 	  #索引
 	#####神的基本属性#####
-	good = yes		  #好的特质
 	immortal = yes    #不朽
 	health = 200	  #健康	
 	prowess = 100	  #勇武
@@ -55,7 +54,6 @@ super_war_god = {
 super_dark_god = {
 	index = 1082 	  #索引
 	#####神的基本属性#####
-	good = yes		  #好的特质
 	immortal = yes    #不朽
 	health = 200	  #健康	
 	prowess = 100	  #勇武
@@ -110,7 +108,6 @@ super_dark_god = {
 super_wisdom_god = {
 	index = 1083 	  #索引
 	#####神的基本属性#####
-	good = yes		  #好的特质
 	immortal = yes    #不朽
 	health = 200	  #健康	
 	prowess = 100	  #勇武
@@ -158,7 +155,6 @@ super_wisdom_god = {
 super_nature_god = {
 	index = 1084 	  #索引
 	#####神的基本属性#####
-	good = yes		  #好的特质
 	immortal = yes    #不朽
 	health = 200	  #健康	
 	prowess = 100	  #勇武
@@ -213,7 +209,6 @@ super_nature_god = {
 super_belief_god = {
 	index = 1085 	  #索引
 	#####神的基本属性#####
-	good = yes		  #好的特质
 	immortal = yes    #不朽
 	health = 200	  #健康	
 	prowess = 100	  #勇武
@@ -258,7 +253,6 @@ super_belief_god = {
 super_sea_god = {
 	index = 1086 	  #索引
 	#####神的基本属性#####
-	good = yes		  #好的特质
 	immortal = yes    #不朽
 	health = 200	  #健康	
 	prowess = 100	  #勇武
@@ -302,7 +296,6 @@ super_sea_god = {
 super_destiny_god = {
 	index = 1087 	  #索引
 	#####神的基本属性#####
-	good = yes		  #好的特质
 	immortal = yes    #不朽
 	health = 200	  #健康	
 	diplomacy = 100   #外交
@@ -339,7 +332,6 @@ super_destiny_god = {
 super_time_god = {
 	index = 1088 	  #索引
 	#####神的基本属性#####
-	good = yes		  #好的特质
 	immortal = yes    #不朽
 	health = 200	  #健康	
 	diplomacy = 100   #外交
@@ -377,7 +369,6 @@ super_time_god = {
 super_sun_god = {
 	index = 1089 	  #索引
 	#####神的基本属性#####
-	good = yes		  #好的特质
 	immortal = yes    #不朽
 	health = 200	  #健康	
 	diplomacy = 100   #外交
@@ -418,7 +409,6 @@ super_sun_god = {
 super_highlander_god = {
 	index = 1090 	  #索引
 	#####神的基本属性#####
-	good = yes		  #好的特质
 	immortal = yes    #不朽
 	health = 200	  #健康	
 	diplomacy = 100   #外交
@@ -480,7 +470,6 @@ super_highlander_god = {
 super_fight_god = {
 	index = 1091 	  #索引
 	#####神的基本属性#####
-	good = yes		  #好的特质
 	immortal = yes    #不朽
 	health = 200	  #健康	
 	diplomacy = 100   #外交
@@ -519,7 +508,6 @@ super_fight_god = {
 super_ark_god = {
 	index = 1092	  #索引
 	#####神的基本属性#####
-	good = yes		  #好的特质
 	immortal = yes    #不朽
 	health = 200	  #健康	
 	diplomacy = 100   #外交

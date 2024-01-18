@@ -100,7 +100,27 @@ world_rift_assassination = {
 			random = {
 				chance = 3
 				scheme_owner = {
+					save_scope_as = actor
+				}
+				scope:target = {
+					save_scope_as = recipient
+				}
+				scheme_owner = {
 					trigger_event = rift_events_world.0012
+				}
+			}
+		}
+		else = {
+			random = {
+				chance = 3
+				scheme_owner = {
+					save_scope_as = actor
+				}
+				scope:target = {
+					save_scope_as = recipient
+				}
+				scope:target = {
+					trigger_event = rift_events_world.0015
 				}
 			}
 		}	
