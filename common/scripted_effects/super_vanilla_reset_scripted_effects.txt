@@ -188,7 +188,7 @@ spawn_temujin_character_effect = {
 		add_trait = angel_traits
 		add_trait = devilishness
 		获得所有超能之路技能 = yes
-		set_character_faith = faith:exotic_fa   #改变了角色的信仰
+		set_character_faith_with_conversion = faith:exotic_fa   #改变了角色的信仰
 	}
 	every_player = {
 		trigger_event = mongol_invasion.1002 # Mongol Empire spawned notification

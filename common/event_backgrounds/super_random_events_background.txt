@@ -104,3 +104,11 @@
 		ambience = "event:/SFX/Events/Backgrounds/ambience_fire"
 	}
 }
+
+生灵之神教会的拜访事件链_1 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/生灵之神教会的拜访事件链_1.dds"
+		environment = "environment_frontend_west_main"
+		ambience = "event:/SFX/Events/Backgrounds/ambience_fire"
+	}
+}

@@ -1,5 +1,6 @@
 ﻿namespace = 洞悉之种事件链
 namespace = 无名邪火事件链
+namespace = 生灵之神教会的拜访事件链
 
 # 洞悉之种的事件链
 洞悉之种事件链.0001 = {
@@ -333,8 +334,8 @@ namespace = 无名邪火事件链
 				current_date <= 1130.1.1
 			}
 		}
-		any_county = {
-			this.holder = root
+		any_held_title = {
+			tier = tier_county
 			count >= 2
 		}
 		primary_title = {		
@@ -1319,5 +1320,71 @@ namespace = 无名邪火事件链
 
 	option = {
 		name = 无名邪火事件链.0012.1
+	}
+}
+
+生灵之神教会的拜访事件链.0001 = {
+	type = character_event
+	title = 生灵之神教会的拜访事件链.0001.t
+	desc = 生灵之神教会的拜访事件链.0001.desc
+	theme = realm
+
+	override_background = {
+		reference = 生灵之神教会的拜访事件链_1
+	}
+
+	left_portrait = root
+	right_portrait = scope:生灵之神教会的人
+	immediate = {
+		create_character = {
+			location = root.location
+			template = 生灵之神教会的人_模板
+			culture = root.culture
+			save_scope_as = 生灵之神教会的人
+		}
+	}
+
+	trigger = {
+		
+		NOT = {
+			root.faith = faith:exotic_fa
+		}
+		NOT = {
+			root.faith = faith:super_belief_fa
+		}
+		OR = {
+			AND = {
+				current_date >= 870.1.1
+				current_date <= 930.1.1
+			}
+			AND = {
+				current_date >= 1070.1.1
+				current_date <= 1130.1.1
+			}
+		}
+		NOT = {
+			has_character_flag = 生灵之神教会的拜访事件链已经完成
+		}
+	}
+
+	option = {
+		name = 生灵之神教会的拜访事件链.0001.1	#选择信仰
+		custom_tooltip = 生灵之神教会的拜访事件链.0001.1.选择信仰
+		root = {
+			set_character_faith_with_conversion = faith:super_belief_fa
+		}
+	}
+
+	option = {
+		name = 生灵之神教会的拜访事件链.0001.2	#抢劫他
+		add_gold = 80
+	}
+
+	option = {
+		name = 生灵之神教会的拜访事件链.0001.3	#拒绝
+	}
+
+	after = {
+		add_character_flag = 生灵之神教会的拜访事件链已经完成
 	}
 }

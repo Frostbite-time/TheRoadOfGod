@@ -17,3 +17,23 @@
 		cynical = {}
 	}
 }
+
+生灵之神教会的人_模板 = {
+	age = { 20 30 }
+	gender = male
+	faith = faith:super_belief_fa
+	random_traits_list = {
+		count = 1
+		education_intrigue_2 = {}
+		education_intrigue_3 = {}
+		education_intrigue_4 = {}
+	}
+	random_traits_list = {
+		count = 2
+		arrogant = {}
+		ambitious = {}
+		vengeful = {}
+		wrathful = {}
+		cynical = {}
+	}
+}
