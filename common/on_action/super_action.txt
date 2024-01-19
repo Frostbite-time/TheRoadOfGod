@@ -268,7 +268,7 @@ super_can_get_sea_god_power_action = {
 			random_living_character = {
 				limit = {
 					any_character_artifact = {
-                        has_artifact_modifier = 海神权杖_修正
+                        has_artifact_modifier = sea_god_artifact_modifier
                     }
 				}
 				trigger_event = super_be_sea_god_events.0003

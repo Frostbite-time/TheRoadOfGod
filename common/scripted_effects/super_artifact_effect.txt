@@ -6,7 +6,7 @@
 		type = miscellaneous
 		visuals = soul_stone
 		rarity = illustrious
-		modifier = 灵魂晶石_修正
+		modifier = soul_stone_modifier
 		wealth = 120
 		quality = 120
 		max_durability = 1000		#宝物最大耐久度
@@ -23,7 +23,7 @@
 		type = miscellaneous
 		visuals = 毁灭之火_图标
 		rarity = illustrious
-		modifier = 毁灭之火_修正
+		modifier = dark_fire_modifier
 		wealth = 100
 		quality = 100
 		max_durability = 1000		#宝物最大耐久度

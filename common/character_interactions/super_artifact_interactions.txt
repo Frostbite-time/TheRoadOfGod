@@ -108,7 +108,7 @@ super_take_his_soul = {
 		scope:actor = {
 			random_character_artifact = {
 				limit = {
-					has_artifact_modifier = 毁灭之火_修正
+					has_artifact_modifier = dark_fire_modifier
 				}
 				destroy_artifact = this
 			}

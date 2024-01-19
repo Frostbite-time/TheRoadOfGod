@@ -32,7 +32,7 @@ namespace = 生灵之神教会的拜访事件链
 	option = {
 		name = 洞悉之种事件链.0001.2		#加强防御
 		add_character_modifier = {
-			modifier = 防御法阵_修正
+			modifier = defensive_magic_modifier
 			years = 2
 		}
 		add_character_flag = super_seed_is_done_flag
@@ -64,7 +64,7 @@ namespace = 生灵之神教会的拜访事件链
 		name = 洞悉之种事件链.0002.2	#逃离
 		add_character_flag = super_seed_is_done_flag
 		add_character_modifier = {
-			modifier = 心有余悸_修正
+			modifier = linger_fear_modifier
 			years = 5
 		}
 	}
@@ -204,7 +204,7 @@ namespace = 生灵之神教会的拜访事件链
 	option = {
 		name = 洞悉之种事件链.0005.1
 		add_character_modifier = {
-			modifier = 防御法阵_修正
+			modifier = defensive_magic_modifier
 			years = 10
 		}
 		add_character_flag = super_seed_is_done_flag
@@ -226,7 +226,7 @@ namespace = 生灵之神教会的拜访事件链
 	option = {
 		name = 洞悉之种事件链.0006.1
 		add_character_modifier = {
-			modifier = 洞悉之种_修正
+			modifier = seed_of_insight_modifier
 		}
 		add_character_flag = super_seed_is_done_flag
 	}
@@ -246,7 +246,7 @@ namespace = 生灵之神教会的拜访事件链
 	option = {
 		name = 洞悉之种事件链.0007.1
 		add_character_modifier = {
-			modifier = 洞悉之种_修正
+			modifier = seed_of_insight_modifier
 		}
 		add_character_flag = super_seed_is_done_flag
 	}
@@ -360,11 +360,11 @@ namespace = 生灵之神教会的拜访事件链
 		add_character_flag = 无名邪火事件链已经完成
 		scope:邪火肆虐的伯爵领 = {
 			add_county_modifier = {
-				modifier = 邪火肆虐_修正
+				modifier = evil_fire_rages_modifier
 				years = 1
 			}
 			add_county_modifier = {
-				modifier = 背弃了民众的领主_修正
+				modifier = lords_turned_back_people_modifier
 				years = 10
 			}
 		}
@@ -408,7 +408,7 @@ namespace = 生灵之神教会的拜访事件链
 		}
 		scope:邪火肆虐的伯爵领 = {
 			add_county_modifier = {
-				modifier = 缓慢恢复的伯爵领_修正
+				modifier = slowly_recovering_earl_collar_modifier
 				years = 3
 			}
 		}
@@ -425,11 +425,11 @@ namespace = 生灵之神教会的拜访事件链
 		}
 		scope:邪火肆虐的伯爵领 = {
 			add_county_modifier = {
-				modifier = 缓慢恢复的伯爵领_修正
+				modifier = slowly_recovering_earl_collar_modifier
 				years = 2
 			}
 			add_county_modifier = {
-				modifier = 拥兵自重_修正
+				modifier = catch_their_army_modifier
 				years = 5
 			}
 		}
@@ -447,7 +447,7 @@ namespace = 生灵之神教会的拜访事件链
 		}
 		scope:邪火肆虐的伯爵领 = {
 			add_county_modifier = {
-				modifier = 邪火肆虐_修正
+				modifier = evil_fire_rages_modifier
 				years = 1
 			}
 		}
@@ -478,7 +478,7 @@ namespace = 生灵之神教会的拜访事件链
 				}
 				scope:邪火肆虐的伯爵领 = {
 					add_county_modifier = {
-						modifier = 邪火肆虐_修正
+						modifier = evil_fire_rages_modifier
 						years = 1
 					}
 				}
@@ -556,11 +556,11 @@ namespace = 生灵之神教会的拜访事件链
 		add_gold = 1000
 		scope:邪火肆虐的伯爵领 = {
 			add_county_modifier = {
-				modifier = 邪火肆虐_修正
+				modifier = evil_fire_rages_modifier
 				years = 3
 			}
 			add_county_modifier = {
-				modifier = 出卖了了民众的领主_修正
+				modifier = lords_betrayed_people_modifier
 				years = 30
 			}
 		}
@@ -692,7 +692,7 @@ namespace = 生灵之神教会的拜访事件链
 
 		scope:邪火肆虐的伯爵领 = {
 			add_county_modifier = {
-				modifier = 邪火肆虐_修正
+				modifier = evil_fire_rages_modifier
 				years = 1
 			}
 		}

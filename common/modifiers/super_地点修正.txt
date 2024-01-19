@@ -1,26 +1,26 @@
-﻿邪火肆虐_修正 = {
+﻿evil_fire_rages_modifier = {
 	icon = county_modifier_development_negative
 	development_growth  = -5
 	monthly_county_control_change_add = -10
 	
 }
 
-背弃了民众的领主_修正 = {
+lords_turned_back_people_modifier = {
 	icon = county_modifier_development_negative
 	county_opinion_add = -30
 }
 
-出卖了了民众的领主_修正 = {
+lords_betrayed_people_modifier = {
 	icon = county_modifier_development_negative
 	county_opinion_add = -100
 }
 
-缓慢恢复的伯爵领_修正 = {
+slowly_recovering_earl_collar_modifier = {
 	icon = county_modifier_development_positive
 	development_growth = 0.3
 }
 
-拥兵自重_修正 = {
+catch_their_army_modifier = {
 	icon = county_modifier_development_negative
 	levy_size = 0.5
 	monthly_county_control_change_add = -2

@@ -1,21 +1,21 @@
 ﻿#检测角色是否拥有贤者之石
 是否有贤者之石 = {
 	any_character_artifact = {
-		has_artifact_modifier = 贤者之石_修正
+		has_artifact_modifier = sage_stone_modifier
 	}
 }
 
 # 检测角色是否拥有灵魂晶石
 是否有灵魂晶石 = {
 	any_character_artifact = {
-		has_artifact_modifier = 灵魂晶石_修正
+		has_artifact_modifier = soul_stone_modifier
 	}
 }
 
 # 检测角色是否装备了灵魂晶石
 是否装备了灵魂晶石 = {
 	any_equipped_character_artifact = {
-		has_artifact_modifier = 灵魂晶石_修正
+		has_artifact_modifier = soul_stone_modifier
 	}
 }
 #检测角色是否拥有十个以上的囚犯
@@ -52,9 +52,9 @@
 #角色是否拥有强力技能特质
 是否拥有强力技能或特质 = {
 	OR = {
-		has_trait = know_all_thing_traits
-		has_trait = the_gift_of_god
-		has_trait = a_patriarch
+		has_perk = konw_all_thing
+		has_perk = holy_warriorss
+		has_perk = one_hand_cover_sky
 		has_perk = nothing_i_cant
 	}
 }
@@ -109,7 +109,7 @@
 #用于检测角色有没有战神之甲
 角色有没有战神之甲 = {
 	any_character_artifact = {
-		has_artifact_modifier =  战神之甲_修正
+		has_artifact_modifier =  war_aromr_modifier
 	}
 }
 
@@ -336,7 +336,7 @@
 
 是否拥有毁灭之火 = {
 	any_character_artifact = {
-		has_artifact_modifier = 毁灭之火_修正
+		has_artifact_modifier = dark_fire_modifier
 	}
 }
 

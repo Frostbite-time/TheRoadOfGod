@@ -44,7 +44,7 @@ Valor_of_man = {
 		}
 	}
 	character_modifier = {
-		prowess = 10
+		prowess = 5
 		no_prowess_loss_from_age = yes
 	}
 	effect = {
@@ -97,8 +97,8 @@ divine_power = {
 		}
 	}
 	character_modifier = {
-		prowess = 10
-		prowess_per_piety_level = 2
+		prowess = 5
+		prowess_per_piety_level = 1
 	}
 	effect = {
 		custom_description_no_bullet = {
@@ -150,9 +150,9 @@ awe_inspiring = {
 		}
 	}
 	character_modifier = {
-		knight_limit = 5
-		prowess = 5
-		knight_effectiveness_mult = 0.5
+		knight_limit = 3
+		prowess = 3
+		knight_effectiveness_mult = 0.2
 	}
 	effect = {
 		custom_description_no_bullet = {
@@ -208,7 +208,7 @@ controller_perk = {
 		custom_description_no_bullet = {
 			text = controller_perk_dec
 		}
-		add_character_modifier = 掌控者
+		add_character_modifier = super_controller_modifier
 	}
 	parent = awe_inspiring	
 }
@@ -310,13 +310,12 @@ talent_of_commander = {
 		}
 	}
 	character_modifier = {
-		men_at_arms_cap = 3
+		men_at_arms_cap = 1
 		men_at_arms_limit = 3
-		knight_limit = 5
+		knight_limit = 3
 		men_at_arms_maintenance = -0.3
-		army_maintenance_mult = -0.2
-		advantage = 5
-		levy_size = 0.3
+		army_maintenance_mult = -0.3
+		levy_size = 0.1
 	}
 	parent = Valor_of_man	
 }
@@ -370,12 +369,12 @@ come_and_go_as_you_please = {
 	character_modifier = {
 		naval_movement_speed_mult = 0.5
 		embarkation_cost_mult = -0.5
-		movement_speed = 0.5
-		retreat_losses = -0.25
+		movement_speed = 0.3
+		retreat_losses = -0.2
 		raid_speed = 0.5
-		supply_capacity_add = 2000
+		supply_capacity_add = 1500
 		no_water_crossing_penalty = yes
-		attacker_advantage = 10
+		attacker_advantage = 20
 	}
 	parent = talent_of_commander	
 }
@@ -428,12 +427,11 @@ eagles_eye = {
 	}
 	character_modifier = {
 		min_combat_roll = 8
-		advantage = 15
+		advantage = 10
 		enemy_terrain_advantage = -5
-		retreat_losses = -0.35
-		counter_efficiency = 0.5
-		pursue_efficiency = 0.5
-		controlled_province_advantage = 15
+		counter_efficiency = 0.2
+		pursue_efficiency = 0.2
+		controlled_province_advantage = 10
 	}
 	parent = come_and_go_as_you_please	
 }
@@ -485,19 +483,19 @@ son_of_god_of_war = {
 		}
 	}
 	character_modifier = {
-		heavy_infantry_damage_mult = 0.5
-		pikemen_damage_mult = 0.5
-		archers_damage_mult = 0.5
-		light_cavalry_damage_mult = 0.5
-		heavy_cavalry_damage_mult = 0.5
-		skirmishers_damage_mult = 0.5
-		heavy_infantry_toughness_mult = 0.5
-		pikemen_toughness_mult = 0.5
-		archers_toughness_mult = 0.5
-		light_cavalry_toughness_mult = 0.5
-		heavy_cavalry_toughness_mult = 0.5
-		skirmishers_toughness_mult = 0.5
-		knight_effectiveness_mult = 1		
+		heavy_infantry_damage_mult = 0.2
+		pikemen_damage_mult = 0.2
+		archers_damage_mult = 0.2
+		light_cavalry_damage_mult = 0.2
+		heavy_cavalry_damage_mult = 0.2
+		skirmishers_damage_mult = 0.2
+		heavy_infantry_toughness_mult = 0.2
+		pikemen_toughness_mult = 0.2
+		archers_toughness_mult = 0.2
+		light_cavalry_toughness_mult = 0.2
+		heavy_cavalry_toughness_mult = 0.2
+		skirmishers_toughness_mult = 0.2
+		knight_effectiveness_mult = 0.5	
 	}
 	parent = eagles_eye		
 }
@@ -549,12 +547,12 @@ good_governance = {
 		}
 	}
 	character_modifier = {
-		stewardship = 6
-		diplomacy = 6
-		domain_tax_mult = 0.2
-		vassal_tax_contribution_mult = 0.35
+		stewardship = 3
+		diplomacy = 3
+		domain_tax_mult = 0.3
+		vassal_tax_contribution_mult = 0.3
 		monthly_county_control_change_factor = 0.3
-		development_growth_factor = 0.3
+		development_growth_factor = 0.2
 	}
 	parent = Valor_of_man	
 }
@@ -606,15 +604,13 @@ holy_father_perk = {
 		}
 	}
 	character_modifier = {
-		faith_creation_piety_cost_mult = -0.8
-		faith_conversion_piety_cost_mult = -0.8
-		monthly_county_control_change_factor = 0.1
-		same_faith_opinion = 30
+		faith_creation_piety_cost_mult = -0.5
+		faith_conversion_piety_cost_mult = -0.5
+		same_faith_opinion = 10
 		holy_order_hire_cost_mult = -0.5
 		monthly_piety_gain_per_knight_add = 1
-		monthly_piety_gain_mult = 0.3
-		stewardship_per_piety_level = 3
-
+		monthly_piety_gain_mult = 0.2
+		stewardship_per_piety_level = 2
 	}
 	parent = good_governance		
 }
@@ -667,8 +663,8 @@ cultural_emphasis = {
 	}
 	character_modifier = {
 		cultural_head_fascination_mult = 1
-		same_culture_mercenary_hire_cost_mult = -0.5
-		same_culture_opinion = 20
+		same_culture_mercenary_hire_cost_mult = -0.3
+		same_culture_opinion = 10
 	}
 	parent = holy_father_perk
 }
@@ -722,7 +718,7 @@ beloved_perk = {
 		add_trait = beloved_perk_trait
 	}
 
-	parent = cultural_emphasis	
+	parent = cultural_emphasis
 }
 
 #肉身成圣，众望所归     解锁决议，尝试肉身成圣

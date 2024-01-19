@@ -23,7 +23,7 @@ super_be_sea_god_events.0001 = {
                 decaying = no
                 quality = 300
                 wealth = 300
-                modifier = 海神权杖_修正
+                modifier = sea_god_artifact_modifier
                 max_durability = 1000
                 durability = 1000
                 save_scope_as = newly_created_artifact
@@ -44,7 +44,7 @@ super_be_sea_god_events.0001 = {
 			    is_imprisoned = no
                 NOT = {
                     any_character_artifact = {
-                        has_artifact_modifier = 海神权杖_修正
+                        has_artifact_modifier = sea_god_artifact_modifier
                     }
                 }    
             }
@@ -99,7 +99,7 @@ super_be_sea_god_events.0003 = {
     immediate = {
         random_character_artifact = {
             limit = {
-                has_artifact_modifier = 海神权杖_修正
+                has_artifact_modifier = sea_god_artifact_modifier
             }
             save_scope_as = super_neptune_scepter_now
         }

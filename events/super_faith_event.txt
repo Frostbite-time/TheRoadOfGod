@@ -106,7 +106,7 @@ super_faith_event.0004 = {
 	option = {
 		root = {          
 			add_character_modifier = {
-				modifier = 来自星空的庇护_修正
+				modifier = bless_from_sky_modifier
 				years = 1
 			}
 		}

@@ -162,7 +162,7 @@ final_call_dec_events.0002 = {
 		trigger_event = final_call_dec_events.0006		
 	}
 	after = {
-		remove_character_modifier = 时空之神的祝福_修正
+		remove_character_modifier = bless_from_timegod_modifier
 	}	
 }
 
@@ -350,7 +350,7 @@ final_call_dec_events.0005 = {
 					modifier = artifact_heavy_cavalry_toughness_3_modifier
 					modifier = artifact_heavy_cavalry_toughness_3_modifier
 					modifier = artifact_heavy_cavalry_toughness_3_modifier
-					modifier = 领军者战甲_修正
+					modifier = leader_aromr_modifier
 					wealth = 100
 					quality = 100
 					save_scope_as = newly_created_artifact
@@ -358,7 +358,7 @@ final_call_dec_events.0005 = {
 				modifier = {
 					add = -10
 					any_artifact = {
-						has_artifact_modifier = 战神之甲_修正
+						has_artifact_modifier = war_aromr_modifier
 					}
 				}
 			}
@@ -403,7 +403,7 @@ final_call_dec_events.0005 = {
 					modifier = artifact_health_gain_4_modifier
 					modifier = artifact_health_gain_4_modifier
 					modifier = artifact_health_gain_4_modifier
-					modifier = 贤者之石_修正
+					modifier = sage_stone_modifier
 					wealth = 100
 					quality = 100
 					save_scope_as = newly_created_artifact
@@ -445,7 +445,7 @@ final_call_dec_events.0006 = {
 			modifier = artifact_health_gain_4_modifier
 			modifier = artifact_health_gain_4_modifier
 			modifier = artifact_health_gain_4_modifier
-			modifier = 贤者之石_修正
+			modifier = sage_stone_modifier
 			wealth = 100
 			quality = 100
 			save_scope_as = newly_created_artifact

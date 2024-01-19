@@ -1,34 +1,34 @@
-﻿掌控者 = {
+﻿super_controller_modifier = {
 	icon = prowess_positive
-	vassal_opinion = 50
+	vassal_opinion = 10
 	vassal_limit = 10
-	domain_limit = 5
+	domain_limit = 3
 	vassal_tax_contribution_mult = 0.3
-	short_reign_duration_mult = -0.5
+	short_reign_duration_mult = -0.2
 	knight_limit = 5
 	knight_effectiveness_mult = 0.2
-	monthly_county_control_change_add = 10
+	monthly_county_control_change_factor = 0.3
 }
 
 #唤神事件buff   高健康
-神恩赐福1 = {
+bless_from_god_modifier_1 = {
 	icon = health_positive
 	health = 3
 }
-神恩赐福2 = {
+bless_from_god_modifier_2 = {
 	icon = health_positive
 	health = 2
 }
-神恩赐福3 = {
+bless_from_god_modifier_3 = {
 	icon = health_positive
 	health = 1
 }
-神之诅咒1 = {
+curse_from_god_modifier_1 = {
 	icon = health_positive
 	health = -2
 }
 #属性增加
-神恩赐福4 = {
+bless_from_god_modifier_4 = {
 	icon = food_positive
 	diplomacy = 3
 	martial = 3
@@ -37,7 +37,7 @@
 	learning = 3
 	prowess = 3
 }
-神恩赐福5 = {
+bless_from_god_modifier_5 = {
 	icon = food_positive
 	diplomacy = 5
 	martial = 5
@@ -46,7 +46,7 @@
 	learning = 5
 	prowess = 5
 }
-神恩赐福6 = {
+bless_from_god_modifier_6 = {
 	icon = food_positive
 	diplomacy = 10
 	martial = 10
@@ -55,7 +55,7 @@
 	learning = 10
 	prowess = 10
 }
-神之诅咒2 = {
+curse_from_god_modifier_2 = {
 	icon = food_positive
 	diplomacy = -5
 	martial = -5
@@ -65,45 +65,45 @@
 	prowess = -5
 }
 #压力降低
-神恩赐福7 = {
+bless_from_god_modifier_7 = {
 	icon = dog_positive
 	stress_gain_mult = -0.5
 	stress_loss_mult = 0.5
 }
 
-神恩赐福8 = {
+bless_from_god_modifier_8 = {
 	icon = dog_positive
 	stress_gain_mult = -0.3
 	stress_loss_mult = 0.3	
 }
-神恩赐福9 = {
+bless_from_god_modifier_9 = {
 	icon = dog_positive
 	stress_gain_mult = -0.1
 	stress_loss_mult = 0.1	
 }
-神之诅咒3 = {
+curse_from_god_modifier_3 = {
 	icon = dog_positive
 	stress_gain_mult = 0.3
 	stress_loss_mult = -0.3	
 }
 
 #时空之神的祝福
-时空之神的祝福_修正 = {
+bless_from_timegod_modifier = {
 	icon = magic_positive
 }
 
 #贤者之石特有修正
-贤者之石_修正 = {
+sage_stone_modifier = {
 	icon = magic_positive
 }
 
 #未修复的领军者战甲修正
-领军者战甲_修正 = {
+leader_aromr_modifier = {
 	icon = magic_positive
 }
 
 #已修复的领军者战甲特有修正
-战神之甲_修正 = {
+war_aromr_modifier = {
 	icon = magic_positive
 	martial = 50
 	prowess = 50
@@ -121,7 +121,7 @@
 }
 
 #星空的庇护
-来自星空的庇护_修正 = {
+bless_from_sky_modifier = {
 	icon = magic_positive
 	advantage_against_coreligionists = 100
 	health = 10
@@ -132,7 +132,7 @@
 }
 
 #神明的侵蚀
-神明的侵蚀_修正 = {
+hit_from_evilgod_modifier = {
 	icon = magic_negative
 	general_opinion = -10
 	opinion_of_same_faith = -10
@@ -140,7 +140,7 @@
 }
 
 #海神权杖
-海神权杖_修正 = {
+sea_god_artifact_modifier = {
 	icon = magic_positive
 	prowess = 50
 	no_prowess_loss_from_age = yes
@@ -156,65 +156,65 @@
 }
 
 #加强警惕
-灵性警觉_修正 = {
+spiritual_alertness_modifier = {
 	icon = spoon_positive
 	hostile_scheme_resistance_mult = 0.25
 }
 
 #降低警惕
-灵性放松_修正 = {
+spiritual_relaxation_modifier = {
 	icon = spoon_positive
 	hostile_scheme_resistance_mult = -0.15
 }
 
 #对于不同游戏规则下对于超能之路生活方式经验加成
-超能之路月度生活方式经验增加百分10_修正 = {
+super_lifestyle_xp_add_mult_modifier_1 = {
 	monthly_super_lifestyle_xp_gain_mult = 0.1
 }
-超能之路月度生活方式经验增加百分20_修正 = {
+super_lifestyle_xp_add_mult_modifier_2 = {
 	monthly_super_lifestyle_xp_gain_mult = 0.2
 }
-超能之路月度生活方式经验增加百分30_修正 = {
+super_lifestyle_xp_add_mult_modifier_3 = {
 	monthly_super_lifestyle_xp_gain_mult = 0.3
 }
-超能之路月度生活方式经验增加百分40_修正 = {
+super_lifestyle_xp_add_mult_modifier_4 = {
 	monthly_super_lifestyle_xp_gain_mult = 0.4
 }
-超能之路月度生活方式经验增加百分50_修正 = {
+super_lifestyle_xp_add_mult_modifier_5 = {
 	monthly_super_lifestyle_xp_gain_mult = 0.5
 }
-超能之路月度生活方式经验增加百分100_修正 = {
+super_lifestyle_xp_add_mult_modifier_10 = {
 	monthly_super_lifestyle_xp_gain_mult = 1
 }
-超能之路月度生活方式经验增加百分200_修正 = {
+super_lifestyle_xp_add_mult_modifier_20 = {
 	monthly_super_lifestyle_xp_gain_mult = 2
 }
 
 # 洞悉之种
-洞悉之种_修正 = {
+seed_of_insight_modifier = {
 	icon = magic_positive
 	monthly_super_lifestyle_xp_gain_mult = 0.2
 }
 
 # 防御法阵
-防御法阵_修正 = {
+defensive_magic_modifier = {
 	icon = magic_positive
 	hostile_scheme_resistance_add = 20
 }
 
 # 心有余悸
-心有余悸_修正 = {
+linger_fear_modifier = {
 	icon = magic_negative
 	health = -0.8
 }
 
 # 灵魂晶石
-灵魂晶石_修正 = {
+soul_stone_modifier = {
 	icon = magic_positive
 	health = -1
 }
 
-毁灭之火_修正 = {
+dark_fire_modifier = {
 	icon = magic_positive
 	advantage = 20
 }

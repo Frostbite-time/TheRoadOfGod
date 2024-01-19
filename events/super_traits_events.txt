@@ -209,7 +209,7 @@ be_angel_event.0010 = {
 	left_portrait = root		#让角色出现在左边
 	immediate = {
 		移除所有种类的使徒特质 = yes
-		add_character_modifier = 神明的侵蚀_修正
+		add_character_modifier = hit_from_evilgod_modifier
 	}
 	option = {
 		name = be_angel_event.0010.a

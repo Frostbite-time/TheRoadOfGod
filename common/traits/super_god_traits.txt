@@ -130,7 +130,6 @@ super_wisdom_god = {
 	stewardship = 100 #管理
 	intrigue = 70	  #谋略
 	learning = 100	  #智识
-	monthly_prestige_gain_per_dread_add = -100 #每点恐怖值使得每月威望增加
 	tyranny_loss_mult = 10 #暴政减少系数
 	domain_limit = 200 #统治上限
 	vassal_limit = 500 #附庸上限
@@ -500,8 +499,6 @@ super_fight_god = {
 	movement_speed = 10 #陆军行军速度
 	naval_movement_speed_mult = 10 #海军行军速度
 	ai_vengefulness = very_high_positive_ai_value #ai的复仇欲 极大
-
-	
 }
 
 #方舟

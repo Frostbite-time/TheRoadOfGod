@@ -751,7 +751,7 @@ rift_events_world.0017 = {
 	option = {
 		name = rift_events_world.0017.1
 		add_character_modifier = {
-			modifier = 灵性警觉_修正
+			modifier = spiritual_alertness_modifier
 			years = 1
 		}
 		add_stress = 30
@@ -841,7 +841,7 @@ rift_events_world.0010 = {
 	option = {
 		name = rift_events_world.0010.1
 		add_character_modifier = {
-			modifier = 灵性放松_修正
+			modifier = spiritual_relaxation_modifier
 			years = 1
 		}
 		add_stress = -30
@@ -1037,7 +1037,7 @@ rift_events_world.0015 = {
 	option = {
 		name = rift_events_world.0015.1
 		add_character_modifier = {
-			modifier = 灵性放松_修正
+			modifier = spiritual_relaxation_modifier
 			years = 1
 		}
 		add_stress = -30
@@ -1056,7 +1056,7 @@ rift_events_world.0016 = {
 	option = {
 		name = rift_events_world.0016.1
 		add_character_modifier = {
-			modifier = 灵性放松_修正
+			modifier = spiritual_relaxation_modifier
 			years = 1
 		}
 		add_stress = -30

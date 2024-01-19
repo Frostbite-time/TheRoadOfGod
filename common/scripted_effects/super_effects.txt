@@ -1,7 +1,7 @@
 ﻿摧毁宝物_贤者之石 ={
 	random_character_artifact = {
 		limit = {
-			has_artifact_modifier = 贤者之石_修正
+			has_artifact_modifier = sage_stone_modifier
 		}
 		save_scope_as = sage_stone_will_remove
 	}
@@ -481,7 +481,7 @@
 		modifier = artifact_health_gain_4_modifier
 		modifier = artifact_health_gain_4_modifier
 		modifier = artifact_health_gain_4_modifier
-		modifier = 贤者之石_修正
+		modifier = sage_stone_modifier
 		wealth = 100
 		quality = 100
 		save_scope_as = newly_created_artifact
@@ -641,9 +641,9 @@
 		limit = {
 			this = {
 				any_character_artifact = {
-					has_artifact_modifier = 领军者战甲_修正
+					has_artifact_modifier = leader_aromr_modifier
 					NOT = {
-						has_artifact_modifier = 战神之甲_修正
+						has_artifact_modifier = war_aromr_modifier
 					}
 				}
 			}
@@ -652,9 +652,9 @@
 			random_character_artifact = {
 				limit = {
 					AND = {
-						has_artifact_modifier = 领军者战甲_修正
+						has_artifact_modifier = leader_aromr_modifier
 						NOT = {
-							has_artifact_modifier = 战神之甲_修正
+							has_artifact_modifier = war_aromr_modifier
 						}
 					}
 				}

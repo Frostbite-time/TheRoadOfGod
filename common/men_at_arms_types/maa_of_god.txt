@@ -1024,6 +1024,7 @@ highlander_god_high = {
 	icon = highlander_god_high
 }
 
+#暗炎法师
 super_maa_dark_Inferno_mage = {
 	type = mage
 	can_recruit = {
