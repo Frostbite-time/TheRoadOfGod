@@ -3,6 +3,7 @@ on_game_start = {
 	on_actions = {
 		super_add_building_slot_constantinople  #为君士坦丁堡添加星盘
 		super_change_faith_to_belief_god   		#使得开局有一些随机的角色成为生灵之神教会的人
+		super_给全图统治者角色添加一些兵力
 	}
 }
 #每年年初触发的自定义action有哪些  没有root
@@ -470,9 +471,29 @@ super_change_faith_to_belief_god = {
 				limit = {
 					is_ai = no
 				}
-				trigger_event = 无名邪火事件链.0010
+				trigger_event = {
+					id = 无名邪火事件链.0010
+					days = { 18 200 }
+				}
 			}
 			
+		}
+	}
+}
+
+super_给全图统治者角色添加一些兵力 = {
+	effect = {
+		every_living_character = {
+			limit = {
+				is_landed = yes
+				primary_title = {
+					tier >= tier_county
+				}
+			}
+			trigger_event = {
+				id = 给予兵种_应对危机.0001
+				days = { 1 30 }
+			}
 		}
 	}
 }

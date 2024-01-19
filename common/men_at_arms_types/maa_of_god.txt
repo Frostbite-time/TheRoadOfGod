@@ -198,7 +198,7 @@ undead_heavy_cavalry = {
 
 #指引之鹰
 fate_eagle = {
-	type = archers   #兵士种类
+	type = creation   #兵士种类
 	can_recruit = {
 		faith = {
 			has_doctrine = fate_cannot_be_disobeyed
@@ -238,8 +238,8 @@ phosphorus_fire_maa_type = {
 			has_doctrine = phosphorus_fire
 		}	
 	}
-	damage = 200
-	toughness = 30 #坚韧
+	damage = 100
+	toughness = 100 #坚韧
 	pursuit = 20  #追击
 	screen = 0  #掩护
 	
@@ -252,12 +252,12 @@ phosphorus_fire_maa_type = {
 	}
 
 	buy_cost = {    #招募花费
-		gold = 100
+		gold = 200
 		piety = 100
 		prestige = 100
 	}        
-	low_maintenance_cost = { gold = heavy_infantry_low_maint_cost }		# Maintenance paid when the regiment is unraised and fully reinforced or when reinforcement is disabled
-	high_maintenance_cost = { gold = heavy_infantry_high_maint_cost }	# Maintenance paid when the regiment is raised or not fully reinforced
+	low_maintenance_cost = { gold = 1 }		# Maintenance paid when the regiment is unraised and fully reinforced or when reinforcement is disabled
+	high_maintenance_cost = { gold = 5 }	# Maintenance paid when the regiment is raised or not fully reinforced
 	
 	stack = 50
 	ai_quality = { value = 150 }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
@@ -1024,7 +1024,7 @@ highlander_god_high = {
 	icon = highlander_god_high
 }
 
-暗炎法师 = {
+super_maa_dark_Inferno_mage = {
 	type = mage
 	can_recruit = {
 		always = no
@@ -1053,6 +1053,6 @@ highlander_god_high = {
 
 	stack = 50
 	ai_quality = { value = god_of_war_maa_weight }
-	icon = 暗炎法师
+	icon = super_maa_dark_Inferno_mage
 
 }

@@ -1,5 +1,5 @@
 ﻿# 每年伯爵以及以上角色 有概率 能触发的on_action
-three_year_playable_pulse = {
+random_yearly_playable_pulse = {
 	on_actions = {
 		super_visit_from_other  #来自其他超能人物的拜访   随机事件仅给予效果，不严重影响游戏
 	}
@@ -27,7 +27,7 @@ super_visit_from_other = {
 					days = { 1 180 }
 				}
 			}
-			1 = {}
+			20 = {}
 		}
 	}	
 }

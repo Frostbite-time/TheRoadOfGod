@@ -1,0 +1,137 @@
+﻿super_maa_monastic_order = { 
+	type = mage   #兵士种类
+	can_recruit = {
+		always = yes
+	}
+	damage = 70
+	toughness = 20 #坚韧
+	pursuit = 30  #追击
+	screen = 10  #掩护
+	
+	terrain_bonus = {    #地形加成
+		hills = { damage = 20 toughness = 20 }
+	}
+
+	counters = {   #克制
+		skirmishers = 1
+		pikemen = 1
+		heavy_infantry = 1
+	}
+
+	buy_cost = {    #招募花费
+		gold = 100
+	}        
+	low_maintenance_cost = { gold = 1 } #最低维护费
+	high_maintenance_cost = { gold = 5 }#最高维护费
+	
+	stack = 80
+
+	ai_quality = { value = god_of_war_maa_weight }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
+	icon = super_maa_monastic_order  # 图标放在\gfx\interface\icons\regimenttypes\name.dds
+}
+
+super_maa_imperial_mage = { 
+	type = mage   #兵士种类
+	can_recruit = {
+		always = yes
+	}
+	damage = 100
+	toughness = 30 #坚韧
+	pursuit = 30  #追击
+	screen = 10  #掩护
+	
+	terrain_bonus = {    #地形加成
+		hills = { damage = 20 toughness = 20 }
+		forest = { toughness = 20 screen = 40 }
+		taiga = { toughness = 20 screen = 40 }
+	}
+
+	counters = {   #克制
+		skirmishers = 1
+		pikemen = 1
+		heavy_infantry = 1
+	}
+
+	buy_cost = {    #招募花费
+		gold = 150
+	}        
+	low_maintenance_cost = { gold = 1 } #最低维护费
+	high_maintenance_cost = { gold = 5 }#最高维护费
+	
+	stack = 80
+
+	ai_quality = { value = god_of_war_maa_weight }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
+	icon = super_maa_imperial_mage  # 图标放在\gfx\interface\icons\regimenttypes\name.dds
+}
+
+super_maa_imperial_elite_mage = { 
+	type = mage   #兵士种类
+	can_recruit = {
+		primary_title = {
+			tier >= tier_duchy
+		}
+	}
+	damage = 150
+	toughness = 50 #坚韧
+	pursuit = 30  #追击
+	screen = 30  #掩护
+	
+	terrain_bonus = {    #地形加成
+		hills = { damage = 20 toughness = 20 }
+		forest = { toughness = 20 screen = 40 }
+		taiga = { toughness = 20 screen = 40 }
+	}
+
+	counters = {   #克制
+		skirmishers = 1
+		pikemen = 1
+		heavy_infantry = 1
+	}
+
+	buy_cost = {    #招募花费
+		gold = 250
+	}        
+	low_maintenance_cost = { gold = 1.2 } #最低维护费
+	high_maintenance_cost = { gold = 6 }#最高维护费
+	
+	stack = 70
+
+	ai_quality = { value = god_of_war_maa_weight }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
+	icon = super_maa_imperial_elite_mage  # 图标放在\gfx\interface\icons\regimenttypes\name.dds
+}
+
+super_maa_legendary_mage = { 
+	type = mage   #兵士种类
+	can_recruit = {
+		primary_title = {
+			tier >= tier_kingdom
+		}
+	}
+	damage = 250
+	toughness = 80 #坚韧
+	pursuit = 80  #追击
+	screen = 80  #掩护
+	
+	terrain_bonus = {    #地形加成
+		hills = { damage = 50 toughness = 40 }
+		forest = { toughness = 40 screen = 80 }
+		taiga = { toughness = 40 screen = 80 }
+	}
+
+	counters = {   #克制
+		skirmishers = 1
+		pikemen = 1
+		heavy_infantry = 1
+	}
+
+	buy_cost = {    #招募花费
+		gold = 500
+	}        
+	low_maintenance_cost = { gold = 2 } #最低维护费
+	high_maintenance_cost = { gold = 10 }#最高维护费
+	
+	stack = 60
+
+	ai_quality = { value = god_of_war_maa_weight }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
+	icon = super_maa_legendary_mage  # 图标放在\gfx\interface\icons\regimenttypes\name.dds
+}

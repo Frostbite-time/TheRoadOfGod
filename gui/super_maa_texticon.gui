@@ -1,4 +1,4 @@
-#Maa在军力界面的图标
+﻿#Maa在军力界面的图标
 texticon = {
 	icon = war_god_maa_archers_icon
 	iconsize = {
@@ -47,7 +47,7 @@ texticon = {
 texticon = {
 	icon = fate_eagle_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/fate_eagle.dds"
+		texture = "gfx/interface/icons/regimenttypes/creation.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -92,7 +92,7 @@ texticon = {
 texticon = {
 	icon = wise_god_low_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/mage.dds"
+		texture = "gfx/interface/icons/regimenttypes/wise_god_low.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -101,7 +101,7 @@ texticon = {
 texticon = {
 	icon = wise_god_high_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/holy_beast.dds"
+		texture = "gfx/interface/icons/regimenttypes/wise_god_high.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -110,7 +110,7 @@ texticon = {
 texticon = {
 	icon = war_god_low_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/holy_beast.dds"
+		texture = "gfx/interface/icons/regimenttypes/war_god_low.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -119,7 +119,7 @@ texticon = {
 texticon = {
 	icon = war_god_high_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/creation.dds"
+		texture = "gfx/interface/icons/regimenttypes/war_god_high.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -128,7 +128,7 @@ texticon = {
 texticon = {
 	icon = dark_god_low_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/creation.dds"
+		texture = "gfx/interface/icons/regimenttypes/dark_god_low.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -137,7 +137,7 @@ texticon = {
 texticon = {
 	icon = dark_god_high_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/creation.dds"
+		texture = "gfx/interface/icons/regimenttypes/dark_god_high.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -146,7 +146,7 @@ texticon = {
 texticon = {
 	icon = nature_god_low_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/beast.dds"
+		texture = "gfx/interface/icons/regimenttypes/nature_god_low.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -155,7 +155,7 @@ texticon = {
 texticon = {
 	icon = nature_god_high_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/holy_beast.dds"
+		texture = "gfx/interface/icons/regimenttypes/nature_god_high.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -164,7 +164,7 @@ texticon = {
 texticon = {
 	icon = sea_god_low_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/creation.dds"
+		texture = "gfx/interface/icons/regimenttypes/sea_god_low.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -173,7 +173,7 @@ texticon = {
 texticon = {
 	icon = sea_god_high_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/holy_beast.dds"
+		texture = "gfx/interface/icons/regimenttypes/sea_god_high.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -182,7 +182,7 @@ texticon = {
 texticon = {
 	icon = belief_god_low_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/heavy_infantry.dds"
+		texture = "gfx/interface/icons/regimenttypes/belief_god_low.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -191,7 +191,7 @@ texticon = {
 texticon = {
 	icon = belief_god_high_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/heavy_cavalry.dds"
+		texture = "gfx/interface/icons/regimenttypes/belief_god_high.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -200,7 +200,7 @@ texticon = {
 texticon = {
 	icon = hope_god_low_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/creation.dds"
+		texture = "gfx/interface/icons/regimenttypes/hope_god_low.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -209,7 +209,7 @@ texticon = {
 texticon = {
 	icon = hope_god_high_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/creation.dds"
+		texture = "gfx/interface/icons/regimenttypes/hope_god_high.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -218,7 +218,7 @@ texticon = {
 texticon = {
 	icon = time_god_low_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/mage.dds"
+		texture = "gfx/interface/icons/regimenttypes/time_god_low.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -227,7 +227,7 @@ texticon = {
 texticon = {
 	icon = time_god_high_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/mage.dds"
+		texture = "gfx/interface/icons/regimenttypes/time_god_high.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -236,7 +236,7 @@ texticon = {
 texticon = {
 	icon = destiny_god_low_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/heavy_infantry.dds"
+		texture = "gfx/interface/icons/regimenttypes/destiny_god_low.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -245,7 +245,7 @@ texticon = {
 texticon = {
 	icon = destiny_god_high_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/mage.dds"
+		texture = "gfx/interface/icons/regimenttypes/destiny_god_high.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -254,7 +254,7 @@ texticon = {
 texticon = {
 	icon = ark_god_low_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/pikemen.dds"
+		texture = "gfx/interface/icons/regimenttypes/ark_god_low.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -263,7 +263,7 @@ texticon = {
 texticon = {
 	icon = ark_god_high_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/heavy_cavalry.dds"
+		texture = "gfx/interface/icons/regimenttypes/ark_god_high.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -272,7 +272,7 @@ texticon = {
 texticon = {
 	icon = fight_god_low_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/creation.dds"
+		texture = "gfx/interface/icons/regimenttypes/fight_god_low.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -281,7 +281,7 @@ texticon = {
 texticon = {
 	icon = fight_god_high_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/heavy_cavalry.dds"
+		texture = "gfx/interface/icons/regimenttypes/fight_god_high.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -290,7 +290,7 @@ texticon = {
 texticon = {
 	icon = highlander_god_low_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/extraplanar_mage.dds"
+		texture = "gfx/interface/icons/regimenttypes/highlander_god_low.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -299,7 +299,7 @@ texticon = {
 texticon = {
 	icon = highlander_god_high_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/extraplanar_beast.dds"
+		texture = "gfx/interface/icons/regimenttypes/highlander_god_high.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
@@ -307,11 +307,96 @@ texticon = {
 }
 
 texticon = {
-	icon = 暗炎法师_icon
+	icon = super_maa_dark_Inferno_mage_icon
 	iconsize = {
-		texture = "gfx/interface/icons/regimenttypes/mage.dds"
+		texture = "gfx/interface/icons/regimenttypes/super_maa_dark_Inferno_mage.dds"
 		size = { 25 25 }
 		offset = { 0 6 }
 		fontsize = 16
 	}
 }
+
+texticon = {
+	icon = super_maa_monastic_order_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/super_maa_monastic_order.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = super_maa_imperial_mage_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/super_maa_imperial_mage.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = super_maa_imperial_elite_mage_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/super_maa_imperial_elite_mage.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = super_maa_legendary_mage_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/super_maa_legendary_mage.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = super_maa_fencer_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/super_maa_fencer.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = super_maa_skilled_fencer_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/super_maa_skilled_fencer.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = super_maa_imperial_swordsman_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/super_maa_imperial_swordsman.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = super_maa_kensei_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/super_maa_kensei.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+
+
+
+

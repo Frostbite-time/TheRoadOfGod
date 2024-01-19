@@ -1,0 +1,129 @@
+﻿namespace = 给予兵种_应对危机
+
+给予兵种_应对危机.0001 = {
+	type = character_event
+	title = 给予兵种_应对危机.0001.t
+	desc = 给予兵种_应对危机.0001.desc
+	theme = realm
+
+	right_portrait = root
+
+	trigger = {
+		NOT = {
+			has_character_flag = 给予兵种_应对危机已经完成
+		}
+	}
+
+	option = {
+		ai_chance = 1000
+		name = 给予兵种_应对危机.0001.1
+		custom_tooltip = 给予兵种_应对危机.0001.1.自定义提示
+
+		if = {
+			limit = {
+				primary_title = {
+					tier >= tier_county
+				}
+			}
+			spawn_army = {
+				name = 传说之始军团
+				uses_supply = yes
+				inheritable = yes
+				men_at_arms = {
+					type = super_maa_monastic_order
+					stacks = 5
+				}
+				men_at_arms = {
+					type = super_maa_fencer
+					stacks = 5
+				}
+				location = root.location
+			}
+		}
+		if = {
+			limit = {
+				primary_title = {
+					tier >= tier_duchy
+				}
+			}
+			spawn_army = {
+				name = 神圣赐福军团
+				uses_supply = yes
+				inheritable = yes
+				men_at_arms = {
+					type = super_maa_imperial_mage
+					stacks = 5
+				}
+				men_at_arms = {
+					type = super_maa_skilled_fencer
+					stacks = 5
+				}
+				location = root.location
+			}
+		}
+		if = {
+			limit = {
+				primary_title = {
+					tier >= tier_kingdom
+				}
+			}
+			spawn_army = {
+				name = 终末之光军团
+				uses_supply = yes
+				inheritable = yes
+				men_at_arms = {
+					type = super_maa_imperial_elite_mage
+					stacks = 5
+				}
+				men_at_arms = {
+					type = super_maa_imperial_swordsman
+					stacks = 5
+				}
+				men_at_arms = {
+					type = super_maa_imperial_mage
+					stacks = 5
+				}
+				men_at_arms = {
+					type = super_maa_skilled_fencer
+					stacks = 5
+				}
+				location = root.location
+			}
+		}
+		
+		if = {
+			limit = {
+				primary_title = {
+					tier >= tier_empire
+				}
+			}
+			spawn_army = {
+				name = 寰宇之音军团
+				uses_supply = yes
+				inheritable = yes
+				men_at_arms = {
+					type = super_maa_imperial_elite_mage
+					stacks = 10
+				}
+				men_at_arms = {
+					type = super_maa_imperial_swordsman
+					stacks = 10
+				}
+				men_at_arms = {
+					type = super_maa_legendary_mage
+					stacks = 5
+				}
+				location = root.location
+			}
+		}
+	}
+
+	option = {
+		ai_chance = 1
+		name = 给予兵种_应对危机.0001.2
+	}
+
+	after = {
+		add_character_flag = 给予兵种_应对危机已经完成
+	}
+} 

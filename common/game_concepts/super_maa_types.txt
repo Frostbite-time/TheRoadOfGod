@@ -38,3 +38,8 @@ extraplanar_beast = {
 	texture = "gfx/interface/icons/regimenttypes/extraplanar_beast.dds"
 	parent = men_at_arms
 }
+
+super_maa_type_fencer = {
+	texture = "gfx/interface/icons/regimenttypes/super_maa_type_fencer.dds"
+	parent = men_at_arms
+}

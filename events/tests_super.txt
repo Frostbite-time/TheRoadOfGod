@@ -12,7 +12,7 @@ ssdsd.0001 = {
 			inheritable = yes
 			name = 地狱毁灭军团
 			men_at_arms = {
-				type = 暗炎法师
+				type = super_maa_dark_Inferno_mage
 				stacks = 10
 			}
 			men_at_arms = {

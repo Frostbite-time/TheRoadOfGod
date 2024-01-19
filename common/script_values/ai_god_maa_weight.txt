@@ -5,3 +5,7 @@
 gods_maa_weight = {
 	value = 1000
 }
+
+super_剑客权重值 = {
+	value = 200
+}
