@@ -27,7 +27,7 @@ super_visit_from_other = {
 					days = { 1 180 }
 				}
 			}
-			20 = {}
+			12 = {}
 		}
 	}	
 }

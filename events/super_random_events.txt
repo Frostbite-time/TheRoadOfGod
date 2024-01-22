@@ -1,6 +1,7 @@
 ﻿namespace = 洞悉之种事件链
 namespace = 无名邪火事件链
 namespace = 生灵之神教会的拜访事件链
+namespace = 拒死之人事件链
 
 # 洞悉之种的事件链
 洞悉之种事件链.0001 = {
@@ -624,6 +625,16 @@ namespace = 生灵之神教会的拜访事件链
 
 		scope:神秘的黑衣人 = {
 
+			set_variable = {
+				name = 占据的伯爵领
+				value = scope:邪火肆虐的伯爵领
+			}
+
+			set_variable = {
+				name = 占据的伯爵领原主人
+				value = root
+			}
+
 			spawn_army = {
 				uses_supply = no
 				inheritable = yes
@@ -655,14 +666,14 @@ namespace = 生灵之神教会的拜访事件链
 				}
 				start_war = {
 					target = scope:邪火肆虐的伯爵领.duchy.holder
-					casus_belli = aggressive_expansion_cb
+					casus_belli = d_fire_aggressive_expansion_cb
 					target_title = scope:邪火肆虐的伯爵领.duchy
 				}	
 			}
 			else = {
 				start_war = {
 					target = scope:邪火肆虐的伯爵领.duchy.holder.top_liege
-					casus_belli = aggressive_expansion_cb
+					casus_belli = d_fire_aggressive_expansion_cb
 					target_title = scope:邪火肆虐的伯爵领.duchy
 				}
 				scope:神秘的黑衣人 = {
@@ -773,6 +784,15 @@ namespace = 生灵之神教会的拜访事件链
 		resolve_title_and_vassal_change = scope:change
 
 		scope:神秘的黑衣人 = {
+			set_variable = {
+				name = 占据的伯爵领
+				value = scope:邪火肆虐的伯爵领
+			}
+
+			set_variable = {
+				name = 占据的伯爵领原主人
+				value = root
+			}
 			使角色独立 = yes
 			if = {
 				limit = {
@@ -782,7 +802,7 @@ namespace = 生灵之神教会的拜访事件链
 				}
 				start_war = {
 					target = scope:邪火肆虐的伯爵领.duchy.holder
-					casus_belli = aggressive_expansion_cb
+					casus_belli = d_fire_aggressive_expansion_cb
 					target_title = scope:邪火肆虐的伯爵领.duchy
 					
 				}	
@@ -790,7 +810,7 @@ namespace = 生灵之神教会的拜访事件链
 			else = {
 				start_war = {
 					target = scope:邪火肆虐的伯爵领.duchy.holder.top_liege
-					casus_belli = aggressive_expansion_cb
+					casus_belli = d_fire_aggressive_expansion_cb
 					target_title = scope:邪火肆虐的伯爵领.duchy
 				}
 				scope:神秘的黑衣人 = {
@@ -1055,6 +1075,15 @@ namespace = 生灵之神教会的拜访事件链
 		resolve_title_and_vassal_change = scope:change
 
 		scope:神秘的黑衣人 = {
+			set_variable = {
+				name = 占据的伯爵领
+				value = scope:邪火肆虐的伯爵领
+			}
+
+			set_variable = {
+				name = 占据的伯爵领原主人
+				value = scope:邪火肆虐的伯爵领.duchy.holder
+			}
 			使角色独立 = yes
 			if = {
 				limit = {
@@ -1064,14 +1093,14 @@ namespace = 生灵之神教会的拜访事件链
 				}
 				start_war = {
 					target = scope:邪火肆虐的伯爵领.duchy.holder
-					casus_belli = aggressive_expansion_cb
+					casus_belli = d_fire_aggressive_expansion_cb
 					target_title = scope:邪火肆虐的伯爵领.duchy
 				}	
 			}
 			else = {
 				start_war = {
 					target = scope:邪火肆虐的伯爵领.duchy.holder.top_liege
-					casus_belli = aggressive_expansion_cb
+					casus_belli = d_fire_aggressive_expansion_cb
 					target_title = scope:邪火肆虐的伯爵领.duchy
 				}
 				scope:神秘的黑衣人 = {
@@ -1388,3 +1417,7 @@ namespace = 生灵之神教会的拜访事件链
 		add_character_flag = 生灵之神教会的拜访事件链已经完成
 	}
 }
+
+#拒死之人事件链.0001 = {
+#
+#}

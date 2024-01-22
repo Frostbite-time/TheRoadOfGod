@@ -231,6 +231,26 @@ exotic_rg = {
 			doctrine = the_rule_of_disorder		#失序之治
 			doctrine = fight_crazy				#战以解忧
 		}
+
+		undead_fa = {
+			color = { 25 78 3 }  			#地图上显示为什么颜色 RGB值
+			icon = meshefaresism
+
+			#下面是宗教圣地  圣地可以在其他地方定义地点和效果  异域的圣地为  罗马，君士坦丁堡，巴黎，耶路撒冷，圣地亚哥
+			holy_site = jerusalem
+			holy_site = rome
+			holy_site = santiago
+			holy_site = constantinople
+			holy_site = paris_site_super
+
+			#教义  用于放置核心教义 也可以在这里放置其他教义以覆盖宗教的默认设置
+			doctrine = tenet_human_sacrifice	#人祭
+			doctrine = tenet_warmonger			#战争狂人
+			doctrine = tenet_tax_nonbelievers	#不信者税
+			doctrine = erosion_dor				#侵蚀
+			doctrine = confusionism_in_space_time	#失序之治
+			doctrine = sanctions_from_shadows	#暗影制裁
+		}
 	}
 }
 
