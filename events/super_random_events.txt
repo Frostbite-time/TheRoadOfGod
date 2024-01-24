@@ -1113,134 +1113,53 @@ namespace = 拒死之人事件链
 				}
 			}
 		}
-
-		if = {
-			limit = {
-				root.var:毁灭之火的起兵力度 = 2
+		scope:神秘的黑衣人 = {
+			spawn_army = {
+				uses_supply = no
+				inheritable = yes
+				name = 地狱毁灭军团
+				men_at_arms = {
+					type = super_maa_dark_Inferno_mage
+					stacks = 5
+				}
+				men_at_arms = {
+					type = undead_light
+					stacks = 5
+				}
+				men_at_arms = {
+					type = undead_heavy
+					stacks = 3
+				}
+				men_at_arms = {
+					type = undead_heavy_cavalry
+					stacks = 3
+				}
+				location = scope:神秘的黑衣人.location
+				origin = scope:神秘的黑衣人.location
 			}
-			scope:神秘的黑衣人 = {
-				spawn_army = {
-					uses_supply = no
-					inheritable = yes
-					name = 地狱毁灭军团
-					men_at_arms = {
-						type = super_maa_dark_Inferno_mage
-						stacks = 5
-					}
-					men_at_arms = {
-						type = undead_light
-						stacks = 5
-					}
-					men_at_arms = {
-						type = undead_heavy
-						stacks = 3
-					}
-					men_at_arms = {
-						type = undead_heavy_cavalry
-						stacks = 3
-					}
-					location = scope:神秘的黑衣人.location
-					origin = scope:神秘的黑衣人.location
+			spawn_army = {
+				uses_supply = no
+				inheritable = yes
+				name = 焚炎灭世军团
+				men_at_arms = {
+					type = super_maa_dark_Inferno_mage
+					stacks = 5
 				}
-				spawn_army = {
-					uses_supply = no
-					inheritable = yes
-					name = 焚炎灭世军团
-					men_at_arms = {
-						type = super_maa_dark_Inferno_mage
-						stacks = 5
-					}
-					men_at_arms = {
-						type = undead_light
-						stacks = 5
-					}
-					men_at_arms = {
-						type = undead_heavy
-						stacks = 3
-					}
-					men_at_arms = {
-						type = undead_heavy_cavalry
-						stacks = 3
-					}
-					location = scope:神秘的黑衣人.location
-					origin = scope:神秘的黑衣人.location
+				men_at_arms = {
+					type = undead_light
+					stacks = 5
 				}
-				spawn_army = {
-					uses_supply = no
-					inheritable = yes
-					name = 毁灭之火军团
-					men_at_arms = {
-						type = super_maa_dark_Inferno_mage
-						stacks = 5
-					}
-					men_at_arms = {
-						type = undead_light
-						stacks = 5
-					}
-					men_at_arms = {
-						type = undead_heavy
-						stacks = 3
-					}
-					men_at_arms = {
-						type = undead_heavy_cavalry
-						stacks = 3
-					}
-					location = scope:神秘的黑衣人.location
-					origin = scope:神秘的黑衣人.location
+				men_at_arms = {
+					type = undead_heavy
+					stacks = 3
 				}
+				men_at_arms = {
+					type = undead_heavy_cavalry
+					stacks = 3
+				}
+				location = scope:神秘的黑衣人.location
+				origin = scope:神秘的黑衣人.location
 			}
-		}
-		else_if = {
-			limit = {root.var:毁灭之火的起兵力度 = 1 }
-			scope:神秘的黑衣人 = {
-				spawn_army = {
-					uses_supply = no
-					inheritable = yes
-					name = 地狱毁灭军团
-					men_at_arms = {
-						type = super_maa_dark_Inferno_mage
-						stacks = 5
-					}
-					men_at_arms = {
-						type = undead_light
-						stacks = 5
-					}
-					men_at_arms = {
-						type = undead_heavy
-						stacks = 3
-					}
-					men_at_arms = {
-						type = undead_heavy_cavalry
-						stacks = 3
-					}
-					location = scope:神秘的黑衣人.location
-					origin = scope:神秘的黑衣人.location
-				}
-				spawn_army = {
-					uses_supply = no
-					inheritable = yes
-					name = 焚炎灭世军团
-					men_at_arms = {
-						type = super_maa_dark_Inferno_mage
-						stacks = 5
-					}
-					men_at_arms = {
-						type = undead_light
-						stacks = 5
-					}
-					men_at_arms = {
-						type = undead_heavy
-						stacks = 3
-					}
-					men_at_arms = {
-						type = undead_heavy_cavalry
-						stacks = 3
-					}
-					location = scope:神秘的黑衣人.location
-					origin = scope:神秘的黑衣人.location
-				}
-			}
-			
 		}
 	}
 
