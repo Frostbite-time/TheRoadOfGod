@@ -303,6 +303,8 @@ namespace = 拒死之人事件链
 	}
 
 	trigger = {
+
+		has_game_rule = super_option_event_invasion_opened
 		
 		trigger_if = {
 			limit = {
@@ -1173,6 +1175,10 @@ namespace = 拒死之人事件链
 
 	override_background = {
 		reference = 毁灭之火事件广播_1
+	}
+
+	trigger = {
+		has_game_rule = super_option_event_invasion_opened
 	}
 
 	right_portrait = {

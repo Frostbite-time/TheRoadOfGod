@@ -259,3 +259,8 @@ super_maa_kensei_flavor: "These swordsmen can no longer be called mere swordsmen
 传说之始军团: "Legion of Legends' Beginning"
 神圣赐福军团: "Holy Blessing Legion"
 寰宇之音军团: "Legion of the Universal Voice"
+rule_super_option_event_invasion: "Whether to Enable Event Invasion"
+setting_super_option_event_invasion_opened: "Enabled"
+setting_super_option_event_invasion_opened_desc: "Enable Event Invasion"
+setting_super_option_event_invasion_banned: "Disabled"
+setting_super_option_event_invasion_banned_desc: "Disable Event Invasion"

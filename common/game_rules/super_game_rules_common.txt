@@ -74,3 +74,14 @@ super_get_lifestyle_xp_rate = {
 		apply_modifier = ai:super_lifestyle_xp_add_mult_modifier_20
 	}
 }
+
+super_option_event_invasion = {
+	categories = {     #分类在difficult下
+		super_rule_group
+	}
+	default = super_option_event_invasion_opened
+	super_option_event_invasion_opened = {
+	}
+	super_option_event_invasion_banned = {
+	}
+}
