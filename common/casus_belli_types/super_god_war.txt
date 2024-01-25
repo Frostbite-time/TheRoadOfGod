@@ -309,13 +309,11 @@ provoke = {
 	 } # 如果评估为 "真"，则只能针对一个标题。
 	combine_into_one = yes				# 如果设置了，那么我们将显示该CB的所有实例（例如，X的圣战，Y的圣战，Z的圣战）作为一个单一条目，让你在不同的目标之间进行选择
 
-	allowed_for_character = { 
+	allowed_against_character = {
 		scope:attacker.faith = {
 			has_doctrine = fight_crazy
 		}
-	 }		#什么样的角色才能使用这个宣战理由
-
-	allowed_against_character = {  }					#允许对哪些角色使用这个宣战理由
+	}					#允许对哪些角色使用这个宣战理由
 
 	
 	is_allowed_claim_title = {  }
@@ -448,14 +446,11 @@ aggressive_expansion_cb = {
 	 } # 如果评估为 "真"，则只能针对一个标题。
 	combine_into_one = yes				# 如果设置了，那么我们将显示该CB的所有实例（例如，X的圣战，Y的圣战，Z的圣战）作为一个单一条目，让你在不同的目标之间进行选择
 
-	allowed_for_character = { 
+
+	allowed_against_character = { 
 		scope:attacker.faith = {
 			has_doctrine = fight_crazy
 		}
-	}		#什么样的角色才能使用这个宣战理由
-
-	allowed_against_character = { 
-		always = yes
 	}					#允许对哪些角色使用这个宣战理由
 
 	
@@ -618,16 +613,13 @@ conquest_cb_super_cb_kingdom = {
 	 } # 如果评估为 "真"，则只能针对一个标题。
 	combine_into_one = yes				# 如果设置了，那么我们将显示该CB的所有实例（例如，X的圣战，Y的圣战，Z的圣战）作为一个单一条目，让你在不同的目标之间进行选择
 
-	allowed_for_character = { 
+	allowed_against_character = { 
 		scope:attacker.faith = {
 			has_doctrine = fight_crazy
 		}
 		scope:defender = {
 			highest_held_title_tier > tier_duchy
 		}
-	}		#什么样的角色才能使用这个宣战理由
-
-	allowed_against_character = { 
 	}					#允许对哪些角色使用这个宣战理由
 
 	
@@ -787,16 +779,13 @@ conquest_cb_super_cb_empire = {
 	 } # 如果评估为 "真"，则只能针对一个标题。
 	combine_into_one = yes				# 如果设置了，那么我们将显示该CB的所有实例（例如，X的圣战，Y的圣战，Z的圣战）作为一个单一条目，让你在不同的目标之间进行选择
 
-	allowed_for_character = { 
+	allowed_against_character = { 
 		scope:attacker.faith = {
 			has_doctrine = fight_crazy
 		}
 		scope:defender = {
 			highest_held_title_tier > tier_kingdom
 		}
-	}		#什么样的角色才能使用这个宣战理由
-
-	allowed_against_character = { 
 	}					#允许对哪些角色使用这个宣战理由
 
 	
