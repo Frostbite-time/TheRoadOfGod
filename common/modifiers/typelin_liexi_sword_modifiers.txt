@@ -1,0 +1,14 @@
+﻿liexi_sword_modifier = {
+#軍事、勇武+8(其他數值暫不加成)
+#diplomacy = 2
+martial = 8
+#stewardship = 2
+#intrigue = 2
+#learning = 2
+prowess = 8
+#加成 騎士戰力20% 攻城時間20% 防守優勢20 進攻優勢10
+knight_effectiveness_mult=0.2
+siege_phase_time=-0.2
+defender_advantage=20
+attacker_advantage=10
+}

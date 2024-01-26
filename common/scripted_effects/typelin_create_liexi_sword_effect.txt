@@ -1,0 +1,21 @@
+﻿# 創造裂隙之剑
+create_liexi_sword = {
+
+	create_artifact = {
+		name =liexi_sword_name
+		description = liexi_sword_desc
+		type = sword
+		visuals = sword
+		rarity = illustrious
+		modifier = liexi_sword_modifier
+		wealth = 120
+		quality = 120
+		max_durability = 100		#宝物最大耐久度
+		durability = 100			#宝物耐久度
+		save_scope_as = newly_created_artifact	#将创建的宝物作为作用域  以便后面的事件使用（如果在事件的immediate中创造也可以直接被当前事件调用）
+		template = liexi_sword_templates			#宝物模板  这个在artifacts/templates文件夹下定义  也可以用原版的  非必须 可以不写
+	}
+
+}
+
+

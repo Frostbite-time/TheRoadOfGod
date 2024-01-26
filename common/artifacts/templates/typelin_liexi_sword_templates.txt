@@ -1,0 +1,26 @@
+﻿#裂隙之剑
+liexi_sword_templates = {
+	#能否裝備
+	can_equip = {
+		always = yes
+	}
+	#能否獲得修正效果   
+	can_benefit = {
+		always = yes
+	}
+	#能否重鑄
+	can_reforge = {
+		always = yes
+	}
+	#能否修復
+	can_repair = {
+		always = yes
+	}
+	# Adds the final value to the AI equipping score, note the can_benefit takes precedence over the score when AI equipping
+	# artifact_ai_will_equip_score in game/common/scripted_values/00_artifact_values.txt also effect the final score
+	ai_score = {
+		value = 1000
+	}
+	#獨特邊框，預設否
+	unique = no
+}

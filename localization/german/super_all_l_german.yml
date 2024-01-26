@@ -1,4 +1,4 @@
-l_german:
+﻿l_english:
  rule_is_open_super_mod: "Whether to enable The Road of God?"
  setting_normal_super_mod: "Enable"
  setting_normal_super_mod_desc: "The Road of God lifestyle is accessible to everyone"
@@ -252,9 +252,12 @@ super_maa_imperial_swordsman_flavor: "Swordsmen with a certain level of understa
 super_maa_kensei: "Sword Saint"
 super_maa_kensei_flavor: "These swordsmen can no longer be called mere swordsmen. Having reached the pinnacle of martial arts, they have developed a sense for magical forces. With a single strike, they can sever the connection between mages and the source of magic, rendering the self-important mages useless.\n\nLegends say:\n'A sword qi spans thirty thousand miles, a single strike chills nineteen states.'"
 给予兵种_应对危机.0001.t: "Mystical Awakening"
+#_typelin_#修改了文本，给予兵种_应对危机.0001.desc。
+#_typelin_#將给予兵种_应对危机.0001.2，替換為给予兵种_应对危机.0001.3
 给予兵种_应对危机.0001.desc: "Mysterious forces from ancient times are about to awaken, causing various crises to appear around the world. The world will become chaotic, and you must prepare to avoid being affected by these forces and suffer catastrophic damage. An existence from a distant place senses all this, tearing through space and sending an army to aid you."
 给予兵种_应对危机.0001.1: "Praise Him"
-给予兵种_应对危机.0001.2: "Hah, I don't need it"
+给予兵种_应对危机.0001.2: "Pick up the weapons they left behind"
+给予兵种_应对危机.0001.3: "Hah, I don't need it"
 给予兵种_应对危机.0001.1.自定义提示: "Trust me, you'll need it"
 传说之始军团: "Legion of Legends' Beginning"
 神圣赐福军团: "Holy Blessing Legion"
