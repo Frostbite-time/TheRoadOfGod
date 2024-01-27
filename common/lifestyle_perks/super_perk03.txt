@@ -14,6 +14,12 @@ In_the_Shadows = {
 			always = yes
 		}
 		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
+		}
+		trigger_if = {
 			limit = {
 				has_game_rule = only_for_player_super_mod
 			}
@@ -66,6 +72,12 @@ plan_master = {
 				has_game_rule = normal_super_mod
 			}
 			always = yes
+		}
+		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
 		}
 		trigger_if = {
 			limit = {
@@ -124,6 +136,12 @@ hidden_murder = {
 			always = yes
 		}
 		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
+		}
+		trigger_if = {
 			limit = {
 				has_game_rule = only_for_player_super_mod
 			}
@@ -175,6 +193,12 @@ calm_and_easy_going = {
 				has_game_rule = normal_super_mod
 			}
 			always = yes
+		}
+		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
 		}
 		trigger_if = {
 			limit = {
@@ -232,6 +256,12 @@ one_hand_cover_sky = {
 			always = yes
 		}
 		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
+		}
+		trigger_if = {
 			limit = {
 				has_game_rule = only_for_player_super_mod
 			}
@@ -285,6 +315,12 @@ brain_scholar = {
 			always = yes
 		}
 		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
+		}
+		trigger_if = {
 			limit = {
 				has_game_rule = only_for_player_super_mod
 			}
@@ -332,6 +368,12 @@ play_heart_and_mind = {
 				has_game_rule = normal_super_mod
 			}
 			always = yes
+		}
+		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
 		}
 		trigger_if = {
 			limit = {
@@ -383,6 +425,12 @@ wielding = {
 			always = yes
 		}
 		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
+		}
+		trigger_if = {
 			limit = {
 				has_game_rule = only_for_player_super_mod
 			}
@@ -430,6 +478,12 @@ marionette = {
 				has_game_rule = normal_super_mod
 			}
 			always = yes
+		}
+		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
 		}
 		trigger_if = {
 			limit = {
@@ -481,6 +535,12 @@ edge_of_darkness = {
 			always = yes
 		}
 		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
+		}
+		trigger_if = {
 			limit = {
 				has_game_rule = only_for_player_super_mod
 			}
@@ -528,6 +588,12 @@ world_rift = {
 				has_game_rule = normal_super_mod
 			}
 			always = yes
+		}
+		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
 		}
 		trigger_if = {
 			limit = {
@@ -582,6 +648,12 @@ precise_positioning = {
 			always = yes
 		}
 		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
+		}
+		trigger_if = {
 			limit = {
 				has_game_rule = only_for_player_super_mod
 			}
@@ -631,6 +703,12 @@ nothing_i_cant =  {
 			always = yes
 		}
 		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
+		}
+		trigger_if = {
 			limit = {
 				has_game_rule = only_for_player_super_mod
 			}
@@ -678,6 +756,12 @@ devilishness = {
 				has_game_rule = normal_super_mod
 			}
 			always = yes
+		}
+		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
 		}
 		trigger_if = {
 			limit = {

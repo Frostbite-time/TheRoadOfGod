@@ -16,6 +16,12 @@ Valor_of_man = {
 			always = yes
 		}
 		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
+		}
+		trigger_if = {
 			limit = {
 				has_game_rule = only_for_player_super_mod
 			}
@@ -69,6 +75,12 @@ divine_power = {
 			always = yes
 		}
 		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
+		}
+		trigger_if = {
 			limit = {
 				has_game_rule = only_for_player_super_mod
 			}
@@ -120,6 +132,12 @@ awe_inspiring = {
 				has_game_rule = normal_super_mod
 			}
 			always = yes
+		}
+		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
 		}
 		trigger_if = {
 			limit = {
@@ -176,6 +194,12 @@ controller_perk = {
 			always = yes
 		}
 		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
+		}
+		trigger_if = {
 			limit = {
 				has_game_rule = only_for_player_super_mod
 			}
@@ -227,6 +251,12 @@ holy_warriorss = {
 			always = yes
 		}
 		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
+		}
+		trigger_if = {
 			limit = {
 				has_game_rule = only_for_player_super_mod
 			}
@@ -275,6 +305,12 @@ talent_of_commander = {
 				has_game_rule = normal_super_mod
 			}
 			always = yes
+		}
+		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
 		}
 		trigger_if = {
 			limit = {
@@ -332,6 +368,12 @@ come_and_go_as_you_please = {
 				has_game_rule = normal_super_mod
 			}
 			always = yes
+		}
+		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
 		}
 		trigger_if = {
 			limit = {
@@ -393,6 +435,12 @@ eagles_eye = {
 			always = yes
 		}
 		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
+		}
+		trigger_if = {
 			limit = {
 				has_game_rule = only_for_player_super_mod
 			}
@@ -448,6 +496,12 @@ son_of_god_of_war = {
 				has_game_rule = normal_super_mod
 			}
 			always = yes
+		}
+		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
 		}
 		trigger_if = {
 			limit = {
@@ -514,6 +568,12 @@ good_governance = {
 			always = yes
 		}
 		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
+		}
+		trigger_if = {
 			limit = {
 				has_game_rule = only_for_player_super_mod
 			}
@@ -569,6 +629,12 @@ holy_father_perk = {
 				has_game_rule = normal_super_mod
 			}
 			always = yes
+		}
+		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
 		}
 		trigger_if = {
 			limit = {
@@ -629,6 +695,12 @@ cultural_emphasis = {
 			always = yes
 		}
 		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
+		}
+		trigger_if = {
 			limit = {
 				has_game_rule = only_for_player_super_mod
 			}
@@ -684,6 +756,12 @@ beloved_perk = {
 			always = yes
 		}
 		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
+		}
+		trigger_if = {
 			limit = {
 				has_game_rule = only_for_player_super_mod
 			}
@@ -733,6 +811,12 @@ saint_in_flesh = {
 				has_game_rule = normal_super_mod
 			}
 			always = yes
+		}
+		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
 		}
 		trigger_if = {
 			limit = {

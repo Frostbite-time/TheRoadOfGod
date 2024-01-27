@@ -347,3 +347,11 @@
 		has_focus = super_perk_mind_power
 	}
 }
+
+# 是玩家或者级别大于等于公爵
+is_player_or_ruler_more_duchy = {
+	OR = {
+		is_ai = no
+		primary_title.tier >= tier_duchy
+	}
+}

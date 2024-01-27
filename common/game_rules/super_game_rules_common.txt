@@ -1,6 +1,6 @@
 ﻿#此文件下放置适用性大的游戏规则
 
-#是否开启此mod
+#是否开启超能之路生活方式
 is_open_super_mod = {
 	
 	categories = {     #分类在ai和difficult下
@@ -10,19 +10,23 @@ is_open_super_mod = {
 	default = normal_super_mod
 
 	normal_super_mod = {
+		# 正常开启
+	}
 
+	for_player_and_duchy_super_mod = {
+		# 只对玩家和公爵及以上开启
 	}
 
 	only_for_player_super_mod = {
-
+		# 只对玩家开启
 	}
 
 	only_for_ai_super_mod = {
-
+		# 只对ai开启
 	}
 
 	banned_for_all = {
-
+		# 禁用
 	}
 }
 
@@ -75,6 +79,7 @@ super_get_lifestyle_xp_rate = {
 	}
 }
 
+# 是否启用事件入侵
 super_option_event_invasion = {
 	categories = {     #分类在difficult下
 		super_rule_group

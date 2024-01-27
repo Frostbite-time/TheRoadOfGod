@@ -113,3 +113,9 @@ cant_murder_tips_1 = {
     global = CAN_IS_CHARACTER_GOD
     global_not = NOT_CAN_IS_CHARACTER_GOD
 }
+
+# 是玩家或者级别大于等于公爵
+is_player_or_ruler_more_duchy = {
+    global = CAN_IS_PLAYER_OR_RULER_MORE_DUCHY
+    global_not = NOT_CAN_IS_PLAYER_OR_RULER_MORE_DUCHY
+}

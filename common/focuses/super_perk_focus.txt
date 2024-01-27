@@ -10,6 +10,12 @@ super_perk_focus_learning = {
 			always = yes
 		}
 		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
+		}
+		trigger_if = {
 			limit = {
 				has_game_rule = only_for_player_super_mod
 			}
@@ -103,6 +109,12 @@ super_perk_focus_power = {
 				has_game_rule = normal_super_mod
 			}
 			always = yes
+		}
+		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
 		}
 		trigger_if = {
 			limit = {
@@ -223,6 +235,12 @@ super_perk_mind_power = {
 				has_game_rule = normal_super_mod
 			}
 			always = yes
+		}
+		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			is_player_or_ruler_more_duchy = yes
 		}
 		trigger_if = {
 			limit = {

@@ -12,6 +12,17 @@ super_lifestyle = {
 			always = yes
 		}
 		trigger_if = {
+			limit = { 
+				has_game_rule = for_player_and_duchy_super_mod
+			}
+			OR = {
+				is_ai = no
+				primary_title = {
+					tier >= tier_duchy
+				}
+			}
+		}
+		trigger_if = {
 			limit = {
 				has_game_rule = only_for_player_super_mod
 			}
