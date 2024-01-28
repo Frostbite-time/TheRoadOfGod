@@ -2,7 +2,7 @@
 create_liexi_sword = {
 
 	create_artifact = {
-		name =liexi_sword_name
+		name = liexi_sword
 		description = liexi_sword_desc
 		type = sword
 		visuals = sword

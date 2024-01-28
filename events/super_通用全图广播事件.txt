@@ -121,7 +121,7 @@
 	option = {#_typelin_#修改了在全圖發兵的的第二選項，可以拿一把劍
 		ai_chance = 1
 		name = 给予兵种_应对危机.0001.2
-		trigger_event=typelin_create_liexi_sword_event.0001
+		create_liexi_sword = yes
 		
 	}
 	option = {

@@ -1,7 +1,1 @@
-﻿typelin_create_liexi_sword_event.0001={
-    type = character_event
-    hidden = yes
-    immediate = {
-        create_liexi_sword=yes
-    }
-}
+﻿
