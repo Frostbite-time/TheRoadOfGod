@@ -12,5 +12,18 @@ ssdsd.0001 = {
 	option = {
 		name = be_angel_event.0001.a
 	}
+
+	option = {
+		trigger = {
+			any_owned_story = {
+				OR = {
+					story_type = super_test_story_cycles
+					story_type = super_test_story_cycles2
+				}
+			}
+		}
+		name = be_angel_event.0001.b
+		add_gold = 100
+	}
 }
 

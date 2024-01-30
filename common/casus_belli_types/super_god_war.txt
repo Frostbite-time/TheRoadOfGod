@@ -527,9 +527,10 @@ conquest_cb_super_cb_kingdom = {
 	imprisonment_by_defender_give_war_score = yes		# 保卫方监禁人员人时有没有战争分数
 	
 
-	on_declaration = { 
-		on_declared_war = yes
-	}                            #宣战时候触发的效果
+	on_declaration = { 							# 宣战时候触发的效果
+		on_declared_war = yes	# 原版				
+	}     
+
 	on_victory = {
 		add_truce_attacker_victory_effect = yes
 		scope:attacker = { show_pow_release_message_effect = yes }

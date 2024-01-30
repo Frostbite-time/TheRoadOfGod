@@ -67,4 +67,18 @@
 	}
 }
 
+rulers_under_the_title_join_war = {
+	every_in_list = {	# 遍历所有目标头衔
+		list = target_titles
+		every_de_jure_county_holder = {	# 遍历目标头衔下每个伯爵领的持有者
+			limit = {
+				is_independent_ruler = yes	# 是独立统治者的
+			}
+			scope:war = {	# 当前战争作用域
+				add_defender = prev	# 将这个统治者加入战争作为防卫者
+			}
+		}
+	}
+}
+
 

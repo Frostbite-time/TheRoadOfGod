@@ -1,0 +1,27 @@
+﻿super_test_story_cycles = {
+
+	on_setup = {
+		debug_log = "super_test_story_cycles_start"
+	}
+
+	on_end = {
+	}
+
+	on_owner_death = {
+		end_story = yes
+	}
+}
+
+super_test_story_cycles2 = {
+
+	on_setup = {
+		debug_log = "super_test_story_cycles2_start"
+	}
+
+	on_end = {
+	}
+
+	on_owner_death = {
+		end_story = yes
+	}
+}
