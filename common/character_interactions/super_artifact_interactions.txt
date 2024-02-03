@@ -133,7 +133,7 @@ super_take_his_soul = {
 				}
 			}
 			trigger_event = {
-				id = 无名邪火事件链.0009
+				id = super_unknow_fire_events.0009
 				days = { 1 20 }
 			}
 

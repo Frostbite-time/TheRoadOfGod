@@ -1,23 +1,23 @@
-﻿namespace = 给予兵种_应对危机
+﻿namespace = super_give_maa_events
 
-给予兵种_应对危机.0001 = {
+super_give_maa_events.0001 = {
 	type = character_event
-	title = 给予兵种_应对危机.0001.t
-	desc = 给予兵种_应对危机.0001.desc
+	title = super_give_maa_events.0001.t
+	desc = super_give_maa_events.0001.desc
 	theme = realm
 
 	right_portrait = root
 
 	trigger = {
 		NOT = {
-			has_character_flag = 给予兵种_应对危机已经完成
+			has_character_flag = super_give_maa_events已经完成
 		}
 	}
 
 	option = {
 		ai_chance = 1000
-		name = 给予兵种_应对危机.0001.1
-		custom_tooltip = 给予兵种_应对危机.0001.1.自定义提示
+		name = super_give_maa_events.0001.1
+		custom_tooltip = super_give_maa_events.0001.1.自定义提示
 
 		if = {
 			limit = {
@@ -26,7 +26,7 @@
 				}
 			}
 			spawn_army = {
-				name = 传说之始军团
+				name = legend_start_army
 				uses_supply = yes
 				inheritable = yes
 				men_at_arms = {
@@ -37,7 +37,7 @@
 					type = super_maa_fencer
 					stacks = 5
 				}
-				location = root.location
+				location = root.capital_barony.title_province
 			}
 		}
 		if = {
@@ -47,7 +47,7 @@
 				}
 			}
 			spawn_army = {
-				name = 神圣赐福军团
+				name = san_army
 				uses_supply = yes
 				inheritable = yes
 				men_at_arms = {
@@ -68,7 +68,7 @@
 				}
 			}
 			spawn_army = {
-				name = 终末之光军团
+				name = light_end_army
 				uses_supply = yes
 				inheritable = yes
 				men_at_arms = {
@@ -98,7 +98,7 @@
 				}
 			}
 			spawn_army = {
-				name = 寰宇之音军团
+				name = voice_of_unv_army
 				uses_supply = yes
 				inheritable = yes
 				men_at_arms = {
@@ -120,17 +120,17 @@
 
 	option = {#_typelin_#修改了在全圖發兵的的第二選項，可以拿一把劍
 		ai_chance = 1
-		name = 给予兵种_应对危机.0001.2
+		name = super_give_maa_events.0001.2
 		create_liexi_sword = yes
 		
 	}
 	option = {
 		ai_chance = 1
-		name = 给予兵种_应对危机.0001.3
+		name = super_give_maa_events.0001.3
 		
 	}
 
 	after = {
-		add_character_flag = 给予兵种_应对危机已经完成
+		add_character_flag = super_give_maa_events已经完成
 	}
 } 

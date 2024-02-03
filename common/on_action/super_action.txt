@@ -472,7 +472,7 @@ super_change_faith_to_belief_god = {
 					is_ai = no
 				}
 				trigger_event = {
-					id = 无名邪火事件链.0010
+					id = super_unknow_fire_events.0010
 					days = { 18 200 }
 				}
 			}
@@ -491,7 +491,7 @@ super_给全图统治者角色添加一些兵力 = {
 				}
 			}
 			trigger_event = {
-				id = 给予兵种_应对危机.0001
+				id = super_give_maa_events.0001
 				days = { 1 30 }
 			}
 		}

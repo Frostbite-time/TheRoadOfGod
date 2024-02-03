@@ -8,7 +8,6 @@ super_faith_event.0001 = {
 	desc = super_faith_event.0001.desc
 	theme = realm
 	left_portrait = root
-	override_background = {event_background = wilderness_forest}
 	
 	option = {
 		hidden_effect = {
@@ -47,7 +46,6 @@ super_faith_event.0002 = {
 	desc = super_faith_event.0002.desc
 	theme = realm
 	left_portrait = root
-	override_background = {event_background = wilderness_forest}
 	
 	option = {
 		add_stress = -50
@@ -63,7 +61,6 @@ super_faith_event.0003 = {
 	desc = super_faith_event.0003.desc
 	theme = realm
 	left_portrait = root
-	override_background = {event_background = wilderness_forest}
 	
 	option = {
 		root = {           #这里的root是之前的被执行者
@@ -101,7 +98,6 @@ super_faith_event.0004 = {
 	desc = super_faith_event.0004.desc
 	theme = realm
 	left_portrait = root
-	override_background = {event_background = wilderness_forest}
 	
 	option = {
 		root = {          
@@ -120,7 +116,6 @@ super_faith_event.0005 = {
 	title = super_faith_event.0005.t
 	desc = super_faith_event.0005.desc
 	theme = realm
-	override_background = {event_background = wilderness_forest}
 	hidden = yes
 	trigger = {
 		root.faith = {

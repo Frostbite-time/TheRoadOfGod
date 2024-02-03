@@ -11,19 +11,19 @@ super_visit_from_other = {
 		random_list = {
 			1 = {
 				trigger_event = {
-					id = 洞悉之种事件链.0001	# 洞悉之种的事件链
+					id = super_knows_seed_events.0001	# 洞悉之种的事件链
 					days = { 1 180 }
 				}
 			}
 			1 = {
 				trigger_event = {
-					id = 无名邪火事件链.0001
+					id = super_unknow_fire_events.0001
 					days = { 1 180 }
 				}
 			}
 			1 = {
 				trigger_event = {
-					id = 生灵之神教会的拜访事件链.0001
+					id = super_visit_from_belief_events.0001
 					days = { 1 180 }
 				}
 			}

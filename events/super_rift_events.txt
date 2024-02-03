@@ -574,7 +574,6 @@ rift_events_world.0005 = {
 	title = rift_events_world.0005.t  #事件标题
 	desc = rift_events_world.0005.desc   #事件描述
 	theme = dynasty        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
-	override_background = { event_background = bp1_relaxing_room_mena }
 	left_portrait = root		#让角色出现在左边
 	right_portrait = scope:target
 	option = {
@@ -603,7 +602,6 @@ rift_events_world.0006 = {
 	title = rift_events_world.0006.t  #事件标题
 	desc = rift_events_world.0006.desc   #事件描述
 	theme = dynasty        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
-	override_background = { event_background = garden }
 	left_portrait = root		#让角色出现在左边
 	right_portrait = scope:target
 	option = {

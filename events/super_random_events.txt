@@ -1,16 +1,16 @@
-﻿namespace = 洞悉之种事件链
-namespace = 无名邪火事件链
-namespace = 生灵之神教会的拜访事件链
+﻿namespace = super_knows_seed_events
+namespace = super_unknow_fire_events
+namespace = super_visit_from_belief_events
 namespace = 拒死之人事件链
 
 # 洞悉之种的事件链
-洞悉之种事件链.0001 = {
+super_knows_seed_events.0001 = {
 	type = character_event
-	title = 洞悉之种事件链.0001.t
-	desc = 洞悉之种事件链.0001.desc
+	title = super_knows_seed_events.0001.t
+	desc = super_knows_seed_events.0001.desc
 	theme = realm
 	override_background = {
-        reference = 洞悉之种事件链_1
+        reference = super_knows_seed_events_1
     }
 
 	trigger = {
@@ -25,13 +25,13 @@ namespace = 拒死之人事件链
 	}
 
 	option = {
-		name = 洞悉之种事件链.0001.1		#前往探查
-		trigger_event = 洞悉之种事件链.0002
+		name = super_knows_seed_events.0001.1		#前往探查
+		trigger_event = super_knows_seed_events.0002
 		ai_chance = 20
 	}
 
 	option = {
-		name = 洞悉之种事件链.0001.2		#加强防御
+		name = super_knows_seed_events.0001.2		#加强防御
 		add_character_modifier = {
 			modifier = defensive_magic_modifier
 			years = 2
@@ -41,10 +41,10 @@ namespace = 拒死之人事件链
 	}
 }
 
-洞悉之种事件链.0002 = {
+super_knows_seed_events.0002 = {
 	type = character_event
-	title = 洞悉之种事件链.0002.t
-	desc = 洞悉之种事件链.0002.desc
+	title = super_knows_seed_events.0002.t
+	desc = super_knows_seed_events.0002.desc
 	theme = realm
 	
 	right_portrait = {
@@ -53,16 +53,16 @@ namespace = 拒死之人事件链
 	}
 
 	override_background = {
-        reference = 洞悉之种事件链_2
+        reference = super_knows_seed_events_2
     }
 
 	option = {
-		name = 洞悉之种事件链.0002.1	#前往探查
-		trigger_event = 洞悉之种事件链.0003
+		name = super_knows_seed_events.0002.1	#前往探查
+		trigger_event = super_knows_seed_events.0003
 	}
 	
 	option = {
-		name = 洞悉之种事件链.0002.2	#逃离
+		name = super_knows_seed_events.0002.2	#逃离
 		add_character_flag = super_seed_is_done_flag
 		add_character_modifier = {
 			modifier = linger_fear_modifier
@@ -71,18 +71,18 @@ namespace = 拒死之人事件链
 	}
 }
 
-洞悉之种事件链.0003 = {
+super_knows_seed_events.0003 = {
 	type = character_event
-	title = 洞悉之种事件链.0003.t
-	desc = 洞悉之种事件链.0003.desc
+	title = super_knows_seed_events.0003.t
+	desc = super_knows_seed_events.0003.desc
 	theme = realm
 
 	override_background = {
-        reference = 洞悉之种事件链_3
+        reference = super_knows_seed_events_3
     }
 	option = {
 		ai_chance = 500
-		name = 洞悉之种事件链.0003.1
+		name = super_knows_seed_events.0003.1
 		trigger = {
 			has_trait = devilishness
 		}
@@ -99,7 +99,7 @@ namespace = 拒死之人事件链
 				}
 			}
 			trigger_event = {
-				id = 洞悉之种事件链.0004
+				id = super_knows_seed_events.0004
 				days = { 1 6 }
 			}
 		}	
@@ -107,31 +107,31 @@ namespace = 拒死之人事件链
 
 	option = {
 		ai_chance = 500
-		name = 洞悉之种事件链.0003.2
+		name = super_knows_seed_events.0003.2
 		trigger = {
 			has_trait = saint_in_flesh_traits
 		}
 		hidden_effect = {
-			trigger_event = 洞悉之种事件链.0005
+			trigger_event = super_knows_seed_events.0005
 		}
 	}
 	
 
 	option = {
 		ai_chance = 500
-		name = 洞悉之种事件链.0003.3
+		name = super_knows_seed_events.0003.3
 		trigger = {
 			has_trait = angel_traits
 		}
 		hidden_effect = {
-			trigger_event = 洞悉之种事件链.0006
+			trigger_event = super_knows_seed_events.0006
 		}
 		
 	}
 
 	option = {
 		ai_chance = 20
-		name = 洞悉之种事件链.0003.4
+		name = super_knows_seed_events.0003.4
 		hidden_effect = {
 			death = {
 				death_reason = death_for_lost_your_soul
@@ -141,7 +141,7 @@ namespace = 拒死之人事件链
 	
 	option = {
 		ai_chance = 50
-		name = 洞悉之种事件链.0003.5
+		name = super_knows_seed_events.0003.5
 		hidden_effect = {
 			random_list = {
 				1 ={
@@ -150,7 +150,7 @@ namespace = 拒死之人事件链
 					}
 				}
 				1 = {
-					trigger_event = 洞悉之种事件链.0007
+					trigger_event = super_knows_seed_events.0007
 				}
 			}
 		}
@@ -159,22 +159,22 @@ namespace = 拒死之人事件链
 
 	option = {
 		ai_chance = 30
-		name = 洞悉之种事件链.0003.6
+		name = super_knows_seed_events.0003.6
 		hidden_effect = {
-			trigger_event = 洞悉之种事件链.0008
+			trigger_event = super_knows_seed_events.0008
 		}
 	}
 	
 }
 
-洞悉之种事件链.0004 = {
+super_knows_seed_events.0004 = {
 	type = character_event
-	title = 洞悉之种事件链.0004.t
-	desc = 洞悉之种事件链.0004.desc
+	title = super_knows_seed_events.0004.t
+	desc = super_knows_seed_events.0004.desc
 	theme = realm
 
 	override_background = {
-        reference = 洞悉之种事件链_4
+        reference = super_knows_seed_events_4
     }
 
 	artifact = {
@@ -187,23 +187,23 @@ namespace = 拒死之人事件链
 	}
 
 	option = {
-		name = 洞悉之种事件链.0004.1
+		name = super_knows_seed_events.0004.1
 		add_character_flag = super_seed_is_done_flag
 	}
 }
 
-洞悉之种事件链.0005 = {
+super_knows_seed_events.0005 = {
 	type = character_event
-	title = 洞悉之种事件链.0005.t
-	desc = 洞悉之种事件链.0005.desc
+	title = super_knows_seed_events.0005.t
+	desc = super_knows_seed_events.0005.desc
 	theme = realm
 
 	override_background = {
-        reference = 洞悉之种事件链_5
+        reference = super_knows_seed_events_5
     }
 
 	option = {
-		name = 洞悉之种事件链.0005.1
+		name = super_knows_seed_events.0005.1
 		add_character_modifier = {
 			modifier = defensive_magic_modifier
 			years = 10
@@ -212,20 +212,20 @@ namespace = 拒死之人事件链
 	}
 }
 
-洞悉之种事件链.0006 = {
+super_knows_seed_events.0006 = {
 	type = character_event
-	title = 洞悉之种事件链.0006.t
-	desc = 洞悉之种事件链.0006.desc
+	title = super_knows_seed_events.0006.t
+	desc = super_knows_seed_events.0006.desc
 	theme = realm
 
 	right_portrait = root
 
 	override_background = {
-        reference = 洞悉之种事件链_6
+        reference = super_knows_seed_events_6
     }
 
 	option = {
-		name = 洞悉之种事件链.0006.1
+		name = super_knows_seed_events.0006.1
 		add_character_modifier = {
 			modifier = seed_of_insight_modifier
 		}
@@ -233,19 +233,19 @@ namespace = 拒死之人事件链
 	}
 }
 
-洞悉之种事件链.0007 = {
+super_knows_seed_events.0007 = {
 	type = character_event
-	title = 洞悉之种事件链.0007.t
-	desc = 洞悉之种事件链.0007.desc
+	title = super_knows_seed_events.0007.t
+	desc = super_knows_seed_events.0007.desc
 	theme = realm
 	right_portrait = root
 
 	override_background = {
-        reference = 洞悉之种事件链_7
+        reference = super_knows_seed_events_7
     }
 
 	option = {
-		name = 洞悉之种事件链.0007.1
+		name = super_knows_seed_events.0007.1
 		add_character_modifier = {
 			modifier = seed_of_insight_modifier
 		}
@@ -253,10 +253,10 @@ namespace = 拒死之人事件链
 	}
 }
 
-洞悉之种事件链.0008 = {
+super_knows_seed_events.0008 = {
 	type = character_event
-	title = 洞悉之种事件链.0008.t
-	desc = 洞悉之种事件链.0008.desc
+	title = super_knows_seed_events.0008.t
+	desc = super_knows_seed_events.0008.desc
 	theme = realm
 
 	right_portrait = {
@@ -266,20 +266,20 @@ namespace = 拒死之人事件链
 
 
 	option = {
-		name = 洞悉之种事件链.0008.1
+		name = super_knows_seed_events.0008.1
 		add_character_flag = super_seed_is_done_flag
 	}
 }
 
 
-无名邪火事件链.0001 = {			# 领主得到消息
+super_unknow_fire_events.0001 = {			# 领主得到消息
 	type = character_event
-	title = 无名邪火事件链.0001.t
-	desc = 无名邪火事件链.0001.desc
+	title = super_unknow_fire_events.0001.t
+	desc = super_unknow_fire_events.0001.desc
 	theme = realm
 
 	override_background = {
-        reference = 无名邪火事件链_1
+        reference = super_unknow_fire_events_1
     }
 
 	right_portrait = {
@@ -345,22 +345,22 @@ namespace = 拒死之人事件链
 			tier >= tier_duchy
 		}
 		NOT = {
-			has_character_flag = 无名邪火事件链已经完成
+			has_character_flag = super_unknow_fire_events已经完成
 		}
 	}
 
 	option = {
-		name = 无名邪火事件链.0001.1	#前往探查
+		name = super_unknow_fire_events.0001.1	#前往探查
 		add_prestige = 100
 		trigger_event = {
-			id = 无名邪火事件链.0002
+			id = super_unknow_fire_events.0002
 			days = { 1 3 }
 		}
 	}
 
 	option = {
-		name = 无名邪火事件链.0001.2	#不管
-		add_character_flag = 无名邪火事件链已经完成
+		name = super_unknow_fire_events.0001.2	#不管
+		add_character_flag = super_unknow_fire_events已经完成
 		scope:邪火肆虐的伯爵领 = {
 			add_county_modifier = {
 				modifier = evil_fire_rages_modifier
@@ -371,22 +371,22 @@ namespace = 拒死之人事件链
 				years = 10
 			}
 		}
-		custom_tooltip = 无名邪火事件链.0001.2.事态严重
+		custom_tooltip = super_unknow_fire_events.0001.2.事态严重
 		trigger_event = {
-			id = 无名邪火事件链.0005
+			id = super_unknow_fire_events.0005
 			years = { 1 3 }
 		}
 	}
 }
 
-无名邪火事件链.0002 = {			# 前往被烧毁的村庄
+super_unknow_fire_events.0002 = {			# 前往被烧毁的村庄
 	type = character_event
-	title = 无名邪火事件链.0002.t
-	desc = 无名邪火事件链.0002.desc
+	title = super_unknow_fire_events.0002.t
+	desc = super_unknow_fire_events.0002.desc
 	theme = realm
 
 	override_background = {
-        reference = 无名邪火事件链_2
+        reference = super_unknow_fire_events_2
     }
 
 	right_portrait = {
@@ -395,18 +395,18 @@ namespace = 拒死之人事件链
 	}
 
 	option = {
-		name = 无名邪火事件链.0002.1	#亲自调查
+		name = super_unknow_fire_events.0002.1	#亲自调查
 		trigger_event = {
-			id = 无名邪火事件链.0003
+			id = super_unknow_fire_events.0003
 			days = { 2 8 }
 		}
 	}
 
 	option = {
-		name = 无名邪火事件链.0002.2	#给予抚恤金
+		name = super_unknow_fire_events.0002.2	#给予抚恤金
 		remove_long_term_gold = 200
 		trigger_event = {
-			id = 无名邪火事件链.0005
+			id = super_unknow_fire_events.0005
 			years = { 3 6 }
 		}
 		scope:邪火肆虐的伯爵领 = {
@@ -415,15 +415,15 @@ namespace = 拒死之人事件链
 				years = 3
 			}
 		}
-		custom_tooltip = 无名邪火事件链.0002.2.事态逐渐平息
+		custom_tooltip = super_unknow_fire_events.0002.2.事态逐渐平息
 
-		add_character_flag = 无名邪火事件链已经完成
+		add_character_flag = super_unknow_fire_events已经完成
 	}
 
 	option = {
-		name = 无名邪火事件链.0002.3	#让当地组织民兵
+		name = super_unknow_fire_events.0002.3	#让当地组织民兵
 		trigger_event = {
-			id = 无名邪火事件链.0005
+			id = super_unknow_fire_events.0005
 			years = { 2 5 }
 		}
 		scope:邪火肆虐的伯爵领 = {
@@ -436,16 +436,16 @@ namespace = 拒死之人事件链
 				years = 5
 			}
 		}
-		custom_tooltip = 无名邪火事件链.0002.3.事态逐渐平息
+		custom_tooltip = super_unknow_fire_events.0002.3.事态逐渐平息
 
-		add_character_flag = 无名邪火事件链已经完成
+		add_character_flag = super_unknow_fire_events已经完成
 	}
 
 	option = {
-		name = 无名邪火事件链.0002.4	#不管
+		name = super_unknow_fire_events.0002.4	#不管
 
 		trigger_event = {
-			id = 无名邪火事件链.0005
+			id = super_unknow_fire_events.0005
 			years = { 1 3 }
 		}
 		scope:邪火肆虐的伯爵领 = {
@@ -454,29 +454,29 @@ namespace = 拒死之人事件链
 				years = 1
 			}
 		}
-		custom_tooltip = 无名邪火事件链.0002.4.事态严重
+		custom_tooltip = super_unknow_fire_events.0002.4.事态严重
 
-		add_character_flag = 无名邪火事件链已经完成
+		add_character_flag = super_unknow_fire_events已经完成
 	}
 }
 
-无名邪火事件链.0003 = {			# 开始调查
+super_unknow_fire_events.0003 = {			# 开始调查
 	type = character_event
-	title = 无名邪火事件链.0003.t
-	desc = 无名邪火事件链.0003.desc
+	title = super_unknow_fire_events.0003.t
+	desc = super_unknow_fire_events.0003.desc
 	theme = realm
 
 	override_background = {
-        reference = 无名邪火事件链_3
+        reference = super_unknow_fire_events_3
     }
 
 	option = {
 		ai_chance = 20
-		name = 无名邪火事件链.0003.1	#派兵搜查
+		name = super_unknow_fire_events.0003.1	#派兵搜查
 		random_list = {
 			7 = {
 				trigger_event = {
-					id = 无名邪火事件链.0005
+					id = super_unknow_fire_events.0005
 					years = { 1 3 }
 				}
 				scope:邪火肆虐的伯爵领 = {
@@ -485,42 +485,42 @@ namespace = 拒死之人事件链
 						years = 1
 					}
 				}
-				custom_tooltip = 无名邪火事件链.0002.4.事态严重
-				add_character_flag = 无名邪火事件链已经完成
+				custom_tooltip = super_unknow_fire_events.0002.4.事态严重
+				add_character_flag = super_unknow_fire_events已经完成
 			}
 			3 = {
 				trigger_event = {
-					id = 无名邪火事件链.0004
+					id = super_unknow_fire_events.0004
 					days = { 1 3 }
 				}
-				custom_tooltip = 无名邪火事件链.0003.1.调查结果
+				custom_tooltip = super_unknow_fire_events.0003.1.调查结果
 			}
 		}
 	}
 
 	option = {
 		ai_chance = 80
-		name = 无名邪火事件链.0003.2	#占卜术
+		name = super_unknow_fire_events.0003.2	#占卜术
 		trigger = {
 			has_trait = know_all_thing_traits
 		}
 		trigger_event = {
-			id = 无名邪火事件链.0004
+			id = super_unknow_fire_events.0004
 			days = { 1 3 }
 		}
-		custom_tooltip = 无名邪火事件链.0003.1.调查结果
+		custom_tooltip = super_unknow_fire_events.0003.1.调查结果
 	}
 
 }
 
-无名邪火事件链.0004 = {			# 是否清缴邪教
+super_unknow_fire_events.0004 = {			# 是否清缴邪教
 	type = character_event
-	title = 无名邪火事件链.0004.t
-	desc = 无名邪火事件链.0004.desc
+	title = super_unknow_fire_events.0004.t
+	desc = super_unknow_fire_events.0004.desc
 	theme = realm
 
 	override_background = {
-        reference = 无名邪火事件链_4
+        reference = super_unknow_fire_events_4
     }
 
 	right_portrait = {
@@ -546,10 +546,10 @@ namespace = 拒死之人事件链
 
 
 	option = {
-		name = 无名邪火事件链.0004.1		#接受贿赂
+		name = super_unknow_fire_events.0004.1		#接受贿赂
 		ai_chance = 50
 		trigger_event = {
-			id = 无名邪火事件链.0005
+			id = super_unknow_fire_events.0005
 			years = { 3 4 }
 		}
 		change_variable = {
@@ -567,7 +567,7 @@ namespace = 拒死之人事件链
 				years = 30
 			}
 		}
-		custom_tooltip = 无名邪火事件链.0004.1.收取贿赂
+		custom_tooltip = super_unknow_fire_events.0004.1.收取贿赂
 
 		hidden_effect = {
 			scope:神秘的黑衣人 = {
@@ -579,11 +579,11 @@ namespace = 拒死之人事件链
 			
 
 
-		add_character_flag = 无名邪火事件链已经完成
+		add_character_flag = super_unknow_fire_events已经完成
 	}
 
 	option = {
-		name = 无名邪火事件链.0004.2		#当场翻脸
+		name = super_unknow_fire_events.0004.2		#当场翻脸
 
 		ai_chance = 25
 
@@ -594,16 +594,16 @@ namespace = 拒死之人事件链
 			FATALITY = yes
 			FIXED = no
 			LOCALE = terrain_scope
-			OUTPUT_EVENT = 无名邪火事件链.0006
+			OUTPUT_EVENT = super_unknow_fire_events.0006
 			INVALIDATION_EVENT = perk_interaction.0102
 		}
 
 		
-		add_character_flag = 无名邪火事件链已经完成
+		add_character_flag = super_unknow_fire_events已经完成
 	}
 
 	option = {
-		name = 无名邪火事件链.0004.3		#派兵围剿
+		name = super_unknow_fire_events.0004.3		#派兵围剿
 
 		ai_chance = 5
 
@@ -690,16 +690,16 @@ namespace = 拒死之人事件链
 			
 		}
 		
-		add_character_flag = 无名邪火事件链已经完成
+		add_character_flag = super_unknow_fire_events已经完成
 	}
 
 	option = {
-		name = 无名邪火事件链.0004.4		#警告对方
+		name = super_unknow_fire_events.0004.4		#警告对方
 
 		ai_chance = 20
 
 		trigger_event = {
-			id = 无名邪火事件链.0005
+			id = super_unknow_fire_events.0005
 			years = { 1 3 }
 		}
 
@@ -718,13 +718,13 @@ namespace = 拒死之人事件链
 			}
 		}
 
-		custom_tooltip = 无名邪火事件链.0004.4.警告对方
+		custom_tooltip = super_unknow_fire_events.0004.4.警告对方
 
-		add_character_flag = 无名邪火事件链已经完成
+		add_character_flag = super_unknow_fire_events已经完成
 	}
 
 	option = {
-		name = 无名邪火事件链.0004.5		#抹杀他
+		name = super_unknow_fire_events.0004.5		#抹杀他
 		ai_chance = 1000
 		trigger = {
 			是否是神 = yes
@@ -736,18 +736,18 @@ namespace = 拒死之人事件链
 			}
 		}
 		创造宝物_毁灭之火 = yes
-		add_character_flag = 无名邪火事件链已经完成
+		add_character_flag = super_unknow_fire_events已经完成
 	}
 }
 
-无名邪火事件链.0005 = {			# 如果不清缴邪教，一段时间后此地爆发兵变
+super_unknow_fire_events.0005 = {			# 如果不清缴邪教，一段时间后此地爆发兵变
 	type = character_event
-	title = 无名邪火事件链.0005.t
-	desc = 无名邪火事件链.0005.desc
+	title = super_unknow_fire_events.0005.t
+	desc = super_unknow_fire_events.0005.desc
 	theme = realm
 
 	override_background = {
-        reference = 无名邪火事件链_5
+        reference = super_unknow_fire_events_5
     }
 
 	right_portrait = {
@@ -951,23 +951,23 @@ namespace = 拒死之人事件链
 	}
 
 	option = {
-		name = 无名邪火事件链.0005.1
+		name = super_unknow_fire_events.0005.1
 	}
 }
 
-无名邪火事件链.0006 = {
+super_unknow_fire_events.0006 = {
 	hidden = yes
 
 	immediate = {
 		# Fire the follow-up stuff; delay this by a day so the toasts appear _after_ the final event.
 		trigger_event = {
-			id = 无名邪火事件链.0007
+			id = super_unknow_fire_events.0007
 			days = 1
 		}
 	}
 }
 
-无名邪火事件链.0007 = {
+super_unknow_fire_events.0007 = {
 	hidden = yes
 
 	immediate = {
@@ -992,7 +992,7 @@ namespace = 拒死之人事件链
 					else = {
 						scope:邪火肆虐的伯爵领.duchy.holder = {
 							trigger_event = {
-								id = 无名邪火事件链.0005
+								id = super_unknow_fire_events.0005
 								days = 3
 							}
 						}
@@ -1035,7 +1035,7 @@ namespace = 拒死之人事件链
 		else = {
 			scope:神秘的黑衣人 =  {
 				trigger_event = {
-					id = 无名邪火事件链.0008
+					id = super_unknow_fire_events.0008
 					days = 3
 				}
 			}
@@ -1058,7 +1058,7 @@ namespace = 拒死之人事件链
 	}
 }
 
-无名邪火事件链.0008 = {
+super_unknow_fire_events.0008 = {
 	hidden = yes
 
 	immediate = {
@@ -1167,10 +1167,10 @@ namespace = 拒死之人事件链
 
 }
 
-无名邪火事件链.0009 = {
+super_unknow_fire_events.0009 = {
 	type = character_event
-	title = 无名邪火事件链.0009.t
-	desc = 无名邪火事件链.0009.desc
+	title = super_unknow_fire_events.0009.t
+	desc = super_unknow_fire_events.0009.desc
 	theme = realm
 
 	override_background = {
@@ -1187,19 +1187,19 @@ namespace = 拒死之人事件链
 	}
 
 	option = {
-		name = 无名邪火事件链.0009.1
+		name = super_unknow_fire_events.0009.1
 	}
 }
 
-无名邪火事件链.0010 = {
+super_unknow_fire_events.0010 = {
 	type = character_event
-	title = 无名邪火事件链.0010.t
-	desc = 无名邪火事件链.0010.desc
+	title = super_unknow_fire_events.0010.t
+	desc = super_unknow_fire_events.0010.desc
 	theme = realm
 
 	trigger = {
 		NOT = {
-			has_character_flag = 已经提醒过无名邪火事件链
+			has_character_flag = 已经提醒过super_unknow_fire_events
 		}
 	}
 
@@ -1213,27 +1213,27 @@ namespace = 拒死之人事件链
 	}
 
 	option = {
-		name = 无名邪火事件链.0010.1
-		custom_tooltip = 无名邪火事件链.0010.1.提醒
-		add_character_flag = 已经提醒过无名邪火事件链
+		name = super_unknow_fire_events.0010.1
+		custom_tooltip = super_unknow_fire_events.0010.1.提醒
+		add_character_flag = 已经提醒过super_unknow_fire_events
 		trigger_event = {
-			id = 无名邪火事件链.0011
+			id = super_unknow_fire_events.0011
 			years = 1
 		}
 		trigger_event = {
-			id = 无名邪火事件链.0012
+			id = super_unknow_fire_events.0012
 			years = 70
 		}
 	}
 }
 
-无名邪火事件链.0011 = {
+super_unknow_fire_events.0011 = {
 	hidden = yes
 
 	trigger = {
 		current_date <= 1066.1.1
 		NOT = {
-			has_character_flag = 已经重置过提醒过无名邪火事件链
+			has_character_flag = 已经重置过提醒过super_unknow_fire_events
 		}	
 	}
 
@@ -1246,21 +1246,21 @@ namespace = 拒死之人事件链
 				current_date >= 1065.1.1
 				current_date <= 1066.1.1
 			}
-			add_character_flag = 已经重置过提醒过无名邪火事件链
-			remove_character_flag = 已经提醒过无名邪火事件链
+			add_character_flag = 已经重置过提醒过super_unknow_fire_events
+			remove_character_flag = 已经提醒过super_unknow_fire_events
 		}
 
 		trigger_event = {
-			id = 无名邪火事件链.0011
+			id = super_unknow_fire_events.0011
 			months = 2
 		}
 	}
 }
 
-无名邪火事件链.0012 = {
+super_unknow_fire_events.0012 = {
 	type = character_event
-	title = 无名邪火事件链.0012.t
-	desc = 无名邪火事件链.0012.desc
+	title = super_unknow_fire_events.0012.t
+	desc = super_unknow_fire_events.0012.desc
 	theme = realm
 
 	override_background = {
@@ -1273,18 +1273,18 @@ namespace = 拒死之人事件链
 	}
 
 	option = {
-		name = 无名邪火事件链.0012.1
+		name = super_unknow_fire_events.0012.1
 	}
 }
 
-生灵之神教会的拜访事件链.0001 = {
+super_visit_from_belief_events.0001 = {
 	type = character_event
-	title = 生灵之神教会的拜访事件链.0001.t
-	desc = 生灵之神教会的拜访事件链.0001.desc
+	title = super_visit_from_belief_events.0001.t
+	desc = super_visit_from_belief_events.0001.desc
 	theme = realm
 
 	override_background = {
-		reference = 生灵之神教会的拜访事件链_1
+		reference = super_visit_from_belief_events_1
 	}
 
 	left_portrait = root
@@ -1317,29 +1317,29 @@ namespace = 拒死之人事件链
 			}
 		}
 		NOT = {
-			has_character_flag = 生灵之神教会的拜访事件链已经完成
+			has_character_flag = super_visit_from_belief_events已经完成
 		}
 	}
 
 	option = {
-		name = 生灵之神教会的拜访事件链.0001.1	#选择信仰
-		custom_tooltip = 生灵之神教会的拜访事件链.0001.1.选择信仰
+		name = super_visit_from_belief_events.0001.1	#选择信仰
+		custom_tooltip = super_visit_from_belief_events.0001.1.选择信仰
 		root = {
 			set_character_faith_with_conversion = faith:super_belief_fa
 		}
 	}
 
 	option = {
-		name = 生灵之神教会的拜访事件链.0001.2	#抢劫他
+		name = super_visit_from_belief_events.0001.2	#抢劫他
 		add_gold = 80
 	}
 
 	option = {
-		name = 生灵之神教会的拜访事件链.0001.3	#拒绝
+		name = super_visit_from_belief_events.0001.3	#拒绝
 	}
 
 	after = {
-		add_character_flag = 生灵之神教会的拜访事件链已经完成
+		add_character_flag = super_visit_from_belief_events已经完成
 	}
 }
 

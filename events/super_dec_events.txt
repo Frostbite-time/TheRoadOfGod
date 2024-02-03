@@ -1104,7 +1104,6 @@ call_god_events.0006 = {
 	title = call_god_events.0006.t   #事件标题
 	desc = call_god_events.0006.desc   #事件描述
 	theme = witchcraft        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
-	override_background = { event_background = bp1_relaxing_room_western }
 	left_portrait = root		#让角色出现在左边
 	right_portrait = scope:use_one_this
 	immediate = {   #当事件触发时会发生的事情，优先级高于一切  本事件中将会筛选出用于此事件的角色

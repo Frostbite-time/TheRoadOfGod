@@ -5,7 +5,6 @@ super_art_cr_sup.0001 = {
 	title = super_art_cr_sup.0001.t
 	desc = super_art_cr_sup.0001.desc
 	theme = realm
-	override_background = { event_background = armory }
 	left_portrait = root
 	option = {
 		ai_chance = 50
@@ -77,7 +76,6 @@ super_art_cr_sup.0002 = {
 	title = super_art_cr_sup.0002.t
 	desc = super_art_cr_sup.0002.desc
 	theme = realm
-	override_background = { event_background = armory }
 	left_portrait = root
 	immediate = {
 		root = {
@@ -214,7 +212,6 @@ super_art_cr_sup.0003 = {
 	title = super_art_cr_sup.0002.t
 	desc = super_art_cr_sup.0003.desc
 	theme = realm
-	override_background = { event_background = armory }
 	left_portrait = root
 	option = {
 		ai_chance = 20
@@ -343,7 +340,6 @@ super_art_cr_sup.0004 = {
 	title = super_art_cr_sup.0002.t
 	desc = super_art_cr_sup.0004.desc
 	theme = realm
-	override_background = { event_background = armory }
 	left_portrait = root
 	option = {
 		name = super_art_cr_sup.0004.a
@@ -374,7 +370,6 @@ super_art_cr_sup.0005 = {
 	title = super_art_cr_sup.0005.t
 	desc = super_art_cr_sup.0005.desc
 	theme = realm
-	override_background = { event_background = armory }
 	right_portrait = root
 	artifact = {
 		target = scope:newly_created_artifact
