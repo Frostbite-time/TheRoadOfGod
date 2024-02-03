@@ -737,10 +737,6 @@ conquest_cb_super_cb_empire = {
 				take_baronies = yes
 			}
 		}
-
-
-
-
 		resolve_title_and_vassal_change = scope:change	
 	}								#当胜利的时候触发的效果
 	on_white_peace = { 

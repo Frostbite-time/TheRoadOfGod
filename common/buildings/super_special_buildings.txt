@@ -16,19 +16,13 @@
 	# 如果 is_graphical_background = yes，则不使用此选项。
 	# 作用域说明：root 代表省份；scope:holder 是省份的持有者；county 是省份所属的县级标题。
 	can_construct_potential = {
-		root = {
-			this = title:b_constantinople.title_province
-		}
+		this = title:b_constantinople.title_province
 	}
 	can_construct_showing_failures_only = {
-		root = {
-			this = title:b_constantinople.title_province
-		}
+		this = title:b_constantinople.title_province
 	}
 	can_construct = {
-		root = {
-			this = title:b_constantinople.title_province
-		}
+		this = title:b_constantinople.title_province
 	}
 
 	#当前伯爵领
@@ -81,14 +75,10 @@ super_wisdom_god_star_building_1 = {
 	# 如果 is_graphical_background = yes，则不使用此选项。
 	# 作用域说明：root 代表省份；scope:holder 是省份的持有者；county 是省份所属的县级标题。
 	can_construct_potential = {
-		root = {
-			this = title:b_constantinople.title_province
-		}
+		this = title:b_constantinople.title_province
 	}
 	can_construct = {
-		root = {
-			this = title:b_constantinople.title_province
-		}
+		this = title:b_constantinople.title_province
 	}
 	
 	# 建筑的花费
@@ -151,14 +141,10 @@ super_wisdom_god_star_building_2 = {
 	# 如果 is_graphical_background = yes，则不使用此选项。
 	# 作用域说明：root 代表省份；scope:holder 是省份的持有者；county 是省份所属的县级标题。
 	can_construct_potential = {
-		root = {
-			this = title:b_constantinople.title_province
-		}
+		this = title:b_constantinople.title_province
 	}
 	can_construct = {
-		root = {
-			this = title:b_constantinople.title_province
-		}
+		this = title:b_constantinople.title_province
 	}
 	
 	# 建筑的花费
@@ -221,14 +207,10 @@ super_wisdom_god_star_building_3 = {
 	# 如果 is_graphical_background = yes，则不使用此选项。
 	# 作用域说明：root 代表省份；scope:holder 是省份的持有者；county 是省份所属的县级标题。
 	can_construct_potential = {
-		root = {
-			this = title:b_constantinople.title_province
-		}
+		this = title:b_constantinople.title_province
 	}
 	can_construct = {
-		root = {
-			this = title:b_constantinople.title_province
-		}
+		this = title:b_constantinople.title_province
 	}
 	
 	# 建筑间接提供效果的自定义描述。
@@ -296,14 +278,10 @@ super_wisdom_god_star_building_4 = {
 	# 如果 is_graphical_background = yes，则不使用此选项。
 	# 作用域说明：root 代表省份；scope:holder 是省份的持有者；county 是省份所属的县级标题。
 	can_construct_potential = {
-		root = {
-			this = title:b_constantinople.title_province
-		}
+		this = title:b_constantinople.title_province
 	}
 	can_construct = {
-		root = {
-			this = title:b_constantinople.title_province
-		}
+		this = title:b_constantinople.title_province
 	}
 	
 	# 建筑的花费
@@ -372,14 +350,10 @@ super_wisdom_god_star_building_5 = {
 	# 如果 is_graphical_background = yes，则不使用此选项。
 	# 作用域说明：root 代表省份；scope:holder 是省份的持有者；county 是省份所属的县级标题。
 	can_construct_potential = {
-		root = {
-			this = title:b_constantinople.title_province
-		}
+		this = title:b_constantinople.title_province
 	}
 	can_construct = {
-		root = {
-			this = title:b_constantinople.title_province
-		}
+		this = title:b_constantinople.title_province
 	}
 	
 	# 建筑的花费
