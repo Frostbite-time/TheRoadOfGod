@@ -48,9 +48,9 @@ super_is_open_mod_helper = {
 	}
 }
 
-#对于超能之路经验的获取速度
+#对于超能之路经验的获取速度  ai
 super_get_lifestyle_xp_rate = { 
-	categories = {     #分类在difficult下
+	categories = {    
 		super_rule_group
 	}
 	default = super_get_lifestyle_xp_rate_low
@@ -76,6 +76,37 @@ super_get_lifestyle_xp_rate = {
 	}
 	super_get_lifestyle_xp_rate_super_high = {
 		apply_modifier = ai:super_lifestyle_xp_add_mult_modifier_20
+	}
+}
+
+#对于超能之路经验的获取速度  player
+super_get_lifestyle_xp_rate_player = { 
+	categories = {    
+		super_rule_group
+	}
+	default = super_get_lifestyle_xp_rate_low_player
+	super_get_lifestyle_xp_rate_same_player = {
+	}
+	super_get_lifestyle_xp_rate_low_player = {
+		apply_modifier = player:super_lifestyle_xp_add_mult_modifier_1
+	}
+	super_get_lifestyle_xp_rate_lower_mid_player = {
+		apply_modifier = player:super_lifestyle_xp_add_mult_modifier_2
+	}
+	super_get_lifestyle_xp_rate_mid_player = {
+		apply_modifier = player:super_lifestyle_xp_add_mult_modifier_3
+	}
+	super_get_lifestyle_xp_rate_lower_high_player = {
+		apply_modifier = player:super_lifestyle_xp_add_mult_modifier_4
+	}
+	super_get_lifestyle_xp_rate_high_player = {
+		apply_modifier = player:super_lifestyle_xp_add_mult_modifier_5
+	}
+	super_get_lifestyle_xp_rate_very_high_player = {
+		apply_modifier = player:super_lifestyle_xp_add_mult_modifier_10
+	}
+	super_get_lifestyle_xp_rate_super_high_player = {
+		apply_modifier = player:super_lifestyle_xp_add_mult_modifier_20
 	}
 }
 

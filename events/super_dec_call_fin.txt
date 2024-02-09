@@ -391,29 +391,7 @@ final_call_dec_events.0005 = {
 				}
 			}
 			1 = {
-				create_artifact = {
-					name = sage_stone_name
-					description = sage_stone_name_desc
-					type = miscellaneous
-					visuals = sage_stone
-					rarity = illustrious
-					modifier = artifact_health_gain_4_modifier
-					modifier = artifact_health_gain_4_modifier
-					modifier = artifact_health_gain_4_modifier
-					modifier = artifact_health_gain_4_modifier
-					modifier = artifact_health_gain_4_modifier
-					modifier = artifact_health_gain_4_modifier
-					modifier = artifact_health_gain_4_modifier
-					modifier = artifact_health_gain_4_modifier
-					modifier = artifact_health_gain_4_modifier
-					modifier = artifact_health_gain_4_modifier
-					modifier = artifact_health_gain_4_modifier
-					modifier = artifact_health_gain_4_modifier
-					modifier = sage_stone_modifier
-					wealth = 100
-					quality = 100
-					save_scope_as = newly_created_artifact
-				}
+				create_sage_stone = yes
 			}	
 		}	
 	}
@@ -433,29 +411,7 @@ final_call_dec_events.0006 = {
 		position = lower_left_portrait
 	}
 	immediate = {
-		create_artifact = {
-			name = sage_stone_name
-			description = sage_stone_name_desc
-			type = miscellaneous
-			visuals = sage_stone
-			rarity = illustrious
-			modifier = artifact_health_gain_4_modifier
-			modifier = artifact_health_gain_4_modifier
-			modifier = artifact_health_gain_4_modifier
-			modifier = artifact_health_gain_4_modifier
-			modifier = artifact_health_gain_4_modifier
-			modifier = artifact_health_gain_4_modifier
-			modifier = artifact_health_gain_4_modifier
-			modifier = artifact_health_gain_4_modifier
-			modifier = artifact_health_gain_4_modifier
-			modifier = artifact_health_gain_4_modifier
-			modifier = artifact_health_gain_4_modifier
-			modifier = artifact_health_gain_4_modifier
-			modifier = sage_stone_modifier
-			wealth = 100
-			quality = 100
-			save_scope_as = newly_created_artifact
-		}
+		create_sage_stone = yes
 	}
 	option = {
 		name = final_call_dec_events.0006.a

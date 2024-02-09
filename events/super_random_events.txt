@@ -183,7 +183,7 @@ super_knows_seed_events.0004 = {
 	}	
 
 	immediate = {
-		创造宝物_灵魂晶石 = yes
+		create_soul_stone = yes
 	}
 
 	option = {
@@ -735,7 +735,7 @@ super_unknow_fire_events.0004 = {			# 是否清缴邪教
 				killer = root
 			}
 		}
-		创造宝物_毁灭之火 = yes
+		create_black_fire = yes
 		add_character_flag = super_unknow_fire_events已经完成
 	}
 }
@@ -987,7 +987,7 @@ super_unknow_fire_events.0007 = {
 						limit = {
 							scope:sc_victor = root
 						}
-						创造宝物_毁灭之火 = yes
+						create_black_fire = yes
 					}
 					else = {
 						scope:邪火肆虐的伯爵领.duchy.holder = {
@@ -1030,7 +1030,7 @@ super_unknow_fire_events.0007 = {
 			limit = {
 				scope:sc_victor = root
 			}
-			创造宝物_毁灭之火 = yes
+			create_black_fire = yes
 		}
 		else = {
 			scope:神秘的黑衣人 =  {

@@ -1,5 +1,6 @@
 ﻿#圣血
 great_blood_traits = {
+	ruler_designer_cost = 50
 	health = 1.2		#健康加成	
 	fertility = 0.1		#生育率加成	
 	inherit_chance = 30    #遗传概率
@@ -18,6 +19,7 @@ great_blood_traits = {
 
 #全知者
 know_all_thing_traits = {
+	ruler_designer_cost = 200
 	random_creation = 2   #随机生成的携带概率   2代表百分之2
 	fame = yes #该特质为一个名声特质
 	health = 1
@@ -42,6 +44,7 @@ know_all_thing_traits = {
 
 #天使
 angel_traits = {
+	ruler_designer_cost = 400
 	health = 10		#健康加成		
 	random_creation = 1   #随机生成的携带概率   2代表百分之2
 	diplomacy = 10
@@ -66,6 +69,7 @@ angel_traits = {
 
 #神的恩赐
 the_gift_of_god = {
+	ruler_designer_cost = 200
 	health = 2		#健康加成
 	fertility = 0.2		#生育率加成	
 	random_creation = 2   #随机生成的携带概率   2代表百分之2
@@ -87,6 +91,7 @@ the_gift_of_god = {
 
 #肉身成圣
 saint_in_flesh_traits = {
+	ruler_designer_cost = 400
 	health = 10		#健康加成	
 	fertility = 0.2		#生育率加成	
 	inherit_chance = 1    #遗传概率
@@ -106,6 +111,7 @@ saint_in_flesh_traits = {
 
 #一代宗师
 a_patriarch = {	
+	ruler_designer_cost = 200
 	random_creation = 2   #随机生成的携带概率   2代表百分之2
 	stress_gain_mult = -0.1
 	stress_loss_mult = 0.1
@@ -126,6 +132,7 @@ a_patriarch = {
 
 #被爱戴者
 beloved_perk_trait = {
+	ruler_designer_cost = 200
 	random_creation = 2
 	ignore_negative_culture_opinion = yes
 	same_culture_opinion = 10
@@ -138,6 +145,7 @@ beloved_perk_trait = {
 
 #魔性
 devilishness = {
+	ruler_designer_cost = 400
 	random_creation = 1
 	health = 10	
 	prowess = 10
@@ -156,6 +164,7 @@ devilishness = {
 
 #神
 god_god = {
+	ruler_designer_cost = 1000
 	health = 200
 	diplomacy = 100
 	martial = 100
@@ -209,6 +218,7 @@ god_god = {
 
 #裂隙生物
 rift_organisms = {
+	ruler_designer_cost = 400
 	health = 20
 	martial = 20
 	prowess = 50
@@ -219,6 +229,7 @@ rift_organisms = {
 
 #邪神
 apostle_of_evil = {
+	ruler_designer_cost = 300
 	health = 15
 	diplomacy = 10
 	martial = 10
@@ -236,7 +247,7 @@ apostle_of_evil = {
 }
 #命运
 apostle_of_destiny = {
-	index = 1077
+	ruler_designer_cost = 300
 	health = 15
 	diplomacy = 15
 	martial = 15
@@ -254,6 +265,7 @@ apostle_of_destiny = {
 }
 #时间
 apostle_of_time = {
+	ruler_designer_cost = 300
 	health = 15
 	diplomacy = 15
 	martial = 15
@@ -271,6 +283,7 @@ apostle_of_time = {
 }
 #希望
 apostle_of_hope = {
+	ruler_designer_cost = 300
 	health = 15
 	diplomacy = 15
 	martial = 15
@@ -289,7 +302,7 @@ apostle_of_hope = {
 
 #传说
 the_legendary_trait = {
-	index = 1080
+	ruler_designer_cost = 100
 	health = 2
 	martial = 5
 	prowess = 10
@@ -300,6 +313,7 @@ the_legendary_trait = {
 
 #毁灭之火的供奉者
 毁灭之火的供奉者_特质 = {
+	ruler_designer_cost = 250
 	health = 10
 	martial = 10
 	prowess = 30

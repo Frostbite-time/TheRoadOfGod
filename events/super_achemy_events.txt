@@ -116,7 +116,7 @@ super_achemy.0004 = {
 		position = lower_right_portrait
 	}
 	immediate = {
-		创造宝物_贤者之石 = yes
+		create_sage_stone = yes
 	}
 	option = {
 		name = super_achemy.0004.a

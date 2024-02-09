@@ -462,32 +462,6 @@
 	}
 }
 
-创造宝物_贤者之石 = {
-	create_artifact = {
-		name = sage_stone_name
-		description = sage_stone_name_desc
-		type = miscellaneous
-		visuals = sage_stone
-		rarity = illustrious
-		modifier = artifact_health_gain_4_modifier
-		modifier = artifact_health_gain_4_modifier
-		modifier = artifact_health_gain_4_modifier
-		modifier = artifact_health_gain_4_modifier
-		modifier = artifact_health_gain_4_modifier
-		modifier = artifact_health_gain_4_modifier
-		modifier = artifact_health_gain_4_modifier
-		modifier = artifact_health_gain_4_modifier
-		modifier = artifact_health_gain_4_modifier
-		modifier = artifact_health_gain_4_modifier
-		modifier = artifact_health_gain_4_modifier
-		modifier = artifact_health_gain_4_modifier
-		modifier = sage_stone_modifier
-		wealth = 100
-		quality = 100
-		save_scope_as = newly_created_artifact
-	}
-}
-
 添加修正_宝物_高级 = {
 	hidden_effect = {
 		scope:newly_created_artifact = {

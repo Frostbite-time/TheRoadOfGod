@@ -94,6 +94,7 @@ bless_from_timegod_modifier = {
 
 #贤者之石特有修正
 sage_stone_modifier = {
+	health = 3
 	icon = magic_positive
 }
 

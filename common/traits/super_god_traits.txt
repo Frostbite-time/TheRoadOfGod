@@ -1,6 +1,6 @@
 ﻿#战争巨神
 super_war_god = {
-	index = 1081 	  #索引
+	ruler_designer_cost = 1000
 	#####神的基本属性#####
 	immortal = yes    #不朽
 	health = 200	  #健康	
@@ -52,7 +52,7 @@ super_war_god = {
 
 #暗影囚笼
 super_dark_god = {
-	index = 1082 	  #索引
+	ruler_designer_cost = 1000
 	#####神的基本属性#####
 	immortal = yes    #不朽
 	health = 200	  #健康	
@@ -106,7 +106,7 @@ super_dark_god = {
 
 #星海铭刻
 super_wisdom_god = {
-	index = 1083 	  #索引
+	ruler_designer_cost = 1000
 	#####神的基本属性#####
 	immortal = yes    #不朽
 	health = 200	  #健康	
@@ -152,7 +152,7 @@ super_wisdom_god = {
 
 #森林之心
 super_nature_god = {
-	index = 1084 	  #索引
+	ruler_designer_cost = 1000
 	#####神的基本属性#####
 	immortal = yes    #不朽
 	health = 200	  #健康	
@@ -206,7 +206,7 @@ super_nature_god = {
 
 #救世之手
 super_belief_god = {
-	index = 1085 	  #索引
+	ruler_designer_cost = 1000
 	#####神的基本属性#####
 	immortal = yes    #不朽
 	health = 200	  #健康	
@@ -250,7 +250,7 @@ super_belief_god = {
 
 #苍海领主
 super_sea_god = {
-	index = 1086 	  #索引
+	ruler_designer_cost = 1000
 	#####神的基本属性#####
 	immortal = yes    #不朽
 	health = 200	  #健康	
@@ -293,7 +293,7 @@ super_sea_god = {
 
 #命运终点
 super_destiny_god = {
-	index = 1087 	  #索引
+	ruler_designer_cost = 1000
 	#####神的基本属性#####
 	immortal = yes    #不朽
 	health = 200	  #健康	
@@ -329,7 +329,7 @@ super_destiny_god = {
 
 #时空之王
 super_time_god = {
-	index = 1088 	  #索引
+	ruler_designer_cost = 1000
 	#####神的基本属性#####
 	immortal = yes    #不朽
 	health = 200	  #健康	
@@ -366,7 +366,7 @@ super_time_god = {
 
 #希望之光
 super_sun_god = {
-	index = 1089 	  #索引
+	ruler_designer_cost = 1000
 	#####神的基本属性#####
 	immortal = yes    #不朽
 	health = 200	  #健康	
@@ -406,7 +406,7 @@ super_sun_god = {
 
 #统御者
 super_highlander_god = {
-	index = 1090 	  #索引
+	ruler_designer_cost = 1000
 	#####神的基本属性#####
 	immortal = yes    #不朽
 	health = 200	  #健康	
@@ -467,7 +467,7 @@ super_highlander_god = {
 
 #征服者
 super_fight_god = {
-	index = 1091 	  #索引
+	ruler_designer_cost = 1000
 	#####神的基本属性#####
 	immortal = yes    #不朽
 	health = 200	  #健康	
@@ -503,7 +503,7 @@ super_fight_god = {
 
 #方舟
 super_ark_god = {
-	index = 1092	  #索引
+	ruler_designer_cost = 1000
 	#####神的基本属性#####
 	immortal = yes    #不朽
 	health = 200	  #健康	

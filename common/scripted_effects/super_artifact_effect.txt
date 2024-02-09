@@ -1,5 +1,5 @@
 ﻿# 创造灵魂晶石
-创造宝物_灵魂晶石 = {
+create_soul_stone = {
 	create_artifact = {
 		name = soul_stone_name
 		description = soul_stone_desc
@@ -16,7 +16,8 @@
 	}
 }
 
-创造宝物_毁灭之火 = {
+# 创造毁灭之火
+create_black_fire = {
 	create_artifact = {
 		name = 毁灭之火_名称
 		description = 毁灭之火_描述
@@ -30,5 +31,20 @@
 		durability = 1000			#宝物耐久度
 		save_scope_as = newly_created_artifact	#将创建的宝物作为作用域  以便后面的事件使用（如果在事件的immediate中创造也可以直接被当前事件调用）
 		template = 毁灭之火_模板			#宝物模板  这个在artifacts/templates文件夹下定义  也可以用原版的  非必须 可以不写
+	}
+}
+
+# 创造宝物 贤者之石
+create_sage_stone = {
+	create_artifact = {
+		name = sage_stone_name
+		description = sage_stone_name_desc
+		type = miscellaneous
+		visuals = sage_stone
+		rarity = illustrious
+		modifier = sage_stone_modifier
+		wealth = 100
+		quality = 100
+		save_scope_as = newly_created_artifact
 	}
 }
