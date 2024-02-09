@@ -84,7 +84,7 @@ super_get_lifestyle_xp_rate_player = {
 	categories = {    
 		super_rule_group
 	}
-	default = super_get_lifestyle_xp_rate_low_player
+	default = super_get_lifestyle_xp_rate_same_player
 	super_get_lifestyle_xp_rate_same_player = {
 	}
 	super_get_lifestyle_xp_rate_low_player = {
