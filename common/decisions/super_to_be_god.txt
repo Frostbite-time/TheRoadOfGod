@@ -30,12 +30,12 @@ super_to_be_war_god = {
 	
 	is_shown = {       #显示决议的条件
 		是否拥有自然六神的神力 = no
-		has_trait = saint_in_flesh_traits
-				
+		角色有没有战神之甲 = yes	
 	}
 	is_valid = {
-		角色有没有战神之甲 = yes
+		
 		没有人拥有战争神力 = yes
+		has_trait = saint_in_flesh_traits
 	}
 		
 	ai_potential = {     #ai是否检测这个决议

@@ -69,6 +69,29 @@
 	}
 }
 
+has_mind_hook_to_target = {
+	OR = {
+		$CHARACTER$ = {
+			has_hook_of_type = {
+				target = $TARGET$
+				type = super_low_hook
+			}
+		}
+		$CHARACTER$ = {
+			has_hook_of_type = {
+				target = $TARGET$
+				type = super_mid_hook
+			}
+		}
+		$CHARACTER$ = {
+			has_hook_of_type = {
+				target = $TARGET$
+				type = super_high_hook
+			}
+		}
+	}
+}
+
 #用于计谋  角色是否被目标思想操纵
 是否被目标思想操纵_用于计谋 = {
 	scope:recipient = {

@@ -351,6 +351,12 @@ get_title_or_vass = {
 	on_accept = {
 		scope:actor = {
 			use_hook = scope:recipient
+			hidden_effect = {
+				remove_hook = {
+					target = scope:recipient
+					type = super_high_hook
+				}
+			}
 			add_hook_no_toast = {
 				target = scope:recipient
 				type = super_mid_hook
@@ -951,7 +957,11 @@ ask_to_pay_super = {
 		}
 	}
 
-	is_valid_showing_failures_only = {	
+	is_valid_showing_failures_only = {
+		has_mind_hook_to_target = {
+			CHARACTER = scope:actor
+			TARGET = scope:recipient
+		}
 	}
 
 	desc = ask_to_pay_super_desc
@@ -1023,7 +1033,7 @@ ask_to_pay_super = {
 					limit = {
 						has_perk = play_heart_and_mind
 					}
-					使得思维学者牵制可以使用3次 = yes
+					super_low_hook_use_three_times = yes
 				}
 			}
 		}

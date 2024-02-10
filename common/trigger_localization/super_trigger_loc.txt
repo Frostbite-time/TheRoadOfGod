@@ -119,3 +119,8 @@ is_player_or_ruler_more_duchy = {
     global = CAN_IS_PLAYER_OR_RULER_MORE_DUCHY
     global_not = NOT_CAN_IS_PLAYER_OR_RULER_MORE_DUCHY
 }
+
+has_mind_hook_to_target = {
+    global = CAN_HAS_MIND_HOOK_TO_TARGET
+    global_not = NOT_CAN_HAS_MIND_HOOK_TO_TARGET
+}
