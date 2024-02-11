@@ -504,6 +504,9 @@ super_khan_action = {
 		if = {
 			limit = {
 				has_game_rule = super_khan_invasion_time_early_1
+				NOT = {
+					has_global_variable = mongols_have_appeared
+				}
 				current_date > 1150.1.1
 			}
 			set_global_variable = {
@@ -518,6 +521,9 @@ super_khan_action = {
 		else_if = {
 			limit = {
 				has_game_rule = super_khan_invasion_time_early_2
+				NOT = {
+					has_global_variable = mongols_have_appeared
+				}
 				current_date > 1100.1.1
 			}
 			set_global_variable = {
@@ -532,6 +538,9 @@ super_khan_action = {
 		else_if = {
 			limit = {
 				has_game_rule = super_khan_invasion_time_early_3
+				NOT = {
+					has_global_variable = mongols_have_appeared
+				}
 				current_date > 1000.1.1
 			}
 			set_global_variable = {
@@ -551,6 +560,9 @@ super_khan_action_on_start = {
 		if = {
 			limit = {
 				has_game_rule = super_khan_invasion_time_early_on_start
+				NOT = {
+					has_global_variable = mongols_have_appeared
+				}
 			}
 			set_global_variable = {
 				name = mongols_have_appeared
