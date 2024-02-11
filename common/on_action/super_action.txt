@@ -195,16 +195,15 @@ super_faith_legendary_trait_pulse = {
 					}
 					prowess > 20
 				}
-				add_trait = the_legendary_trait
 				random_list = {
-					5 = {
+					10 = {
 						save_scope_as = legendary_knight
 						trigger_event = super_faith_event.0007
 						this.liege = {
 							trigger_event = super_faith_event.0008
 						}
 					}
-					95 = {}
+					90 = {}
 				}
 			}
 		}
