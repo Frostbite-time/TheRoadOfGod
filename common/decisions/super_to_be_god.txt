@@ -29,11 +29,11 @@ super_to_be_war_god = {
 	cooldown = { days = 1825 } #决议的冷却时间
 	
 	is_shown = {       #显示决议的条件
+		是否有使徒特质 = no
 		是否拥有自然六神的神力 = no
 		角色有没有战神之甲 = yes	
 	}
 	is_valid = {
-		
 		没有人拥有战争神力 = yes
 		has_trait = saint_in_flesh_traits
 	}
@@ -94,6 +94,7 @@ super_to_be_dark_god = {
 	cooldown = { days = 1825 } #决议的冷却时间
 	
 	is_shown = {       #显示决议的条件
+		是否有使徒特质 = no
 		是否拥有自然六神的神力 = no
 		has_trait = devilishness
 	}	
@@ -152,6 +153,7 @@ super_to_be_wisdom_god = {
 	cooldown = { days = 1825 } #决议的冷却时间
 	
 	is_shown = {       #显示决议的条件
+		是否有使徒特质 = no
 		是否拥有自然六神的神力 = no
 		any_directly_owned_province = {
 			has_building = super_wisdom_god_star_building_5
@@ -210,6 +212,7 @@ super_to_be_nature_god = {
 	cooldown = { days = 1825 } #决议的冷却时间
 	
 	is_shown = {       #显示决议的条件
+		是否有使徒特质 = no
 		是否拥有自然六神的神力 = no
 		has_trait = saint_in_flesh_traits
 		has_trait = angel_traits
@@ -316,6 +319,7 @@ super_to_be_blielif_god = {
 	cooldown = { days = 1825 } #决议的冷却时间
 	
 	is_shown = {       #显示决议的条件
+		是否有使徒特质 = no
 		是否拥有自然六神的神力 = no
 		faith = faith:super_belief_fa
 	}	
@@ -375,6 +379,7 @@ super_to_be_sea_god = {
 	cooldown = { days = 1825 } #决议的冷却时间
 	
 	is_shown = {       #显示决议的条件
+		是否有使徒特质 = no
 		是否拥有自然六神的神力 = no
 		any_character_artifact = {
 			has_artifact_modifier = sea_god_artifact_modifier

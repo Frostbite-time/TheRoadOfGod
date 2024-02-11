@@ -121,3 +121,22 @@ super_option_event_invasion = {
 	super_option_event_invasion_banned = {
 	}
 }
+
+# 有关大汗的入侵时间的游戏规则
+super_khan_invasion_time = {
+	categories = {     #分类在difficult下
+		super_rule_group
+	}
+	default = super_khan_invasion_time_normal
+	super_khan_invasion_time_normal = {
+	}
+	super_khan_invasion_time_early_1 = {
+	}
+	super_khan_invasion_time_early_2 = {
+	}
+	super_khan_invasion_time_early_3 = {
+	}
+	super_khan_invasion_time_early_on_start = {
+	}
+	
+}

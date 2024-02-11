@@ -84,9 +84,6 @@ super_be_nature_events.0004 = {
     title = super_be_nature_events.0004.t
     desc = super_be_nature_events.0004.desc
     theme = realm
-    override_background = {
-        reference = super_to_be_nature_god_4
-    }
     # other event details...
     left_portrait = scope:super_nature_god_now
     right_portrait = {
