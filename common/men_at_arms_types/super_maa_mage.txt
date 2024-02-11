@@ -21,8 +21,8 @@
 	buy_cost = {    #招募花费
 		gold = 100
 	}        
-	low_maintenance_cost = { gold = 1 } #最低维护费
-	high_maintenance_cost = { gold = 5 }#最高维护费
+	low_maintenance_cost = { gold = 0.5 } #最低维护费
+	high_maintenance_cost = { gold = 1.5 }#最高维护费
 	
 	stack = 80
 
@@ -55,8 +55,8 @@ super_maa_imperial_mage = {
 	buy_cost = {    #招募花费
 		gold = 150
 	}        
-	low_maintenance_cost = { gold = 1 } #最低维护费
-	high_maintenance_cost = { gold = 5 }#最高维护费
+	low_maintenance_cost = { gold = 0.5 } #最低维护费
+	high_maintenance_cost = { gold = 1.5 }#最高维护费
 	
 	stack = 80
 
@@ -75,6 +75,8 @@ super_maa_imperial_elite_mage = {
 	toughness = 50 #坚韧
 	pursuit = 30  #追击
 	screen = 30  #掩护
+	siege_value = 0.1
+	siege_tier = 3
 	
 	terrain_bonus = {    #地形加成
 		hills = { damage = 20 toughness = 20 }
@@ -91,8 +93,8 @@ super_maa_imperial_elite_mage = {
 	buy_cost = {    #招募花费
 		gold = 250
 	}        
-	low_maintenance_cost = { gold = 1.2 } #最低维护费
-	high_maintenance_cost = { gold = 6 }#最高维护费
+	low_maintenance_cost = { gold = 0.7 } #最低维护费
+	high_maintenance_cost = { gold = 3 }#最高维护费
 	
 	stack = 70
 
@@ -111,6 +113,8 @@ super_maa_legendary_mage = {
 	toughness = 80 #坚韧
 	pursuit = 80  #追击
 	screen = 80  #掩护
+	siege_value = 0.2
+	siege_tier = 4
 	
 	terrain_bonus = {    #地形加成
 		hills = { damage = 50 toughness = 40 }
@@ -127,8 +131,8 @@ super_maa_legendary_mage = {
 	buy_cost = {    #招募花费
 		gold = 500
 	}        
-	low_maintenance_cost = { gold = 2 } #最低维护费
-	high_maintenance_cost = { gold = 10 }#最高维护费
+	low_maintenance_cost = { gold = 1 } #最低维护费
+	high_maintenance_cost = { gold = 5 }#最高维护费
 	
 	stack = 60
 

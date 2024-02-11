@@ -25,8 +25,8 @@ war_god_maa_archers = {
 		piety = 500
 		prestige = 500
 	}        
-	low_maintenance_cost = { gold = 2 } #最低维护费
-	high_maintenance_cost = { gold = 10 }#最高维护费
+	low_maintenance_cost = { gold = 1 } #最低维护费
+	high_maintenance_cost = { gold = 5 }#最高维护费
 	
 	stack = 80
 	ai_quality = { value = god_of_war_maa_weight }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
@@ -57,8 +57,8 @@ war_god_maa_heavy_infantry = {
 		piety = 500
 		prestige = 500
 	}        
-	low_maintenance_cost = { gold = 2 } #最低维护费
-	high_maintenance_cost = { gold = 10 }#最高维护费
+	low_maintenance_cost = { gold = 1 } #最低维护费
+	high_maintenance_cost = { gold = 5 }#最高维护费
 	
 	stack = 80
 	ai_quality = { value = god_of_war_maa_weight }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
@@ -94,8 +94,8 @@ war_god_maa_heavy_cavalry = {
 		piety = 500
 		prestige = 500
 	}        
-	low_maintenance_cost = { gold = 2 } #最低维护费
-	high_maintenance_cost = { gold = 10 }#最高维护费
+	low_maintenance_cost = { gold = 1 } #最低维护费
+	high_maintenance_cost = { gold = 5 }#最高维护费
 	
 	stack = 80
 	ai_quality = { value = god_of_war_maa_weight }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
@@ -399,6 +399,8 @@ wise_god_high = {
 	toughness = 9000
 	pursuit = 4500
 	screen = 4500
+	siege_value = 5
+	siege_tier = 4
 	terrain_bonus = {
 	}
 	counters = {
@@ -424,6 +426,8 @@ war_god_low = {
 	toughness = 3000
 	pursuit = 1500
 	screen = 1500
+	siege_value = 7
+	siege_tier = 4
 	terrain_bonus = {
 	}
 	counters = {
@@ -454,6 +458,8 @@ war_god_high = {
 	toughness = 3000
 	pursuit = 1500
 	screen = 1500
+	siege_value = 2
+	siege_tier = 4
 	terrain_bonus = {
 	}
 	counters = {
@@ -565,6 +571,8 @@ nature_god_high = {
 	toughness = 9000
 	pursuit = 1000
 	screen = 9000
+	siege_value = 5
+	siege_tier = 4
 	terrain_bonus = {
 	}
 	counters = {
@@ -619,6 +627,8 @@ sea_god_high = {
 	toughness = 4000
 	pursuit = 3000
 	screen = 1000
+	siege_value = 3
+	siege_tier = 4
 	terrain_bonus = {
 	}
 	counters = {
@@ -674,6 +684,8 @@ belief_god_high = {
 	toughness = 1000
 	pursuit = 1000
 	screen = 300
+	siege_value = 0.3
+	siege_tier = 4
 	terrain_bonus = {
 	}
 	counters = {
@@ -729,6 +741,8 @@ hope_god_high = {
 	toughness = 0
 	pursuit = 9999
 	screen = 9999
+	siege_value = 2
+	siege_tier = 4
 	terrain_bonus = {
 	}
 	counters = {
@@ -755,6 +769,8 @@ time_god_low = {
 	toughness = 5000
 	pursuit = 8000
 	screen = 8000
+	siege_value = 1
+	siege_tier = 4
 	terrain_bonus = {
 	}
 	counters = {
@@ -811,6 +827,8 @@ destiny_god_low = {
 	toughness = 1200
 	pursuit = 750
 	screen = 750
+	siege_value = 0.3
+	siege_tier = 4
 	terrain_bonus = {
 	}
 	counters = {
@@ -889,6 +907,8 @@ ark_god_high = {
 	toughness = 9999
 	pursuit = 0
 	screen = 0
+	siege_value = 10
+	siege_tier = 4
 	terrain_bonus = {
 	}
 	counters = {
@@ -943,6 +963,8 @@ fight_god_high = {
 	toughness = 900
 	pursuit = 900
 	screen = 900
+	siege_value = 0.2
+	siege_tier = 4
 	terrain_bonus = {
 	}
 	counters = {
@@ -970,6 +992,8 @@ highlander_god_low = {
 	toughness = 3600
 	pursuit = 3600
 	screen = 3600
+	siege_value = 3
+	siege_tier = 4
 	terrain_bonus = {
 	}
 	counters = {
@@ -1002,6 +1026,8 @@ highlander_god_high = {
 	toughness = 99999
 	pursuit = 99999
 	screen = 99999
+	siege_value = 10
+	siege_tier = 4
 	terrain_bonus = {
 	}
 	counters = {
@@ -1049,8 +1075,8 @@ super_maa_dark_Inferno_mage = {
 		gold = 200
 	}
 
-	low_maintenance_cost = { gold = 2 }
-	high_maintenance_cost = { gold = 10 }
+	low_maintenance_cost = { gold = 1 }
+	high_maintenance_cost = { gold = 5 }
 
 	stack = 50
 	ai_quality = { value = god_of_war_maa_weight }

@@ -22,8 +22,8 @@
 	buy_cost = {    #招募花费
 		gold = 50
 	}        
-	low_maintenance_cost = { gold = 0.5 } #最低维护费
-	high_maintenance_cost = { gold = 2.5 }#最高维护费
+	low_maintenance_cost = { gold = 0.25 } #最低维护费
+	high_maintenance_cost = { gold = 1.25 }#最高维护费
 	
 	stack = 100
 
@@ -55,8 +55,8 @@ super_maa_skilled_fencer = {
 	buy_cost = {    #招募花费
 		gold = 100
 	}        
-	low_maintenance_cost = { gold = 1 } #最低维护费
-	high_maintenance_cost = { gold = 3 }#最高维护费
+	low_maintenance_cost = { gold = 0.5 } #最低维护费
+	high_maintenance_cost = { gold = 1.5 }#最高维护费
 	
 	stack = 100
 
@@ -91,8 +91,8 @@ super_maa_imperial_swordsman = {
 	buy_cost = {    #招募花费
 		gold = 150
 	}        
-	low_maintenance_cost = { gold = 1 } #最低维护费
-	high_maintenance_cost = { gold = 3.5 }#最高维护费
+	low_maintenance_cost = { gold = 0.6 } #最低维护费
+	high_maintenance_cost = { gold = 1.75 }#最高维护费
 	
 	stack = 100
 
@@ -127,8 +127,8 @@ super_maa_kensei = {
 	buy_cost = {    #招募花费
 		gold = 300
 	}        
-	low_maintenance_cost = { gold = 2 } #最低维护费
-	high_maintenance_cost = { gold = 10 }#最高维护费
+	low_maintenance_cost = { gold = 1 } #最低维护费
+	high_maintenance_cost = { gold = 5 }#最高维护费
 	
 	stack = 100
 

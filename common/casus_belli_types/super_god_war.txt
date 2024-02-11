@@ -4,7 +4,7 @@ god_arr_in = {
 
 	combine_into_one = yes
 	should_show_war_goal_subview = yes
-	mutually_exclusive_titles = { always = yes }
+	mutually_exclusive_titles = { always = no }
 
 	allowed_for_character = {
 	}
@@ -14,8 +14,9 @@ god_arr_in = {
 	
 	allowed_against_character = {
 	}
-	target_titles = all
-	target_title_tier = kingdom
+
+	target_titles = neighbor_land_or_water
+	target_title_tier = empire
 	target_de_jure_regions_above = yes
 	ignore_effect = change_title_holder
 
@@ -30,12 +31,7 @@ god_arr_in = {
 	}
 
 	valid_to_start = {
-		scope:target = {
-			any_in_de_jure_hierarchy = {
-				tier = tier_county
-				neighboring_county_or_viking_conquest_trigger = { CHARACTER = root }
-			}
-		}
+		always = yes
 	}
 
 	should_invalidate = {
