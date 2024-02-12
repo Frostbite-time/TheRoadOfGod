@@ -1702,6 +1702,7 @@ negotiate_alliance_interaction = {
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------
+# 要求臣服
 offer_vassalization_interaction = {
 	category = interaction_category_vassal
 	icon = icon_vassal
@@ -1751,7 +1752,7 @@ offer_vassalization_interaction = {
 	ai_accept = {
 		base = -50
 
-		modifier = {
+		modifier = {	# _super_ 修改在此处
 			scope:actor = {
 				OR = {
 					has_hook_of_type = {
@@ -1761,6 +1762,22 @@ offer_vassalization_interaction = {
 				}	
 			}
 			add = 600
+		}
+
+		modifier = {
+			scope:actor = {
+				是否是神 = yes
+				is_ai = no
+			}
+			add = 50
+		}
+
+		modifier = {
+			scope:actor = {
+				是否是神 = yes
+				is_ai = yes
+			}
+			add = 100
 		}
 		
 		#MAIN
@@ -2650,6 +2667,7 @@ offer_vassalization_interaction = {
 }
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
+# 邀请来宫廷
 invite_to_court_interaction = {
 	category = interaction_category_vassal
 	icon = guest
@@ -3150,6 +3168,7 @@ invite_to_court_interaction = {
 	send_options_exclusive = no
 }
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
+# 安排婚姻
 arrange_marriage_interaction = {
 	icon = icon_marriage
 	category = interaction_category_diplomacy
@@ -4165,6 +4184,7 @@ arrange_marriage_interaction = {
 }
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------
+# 请求绝罚
 request_excommunication_interaction = {
 	category = interaction_category_hostile
 	icon = excommunication
@@ -4438,6 +4458,7 @@ request_excommunication_interaction = {
 
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------
+# 请求宣称
 hof_ask_for_claim_interaction = {
 	category = interaction_category_diplomacy
 	icon = religious_claim
@@ -5080,6 +5101,7 @@ hof_ask_for_claim_interaction = {
 
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
+# 剥夺宣称
 revoke_title_interaction = {
 
 	category = interaction_category_vassal
@@ -5928,6 +5950,7 @@ revoke_title_interaction = {
 
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
+# 谋杀
 start_murder_interaction = {
 	icon = icon_hostile
 	common_interaction = yes
@@ -6091,6 +6114,7 @@ start_murder_interaction = {
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
+# 收回封臣
 retract_vassal_interaction = {
 	category = interaction_category_vassal
 	special_interaction = retract_vassal_interaction
@@ -6833,6 +6857,7 @@ retract_vassal_interaction = {
 
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------
+# 宣战
 declare_war_interaction = {
 	category = interaction_category_diplomacy
 	common_interaction = yes
