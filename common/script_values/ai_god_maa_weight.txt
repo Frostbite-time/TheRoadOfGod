@@ -1,11 +1,11 @@
 ﻿god_of_war_maa_weight = {
-	value = 250
+	value = 200
 }
 
 gods_maa_weight = {
-	value = 1000
+	value = 666
 }
 
 super_剑客权重值 = {
-	value = 200
+	value = 150
 }
