@@ -9,3 +9,7 @@ gods_maa_weight = {
 super_剑客权重值 = {
 	value = 150
 }
+
+super_siege_wieght = {
+	value = 140
+}

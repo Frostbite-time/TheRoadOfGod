@@ -1,0 +1,45 @@
+﻿super_maa_arrow_siege = { 
+	type = siege_weapon   #兵士种类
+
+	can_recruit = {
+		primary_title = {
+			tier >= tier_kingdom
+		}
+	}
+
+	siege_value = 3
+	siege_tier = 4
+
+	buy_cost = {    #招募花费
+		gold = 350
+	}        
+	low_maintenance_cost = { gold = 0.5 } #最低维护费
+	high_maintenance_cost = { gold = 2 }#最高维护费
+	
+	stack = 5
+
+	ai_quality = { value = super_siege_wieght }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
+}
+
+super_maa_mage_stone_throw = { 
+	type = siege_weapon   #兵士种类
+	
+	can_recruit = {
+		primary_title = {
+			tier >= tier_duchy
+		}
+	}
+
+	siege_value = 2
+	siege_tier = 4
+	
+	buy_cost = {    #招募花费
+		gold = 200
+	}        
+	low_maintenance_cost = { gold = 0.3 } #最低维护费
+	high_maintenance_cost = { gold = 1.5 }#最高维护费
+	
+	stack = 5
+
+	ai_quality = { value = super_siege_wieght }  #ai对于兵种的权重，具体位置在\common\script_values文件夹中
+}

@@ -396,6 +396,26 @@ texticon = {
 	}
 }
 
+texticon = {
+	icon = super_maa_arrow_siege_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/super_maa_arrow_siege.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = super_maa_mage_stone_throw_icon
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/super_maa_mage_stone_throw.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
 
 
 
