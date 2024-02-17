@@ -7,6 +7,9 @@
 		}
 	}
 
+	damage = 10
+	toughness = 20 #坚韧
+
 	siege_value = 3
 	siege_tier = 4
 
@@ -29,6 +32,9 @@ super_maa_mage_stone_throw = {
 			tier >= tier_duchy
 		}
 	}
+
+	damage = 10
+	toughness = 30 #坚韧
 
 	siege_value = 2
 	siege_tier = 4
