@@ -286,6 +286,7 @@ final_call_dec_events.0005 = {
 						name = wealth
 						value = 100
 					}
+					get_artifact_feature_references_effect = yes
 				}
 			}
 			10 = {
@@ -315,6 +316,7 @@ final_call_dec_events.0005 = {
 						name = wealth
 						value = 100
 					}
+					get_artifact_feature_references_effect = yes
 				}
 			}
 			10 = {
@@ -344,6 +346,7 @@ final_call_dec_events.0005 = {
 						name = wealth
 						value = 100
 					}
+					get_artifact_feature_references_effect = yes
 				}
 			}
 			10 = {
@@ -373,6 +376,7 @@ final_call_dec_events.0005 = {
 						name = wealth
 						value = 100
 					}
+					get_artifact_feature_references_effect = yes
 				}
 			}
 			10 = {
@@ -402,6 +406,7 @@ final_call_dec_events.0005 = {
 						name = wealth
 						value = 100
 					}
+					get_artifact_feature_references_effect = yes
 				}
 			}
 			10 = {
@@ -432,6 +437,7 @@ final_call_dec_events.0005 = {
 						name = wealth
 						value = 100
 					}
+					get_artifact_feature_references_effect = yes
 				}
 				modifier = {
 					add = -10
@@ -472,6 +478,7 @@ final_call_dec_events.0005 = {
 						name = wealth
 						value = 100
 					}
+					get_artifact_feature_references_effect = yes
 				}
 			}
 			1 = {

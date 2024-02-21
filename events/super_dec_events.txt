@@ -6279,6 +6279,7 @@ run_and_zhui.0132 = {
 									name = wealth
 									value = 100
 								}
+								get_artifact_feature_references_effect = yes
 							}
 						}
                         20 = {death = natural}

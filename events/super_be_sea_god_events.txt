@@ -39,6 +39,7 @@ super_be_sea_god_events.0001 = {
                     name = wealth
                     value = 300
                 }
+                get_artifact_feature_references_effect = yes
             }
         }    
     }

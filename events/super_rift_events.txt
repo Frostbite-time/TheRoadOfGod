@@ -731,6 +731,7 @@ rift_events_world.0007 = {
 								name = wealth
 								value = 100
 							}
+							get_artifact_feature_references_effect = yes
 						}
 					}
 					10 = {

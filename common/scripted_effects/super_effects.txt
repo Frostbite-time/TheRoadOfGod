@@ -31,6 +31,7 @@ create_1_level_alchemy_artifact = {
 			name = wealth
 			value = 25
 		}
+		get_artifact_feature_references_effect = yes
 	}
 	hidden_effect = {
 		scope:newly_created_artifact = {
@@ -151,6 +152,7 @@ create_2_level_alchemy_artifact = {
 			name = wealth
 			value = 50
 		}
+		get_artifact_feature_references_effect = yes
 	}
 	hidden_effect = {
 		scope:newly_created_artifact = {
@@ -335,6 +337,7 @@ create_3_level_alchemy_artifact = {
 			name = wealth
 			value = 80
 		}
+		get_artifact_feature_references_effect = yes
 	}
 	hidden_effect = {
 		scope:newly_created_artifact = {

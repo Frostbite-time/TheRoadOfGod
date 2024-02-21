@@ -23,6 +23,7 @@ create_soul_stone = {
 			name = wealth
 			value = 120
 		}
+		get_artifact_feature_references_effect = yes
 	}
 }
 
@@ -52,6 +53,7 @@ create_black_fire = {
 			name = wealth
 			value = 100
 		}
+		get_artifact_feature_references_effect = yes
 	}
 }
 
@@ -79,5 +81,6 @@ create_sage_stone = {
 			name = wealth
 			value = 100
 		}
+		get_artifact_feature_references_effect = yes
 	}
 }

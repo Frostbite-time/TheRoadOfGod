@@ -41,6 +41,7 @@ fixed_war_arm.0001 = {
 					name = wealth
 					value = 300
 				}
+				get_artifact_feature_references_effect = yes
 			}
 		}	
 	}

@@ -25,6 +25,7 @@ create_liexi_sword = {
 			name = wealth
 			value = 75
 		}
+		get_artifact_feature_references_effect = yes
 	}
 }
 
