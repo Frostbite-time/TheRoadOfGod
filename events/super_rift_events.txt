@@ -700,6 +700,7 @@ rift_events_world.0007 = {
 			hidden_effect = {
 				random_list = {
 					2 = {
+						save_scope_as = owner
 						create_artifact = {
 							name = the_book_of_the_dead
 							description = the_book_of_the_dead_desc

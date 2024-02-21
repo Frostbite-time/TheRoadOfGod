@@ -183,6 +183,7 @@ super_knows_seed_events.0004 = {
 	}	
 
 	immediate = {
+		save_scope_as = owner
 		create_soul_stone = yes
 	}
 
@@ -1214,7 +1215,7 @@ super_unknow_fire_events.0010 = {
 
 	option = {
 		name = super_unknow_fire_events.0010.1
-		custom_tooltip = super_unknow_fire_events.0010.1.提醒
+		custom_tooltip = super_unknow_fire_events.0010.1.tt
 		add_character_flag = 已经提醒过super_unknow_fire_events
 		trigger_event = {
 			id = super_unknow_fire_events.0011
@@ -1323,7 +1324,7 @@ super_visit_from_belief_events.0001 = {
 
 	option = {
 		name = super_visit_from_belief_events.0001.1	#选择信仰
-		custom_tooltip = super_visit_from_belief_events.0001.1.选择信仰
+		custom_tooltip = super_visit_from_belief_events.0001.1.tt
 		root = {
 			set_character_faith_with_conversion = faith:super_belief_fa
 		}

@@ -260,6 +260,7 @@ final_call_dec_events.0005 = {
 	immediate = {
 		random_list = {
 			10 = {
+				save_scope_as = owner
 				create_artifact = {
 					name = holy_sword_call
 					description = holy_sword_call_desc
@@ -277,6 +278,7 @@ final_call_dec_events.0005 = {
 				}
 			}
 			10 = {
+				save_scope_as = owner
 				create_artifact = {
 					name = dream_sword_call
 					description = dream_sword_call_desc
@@ -294,6 +296,7 @@ final_call_dec_events.0005 = {
 				}
 			}
 			10 = {
+				save_scope_as = owner
 				create_artifact = {
 					name = chaos_chopper_call
 					description = chaos_chopper_call_desc
@@ -311,6 +314,7 @@ final_call_dec_events.0005 = {
 				}
 			}
 			10 = {
+				save_scope_as = owner
 				create_artifact = {
 					name = carved_armour_call
 					description = carved_armour_call_desc
@@ -328,6 +332,7 @@ final_call_dec_events.0005 = {
 				}
 			}
 			10 = {
+				save_scope_as = owner
 				create_artifact = {
 					name = brave_armour_call
 					description = brave_armour_call_desc
@@ -345,6 +350,7 @@ final_call_dec_events.0005 = {
 				}
 			}
 			10 = {
+				save_scope_as = owner
 				create_artifact = {
 					name = leaders_call
 					description = leaders_call_desc
@@ -369,6 +375,7 @@ final_call_dec_events.0005 = {
 				}
 			}
 			1 = {
+				save_scope_as = owner
 				create_artifact = {
 					name = the_book_of_the_dead
 					description = the_book_of_the_dead_desc

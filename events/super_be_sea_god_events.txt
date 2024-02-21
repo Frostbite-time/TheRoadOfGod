@@ -14,6 +14,7 @@ super_be_sea_god_events.0001 = {
     left_portrait = root
     immediate = {
         root = {
+            save_scope_as = owner
             create_artifact = {
                 name = neptune_scepter_name
                 description = neptune_scepter_desc

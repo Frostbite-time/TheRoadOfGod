@@ -1,6 +1,6 @@
 ﻿# 創造裂隙之剑
 create_liexi_sword = {
-
+	save_scope_as = owner
 	create_artifact = {
 		name = liexi_sword
 		description = liexi_sword_desc

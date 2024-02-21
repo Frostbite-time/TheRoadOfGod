@@ -18,6 +18,7 @@ create_soul_stone = {
 
 # 创造毁灭之火
 create_black_fire = {
+	save_scope_as = owner
 	create_artifact = {
 		name = super_black_fire_name
 		description = super_black_fire_desc
@@ -36,6 +37,7 @@ create_black_fire = {
 
 # 创造宝物 贤者之石
 create_sage_stone = {
+	save_scope_as = owner
 	create_artifact = {
 		name = sage_stone_name
 		description = sage_stone_name_desc

@@ -9,6 +9,7 @@
 }
 
 create_1_level_alchemy_artifact = {
+	save_scope_as = owner
 	create_artifact = {
 		name = alchemy_artifact_1
 		description = alchemy_artifact_1_desc
@@ -117,6 +118,7 @@ create_1_level_alchemy_artifact = {
 }
 
 create_2_level_alchemy_artifact = {
+	save_scope_as = owner
 	create_artifact = {
 		name = alchemy_artifact_2
 		description = alchemy_artifact_2_desc
@@ -289,6 +291,7 @@ create_2_level_alchemy_artifact = {
 }
 
 create_3_level_alchemy_artifact = {
+	save_scope_as = owner
 	create_artifact = {
 		name = alchemy_artifact_3
 		description = alchemy_artifact_3_desc

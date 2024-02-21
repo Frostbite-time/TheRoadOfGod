@@ -16,6 +16,7 @@ fixed_war_arm.0001 = {
 			destory_all_lead_armor = yes
 		}
 		root = {  #创造的宝物会被这个作用域角色获得
+			save_scope_as = owner
 			create_artifact = {  #创建宝物
 				name = war_arm  			#宝物名称 这是一个本地化键
 				description = war_arm_desc	#宝物描述 这是一个本地化键
