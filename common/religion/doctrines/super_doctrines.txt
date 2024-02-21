@@ -36,7 +36,7 @@ doctrine_super = { # The key will be used for the doctrine icon, combined with t
 			stewardship = 2
 			diplomacy = 2
 		}		# 这个信仰的所有角色都得到这个修改器
-		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+		#doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
 
 		traits = {}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。
 	}
@@ -67,7 +67,7 @@ doctrine_super = { # The key will be used for the doctrine icon, combined with t
 			embarkation_cost_mult = -0.5
 			no_water_crossing_penalty = yes
 		}		# 这个信仰的所有角色都得到这个修改器
-		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+		#doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
 
 		traits = {}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。
 	}
@@ -98,7 +98,7 @@ doctrine_super = { # The key will be used for the doctrine icon, combined with t
 			tyranny_gain_mult = -1
 			tyranny_loss_mult = 1
 		}		# 这个信仰的所有角色都得到这个修改器
-		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+		#doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
 
 		traits = {}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。
 	}
@@ -130,7 +130,7 @@ doctrine_super = { # The key will be used for the doctrine icon, combined with t
 			forest_advantage = 30
 			siege_phase_time = -0.1
 		}		# 这个信仰的所有角色都得到这个修改器
-		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+		#doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
 
 		traits = {
 
@@ -162,7 +162,7 @@ doctrine_super = { # The key will be used for the doctrine icon, combined with t
 		character_modifier = {
 			
 		}		# 这个信仰的所有角色都得到这个修改器
-		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+		#doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
 
 		traits = {
 
@@ -194,7 +194,7 @@ doctrine_super = { # The key will be used for the doctrine icon, combined with t
 		character_modifier = {
 			opinion_of_same_faith = 30
 		}		# 这个信仰的所有角色都得到这个修改器
-		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+		#doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
 
 		traits = {
 
@@ -228,7 +228,7 @@ doctrine_super = { # The key will be used for the doctrine icon, combined with t
 		character_modifier = {
 			
 		}		# 这个信仰的所有角色都得到这个修改器
-		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+		#doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
 
 		traits = {
 
@@ -262,7 +262,7 @@ doctrine_super = { # The key will be used for the doctrine icon, combined with t
 		character_modifier = {
 			
 		}		# 这个信仰的所有角色都得到这个修改器
-		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+		#doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
 
 		traits = {
 
@@ -292,7 +292,7 @@ doctrine_super = { # The key will be used for the doctrine icon, combined with t
 		character_modifier = {
 			
 		}		# 这个信仰的所有角色都得到这个修改器
-		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+		#doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
 
 		traits = {
 
@@ -323,7 +323,7 @@ doctrine_super = { # The key will be used for the doctrine icon, combined with t
 		character_modifier = {
 			archers_max_size_add = 3
 		}		# 这个信仰的所有角色都得到这个修改器
-		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+		#doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
 
 		traits = {
 
@@ -356,7 +356,7 @@ doctrine_super = { # The key will be used for the doctrine icon, combined with t
 			vassal_tax_contribution_mult = -0.2
 			vassal_levy_contribution_mult = -0.2
 		}		# 这个信仰的所有角色都得到这个修改器
-		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+		#doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
 
 		traits = {
 
@@ -387,7 +387,7 @@ doctrine_super = { # The key will be used for the doctrine icon, combined with t
 			owned_hostile_scheme_success_chance_add = 10
 			ai_vengefulness = 10
 		}		# 这个信仰的所有角色都得到这些修正
-		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+		#doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
 
 		traits = {
 			sins = {beloved_perk_trait}
@@ -419,7 +419,7 @@ doctrine_super = { # The key will be used for the doctrine icon, combined with t
 			learning = 10
 			life_expectancy = 30
 		}		# 这个信仰的所有角色都得到这些修正
-		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+		#doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
 
 		traits = {
 		}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。
@@ -454,7 +454,7 @@ doctrine_super = { # The key will be used for the doctrine icon, combined with t
 			army_maintenance_mult = -0.25
 
 		}		# 这个信仰的所有角色都得到这些修正
-		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+		#doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
 
 		traits = {
 		}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。
@@ -489,7 +489,7 @@ doctrine_super = { # The key will be used for the doctrine icon, combined with t
 			learning = 5
 			prowess = 5
 		}		# 这个信仰的所有角色都得到这些修正
-		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+		#doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
 
 		traits = {
 		}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。
@@ -518,7 +518,7 @@ doctrine_super = { # The key will be used for the doctrine icon, combined with t
 		character_modifier = {
 			knight_effectiveness_mult = 1
 		}		# 这个信仰的所有角色都得到这些修正
-		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+		#doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
 
 		traits = {
 			virtues = {
@@ -549,7 +549,7 @@ doctrine_super = { # The key will be used for the doctrine icon, combined with t
 		character_modifier = {
 			knight_effectiveness_mult = 0.2
 		}		# 这个信仰的所有角色都得到这些修正
-		doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
+		#doctrine_character_modifier = {} # 如果这个信仰也有指定的教义，那么这个信仰的所有角色都会得到这个修饰。
 
 		traits = {
 		}			# 添加额外的罪孽/美德。见_religions.info中的traits。如果一个特征在宗教中已经是一种罪过或美德，则该教义优先。

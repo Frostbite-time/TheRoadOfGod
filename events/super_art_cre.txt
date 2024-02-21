@@ -481,6 +481,7 @@ super_art_cr_sup.0005 = {
 						root.var:super_times_of_artifact_rise >= 3
 					}
 					reforge_artifact = {
+						type = axe
 						rarity = illustrious
 						quality = 150
 						wealth = 150
@@ -501,6 +502,7 @@ super_art_cr_sup.0005 = {
 						root.var:super_times_of_artifact_rise >= 2
 					}
 					reforge_artifact = {
+						type = axe
 						rarity = illustrious
 						quality = 110
 						wealth = 110
@@ -519,6 +521,7 @@ super_art_cr_sup.0005 = {
 						root.var:super_times_of_artifact_rise >= 1
 					}
 					reforge_artifact = {
+						type = axe
 						rarity = famed
 						wealth = 68
 						quality = 68
@@ -534,15 +537,16 @@ super_art_cr_sup.0005 = {
 				}
 				else_if = {
 					reforge_artifact = {
+						type = axe
 						rarity = masterwork
-						save_scope_value_as = {
-							name = quality
-							value = 30
-						}
-						save_scope_value_as = {
-							name = wealth
-							value = 30
-						}
+					}
+					save_scope_value_as = {
+						name = quality
+						value = 30
+					}
+					save_scope_value_as = {
+						name = wealth
+						value = 30
 					}
 				}
 			}

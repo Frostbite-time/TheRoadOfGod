@@ -21,7 +21,6 @@ great_blood_traits = {
 know_all_thing_traits = {
 	ruler_designer_cost = 200
 	random_creation = 2   #随机生成的携带概率   2代表百分之2
-	fame = yes #该特质为一个名声特质
 	health = 1
 	diplomacy = 5
 	martial = 5
