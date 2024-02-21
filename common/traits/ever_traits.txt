@@ -312,7 +312,7 @@ the_legendary_trait = {
 }
 
 #毁灭之火的供奉者
-毁灭之火的供奉者_特质 = {
+super_black_fire_believer = {
 	ruler_designer_cost = 250
 	health = 10
 	martial = 10

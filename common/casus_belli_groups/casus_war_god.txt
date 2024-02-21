@@ -1,7 +1,7 @@
 ﻿#神国降临  宣战理由
 god_kingdom_arrive_in = {
 	allowed_for_character = {
-		角色是不是神_接受参数 = {
+		is_god_parament = {
 			CHARACTER = this
 		}
 	}

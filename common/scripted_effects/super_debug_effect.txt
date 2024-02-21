@@ -5,7 +5,7 @@
 #
 #
 
-获得所有超能之路技能 = {         #给予所有的超能之路技能
+get_all_superlife_perk = {         #给予所有的超能之路技能
 	add_perk = first_of_learn
 	add_perk = long_life
 	add_perk = call_to_God
@@ -51,14 +51,14 @@
 }
 
 #给予三大主特质
-得到三大主特质 = {
+get_three_main_trait = {
 	add_trait = devilishness
 	add_trait = saint_in_flesh_traits
 	add_trait = angel_traits
 }
 
 #成为随机一个神的使徒
-随机成为一个神明的使徒 = {
+get_random_apostle_trait = {
 	random_list = {
 		1 = {add_trait = apostle_of_evil}
 		1 = {add_trait = apostle_of_destiny}

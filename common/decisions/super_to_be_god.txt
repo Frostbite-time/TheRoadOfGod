@@ -29,12 +29,12 @@ super_to_be_war_god = {
 	cooldown = { days = 1825 } #决议的冷却时间
 	
 	is_shown = {       #显示决议的条件
-		是否有使徒特质 = no
-		是否拥有自然六神的神力 = no
-		角色有没有战神之甲 = yes	
+		has_apostle_trait = no
+		has_nature_god_trait = no
+		has_war_god_armor = yes	
 	}
 	is_valid = {
-		没有人拥有战争神力 = yes
+		none_is_war_god = yes
 		has_trait = saint_in_flesh_traits
 	}
 		
@@ -94,15 +94,15 @@ super_to_be_dark_god = {
 	cooldown = { days = 1825 } #决议的冷却时间
 	
 	is_shown = {       #显示决议的条件
-		是否有使徒特质 = no
-		是否拥有自然六神的神力 = no
+		has_apostle_trait = no
+		has_nature_god_trait = no
 		has_trait = devilishness
 	}	
 
 	is_valid = {
-		没有人拥有暗影神力 = yes		
-		暗影之神成神条件_囚犯数量 = yes
-		是否有贤者之石 = yes
+		none_is_dark_god = yes		
+		is_enough_prisoners_for_dark = yes
+		has_sage_stone = yes
 		trigger_if = {
 			limit = {
 				is_ai = no
@@ -129,7 +129,7 @@ super_to_be_dark_god = {
 				days = { 2 3 }
 			}
 		}
-		摧毁宝物_贤者之石 =yes	
+		destory_sage_stone =yes	
 	}
 }
 
@@ -153,8 +153,8 @@ super_to_be_wisdom_god = {
 	cooldown = { days = 1825 } #决议的冷却时间
 	
 	is_shown = {       #显示决议的条件
-		是否有使徒特质 = no
-		是否拥有自然六神的神力 = no
+		has_apostle_trait = no
+		has_nature_god_trait = no
 		any_directly_owned_province = {
 			has_building = super_wisdom_god_star_building_5
 		}
@@ -162,7 +162,7 @@ super_to_be_wisdom_god = {
 	
 	is_valid = {
 		has_trait = angel_traits
-		没有人拥有智慧神力 = yes
+		none_is_wisdom_god = yes
 	}
 
 	ai_potential = {     #ai是否检测这个决议
@@ -212,62 +212,62 @@ super_to_be_nature_god = {
 	cooldown = { days = 1825 } #决议的冷却时间
 	
 	is_shown = {       #显示决议的条件
-		是否有使徒特质 = no
-		是否拥有自然六神的神力 = no
+		has_apostle_trait = no
+		has_nature_god_trait = no
 		has_trait = saint_in_flesh_traits
 		has_trait = angel_traits
 	}	
 
 	is_valid = {
-		没有人拥有森林神力 = yes
-		是否有贤者之石 = yes
+		none_is_forest_god = yes
+		has_sage_stone = yes
 		trigger_if = {
 			limit = { 
 				is_ai = yes
 			}
-			至少拥有5个直属森林男爵领 = yes
+			has_five_diecrt_forest_barony = yes
 		}
 		trigger_else_if = {
 			limit = {
 				has_game_rule = super_5_forest_be_god
 			}
-			至少拥有5个直属森林男爵领 = yes
+			has_five_diecrt_forest_barony = yes
 		}
 		trigger_else_if = {
 			limit = {
 				has_game_rule = super_10_forest_be_god
 			}
-			至少拥有10个直属森林男爵领 = yes
+			has_ten_diecrt_forest_barony = yes
 		}
 		trigger_else_if = {
 			limit = {
 				has_game_rule = super_12_forest_be_god
 			}
-			至少拥有12个直属森林男爵领 = yes
+			has_twelve_diecrt_forest_barony = yes
 		}
 		trigger_else_if = {
 			limit = {
 				has_game_rule = super_15_forest_be_god
 			}
-			至少拥有15个直属森林男爵领 = yes
+			has_fifteen_diecrt_forest_barony = yes
 		}
 		trigger_else_if = {
 			limit = {
 				has_game_rule = super_20_forest_be_god
 			}
-			至少拥有20个直属森林男爵领 = yes
+			has_twenty_diecrt_forest_barony = yes
 		}
 		trigger_else_if = {
 			limit = {
 				has_game_rule = super_25_forest_be_god
 			}
-			至少拥有25个直属森林男爵领 = yes
+			has_twentyfive_diecrt_forest_barony = yes
 		}
 		trigger_else = {
 			limit = {
 				has_game_rule = super_30_forest_be_god
 			}
-			至少拥有30个直属森林男爵领 = yes
+			has_thirty_diecrt_forest_barony = yes
 		}
 	}
 	
@@ -286,7 +286,7 @@ super_to_be_nature_god = {
 				days = { 2 3 }
 			}
 		}
-		摧毁宝物_贤者之石 =yes	
+		destory_sage_stone =yes	
 	}
 }
 
@@ -319,16 +319,16 @@ super_to_be_blielif_god = {
 	cooldown = { days = 1825 } #决议的冷却时间
 	
 	is_shown = {       #显示决议的条件
-		是否有使徒特质 = no
-		是否拥有自然六神的神力 = no
+		has_apostle_trait = no
+		has_nature_god_trait = no
 		faith = faith:super_belief_fa
 	}	
 
 	is_valid = {
-		没有人拥有生灵神力 = yes
-		是否有贤者之石 = yes
+		none_is_mind_god = yes
+		has_sage_stone = yes
 		has_trait = angel_traits
-		生灵之神教会至少拥有200块伯爵领信仰 = yes
+		mind_god_has_200_county_believe = yes
 	}
 	
 	ai_potential = {     #ai是否检测这个决议
@@ -346,7 +346,7 @@ super_to_be_blielif_god = {
 				days = { 2 3 }
 			}
 		}
-		摧毁宝物_贤者之石 =yes	
+		destory_sage_stone =yes	
 	}
 }
 
@@ -379,8 +379,8 @@ super_to_be_sea_god = {
 	cooldown = { days = 1825 } #决议的冷却时间
 	
 	is_shown = {       #显示决议的条件
-		是否有使徒特质 = no
-		是否拥有自然六神的神力 = no
+		has_apostle_trait = no
+		has_nature_god_trait = no
 		any_character_artifact = {
 			has_artifact_modifier = sea_god_artifact_modifier
 		}
@@ -388,8 +388,8 @@ super_to_be_sea_god = {
 	}	
 
 	is_valid = {
-		没有人拥有海洋神力 = yes
-		是否有贤者之石 = yes
+		none_is_sea_god = yes
+		has_sage_stone = yes
 		has_trait = saint_in_flesh_traits
 	}
 	
@@ -408,6 +408,6 @@ super_to_be_sea_god = {
 				days = { 2 3 }
 			}
 		}
-		摧毁宝物_贤者之石 =yes	
+		destory_sage_stone =yes	
 	}
 }

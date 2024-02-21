@@ -8,108 +8,108 @@ cant_murder_tips_1 = {
     global = CANT_MURDER_TIPS_1
 }
 #拥有已经修复的战神之甲
-角色有没有战神之甲 = {
+has_war_god_armor = {
     global_not = NOT_CAN_HAS_WAR_ARM_FIXED
     global = CAN_HAS_WAR_ARM_FIXED  
 }
 #该角色是否拥有自然六神神力
-是否拥有自然六神的神力 = {
+has_nature_god_trait = {
     global_not = NOT_CAN_IS_STAR_POWER_GOD
     global = CAN_IS_STAR_POWER_GOD   
 }
 #战争神力是否未被占据
-没有人拥有战争神力 = {
+none_is_war_god = {
     global_not = NOT_CAN_IS_ANYONE_WAR_GOD
     global = CAN_IS_ANYONE_WAR_GOD  
 }
 #森林神力是否未被占据
-没有人拥有森林神力 = {
+none_is_forest_god = {
     global = CAN_IS_ANYONE_NATURE_GOD
     global_not = NOT_CAN_IS_ANYONE_NATURE_GOD
 }
 #暗影神力是否未被占据
-没有人拥有暗影神力 = {
+none_is_dark_god = {
     global = CAN_IS_ANYONE_DARK_GOD
     global_not = NOT_CAN_IS_ANYONE_DARK_GOD
 }
 #智慧神力是否未被占据
-没有人拥有智慧神力 = {
+none_is_wisdom_god = {
     global = CAN_IS_ANYONE_WISDOM_GOD
     global_not = NOT_CAN_IS_ANYONE_WISDOM_GOD
 }
 #生灵神力是否未被占据
-没有人拥有生灵神力 = {
+none_is_mind_god = {
     global = CAN_IS_ANYONE_BELIEF_GOD
     global_not = NOT_CAN_IS_ANYONE_BELIEF_GOD
 }
 #海洋神力是否未被占据
-没有人拥有海洋神力 = {
+none_is_sea_god = {
     global = CAN_IS_ANYONE_SEA_GOD
     global_not = NOT_CAN_IS_ANYONE_SEA_GOD
 }
 #是否拥有五十个以上囚犯
-暗影之神成神条件_囚犯数量 = {
+is_enough_prisoners_for_dark = {
     global = CAN_IS_HAVE_FIFTY_PRISONER
     global_not = NOT_CAN_IS_HAVE_FIFTY_PRISONER
 }
 #是否拥有贤者之石
-是否有贤者之石 = {
+has_sage_stone = {
     global = CAN_IS_HAVE_SAGE_STONE
     global_not = NOT_CAN_IS_HAVE_SAGE_STONE
 }
 #至少拥有5个直属森林男爵领
-至少拥有5个直属森林男爵领 = {
+has_five_diecrt_forest_barony = {
     global = CAN_HAS_LEAST_FIVE_FOEST_PROVINCE
 }
 #至少拥有10个直属森林男爵领
-至少拥有10个直属森林男爵领 = {
+has_ten_diecrt_forest_barony = {
     global = CAN_HAS_LEAST_TEN_FOEST_PROVINCE
 }
 #至少拥有12个直属森林男爵领
-至少拥有12个直属森林男爵领 = {
+has_twelve_diecrt_forest_barony = {
     global = CAN_HAS_LEAST_TWELVE_FOEST_PROVINCE
 }
 #至少拥有15个直属森林男爵领
-至少拥有15个直属森林男爵领 = {
+has_fifteen_diecrt_forest_barony = {
     global = CAN_HAS_LEAST_FIFTEEN_FOEST_PROVINCE
 }
 #至少拥有20个直属森林男爵领
-至少拥有20个直属森林男爵领 = {
+has_twenty_diecrt_forest_barony = {
     global = CAN_HAS_LEAST_TWENTY_FOEST_PROVINCE
 }
 #至少拥有25个直属森林男爵领
-至少拥有25个直属森林男爵领 = {
+has_twentyfive_diecrt_forest_barony = {
     global = CAN_HAS_LEAST_TWENTYFIVE_FOEST_PROVINCE
 }
 #至少拥有30个直属森林男爵领
-至少拥有30个直属森林男爵领 = {
+has_thirty_diecrt_forest_barony = {
     global = CAN_HAS_LEAST_THIRTY_FOEST_PROVINCE
 }
 #至少200个伯爵领信仰 生灵之神教会 
-生灵之神教会至少拥有200块伯爵领信仰 = {
+mind_god_has_200_county_believe = {
     global = CAN_SUPER_AT_LEAST_TWO_HUNDREDS_COUNTY_FAITH_BELIEF_FA
 }
 
 # 拥有灵魂晶石
-是否有灵魂晶石 = {
+has_soul_stone = {
     global = CAN_IS_HAVE_SOUL_STONE
     global_not = NOT_CAN_IS_HAVE_SOUL_STONE
 }
 
 # 该角色十分强大
-是否拥有足够强大的实力 = {
+is_character_powerful = {
     global = CAN_IS_POWERFUL_SUPER_ONE
     global_not = NOT_CAN_IS_POWERFUL_SUPER_ONE
 }
 
 # 角色是否装备有灵魂晶石
-是否装备了灵魂晶石 = {
+is_equie_soul_stone = {
     global = CAN_IS_EQUIQ_SOUL_STONE
     global_not = NOT_CAN_IS_EQUIQ_SOUL_STONE
 }
 
 # 该角色是神
-是否是神 = {
+is_god = {
     global = CAN_IS_CHARACTER_GOD
     global_not = NOT_CAN_IS_CHARACTER_GOD
 }

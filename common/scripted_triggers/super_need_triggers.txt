@@ -1,32 +1,32 @@
 ﻿#检测角色是否拥有贤者之石
-是否有贤者之石 = {
+has_sage_stone = {
 	any_character_artifact = {
 		has_artifact_modifier = sage_stone_modifier
 	}
 }
 
 # 检测角色是否拥有灵魂晶石
-是否有灵魂晶石 = {
+has_soul_stone = {
 	any_character_artifact = {
 		has_artifact_modifier = soul_stone_modifier
 	}
 }
 
 # 检测角色是否装备了灵魂晶石
-是否装备了灵魂晶石 = {
+is_equie_soul_stone = {
 	any_equipped_character_artifact = {
 		has_artifact_modifier = soul_stone_modifier
 	}
 }
 #检测角色是否拥有十个以上的囚犯
-是否拥有十个以上的囚犯 = {
+has_ten_prisoner = {
 	AND = {
 		any_prisoner = { count >= 10 }
 	}
 }
 
 #检测角色是否有5个以上囚犯
-是否有5个以上囚犯 = {
+has_five_prisoner = {
 	AND = {
 		any_prisoner = { count >= 5 }
 	}
@@ -34,7 +34,7 @@
 
 
 #角色是否拥有任何高级特质
-是否拥有三大特质之一 = {
+has_a_main_super_trait = {
 	OR = {
 		has_trait = angel_traits
 		has_trait = saint_in_flesh_traits
@@ -43,14 +43,14 @@
 }
 
 #角色是否是神
-是否是神 = {
-	角色是不是神_接受参数 = {
+is_god = {
+	is_god_parament = {
 		CHARACTER = this
 	}
 }
 
-#角色是否拥有强力技能特质
-是否拥有强力技能或特质 = {
+#角色是否拥有强力技能
+has_powerful_perk = {
 	OR = {
 		has_perk = konw_all_thing
 		has_perk = holy_warriorss
@@ -60,7 +60,7 @@
 }
 
 #角色有使徒特质
-是否有使徒特质 = {
+has_apostle_trait = {
 	OR = {
 		has_trait = apostle_of_destiny
 		has_trait = apostle_of_hope
@@ -93,7 +93,7 @@ has_mind_hook_to_target = {
 }
 
 #用于计谋  角色是否被目标思想操纵
-是否被目标思想操纵_用于计谋 = {
+is_powerful_mind_hooked_by_target = {
 	scope:recipient = {
 		OR = {
 			has_hook_of_type = {
@@ -109,7 +109,7 @@ has_mind_hook_to_target = {
 }
 
 #用于检测角色是不是神  输入一个角色作用域 如果是神，返回真
-角色是不是神_接受参数 = {
+is_god_parament = {
 	$CHARACTER$ = {
 		OR = {
 			has_trait = super_war_god
@@ -130,14 +130,14 @@ has_mind_hook_to_target = {
 }
 
 #用于检测角色有没有战神之甲
-角色有没有战神之甲 = {
+has_war_god_armor = {
 	any_character_artifact = {
 		has_artifact_modifier =  war_aromr_modifier
 	}
 }
 
 #检查是否拥有自然六神的神力
-是否拥有自然六神的神力 = {
+has_nature_god_trait = {
 	OR = {
 		has_trait = super_war_god
 		has_trait = super_dark_god
@@ -149,20 +149,20 @@ has_mind_hook_to_target = {
 }
 
 # 角色是否拥有足够强大的实力
-是否拥有足够强大的实力 = {
+is_character_powerful = {
 	OR = {
-		角色有没有战神之甲 = yes
-		是否是神 = yes
-		是否有使徒特质 = yes
-		是否拥有三大特质之一 = yes
-		是否拥有强力技能或特质 = yes
+		has_war_god_armor = yes
+		is_god = yes
+		has_apostle_trait = yes
+		has_a_main_super_trait = yes
+		has_powerful_perk = yes
 	}
 }
 
 #检查地图上是否有其他人拥有自然神力--------------------------------------------------------
 
 #战争
-没有人拥有战争神力 = {
+none_is_war_god = {
 	NOT = {	
 		any_living_character = {
 			has_trait = super_war_god
@@ -170,7 +170,7 @@ has_mind_hook_to_target = {
 	}	
 }
 #森林
-没有人拥有森林神力 = {
+none_is_forest_god = {
 	NOT = {
 		any_living_character = {
 			has_trait = super_nature_god
@@ -178,7 +178,7 @@ has_mind_hook_to_target = {
 	}	
 }
 #智慧
-没有人拥有智慧神力 = {
+none_is_wisdom_god = {
 	NOT = {
 		any_living_character = {
 			has_trait = super_wisdom_god
@@ -186,7 +186,7 @@ has_mind_hook_to_target = {
 	}
 }
 #黑暗
-没有人拥有暗影神力 = {
+none_is_dark_god = {
 	NOT = {
 		any_living_character = {
 			has_trait = super_dark_god
@@ -194,7 +194,7 @@ has_mind_hook_to_target = {
 	}	
 }
 #信仰
-没有人拥有生灵神力 = {
+none_is_mind_god = {
 	NOT = {
 		any_living_character = {
 			has_trait = super_belief_god
@@ -202,7 +202,7 @@ has_mind_hook_to_target = {
 	}	
 }
 #海洋
-没有人拥有海洋神力 = {
+none_is_sea_god = {
 	NOT = {
 		any_living_character = {
 			has_trait = super_sea_god
@@ -212,7 +212,7 @@ has_mind_hook_to_target = {
 #---------------------------------------------------------------------------------------
 
 #专为成为暗影之神准备的触发器
-暗影之神成神条件_囚犯数量 = {
+is_enough_prisoners_for_dark = {
 	trigger_if = {
 		limit = {
 			is_ai = no
@@ -225,7 +225,7 @@ has_mind_hook_to_target = {
 }
 
 #至少拥有5个直属森林男爵领
-至少拥有5个直属森林男爵领 = {
+has_five_diecrt_forest_barony = {
 	OR = {
 		any_directly_owned_province = {
 			count >= 5
@@ -243,7 +243,7 @@ has_mind_hook_to_target = {
 }	
 
 #至少拥有10个直属森林男爵领
-至少拥有10个直属森林男爵领 = {
+has_ten_diecrt_forest_barony = {
 	OR = {
 		any_directly_owned_province = {
 			count >= 10
@@ -261,7 +261,7 @@ has_mind_hook_to_target = {
 }
 
 #至少拥有12个直属森林男爵领
-至少拥有12个直属森林男爵领 = {
+has_twelve_diecrt_forest_barony = {
 	OR = {
 		any_directly_owned_province = {
 			count >= 12
@@ -279,7 +279,7 @@ has_mind_hook_to_target = {
 }
 
 #至少拥有15个直属森林男爵领
-至少拥有15个直属森林男爵领 = {
+has_fifteen_diecrt_forest_barony = {
 	OR = {
 		any_directly_owned_province = {
 			count >= 15
@@ -297,7 +297,7 @@ has_mind_hook_to_target = {
 }
 
 #至少拥有20个直属森林男爵领
-至少拥有20个直属森林男爵领 = {
+has_twenty_diecrt_forest_barony = {
 	OR = {
 		any_directly_owned_province = {
 			count >= 20
@@ -315,7 +315,7 @@ has_mind_hook_to_target = {
 }
 
 #至少拥有25个直属森林男爵领
-至少拥有25个直属森林男爵领 = {
+has_twentyfive_diecrt_forest_barony = {
 	OR = {
 		any_directly_owned_province = {
 			count >= 25
@@ -333,7 +333,7 @@ has_mind_hook_to_target = {
 }
 
 #至少拥有30个直属森林男爵领
-至少拥有30个直属森林男爵领 = {
+has_thirty_diecrt_forest_barony = {
 	OR = {
 		any_directly_owned_province = {
 			count >= 30
@@ -351,19 +351,21 @@ has_mind_hook_to_target = {
 }
 
 #至少有200个伯爵领信仰 生灵之神教会
-生灵之神教会至少拥有200块伯爵领信仰 = {
+mind_god_has_200_county_believe = {
 	faith:super_belief_fa = {
 		num_county_followers >= 200
 	}
 }
 
-是否拥有毁灭之火 = {
+# 是否拥有毁灭之火
+has_black_fire = {
 	any_character_artifact = {
 		has_artifact_modifier = dark_fire_modifier
 	}
 }
 
-是否有超能之路生活方式重心 = {
+# 是否拥有超能之路生活方式
+has_super_life_focus = {
 	OR = {
 		has_focus = super_perk_focus_learning
 		has_focus = super_perk_focus_power

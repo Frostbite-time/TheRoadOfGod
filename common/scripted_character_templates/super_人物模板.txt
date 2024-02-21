@@ -1,7 +1,7 @@
 ﻿黑衣人_毁灭之火持有者 = {
 	age = { 30 60 }
 	gender = male
-	trait = 毁灭之火的供奉者_特质
+	trait = super_black_fire_believer
 	random_traits_list = {
 		count = 1
 		education_intrigue_2 = {}

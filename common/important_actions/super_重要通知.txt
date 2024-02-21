@@ -4,7 +4,7 @@
 		
 		if = {
 			limit = {
-				是否有超能之路生活方式重心 = yes
+				has_super_life_focus = yes
 				perk_points > 0
 				is_adult = yes
 			}

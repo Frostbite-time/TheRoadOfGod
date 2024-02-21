@@ -41,7 +41,7 @@ super_low_hook_use_three_times = {
 }
 
 #要求对方交出头衔并成为附庸
-要求对方交出头衔并成为附庸_在互动可用 = {
+demand_target_title_and_be_vassal_use_by_interaction = {
 	create_title_and_vassal_change = {
 		type = swear_fealty
 		save_scope_as = change
@@ -52,7 +52,7 @@ super_low_hook_use_three_times = {
 				tier = tier_empire
 			}
 		}
-		获取对方的一个封臣和这个封臣的主头衔_在互动可用 = yes
+		get_a_vassal_and_title_use_by_interaction = yes
 	}
 	else_if = {
 		limit = {
@@ -118,7 +118,7 @@ super_low_hook_use_three_times = {
 }
 
 #获取对方的一个封臣和这个封臣的主头衔
-获取对方的一个封臣和这个封臣的主头衔_在互动可用 = {
+get_a_vassal_and_title_use_by_interaction = {
 	scope:recipient = {
 		random_powerful_vassal = {
 			save_scope_as = pow_use
@@ -188,7 +188,7 @@ super_low_hook_use_three_times = {
 }
 
 #用于唤神事件的头衔转变
-要求对方交出头衔并成为附庸_仅用于召唤神明的事件链 = {
+demand_target_title_and_be_vassal_use_by_call_god_event = {
 	create_title_and_vassal_change = {
 		type = swear_fealty
 		save_scope_as = change
@@ -199,7 +199,7 @@ super_low_hook_use_three_times = {
 				tier = tier_empire
 			}
 		}
-		获取对方的一个封臣和这个封臣的主头衔_在互动可用 = yes
+		get_a_vassal_and_title_use_by_interaction = yes
 	}
 	else_if = {
 		limit = {

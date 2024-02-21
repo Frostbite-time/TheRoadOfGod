@@ -184,7 +184,7 @@ be_angel_event.0009 = {
 				title = perk_interaction.0101.victor_toast.t
 				left_icon = scope:sc_victor
 				right_icon = scope:sc_loser
-				show_as_tooltip = { 摆脱使徒身份的决斗效果 = yes }
+				show_as_tooltip = { out_aposlte_duel_effect = yes }
 			}
 		}
 		# And to the loser.
@@ -193,11 +193,11 @@ be_angel_event.0009 = {
 				title = perk_interaction.0101.loser_toast.t
 				left_icon = scope:sc_loser
 				right_icon = scope:sc_victor
-				show_as_tooltip = { 摆脱使徒身份的决斗效果 = yes }
+				show_as_tooltip = { out_aposlte_duel_effect = yes }
 			}
 		}
 		# Then execute the actual effects.
-		摆脱使徒身份的决斗效果 = yes
+		out_aposlte_duel_effect = yes
 	}
 }
 #摆脱使徒的身份   成功逃跑
@@ -208,7 +208,7 @@ be_angel_event.0010 = {
 	theme = death        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
 	left_portrait = root		#让角色出现在左边
 	immediate = {
-		移除所有种类的使徒特质 = yes
+		remove_all_apostle_trait = yes
 		add_character_modifier = hit_from_evilgod_modifier
 	}
 	option = {

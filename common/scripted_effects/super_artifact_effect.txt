@@ -19,10 +19,10 @@ create_soul_stone = {
 # 创造毁灭之火
 create_black_fire = {
 	create_artifact = {
-		name = 毁灭之火_名称
-		description = 毁灭之火_描述
+		name = super_black_fire_name
+		description = super_black_fire_desc
 		type = miscellaneous
-		visuals = 毁灭之火_图标
+		visuals = super_black_fire_icon
 		rarity = illustrious
 		modifier = dark_fire_modifier
 		wealth = 100
@@ -30,7 +30,7 @@ create_black_fire = {
 		max_durability = 1000		#宝物最大耐久度
 		durability = 1000			#宝物耐久度
 		save_scope_as = newly_created_artifact	#将创建的宝物作为作用域  以便后面的事件使用（如果在事件的immediate中创造也可以直接被当前事件调用）
-		template = 毁灭之火_模板			#宝物模板  这个在artifacts/templates文件夹下定义  也可以用原版的  非必须 可以不写
+		template = super_black_fire_template			#宝物模板  这个在artifacts/templates文件夹下定义  也可以用原版的  非必须 可以不写
 	}
 }
 

@@ -161,7 +161,7 @@ start_rift_murder_interaction = {
 		}
 		scope:recipient = { NOT = { has_strong_hook = scope:actor } }
 		NOT = {
-			角色是不是神_接受参数 = {
+			is_god_parament = {
 				CHARACTER = scope:recipient
 			}
 		}
@@ -259,7 +259,7 @@ start_rift_murder_interaction = {
 						}
 						modifier = {
 							factor = 0
-							角色是不是神_接受参数 = {
+							is_god_parament = {
 								CHARACTER = scope:recipient
 							}
 						}
@@ -373,7 +373,7 @@ get_title_or_vass = {
 				trigger_event = thelast.0002
 			}
 		}
-		要求对方交出头衔并成为附庸_在互动可用 = yes
+		demand_target_title_and_be_vassal_use_by_interaction = yes
 	}
 }
 
@@ -1089,7 +1089,7 @@ run_out_hook = {
 		modifier = {
 			add = 60
 			scope:actor = {
-				是否拥有三大特质之一 = yes
+				has_a_main_super_trait = yes
 			}	
 		}
 		modifier = {

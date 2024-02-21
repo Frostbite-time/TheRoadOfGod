@@ -10,7 +10,7 @@ final_call_dec_events.0001 = {
 	option = {
 		name = final_call_dec_events.0001.a   #如果主角是神的话
 		trigger = {
-			角色是不是神_接受参数 = {
+			is_god_parament = {
 				CHARACTER = this
 			}
 		}
@@ -20,7 +20,7 @@ final_call_dec_events.0001 = {
 		name = final_call_dec_events.0001.b
 		trigger = {
 			NOT = {
-				角色是不是神_接受参数 = {
+				is_god_parament = {
 					CHARACTER = this
 				}
 			}	
@@ -69,7 +69,7 @@ final_call_dec_events.0001 = {
 		name = final_call_dec_events.0001.c
 		trigger = {
 			NOT = {
-				角色是不是神_接受参数 = {
+				is_god_parament = {
 					CHARACTER = this
 				}
 			}	

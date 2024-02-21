@@ -34,14 +34,14 @@ super_take_his_soul = {
 	is_shown = {
 		NOT = { scope:recipient = scope:actor }
 		scope:actor = {
-			是否装备了灵魂晶石 = yes
+			is_equie_soul_stone = yes
 		}
 	}
 
 	is_valid_showing_failures_only = {
 		NOT = {
 			scope:recipient = {
-				是否拥有足够强大的实力 = yes
+				is_character_powerful = yes
 			}
 		}		
 	}
@@ -59,9 +59,9 @@ super_take_his_soul = {
 }
 
 # 使用毁灭之火
-使用毁灭之火 = {
+super_use_black_fire_interaction = {
 	icon = icon_hostile
-	desc = 使用毁灭之火_描述
+	desc = super_use_black_fire_interaction_desc
 	common_interaction = yes
 	interface_priority = 90
 	category = interaction_category_hostile
@@ -94,7 +94,7 @@ super_take_his_soul = {
 	is_shown = {
 		NOT = { scope:recipient = scope:actor }
 		scope:actor = {
-			是否拥有毁灭之火 = yes
+			has_black_fire = yes
 		}
 	}
 
@@ -119,7 +119,7 @@ super_take_his_soul = {
 					save_scope_as = 被焚毁的公国
 				}
 			}
-			毁灭之火_焚烧小王国 = yes
+			super_black_fire_destory_duchy = yes
 		}
 
 		every_living_character = {

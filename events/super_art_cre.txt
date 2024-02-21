@@ -11,7 +11,7 @@ super_art_cr_sup.0001 = {
 		name = super_art_cr_sup.0001.a     #王冠
 		root = {
 			set_variable = {
-				name = 神器类型
+				name = super_create_artifact_type
 				value = 1
 			}
 			remove_short_term_gold = {
@@ -32,7 +32,7 @@ super_art_cr_sup.0001 = {
 		name = super_art_cr_sup.0001.b     #武器
 		root = {
 			set_variable = {
-				name = 神器类型
+				name = super_create_artifact_type
 				value = 2
 			}
 			remove_short_term_gold = {
@@ -53,7 +53,7 @@ super_art_cr_sup.0001 = {
 		name = super_art_cr_sup.0001.c     #护甲
 		root = {
 			set_variable = {
-				name = 神器类型
+				name = super_create_artifact_type
 				value = 3
 			}
 			remove_short_term_gold = {
@@ -80,7 +80,7 @@ super_art_cr_sup.0002 = {
 	immediate = {
 		root = {
 			set_variable = {
-				name = 神器宝物提升次数
+				name = super_times_of_artifact_rise
 				value = 0
 			}
 		}
@@ -90,7 +90,7 @@ super_art_cr_sup.0002 = {
 		name = super_art_cr_sup.0002.a
 		root = {
 			change_variable = {
-				name = 神器宝物提升次数
+				name = super_times_of_artifact_rise
 				add = 1
 			}
 			remove_short_term_gold = {
@@ -127,7 +127,7 @@ super_art_cr_sup.0002 = {
 		name = super_art_cr_sup.0002.b
 		root = {
 			change_variable = {
-				name = 神器宝物提升次数
+				name = super_times_of_artifact_rise
 				add = 1
 			}
 			add_piety = {
@@ -164,7 +164,7 @@ super_art_cr_sup.0002 = {
 		name = super_art_cr_sup.0002.c
 		root = {
 			change_variable = {
-				name = 神器宝物提升次数
+				name = super_times_of_artifact_rise
 				add = 1
 			}
 			add_prestige = {
@@ -218,7 +218,7 @@ super_art_cr_sup.0003 = {
 		name = super_art_cr_sup.0003.a
 		root = {
 			change_variable = {
-				name = 神器宝物提升次数
+				name = super_times_of_artifact_rise
 				add = 1
 			}
 			add_stress = {
@@ -237,7 +237,7 @@ super_art_cr_sup.0003 = {
 				}
 				modifier = {
 					trigger_if = {
-						limit = { 是否有贤者之石 = yes }
+						limit = { has_sage_stone = yes }
 					}
 					add = 50
 				}
@@ -255,7 +255,7 @@ super_art_cr_sup.0003 = {
 		name = super_art_cr_sup.0003.b
 		root = {
 			change_variable = {
-				name = 神器宝物提升次数
+				name = super_times_of_artifact_rise
 				add = 1
 			}
 			remove_short_term_gold = {
@@ -274,7 +274,7 @@ super_art_cr_sup.0003 = {
 				}
 				modifier = {
 					trigger_if = {
-						limit = { 是否有贤者之石 = yes }
+						limit = { has_sage_stone = yes }
 					}
 					add = 50
 				}
@@ -292,7 +292,7 @@ super_art_cr_sup.0003 = {
 		name = super_art_cr_sup.0003.c
 		root = {
 			change_variable = {
-				name = 神器宝物提升次数
+				name = super_times_of_artifact_rise
 				add = 1
 			}
 			add_prestige = {
@@ -311,7 +311,7 @@ super_art_cr_sup.0003 = {
 				}
 				modifier = {
 					trigger_if = {
-						limit = { 是否有贤者之石 = yes }
+						limit = { has_sage_stone = yes }
 					}
 					add = 50
 				}
@@ -345,10 +345,10 @@ super_art_cr_sup.0004 = {
 		name = super_art_cr_sup.0004.a
 		root = {
 			change_variable = {
-				name = 神器宝物提升次数
+				name = super_times_of_artifact_rise
 				add = 1
 			}
-			摧毁宝物_贤者之石 =yes
+			destory_sage_stone =yes
 		}
 		trigger_event = {
 			id = super_art_cr_sup.0005
@@ -367,15 +367,11 @@ super_art_cr_sup.0004 = {
 #生成实际的宝物
 super_art_cr_sup.0005 = {
 	type = character_event
-	title = super_art_cr_sup.0005.t
-	desc = super_art_cr_sup.0005.desc
-	theme = realm
-	right_portrait = root
-	artifact = {
-		target = scope:newly_created_artifact
-		position = lower_left_portrait
-	}
+	hidden = yes
 	immediate = {
+		root = {
+			save_scope_as = owner
+		}
 		create_artifact = {
 			name = shen_qi
 			description = shen_qi_desc
@@ -388,181 +384,197 @@ super_art_cr_sup.0005 = {
 			save_scope_as = newly_created_artifact
 		}
 		scope:newly_created_artifact = {
-			添加修正_宝物_中级 = yes
+			add_mid_modifier_to_artifact = yes
 		}
-		scope:newly_created_artifact = {   #为工艺品设置名称
-			if = {
-				limit = {
-					root.var:神器类型 = 1
-				}
+		hidden_effect = {
+			scope:newly_created_artifact = {   #为工艺品设置名称
 				if = {
 					limit = {
-						root.var:神器宝物提升次数 >= 3
+						root.var:super_create_artifact_type = 1
 					}
-					set_artifact_name = shen_guan_4
+					if = {
+						limit = {
+							root.var:super_times_of_artifact_rise >= 3
+						}
+						set_artifact_name = shen_guan_4
+					}
+					else_if = {
+						limit = {
+							root.var:super_times_of_artifact_rise >= 2
+						}
+						set_artifact_name = shen_guan_3
+					}
+					else_if = {
+						limit = {
+							root.var:super_times_of_artifact_rise >= 1
+						}
+						set_artifact_name = shen_guan_2
+					}
+					else_if = {
+						set_artifact_name = shen_guan_1
+					}
 				}
 				else_if = {
 					limit = {
-						root.var:神器宝物提升次数 >= 2
+						root.var:super_create_artifact_type = 2
 					}
-					set_artifact_name = shen_guan_3
+					if = {
+						limit = {
+							root.var:super_times_of_artifact_rise >= 3
+						}
+						set_artifact_name = shen_wu_4
+					}
+					else_if = {
+						limit = {
+							root.var:super_times_of_artifact_rise >= 2
+						}
+						set_artifact_name = shen_wu_3
+					}
+					else_if = {
+						limit = {
+							root.var:super_times_of_artifact_rise >= 1
+						}
+						set_artifact_name = shen_wu_2
+					}
+					else_if = {
+						set_artifact_name = shen_wu_1
+					}
 				}
 				else_if = {
 					limit = {
-						root.var:神器宝物提升次数 >= 1
+						root.var:super_create_artifact_type = 3
 					}
-					set_artifact_name = shen_guan_2
-				}
-				else_if = {
-					set_artifact_name = shen_guan_1
+					if = {
+						limit = {
+							root.var:super_times_of_artifact_rise >= 3
+						}
+						set_artifact_name = shen_jia_4
+					}
+					else_if = {
+						limit = {
+							root.var:super_times_of_artifact_rise >= 2
+						}
+						set_artifact_name = shen_jia_3
+					}
+					else_if = {
+						limit = {
+							root.var:super_times_of_artifact_rise >= 1
+						}
+						set_artifact_name = shen_jia_2
+					}
+					else_if = {
+						set_artifact_name = shen_jia_1
+					}
 				}
 			}
-			else_if = {
-				limit = {
-					root.var:神器类型 = 2
-				}
+			scope:newly_created_artifact = {    #设置稀有度等级
 				if = {
 					limit = {
-						root.var:神器宝物提升次数 >= 3
+						root.var:super_times_of_artifact_rise >= 3
 					}
-					set_artifact_name = shen_wu_4
+					reforge_artifact = {
+						rarity = illustrious
+						quality = 150
+						wealth = 150
+					}
 				}
 				else_if = {
 					limit = {
-						root.var:神器宝物提升次数 >= 2
+						root.var:super_times_of_artifact_rise >= 2
 					}
-					set_artifact_name = shen_wu_3
+					reforge_artifact = {
+						rarity = illustrious
+						quality = 110
+						wealth = 110
+					}
 				}
 				else_if = {
 					limit = {
-						root.var:神器宝物提升次数 >= 1
+						root.var:super_times_of_artifact_rise >= 1
 					}
-					set_artifact_name = shen_wu_2
-				}
-				else_if = {
-					set_artifact_name = shen_wu_1
-				}
-			}
-			else_if = {
-				limit = {
-					root.var:神器类型 = 3
-				}
-				if = {
-					limit = {
-						root.var:神器宝物提升次数 >= 3
-					}
-					set_artifact_name = shen_jia_4
-				}
-				else_if = {
-					limit = {
-						root.var:神器宝物提升次数 >= 2
-					}
-					set_artifact_name = shen_jia_3
-				}
-				else_if = {
-					limit = {
-						root.var:神器宝物提升次数 >= 1
-					}
-					set_artifact_name = shen_jia_2
-				}
-				else_if = {
-					set_artifact_name = shen_jia_1
-				}
-			}
-		}
-		scope:newly_created_artifact = {    #设置稀有度等级
-			if = {
-				limit = {
-					root.var:神器宝物提升次数 >= 3
-				}
-				reforge_artifact = {
-					rarity = illustrious
-					quality = 150
-					wealth = 150
-				}
-			}
-			else_if = {
-				limit = {
-					root.var:神器宝物提升次数 >= 2
-				}
-				reforge_artifact = {
-					rarity = illustrious
-					quality = 110
-					wealth = 110
-				}
-			}
-			else_if = {
-				limit = {
-					root.var:神器宝物提升次数 >= 1
-				}
-				reforge_artifact = {
-					rarity = famed
-					wealth = 68
-					quality = 68
+					reforge_artifact = {
+						rarity = famed
+						wealth = 68
+						quality = 68
 
+					}
+				}
+				else_if = {
+					reforge_artifact = {
+						rarity = masterwork
+					}
 				}
 			}
-			else_if = {
-				reforge_artifact = {
-					rarity = masterwork
+			scope:newly_created_artifact = {   #重设宝物的类型
+				if = {
+					limit = {
+						root.var:super_create_artifact_type = 1
+					}
+					reforge_artifact = {
+						type = helmet
+						visuals = crown
+					}
+				}
+				else_if = {
+					limit = {
+						root.var:super_create_artifact_type = 2
+					}
+					reforge_artifact = {
+						type = sword
+						visuals = sword
+					}
+				}
+				else_if = {
+					limit = {
+						root.var:super_create_artifact_type = 3
+					}
+					reforge_artifact = {
+						type = armor_plate
+						visuals = armor
+					}
+				}
+			}
+			scope:newly_created_artifact = {   #给予宝物修正
+				if = {
+					limit = {
+						root.var:super_times_of_artifact_rise >= 3
+					}
+					add_mid_modifier_to_artifact = yes
+					add_mid_modifier_to_artifact = yes
+					add_high_modifier_to_artifact = yes
+					add_high_modifier_to_artifact = yes
+				}
+				if = {
+					limit = {
+						root.var:super_times_of_artifact_rise >= 2
+					}
+					add_high_modifier_to_artifact = yes
+					add_high_modifier_to_artifact = yes
+				}
+				if = {
+					limit = {
+						root.var:super_times_of_artifact_rise >= 1
+					}
+					add_high_modifier_to_artifact = yes
+					add_high_modifier_to_artifact = yes
+					add_high_modifier_to_artifact = yes
 				}
 			}
 		}
-		scope:newly_created_artifact = {   #重设宝物的类型
-			if = {
-				limit = {
-					root.var:神器类型 = 1
-				}
-				reforge_artifact = {
-					type = helmet
-					visuals = crown
-				}
-			}
-			else_if = {
-				limit = {
-					root.var:神器类型 = 2
-				}
-				reforge_artifact = {
-					type = sword
-					visuals = sword
-				}
-			}
-			else_if = {
-				limit = {
-					root.var:神器类型 = 3
-				}
-				reforge_artifact = {
-					type = armor_plate
-					visuals = armor
-				}
-			}
-		}
-		scope:newly_created_artifact = {   #给予宝物修正
-			if = {
-				limit = {
-					root.var:神器宝物提升次数 >= 3
-				}
-				添加修正_宝物_中级 = yes
-				添加修正_宝物_中级 = yes
-				添加修正_宝物_高级 = yes
-				添加修正_宝物_高级 = yes
-			}
-			if = {
-				limit = {
-					root.var:神器宝物提升次数 >= 2
-				}
-				添加修正_宝物_高级 = yes
-				添加修正_宝物_高级 = yes
-			}
-			if = {
-				limit = {
-					root.var:神器宝物提升次数 >= 1
-				}
-				添加修正_宝物_高级 = yes
-				添加修正_宝物_高级 = yes
-				添加修正_宝物_高级 = yes
-			}
-		}
+		trigger_event = super_art_cr_sup.0007
+		
+	}
+}
+
+super_art_cr_sup.0007 = {
+	type = character_event
+	title = super_art_cr_sup.0005.t
+	desc = super_art_cr_sup.0005.desc
+	theme = realm
+	right_portrait = root
+	artifact = {
+		target = scope:newly_created_artifact
+		position = lower_left_portrait
 	}
 	option = {
 		name = super_art_cr_sup.0005.a
@@ -576,7 +588,7 @@ super_art_cr_sup.0006 = {
 	immediate = {
 		if = {
 			limit = {
-				是否有贤者之石 = yes
+				has_sage_stone = yes
 			}
 			trigger_event = super_art_cr_sup.0004
 		}

@@ -1,4 +1,4 @@
-﻿摧毁宝物_贤者之石 ={
+﻿destory_sage_stone ={
 	random_character_artifact = {
 		limit = {
 			has_artifact_modifier = sage_stone_modifier
@@ -8,7 +8,7 @@
 	destroy_artifact = scope:sage_stone_will_remove
 }
 
-创造宝物_1级炼金术类 = {
+create_1_level_alchemy_artifact = {
 	create_artifact = {
 		name = alchemy_artifact_1
 		description = alchemy_artifact_1_desc
@@ -116,7 +116,7 @@
 	}	
 }
 
-创造宝物_2级炼金术类 = {
+create_2_level_alchemy_artifact = {
 	create_artifact = {
 		name = alchemy_artifact_2
 		description = alchemy_artifact_2_desc
@@ -288,7 +288,7 @@
 	}	
 }
 
-创造宝物_3级炼金术类 = {
+create_3_level_alchemy_artifact = {
 	create_artifact = {
 		name = alchemy_artifact_3
 		description = alchemy_artifact_3_desc
@@ -462,7 +462,7 @@
 	}
 }
 
-添加修正_宝物_高级 = {
+add_high_modifier_to_artifact = {
 	hidden_effect = {
 		scope:newly_created_artifact = {
 			random_list = {
@@ -537,7 +537,7 @@
 	}	
 }
 
-添加修正_宝物_中级 = {
+add_mid_modifier_to_artifact = {
 	hidden_effect = {
 		scope:newly_created_artifact = {
 			random_list = {
@@ -610,7 +610,7 @@
 	}	
 }
 
-摧毁宝物_全部的领军者战甲 = {
+destory_all_lead_armor = {
 	while = {
 		limit = {
 			this = {
@@ -639,7 +639,7 @@
 	}	
 }
 
-勇武决斗的效果 = {
+brave_duel_effect = {
 	scope:sc_victor = {
 		every_character_war = {
 			limit = {
@@ -656,7 +656,7 @@
 	}
 }
 
-摆脱使徒身份的决斗效果 = {
+out_aposlte_duel_effect = {
 	scope:sc_victor = {
 		if = {
 			limit = {
@@ -684,7 +684,7 @@
 		}
 		if = {
 			limit = {
-				角色是不是神_接受参数 = {
+				is_god_parament = {
 					CHARACTER = this
 				}
 			}
@@ -697,7 +697,7 @@
 		if = {
 			limit = {
 				NOT = {
-					角色是不是神_接受参数 = {
+					is_god_parament = {
 						CHARACTER = this
 					}
 				}
@@ -715,7 +715,7 @@
 	}
 }
 
-移除所有种类的使徒特质 = {
+remove_all_apostle_trait = {
 	if = {
 		limit = {
 			has_trait = apostle_of_destiny
@@ -742,7 +742,7 @@
 	}
 }
 
-移除所有负面特质_不包括名声和性格特质 = {
+remove_all_bad_trait_without_fame_and_personalities = {
 	if = {
 		limit = {
 			has_trait = depressed_1
@@ -1141,29 +1141,29 @@
 	}
 }
 
-毁灭之火_焚烧小王国 = {		# 接受一个人物，使人物所在地的公国内所有人全部死亡
+super_black_fire_destory_duchy = {		# 接受一个人物，使人物所在地的公国内所有人全部死亡
 	scope:actor = {
-		save_scope_as = 使用毁灭之火的凶手
+		save_scope_as = super_who_use_black_fire
 	}
 	this.location = {
 		duchy = {
-			save_scope_as = 将被焚毁的公国
+			save_scope_as = super_where_will_be_destory
 		}
 	}
 
 	every_living_character = {
 		limit = {
-			this.location.duchy = scope:将被焚毁的公国
+			this.location.duchy = scope:super_where_will_be_destory
 			NOT = {
 				OR = {
-					是否拥有三大特质之一 = yes
-					是否是神 = yes
+					has_a_main_super_trait = yes
+					is_god = yes
 				}
 			}
 		}
 		death = {
-			death_reason = 死于毁灭之火
-			killer = scope:使用毁灭之火的凶手
+			death_reason = super_death_black_fire
+			killer = scope:super_who_use_black_fire
 		}
 	}
 
@@ -1172,7 +1172,7 @@
 
 
 # 使得该角色独立    给需要独立的角色使用
-使角色独立 = {
+make_character_indepent = {
 	create_title_and_vassal_change = {
 		type = independency
 		save_scope_as = change

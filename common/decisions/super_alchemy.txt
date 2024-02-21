@@ -75,7 +75,7 @@ creat_sage_stone_dec = {
 		AND = {
 			is_available_adult = yes
 			is_imprisoned = no
-			是否有贤者之石 = no
+			has_sage_stone = no
 		}	
 	}
 	

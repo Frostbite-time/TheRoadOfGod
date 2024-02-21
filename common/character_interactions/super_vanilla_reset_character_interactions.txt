@@ -58,9 +58,9 @@ ransom_interaction = {
 			trigger_else_if = {
 				limit = {
 					scope:actor = {
-						是否拥有自然六神的神力 = no
+						has_nature_god_trait = no
 						has_trait = devilishness
-						没有人拥有暗影神力 = yes
+						none_is_dark_god = yes
 					}						
 				}
 				always = no
@@ -1766,7 +1766,7 @@ offer_vassalization_interaction = {
 
 		modifier = {
 			scope:actor = {
-				是否是神 = yes
+				is_god = yes
 				is_ai = no
 			}
 			add = 50
@@ -1774,7 +1774,7 @@ offer_vassalization_interaction = {
 
 		modifier = {
 			scope:actor = {
-				是否是神 = yes
+				is_god = yes
 				is_ai = yes
 			}
 			add = 100
@@ -6004,7 +6004,7 @@ start_murder_interaction = {
 			}
 			custom_description = {
 				text = cant_murder_tips_1
-				是否被目标思想操纵_用于计谋 = no
+				is_powerful_mind_hooked_by_target = no
 			}
 		}
 		trigger_else = {
@@ -6021,7 +6021,7 @@ start_murder_interaction = {
 		}
 		NOT = {
 			scope:recipient = {
-				是否是神 = yes
+				is_god = yes
 			}
 		}	
 	}

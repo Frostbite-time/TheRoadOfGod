@@ -107,7 +107,7 @@ soul_stone_template = {
 }
 
 # 毁灭之火的模板
-毁灭之火_模板 = {
+super_black_fire_template = {
 	can_equip = {
 		always = yes
 	}

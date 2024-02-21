@@ -87,7 +87,7 @@ super_be_war_god_event.0004 = {
     option = {
         name = super_be_war_god_event.0004.1
         add_trait = super_war_god
-        移除所有负面特质_不包括名声和性格特质 = yes
+        remove_all_bad_trait_without_fame_and_personalities = yes
         # option details...
     }
 

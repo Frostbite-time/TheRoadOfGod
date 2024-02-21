@@ -189,7 +189,7 @@ super_faith_event.0006 = {
 		trigger = {
 			root = {
 				NOT = {
-					角色是不是神_接受参数 = {
+					is_god_parament = {
 						CHARACTER = this
 					}
 				}
@@ -199,7 +199,7 @@ super_faith_event.0006 = {
 	option = {
 		trigger = {
 			root = {
-				角色是不是神_接受参数 = {
+				is_god_parament = {
 					CHARACTER = this
 				}
 			}
@@ -266,7 +266,7 @@ super_faith_event.0010 = {
 				title = perk_interaction.0101.victor_toast.t
 				left_icon = scope:sc_victor
 				right_icon = scope:sc_loser
-				show_as_tooltip = { 勇武决斗的效果 = yes }
+				show_as_tooltip = { brave_duel_effect = yes }
 			}
 		}
 		# And to the loser.
@@ -275,11 +275,11 @@ super_faith_event.0010 = {
 				title = perk_interaction.0101.loser_toast.t
 				left_icon = scope:sc_loser
 				right_icon = scope:sc_victor
-				show_as_tooltip = { 勇武决斗的效果 = yes }
+				show_as_tooltip = { brave_duel_effect = yes }
 			}
 		}
 		# Then execute the actual effects.
-		勇武决斗的效果 = yes
+		brave_duel_effect = yes
 	}
 }
 
