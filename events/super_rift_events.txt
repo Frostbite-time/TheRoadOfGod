@@ -719,6 +719,7 @@ rift_events_world.0007 = {
 							modifier = artifact_dread_baseline_add_4_modifier
 							wealth = 100
 							quality = 100
+							max_durability = 100
 							save_scope_as = newly_created_artifact
 						}
 					}

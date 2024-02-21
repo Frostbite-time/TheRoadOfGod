@@ -274,6 +274,7 @@ final_call_dec_events.0005 = {
 					modifier = artifact_controlled_province_advantage_8_modifier
 					wealth = 100
 					quality = 100
+					max_durability = 100
 					save_scope_as = newly_created_artifact
 				}
 			}
@@ -292,6 +293,7 @@ final_call_dec_events.0005 = {
 					modifier = artifact_raid_speed_12_modifier
 					wealth = 100
 					quality = 100
+					max_durability = 100
 					save_scope_as = newly_created_artifact
 				}
 			}
@@ -310,6 +312,7 @@ final_call_dec_events.0005 = {
 					modifier = artifact_prowess_11_modifier
 					wealth = 100
 					quality = 100
+					max_durability = 100
 					save_scope_as = newly_created_artifact
 				}
 			}
@@ -328,6 +331,7 @@ final_call_dec_events.0005 = {
 					modifier = artifact_dynasty_opinion_8_modifier
 					wealth = 100
 					quality = 100
+					max_durability = 100
 					save_scope_as = newly_created_artifact
 				}
 			}
@@ -346,6 +350,7 @@ final_call_dec_events.0005 = {
 					modifier = artifact_controlled_province_advantage_8_modifier
 					wealth = 100
 					quality = 100
+					max_durability = 100
 					save_scope_as = newly_created_artifact
 				}
 			}
@@ -365,6 +370,7 @@ final_call_dec_events.0005 = {
 					modifier = leader_aromr_modifier
 					wealth = 100
 					quality = 100
+					max_durability = 100
 					save_scope_as = newly_created_artifact
 				}
 				modifier = {
@@ -394,6 +400,7 @@ final_call_dec_events.0005 = {
 					modifier = artifact_dread_baseline_add_4_modifier
 					wealth = 100
 					quality = 100
+					max_durability = 100
 					save_scope_as = newly_created_artifact
 				}
 			}

@@ -18,6 +18,7 @@ create_1_level_alchemy_artifact = {
 		rarity = masterwork
 		wealth = 25
 		quality = 25
+		max_durability = 30
 		save_scope_as = newly_created_artifact
 		modifier = artifact_prowess_1_modifier
 	}
@@ -127,6 +128,7 @@ create_2_level_alchemy_artifact = {
 		rarity = famed
 		wealth = 50
 		quality = 50
+		max_durability = 60
 		save_scope_as = newly_created_artifact
 		modifier = artifact_prowess_1_modifier
 	}
@@ -300,6 +302,7 @@ create_3_level_alchemy_artifact = {
 		rarity = illustrious
 		wealth = 80
 		quality = 80
+		max_durability = 90
 		save_scope_as = newly_created_artifact
 		modifier = artifact_prowess_1_modifier
 	}
