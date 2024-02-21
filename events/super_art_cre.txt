@@ -372,64 +372,20 @@ super_art_cr_sup.0005 = {
 		root = {
 			save_scope_as = owner
 		}
-		# 根据类型生成宝物
-		if = {
-			limit = {
-				root.var:super_create_artifact_type = 1
-			}
-			create_artifact = {
-				name = shen_qi
-				description = shen_qi_desc
-				type = helmet
-				visuals = crown
-				rarity = masterwork
-				modifier = artifact_prowess_1_modifier
-				wealth = 20
-				quality = 20
-				max_durability = 80
-				save_scope_as = newly_created_artifact
-			}
+		create_artifact = {
+			name = shen_qi
+			description = shen_qi_desc
+			type = axe
+			visuals = axe
+			rarity = masterwork
+			modifier = artifact_prowess_1_modifier
+			wealth = 20
+			quality = 20
+			save_scope_as = newly_created_artifact
 		}
-		else_if = {
-			limit = {
-				root.var:super_create_artifact_type = 2
-			}
-			create_artifact = {
-				name = shen_qi
-				description = shen_qi_desc
-				type = sword
-				visuals = sword
-				rarity = masterwork
-				modifier = artifact_prowess_1_modifier
-				wealth = 20
-				quality = 20
-				max_durability = 80
-				save_scope_as = newly_created_artifact
-			}
-		}
-		else_if = {
-			limit = {
-				root.var:super_create_artifact_type = 3
-			}
-			create_artifact = {
-				name = shen_qi
-				description = shen_qi_desc
-				type = armor_plate
-				visuals = armor
-				rarity = masterwork
-				modifier = artifact_prowess_1_modifier
-				wealth = 20
-				quality = 20
-				max_durability = 80
-				save_scope_as = newly_created_artifact
-			}
-		}
-		
-		# 为宝物添加一些基础修正
 		scope:newly_created_artifact = {
 			add_mid_modifier_to_artifact = yes
 		}
-
 		hidden_effect = {
 			scope:newly_created_artifact = {   #为工艺品设置名称
 				if = {
@@ -546,8 +502,35 @@ super_art_cr_sup.0005 = {
 				else_if = {
 					reforge_artifact = {
 						rarity = masterwork
-						wealth = 30
-						quality = 30
+					}
+				}
+			}
+			scope:newly_created_artifact = {   #重设宝物的类型
+				if = {
+					limit = {
+						root.var:super_create_artifact_type = 1
+					}
+					reforge_artifact = {
+						type = helmet
+						visuals = crown
+					}
+				}
+				else_if = {
+					limit = {
+						root.var:super_create_artifact_type = 2
+					}
+					reforge_artifact = {
+						type = sword
+						visuals = sword
+					}
+				}
+				else_if = {
+					limit = {
+						root.var:super_create_artifact_type = 3
+					}
+					reforge_artifact = {
+						type = armor_plate
+						visuals = armor
 					}
 				}
 			}
