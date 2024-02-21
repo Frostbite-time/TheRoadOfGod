@@ -379,11 +379,19 @@ super_art_cr_sup.0005 = {
 			visuals = axe
 			rarity = masterwork
 			modifier = artifact_prowess_1_modifier
-			wealth = 20
-			quality = 20
+			wealth = 30
+			quality = 30
 			save_scope_as = newly_created_artifact
 		}
 		scope:newly_created_artifact = {
+			save_scope_value_as = {
+				name = quality
+				value = 30
+			}
+			save_scope_value_as = {
+				name = wealth
+				value = 30
+			}
 			add_mid_modifier_to_artifact = yes
 		}
 		hidden_effect = {
@@ -477,6 +485,16 @@ super_art_cr_sup.0005 = {
 						quality = 150
 						wealth = 150
 					}
+
+					save_scope_value_as = {
+						name = quality
+						value = 150
+					}
+					save_scope_value_as = {
+						name = wealth
+						value = 150
+					}
+
 				}
 				else_if = {
 					limit = {
@@ -487,6 +505,14 @@ super_art_cr_sup.0005 = {
 						quality = 110
 						wealth = 110
 					}
+					save_scope_value_as = {
+						name = quality
+						value = 110
+					}
+					save_scope_value_as = {
+						name = wealth
+						value = 110
+					}
 				}
 				else_if = {
 					limit = {
@@ -496,12 +522,27 @@ super_art_cr_sup.0005 = {
 						rarity = famed
 						wealth = 68
 						quality = 68
-
+					}
+					save_scope_value_as = {
+						name = quality
+						value = 68
+					}
+					save_scope_value_as = {
+						name = wealth
+						value = 68
 					}
 				}
 				else_if = {
 					reforge_artifact = {
 						rarity = masterwork
+						save_scope_value_as = {
+							name = quality
+							value = 30
+						}
+						save_scope_value_as = {
+							name = wealth
+							value = 30
+						}
 					}
 				}
 			}
@@ -559,6 +600,15 @@ super_art_cr_sup.0005 = {
 					add_high_modifier_to_artifact = yes
 					add_high_modifier_to_artifact = yes
 				}
+				#如果某天报错继续，尝试加上这个
+				# set_variable = {
+				# 	name = quality
+				# 	value = scope:quality
+				# }
+				# set_variable = {
+				# 	name = wealth
+				# 	value = scope:wealth
+				# }
 			}
 		}
 		trigger_event = super_art_cr_sup.0007

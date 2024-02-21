@@ -14,6 +14,16 @@ create_soul_stone = {
 		save_scope_as = newly_created_artifact	#将创建的宝物作为作用域  以便后面的事件使用（如果在事件的immediate中创造也可以直接被当前事件调用）
 		template = soul_stone_template			#宝物模板  这个在artifacts/templates文件夹下定义  也可以用原版的  非必须 可以不写
 	}
+	scope:newly_created_artifact = {
+		save_scope_value_as = {
+			name = quality
+			value = 120
+		}
+		save_scope_value_as = {
+			name = wealth
+			value = 120
+		}
+	}
 }
 
 # 创造毁灭之火
@@ -33,6 +43,16 @@ create_black_fire = {
 		save_scope_as = newly_created_artifact	#将创建的宝物作为作用域  以便后面的事件使用（如果在事件的immediate中创造也可以直接被当前事件调用）
 		template = super_black_fire_template			#宝物模板  这个在artifacts/templates文件夹下定义  也可以用原版的  非必须 可以不写
 	}
+	scope:newly_created_artifact = {
+		save_scope_value_as = {
+			name = quality
+			value = 100
+		}
+		save_scope_value_as = {
+			name = wealth
+			value = 100
+		}
+	}
 }
 
 # 创造宝物 贤者之石
@@ -49,5 +69,15 @@ create_sage_stone = {
 		quality = 100
 		max_durability = 1000
 		save_scope_as = newly_created_artifact
+	}
+	scope:newly_created_artifact = {
+		save_scope_value_as = {
+			name = quality
+			value = 100
+		}
+		save_scope_value_as = {
+			name = wealth
+			value = 100
+		}
 	}
 }

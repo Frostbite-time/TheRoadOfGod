@@ -30,6 +30,16 @@ super_be_sea_god_events.0001 = {
                 save_scope_as = newly_created_artifact
                 template = neptune_scepter_template
             }
+            scope:newly_created_artifact = {
+                save_scope_value_as = {
+                    name = quality
+                    value = 300
+                }
+                save_scope_value_as = {
+                    name = wealth
+                    value = 300
+                }
+            }
         }    
     }
     option = {

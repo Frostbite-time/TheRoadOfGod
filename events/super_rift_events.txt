@@ -722,6 +722,16 @@ rift_events_world.0007 = {
 							max_durability = 100
 							save_scope_as = newly_created_artifact
 						}
+						scope:newly_created_artifact = {
+							save_scope_value_as = {
+								name = quality
+								value = 100
+							}
+							save_scope_value_as = {
+								name = wealth
+								value = 100
+							}
+						}
 					}
 					10 = {
 						root = {

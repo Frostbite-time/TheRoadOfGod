@@ -22,6 +22,16 @@ create_1_level_alchemy_artifact = {
 		save_scope_as = newly_created_artifact
 		modifier = artifact_prowess_1_modifier
 	}
+	scope:newly_created_artifact = {
+		save_scope_value_as = {
+			name = quality
+			value = 25
+		}
+		save_scope_value_as = {
+			name = wealth
+			value = 25
+		}
+	}
 	hidden_effect = {
 		scope:newly_created_artifact = {
 			random_list = {
@@ -131,6 +141,16 @@ create_2_level_alchemy_artifact = {
 		max_durability = 60
 		save_scope_as = newly_created_artifact
 		modifier = artifact_prowess_1_modifier
+	}
+	scope:newly_created_artifact = {
+		save_scope_value_as = {
+			name = quality
+			value = 50
+		}
+		save_scope_value_as = {
+			name = wealth
+			value = 50
+		}
 	}
 	hidden_effect = {
 		scope:newly_created_artifact = {
@@ -305,6 +325,16 @@ create_3_level_alchemy_artifact = {
 		max_durability = 90
 		save_scope_as = newly_created_artifact
 		modifier = artifact_prowess_1_modifier
+	}
+	scope:newly_created_artifact = {
+		save_scope_value_as = {
+			name = quality
+			value = 80
+		}
+		save_scope_value_as = {
+			name = wealth
+			value = 80
+		}
 	}
 	hidden_effect = {
 		scope:newly_created_artifact = {
