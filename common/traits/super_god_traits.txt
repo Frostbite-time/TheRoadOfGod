@@ -48,6 +48,8 @@ super_war_god = {
 	levy_reinforcement_rate_friendly_territory = 1      #友方领地补兵效率
 	movement_speed = 5 #陆军移动速度
 	ai_boldness = very_high_positive_ai_value   		#AI大胆程度  很积极
+	ai_war_chance = 10
+	ai_war_cooldown	= -0.95
 }
 
 #暗影囚笼
@@ -102,6 +104,8 @@ super_dark_god = {
 	max_personal_schemes_add = 10 #个人计谋最大数量增加
 	max_hostile_schemes_add = 5 #阴谋计谋最大数量增加
 	ai_vengefulness = very_high_positive_ai_value #ai的复仇欲 极大
+	ai_war_chance = 10
+	ai_war_cooldown	= -0.95
 }
 
 #星海铭刻
@@ -148,6 +152,8 @@ super_wisdom_god = {
 	personal_scheme_resistance_add = 500 #个人计谋阻力
 	cultural_head_fascination_mult = 3 #对于领导的文化的影响
 	ai_honor = very_high_positive_ai_value #AI对荣耀的重视
+	ai_war_chance = 0.25
+	ai_war_cooldown	= -0.95
 }
 
 #森林之心
@@ -202,6 +208,8 @@ super_nature_god = {
 	forest_attrition_mult = -1 #森林地形的损耗
 	forest_cancel_negative_supply = yes #移除在森林地形的补给惩罚
 	forest_advantage = 500 #森林地区的战斗优势
+	ai_war_chance = 2
+	ai_war_cooldown	= -0.95
 }
 
 #救世之手
@@ -246,6 +254,8 @@ super_belief_god = {
 	levy_reinforcement_rate_same_faith = 1 #相同宗教补兵效率
 	build_piety_cost = -1000 #建筑虔诚花费
 	ai_compassion = very_high_positive_ai_value #ai的同情心，很积极
+	ai_war_chance = 10
+	ai_war_cooldown	= -0.95
 }
 
 #苍海领主
@@ -289,6 +299,8 @@ super_sea_god = {
 	naval_movement_speed_mult = 20 #海军行军速度
 	no_water_crossing_penalty = yes #渡河无优势惩罚
 	ai_rationality = very_high_positive_ai_value #ai的理性程度 很积极
+	ai_war_chance = 10
+	ai_war_cooldown	= -0.95
 }
 
 #命运终点
@@ -325,6 +337,8 @@ super_destiny_god = {
 	movement_speed = 10 #陆军行军速度
 	naval_movement_speed_mult = 10 #海军行军速度
 	ai_vengefulness = very_high_positive_ai_value #ai的复仇欲 极大
+	ai_war_chance = 10
+	ai_war_cooldown	= -0.95
 }
 
 #时空之王
@@ -361,7 +375,8 @@ super_time_god = {
 	movement_speed = 100 #陆军行军速度
 	naval_movement_speed_mult = 100 #海军行军速度
 	ai_rationality = very_high_positive_ai_value #ai的理性程度 很积极
-	
+	ai_war_chance = 10
+	ai_war_cooldown	= -0.95
 }
 
 #希望之光
@@ -401,7 +416,8 @@ super_sun_god = {
 	movement_speed = 3 #陆军行军速度
 	naval_movement_speed_mult = 3 #海军行军速度
 	ai_vengefulness = very_high_positive_ai_value #ai的复仇欲 极大
-	
+	ai_war_chance = 10
+	ai_war_cooldown	= -0.95
 }
 
 #统御者
@@ -463,6 +479,8 @@ super_highlander_god = {
 	skirmishers_siege_value_add = 1
 	immortal = yes	
 	ai_vengefulness = very_high_positive_ai_value #ai的复仇欲 极大
+	ai_war_chance = 10
+	ai_war_cooldown	= -0.95
 }
 
 #征服者
@@ -499,6 +517,8 @@ super_fight_god = {
 	movement_speed = 10 #陆军行军速度
 	naval_movement_speed_mult = 10 #海军行军速度
 	ai_vengefulness = very_high_positive_ai_value #ai的复仇欲 极大
+	ai_war_chance = 10
+	ai_war_cooldown	= -0.95
 }
 
 #方舟
@@ -536,4 +556,6 @@ super_ark_god = {
 	faith_conversion_piety_cost_mult = 100000 #改信需要花费的信仰系数
 	faith_creation_piety_cost_mult = 100000 #创教需要花费的信仰系数
 	ai_compassion = very_high_positive_ai_value #很积极
+	ai_war_chance = 10
+	ai_war_cooldown	= -0.95
 }
