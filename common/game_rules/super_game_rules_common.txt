@@ -140,3 +140,27 @@ super_khan_invasion_time = {
 	}
 	
 }
+
+# 调控超能之路兵种的使用权限
+super_mma_permission = {
+	categories = {     #分类在difficult下
+		super_rule_group
+	}
+	default = super_mma_permission_enable
+	super_mma_permission_ai = {}
+	super_mma_permission_player = {}
+	super_mma_permission_banned = {}
+	super_mma_permission_enable = {}
+}
+
+# 开局是否开启奖励
+super_open_start_reward = {
+	categories = {     #分类在difficult下
+		super_rule_group
+	}
+	default = super_open_start_reward_opened
+	super_open_start_reward_opened = {}
+	super_open_start_reward_banned = {}
+	super_open_start_reward_ai = {}
+	super_open_start_reward_player = {}
+}

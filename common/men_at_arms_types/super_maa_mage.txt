@@ -1,7 +1,7 @@
 ﻿super_maa_monastic_order = { 
 	type = mage   #兵士种类
 	can_recruit = {
-		always = yes
+		super_rule_for_mma = yes
 	}
 	damage = 70
 	toughness = 20 #坚韧
@@ -33,7 +33,7 @@
 super_maa_imperial_mage = { 
 	type = mage   #兵士种类
 	can_recruit = {
-		always = yes
+		super_rule_for_mma = yes
 	}
 	damage = 100
 	toughness = 30 #坚韧
@@ -70,6 +70,7 @@ super_maa_imperial_elite_mage = {
 		primary_title = {
 			tier >= tier_duchy
 		}
+		super_rule_for_mma = yes
 	}
 	damage = 150
 	toughness = 50 #坚韧
@@ -108,6 +109,7 @@ super_maa_legendary_mage = {
 		primary_title = {
 			tier >= tier_kingdom
 		}
+		super_rule_for_mma = yes
 	}
 	damage = 250
 	toughness = 80 #坚韧

@@ -1,7 +1,7 @@
 ﻿super_maa_fencer = { 
 	type = super_maa_type_fencer   #兵士种类
 	can_recruit = {
-		always = yes
+		super_rule_for_mma = yes
 	}
 	damage = 50
 	toughness = 50 #坚韧
@@ -34,7 +34,7 @@
 super_maa_skilled_fencer = { 
 	type = super_maa_type_fencer   #兵士种类
 	can_recruit = {
-		always = yes
+		super_rule_for_mma = yes
 	}
 	damage = 90
 	toughness = 50 #坚韧
@@ -71,6 +71,7 @@ super_maa_imperial_swordsman = {
 		primary_title = {
 			tier >= tier_duchy
 		}
+		super_rule_for_mma = yes
 	}
 	damage = 120
 	toughness = 80 #坚韧
@@ -107,6 +108,7 @@ super_maa_kensei = {
 		primary_title = {
 			tier >= tier_kingdom
 		}
+		super_rule_for_mma = yes
 	}
 	damage = 150
 	toughness = 150 #坚韧

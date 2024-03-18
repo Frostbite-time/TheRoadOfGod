@@ -380,3 +380,59 @@ is_player_or_ruler_more_duchy = {
 		primary_title.tier >= tier_duchy
 	}
 }
+
+# 超能之路规则组对于兵种的调控
+super_rule_for_mma = {
+	trigger_if = {
+		limit = {
+			has_game_rule = super_mma_permission_enable
+		}
+		always = yes
+	}
+	trigger_else_if = {
+		limit = {
+			has_game_rule = super_mma_permission_banned
+		}
+		always = no
+	}
+	trigger_else_if = {
+		limit = {
+			has_game_rule = super_mma_permission_player
+		}
+		is_ai = no
+	}
+	trigger_else_if = {
+		limit = {
+			has_game_rule = super_mma_permission_ai
+		}
+		is_ai = yes
+	}
+}
+
+# 超能之路规则组对于开局奖励的调控
+super_rule_for_start_reward = {
+	trigger_if = {
+		limit = {
+			has_game_rule = super_open_start_reward_opened
+		}
+		always = yes
+	}
+	trigger_else_if = {
+		limit = {
+			has_game_rule = super_open_start_reward_banned
+		}
+		always = no
+	}
+	trigger_else_if = {
+		limit = { 
+			has_game_rule = super_open_start_reward_ai
+		}
+		is_ai = yes
+	}
+	trigger_else_if = {
+		limit = {
+			has_game_rule = super_open_start_reward_player
+		}
+		is_ai = no
+	}
+}

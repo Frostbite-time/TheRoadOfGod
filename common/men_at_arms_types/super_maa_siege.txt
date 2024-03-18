@@ -5,6 +5,7 @@
 		primary_title = {
 			tier >= tier_kingdom
 		}
+		super_rule_for_mma = yes
 	}
 
 	damage = 10
@@ -31,6 +32,7 @@ super_maa_mage_stone_throw = {
 		primary_title = {
 			tier >= tier_duchy
 		}
+		super_rule_for_mma = yes
 	}
 
 	damage = 10

@@ -9,6 +9,7 @@ super_give_maa_events.0001 = {
 	right_portrait = root
 
 	trigger = {
+		super_rule_for_start_reward = yes
 		NOT = {
 			has_character_flag = super_give_maa_events已经完成
 		}
