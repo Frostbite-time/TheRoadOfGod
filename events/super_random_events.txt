@@ -1,7 +1,8 @@
 ﻿namespace = super_knows_seed_events
 namespace = super_unknow_fire_events
 namespace = super_visit_from_belief_events
-namespace = 拒死之人事件链
+# namespace = 拒死之人事件链
+
 
 # 洞悉之种的事件链
 super_knows_seed_events.0001 = {
@@ -695,7 +696,7 @@ super_unknow_fire_events.0004 = {			# 是否清缴邪教
 	}
 
 	option = {
-		name = super_unknow_fire_events.0004.4		#warn_other
+		name = super_unknow_fire_events.0004.4		# 口头警告
 
 		ai_chance = 20
 
@@ -1018,9 +1019,11 @@ super_unknow_fire_events.0007 = {
 						}
 					}
 					else = {
-						death = {
-							death_reason = death_vanished
-							killer = scope:sc_victor
+						scope:神秘的黑衣人 =  {
+							death = {
+								death_reason = death_vanished
+								killer = scope:sc_victor
+							}
 						}
 					}
 				}
@@ -1041,6 +1044,7 @@ super_unknow_fire_events.0007 = {
 				}
 			}
 		}
+
 		if = {
 			limit = {
 				scope:sc_loser = root
@@ -1051,9 +1055,11 @@ super_unknow_fire_events.0007 = {
 			}
 		}
 		else = {
-			death = {
-				death_reason = death_vanished
-				killer = scope:sc_victor
+			scope:神秘的黑衣人 =  {
+				death = {
+					death_reason = death_vanished
+					killer = scope:sc_victor
+				}
 			}
 		}
 	}
