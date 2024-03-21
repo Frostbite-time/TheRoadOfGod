@@ -136,7 +136,15 @@ super_khan_invasion_time = {
 	}
 	super_khan_invasion_time_early_3 = {
 	}
-	super_khan_invasion_time_early_on_start = {
+	super_khan_invasion_time_early_on_start_10 = {
+	}
+	super_khan_invasion_time_early_on_start_20 = {
+	}
+	super_khan_invasion_time_early_on_start_30 = {
+	}
+	super_khan_invasion_time_early_on_start_40 = {
+	}
+	super_khan_invasion_time_early_on_start_50 = {
 	}
 	
 }

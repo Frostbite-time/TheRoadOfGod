@@ -559,7 +559,7 @@ super_khan_action_on_start = {
 	effect = {
 		if = {
 			limit = {
-				has_game_rule = super_khan_invasion_time_early_on_start
+				has_game_rule = super_khan_invasion_time_early_on_start_10
 				NOT = {
 					has_global_variable = mongols_have_appeared
 				}
@@ -571,6 +571,70 @@ super_khan_action_on_start = {
 			trigger_event = {
 				id = mongol_invasion.0001
 				years = 10
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = super_khan_invasion_time_early_on_start_20
+				NOT = {
+					has_global_variable = mongols_have_appeared
+				}
+			}
+			set_global_variable = {
+				name = mongols_have_appeared
+				value = yes
+			}
+			trigger_event = {
+				id = mongol_invasion.0001
+				years = 20
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = super_khan_invasion_time_early_on_start_30
+				NOT = {
+					has_global_variable = mongols_have_appeared
+				}
+			}
+			set_global_variable = {
+				name = mongols_have_appeared
+				value = yes
+			}
+			trigger_event = {
+				id = mongol_invasion.0001
+				years = 30
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = super_khan_invasion_time_early_on_start_40
+				NOT = {
+					has_global_variable = mongols_have_appeared
+				}
+			}
+			set_global_variable = {
+				name = mongols_have_appeared
+				value = yes
+			}
+			trigger_event = {
+				id = mongol_invasion.0001
+				years = 40
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = super_khan_invasion_time_early_on_start_50
+				NOT = {
+					has_global_variable = mongols_have_appeared
+				}
+			}
+			set_global_variable = {
+				name = mongols_have_appeared
+				value = yes
+			}
+			trigger_event = {
+				id = mongol_invasion.0001
+				years = 50
 			}
 		}
 	}
