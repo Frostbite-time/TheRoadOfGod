@@ -854,7 +854,8 @@ call_god_events.0007 = {
 	desc = call_god_events.0007.desc   #事件描述
 	theme = witchcraft        #事件主题，会决定事件的场景等，可以在wiki上面找到更多
 	left_portrait = root    #让角色出现在左边
-	immediate = {
+	option = {
+		name = call_god_events.0007.a
 		random_list = {
 			100 = {
 				root = {
@@ -896,9 +897,6 @@ call_god_events.0007 = {
 				}
 			}
 		}
-	}
-	option = {
-		name = call_god_events.0007.a
 	}
 }
 #命运路线   03平淡的回应
